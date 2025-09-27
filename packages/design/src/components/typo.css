@@ -1,0 +1,216 @@
+@reference "../utilities.css";
+@layer components {
+  .typo {
+    text-wrap-mode: wrap;
+    text-wrap-style: stable;
+    font-family: var(--font-ui);
+    font-size: var(--text-root);
+    line-height: var(--text-root--line-height);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-root--text);
+    background-color: var(--color-root);
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .typo h1 {
+    font-size: var(--text-root-xl);
+    line-height: var(--text-root-xl--line-height);
+    font-weight: var(--font-weight-ui-xl);
+    color: var(--color-root--text);
+    padding-block: var(--spacing-mini);
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .typo h2 {
+    font-size: var(--text-root-lg);
+    line-height: var(--text-root-lg--line-height);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-root--text);
+    padding-block: var(--spacing-mini);
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .typo h3 {
+    font-size: var(--text-root-lg);
+    line-height: var(--text-root-lg--line-height);
+    font-weight: var(--font-weight-ui-lg);
+    color: var(--color-root--text);
+    padding-block: var(--spacing-mini);
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .typo h4 {
+    font-size: var(--text-root);
+    line-height: var(--text-root--line-height);
+    font-weight: var(--font-weight-ui-lg);
+    color: var(--color-root--text);
+    padding-block: var(--spacing-mini);
+  }
+
+  .typo p {
+    font-size: var(--text-ui);
+    line-height: var(--text-ui--line-height);
+    font-weight: var(--font-weight-ui);
+    color: var(--color-ui--text);
+    padding-block: var(--spacing-mini);
+  }
+
+  .typo small {
+    font-size: var(--text-root-sm);
+    line-height: var(--text-root-sm--line-height);
+    font-weight: var(--font-weight-light);
+    padding-block: var(--spacing-mini);
+  }
+
+  .typo mark {
+    background: var(--color-ui-success);
+    color: var(--color-ui-success--text);
+    padding: 0.1em 0.25em;
+    border-radius: 0.25em;
+  }
+
+  .typo abbr[title] {
+    border-bottom: 1px dotted var(--color-ui--border);
+    cursor: help;
+    text-decoration: none;
+  }
+
+  .typo sup,
+  .typo sub {
+    font-size: 0.75em;
+    line-height: 1;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  .typo sup {
+    top: -0.5em;
+  }
+
+  .typo sub {
+    bottom: -0.25em;
+  }
+
+  .typo kbd {
+    font-family: var(--font-mono);
+    background: var(--color-layer);
+    color: var(--color-layer--text);
+    border-radius: var(--radius-ui);
+    border: 1px solid var(--color-layer--border);
+    padding: 0.25em;
+    margin-inline: 0.25em;
+  }
+
+  .typo del {
+    text-decoration: line-through;
+    color: var(--color-root--alert);
+  }
+
+  .typo ins {
+    text-decoration: underline;
+    color: var(--color-root--success);
+  }
+
+  .typo b,
+  .typo strong {
+    font-weight: var(--font-weight-bold);
+  }
+
+  .typo i,
+  .typo em {
+    font-style: italic;
+  }
+
+  .typo blockquote {
+    background: var(--color-layer);
+    color: var(--color-layer--text);
+    box-shadow: var(--shadow-layer);
+    font-style: italic;
+    border-end-end-radius: var(--radius-ui);
+    border-start-end-radius: var(--radius-ui);
+    border: 1px solid var(--color-layer--border);
+    border-inline-start: 4px solid var(--color-layer--info);
+    margin-block: 2em;
+    padding-inline: var(--spacing-ui-padding);
+    gap: var(--spacing-ui-gap);
+    width: fit-content;
+  }
+
+  /* .typo img {
+    max-width: var(--container-ui);
+    height: auto;
+    display: block;
+    border: 1px solid var(--color-ui--border);
+    border-radius: var(--radius-ui);
+  } */
+
+  .typo hr {
+    border-top: 1px solid var(--color-ui--border);
+    margin-block: 5em;
+    margin-inline: auto;
+    width: 80%;
+  }
+
+  .typo dt {
+    font-weight: var(--font-weight-ui-lg);
+    font-style: italic;
+  }
+
+  .typo figcaption {
+    font-size: var(--text-root-sm);
+    line-height: var(--text-root-sm--line-height);
+    color: var(--color-ui--muted);
+    margin-top: 1em;
+  }
+
+  .typo table {
+    display: block;
+    width: 100%;
+    font-size: var(--text-root);
+    line-height: var(--text-root--line-height);
+    margin-block: 2em;
+    border-collapse: collapse;
+  }
+
+  .typo table th,
+  .typo table td {
+    text-align: left;
+    padding: 1em;
+    border-bottom: 1px solid var(--color-ui--border);
+    white-space: wrap;
+  }
+
+  .typo table a {
+    white-space: wrap;
+  }
+
+  .typo ul,
+  .typo ol {
+    list-style-position: inside;
+  }
+
+  .typo li {
+    font-size: var(--text-root);
+    line-height: var(--text-root--line-height);
+  }
+
+  .typo ul {
+    list-style-type: disc;
+  }
+
+  .typo ol {
+    list-style-type: decimal;
+  }
+
+  .typo li::marker {
+    color: currentColor;
+  }
+}

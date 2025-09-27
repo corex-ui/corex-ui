@@ -1,0 +1,47 @@
+@reference "../utilities.css";
+@layer components {
+  .button {
+    @apply ui-trigger;
+    justify-content: center;
+    /* width: auto; */
+    box-shadow: var(--shadow-ui);
+  }
+
+  .button.button--square,
+  .button.button--circle {
+    aspect-ratio: 1/1;
+    padding: 0 !important;
+  }
+
+  .button.button--circle {
+    border-radius: 50%;
+  }
+}
+
+@utility button--* {
+  font-size: --value(--text-ui-*, [length]);
+  line-height: --value(--text-ui-* --line-height, [length]);
+  min-height: --value(--spacing-ui-*, [length]);
+  background-color: --value(--color-ui-*, [color]);
+  color: --value(--color-ui-* --text, [color]);
+  padding-inline: --value(--spacing-ui-padding-*, [length]);
+  gap: --value(--spacing-ui-gap-*, [length]);
+
+  &:hover {
+    background-color: --value(--color-ui-* -hover, [color]);
+  }
+
+  &:active {
+    background-color: --value(--color-ui-* -active, [color]);
+  }
+
+  &:focus-visible {
+    outline-color: --value(--color-ui-* --text, [color]);
+  }
+
+  &:disabled,
+  &[data-disabled] {
+    color: --value(--color-ui-* --muted, [color]);
+    background-color: --alpha(--value(--color-ui-*, [color]) / 80%);
+  }
+}

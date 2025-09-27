@@ -1,0 +1,20 @@
+{
+  "name": "corex-ui",
+  "private": true,
+  "description": "A modern, accessible UI component system built with TypeScript and Zag.js. Framework-agnostic, unstyled by default, and flexible for building web interfaces.",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,md,html,css}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version", 
+    "release": "turbo run build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "prettier": "^3.2.5",
+    "turbo": "^2.5.6"
+  },
+  "packageManager": "pnpm@10.16.1"
+}

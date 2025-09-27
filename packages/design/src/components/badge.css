@@ -1,0 +1,64 @@
+@reference "../utilities.css";
+@layer components {
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: unset;
+    width: fit-content;
+    max-width: 100%;
+    font-size: var(--text-ui);
+    line-height: var(--text-ui--line-height);
+    font-weight: var(--font-weight-ui);
+    border-radius: var(--radius-ui);
+    border: 1px solid var(--color-ui--border);
+    padding-inline: var(--spacing-mini-padding);
+    gap: var(--spacing-mini-gap);
+    min-height: var(--spacing-mini);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    color: var(--color-ui--text);
+    background-color: var(--color-ui);
+
+    &:disabled,
+    &[data-disabled],
+    &[data-disabled="true"],
+    &[disabled="true"] {
+      color: var(--color-ui--muted);
+      background-color: --alpha(var(--color-ui) / 60%);
+      cursor: not-allowed;
+    }
+
+    & svg {
+      @apply ui-icon;
+    }
+  }
+
+  .badge.badge--square,
+  .badge.badge--circle {
+    aspect-ratio: 1 / 1;
+    padding: 0 !important;
+  }
+
+  .badge.badge--circle {
+    border-radius: 50%;
+  }
+}
+
+@utility badge--* {
+  font-size: --value(--text-ui-*, [length]);
+  line-height: --value(--text-ui-* --line-height, [length]);
+  min-height: --value(--spacing-mini-*, [length]);
+  background-color: --value(--color-ui-*, [color]);
+  color: --value(--color-ui-* --text, [color]);
+  padding-inline: --value(--spacing-mini-padding-*, [length]);
+  gap: --value(--spacing-mini-gap-*, [length]);
+
+  &:disabled,
+  &[data-disabled] {
+    color: --value(--color-ui-* --muted, [color]);
+    background-color: --alpha(--value(--color-ui-*, [color]) / 60%);
+  }
+}

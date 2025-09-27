@@ -1,0 +1,13 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+@theme inline {
+  --font-ui: Outfit, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-code: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-weight-ui-sm: 200;
+  --font-weight-ui-md: 400;
+  --font-weight-ui-lg: 600;
+  --font-weight-ui-xl: 800;
+  --font-weight-ui: var(--font-weight-ui-md);
+}

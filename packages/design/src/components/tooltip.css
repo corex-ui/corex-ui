@@ -1,0 +1,19 @@
+[data-scope="tooltip"][data-part="content"] {
+  z-index: 1;
+  padding: 0.25em 0.5em;
+  box-shadow: 2px 2px 10px hsla(0, 0%, 0%, 0.1);
+  white-space: nowrap;
+  font-size: 85%;
+  background: #f0f0f0;
+  color: #444;
+}
+
+[data-scope="tooltip"][data-part="arrow"] {
+  --arrow-background: #f0f0f0;
+  --arrow-size: 8px;
+}
+
+[data-scope="tooltip"][data-part="arrow-tip"] {
+  border-radius: 0.125rem;
+  /* border: solid 1px #ccc; */
+}

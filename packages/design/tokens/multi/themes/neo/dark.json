@@ -1,0 +1,360 @@
+{
+  "mode": {
+    "color": {
+      "root": {
+        "-border": {
+          "default": {
+            "value": "#484a4b",
+            "type": "color",
+            "description": "2:1 contrast against root-default (#181819)"
+          }
+        },
+        "-text": {
+          "default": {
+            "value": "#adadae",
+            "type": "color",
+            "description": "8:1 contrast against root-default (#181819)"
+          }
+        },
+        "-muted": {
+          "default": {
+            "value": "#949597",
+            "type": "color",
+            "description": "6:1 contrast against root-default (#181819)"
+          }
+        },
+        "-accent": {
+          "default": {
+            "value": "#bfc1c4",
+            "type": "color",
+            "description": "10:1 contrast against root-default (#181819)"
+          }
+        },
+        "-brand": {
+          "default": {
+            "value": "#c8bdd3",
+            "type": "color",
+            "description": "10:1 contrast against root-default (#181819)"
+          }
+        },
+        "-alert": {
+          "default": {
+            "value": "#e8b5b5",
+            "type": "color",
+            "description": "10:1 contrast against root-default (#181819)"
+          }
+        },
+        "-info": {
+          "default": {
+            "value": "#a9c4de",
+            "type": "color",
+            "description": "10:1 contrast against root-default (#181819)"
+          }
+        },
+        "-success": {
+          "default": {
+            "value": "#9ccbb6",
+            "type": "color",
+            "description": "10:1 contrast against root-default (#181819)"
+          }
+        },
+        "default": {
+          "value": "#181819",
+          "type": "color",
+          "description": "1:1 contrast against root-default (#181819)"
+        }
+      },
+      "layer": {
+        "-border": {
+          "default": {
+            "value": "#525355",
+            "type": "color",
+            "description": "2:1 contrast against layer-default (#252526)"
+          }
+        },
+        "-text": {
+          "default": {
+            "value": "#bbbbbc",
+            "type": "color",
+            "description": "8:1 contrast against layer-default (#252526)"
+          }
+        },
+        "-muted": {
+          "default": {
+            "value": "#a1a2a3",
+            "type": "color",
+            "description": "6:1 contrast against layer-default (#252526)"
+          }
+        },
+        "-accent": {
+          "default": {
+            "value": "#ced0d3",
+            "type": "color",
+            "description": "10:1 contrast against layer-default (#252526)"
+          }
+        },
+        "-brand": {
+          "default": {
+            "value": "#d6cddd",
+            "type": "color",
+            "description": "10:1 contrast against layer-default (#252526)"
+          }
+        },
+        "-alert": {
+          "default": {
+            "value": "#eec8c8",
+            "type": "color",
+            "description": "10:1 contrast against layer-default (#252526)"
+          }
+        },
+        "-info": {
+          "default": {
+            "value": "#bfd3e6",
+            "type": "color",
+            "description": "10:1 contrast against layer-default (#252526)"
+          }
+        },
+        "-success": {
+          "default": {
+            "value": "#b5d8c8",
+            "type": "color",
+            "description": "10:1 contrast against layer-default (#252526)"
+          }
+        },
+        "default": {
+          "value": "#252526",
+          "type": "color",
+          "description": "1:1 contrast against layer-default (#252526)"
+        }
+      },
+      "ui": {
+        "-border": {
+          "default": {
+            "value": "#494b4d",
+            "type": "color",
+            "description": "1.5:1 contrast against ui-active (#303131)"
+          }
+        },
+        "-text": {
+          "default": {
+            "value": "#aeaeaf",
+            "type": "color",
+            "description": "6:1 contrast against ui-active (#303131)"
+          }
+        },
+        "-muted": {
+          "default": {
+            "value": "#97989a",
+            "type": "color",
+            "description": "4.6:1 contrast against ui-active (#303131)"
+          }
+        },
+        "default": {
+          "value": "#222223",
+          "type": "color",
+          "description": "-1.2:1 contrast against ui-active (#303131)"
+        },
+        "hover": {
+          "value": "#282829",
+          "type": "color",
+          "description": "-1.1:1 contrast against ui-active (#303131)"
+        },
+        "active": {
+          "value": "#303131",
+          "type": "color",
+          "description": "1:1 contrast against ui-active (#303131)"
+        }
+      },
+      "ui-accent": {
+        "-border": {
+          "default": {
+            "value": "#88898a",
+            "type": "color",
+            "description": "1.5:1 contrast against ui-accent-active (#a7aaac)"
+          }
+        },
+        "-text": {
+          "default": {
+            "value": "#2b2c2e",
+            "type": "color",
+            "description": "6:1 contrast against ui-accent-active (#a7aaac)"
+          }
+        },
+        "-muted": {
+          "default": {
+            "value": "#3c3e40",
+            "type": "color",
+            "description": "4.6:1 contrast against ui-accent-active (#a7aaac)"
+          }
+        },
+        "default": {
+          "value": "#b8babd",
+          "type": "color",
+          "description": "-1.2:1 contrast against ui-accent-active (#a7aaac)"
+        },
+        "hover": {
+          "value": "#b0b2b4",
+          "type": "color",
+          "description": "-1.1:1 contrast against ui-accent-active (#a7aaac)"
+        },
+        "active": {
+          "value": "#a7aaac",
+          "type": "color",
+          "description": "1:1 contrast against ui-accent-active (#a7aaac)"
+        }
+      },
+      "ui-brand": {
+        "-border": {
+          "default": {
+            "value": "#898a8b",
+            "type": "color",
+            "description": "1.5:1 contrast against ui-brand-active (#b3a4c1)"
+          }
+        },
+        "-text": {
+          "default": {
+            "value": "#2b2d2e",
+            "type": "color",
+            "description": "6:1 contrast against ui-brand-active (#b3a4c1)"
+          }
+        },
+        "-muted": {
+          "default": {
+            "value": "#3d3f40",
+            "type": "color",
+            "description": "4.6:1 contrast against ui-brand-active (#b3a4c1)"
+          }
+        },
+        "default": {
+          "value": "#c3b7ce",
+          "type": "color",
+          "description": "-1.2:1 contrast against ui-brand-active (#b3a4c1)"
+        },
+        "hover": {
+          "value": "#bcaec8",
+          "type": "color",
+          "description": "-1.1:1 contrast against ui-brand-active (#b3a4c1)"
+        },
+        "active": {
+          "value": "#b3a4c1",
+          "type": "color",
+          "description": "1:1 contrast against ui-brand-active (#b3a4c1)"
+        }
+      },
+      "ui-alert": {
+        "-border": {
+          "default": {
+            "value": "#88898a",
+            "type": "color",
+            "description": "1.5:1 contrast against ui-alert-active (#df9696)"
+          }
+        },
+        "-text": {
+          "default": {
+            "value": "#2b2c2e",
+            "type": "color",
+            "description": "6:1 contrast against ui-alert-active (#df9696)"
+          }
+        },
+        "-muted": {
+          "default": {
+            "value": "#3c3e40",
+            "type": "color",
+            "description": "4.6:1 contrast against ui-alert-active (#df9696)"
+          }
+        },
+        "default": {
+          "value": "#e6adad",
+          "type": "color",
+          "description": "-1.2:1 contrast against ui-alert-active (#df9696)"
+        },
+        "hover": {
+          "value": "#e2a2a2",
+          "type": "color",
+          "description": "-1.1:1 contrast against ui-alert-active (#df9696)"
+        },
+        "active": {
+          "value": "#df9696",
+          "type": "color",
+          "description": "1:1 contrast against ui-alert-active (#df9696)"
+        }
+      },
+      "ui-info": {
+        "-border": {
+          "default": {
+            "value": "#88898a",
+            "type": "color",
+            "description": "1.5:1 contrast against ui-info-active (#87add0)"
+          }
+        },
+        "-text": {
+          "default": {
+            "value": "#2b2c2e",
+            "type": "color",
+            "description": "6:1 contrast against ui-info-active (#87add0)"
+          }
+        },
+        "-muted": {
+          "default": {
+            "value": "#3c3e40",
+            "type": "color",
+            "description": "4.6:1 contrast against ui-info-active (#87add0)"
+          }
+        },
+        "default": {
+          "value": "#9fbeda",
+          "type": "color",
+          "description": "-1.2:1 contrast against ui-info-active (#87add0)"
+        },
+        "hover": {
+          "value": "#95b7d6",
+          "type": "color",
+          "description": "-1.1:1 contrast against ui-info-active (#87add0)"
+        },
+        "active": {
+          "value": "#87add0",
+          "type": "color",
+          "description": "1:1 contrast against ui-info-active (#87add0)"
+        }
+      },
+      "ui-success": {
+        "-border": {
+          "default": {
+            "value": "#898a8b",
+            "type": "color",
+            "description": "1.5:1 contrast against ui-success-active (#76b799)"
+          }
+        },
+        "-text": {
+          "default": {
+            "value": "#2b2d2e",
+            "type": "color",
+            "description": "6:1 contrast against ui-success-active (#76b799)"
+          }
+        },
+        "-muted": {
+          "default": {
+            "value": "#3d3f40",
+            "type": "color",
+            "description": "4.6:1 contrast against ui-success-active (#76b799)"
+          }
+        },
+        "default": {
+          "value": "#91c6ad",
+          "type": "color",
+          "description": "-1.2:1 contrast against ui-success-active (#76b799)"
+        },
+        "hover": {
+          "value": "#87c0a5",
+          "type": "color",
+          "description": "-1.1:1 contrast against ui-success-active (#76b799)"
+        },
+        "active": {
+          "value": "#76b799",
+          "type": "color",
+          "description": "1:1 contrast against ui-success-active (#76b799)"
+        }
+      }
+    }
+  }
+}

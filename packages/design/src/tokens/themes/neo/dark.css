@@ -1,0 +1,60 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-theme=neo][data-mode=dark] {
+  --mode-color-root--border: #484a4b; /** 2:1 contrast against root-default (#181819) */
+  --mode-color-root--text: #adadae; /** 8:1 contrast against root-default (#181819) */
+  --mode-color-root--muted: #949597; /** 6:1 contrast against root-default (#181819) */
+  --mode-color-root--accent: #bfc1c4; /** 10:1 contrast against root-default (#181819) */
+  --mode-color-root--brand: #c8bdd3; /** 10:1 contrast against root-default (#181819) */
+  --mode-color-root--alert: #e8b5b5; /** 10:1 contrast against root-default (#181819) */
+  --mode-color-root--info: #a9c4de; /** 10:1 contrast against root-default (#181819) */
+  --mode-color-root--success: #9ccbb6; /** 10:1 contrast against root-default (#181819) */
+  --mode-color-root: #181819; /** 1:1 contrast against root-default (#181819) */
+  --mode-color-layer--border: #525355; /** 2:1 contrast against layer-default (#252526) */
+  --mode-color-layer--text: #bbbbbc; /** 8:1 contrast against layer-default (#252526) */
+  --mode-color-layer--muted: #a1a2a3; /** 6:1 contrast against layer-default (#252526) */
+  --mode-color-layer--accent: #ced0d3; /** 10:1 contrast against layer-default (#252526) */
+  --mode-color-layer--brand: #d6cddd; /** 10:1 contrast against layer-default (#252526) */
+  --mode-color-layer--alert: #eec8c8; /** 10:1 contrast against layer-default (#252526) */
+  --mode-color-layer--info: #bfd3e6; /** 10:1 contrast against layer-default (#252526) */
+  --mode-color-layer--success: #b5d8c8; /** 10:1 contrast against layer-default (#252526) */
+  --mode-color-layer: #252526; /** 1:1 contrast against layer-default (#252526) */
+  --mode-color-ui--border: #494b4d; /** 1.5:1 contrast against ui-active (#303131) */
+  --mode-color-ui--text: #aeaeaf; /** 6:1 contrast against ui-active (#303131) */
+  --mode-color-ui--muted: #97989a; /** 4.6:1 contrast against ui-active (#303131) */
+  --mode-color-ui: #222223; /** -1.2:1 contrast against ui-active (#303131) */
+  --mode-color-ui-hover: #282829; /** -1.1:1 contrast against ui-active (#303131) */
+  --mode-color-ui-active: #303131; /** 1:1 contrast against ui-active (#303131) */
+  --mode-color-ui-accent--border: #88898a; /** 1.5:1 contrast against ui-accent-active (#a7aaac) */
+  --mode-color-ui-accent--text: #2b2c2e; /** 6:1 contrast against ui-accent-active (#a7aaac) */
+  --mode-color-ui-accent--muted: #3c3e40; /** 4.6:1 contrast against ui-accent-active (#a7aaac) */
+  --mode-color-ui-accent: #b8babd; /** -1.2:1 contrast against ui-accent-active (#a7aaac) */
+  --mode-color-ui-accent-hover: #b0b2b4; /** -1.1:1 contrast against ui-accent-active (#a7aaac) */
+  --mode-color-ui-accent-active: #a7aaac; /** 1:1 contrast against ui-accent-active (#a7aaac) */
+  --mode-color-ui-brand--border: #898a8b; /** 1.5:1 contrast against ui-brand-active (#b3a4c1) */
+  --mode-color-ui-brand--text: #2b2d2e; /** 6:1 contrast against ui-brand-active (#b3a4c1) */
+  --mode-color-ui-brand--muted: #3d3f40; /** 4.6:1 contrast against ui-brand-active (#b3a4c1) */
+  --mode-color-ui-brand: #c3b7ce; /** -1.2:1 contrast against ui-brand-active (#b3a4c1) */
+  --mode-color-ui-brand-hover: #bcaec8; /** -1.1:1 contrast against ui-brand-active (#b3a4c1) */
+  --mode-color-ui-brand-active: #b3a4c1; /** 1:1 contrast against ui-brand-active (#b3a4c1) */
+  --mode-color-ui-alert--border: #88898a; /** 1.5:1 contrast against ui-alert-active (#df9696) */
+  --mode-color-ui-alert--text: #2b2c2e; /** 6:1 contrast against ui-alert-active (#df9696) */
+  --mode-color-ui-alert--muted: #3c3e40; /** 4.6:1 contrast against ui-alert-active (#df9696) */
+  --mode-color-ui-alert: #e6adad; /** -1.2:1 contrast against ui-alert-active (#df9696) */
+  --mode-color-ui-alert-hover: #e2a2a2; /** -1.1:1 contrast against ui-alert-active (#df9696) */
+  --mode-color-ui-alert-active: #df9696; /** 1:1 contrast against ui-alert-active (#df9696) */
+  --mode-color-ui-info--border: #88898a; /** 1.5:1 contrast against ui-info-active (#87add0) */
+  --mode-color-ui-info--text: #2b2c2e; /** 6:1 contrast against ui-info-active (#87add0) */
+  --mode-color-ui-info--muted: #3c3e40; /** 4.6:1 contrast against ui-info-active (#87add0) */
+  --mode-color-ui-info: #9fbeda; /** -1.2:1 contrast against ui-info-active (#87add0) */
+  --mode-color-ui-info-hover: #95b7d6; /** -1.1:1 contrast against ui-info-active (#87add0) */
+  --mode-color-ui-info-active: #87add0; /** 1:1 contrast against ui-info-active (#87add0) */
+  --mode-color-ui-success--border: #898a8b; /** 1.5:1 contrast against ui-success-active (#76b799) */
+  --mode-color-ui-success--text: #2b2d2e; /** 6:1 contrast against ui-success-active (#76b799) */
+  --mode-color-ui-success--muted: #3d3f40; /** 4.6:1 contrast against ui-success-active (#76b799) */
+  --mode-color-ui-success: #91c6ad; /** -1.2:1 contrast against ui-success-active (#76b799) */
+  --mode-color-ui-success-hover: #87c0a5; /** -1.1:1 contrast against ui-success-active (#76b799) */
+  --mode-color-ui-success-active: #76b799; /** 1:1 contrast against ui-success-active (#76b799) */
+}

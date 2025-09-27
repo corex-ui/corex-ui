@@ -1,0 +1,65 @@
+@reference "../utilities.css";
+
+@layer components {
+  .tabs [data-scope="tabs"][data-part="root"] {
+    @apply ui-root;
+    max-width: var(--container-ui);
+  }
+
+  .tabs [data-scope="tabs"][data-part="root"][data-orientation="vertical"] {
+    flex-direction: row;
+  }
+
+  .tabs [data-scope="tabs"][data-part="root"][data-orientation="horizontal"] {
+    flex-direction: column;
+  }
+
+  .tabs [data-scope="tabs"][data-part="list"] {
+    display: inline-flex;
+    background-color: var(--color-ui--border);
+    gap: 1px;
+    width: fit-content;
+  }
+
+  .tabs [data-scope="tabs"][data-part="list"][data-orientation="vertical"] {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .tabs [data-scope="tabs"][data-part="list"][data-orientation="horizontal"] {
+    flex-direction: row;
+  }
+
+  .tabs [data-scope="tabs"][data-part="content"] {
+    @apply ui-content;
+    border-radius: 0;
+  }
+
+  .tabs [data-scope="tabs"][data-part="trigger"] {
+    @apply ui-item;
+    width: auto;
+  }
+}
+
+@utility tabs--* {
+  &.tabs {
+    & [data-scope="tabs"][data-part="root"] {
+      max-width: --value(--container-ui-*, [length]);
+    }
+
+    & [data-scope="tabs"][data-part="trigger"] {
+      font-size: --value(--text-ui-*, [length]);
+      line-height: --value(--text-ui-* --line-height, [length]);
+      min-height: --value(--spacing-ui-*, [length]);
+      padding-inline: --value(--spacing-ui-padding-*, [length]);
+      &[data-selected] {
+        background-color: --value(--color-ui-*, [color]);
+        color: --value(--color-ui-* --text, [color]);
+      }
+    }
+    & [data-scope="tabs"][data-part="content"] > p {
+      font-size: --value(--text-ui-*, [length]);
+      line-height: --value(--text-ui-* --line-height, [length]);
+    }
+  }
+}

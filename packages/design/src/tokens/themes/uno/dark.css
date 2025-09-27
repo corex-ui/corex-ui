@@ -1,0 +1,60 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-theme=uno][data-mode=dark] {
+  --mode-color-root--border: #222832; /** 1.2:1 contrast against root-default (#121928) */
+  --mode-color-root--text: #e4e4e5; /** 14:1 contrast against root-default (#121928) */
+  --mode-color-root--muted: #7d828c; /** 4.6:1 contrast against root-default (#121928) */
+  --mode-color-root--accent: #b6b9bd; /** 9:1 contrast against root-default (#121928) */
+  --mode-color-root--brand: #5998e7; /** 6:1 contrast against root-default (#121928) */
+  --mode-color-root--alert: #f06d6d; /** 6:1 contrast against root-default (#121928) */
+  --mode-color-root--info: #30a0d3; /** 6:1 contrast against root-default (#121928) */
+  --mode-color-root--success: #2aaa7b; /** 6:1 contrast against root-default (#121928) */
+  --mode-color-root: #121928; /** 1:1 contrast against root-default (#121928) */
+  --mode-color-layer--border: #2b333f; /** 1.2:1 contrast against layer-default (#1e2533) */
+  --mode-color-layer--text: #f3f4f5; /** 14:1 contrast against layer-default (#1e2533) */
+  --mode-color-layer--muted: #878d97; /** 4.6:1 contrast against layer-default (#1e2533) */
+  --mode-color-layer--accent: #c5c6ca; /** 9:1 contrast against layer-default (#1e2533) */
+  --mode-color-layer--brand: #60a4f9; /** 6:1 contrast against layer-default (#1e2533) */
+  --mode-color-layer--alert: #f97c7c; /** 6:1 contrast against layer-default (#1e2533) */
+  --mode-color-layer--info: #33ade2; /** 6:1 contrast against layer-default (#1e2533) */
+  --mode-color-layer--success: #2db784; /** 6:1 contrast against layer-default (#1e2533) */
+  --mode-color-layer: #1e2533; /** 1:1 contrast against layer-default (#1e2533) */
+  --mode-color-ui--border: #343d4c; /** 1.2:1 contrast against ui-active (#2a303e) */
+  --mode-color-ui--text: #f3f4f4; /** 12:1 contrast against ui-active (#2a303e) */
+  --mode-color-ui--muted: #9097a2; /** 4.5:1 contrast against ui-active (#2a303e) */
+  --mode-color-ui: #222937; /** -1.1:1 contrast against ui-active (#2a303e) */
+  --mode-color-ui-hover: #262c3a; /** -1.05:1 contrast against ui-active (#2a303e) */
+  --mode-color-ui-active: #2a303e; /** 1:1 contrast against ui-active (#2a303e) */
+  --mode-color-ui-accent--border: #5a6370; /** 1.3:1 contrast against ui-accent-active (#495260) */
+  --mode-color-ui-accent--text: #ffffff; /** 12:1 contrast against ui-accent-active (#495260) */
+  --mode-color-ui-accent--muted: #bfc3cb; /** 4.5:1 contrast against ui-accent-active (#495260) */
+  --mode-color-ui-accent: #424b5a; /** -1.1:1 contrast against ui-accent-active (#495260) */
+  --mode-color-ui-accent-hover: #454e5d; /** -1.05:1 contrast against ui-accent-active (#495260) */
+  --mode-color-ui-accent-active: #495260; /** 1:1 contrast against ui-accent-active (#495260) */
+  --mode-color-ui-brand--border: #3a58b9; /** 1.4:1 contrast against ui-brand-active (#846b9b) */
+  --mode-color-ui-brand--text: #000000; /** 8:1 contrast against ui-brand-active (#846b9b) */
+  --mode-color-ui-brand--muted: #000000; /** 4.6:1 contrast against ui-brand-active (#846b9b) */
+  --mode-color-ui-brand: #8b74a1; /** -1.1:1 contrast against ui-brand-active (#846b9b) */
+  --mode-color-ui-brand-hover: #88709e; /** -1.05:1 contrast against ui-brand-active (#846b9b) */
+  --mode-color-ui-brand-active: #846b9b; /** 1:1 contrast against ui-brand-active (#846b9b) */
+  --mode-color-ui-alert--border: #964646; /** 1.4:1 contrast against ui-alert-active (#de3030) */
+  --mode-color-ui-alert--text: #000000; /** 8:1 contrast against ui-alert-active (#de3030) */
+  --mode-color-ui-alert--muted: #010000; /** 4.6:1 contrast against ui-alert-active (#de3030) */
+  --mode-color-ui-alert: #e14444; /** -1.1:1 contrast against ui-alert-active (#de3030) */
+  --mode-color-ui-alert-hover: #df3b3b; /** -1.05:1 contrast against ui-alert-active (#de3030) */
+  --mode-color-ui-alert-active: #de3030; /** 1:1 contrast against ui-alert-active (#de3030) */
+  --mode-color-ui-info--border: #2f6483; /** 1.4:1 contrast against ui-info-active (#027cba) */
+  --mode-color-ui-info--text: #000000; /** 8:1 contrast against ui-info-active (#027cba) */
+  --mode-color-ui-info--muted: #000000; /** 4.6:1 contrast against ui-info-active (#027cba) */
+  --mode-color-ui-info: #0384c7; /** -1.1:1 contrast against ui-info-active (#027cba) */
+  --mode-color-ui-info-hover: #0280c1; /** -1.05:1 contrast against ui-info-active (#027cba) */
+  --mode-color-ui-info-active: #027cba; /** 1:1 contrast against ui-info-active (#027cba) */
+  --mode-color-ui-success--border: #1a6c55; /** 1.4:1 contrast against ui-success-active (#04865e) */
+  --mode-color-ui-success--text: #000000; /** 8:1 contrast against ui-success-active (#04865e) */
+  --mode-color-ui-success--muted: #010101; /** 4.6:1 contrast against ui-success-active (#04865e) */
+  --mode-color-ui-success: #058f64; /** -1.1:1 contrast against ui-success-active (#04865e) */
+  --mode-color-ui-success-hover: #058b61; /** -1.05:1 contrast against ui-success-active (#04865e) */
+  --mode-color-ui-success-active: #04865e; /** 1:1 contrast against ui-success-active (#04865e) */
+}

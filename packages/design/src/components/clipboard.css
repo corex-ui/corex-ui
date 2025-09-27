@@ -1,0 +1,51 @@
+@reference "../utilities.css";
+@layer components {
+  .clipboard [data-scope="clipboard"][data-part="root"] {
+    @apply ui-root;
+    gap: var(--spacing-ui-gap);
+    max-width: var(--container-ui);
+  }
+
+  .clipboard [data-scope="clipboard"][data-part="trigger"] {
+    @apply ui-trigger;
+  }
+  .clipboard [data-scope="clipboard"][data-part="label"] {
+    @apply ui-label;
+  }
+
+  .clipboard [data-scope="clipboard"][data-part="control"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-ui-gap);
+  }
+
+  .clipboard [data-scope="clipboard"][data-part="input"] {
+    @apply ui-input;
+  }
+
+  .clipboard [data-scope="clipboard"][data-part="trigger"] [data-copied] {
+    display: none;
+  }
+
+  .clipboard
+    [data-scope="clipboard"][data-part="trigger"][data-copied]
+    [data-copied] {
+    display: inline-block;
+  }
+  .clipboard [data-scope="clipboard"][data-part="trigger"][data-copied] {
+    background-color: var(--color-ui-success);
+    color: var(--color-ui-success--text);
+    outline-color: var(--color-ui-success--text);
+  }
+
+  .clipboard [data-scope="clipboard"][data-part="trigger"] [data-copy] {
+    display: inline-block;
+  }
+
+  .clipboard
+    [data-scope="clipboard"][data-part="trigger"][data-copied]
+    [data-copy] {
+    display: none;
+  }
+}

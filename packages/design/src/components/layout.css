@@ -1,0 +1,120 @@
+@reference "../utilities.css";
+@reference "../components/scrollbar.css";
+
+@layer components {
+  .layout {
+    display: flex;
+    height: 100vh;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--color-root--text);
+    background: var(--color-root);
+  }
+
+  .layout .layout__header {
+    border-block-end: 1px solid var(--color-layer--border);
+    background: var(--color-layer);
+    color: var(--color-layer--text);
+    width: 100%;
+    z-index: 20;
+  }
+
+  .layout .layout__header .layout__header__content {
+    padding-inline: var(--spacing-ui-padding-xl);
+    padding-block: var(--spacing-ui-padding-sm);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-inline: auto;
+    max-width: var(--breakpoint-xl);
+  }
+
+  .layout .layout__footer {
+    border-block-start: 1px solid var(--color-layer--border);
+    background: var(--color-layer);
+    color: var(--color-layer--text);
+    width: 100%;
+    z-index: 20;
+  }
+
+  .layout .layout__footer .layout__footer__content {
+    padding-inline: var(--spacing-ui-padding-xl);
+    padding-block: var(--spacing-ui-padding-sm);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-inline: auto;
+  }
+
+  .layout .layout__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-ui-gap);
+  }
+
+  .layout .layout__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+    margin-inline: auto;
+    max-width: var(--breakpoint-xl);
+  }
+
+  .layout .layout__side {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-root);
+    color: var(--color-root--text);
+  }
+
+  .layout .layout__main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex: 1;
+    margin-inline: auto;
+  }
+
+  .layout .layout__main--2col {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+
+  .layout .layout__content {
+    @apply scrollbar;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+  }
+
+  .layout .layout__aside {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: auto;
+    max-width: var(--container-mini);
+    margin-inline: auto;
+    background: var(--color-root);
+    color: var(--color-root--text);
+    justify-items: center;
+    padding: var(--spacing-ui-padding);
+    margin-inline: auto;
+  }
+
+  .layout .layout__article {
+    margin-inline: auto;
+    padding: var(--spacing-ui-padding);
+    max-width: var(--container-ui-xl);
+  }
+}

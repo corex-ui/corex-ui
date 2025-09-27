@@ -1,0 +1,114 @@
+{
+  "name": "@corex-ui/static",
+  "version": "0.0.1",
+  "description": "Accessible, unstyled UI components designed for static websites. HTML and JavaScript powered by TypeScript and ZagJS.",
+  "author": "Netoum <info@netoum.com> (https://www.netoum.com)",
+  "homepage": "https://corex-ui.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corex-ui/corex-ui"
+  },
+  "bugs": {
+    "url": "https://github.com/corex-ui/corex-ui/issues"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.min.js",
+  "jsdelivr": "./dist/index.min.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./lib": {
+      "import": "./dist/lib/index.mjs",
+      "types": "./dist/lib/index.d.ts"
+    },
+    "./lib/*": {
+      "import": "./dist/lib/*.mjs",
+      "types": "./dist/lib/*.d.ts"
+    },
+    "./components/*": {
+      "import": "./dist/components/*.mjs",
+      "types": "./dist/components/*.d.ts"
+    },
+    "./react": {
+      "import": "./dist/react/index.ts",
+      "types": "./dist/react/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "lint": "eslint \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "corex",
+    "corex-ui",
+    "static",
+    "components",
+    "accessible",
+    "unstyled",
+    "ui",
+    "javascript",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19",
+    "@typescript-eslint/parser": "^8.44.1",
+    "esbuild": "^0.17.11",
+    "eslint": "^9.32.0",
+    "tsup": "^8.1.0",
+    "turbo": "^2.5.0",
+    "typescript": "~5.8.3"
+  },
+  "dependencies": {
+    "@internationalized/date": "^3.8.1",
+    "@types/prismjs": "^1.26.5",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@zag-js/accordion": "^1.24.0",
+    "@zag-js/angle-slider": "^1.24.0",
+    "@zag-js/avatar": "^1.24.0",
+    "@zag-js/carousel": "^1.24.0",
+    "@zag-js/checkbox": "^1.24.0",
+    "@zag-js/clipboard": "^1.24.0",
+    "@zag-js/collapsible": "^1.24.0",
+    "@zag-js/collection": "^1.24.0",
+    "@zag-js/color-picker": "^1.24.0",
+    "@zag-js/combobox": "^1.24.0",
+    "@zag-js/core": "^1.24.0",
+    "@zag-js/date-picker": "^1.24.0",
+    "@zag-js/dialog": "^1.24.0",
+    "@zag-js/editable": "^1.24.0",
+    "@zag-js/file-upload": "^1.24.0",
+    "@zag-js/floating-panel": "^1.24.0",
+    "@zag-js/i18n-utils": "^1.24.0",
+    "@zag-js/listbox": "^1.24.0",
+    "@zag-js/menu": "^1.24.0",
+    "@zag-js/select": "^1.24.0",
+    "@zag-js/signature-pad": "^1.24.0",
+    "@zag-js/store": "^1.24.0",
+    "@zag-js/switch": "^1.24.0",
+    "@zag-js/tabs": "^1.24.0",
+    "@zag-js/timer": "^1.24.0",
+    "@zag-js/toast": "^1.24.0",
+    "@zag-js/toggle-group": "^1.24.0",
+    "@zag-js/tree-view": "^1.24.0",
+    "@zag-js/types": "^1.24.0",
+    "@zag-js/utils": "^1.24.0",
+    "prismjs": "^1.30.0",
+    "react": "19.1.0"
+  },
+  "packageManager": "pnpm@10.12.4"
+}

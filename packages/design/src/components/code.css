@@ -1,0 +1,198 @@
+@reference "../utilities.css";
+@reference "./scrollbar.css";
+
+@layer components {
+  code,
+  pre {
+    font-family: var(--font-code);
+    font-size: var(--text-ui);
+    line-height: var(--text-ui--line-height);
+    text-align: left;
+    white-space: pre-line;
+    word-break: break-word;
+    word-wrap: break-word;
+    hyphens: none;
+  }
+
+  code[class="language-json"],
+  pre[class="language-json"] {
+    white-space: pre;
+  }
+
+  pre {
+    position: relative;
+    background-image: linear-gradient(
+      var(--color-root) 50%,
+      var(--color-layer) 50%
+    );
+    background-size: 100% calc(var(--text-ui) * var(--text-ui--line-height));
+    background-origin: content-box;
+    background-attachment: local;
+    background-position: 0 calc(var(--spacing-ui-padding) / 2);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: nowrap;
+    width: auto;
+    align-content: start;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    justify-content: start;
+    text-align: start;
+    overflow-x: auto;
+    border-radius: var(--radius-ui);
+    border: 1px solid var(--color-ui--border);
+    max-width: var(--container-ui);
+    font-size: var(--text-ui);
+    line-height: var(--text-ui--line-height);
+    padding: var(--spacing-ui-padding);
+    color: var(--color-layer--text);
+    max-height: var(--container-mini);
+    overflow: hidden;
+    @apply scrollbar scrollbar--sm;
+  }
+
+  pre:focus-visible {
+    outline: 2px solid var(--color-ui--focus);
+    outline-offset: 1px;
+    box-shadow: none;
+  }
+
+  :not(pre) > code,
+  :not(pre) > code {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: var(--font-code);
+    font-size: inherit;
+    line-height: inherit;
+    padding-inline: var(--spacing-mini-padding);
+    background-color: var(--color-root);
+    color: var(--color-root--alert);
+    border-radius: var(--radius-ui);
+    border: 1px solid var(--color-ui--border);
+    justify-content: start;
+    align-items: start;
+    white-space: wrap;
+    word-wrap: break-word;
+    flex-wrap: wrap;
+    user-select: all;
+  }
+
+  .token.block-comment,
+  .token.cdata,
+  .token.comment,
+  .token.doctype,
+  .token.prolog {
+    color: var(--color-layer--info);
+  }
+
+  .token.punctuation {
+    color: var(--color-layer--text);
+  }
+
+  .token.boolean,
+  .token.constant,
+  .token.deleted,
+  .token.function-name,
+  .token.number,
+  .token.property,
+  .token.symbol,
+  .token.tag {
+    color: var(--color-layer--info);
+  }
+
+  .token.attr-name,
+  .token.builtin,
+  .token.char,
+  .token.function,
+  .token.inserted,
+  .token.selector,
+  .token.string {
+    color: var(--color-layer--alert);
+  }
+
+  .token.entity,
+  .token.operator,
+  .token.url,
+  .token.variable {
+    color: var(--color-layer--success);
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.class-name,
+  .token.keyword {
+    color: var(--color-layer--success);
+  }
+
+  .token.important,
+  .token.regex {
+    color: var(--color-layer--alert);
+  }
+
+  .language-css .token.string,
+  .style .token.string {
+    color: var(--color-layer--info);
+  }
+
+  .token.important {
+    font-weight: var(--font-weight-ui);
+  }
+
+  .token.bold {
+    font-weight: var(--font-weight-ui-lg);
+  }
+
+  .token.italic {
+    font-style: italic;
+  }
+
+  .token.entity {
+    cursor: help;
+  }
+
+  .token.namespace {
+    color: var(--color-ui--muted);
+  }
+
+  pre.line-numbers.line-numbers {
+    padding-left: 0;
+  }
+
+  pre.line-numbers.line-numbers code {
+    padding-left: var(--spacing-ui-padding);
+  }
+
+  pre.line-numbers.line-numbers .line-numbers-rows {
+    left: 0;
+  }
+
+  pre[data-line] {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+
+  pre[data-line] code {
+    position: relative;
+    padding-left: var(--spacing-ui-padding);
+  }
+
+  pre .line-highlight {
+    margin-top: 0;
+  }
+}
+
+@utility code--* {
+  max-width: --value(--cointainer-ui-*, [length]);
+  font-size: --value(--text-ui-*, [length]);
+  line-height: --value(--text-ui-* --line-height, [length]);
+  & code {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+  }
+}

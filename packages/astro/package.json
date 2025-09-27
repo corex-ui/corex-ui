@@ -1,0 +1,55 @@
+{
+  "name": "@corex-ui/astro",
+  "version": "0.0.1",
+  "description": "Astro integration for rendering Corex UI static components post build.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/render.cjs.js",
+  "module": "./dist/render.es.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "require": "./dist/render.cjs.js",
+      "import": "./dist/render.es.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corex-ui/corex-ui"
+  },
+  "bugs": {
+    "url": "https://github.com/corex-ui/corex-ui/issues"
+  },
+  "homepage": "https://corex-ui.com",
+  "keywords": [
+    "astro",
+    "astro-integration",
+    "corex",
+    "corex-ui",
+    "components",
+    "static",
+    "render"
+  ],
+  "author": "Netoum <info@netoum.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jsdom": "^21.1.7",
+    "jsdom": "^26.1.0",
+    "typescript": "~5.8.3",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "dependencies": {
+    "astro": "^5.13.10"
+  }
+}

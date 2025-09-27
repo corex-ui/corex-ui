@@ -1,0 +1,93 @@
+@reference "../utilities.css";
+
+@layer components {
+  .site-search [data-scope="combobox"][data-part="root"] {
+    @apply ui-root;
+    max-width: var(--container-mini);
+  }
+
+  .site-search [data-part="label"] {
+    @apply ui-label;
+  }
+
+  .site-search [data-part="control"] {
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    & svg {
+      @apply ui-icon;
+    }
+  }
+
+  .site-search [data-part="input"] {
+    @apply ui-input;
+    padding-inline-start: var(--spacing-ui);
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .site-search [data-part="positioner"] {
+    position: relative;
+    z-index: 9999;
+  }
+
+  .site-search [data-part="content"] {
+    @apply ui-content;
+    max-height: var(--container-ui);
+    overflow: auto;
+    padding: 0;
+    box-shadow: var(--shadow-ui);
+    z-index: 9999;
+  }
+
+  .site-search [data-part="no-results"],
+  .site-search [data-part="loading"] {
+    @apply ui-label;
+  }
+
+  .site-search [data-part="item"] {
+    @apply ui-item;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+    padding: var(--spacing-ui-padding);
+    border-block-end: 1px solid var(--color-ui--border);
+  }
+
+  .site-search [data-part="excerpt"] {
+    font-size: var(--text-ui-sm);
+    color: currentColor;
+    line-height: var(--text-ui-sm--line-height);
+    width: 100%;
+    font-weight: var(--font-weight-ui);
+    word-break: break-word;
+
+    & mark {
+      background-color: var(--color-ui-accent);
+      color: var(--color-ui-accent--text);
+    }
+  }
+
+  .site-search [data-part="item"][data-highlighted] [data-part="excerpt"] {
+    color: currentColor;
+
+    & mark {
+      background-color: var(--color-ui);
+      color: var(--color-ui--text);
+    }
+  }
+
+  .site-search [data-part="control"] .site-search__icon {
+    position: absolute;
+    left: calc(var(--spacing) * 2);
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 4);
+    color: var(--color-base-700);
+  }
+}

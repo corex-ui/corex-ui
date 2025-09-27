@@ -1,0 +1,134 @@
+@reference "../utilities.css";
+
+@layer components {
+  .checkbox [data-scope="checkbox"][data-part="root"] {
+    @apply ui-root;
+    flex-direction: row;
+    max-width: var(--container-ui);
+    width: auto;
+    gap: var(--spacing-ui-gap);
+    position: relative;
+  }
+
+  .checkbox [data-scope="checkbox"][data-part="label"] {
+    @apply ui-label;
+
+    &[data-invalid] {
+      color: var(--color-ui-alert);
+    }
+  }
+
+  .checkbox [data-scope="checkbox"][data-part="control"] {
+    height: var(--spacing-mini);
+    width: var(--spacing-mini);
+    background: var(--color-ui);
+    color: var(--color-ui--text);
+    font-weight: var(--font-weight-ui);
+    border-radius: var(--radius-ui);
+    border: 1px solid var(--color-ui--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-ui-hover);
+    }
+
+    &:active {
+      background-color: var(--color-ui-active);
+    }
+
+    &:focus-visible,
+    &[data-focus] {
+      outline: 2px solid var(--color-ui--text);
+      outline-offset: -3px;
+    }
+
+    &:disabled,
+    &[data-disabled],
+    &[data-disabled="true"],
+    &[disabled="true"] {
+      color: var(--color-ui--muted);
+      background-color: --alpha(var(--color-ui) / 60%);
+      cursor: not-allowed;
+    }
+
+    &[data-invalid] {
+      color: var(--color-ui-alert);
+      border-color: var(--color-ui-alert);
+    }
+
+    &[data-required] {
+      color: var(--color-ui-alert);
+      border-color: var(--color-ui-alert);
+    }
+  }
+
+  .checkbox [data-scope="checkbox"][data-part="control"] [data-indeterminate] {
+    display: none;
+  }
+
+  .checkbox [data-scope="checkbox"][data-part="control"] [data-checked] {
+    display: none;
+  }
+
+  .checkbox
+    [data-scope="checkbox"][data-part="control"][data-state="checked"]
+    [data-checked] {
+    @apply ui-icon;
+  }
+
+  .checkbox
+    [data-scope="checkbox"][data-part="control"][data-state="indeterminate"]
+    [data-indeterminate] {
+    @apply ui-icon;
+  }
+}
+
+@utility checkbox--* {
+  &.checkbox {
+    & [data-scope="checkbox"][data-part="root"] {
+      max-width: --value(--container-ui-*, [length]);
+    }
+
+    & [data-scope="checkbox"][data-part="label"] {
+      font-size: --value(--text-ui-*, [length]);
+      line-height: --value(--text-ui-* --line-height, [length]);
+    }
+
+    & [data-scope="checkbox"][data-part="control"] {
+      max-width: --value(--container-mini-*, [length]);
+      padding: --value(--spacing-mini-padding-*, [length]);
+      gap: --value(--spacing-mini-gap-*, [length]);
+      font-size: --value(--text-ui-*, [length]);
+      line-height: --value(--text-ui-* --line-height, [length]);
+      min-height: --value(--spacing-mini-*, [length]);
+      background-color: --value(--color-ui-*, [color]);
+      color: --value(--color-ui-* --text, [color]);
+      border-color: --value(--color-ui-* --border, [color]);
+
+      &:hover {
+        background-color: --value(--color-ui-* -hover, [color]);
+      }
+
+      &:active {
+        background-color: --value(--color-ui-* -active, [color]);
+      }
+
+      &:focus-visible,
+      &[data-focus] {
+        outline-color: --value(--color-ui-* --text, [color]);
+      }
+
+      &:disabled,
+      &[data-disabled],
+      &[data-disabled="true"],
+      &[disabled="true"] {
+        color: var(--color-ui--muted);
+        background-color: --alpha(var(--color-ui) / 60%);
+        cursor: not-allowed;
+      }
+    }
+  }
+}

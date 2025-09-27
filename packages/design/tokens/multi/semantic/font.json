@@ -1,0 +1,56 @@
+{
+  "font": {
+    "ui": {
+      "default": {
+        "value": [
+          "Outfit",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol",
+          "Noto Color Emoji"
+        ],
+        "type": "fontFamily"
+      }
+    },
+    "code": {
+      "value": [
+        "ui-monospace",
+        "SFMono-Regular",
+        "Menlo",
+        "Monaco",
+        "Consolas",
+        "Liberation Mono",
+        "Courier New",
+        "monospace"
+      ],
+      "type": "fontFamily"
+    }
+  },
+  "font-weight": {
+    "ui": {
+      "sm": {
+        "value": 200,
+        "type": "fontWeight"
+      },
+      "default": {
+        "value": "{font-weight.ui.md}",
+        "type": "fontWeight"
+      },
+      "md": {
+        "value": 400,
+        "type": "fontWeight"
+      },
+      "lg": {
+        "value": 600,
+        "type": "fontWeight"
+      },
+      "xl": {
+        "value": 800,
+        "type": "fontWeight"
+      }
+    }
+  }
+}

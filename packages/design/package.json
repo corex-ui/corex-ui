@@ -1,0 +1,78 @@
+{
+  "name": "@corex-ui/design",
+  "version": "0.0.1",
+  "description": "A comprehensive tool to transform design tokens into Tailwind CSS configuration and prebuilt CSS for Corex UI projects.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/main.css",
+  "unpkg": "./dist/main.css",
+  "jsdelivr": "./dist/main.css",
+  "exports": {
+    ".": {
+      "default": "./dist/main.css"
+    },
+    "./tokens.css": {
+      "default": "./dist/tokens.css"
+    },
+    "./tokens/semantic/*.css": {
+      "default": "./dist/tokens/semantic/*.css"
+    },
+    "./utilities.css": {
+      "default": "./dist/utilities.css"
+    },
+    "./fonts.css": {
+      "default": "./dist/fonts.css"
+    },
+    "./fonts": {
+      "default": "./dist/fonts.css"
+    },
+    "./themes/*.css": {
+      "default": "./dist/tokens/themes/*.css"
+    },
+    "./components.css": {
+      "default": "./dist/components.css"
+    },
+    "./components/*.css": {
+      "default": "./dist/components/*.css"
+    }
+  },
+  "author": "Netoum <info@netoum.com> (https://www.netoum.com)",
+  "homepage": "https://corex-ui.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corex-ui/corex-ui"
+  },
+  "bugs": {
+    "url": "https://github.com/corex-ui/corex-ui/issues"
+  },
+  "files": [
+    "README.md",
+    "LICENSE.md",
+    "package.json",
+    "dist/*"
+  ],
+  "scripts": {
+    "palette": "node scripts/palette.mjs",
+    "tokens": "node scripts/tokens.mjs",
+    "tokens:single": "node scripts/tokens-single.mjs",
+    "copy": "node build.mjs",
+    "build": "npm run palette && npm run tokens && npm run copy",
+    "build:single": "npm run tokens:single && npm run copy",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@adobe/leonardo-contrast-colors": "^1.0.0",
+    "@tokens-studio/sd-transforms": "^2.0.1",
+    "fs-extra": "^11.3.0",
+    "style-dictionary": "^5.0.4",
+    "turbo": "^2.5.0"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.13"
+  },
+  "packageManager": "pnpm@10.12.4"
+}
