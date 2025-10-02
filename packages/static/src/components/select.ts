@@ -137,7 +137,9 @@ export class Select extends Component<select.Props, select.Api> {
     }
     this.renderHiddenSelect();
 
-    this.updateTriggerText();
+    if (!getString(this.el, "noTriggerUpdate")) {
+      this.updateTriggerText();      
+    }
     const parts = [
       "root",
       "label",
