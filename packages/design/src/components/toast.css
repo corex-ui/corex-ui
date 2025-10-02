@@ -1,4 +1,4 @@
-@reference "../utilities.css";
+@import "../main.css";
 
 @layer components {
   [data-scope="toast"][data-part="group"] {
@@ -11,7 +11,6 @@
   [data-scope="toast"][data-part="root"] {
     @apply ui-root;
     position: relative;
-    box-shadow: var(--shadow-ui);
     translate: var(--x) var(--y);
     z-index: var(--z-index);
     height: var(--height);
@@ -35,6 +34,8 @@
   [data-scope="toast"][data-part="content"] {
     @apply ui-content;
     padding: 0;
+    border-radius: var(--radius-ui);
+    overflow: hidden;
   }
 
   [data-scope="toast"][data-part="title"] {
@@ -45,6 +46,7 @@
     color: var(--color-layer--text);
     padding: var(--spacing-mini-padding);
     border-block-end: 1px solid var(--color-ui--border);
+    padding-inline-end: var(--spacing-ui-sm);
   }
 
   [data-scope="toast"][data-part="description"] {
@@ -55,11 +57,11 @@
   }
 
   [data-scope="toast"][data-part="close-trigger"] {
-    @apply ui-trigger ui-trigger--square;
+    @apply ui-trigger ui-trigger--sm ui-trigger--circle;
     position: absolute;
     min-height: var(--spacing-mini);
-    right: var(--spacing-micro-gap);
-    top: var(--spacing-micro-gap);
+    right: var(--spacing-mini-gap);
+    top: var(--spacing-mini-gap);
   }
 
   /* Variants mapped to your button/listbox colors */
@@ -145,7 +147,7 @@
     aspect-ratio: 1/1;
     border: 2px solid var(--color-ui-accent);
     border-top-color: var(--color-ui);
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     animation: spin 1s linear infinite;
   }
 

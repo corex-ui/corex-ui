@@ -1,4 +1,4 @@
-@reference "../utilities.css";
+@import "../main.css";
 @reference "../components/scrollbar.css";
 
 @layer components {
@@ -10,6 +10,7 @@
     overflow: hidden;
     color: var(--color-root--text);
     background: var(--color-root);
+    @apply scrollbar;
   }
 
   .layout .layout__header {
@@ -37,6 +38,7 @@
     color: var(--color-layer--text);
     width: 100%;
     z-index: 20;
+    padding-block: var(--spacing-ui-padding-sm);
   }
 
   .layout .layout__footer .layout__footer__content {
@@ -60,11 +62,12 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    flex: 1;
     width: 100%;
     overflow: hidden;
+    justify-content: center;
     margin-inline: auto;
     max-width: var(--breakpoint-xl);
+    background-color: var(--color-root);
   }
 
   .layout .layout__side {
@@ -72,49 +75,35 @@
     flex-direction: column;
     background: var(--color-root);
     color: var(--color-root--text);
+    width: var(--container-ui);
   }
 
   .layout .layout__main {
     display: flex;
     flex-direction: row;
     width: 100%;
-    flex: 1;
+    overflow: hidden;
     margin-inline: auto;
-  }
-
-  .layout .layout__main--2col {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
+    @apply scrollbar;
   }
 
   .layout .layout__content {
     @apply scrollbar;
     display: flex;
     flex-direction: column;
-    flex: 1;
     overflow-y: auto;
     height: 100%;
     width: 100%;
   }
 
-  .layout .layout__aside {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    width: auto;
-    max-width: var(--container-mini);
-    margin-inline: auto;
-    background: var(--color-root);
-    color: var(--color-root--text);
-    justify-items: center;
-    padding: var(--spacing-ui-padding);
-    margin-inline: auto;
-  }
-
   .layout .layout__article {
     margin-inline: auto;
-    padding: var(--spacing-ui-padding);
+    padding: var(--spacing-ui-padding-xl);
     max-width: var(--container-ui-xl);
+    & h1,
+    & h2,
+    & h3 {
+      scroll-margin-top: var(--spacing-ui-xl);
+    }
   }
 }

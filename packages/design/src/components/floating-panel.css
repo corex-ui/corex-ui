@@ -1,5 +1,6 @@
-@reference "../utilities.css";
-@reference "./scrollbar.css";
+@import "@corex-ui/design/utilities.css";
+@import "@corex-ui/design/tokens.css";
+@import "@corex-ui/design/components/scrollbar.css";
 
 @layer components {
   .floating-panel [data-scope="floating-panel"][data-part="trigger"] {

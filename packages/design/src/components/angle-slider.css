@@ -1,14 +1,13 @@
-@reference "../utilities.css";
+@import "../main.css";
 
 @layer components {
   .angle-slider [data-scope="angle-slider"][data-part="root"] {
     @apply ui-root;
     max-width: var(--container-micro);
-    gap: var(--spacing-micro-gap);
-    padding: var(--spacing-micro-padding);
+    gap: var(--spacing-ui-gap);
+    padding: var(--spacing-ui-padding);
     background-color: var(--color-root);
     color: var(--color-root--text);
-    box-shadow: var(--shadow-ui);
     border-radius: var(--radius-ui);
     border: 1px solid var(--color-root--border);
   }
@@ -23,7 +22,7 @@
     --thumb-indicator-size: min(var(--thumb-size), calc(var(--size) / 2));
     width: var(--size);
     height: var(--size);
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     border: 1px solid var(--color-ui--border);
     background-color: var(--color-ui);
     margin-inline: auto;
@@ -69,7 +68,7 @@
   .angle-slider [data-scope="angle-slider"][data-part="marker-group"] {
     position: absolute;
     inset: 1px;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     pointer-events: none;
   }
 

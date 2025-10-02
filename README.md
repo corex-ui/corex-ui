@@ -68,4 +68,3 @@ pnpm run format
 ## 📝 License
 
 [MIT](./LICENSE) © [Netoum.com](https://netoum.com)
-

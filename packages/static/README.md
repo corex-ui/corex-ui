@@ -160,7 +160,7 @@ pnpm add @corex-ui/static
 
 ### Usage
 
-```tsx
+```ts
 import { Accordion } from '@corex-ui/static/react';
 
 export default function Home() {

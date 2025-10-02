@@ -3,24 +3,14 @@
  */
 
 @theme inline {
-  --text-root-sm: 0.875rem;
-  --text-root-sm--line-height: 1.4286;
-  --text-root-md: 1rem;
-  --text-root-md--line-height: 1.5;
-  --text-root-lg: 1.25rem;
-  --text-root-lg--line-height: 1.4;
-  --text-root-xl: 1.875rem;
-  --text-root-xl--line-height: 1.2;
-  --text-ui-sm: 0.875rem;
-  --text-ui-sm--line-height: 1.4286;
-  --text-ui-base: 1rem;
-  --text-ui-base--line-height: 1.5;
-  --text-ui-lg: 1.125rem;
-  --text-ui-lg--line-height: 1.5556;
-  --text-ui-xl: 1.25rem;
-  --text-ui-xl--line-height: 1.4;
-  --text-root: var(--text-root-md);
-  --text-root--line-height: var(--text-root-md--line-height);
-  --text-ui: var(--text-ui-base);
-  --text-ui--line-height: var(--text-ui-base--line-height);
+  --text-ui-sm: 1rem;
+  --text-ui-sm--line-height: 1.5;
+  --text-ui-md: 1.125rem;
+  --text-ui-md--line-height: 1.5556;
+  --text-ui-lg: 1.25rem;
+  --text-ui-lg--line-height: 1.5;
+  --text-ui-xl: 1.75rem;
+  --text-ui-xl--line-height: 1.4286;
+  --text-ui: var(--text-ui-md);
+  --text-ui--line-height: var(--text-ui-md--line-height);
 }

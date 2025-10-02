@@ -6,421 +6,836 @@ import path from 'path';
 // Flat theme configuration
 // -----------------------------
 const THEMES_CONFIG = {
-'neo-light': {
-  backgrounds: [
-    {
-      name: 'root',
-      color: '#EEF0F3',
-      lightness: 99,
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.15 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 },
-        { name: '-accent', color: '#D8DBDE', ratio: 9 },
-        { name: '-brand', color: '#452068', ratio: 6 },
-        { name: '-alert', color: '#C94F4F', ratio: 6 },
-        { name: '-info', color: '#5A8FBF', ratio: 6 },
-        { name: '-success', color: '#4FA37C', ratio: 6 }
-      ]
-    },
-    {
-      name: 'layer',
-      color: '#EEF0F3',
-      lightness: 98,
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.15 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 },
-        { name: '-accent', color: '#D8DBDE', ratio: 9 },
-        { name: '-brand', color: '#452068', ratio: 6 },
-        { name: '-alert', color: '#C94F4F', ratio: 6 },
-        { name: '-info', color: '#5A8FBF', ratio: 6 },
-        { name: '-success', color: '#4FA37C', ratio: 6 }
-      ]
-    },
-    {
-      name: 'ui',
-      color: '#EEF0F3',
-      lightness: 92,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.15 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-accent',
-      color: '#D8DBDE',
-      lightness: 40,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.5 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-brand',
-      color: '#452068',
-      lightness: 40,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.5 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-alert',
-      color: '#C94F4F',
-      lightness: 40,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.5 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-info',
-      color: '#5A8FBF',
-      lightness: 40,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.5 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-success',
-      color: '#4FA37C',
-      lightness: 40,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.5 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    }
-  ],
-  output: 'tokens/multi/themes/neo/light.json',
-  indent: 2
-},
+  'neo-light': {
+    backgrounds: [
+      {
+        name: 'root',
+        color: '#F2F4F8',
+        lightness: 99,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-accent', color: '#1D1C20', ratio: 7 },
+          { name: '-brand', color: '#2f44ad', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'layer',
+        color: '#F2F4F8',
+        lightness: 96,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-accent', color: '#1D1C20', ratio: 7 },
+          { name: '-brand', color: '#2f44ad', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'ui',
+        color: '#F2F4F8',
+        lightness: 91,
+        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
 
-'neo-dark': {
-  backgrounds: [
-    {
-      name: 'root',
-      color: '#EEF0F3',
-      lightness: 8,
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 2 },
-        { name: '-text', color: '#3C3E40', ratio: 8 },
-        { name: '-muted', color: '#3C3E40', ratio: 6 },
-        { name: '-accent', color: '#D8DBDE', ratio: 10 },
-        { name: '-brand', color: '#452068', ratio: 10 },
-        { name: '-alert', color: '#C94F4F', ratio: 10 },
-        { name: '-info', color: '#5A8FBF', ratio: 10 },
-        { name: '-success', color: '#4FA37C', ratio: 10 }
-      ]
-    },
-    {
-      name: 'layer',
-      color: '#EEF0F3',
-      lightness: 15,
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 2 },
-        { name: '-text', color: '#3C3E40', ratio: 8 },
-        { name: '-muted', color: '#3C3E40', ratio: 6 },
-        { name: '-accent', color: '#D8DBDE', ratio: 10 },
-        { name: '-brand', color: '#452068', ratio: 10 },
-        { name: '-alert', color: '#C94F4F', ratio: 10 },
-        { name: '-info', color: '#5A8FBF', ratio: 10 },
-        { name: '-success', color: '#4FA37C', ratio: 10 }
-      ]
-    },
-    {
-      name: 'ui',
-      color: '#EEF0F3',
-      lightness: 20,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.5 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-accent',
-      color: '#D8DBDE',
-      lightness: 70,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.5 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-brand',
-      color: '#452068',
-      lightness: 70,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.5 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-alert',
-      color: '#C94F4F',
-      lightness: 70,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.5 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-info',
-      color: '#5A8FBF',
-      lightness: 70,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.5 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-success',
-      color: '#4FA37C',
-      lightness: 70,
-      ratios: { default: -1.2, hover: -1.1, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#3C3E40', ratio: 1.5 },
-        { name: '-text', color: '#3C3E40', ratio: 6 },
-        { name: '-muted', color: '#3C3E40', ratio: 4.6 }
-      ]
-    }
-  ],
-  output: 'tokens/multi/themes/neo/dark.json',
-  indent: 2
-},
+        ]
+      },
+      {
+        name: 'ui-accent',
+        color: '#1D1C20',
+        lightness: 35,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-brand',
+        color: '#2f44ad',
+        lightness: 42,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-alert',
+        color: '#C94F4F',
+        lightness: 42,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-info',
+        color: '#81A9CB',
+        lightness: 42,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-success',
+        color: '#4FA37C',
+        lightness: 42,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 }
+        ]
+      }
+    ],
+    output: 'tokens/multi/themes/neo/light.json',
+    indent: 2
+  },
 
-'uno-light': {
-  backgrounds: [
-    {
-      name: 'root',
-      color: '#111827',
-      lightness: 97,
-      contrastColors: [
-        { name: '-border', color: '#D1D5DB', ratio: 1.2 },
-        { name: '-text', color: '#111827', ratio: 14 },
-        { name: '-muted', color: '#6B7280', ratio: 4.8 },
-        { name: '-accent', color: '#E5E7EB', ratio: 9 },
-        { name: '-brand', color: '#452068', ratio: 6 },
-        { name: '-alert', color: '#DC2626', ratio: 6 },
-        { name: '-info', color: '#0284C7', ratio: 6 },
-        { name: '-success', color: '#059669', ratio: 6 }
-      ]
-    },
-    {
-      name: 'layer',
-      color: '#111827',
-      lightness: 94,
-      contrastColors: [
-        { name: '-border', color: '#D1D5DB', ratio: 1.2 },
-        { name: '-text', color: '#111827', ratio: 14 },
-        { name: '-muted', color: '#6B7280', ratio: 4.8 },
-        { name: '-accent', color: '#E5E7EB', ratio: 9 },
-        { name: '-brand', color: '#452068', ratio: 6 },
-        { name: '-alert', color: '#DC2626', ratio: 6 },
-        { name: '-info', color: '#0284C7', ratio: 6 },
-        { name: '-success', color: '#059669', ratio: 6 }
-      ]
-    },
-    {
-      name: 'ui',
-      color: '#111827',
-      lightness: 90,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#D1D5DB', ratio: 1.2 },
-        { name: '-text', color: '#111827', ratio: 12 },
-        { name: '-muted', color: '#6B7280', ratio: 4.5 }
-      ]
-    },
-    {
-      name: 'ui-accent',
-      color: '#E5E7EB',
-      lightness: 32,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#D1D5DB', ratio: 1.3 },
-        { name: '-text', color: '#111827', ratio: 12 },
-        { name: '-muted', color: '#6B7280', ratio: 4.5 }
-      ]
-    },
-    {
-      name: 'ui-brand',
-      color: '#452068',
-      lightness: 45,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#1E3A8A', ratio: 1.4 },
-        { name: '-text', color: '#FFFFFF', ratio: 8 },
-        { name: '-muted', color: '#BFDBFE', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-alert',
-      color: '#DC2626',
-      lightness: 45,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#7F1D1D', ratio: 1.4 },
-        { name: '-text', color: '#FFFFFF', ratio: 8 },
-        { name: '-muted', color: '#FCA5A5', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-info',
-      color: '#0284C7',
-      lightness: 45,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#0C4A6E', ratio: 1.4 },
-        { name: '-text', color: '#FFFFFF', ratio: 8 },
-        { name: '-muted', color: '#7DD3FC', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-success',
-      color: '#059669',
-      lightness: 45,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#065F46', ratio: 1.4 },
-        { name: '-text', color: '#FFFFFF', ratio: 8 },
-        { name: '-muted', color: '#6EE7B7', ratio: 4.6 }
-      ]
-    }
-  ],
-  output: 'tokens/multi/themes/uno/light.json',
-  indent: 2
-},
+  'neo-dark': {
+    backgrounds: [
+      {
+        name: 'root',
+        color: '#F2F4F8',
+        lightness: 8,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-accent', color: '#1D1C20', ratio: 7 },
+          { name: '-brand', color: '#2f44ad', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'layer',
+        color: '#F2F4F8',
+        lightness: 12,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-accent', color: '#1D1C20', ratio: 7 },
+          { name: '-brand', color: '#2f44ad', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'ui',
+        color: '#F2F4F8',
+        lightness: 16,
+        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
 
-'uno-dark': {
-  backgrounds: [
-    {
-      name: 'root',
-      color: '#111827',
-      lightness: 8,
-      contrastColors: [
-        { name: '-border', color: '#374151', ratio: 1.2 },
-        { name: '-text', color: '#F9FAFB', ratio: 14 },
-        { name: '-muted', color: '#9CA3AF', ratio: 4.6 },
-        { name: '-accent', color: '#1F2937', ratio: 9 },
-        { name: '-brand', color: '#60A5FA', ratio: 6 },
-        { name: '-alert', color: '#F87171', ratio: 6 },
-        { name: '-info', color: '#38BDF8', ratio: 6 },
-        { name: '-success', color: '#34D399', ratio: 6 }
-      ]
-    },
-    {
-      name: 'layer',
-      color: '#111827',
-      lightness: 15,
-      contrastColors: [
-        { name: '-border', color: '#374151', ratio: 1.2 },
-        { name: '-text', color: '#F9FAFB', ratio: 14 },
-        { name: '-muted', color: '#9CA3AF', ratio: 4.6 },
-        { name: '-accent', color: '#111827', ratio: 9 },
-        { name: '-brand', color: '#60A5FA', ratio: 6 },
-        { name: '-alert', color: '#F87171', ratio: 6 },
-        { name: '-info', color: '#38BDF8', ratio: 6 },
-        { name: '-success', color: '#34D399', ratio: 6 }
-      ]
-    },
-    {
-      name: 'ui',
-      color: '#111827',
-      lightness: 20,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#374151', ratio: 1.2 },
-        { name: '-text', color: '#F9FAFB', ratio: 12 },
-        { name: '-muted', color: '#9CA3AF', ratio: 4.5 }
-      ]
-    },
-    {
-      name: 'ui-accent',
-      color: '#374151',
-      lightness: 35,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#4B5563', ratio: 1.3 },
-        { name: '-text', color: '#F9FAFB', ratio: 12 },
-        { name: '-muted', color: '#9CA3AF', ratio: 4.5 }
-      ]
-    },
-    {
-      name: 'ui-brand',
-      color: '#452068',
-      lightness: 50,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#1E40AF', ratio: 1.4 },
-        { name: '-text', color: '#FFFFFF', ratio: 8 },
-        { name: '-muted', color: '#BFDBFE', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-alert',
-      color: '#DC2626',
-      lightness: 50,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#7F1D1D', ratio: 1.4 },
-        { name: '-text', color: '#FFFFFF', ratio: 8 },
-        { name: '-muted', color: '#FCA5A5', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-info',
-      color: '#0284C7',
-      lightness: 50,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#0C4A6E', ratio: 1.4 },
-        { name: '-text', color: '#FFFFFF', ratio: 8 },
-        { name: '-muted', color: '#7DD3FC', ratio: 4.6 }
-      ]
-    },
-    {
-      name: 'ui-success',
-      color: '#059669',
-      lightness: 50,
-      ratios: { default: -1.1, hover: -1.05, active: 1 },
-      contrastColors: [
-        { name: '-border', color: '#065F46', ratio: 1.4 },
-        { name: '-text', color: '#FFFFFF', ratio: 8 },
-        { name: '-muted', color: '#6EE7B7', ratio: 4.6 }
-      ]
-    }
-  ],
-  output: 'tokens/multi/themes/uno/dark.json',
-  indent: 2
-},
+        ]
+      },
+      {
+        name: 'ui-accent',
+        color: '#1D1C20',
+        lightness: 65,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-brand',
+        color: '#2f44ad',
+        lightness: 60,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-alert',
+        color: '#C94F4F',
+        lightness: 60,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-info',
+        color: '#81A9CB',
+        lightness: 60,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-success',
+        color: '#4FA37C',
+        lightness: 60,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      }
+    ],
+    output: 'tokens/multi/themes/neo/dark.json',
+    indent: 2
+  },
+  'uno-light': {
+    backgrounds: [
+      {
+        name: 'root',
+        color: '#4D2E50',
+        lightness: 97,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-accent', color: '#1D1C20', ratio: 7 },
+          { name: '-brand', color: '#4D2E50', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'layer',
+        color: '#4D2E50',
+        lightness: 95,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-accent', color: '#1D1C20', ratio: 7 },
+          { name: '-brand', color: '#4D2E50', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'ui',
+        color: '#4D2E50',
+        lightness: 88,
+        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
 
+        ]
+      },
+      {
+        name: 'ui-accent',
+        color: '#1D1C20',
+        lightness: 45,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-brand',
+        color: '#4D2E50',
+        lightness: 32,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-alert',
+        color: '#C94F4F',
+        lightness: 32,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-info',
+        color: '#81A9CB',
+        lightness: 32,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-success',
+        color: '#4FA37C',
+        lightness: 32,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 }
+        ]
+      }
+    ],
+    output: 'tokens/multi/themes/uno/light.json',
+    indent: 2
+  },
+
+  'uno-dark': {
+    backgrounds: [
+      {
+        name: 'root',
+        color: '#4D2E50',
+        lightness: 12,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-accent', color: '#1D1C20', ratio: 7 },
+          { name: '-brand', color: '#4D2E50', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'layer',
+        color: '#4D2E50',
+        lightness: 16,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-accent', color: '#1D1C20', ratio: 7 },
+          { name: '-brand', color: '#4D2E50', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'ui',
+        color: '#4D2E50',
+        lightness: 20,
+        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+
+        ]
+      },
+      {
+        name: 'ui-accent',
+        color: '#1D1C20',
+        lightness: 55,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-brand',
+        color: '#4D2E50',
+        lightness: 55,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-alert',
+        color: '#C94F4F',
+        lightness: 55,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-info',
+        color: '#81A9CB',
+        lightness: 55,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-success',
+        color: '#4FA37C',
+        lightness: 55,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      }
+    ],
+    output: 'tokens/multi/themes/uno/dark.json',
+    indent: 2
+  },
+  'duo-light': {
+    backgrounds: [
+      {
+        name: 'root',
+        color: '#3B5E2B',
+        lightness: 99,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-accent', color: '#B9C3B9', ratio: 7 },
+          { name: '-brand', color: '#3B5E2B', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'layer',
+        color: '#3B5E2B',
+        lightness: 96,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-accent', color: '#B9C3B9', ratio: 7 },
+          { name: '-brand', color: '#3B5E2B', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'ui',
+        color: '#3B5E2B',
+        lightness: 91,
+        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+
+        ]
+      },
+      {
+        name: 'ui-accent',
+        color: '#B9C3B9',
+        lightness: 42,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-brand',
+        color: '#3B5E2B',
+        lightness: 42,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-alert',
+        color: '#C94F4F',
+        lightness: 42,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-info',
+        color: '#81A9CB',
+        lightness: 42,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-success',
+        color: '#4FA37C',
+        lightness: 42,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 }
+        ]
+      }
+    ],
+    output: 'tokens/multi/themes/duo/light.json',
+    indent: 2
+  },
+
+  'duo-dark': {
+    backgrounds: [
+      {
+        name: 'root',
+        color: '#3B5E2B',
+        lightness: 8,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-accent', color: '#B9C3B9', ratio: 7 },
+          { name: '-brand', color: '#3B5E2B', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'layer',
+        color: '#3B5E2B',
+        lightness: 12,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-accent', color: '#B9C3B9', ratio: 7 },
+          { name: '-brand', color: '#3B5E2B', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'ui',
+        color: '#3B5E2B',
+        lightness: 16,
+        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+
+        ]
+      },
+      {
+        name: 'ui-accent',
+        color: '#B9C3B9',
+        lightness: 60,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-brand',
+        color: '#3B5E2B',
+        lightness: 60,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-alert',
+        color: '#C94F4F',
+        lightness: 60,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-info',
+        color: '#81A9CB',
+        lightness: 60,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-success',
+        color: '#4FA37C',
+        lightness: 60,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      }
+    ],
+    output: 'tokens/multi/themes/duo/dark.json',
+    indent: 2
+  },
+  'leo-light': {
+    backgrounds: [
+      {
+        name: 'root',
+        color: '#B3B6C0',
+        lightness: 95,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-accent', color: '#E3E9F0', ratio: 7 },
+          { name: '-brand', color: '#B3B6C0', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'layer',
+        color: '#B3B6C0',
+        lightness: 92,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-accent', color: '#E3E9F0', ratio: 7 },
+          { name: '-brand', color: '#B3B6C0', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'ui',
+        color: '#B3B6C0',
+        lightness: 86,
+        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+
+        ]
+      },
+      {
+        name: 'ui-accent',
+        color: '#E3E9F0',
+        lightness: 45,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-brand',
+        color: '#B3B6C0',
+        lightness: 32,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-alert',
+        color: '#C94F4F',
+        lightness: 32,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-info',
+        color: '#81A9CB',
+        lightness: 32,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+        ]
+      },
+      {
+        name: 'ui-success',
+        color: '#4FA37C',
+        lightness: 32,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
+          { name: '-text', color: '#1D1C20', ratio: 7 },
+          { name: '-muted', color: '#1D1C20', ratio: 4.8 }
+        ]
+      }
+    ],
+    output: 'tokens/multi/themes/leo/light.json',
+    indent: 2
+  },
+
+  'leo-dark': {
+    backgrounds: [
+      {
+        name: 'root',
+        color: '#B3B6C0',
+        lightness: 8,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-accent', color: '#E3E9F0', ratio: 7 },
+          { name: '-brand', color: '#B3B6C0', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'layer',
+        color: '#B3B6C0',
+        lightness: 12,
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-accent', color: '#E3E9F0', ratio: 7 },
+          { name: '-brand', color: '#B3B6C0', ratio: 7 },
+          { name: '-alert', color: '#C94F4F', ratio: 7 },
+          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-success', color: '#4FA37C', ratio: 7 }
+        ]
+      },
+      {
+        name: 'ui',
+        color: '#B3B6C0',
+        lightness: 16,
+        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+
+        ]
+      },
+      {
+        name: 'ui-accent',
+        color: '#E3E9F0',
+        lightness: 55,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-brand',
+        color: '#B3B6C0',
+        lightness: 55,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-alert',
+        color: '#C94F4F',
+        lightness: 55,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-info',
+        color: '#81A9CB',
+        lightness: 55,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      },
+      {
+        name: 'ui-success',
+        color: '#4FA37C',
+        lightness: 55,
+        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        contrastColors: [
+          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
+          { name: '-text', color: '#1D1C20', ratio: 9 },
+          { name: '-muted', color: '#1D1C20', ratio: 6 },
+        ]
+      }
+    ],
+    output: 'tokens/multi/themes/leo/dark.json',
+    indent: 2
+  },
 
 };
-
 // -----------------------------
 function ensureDirExists(filePath) {
   const dir = path.dirname(filePath);
@@ -430,14 +845,17 @@ function ensureDirExists(filePath) {
 // -----------------------------
 function createBackground(bg) {
   const ratios = bg.ratios || { default: 1 };
-  return new BackgroundColor({ name: bg.name, colorKeys: [bg.color], ratios });
+  const colorKeys = Array.isArray(bg.color) ? bg.color : [bg.color].filter(Boolean);
+  return new BackgroundColor({ name: bg.name, colorKeys: colorKeys.length ? colorKeys : ['#ffffff'], ratios });
 }
 
 // -----------------------------
 function createTextColors(textColorConfigs) {
-  return (textColorConfigs || []).map(tc =>
-    new Color({ name: tc.name, colorKeys: [tc.color], ratios: { default: tc.ratio } })
-  );
+  return (textColorConfigs || []).map(tc => {
+    const colorKeys = Array.isArray(tc.color) ? tc.color : [tc.color].filter(Boolean);
+    const ratio = typeof tc.ratio === 'number' ? tc.ratio : 1;
+    return new Color({ name: tc.name, colorKeys: colorKeys.length ? colorKeys : ['#000000'], ratios: { default: ratio } });
+  });
 }
 
 // -----------------------------
@@ -455,30 +873,30 @@ function generateThemes(themeConfig) {
 }
 
 // -----------------------------
-// Convert Leonardo output to Style Dictionary JSON with mode structure
+// Convert Leonardo output to Style Dictionary JSON with theme structure
 // -----------------------------
-function toStyleDictionaryFormat(themes, modeName) {
+function toStyleDictionaryFormat(themes, themeName) {
   const result = {};
-  const modeKey = modeName || "mode";
-  
-  result[modeKey] = {
-      color: {}
+  const themeKey = themeName || "theme";
+
+  result[themeKey] = {
+    color: {}
   };
 
   themes.forEach(theme => {
     const bg = theme._backgroundColor;
     const mainState = Object.entries(bg._ratios || {}).find(([, ratio]) => ratio === 1)?.[0] || 'default';
-    
+
     // Find the contrast color object that matches the background name
     const backgroundColorObj = theme._contrastColors?.find(colorObj => colorObj.name === bg._name);
 
     // If no values, just fallback to background color
-    const bgValue = backgroundColorObj?.values?.find(v => v.name === mainState)?.value 
-                    || bg._colorKeys?.[0];
+    const bgValue = backgroundColorObj?.values?.find(v => v.name === mainState)?.value
+      || bg._colorKeys?.[0];
 
     // Initialize background name
-    if (!result[modeKey].color[bg._name]) {
-      result[modeKey].color[bg._name] = {};
+    if (!result[themeKey].color[bg._name]) {
+      result[themeKey].color[bg._name] = {};
     }
 
     // Add contrast colors (text, muted, etc.)
@@ -486,15 +904,15 @@ function toStyleDictionaryFormat(themes, modeName) {
       if (!colorObj.name || colorObj.name === bg._name) return;
 
       const key = colorObj.name;
-      if (!result[modeKey].color[bg._name][key]) {
-        result[modeKey].color[bg._name][key] = {};
+      if (!result[themeKey].color[bg._name][key]) {
+        result[themeKey].color[bg._name][key] = {};
       }
 
       // If values exist, use them; otherwise, use default ratio/color
       if (colorObj.values?.length) {
         colorObj.values.forEach(v => {
           const stateName = v.name || 'default';
-          result[modeKey].color[bg._name][key][stateName] = {
+          result[themeKey].color[bg._name][key][stateName] = {
             value: v.value,
             type: 'color',
             description: `${v.contrast}:1 contrast against ${bg._name}-${mainState} (${bgValue})`
@@ -505,7 +923,7 @@ function toStyleDictionaryFormat(themes, modeName) {
         const stateName = 'default';
         const value = colorObj._colorKeys?.[0] || bg._colorKeys?.[0];
         const contrast = colorObj.ratios?.default ?? 1;
-        result[modeKey].color[bg._name][key][stateName] = {
+        result[themeKey].color[bg._name][key][stateName] = {
           value,
           type: 'color',
           description: `${contrast}:1 contrast against ${bg._name}-${mainState} (${bgValue})`
@@ -517,7 +935,7 @@ function toStyleDictionaryFormat(themes, modeName) {
     if (backgroundColorObj?.values?.length) {
       backgroundColorObj.values.forEach(v => {
         const stateName = v.name || 'default';
-        result[modeKey].color[bg._name][stateName] = {
+        result[themeKey].color[bg._name][stateName] = {
           value: v.value,
           type: 'color',
           description: `${v.contrast}:1 contrast against ${bg._name}-${mainState} (${bgValue})`
@@ -526,7 +944,7 @@ function toStyleDictionaryFormat(themes, modeName) {
     } else {
       // fallback to base background color
       const stateName = 'default';
-      result[modeKey].color[bg._name][stateName] = {
+      result[themeKey].color[bg._name][stateName] = {
         value: bg._colorKeys?.[0],
         type: 'color',
         description: `Base background ${bg._name}-${mainState}`
@@ -551,13 +969,13 @@ function toStyleDictionarySemanticFormat(themes) {
     if (bg._ratios && Object.keys(bg._ratios).length) {
       Object.keys(bg._ratios).forEach(stateName => {
         result.color[bgName][stateName] = {
-          value: `{mode.color.${bgName}.${stateName}}`,
+          value: `{theme.color.${bgName}.${stateName}}`,
           type: 'color'
         };
       });
     } else if (bg._colorKeys?.length) {
       result.color[bgName].default = {
-        value: `{mode.color.${bgName}.default}`,
+        value: `{theme.color.${bgName}.default}`,
         type: 'color'
       };
     }
@@ -571,7 +989,7 @@ function toStyleDictionarySemanticFormat(themes) {
       colorObj.values?.forEach(v => {
         const stateName = v.name || 'default';
         result.color[bgName][key][stateName] = {
-          value: `{mode.color.${bgName}.${key}.${stateName}}`,
+          value: `{theme.color.${bgName}.${key}.${stateName}}`,
           type: 'color'
         };
       });

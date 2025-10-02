@@ -1,9 +1,9 @@
-@reference "../utilities.css";
+@import "../main.css";
 
 @layer components {
   .color-picker [data-scope="color-picker"][data-part="root"] {
     @apply ui-root;
-    max-width: var(--container-mini);
+    max-width: var(--container-ui);
     gap: var(--spacing-mini-gap);
     position: relative;
   }
@@ -27,7 +27,7 @@
 
   .color-picker [data-scope="color-picker"][data-part="trigger"] {
     @apply ui-trigger;
-    min-height: var(--spacing-ui);
+    min-height: var(--spacing-mini);
     padding: 0;
     aspect-ratio: 1 / 1;
     width: auto;
@@ -48,7 +48,7 @@
 
   .color-picker [data-scope="color-picker"][data-part="channel-input"] {
     @apply ui-input;
-    width: var(--container-micro-sm);
+    width: var(--container-micro);
   }
 
   .color-picker
@@ -98,7 +98,7 @@
   [data-scope="color-picker"][data-part="area-thumb"],
   [data-scope="color-picker"][data-part="channel-slider-thumb"] {
     border: 2px solid var(--color-ui--text);
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     box-sizing: border-box;
     transform: translate(-50%, -50%);
     outline: 2px solid var(--color-ui-accent--text);
@@ -126,10 +126,7 @@
   }
 
   .color-picker [data-scope="color-picker"][data-part="eye-dropper-trigger"] {
-    @apply ui-trigger;
-    height: var(--spacing-mini);
-    width: auto;
-    aspect-ratio: 1 / 1;
+    @apply ui-trigger ui-trigger--square;
   }
 
   .color-picker [data-part="pickers"] {

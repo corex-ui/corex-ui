@@ -1,4 +1,4 @@
-@reference "../utilities.css";
+@import "../main.css";
 @layer components {
   /* Menu content */
   .menu [data-scope="menu"][data-part="content"] {

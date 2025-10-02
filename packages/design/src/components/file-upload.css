@@ -1,4 +1,4 @@
-@reference "../utilities.css";
+@import "../main.css";
 @import "../components/scrollbar.css";
 
 @layer components {

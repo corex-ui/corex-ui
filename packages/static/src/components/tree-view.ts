@@ -6,6 +6,7 @@ import {
   generateId,
   getString,
   getStringList,
+  arraysEqualUnordered,
   normalizeProps,
   renderPart,
   renderNode,
@@ -261,7 +262,10 @@ export function initializeTreeView(
     treeViewComponent.init();
     treeViewComponent.el.addEventListener("tree-view:set-value", (event) => {
       const { value } = (event as CustomEvent<{ value: string[] }>).detail;
-      treeViewComponent.api.setSelectedValue(value);
+      const current = treeViewComponent.api.selectedValue;
+      if (!arraysEqualUnordered(current, value)) {
+        treeViewComponent.api.setSelectedValue(value);
+      }
     });
   });
 }
