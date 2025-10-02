@@ -1,6 +1,6 @@
 {
   "name": "@corex-ui/static",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Accessible, unstyled UI components designed for static websites. HTML and JavaScript powered by TypeScript and ZagJS.",
   "author": "Netoum <info@netoum.com> (https://www.netoum.com)",
   "homepage": "https://corex-ui.com",
