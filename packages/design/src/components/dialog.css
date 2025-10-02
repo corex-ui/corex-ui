@@ -1,13 +1,13 @@
-@reference "../utilities.css";
+@import "../main.css";
 @layer components {
   .dialog [data-scope="dialog"][data-part="trigger"] {
     @apply ui-trigger;
   }
 
   .dialog [data-scope="dialog"][data-part="close-trigger"] {
-    @apply ui-trigger;
+    @apply ui-trigger ui-trigger--circle ui-trigger--sm;
     flex-shrink: 0;
-    height: auto;
+    height: fit-content;
   }
 
   .dialog [data-scope="dialog"][data-part="backdrop"] {

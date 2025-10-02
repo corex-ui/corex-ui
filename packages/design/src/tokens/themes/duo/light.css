@@ -1,0 +1,60 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-theme=duo][data-mode=light] {
+  --theme-color-root--border: #f4f5f6; /** 1.05:1 contrast against root-default (#f9faf8) */
+  --theme-color-root--text: #575659; /** 7:1 contrast against root-default (#f9faf8) */
+  --theme-color-root--muted: #706f72; /** 4.8:1 contrast against root-default (#f9faf8) */
+  --theme-color-root--accent: #535853; /** 7:1 contrast against root-default (#f9faf8) */
+  --theme-color-root--brand: #3d5f2d; /** 7:1 contrast against root-default (#f9faf8) */
+  --theme-color-root--alert: #923a3a; /** 7:1 contrast against root-default (#f9faf8) */
+  --theme-color-root--info: #44596b; /** 7:1 contrast against root-default (#f9faf8) */
+  --theme-color-root--success: #2f6049; /** 7:1 contrast against root-default (#f9faf8) */
+  --theme-color-root: #f9faf8; /** 1:1 contrast against root-default (#f9faf8) */
+  --theme-color-layer--border: #eaeced; /** 1.05:1 contrast against layer-default (#f0f3ef) */
+  --theme-color-layer--text: #525155; /** 7:1 contrast against layer-default (#f0f3ef) */
+  --theme-color-layer--muted: #6b6a6d; /** 4.8:1 contrast against layer-default (#f0f3ef) */
+  --theme-color-layer--accent: #4f534f; /** 7:1 contrast against layer-default (#f0f3ef) */
+  --theme-color-layer--brand: #395a29; /** 7:1 contrast against layer-default (#f0f3ef) */
+  --theme-color-layer--alert: #8b3636; /** 7:1 contrast against layer-default (#f0f3ef) */
+  --theme-color-layer--info: #405465; /** 7:1 contrast against layer-default (#f0f3ef) */
+  --theme-color-layer--success: #2c5a45; /** 7:1 contrast against layer-default (#f0f3ef) */
+  --theme-color-layer: #f0f3ef; /** 1:1 contrast against layer-default (#f0f3ef) */
+  --theme-color-ui--border: #dcdfe1; /** 1.05:1 contrast against ui-active (#e0e5dd) */
+  --theme-color-ui--text: #4a494d; /** 7:1 contrast against ui-active (#e0e5dd) */
+  --theme-color-ui--muted: #626164; /** 4.8:1 contrast against ui-active (#e0e5dd) */
+  --theme-color-ui: #f3f5f2; /** -1.15:1 contrast against ui-active (#e0e5dd) */
+  --theme-color-ui-hover: #eef1ed; /** -1.1:1 contrast against ui-active (#e0e5dd) */
+  --theme-color-ui-active: #e0e5dd; /** 1:1 contrast against ui-active (#e0e5dd) */
+  --theme-color-ui-accent--border: #656668; /** 1.05:1 contrast against ui-accent-active (#5f655f) */
+  --theme-color-ui-accent--text: #ffffff; /** 7:1 contrast against ui-accent-active (#5f655f) */
+  --theme-color-ui-accent--muted: #e5e5e5; /** 4.8:1 contrast against ui-accent-active (#5f655f) */
+  --theme-color-ui-accent: #535853; /** -1.2:1 contrast against ui-accent-active (#5f655f) */
+  --theme-color-ui-accent-hover: #585d58; /** -1.1:1 contrast against ui-accent-active (#5f655f) */
+  --theme-color-ui-accent-active: #5f655f; /** 1:1 contrast against ui-accent-active (#5f655f) */
+  --theme-color-ui-brand--border: #656668; /** 1.05:1 contrast against ui-brand-active (#4a6b3b) */
+  --theme-color-ui-brand--text: #ffffff; /** 7:1 contrast against ui-brand-active (#4a6b3b) */
+  --theme-color-ui-brand--muted: #e5e4e5; /** 4.8:1 contrast against ui-brand-active (#4a6b3b) */
+  --theme-color-ui-brand: #3c5f2c; /** -1.2:1 contrast against ui-brand-active (#4a6b3b) */
+  --theme-color-ui-brand-hover: #436534; /** -1.1:1 contrast against ui-brand-active (#4a6b3b) */
+  --theme-color-ui-brand-active: #4a6b3b; /** 1:1 contrast against ui-brand-active (#4a6b3b) */
+  --theme-color-ui-alert--border: #656668; /** 1.05:1 contrast against ui-alert-active (#a74141) */
+  --theme-color-ui-alert--text: #ffffff; /** 7:1 contrast against ui-alert-active (#a74141) */
+  --theme-color-ui-alert--muted: #e5e4e5; /** 4.8:1 contrast against ui-alert-active (#a74141) */
+  --theme-color-ui-alert: #923939; /** -1.2:1 contrast against ui-alert-active (#a74141) */
+  --theme-color-ui-alert-hover: #9b3d3d; /** -1.1:1 contrast against ui-alert-active (#a74141) */
+  --theme-color-ui-alert-active: #a74141; /** 1:1 contrast against ui-alert-active (#a74141) */
+  --theme-color-ui-info--border: #656668; /** 1.05:1 contrast against ui-info-active (#4d6579) */
+  --theme-color-ui-info--text: #ffffff; /** 7:1 contrast against ui-info-active (#4d6579) */
+  --theme-color-ui-info--muted: #e5e4e5; /** 4.8:1 contrast against ui-info-active (#4d6579) */
+  --theme-color-ui-info: #44596b; /** -1.2:1 contrast against ui-info-active (#4d6579) */
+  --theme-color-ui-info-hover: #485e71; /** -1.1:1 contrast against ui-info-active (#4d6579) */
+  --theme-color-ui-info-active: #4d6579; /** 1:1 contrast against ui-info-active (#4d6579) */
+  --theme-color-ui-success--border: #656668; /** 1.05:1 contrast against ui-success-active (#356e54) */
+  --theme-color-ui-success--text: #ffffff; /** 7:1 contrast against ui-success-active (#356e54) */
+  --theme-color-ui-success--muted: #e5e5e5; /** 4.8:1 contrast against ui-success-active (#356e54) */
+  --theme-color-ui-success: #2f6049; /** -1.2:1 contrast against ui-success-active (#356e54) */
+  --theme-color-ui-success-hover: #32664e; /** -1.1:1 contrast against ui-success-active (#356e54) */
+  --theme-color-ui-success-active: #356e54; /** 1:1 contrast against ui-success-active (#356e54) */
+}

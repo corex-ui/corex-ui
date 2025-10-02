@@ -1,0 +1,60 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-theme=leo][data-mode=dark] {
+  --theme-color-root--border: #3a3b3c; /** 1.6:1 contrast against root-default (#171819) */
+  --theme-color-root--text: #b8b7b9; /** 9:1 contrast against root-default (#171819) */
+  --theme-color-root--muted: #959596; /** 6:1 contrast against root-default (#171819) */
+  --theme-color-root--accent: #9ea2a7; /** 7:1 contrast against root-default (#171819) */
+  --theme-color-root--brand: #9fa1aa; /** 7:1 contrast against root-default (#171819) */
+  --theme-color-root--alert: #dc8c8c; /** 7:1 contrast against root-default (#171819) */
+  --theme-color-root--info: #7fa6c8; /** 7:1 contrast against root-default (#171819) */
+  --theme-color-root--success: #68b08f; /** 7:1 contrast against root-default (#171819) */
+  --theme-color-root: #171819; /** 1:1 contrast against root-default (#171819) */
+  --theme-color-layer--border: #404142; /** 1.6:1 contrast against layer-default (#202022) */
+  --theme-color-layer--text: #c0bfc0; /** 9:1 contrast against layer-default (#202022) */
+  --theme-color-layer--muted: #9c9b9d; /** 6:1 contrast against layer-default (#202022) */
+  --theme-color-layer--accent: #a5aaaf; /** 7:1 contrast against layer-default (#202022) */
+  --theme-color-layer--brand: #a6a8b2; /** 7:1 contrast against layer-default (#202022) */
+  --theme-color-layer--alert: #df9696; /** 7:1 contrast against layer-default (#202022) */
+  --theme-color-layer--info: #88adce; /** 7:1 contrast against layer-default (#202022) */
+  --theme-color-layer--success: #74b698; /** 7:1 contrast against layer-default (#202022) */
+  --theme-color-layer: #202022; /** 1:1 contrast against layer-default (#202022) */
+  --theme-color-ui--border: #464748; /** 1.6:1 contrast against ui-active (#262729) */
+  --theme-color-ui--text: #c9c8c9; /** 9:1 contrast against ui-active (#262729) */
+  --theme-color-ui--muted: #a4a4a5; /** 6:1 contrast against ui-active (#262729) */
+  --theme-color-ui: #1a1b1c; /** -1.15:1 contrast against ui-active (#262729) */
+  --theme-color-ui-hover: #1e1e20; /** -1.1:1 contrast against ui-active (#262729) */
+  --theme-color-ui-active: #262729; /** 1:1 contrast against ui-active (#262729) */
+  --theme-color-ui-accent--border: #616264; /** 1.6:1 contrast against ui-accent-active (#7f8286) */
+  --theme-color-ui-accent--text: #000000; /** 9:1 contrast against ui-accent-active (#7f8286) */
+  --theme-color-ui-accent--muted: #000000; /** 6:1 contrast against ui-accent-active (#7f8286) */
+  --theme-color-ui-accent: #8e9196; /** -1.2:1 contrast against ui-accent-active (#7f8286) */
+  --theme-color-ui-accent-hover: #878a8e; /** -1.1:1 contrast against ui-accent-active (#7f8286) */
+  --theme-color-ui-accent-active: #7f8286; /** 1:1 contrast against ui-accent-active (#7f8286) */
+  --theme-color-ui-brand--border: #616264; /** 1.6:1 contrast against ui-brand-active (#81838a) */
+  --theme-color-ui-brand--text: #000000; /** 9:1 contrast against ui-brand-active (#81838a) */
+  --theme-color-ui-brand--muted: #000000; /** 6:1 contrast against ui-brand-active (#81838a) */
+  --theme-color-ui-brand: #8f9199; /** -1.2:1 contrast against ui-brand-active (#81838a) */
+  --theme-color-ui-brand-hover: #878a91; /** -1.1:1 contrast against ui-brand-active (#81838a) */
+  --theme-color-ui-brand-active: #81838a; /** 1:1 contrast against ui-brand-active (#81838a) */
+  --theme-color-ui-alert--border: #616264; /** 1.6:1 contrast against ui-alert-active (#ce5f5f) */
+  --theme-color-ui-alert--text: #000000; /** 9:1 contrast against ui-alert-active (#ce5f5f) */
+  --theme-color-ui-alert--muted: #000000; /** 6:1 contrast against ui-alert-active (#ce5f5f) */
+  --theme-color-ui-alert: #d57676; /** -1.2:1 contrast against ui-alert-active (#ce5f5f) */
+  --theme-color-ui-alert-hover: #d26b6b; /** -1.1:1 contrast against ui-alert-active (#ce5f5f) */
+  --theme-color-ui-alert-active: #ce5f5f; /** 1:1 contrast against ui-alert-active (#ce5f5f) */
+  --theme-color-ui-info--border: #626364; /** 1.6:1 contrast against ui-info-active (#6686a1) */
+  --theme-color-ui-info--text: #000000; /** 9:1 contrast against ui-info-active (#6686a1) */
+  --theme-color-ui-info--muted: #000000; /** 6:1 contrast against ui-info-active (#6686a1) */
+  --theme-color-ui-info: #7295b3; /** -1.2:1 contrast against ui-info-active (#6686a1) */
+  --theme-color-ui-info-hover: #6d8eab; /** -1.1:1 contrast against ui-info-active (#6686a1) */
+  --theme-color-ui-info-active: #6686a1; /** 1:1 contrast against ui-info-active (#6686a1) */
+  --theme-color-ui-success--border: #616264; /** 1.6:1 contrast against ui-success-active (#46916e) */
+  --theme-color-ui-success--text: #000000; /** 9:1 contrast against ui-success-active (#46916e) */
+  --theme-color-ui-success--muted: #000000; /** 6:1 contrast against ui-success-active (#46916e) */
+  --theme-color-ui-success: #4ea17b; /** -1.2:1 contrast against ui-success-active (#46916e) */
+  --theme-color-ui-success-hover: #4a9a75; /** -1.1:1 contrast against ui-success-active (#46916e) */
+  --theme-color-ui-success-active: #46916e; /** 1:1 contrast against ui-success-active (#46916e) */
+}

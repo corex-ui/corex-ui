@@ -1,4 +1,4 @@
-@reference "../utilities.css";
+@import "../main.css";
 @layer components {
   .badge {
     display: inline-flex;
@@ -43,7 +43,7 @@
   }
 
   .badge.badge--circle {
-    border-radius: 50%;
+    border-radius: var(--radius-full);
   }
 }
 

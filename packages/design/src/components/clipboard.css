@@ -1,4 +1,4 @@
-@reference "../utilities.css";
+@import "../main.css";
 @layer components {
   .clipboard [data-scope="clipboard"][data-part="root"] {
     @apply ui-root;
@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     gap: var(--spacing-ui-gap);
   }
 

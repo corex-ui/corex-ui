@@ -1,4 +1,4 @@
-@reference "../utilities.css";
+@import "../main.css";
 
 @layer components {
   .carousel [data-scope="carousel"][data-part="root"] {
@@ -125,7 +125,7 @@
     min-height: var(--spacing-micro);
     min-width: var(--spacing-micro);
     aspect-ratio: 1/1;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     background-color: var(--color-ui);
     padding: 0;
     transition: background-color 0.2s ease-in-out;

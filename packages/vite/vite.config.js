@@ -8,10 +8,14 @@ export default defineConfig({
       entry: path.resolve(__dirname, "src/main.ts"),
       name: "vitePluginCorex",
       fileName: (format) => `vite-corex-render.${format}.js`,
-      formats: ["es", "cjs"], // plugin = Node only
+      formats: ["es", "cjs"],
     },
     rollupOptions: {
       external: ["vite", "jsdom", "fs", "path", "url"], // keep Node deps external
+      output: {
+        exports: "named",
+      },
+
     },
     target: "esnext",
     sourcemap: true,

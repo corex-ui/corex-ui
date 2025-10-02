@@ -84,7 +84,12 @@ async function semantic() {
   return Promise.all(promises);
 }
 async function theme() {
-  const themes = ["neo", "uno"];
+  const themes = [
+    "neo",
+    "uno",
+    "duo",
+    "leo"
+  ];
   const modes = ["light", "dark"];
   const promises =
   themes.map(theme => {

@@ -3,14 +3,8 @@
     "ui": {
       "default": {
         "value": [
-          "Outfit",
-          "ui-sans-serif",
           "system-ui",
-          "sans-serif",
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji"
+          "sans-serif"
         ],
         "type": "fontFamily"
       }
@@ -18,12 +12,6 @@
     "code": {
       "value": [
         "ui-monospace",
-        "SFMono-Regular",
-        "Menlo",
-        "Monaco",
-        "Consolas",
-        "Liberation Mono",
-        "Courier New",
         "monospace"
       ],
       "type": "fontFamily"

@@ -3,6 +3,10 @@
     "ui": {
       "value": "0.375rem",
       "type": "borderRadius"
+    },
+    "full": {
+      "value": "calc(infinity * 1px)",
+      "type": "borderRadius"
     }
   }
 }

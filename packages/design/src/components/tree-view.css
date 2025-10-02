@@ -1,4 +1,4 @@
-@reference "../utilities.css";
+@import "../main.css";
 
 @layer components {
   .tree-view [data-scope="tree-view"][data-part="root"] {
@@ -18,9 +18,18 @@
     @apply ui-label;
   }
 
+  .tree-view [data-scope="tree-view"][data-part="branch"] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-ui-gap-sm);
+  }
+
   .tree-view [data-scope="tree-view"][data-part="item"],
   .tree-view [data-scope="tree-view"][data-part="branch-control"] {
     @apply ui-item;
+    border: 1px solid var(--color-ui--border);
+    border-radius: 0 var(--radius-ui) var(--radius-ui) 0;
   }
 
   .tree-view [data-scope="tree-view"][data-part="item-text"],
@@ -31,6 +40,7 @@
 
   .tree-view [data-scope="tree-view"][data-part="branch-content"] {
     margin-inline-start: var(--spacing-ui-gap);
+    gap: var(--spacing-ui-gap-sm);
   }
 
   .tree-view

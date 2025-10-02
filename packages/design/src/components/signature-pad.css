@@ -1,4 +1,4 @@
-@reference "../utilities.css";
+@import "../main.css";
 
 @layer components {
   [data-scope="signature-pad"][data-part="root"] {
@@ -25,22 +25,19 @@
     bottom: var(--spacing-mini-gap);
     left: var(--spacing-mini-gap);
     right: var(--spacing-mini-gap);
-    border-bottom: 2px dashed var(--color-ui--border);
+    border-bottom: 2px dashed var(--color-gray-800);
+  }
+
+  [data-scope="signature-pad"][data-part="segment"] {
+    background-color: var(--color-gray-100);
+    border-radius: var(--radius-ui);
   }
 
   [data-scope="signature-pad"][data-part="clear-trigger"] {
-    @apply ui-trigger;
+    @apply ui-trigger ui-trigger--sm ui-trigger--circle;
     position: absolute;
     top: var(--spacing-mini-gap);
     right: var(--spacing-mini-gap);
-    min-height: var(--spacing-mini-sm);
-    width: auto;
-    aspect-ratio: 1/1;
-    padding: var(--spacing-mini-padding);
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .signature-pad [data-part="preview"] {
@@ -51,6 +48,7 @@
     padding: var(--spacing-mini-padding);
     gap: var(--spacing-mini-gap);
     background-color: var(--color-layer);
+
     & img {
       width: 100%;
       height: var(--container-micro);

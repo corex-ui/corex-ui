@@ -1,86 +1,44 @@
 {
   "text": {
-    "root": {
+    "ui": {
       "default": {
-        "value": "{text.root.md}",
+        "value": "{text.ui.md}",
         "type": "dimension"
       },
       "-line-height": {
-        "value": "{text.root.md--line-height}",
+        "value": "{text.ui.md--line-height}",
         "type": "dimension"
       },
       "sm": {
-        "value": "0.875rem",
+        "value": "1rem",
         "type": "dimension"
       },
       "sm--line-height": {
-        "value": "calc(1.25 / 0.875)",
+        "value": "calc(1.5 / 1)",
         "type": "dimension"
       },
       "md": {
-        "value": "1rem",
-        "type": "dimension"
-      },
-      "md--line-height": {
-        "value": "calc(1.5 / 1)",
-        "type": "dimension"
-      },
-      "lg": {
-        "value": "1.25rem",
-        "type": "dimension"
-      },
-      "lg--line-height": {
-        "value": "calc(1.75 / 1.25)",
-        "type": "dimension"
-      },
-      "xl": {
-        "value": "1.875rem",
-        "type": "dimension"
-      },
-      "xl--line-height": {
-        "value": "calc(2.25 / 1.875)",
-        "type": "dimension"
-      }
-    },
-    "ui": {
-      "default": {
-        "value": "{text.ui.base}",
-        "type": "dimension"
-      },
-      "-line-height": {
-        "value": "{text.ui.base--line-height}",
-        "type": "dimension"
-      },
-      "sm": {
-        "value": "0.875rem",
-        "type": "dimension"
-      },
-      "sm--line-height": {
-        "value": "calc(1.25 / 0.875)",
-        "type": "dimension"
-      },
-      "base": {
-        "value": "1rem",
-        "type": "dimension"
-      },
-      "base--line-height": {
-        "value": "calc(1.5 / 1)",
-        "type": "dimension"
-      },
-      "lg": {
         "value": "1.125rem",
         "type": "dimension"
       },
-      "lg--line-height": {
+      "md--line-height": {
         "value": "calc(1.75 / 1.125)",
         "type": "dimension"
       },
-      "xl": {
+      "lg": {
         "value": "1.25rem",
         "type": "dimension"
       },
+      "lg--line-height": {
+        "value": "calc(1.875 / 1.25)",
+        "type": "dimension"
+      },
+      "xl": {
+        "value": "1.75rem",
+        "type": "dimension"
+      },
       "xl--line-height": {
-        "value": "calc(1.75 / 1.25)",
+        "value": "calc(2.5 / 1.75)",
         "type": "dimension"
       }
     }

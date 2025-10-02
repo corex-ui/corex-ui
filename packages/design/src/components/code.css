@@ -1,12 +1,13 @@
-@reference "../utilities.css";
-@reference "./scrollbar.css";
+@import "@corex-ui/design/utilities.css";
+@import "@corex-ui/design/tokens.css";
+@import "@corex-ui/design/components/scrollbar.css";
 
 @layer components {
   code,
   pre {
     font-family: var(--font-code);
-    font-size: var(--text-ui);
-    line-height: var(--text-ui--line-height);
+    font-size: var(--text-ui-sm);
+    line-height: var(--text-ui-sm--line-height);
     text-align: left;
     white-space: pre-line;
     word-break: break-word;
@@ -21,14 +22,6 @@
 
   pre {
     position: relative;
-    background-image: linear-gradient(
-      var(--color-root) 50%,
-      var(--color-layer) 50%
-    );
-    background-size: 100% calc(var(--text-ui) * var(--text-ui--line-height));
-    background-origin: content-box;
-    background-attachment: local;
-    background-position: 0 calc(var(--spacing-ui-padding) / 2);
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -47,6 +40,7 @@
     font-size: var(--text-ui);
     line-height: var(--text-ui--line-height);
     padding: var(--spacing-ui-padding);
+    background-color: var(--color-layer);
     color: var(--color-layer--text);
     max-height: var(--container-mini);
     overflow: hidden;
@@ -72,8 +66,6 @@
     padding-inline: var(--spacing-mini-padding);
     background-color: var(--color-root);
     color: var(--color-root--alert);
-    border-radius: var(--radius-ui);
-    border: 1px solid var(--color-ui--border);
     justify-content: start;
     align-items: start;
     white-space: wrap;

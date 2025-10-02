@@ -1,0 +1,60 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-theme=duo][data-mode=dark] {
+  --theme-color-root--border: #3a3b3c; /** 1.6:1 contrast against root-default (#101a0c) */
+  --theme-color-root--text: #b8b7b9; /** 9:1 contrast against root-default (#101a0c) */
+  --theme-color-root--muted: #959496; /** 6:1 contrast against root-default (#101a0c) */
+  --theme-color-root--accent: #9ba49b; /** 7:1 contrast against root-default (#101a0c) */
+  --theme-color-root--brand: #94a78b; /** 7:1 contrast against root-default (#101a0c) */
+  --theme-color-root--alert: #dc8c8c; /** 7:1 contrast against root-default (#101a0c) */
+  --theme-color-root--info: #7ea6c7; /** 7:1 contrast against root-default (#101a0c) */
+  --theme-color-root--success: #67b08e; /** 7:1 contrast against root-default (#101a0c) */
+  --theme-color-root: #101a0c; /** 1:1 contrast against root-default (#101a0c) */
+  --theme-color-layer--border: #404041; /** 1.6:1 contrast against layer-default (#162310) */
+  --theme-color-layer--text: #bfbfc0; /** 9:1 contrast against layer-default (#162310) */
+  --theme-color-layer--muted: #9c9b9d; /** 6:1 contrast against layer-default (#162310) */
+  --theme-color-layer--accent: #a2aba2; /** 7:1 contrast against layer-default (#162310) */
+  --theme-color-layer--brand: #9cad94; /** 7:1 contrast against layer-default (#162310) */
+  --theme-color-layer--alert: #df9595; /** 7:1 contrast against layer-default (#162310) */
+  --theme-color-layer--info: #86adcd; /** 7:1 contrast against layer-default (#162310) */
+  --theme-color-layer--success: #73b697; /** 7:1 contrast against layer-default (#162310) */
+  --theme-color-layer: #162310; /** 1:1 contrast against layer-default (#162310) */
+  --theme-color-ui--border: #464748; /** 1.6:1 contrast against ui-active (#1b2b14) */
+  --theme-color-ui--text: #c9c8c9; /** 9:1 contrast against ui-active (#1b2b14) */
+  --theme-color-ui--muted: #a4a3a5; /** 6:1 contrast against ui-active (#1b2b14) */
+  --theme-color-ui: #121d0d; /** -1.15:1 contrast against ui-active (#1b2b14) */
+  --theme-color-ui-hover: #152210; /** -1.1:1 contrast against ui-active (#1b2b14) */
+  --theme-color-ui-active: #1b2b14; /** 1:1 contrast against ui-active (#1b2b14) */
+  --theme-color-ui-accent--border: #6c6e6f; /** 1.6:1 contrast against ui-accent-active (#899189) */
+  --theme-color-ui-accent--text: #000000; /** 9:1 contrast against ui-accent-active (#899189) */
+  --theme-color-ui-accent--muted: #0f0e10; /** 6:1 contrast against ui-accent-active (#899189) */
+  --theme-color-ui-accent: #99a199; /** -1.2:1 contrast against ui-accent-active (#899189) */
+  --theme-color-ui-accent-hover: #929a92; /** -1.1:1 contrast against ui-accent-active (#899189) */
+  --theme-color-ui-accent-active: #899189; /** 1:1 contrast against ui-accent-active (#899189) */
+  --theme-color-ui-brand--border: #6b6d6e; /** 1.6:1 contrast against ui-brand-active (#7e9574) */
+  --theme-color-ui-brand--text: #000000; /** 9:1 contrast against ui-brand-active (#7e9574) */
+  --theme-color-ui-brand--muted: #0e0d0f; /** 6:1 contrast against ui-brand-active (#7e9574) */
+  --theme-color-ui-brand: #90a487; /** -1.2:1 contrast against ui-brand-active (#7e9574) */
+  --theme-color-ui-brand-hover: #899e7f; /** -1.1:1 contrast against ui-brand-active (#7e9574) */
+  --theme-color-ui-brand-active: #7e9574; /** 1:1 contrast against ui-brand-active (#7e9574) */
+  --theme-color-ui-alert--border: #8a8c8e; /** 1.05:1 contrast against ui-alert-active (#d47474) */
+  --theme-color-ui-alert--text: #000000; /** 9:1 contrast against ui-alert-active (#d47474) */
+  --theme-color-ui-alert--muted: #0e0e10; /** 6:1 contrast against ui-alert-active (#d47474) */
+  --theme-color-ui-alert: #da8888; /** -1.2:1 contrast against ui-alert-active (#d47474) */
+  --theme-color-ui-alert-hover: #d77e7e; /** -1.1:1 contrast against ui-alert-active (#d47474) */
+  --theme-color-ui-alert-active: #d47474; /** 1:1 contrast against ui-alert-active (#d47474) */
+  --theme-color-ui-info--border: #8a8c8e; /** 1.05:1 contrast against ui-info-active (#7093b0) */
+  --theme-color-ui-info--text: #000000; /** 9:1 contrast against ui-info-active (#7093b0) */
+  --theme-color-ui-info--muted: #0f0e11; /** 6:1 contrast against ui-info-active (#7093b0) */
+  --theme-color-ui-info: #7ca3c4; /** -1.2:1 contrast against ui-info-active (#7093b0) */
+  --theme-color-ui-info-hover: #779cbb; /** -1.1:1 contrast against ui-info-active (#7093b0) */
+  --theme-color-ui-info-active: #7093b0; /** 1:1 contrast against ui-info-active (#7093b0) */
+  --theme-color-ui-success--border: #8a8c8e; /** 1.05:1 contrast against ui-success-active (#4d9f79) */
+  --theme-color-ui-success--text: #000000; /** 9:1 contrast against ui-success-active (#4d9f79) */
+  --theme-color-ui-success--muted: #0f0e10; /** 6:1 contrast against ui-success-active (#4d9f79) */
+  --theme-color-ui-success: #63ad8b; /** -1.2:1 contrast against ui-success-active (#4d9f79) */
+  --theme-color-ui-success-hover: #57a782; /** -1.1:1 contrast against ui-success-active (#4d9f79) */
+  --theme-color-ui-success-active: #4d9f79; /** 1:1 contrast against ui-success-active (#4d9f79) */
+}

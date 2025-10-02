@@ -1,4 +1,5 @@
-@reference "../utilities.css";
+@import "../main.css";
+
 @layer components {
   .avatar [data-scope="avatar"][data-part="root"] {
     @apply ui-root;
@@ -10,15 +11,15 @@
     align-items: center;
     justify-content: center;
     text-align: start;
-    width: auto;
+    width: var(--spacing-ui);
     aspect-ratio: 1 / 1;
     font-size: var(--text-ui);
     line-height: var(--text-ui--line-height);
     font-weight: var(--font-weight-ui);
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     border: 1px solid var(--color-ui--border);
     gap: var(--spacing-ui-gap);
-    min-height: var(--spacing-ui);
+    height: var(--spacing-ui);
     color: var(--color-ui--text);
     background-color: var(--color-ui);
   }
@@ -48,7 +49,9 @@
     & [data-scope="avatar"][data-part="fallback"] {
       font-size: --value(--text-ui-*, [length]);
       line-height: --value(--text-ui-* --line-height, [length]);
-      min-height: --value(--spacing-ui-*, [length]);
+      width: --value(--spacing-ui-*, [length]);
+      height: --value(--spacing-ui-*, [length]);
+
       background-color: --value(--color-ui-*, [color]);
       color: --value(--color-ui-* --text, [color]);
       border-color: --value(--color-ui-* --border, [color]);

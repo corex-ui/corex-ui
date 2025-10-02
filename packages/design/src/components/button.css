@@ -1,10 +1,8 @@
-@reference "../utilities.css";
+@import "../main.css";
 @layer components {
   .button {
     @apply ui-trigger;
     justify-content: center;
-    /* width: auto; */
-    box-shadow: var(--shadow-ui);
   }
 
   .button.button--square,
@@ -14,7 +12,7 @@
   }
 
   .button.button--circle {
-    border-radius: 50%;
+    border-radius: var(--radius-full);
   }
 }
 

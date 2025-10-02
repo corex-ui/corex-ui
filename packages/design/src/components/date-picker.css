@@ -1,6 +1,14 @@
-@reference "../utilities.css";
+@import "../main.css";
 
 @layer components {
+  .date-picker [data-scope="date-picker"][data-part="label"] {
+    @apply ui-label;
+
+    &[data-invalid] {
+      color: var(--color-root-alert);
+    }
+  }
+
   .date-picker [data-scope="date-picker"][data-part="control"] {
     display: flex;
     flex-direction: row;
@@ -138,10 +146,10 @@
 
   .date-picker [data-scope="date-picker"][data-part="prev-trigger"],
   .date-picker [data-scope="date-picker"][data-part="next-trigger"] {
-    @apply ui-trigger;
+    @apply ui-trigger ui-trigger--sm ui-trigger--square;
   }
 
   .date-picker [data-scope="date-picker"][data-part="view-trigger"] {
-    @apply ui-trigger;
+    @apply ui-trigger ui-trigger--sm;
   }
 }

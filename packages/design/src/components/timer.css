@@ -1,4 +1,4 @@
-@reference "../utilities.css";
+@import "../main.css";
 @layer components {
   .timer [data-scope="timer"][data-part="root"] {
     @apply ui-root;

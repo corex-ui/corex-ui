@@ -1,4 +1,4 @@
-@reference "../utilities.css";
+@import "../main.css";
 
 @layer components {
   .switch [data-scope="switch"][data-part="root"] {
@@ -22,7 +22,7 @@
     -webkit-box-pack: start;
     justify-content: flex-start;
     box-sizing: content-box;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     border: 1px solid var(--color-ui--border);
     padding: var(--spacing-micro-padding);
     width: var(--switch-track-width);
@@ -73,6 +73,7 @@
 
   .switch [data-scope="switch"][data-part="label"] {
     @apply ui-label;
+    cursor: pointer;
   }
 
   .switch--square [data-scope="switch"][data-part="control"] {

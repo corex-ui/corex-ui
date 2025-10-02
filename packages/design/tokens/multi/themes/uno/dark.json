@@ -1,358 +1,358 @@
 {
-  "mode": {
+  "theme": {
     "color": {
       "root": {
         "-border": {
           "default": {
-            "value": "#222832",
+            "value": "#404041",
             "type": "color",
-            "description": "1.2:1 contrast against root-default (#121928)"
+            "description": "1.6:1 contrast against root-default (#2a192c)"
           }
         },
         "-text": {
           "default": {
-            "value": "#e4e4e5",
+            "value": "#bfbfc0",
             "type": "color",
-            "description": "14:1 contrast against root-default (#121928)"
+            "description": "9:1 contrast against root-default (#2a192c)"
           }
         },
         "-muted": {
           "default": {
-            "value": "#7d828c",
+            "value": "#9c9b9d",
             "type": "color",
-            "description": "4.6:1 contrast against root-default (#121928)"
+            "description": "6:1 contrast against root-default (#2a192c)"
           }
         },
         "-accent": {
           "default": {
-            "value": "#b6b9bd",
+            "value": "#a9a8aa",
             "type": "color",
-            "description": "9:1 contrast against root-default (#121928)"
+            "description": "7:1 contrast against root-default (#2a192c)"
           }
         },
         "-brand": {
           "default": {
-            "value": "#5998e7",
+            "value": "#b2a4b3",
             "type": "color",
-            "description": "6:1 contrast against root-default (#121928)"
+            "description": "7:1 contrast against root-default (#2a192c)"
           }
         },
         "-alert": {
           "default": {
-            "value": "#f06d6d",
+            "value": "#df9696",
             "type": "color",
-            "description": "6:1 contrast against root-default (#121928)"
+            "description": "7:1 contrast against root-default (#2a192c)"
           }
         },
         "-info": {
           "default": {
-            "value": "#30a0d3",
+            "value": "#86adcd",
             "type": "color",
-            "description": "6:1 contrast against root-default (#121928)"
+            "description": "7:1 contrast against root-default (#2a192c)"
           }
         },
         "-success": {
           "default": {
-            "value": "#2aaa7b",
+            "value": "#74b698",
             "type": "color",
-            "description": "6:1 contrast against root-default (#121928)"
+            "description": "7:1 contrast against root-default (#2a192c)"
           }
         },
         "default": {
-          "value": "#121928",
+          "value": "#2a192c",
           "type": "color",
-          "description": "1:1 contrast against root-default (#121928)"
+          "description": "1:1 contrast against root-default (#2a192c)"
         }
       },
       "layer": {
         "-border": {
           "default": {
-            "value": "#2b333f",
+            "value": "#464748",
             "type": "color",
-            "description": "1.2:1 contrast against layer-default (#1e2533)"
+            "description": "1.6:1 contrast against layer-default (#362038)"
           }
         },
         "-text": {
           "default": {
-            "value": "#f3f4f5",
+            "value": "#cac9ca",
             "type": "color",
-            "description": "14:1 contrast against layer-default (#1e2533)"
+            "description": "9:1 contrast against layer-default (#362038)"
           }
         },
         "-muted": {
           "default": {
-            "value": "#878d97",
+            "value": "#a5a4a6",
             "type": "color",
-            "description": "4.6:1 contrast against layer-default (#1e2533)"
+            "description": "6:1 contrast against layer-default (#362038)"
           }
         },
         "-accent": {
           "default": {
-            "value": "#c5c6ca",
+            "value": "#b2b2b3",
             "type": "color",
-            "description": "9:1 contrast against layer-default (#1e2533)"
+            "description": "7:1 contrast against layer-default (#362038)"
           }
         },
         "-brand": {
           "default": {
-            "value": "#60a4f9",
+            "value": "#baaebc",
             "type": "color",
-            "description": "6:1 contrast against layer-default (#1e2533)"
+            "description": "7:1 contrast against layer-default (#362038)"
           }
         },
         "-alert": {
           "default": {
-            "value": "#f97c7c",
+            "value": "#e2a1a1",
             "type": "color",
-            "description": "6:1 contrast against layer-default (#1e2533)"
+            "description": "7:1 contrast against layer-default (#362038)"
           }
         },
         "-info": {
           "default": {
-            "value": "#33ade2",
+            "value": "#94b6d3",
             "type": "color",
-            "description": "6:1 contrast against layer-default (#1e2533)"
+            "description": "7:1 contrast against layer-default (#362038)"
           }
         },
         "-success": {
           "default": {
-            "value": "#2db784",
+            "value": "#84bfa3",
             "type": "color",
-            "description": "6:1 contrast against layer-default (#1e2533)"
+            "description": "7:1 contrast against layer-default (#362038)"
           }
         },
         "default": {
-          "value": "#1e2533",
+          "value": "#362038",
           "type": "color",
-          "description": "1:1 contrast against layer-default (#1e2533)"
+          "description": "1:1 contrast against layer-default (#362038)"
         }
       },
       "ui": {
         "-border": {
           "default": {
-            "value": "#343d4c",
+            "value": "#4d4e4f",
             "type": "color",
-            "description": "1.2:1 contrast against ui-active (#2a303e)"
+            "description": "1.6:1 contrast against ui-active (#402643)"
           }
         },
         "-text": {
           "default": {
-            "value": "#f3f4f4",
+            "value": "#d4d4d5",
             "type": "color",
-            "description": "12:1 contrast against ui-active (#2a303e)"
+            "description": "9:1 contrast against ui-active (#402643)"
           }
         },
         "-muted": {
           "default": {
-            "value": "#9097a2",
+            "value": "#aeadaf",
             "type": "color",
-            "description": "4.5:1 contrast against ui-active (#2a303e)"
+            "description": "6:1 contrast against ui-active (#402643)"
           }
         },
         "default": {
-          "value": "#222937",
+          "value": "#311d33",
           "type": "color",
-          "description": "-1.1:1 contrast against ui-active (#2a303e)"
+          "description": "-1.15:1 contrast against ui-active (#402643)"
         },
         "hover": {
-          "value": "#262c3a",
+          "value": "#362038",
           "type": "color",
-          "description": "-1.05:1 contrast against ui-active (#2a303e)"
+          "description": "-1.1:1 contrast against ui-active (#402643)"
         },
         "active": {
-          "value": "#2a303e",
+          "value": "#402643",
           "type": "color",
-          "description": "1:1 contrast against ui-active (#2a303e)"
+          "description": "1:1 contrast against ui-active (#402643)"
         }
       },
       "ui-accent": {
         "-border": {
           "default": {
-            "value": "#5a6370",
+            "value": "#616264",
             "type": "color",
-            "description": "1.3:1 contrast against ui-accent-active (#495260)"
+            "description": "1.6:1 contrast against ui-accent-active (#828284)"
           }
         },
         "-text": {
           "default": {
-            "value": "#ffffff",
+            "value": "#000000",
             "type": "color",
-            "description": "12:1 contrast against ui-accent-active (#495260)"
+            "description": "9:1 contrast against ui-accent-active (#828284)"
           }
         },
         "-muted": {
           "default": {
-            "value": "#bfc3cb",
+            "value": "#000000",
             "type": "color",
-            "description": "4.5:1 contrast against ui-accent-active (#495260)"
+            "description": "6:1 contrast against ui-accent-active (#828284)"
           }
         },
         "default": {
-          "value": "#424b5a",
+          "value": "#919092",
           "type": "color",
-          "description": "-1.1:1 contrast against ui-accent-active (#495260)"
+          "description": "-1.2:1 contrast against ui-accent-active (#828284)"
         },
         "hover": {
-          "value": "#454e5d",
+          "value": "#8b8a8c",
           "type": "color",
-          "description": "-1.05:1 contrast against ui-accent-active (#495260)"
+          "description": "-1.1:1 contrast against ui-accent-active (#828284)"
         },
         "active": {
-          "value": "#495260",
+          "value": "#828284",
           "type": "color",
-          "description": "1:1 contrast against ui-accent-active (#495260)"
+          "description": "1:1 contrast against ui-accent-active (#828284)"
         }
       },
       "ui-brand": {
         "-border": {
           "default": {
-            "value": "#3a58b9",
+            "value": "#616264",
             "type": "color",
-            "description": "1.4:1 contrast against ui-brand-active (#846b9b)"
+            "description": "1.6:1 contrast against ui-brand-active (#8f7c91)"
           }
         },
         "-text": {
           "default": {
             "value": "#000000",
             "type": "color",
-            "description": "8:1 contrast against ui-brand-active (#846b9b)"
+            "description": "9:1 contrast against ui-brand-active (#8f7c91)"
           }
         },
         "-muted": {
           "default": {
             "value": "#000000",
             "type": "color",
-            "description": "4.6:1 contrast against ui-brand-active (#846b9b)"
+            "description": "6:1 contrast against ui-brand-active (#8f7c91)"
           }
         },
         "default": {
-          "value": "#8b74a1",
+          "value": "#9d8c9f",
           "type": "color",
-          "description": "-1.1:1 contrast against ui-brand-active (#846b9b)"
+          "description": "-1.2:1 contrast against ui-brand-active (#8f7c91)"
         },
         "hover": {
-          "value": "#88709e",
+          "value": "#978599",
           "type": "color",
-          "description": "-1.05:1 contrast against ui-brand-active (#846b9b)"
+          "description": "-1.1:1 contrast against ui-brand-active (#8f7c91)"
         },
         "active": {
-          "value": "#846b9b",
+          "value": "#8f7c91",
           "type": "color",
-          "description": "1:1 contrast against ui-brand-active (#846b9b)"
+          "description": "1:1 contrast against ui-brand-active (#8f7c91)"
         }
       },
       "ui-alert": {
         "-border": {
           "default": {
-            "value": "#964646",
+            "value": "#616264",
             "type": "color",
-            "description": "1.4:1 contrast against ui-alert-active (#de3030)"
+            "description": "1.6:1 contrast against ui-alert-active (#ce5f5f)"
           }
         },
         "-text": {
           "default": {
             "value": "#000000",
             "type": "color",
-            "description": "8:1 contrast against ui-alert-active (#de3030)"
+            "description": "9:1 contrast against ui-alert-active (#ce5f5f)"
           }
         },
         "-muted": {
           "default": {
-            "value": "#010000",
+            "value": "#000000",
             "type": "color",
-            "description": "4.6:1 contrast against ui-alert-active (#de3030)"
+            "description": "6:1 contrast against ui-alert-active (#ce5f5f)"
           }
         },
         "default": {
-          "value": "#e14444",
+          "value": "#d57676",
           "type": "color",
-          "description": "-1.1:1 contrast against ui-alert-active (#de3030)"
+          "description": "-1.2:1 contrast against ui-alert-active (#ce5f5f)"
         },
         "hover": {
-          "value": "#df3b3b",
+          "value": "#d26b6b",
           "type": "color",
-          "description": "-1.05:1 contrast against ui-alert-active (#de3030)"
+          "description": "-1.1:1 contrast against ui-alert-active (#ce5f5f)"
         },
         "active": {
-          "value": "#de3030",
+          "value": "#ce5f5f",
           "type": "color",
-          "description": "1:1 contrast against ui-alert-active (#de3030)"
+          "description": "1:1 contrast against ui-alert-active (#ce5f5f)"
         }
       },
       "ui-info": {
         "-border": {
           "default": {
-            "value": "#2f6483",
+            "value": "#626364",
             "type": "color",
-            "description": "1.4:1 contrast against ui-info-active (#027cba)"
+            "description": "1.6:1 contrast against ui-info-active (#6686a1)"
           }
         },
         "-text": {
           "default": {
             "value": "#000000",
             "type": "color",
-            "description": "8:1 contrast against ui-info-active (#027cba)"
+            "description": "9:1 contrast against ui-info-active (#6686a1)"
           }
         },
         "-muted": {
           "default": {
             "value": "#000000",
             "type": "color",
-            "description": "4.6:1 contrast against ui-info-active (#027cba)"
+            "description": "6:1 contrast against ui-info-active (#6686a1)"
           }
         },
         "default": {
-          "value": "#0384c7",
+          "value": "#7295b3",
           "type": "color",
-          "description": "-1.1:1 contrast against ui-info-active (#027cba)"
+          "description": "-1.2:1 contrast against ui-info-active (#6686a1)"
         },
         "hover": {
-          "value": "#0280c1",
+          "value": "#6d8eab",
           "type": "color",
-          "description": "-1.05:1 contrast against ui-info-active (#027cba)"
+          "description": "-1.1:1 contrast against ui-info-active (#6686a1)"
         },
         "active": {
-          "value": "#027cba",
+          "value": "#6686a1",
           "type": "color",
-          "description": "1:1 contrast against ui-info-active (#027cba)"
+          "description": "1:1 contrast against ui-info-active (#6686a1)"
         }
       },
       "ui-success": {
         "-border": {
           "default": {
-            "value": "#1a6c55",
+            "value": "#616264",
             "type": "color",
-            "description": "1.4:1 contrast against ui-success-active (#04865e)"
+            "description": "1.6:1 contrast against ui-success-active (#46916e)"
           }
         },
         "-text": {
           "default": {
             "value": "#000000",
             "type": "color",
-            "description": "8:1 contrast against ui-success-active (#04865e)"
+            "description": "9:1 contrast against ui-success-active (#46916e)"
           }
         },
         "-muted": {
           "default": {
-            "value": "#010101",
+            "value": "#000000",
             "type": "color",
-            "description": "4.6:1 contrast against ui-success-active (#04865e)"
+            "description": "6:1 contrast against ui-success-active (#46916e)"
           }
         },
         "default": {
-          "value": "#058f64",
+          "value": "#4ea17b",
           "type": "color",
-          "description": "-1.1:1 contrast against ui-success-active (#04865e)"
+          "description": "-1.2:1 contrast against ui-success-active (#46916e)"
         },
         "hover": {
-          "value": "#058b61",
+          "value": "#4a9a75",
           "type": "color",
-          "description": "-1.05:1 contrast against ui-success-active (#04865e)"
+          "description": "-1.1:1 contrast against ui-success-active (#46916e)"
         },
         "active": {
-          "value": "#04865e",
+          "value": "#46916e",
           "type": "color",
-          "description": "1:1 contrast against ui-success-active (#04865e)"
+          "description": "1:1 contrast against ui-success-active (#46916e)"
         }
       }
     }
