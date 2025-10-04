@@ -6,103 +6,103 @@ import path from 'path';
 // Flat theme configuration
 // -----------------------------
 const THEMES_CONFIG = {
+  // NEO: Modern, clean blue-gray (refined & matte)
   'neo-light': {
     backgrounds: [
       {
         name: 'root',
-        color: '#F2F4F8',
-        lightness: 99,
+        color: '#F5F7FA',
+        lightness: 98,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-          { name: '-accent', color: '#1D1C20', ratio: 7 },
-          { name: '-brand', color: '#2f44ad', ratio: 7 },
+          { name: '-border', color: '#E1E4E8', ratio: 1.05 },
+          { name: '-text', color: '#1A1D23', ratio: 7.5 },
+          { name: '-muted', color: '#6B7280', ratio: 4.8 },
+          { name: '-accent', color: '#4B5563', ratio: 7 },
+          { name: '-brand', color: '#3B5BDB', ratio: 7 },
           { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-info', color: '#5B8AB8', ratio: 7 },
           { name: '-success', color: '#4FA37C', ratio: 7 }
         ]
       },
       {
         name: 'layer',
-        color: '#F2F4F8',
+        color: '#FAFBFC',
         lightness: 96,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-          { name: '-accent', color: '#1D1C20', ratio: 7 },
-          { name: '-brand', color: '#2f44ad', ratio: 7 },
+          { name: '-border', color: '#E5E7EB', ratio: 1.05 },
+          { name: '-text', color: '#1A1D23', ratio: 7.5 },
+          { name: '-muted', color: '#6B7280', ratio: 4.8 },
+          { name: '-accent', color: '#4B5563', ratio: 7 },
+          { name: '-brand', color: '#3B5BDB', ratio: 7 },
           { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-info', color: '#5B8AB8', ratio: 7 },
           { name: '-success', color: '#4FA37C', ratio: 7 }
         ]
       },
       {
         name: 'ui',
-        color: '#F2F4F8',
-        lightness: 91,
-        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        color: '#F3F4F6',
+        lightness: 92,
+        ratios: { default: -1.1, hover: -1.05, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-
+          { name: '-border', color: '#D1D5DB', ratio: 1.08 },
+          { name: '-text', color: '#1A1D23', ratio: 7.5 },
+          { name: '-muted', color: '#6B7280', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-accent',
-        color: '#1D1C20',
-        lightness: 35,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#4B5563',
+        lightness: 40,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#6B7280', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#D1D5DB', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-brand',
-        color: '#2f44ad',
-        lightness: 42,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#3B5BDB',
+        lightness: 45,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#4B6BEB', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#E0E7FF', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-alert',
         color: '#C94F4F',
-        lightness: 42,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        lightness: 45,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#D96666', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#FEE2E2', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-info',
-        color: '#81A9CB',
-        lightness: 42,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#5B8AB8',
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#6B9AC8', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#E0F2FE', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-success',
         color: '#4FA37C',
-        lightness: 42,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 }
+          { name: '-border', color: '#5FB38C', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#D1FAE5', ratio: 4.8 }
         ]
       }
     ],
@@ -114,202 +114,201 @@ const THEMES_CONFIG = {
     backgrounds: [
       {
         name: 'root',
-        color: '#F2F4F8',
+        color: '#1A1D23',
         lightness: 8,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-          { name: '-accent', color: '#1D1C20', ratio: 7 },
-          { name: '-brand', color: '#2f44ad', ratio: 7 },
-          { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
-          { name: '-success', color: '#4FA37C', ratio: 7 }
+          { name: '-border', color: '#2D3139', ratio: 1.4 },
+          { name: '-text', color: '#E5E7EB', ratio: 9 },
+          { name: '-muted', color: '#9CA3AF', ratio: 6 },
+          { name: '-accent', color: '#D1D5DB', ratio: 7 },
+          { name: '-brand', color: '#5472E4', ratio: 7 },
+          { name: '-alert', color: '#E06666', ratio: 7 },
+          { name: '-info', color: '#7BA3D1', ratio: 7 },
+          { name: '-success', color: '#6BB896', ratio: 7 }
         ]
       },
       {
         name: 'layer',
-        color: '#F2F4F8',
-        lightness: 12,
+        color: '#1F2329',
+        lightness: 10,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-          { name: '-accent', color: '#1D1C20', ratio: 7 },
-          { name: '-brand', color: '#2f44ad', ratio: 7 },
-          { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
-          { name: '-success', color: '#4FA37C', ratio: 7 }
+          { name: '-border', color: '#33373F', ratio: 1.4 },
+          { name: '-text', color: '#E5E7EB', ratio: 9 },
+          { name: '-muted', color: '#9CA3AF', ratio: 6 },
+          { name: '-accent', color: '#D1D5DB', ratio: 7 },
+          { name: '-brand', color: '#5472E4', ratio: 7 },
+          { name: '-alert', color: '#E06666', ratio: 7 },
+          { name: '-info', color: '#7BA3D1', ratio: 7 },
+          { name: '-success', color: '#6BB896', ratio: 7 }
         ]
       },
       {
         name: 'ui',
-        color: '#F2F4F8',
-        lightness: 16,
-        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        color: '#252930',
+        lightness: 14,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-
+          { name: '-border', color: '#3D424A', ratio: 1.4 },
+          { name: '-text', color: '#E5E7EB', ratio: 9 },
+          { name: '-muted', color: '#9CA3AF', ratio: 6 }
         ]
       },
       {
         name: 'ui-accent',
-        color: '#1D1C20',
-        lightness: 65,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#D1D5DB',
+        lightness: 70,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#E5E7EB', ratio: 1.1 },
+          { name: '-text', color: '#111827', ratio: 9 },
+          { name: '-muted', color: '#374151', ratio: 6 }
         ]
       },
       {
         name: 'ui-brand',
-        color: '#2f44ad',
-        lightness: 60,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#5472E4',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#6482F4', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#1E3A8A', ratio: 6 }
         ]
       },
       {
         name: 'ui-alert',
-        color: '#C94F4F',
-        lightness: 60,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#E06666',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#F07676', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#7F1D1D', ratio: 6 }
         ]
       },
       {
         name: 'ui-info',
-        color: '#81A9CB',
-        lightness: 60,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#7BA3D1',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#8BB3E1', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#1E3A8A', ratio: 6 }
         ]
       },
       {
         name: 'ui-success',
-        color: '#4FA37C',
-        lightness: 60,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#6BB896',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#7BC8A6', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#064E3B', ratio: 6 }
         ]
       }
     ],
     output: 'tokens/multi/themes/neo/dark.json',
     indent: 2
   },
+
   'uno-light': {
     backgrounds: [
       {
         name: 'root',
-        color: '#4D2E50',
-        lightness: 97,
+        color: '#F8F7FA',
+        lightness: 96,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-          { name: '-accent', color: '#1D1C20', ratio: 7 },
-          { name: '-brand', color: '#4D2E50', ratio: 7 },
+          { name: '-border', color: '#E4E2E8', ratio: 1.08 },
+          { name: '-text', color: '#2A2838', ratio: 9 },
+          { name: '-muted', color: '#64748B', ratio: 6 },
+          { name: '-accent', color: '#7C6B8F', ratio: 7 },
+          { name: '-brand', color: '#6B5B8D', ratio: 7 },
           { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-info', color: '#5B8AB8', ratio: 7 },
           { name: '-success', color: '#4FA37C', ratio: 7 }
         ]
       },
       {
         name: 'layer',
-        color: '#4D2E50',
-        lightness: 95,
+        color: '#FAFBFC',
+        lightness: 92,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-          { name: '-accent', color: '#1D1C20', ratio: 7 },
-          { name: '-brand', color: '#4D2E50', ratio: 7 },
+          { name: '-border', color: '#E4E2E8', ratio: 1.08 },
+          { name: '-text', color: '#2A2838', ratio: 9 },
+          { name: '-muted', color: '#64748B', ratio: 6 },
+          { name: '-accent', color: '#7C6B8F', ratio: 7 },
+          { name: '-brand', color: '#6B5B8D', ratio: 7 },
           { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-info', color: '#5B8AB8', ratio: 7 },
           { name: '-success', color: '#4FA37C', ratio: 7 }
         ]
       },
       {
         name: 'ui',
-        color: '#4D2E50',
+        color: '#F2F1F5',
         lightness: 88,
-        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        ratios: { default: -1.1, hover: -1.05, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-
+          { name: '-border', color: '#D8D5DD', ratio: 1.1 },
+          { name: '-text', color: '#2A2838', ratio: 7.5 },
+          { name: '-muted', color: '#64748B', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-accent',
-        color: '#1D1C20',
-        lightness: 45,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#7C6B8F',
+        lightness: 78,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#8C7B9F', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#E8E6EC', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-brand',
-        color: '#4D2E50',
-        lightness: 32,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#6B5B8D',
+        lightness: 45,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#7B6B9D', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#EDE9FE', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-alert',
         color: '#C94F4F',
-        lightness: 32,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        lightness: 45,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#D96666', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#FEE2E2', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-info',
-        color: '#81A9CB',
-        lightness: 32,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#5B8AB8',
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#6B9AC8', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#E0F2FE', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-success',
         color: '#4FA37C',
-        lightness: 32,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 }
+          { name: '-border', color: '#5FB38C', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#D1FAE5', ratio: 4.8 }
         ]
       }
     ],
@@ -321,202 +320,202 @@ const THEMES_CONFIG = {
     backgrounds: [
       {
         name: 'root',
-        color: '#4D2E50',
-        lightness: 12,
+        color: '#1D1A24',
+        lightness: 7,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-          { name: '-accent', color: '#1D1C20', ratio: 7 },
-          { name: '-brand', color: '#4D2E50', ratio: 7 },
-          { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
-          { name: '-success', color: '#4FA37C', ratio: 7 }
+          { name: '-border', color: '#2E2A38', ratio: 1.4 },
+          { name: '-text', color: '#E5E2EB', ratio: 9 },
+          { name: '-muted', color: '#9B95A8', ratio: 6 },
+          { name: '-accent', color: '#B8AEC8', ratio: 7 },
+          { name: '-brand', color: '#8B7BA8', ratio: 7 },
+          { name: '-alert', color: '#E06666', ratio: 7 },
+          { name: '-info', color: '#7BA3D1', ratio: 7 },
+          { name: '-success', color: '#6BB896', ratio: 7 }
         ]
       },
       {
         name: 'layer',
-        color: '#4D2E50',
-        lightness: 16,
+        color: '#23202E',
+        lightness: 10,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-          { name: '-accent', color: '#1D1C20', ratio: 7 },
-          { name: '-brand', color: '#4D2E50', ratio: 7 },
-          { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
-          { name: '-success', color: '#4FA37C', ratio: 7 }
+          { name: '-border', color: '#34303E', ratio: 1.4 },
+          { name: '-text', color: '#E5E2EB', ratio: 9 },
+          { name: '-muted', color: '#9B95A8', ratio: 6 },
+          { name: '-accent', color: '#B8AEC8', ratio: 7 },
+          { name: '-brand', color: '#8B7BA8', ratio: 7 },
+          { name: '-alert', color: '#E06666', ratio: 7 },
+          { name: '-info', color: '#7BA3D1', ratio: 7 },
+          { name: '-success', color: '#6BB896', ratio: 7 }
         ]
       },
       {
         name: 'ui',
-        color: '#4D2E50',
-        lightness: 20,
-        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        color: '#2A2636',
+        lightness: 13,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-
+          { name: '-border', color: '#3D3848', ratio: 1.4 },
+          { name: '-text', color: '#E5E2EB', ratio: 9 },
+          { name: '-muted', color: '#9B95A8', ratio: 6 }
         ]
       },
       {
         name: 'ui-accent',
-        color: '#1D1C20',
-        lightness: 55,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#B8AEC8',
+        lightness: 65,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#C8BED8', ratio: 1.1 },
+          { name: '-text', color: '#1D1A24', ratio: 9 },
+          { name: '-muted', color: '#3D3848', ratio: 6 }
         ]
       },
       {
         name: 'ui-brand',
-        color: '#4D2E50',
-        lightness: 55,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#8B7BA8',
+        lightness: 60,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#9B8BB8', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#2A2636', ratio: 6 }
         ]
       },
       {
         name: 'ui-alert',
-        color: '#C94F4F',
-        lightness: 55,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#E06666',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#F07676', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#7F1D1D', ratio: 6 }
         ]
       },
       {
         name: 'ui-info',
-        color: '#81A9CB',
-        lightness: 55,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#7BA3D1',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#8BB3E1', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#1E3A8A', ratio: 6 }
         ]
       },
       {
         name: 'ui-success',
-        color: '#4FA37C',
-        lightness: 55,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#6BB896',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#7BC8A6', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#064E3B', ratio: 6 }
         ]
       }
     ],
     output: 'tokens/multi/themes/uno/dark.json',
     indent: 2
   },
+
+  // DUO: Soft warm taupe & muted terracotta
   'duo-light': {
     backgrounds: [
       {
         name: 'root',
-        color: '#3B5E2B',
-        lightness: 99,
+        color: '#F9F7F4',
+        lightness: 97,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-          { name: '-accent', color: '#B9C3B9', ratio: 7 },
-          { name: '-brand', color: '#3B5E2B', ratio: 7 },
+          { name: '-border', color: '#E6E2DC', ratio: 1.05 },
+          { name: '-text', color: '#2E2822', ratio: 7.5 },
+          { name: '-muted', color: '#72685D', ratio: 4.8 },
+          { name: '-accent', color: '#8B7A6A', ratio: 7 },
+          { name: '-brand', color: '#9D6C55', ratio: 7 },
           { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-info', color: '#5B8AB8', ratio: 7 },
           { name: '-success', color: '#4FA37C', ratio: 7 }
         ]
       },
       {
         name: 'layer',
-        color: '#3B5E2B',
-        lightness: 96,
+        color: '#FDFCFB',
+        lightness: 99,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-          { name: '-accent', color: '#B9C3B9', ratio: 7 },
-          { name: '-brand', color: '#3B5E2B', ratio: 7 },
+          { name: '-border', color: '#EAE6E0', ratio: 1.05 },
+          { name: '-text', color: '#2E2822', ratio: 7.5 },
+          { name: '-muted', color: '#72685D', ratio: 4.8 },
+          { name: '-accent', color: '#8B7A6A', ratio: 7 },
+          { name: '-brand', color: '#9D6C55', ratio: 7 },
           { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-info', color: '#5B8AB8', ratio: 7 },
           { name: '-success', color: '#4FA37C', ratio: 7 }
         ]
       },
       {
         name: 'ui',
-        color: '#3B5E2B',
-        lightness: 91,
-        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        color: '#F4F1ED',
+        lightness: 95,
+        ratios: { default: -1.1, hover: -1.05, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-
+          { name: '-border', color: '#D9D3CA', ratio: 1.08 },
+          { name: '-text', color: '#2E2822', ratio: 7.5 },
+          { name: '-muted', color: '#72685D', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-accent',
-        color: '#B9C3B9',
-        lightness: 42,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#8B7A6A',
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#9B8A7A', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#EAE6E0', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-brand',
-        color: '#3B5E2B',
-        lightness: 42,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#9D6C55',
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#AD7C65', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#FFF5ED', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-alert',
         color: '#C94F4F',
-        lightness: 42,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        lightness: 45,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#D96666', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#FEE2E2', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-info',
-        color: '#81A9CB',
-        lightness: 42,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#5B8AB8',
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#6B9AC8', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#E0F2FE', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-success',
         color: '#4FA37C',
-        lightness: 42,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 }
+          { name: '-border', color: '#5FB38C', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#D1FAE5', ratio: 4.8 }
         ]
       }
     ],
@@ -528,202 +527,202 @@ const THEMES_CONFIG = {
     backgrounds: [
       {
         name: 'root',
-        color: '#3B5E2B',
-        lightness: 8,
+        color: '#221E1A',
+        lightness: 7,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-          { name: '-accent', color: '#B9C3B9', ratio: 7 },
-          { name: '-brand', color: '#3B5E2B', ratio: 7 },
-          { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
-          { name: '-success', color: '#4FA37C', ratio: 7 }
+          { name: '-border', color: '#32291E', ratio: 1.4 },
+          { name: '-text', color: '#EAE6E0', ratio: 9 },
+          { name: '-muted', color: '#9D9189', ratio: 6 },
+          { name: '-accent', color: '#B8A697', ratio: 7 },
+          { name: '-brand', color: '#B88C73', ratio: 7 },
+          { name: '-alert', color: '#E06666', ratio: 7 },
+          { name: '-info', color: '#7BA3D1', ratio: 7 },
+          { name: '-success', color: '#6BB896', ratio: 7 }
         ]
       },
       {
         name: 'layer',
-        color: '#3B5E2B',
-        lightness: 12,
+        color: '#2A241E',
+        lightness: 10,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-          { name: '-accent', color: '#B9C3B9', ratio: 7 },
-          { name: '-brand', color: '#3B5E2B', ratio: 7 },
-          { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
-          { name: '-success', color: '#4FA37C', ratio: 7 }
+          { name: '-border', color: '#3A2F24', ratio: 1.4 },
+          { name: '-text', color: '#EAE6E0', ratio: 9 },
+          { name: '-muted', color: '#9D9189', ratio: 6 },
+          { name: '-accent', color: '#B8A697', ratio: 7 },
+          { name: '-brand', color: '#B88C73', ratio: 7 },
+          { name: '-alert', color: '#E06666', ratio: 7 },
+          { name: '-info', color: '#7BA3D1', ratio: 7 },
+          { name: '-success', color: '#6BB896', ratio: 7 }
         ]
       },
       {
         name: 'ui',
-        color: '#3B5E2B',
-        lightness: 16,
-        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        color: '#312A23',
+        lightness: 13,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-
+          { name: '-border', color: '#433A2F', ratio: 1.4 },
+          { name: '-text', color: '#EAE6E0', ratio: 9 },
+          { name: '-muted', color: '#9D9189', ratio: 6 }
         ]
       },
       {
         name: 'ui-accent',
-        color: '#B9C3B9',
-        lightness: 60,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#B8A697',
+        lightness: 65,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#C8B6A7', ratio: 1.1 },
+          { name: '-text', color: '#221E1A', ratio: 9 },
+          { name: '-muted', color: '#3A2F24', ratio: 6 }
         ]
       },
       {
         name: 'ui-brand',
-        color: '#3B5E2B',
+        color: '#B88C73',
         lightness: 60,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#C89C83', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#3A2F24', ratio: 6 }
         ]
       },
       {
         name: 'ui-alert',
-        color: '#C94F4F',
-        lightness: 60,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#E06666',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#F07676', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#7F1D1D', ratio: 6 }
         ]
       },
       {
         name: 'ui-info',
-        color: '#81A9CB',
-        lightness: 60,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#7BA3D1',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#8BB3E1', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#1E3A8A', ratio: 6 }
         ]
       },
       {
         name: 'ui-success',
-        color: '#4FA37C',
-        lightness: 60,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#6BB896',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.05 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#7BC8A6', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#064E3B', ratio: 6 }
         ]
       }
     ],
     output: 'tokens/multi/themes/duo/dark.json',
     indent: 2
   },
+
+  // LEO: Cool slate & muted teal
   'leo-light': {
     backgrounds: [
       {
         name: 'root',
-        color: '#B3B6C0',
-        lightness: 95,
+        color: '#F6F8F9',
+        lightness: 97,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-          { name: '-accent', color: '#E3E9F0', ratio: 7 },
-          { name: '-brand', color: '#B3B6C0', ratio: 7 },
+          { name: '-border', color: '#E3E7E9', ratio: 1.05 },
+          { name: '-text', color: '#1E2528', ratio: 7.5 },
+          { name: '-muted', color: '#5F6D73', ratio: 4.8 },
+          { name: '-accent', color: '#5A707A', ratio: 7 },
+          { name: '-brand', color: '#4A7C8C', ratio: 7 },
           { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-info', color: '#5B8AB8', ratio: 7 },
           { name: '-success', color: '#4FA37C', ratio: 7 }
         ]
       },
       {
         name: 'layer',
-        color: '#B3B6C0',
-        lightness: 92,
+        color: '#FBFCFD',
+        lightness: 99,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-          { name: '-accent', color: '#E3E9F0', ratio: 7 },
-          { name: '-brand', color: '#B3B6C0', ratio: 7 },
+          { name: '-border', color: '#E7EBED', ratio: 1.05 },
+          { name: '-text', color: '#1E2528', ratio: 7.5 },
+          { name: '-muted', color: '#5F6D73', ratio: 4.8 },
+          { name: '-accent', color: '#5A707A', ratio: 7 },
+          { name: '-brand', color: '#4A7C8C', ratio: 7 },
           { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
+          { name: '-info', color: '#5B8AB8', ratio: 7 },
           { name: '-success', color: '#4FA37C', ratio: 7 }
         ]
       },
       {
         name: 'ui',
-        color: '#B3B6C0',
-        lightness: 86,
-        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        color: '#F1F4F5',
+        lightness: 95,
+        ratios: { default: -1.1, hover: -1.05, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
-
+          { name: '-border', color: '#D6DCDF', ratio: 1.08 },
+          { name: '-text', color: '#1E2528', ratio: 7.5 },
+          { name: '-muted', color: '#5F6D73', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-accent',
-        color: '#E3E9F0',
-        lightness: 45,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#5A707A',
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#6A808A', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#E7EBED', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-brand',
-        color: '#B3B6C0',
-        lightness: 32,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#4A7C8C',
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#5A8C9C', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#E0F2FE', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-alert',
         color: '#C94F4F',
-        lightness: 32,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        lightness: 45,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#D96666', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#FEE2E2', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-info',
-        color: '#81A9CB',
-        lightness: 32,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#5B8AB8',
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 },
+          { name: '-border', color: '#6B9AC8', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#E0F2FE', ratio: 4.8 }
         ]
       },
       {
         name: 'ui-success',
         color: '#4FA37C',
-        lightness: 32,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        lightness: 48,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.2 },
-          { name: '-text', color: '#1D1C20', ratio: 7 },
-          { name: '-muted', color: '#1D1C20', ratio: 4.8 }
+          { name: '-border', color: '#5FB38C', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 7.5 },
+          { name: '-muted', color: '#D1FAE5', ratio: 4.8 }
         ]
       }
     ],
@@ -735,106 +734,104 @@ const THEMES_CONFIG = {
     backgrounds: [
       {
         name: 'root',
-        color: '#B3B6C0',
-        lightness: 8,
+        color: '#1A1F22',
+        lightness: 7,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-          { name: '-accent', color: '#E3E9F0', ratio: 7 },
-          { name: '-brand', color: '#B3B6C0', ratio: 7 },
-          { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
-          { name: '-success', color: '#4FA37C', ratio: 7 }
+          { name: '-border', color: '#2D3438', ratio: 1.4 },
+          { name: '-text', color: '#E3E7E9', ratio: 9 },
+          { name: '-muted', color: '#93A1A8', ratio: 6 },
+          { name: '-accent', color: '#A8B8C0', ratio: 7 },
+          { name: '-brand', color: '#6A9CAC', ratio: 7 },
+          { name: '-alert', color: '#E06666', ratio: 7 },
+          { name: '-info', color: '#7BA3D1', ratio: 7 },
+          { name: '-success', color: '#6BB896', ratio: 7 }
         ]
       },
       {
         name: 'layer',
-        color: '#B3B6C0',
-        lightness: 12,
+        color: '#20252A',
+        lightness: 10,
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-          { name: '-accent', color: '#E3E9F0', ratio: 7 },
-          { name: '-brand', color: '#B3B6C0', ratio: 7 },
-          { name: '-alert', color: '#C94F4F', ratio: 7 },
-          { name: '-info', color: '#81A9CB', ratio: 7 },
-          { name: '-success', color: '#4FA37C', ratio: 7 }
+          { name: '-border', color: '#353D42', ratio: 1.4 },
+          { name: '-text', color: '#E3E7E9', ratio: 9 },
+          { name: '-muted', color: '#93A1A8', ratio: 6 },
+          { name: '-accent', color: '#A8B8C0', ratio: 7 },
+          { name: '-brand', color: '#6A9CAC', ratio: 7 },
+          { name: '-alert', color: '#E06666', ratio: 7 },
+          { name: '-info', color: '#7BA3D1', ratio: 7 },
+          { name: '-success', color: '#6BB896', ratio: 7 }
         ]
       },
       {
         name: 'ui',
-        color: '#B3B6C0',
-        lightness: 16,
-        ratios: { default: -1.15, hover: -1.1, active: 1 },
+        color: '#272D32',
+        lightness: 13,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
-
+          { name: '-border', color: '#3F474D', ratio: 1.4 },
+          { name: '-text', color: '#E3E7E9', ratio: 9 },
+          { name: '-muted', color: '#93A1A8', ratio: 6 }
         ]
       },
       {
         name: 'ui-accent',
-        color: '#E3E9F0',
-        lightness: 55,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#A8B8C0',
+        lightness: 65,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#B8C8D0', ratio: 1.1 },
+          { name: '-text', color: '#1A1F22', ratio: 9 },
+          { name: '-muted', color: '#353D42', ratio: 6 }
         ]
       },
       {
         name: 'ui-brand',
-        color: '#B3B6C0',
-        lightness: 55,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#6A9CAC',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#7AACBC', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#164E63', ratio: 6 }
         ]
       },
       {
         name: 'ui-alert',
-        color: '#C94F4F',
-        lightness: 55,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#E06666',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#F07676', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#7F1D1D', ratio: 6 }
         ]
       },
       {
         name: 'ui-info',
-        color: '#81A9CB',
-        lightness: 55,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#7BA3D1',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#8BB3E1', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#1E3A8A', ratio: 6 }
         ]
       },
       {
         name: 'ui-success',
-        color: '#4FA37C',
-        lightness: 55,
-        ratios: { default: -1.2, hover: -1.1, active: 1 },
+        color: '#6BB896',
+        lightness: 58,
+        ratios: { default: -1.15, hover: -1.08, active: 1 },
         contrastColors: [
-          { name: '-border', color: '#D8DBDE', ratio: 1.6 },
-          { name: '-text', color: '#1D1C20', ratio: 9 },
-          { name: '-muted', color: '#1D1C20', ratio: 6 },
+          { name: '-border', color: '#7BC8A6', ratio: 1.1 },
+          { name: '-text', color: '#FFFFFF', ratio: 9 },
+          { name: '-muted', color: '#064E3B', ratio: 6 }
         ]
       }
     ],
     output: 'tokens/multi/themes/leo/dark.json',
     indent: 2
-  },
-
+  }
 };
 // -----------------------------
 function ensureDirExists(filePath) {
