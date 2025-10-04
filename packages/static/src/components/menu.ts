@@ -55,7 +55,7 @@ export class Menu extends Component<menu.Props, menu.Api> {
     const labels = ["item-group-label"];
     for (const item of labels) {
       renderPart(this.el, item, this.api, {
-        htmlFor: (el: any) => el.getAttribute("data-htmlFor"), // explicit getter
+        htmlFor: (el: any) => el.getAttribute("data-htmlFor"),
       });
     }
 
