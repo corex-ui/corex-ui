@@ -4,10 +4,8 @@
 @layer components {
   .layout {
     display: flex;
-    height: 100vh;
     min-height: 100vh;
     flex-direction: column;
-    overflow: hidden;
     color: var(--color-root--text);
     background: var(--color-root);
     @apply scrollbar;
@@ -19,6 +17,8 @@
     color: var(--color-layer--text);
     width: 100%;
     z-index: 20;
+    position: sticky;
+    top: 0;
   }
 
   .layout .layout__header .layout__header__content {
@@ -29,7 +29,7 @@
     flex-wrap: wrap;
     align-items: center;
     margin-inline: auto;
-    max-width: var(--breakpoint-xl);
+    /* max-width: var(--breakpoint-xl); */
   }
 
   .layout .layout__footer {
@@ -59,51 +59,55 @@
   }
 
   .layout .layout__wrapper {
-    position: relative;
     display: flex;
     flex-direction: row;
     width: 100%;
-    overflow: hidden;
     justify-content: center;
     margin-inline: auto;
-    max-width: var(--breakpoint-xl);
+    /* max-width: var(--breakpoint-xl); */
     background-color: var(--color-root);
+    position: relative;
   }
-
+  
   .layout .layout__side {
+    position: sticky; 
+    top: var(--spacing-ui-xl);
     display: flex;
     flex-direction: column;
     background: var(--color-root);
     color: var(--color-root--text);
-    width: var(--container-ui);
-  }
+    max-width: var(--container-ui);
+    min-width: var(--container-mini);
 
+    width: auto;
+    align-self: flex-start;
+    height: calc(100vh - var(--spacing-ui-xl));
+    overflow-y: auto; 
+  }
+  
   .layout .layout__main {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    overflow: hidden;
+    flex-direction: column;
+    flex: 1;
     margin-inline: auto;
-    @apply scrollbar;
+    position: relative;
   }
 
   .layout .layout__content {
-    @apply scrollbar;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    height: 100%;
     width: 100%;
   }
 
   .layout .layout__article {
     margin-inline: auto;
-    padding: var(--spacing-ui-padding-xl);
     max-width: var(--container-ui-xl);
-    & h1,
-    & h2,
-    & h3 {
-      scroll-margin-top: var(--spacing-ui-xl);
-    }
+    padding: var(--spacing-ui-padding);
+  }
+
+  .layout__article h1,
+  .layout__article h2,
+  .layout__article h3 {
+    scroll-margin-top: calc(var(--spacing-ui-xl) * 2);
   }
 }
