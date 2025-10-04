@@ -24,12 +24,6 @@
     "./utilities.css": {
       "default": "./dist/utilities.css"
     },
-    "./fonts.css": {
-      "default": "./dist/fonts.css"
-    },
-    "./fonts": {
-      "default": "./dist/fonts.css"
-    },
     "./themes/*.css": {
       "default": "./dist/tokens/themes/*.css"
     },
