@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     max-width: var(--container-mini);
+    width: 100%;
     position: relative;
     margin-inline: auto;
     gap: var(--spacing-mini-gap);
@@ -34,7 +35,6 @@
     z-index: 50;
     padding: 0;
     border-radius: var(--radius-ui);
-    /* gap: var(--spacing-mini-gap); */
     overflow: hidden;
     box-shadow: var(--shadow-ui);
 
