@@ -98,15 +98,19 @@
   }
 }
 
-@utility ui-trigger--square {
+@utility ui-trigger--square  {
   aspect-ratio: 1/1;
   padding: 0 !important;
+  appearance: none;
+  width: min-content;
 }
 
 @utility ui-trigger--circle {
+  border-radius: var(--radius-full);
   aspect-ratio: 1/1;
   padding: 0 !important;
-  border-radius: var(--radius-full);
+  width: min-content;
+  apprarence: none;
 }
 
 @utility ui-icon {
@@ -297,5 +301,27 @@
 
   &[data-highlighted]:not(:hover) {
     outline: 2px solid --value(--color-ui-* --border, [color]);
+  }
+}
+
+
+@utility ui-link {
+  display: inline-flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  width: auto;
+  color: var(--color-layer--text);
+  height: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  gap: var(--spacing-mini-gap);
+  padding-inline: var(--spacing-mini-padding);
+  border-radius: var(--radius-ui);
+  text-decoration: none;
+  text-wrap-mode: nowrap;
+  &:hover {
+    color: var(--color-layer--brand);
   }
 }

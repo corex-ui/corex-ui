@@ -29,7 +29,6 @@
     flex-wrap: wrap;
     align-items: center;
     margin-inline: auto;
-    /* max-width: var(--breakpoint-xl); */
   }
 
   .layout .layout__footer {
@@ -37,7 +36,6 @@
     background: var(--color-layer);
     color: var(--color-layer--text);
     width: 100%;
-    z-index: 20;
     padding-block: var(--spacing-ui-padding-sm);
   }
 
@@ -64,13 +62,12 @@
     width: 100%;
     justify-content: center;
     margin-inline: auto;
-    /* max-width: var(--breakpoint-xl); */
     background-color: var(--color-root);
     position: relative;
   }
-  
+
   .layout .layout__side {
-    position: sticky; 
+    position: sticky;
     top: var(--spacing-ui-xl);
     display: flex;
     flex-direction: column;
@@ -82,9 +79,10 @@
     width: auto;
     align-self: flex-start;
     height: calc(100vh - var(--spacing-ui-xl));
-    overflow-y: auto; 
+    overflow-y: auto;
+    @apply scrollbar scrollbar--sm;
   }
-  
+
   .layout .layout__main {
     display: flex;
     flex-direction: column;

@@ -12,7 +12,7 @@
   .select [data-scope="select"][data-part="control"] {
     display: flex;
     flex-direction: column;
-    width: var(--container-mini);
+    max-width: var(--container-mini);
     position: relative;
     margin-inline: auto;
     gap: var(--spacing-mini-gap);
@@ -71,7 +71,7 @@
     }
 
     & [data-scope="select"][data-part="control"] {
-      width: --value(--container-mini-*, [length]);
+      max-width: --value(--container-mini-*, [length]);
       gap: --value(--spacing-mini-gap-*, [length]);
     }
 
