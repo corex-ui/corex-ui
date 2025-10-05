@@ -1,5 +1,11 @@
 # @corex-ui/astro
 
+## 0.0.5
+
+### Patch Changes
+
+- Fix CLI
+
 ## 0.0.4
 
 ### Patch Changes
