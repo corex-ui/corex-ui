@@ -11,8 +11,8 @@ const resolvePath = (p: string) => pathResolve(process.cwd(), p)
 
 export default class Render extends Command {
   static args = {
+    dist: Args.string({description: 'Output folder to prerender', required: false, default: "dist"}),
     components: Args.string({description: 'Components to prerender', multiple: true, required: false}),
-    dist: Args.string({description: 'Output folder to prerender', required: true}),
   }
   static description = 'Prerender Corex components in HTML files'
   static examples = [
