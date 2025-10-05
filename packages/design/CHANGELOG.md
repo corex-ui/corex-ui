@@ -1,5 +1,11 @@
 # @corex-ui/design
 
+## 0.0.7
+
+### Patch Changes
+
+- Css and ts fixes
+
 ## 0.0.6
 
 ### Patch Changes
