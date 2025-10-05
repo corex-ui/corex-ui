@@ -36,9 +36,10 @@ export function applyBrowserPolyfills(win: JSDOM['window']): void {
       getPropertyValue: (): string => '',
     }))
 
-  g.ResizeObserver = ResizeObserver
-  ;(g.window as Window & typeof globalThis).ResizeObserver = ResizeObserver
-
+    const RO = ResizeObserver as any
+    (g as any).ResizeObserver = RO
+    ;(g.window as any).ResizeObserver = RO
+    
   const raf = (cb: FrameRequestCallback): number => setTimeout(() => cb(Date.now()), 16) as unknown as number
 
   g.requestAnimationFrame = win.requestAnimationFrame ?? raf

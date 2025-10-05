@@ -3,7 +3,7 @@ import {Args, Command} from '@oclif/core'
 import fs from 'node:fs'
 import {join, resolve as pathResolve} from 'node:path'
 
-import {findHtmlFiles, processHtmlFile} from './utils'
+import {findHtmlFiles, processHtmlFile} from './utils.js'
 
 const log = (msg: string) => console.log(`[Corex] ${msg}`)
 const logInfo = (msg: string) => console.info(`  • ${msg}`)
