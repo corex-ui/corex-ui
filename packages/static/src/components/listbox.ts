@@ -97,6 +97,8 @@ export class Listbox extends Component<listbox.Props, listbox.Api> {
       contentEl = document.createElement("div");
       contentEl.setAttribute("data-part", "content");
       rootEl.appendChild(contentEl);
+    } else {
+      contentEl.innerHTML = '';
     }
 
     const groupMap: Record<string, HTMLElement> = {};
