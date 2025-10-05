@@ -12,7 +12,8 @@
   .select [data-scope="select"][data-part="control"] {
     display: flex;
     flex-direction: column;
-    width: var(--container-mini);
+    max-width: var(--container-mini);
+    width: 100%;
     position: relative;
     margin-inline: auto;
     gap: var(--spacing-mini-gap);
@@ -34,7 +35,6 @@
     z-index: 50;
     padding: 0;
     border-radius: var(--radius-ui);
-    /* gap: var(--spacing-mini-gap); */
     overflow: hidden;
     box-shadow: var(--shadow-ui);
 
@@ -71,7 +71,7 @@
     }
 
     & [data-scope="select"][data-part="control"] {
-      width: --value(--container-mini-*, [length]);
+      max-width: --value(--container-mini-*, [length]);
       gap: --value(--spacing-mini-gap-*, [length]);
     }
 

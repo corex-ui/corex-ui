@@ -3,7 +3,7 @@
 @layer components {
   .tabs [data-scope="tabs"][data-part="root"] {
     @apply ui-root;
-    max-width: var(--container-ui);
+    max-width: var(--container-mini);
   }
 
   .tabs [data-scope="tabs"][data-part="root"][data-orientation="vertical"] {
@@ -44,19 +44,20 @@
 @utility tabs--* {
   &.tabs {
     & [data-scope="tabs"][data-part="root"] {
-      max-width: --value(--container-ui-*, [length]);
+      max-width: --value(--container-mini-*, [length]);
     }
 
     & [data-scope="tabs"][data-part="trigger"] {
       font-size: --value(--text-ui-*, [length]);
       line-height: --value(--text-ui-* --line-height, [length]);
       min-height: --value(--spacing-ui-*, [length]);
-      padding-inline: --value(--spacing-ui-padding-*, [length]);
+
       &[data-selected] {
         background-color: --value(--color-ui-*, [color]);
         color: --value(--color-ui-* --text, [color]);
       }
     }
+
     & [data-scope="tabs"][data-part="content"] > p {
       font-size: --value(--text-ui-*, [length]);
       line-height: --value(--text-ui-* --line-height, [length]);

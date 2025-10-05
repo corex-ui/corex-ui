@@ -46,8 +46,9 @@
     flex-direction: row;
     justify-content: space-between;
   }
-  .dialog [data-scope="dialog"][data-part="title"] {
-    padding-block: 0;
+  .dialog [data-scope="dialog"][data-part="title"],
+  .dialog [data-scope="dialog"][data-part="description"] {
+    margin-block: 0;
   }
 
   .dialog.dialog--side [data-scope="dialog"][data-part="positioner"] {
