@@ -1,27 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "useDefineForClassFields": true,
-    "module": "NodeNext",
+    "declaration": true,
+    "module": "Node16",
     "outDir": "dist",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-"moduleResolution": "NodeNext",
-"verbatimModuleSyntax": true,
-    "moduleDetection": "force",
     "strict": true,
-    "composite": true,
-
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "types": ["node", "mocha"]
+    "target": "es2022",
+    "moduleResolution": "node16",
+    "composite": true
+    },
+"include": ["src/**/*.ts", "test/**/*.ts"],
+  "ts-node": {
+    "esm": true
   },
-  "include": ["src/**/*.ts", "src/test/**/*.ts"],
-"ts-node": {
-  "esm": true,
-  "transpileOnly": true
-}
 }
