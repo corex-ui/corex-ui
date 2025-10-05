@@ -21,27 +21,22 @@
     flex-direction: column;
   }
 
-  .accordion
-    [data-scope="accordion"][data-part="item"][data-state="closed"]
-    [data-scope="accordion"][data-part="item-indicator"][data-open],
-  .accordion
-    [data-scope="accordion"][data-part="item"][data-state="open"]
-    [data-scope="accordion"][data-part="item-indicator"][data-closed] {
+  .accordion [data-scope="accordion"][data-part="item"][data-state="closed"] [data-scope="accordion"][data-part="item-indicator"][data-open],
+  .accordion [data-scope="accordion"][data-part="item"][data-state="open"] [data-scope="accordion"][data-part="item-indicator"][data-closed] {
     display: none;
     transform: none;
   }
 
-  .accordion
-    [data-scope="accordion"][data-part="item"][data-state="open"]
-    [data-scope="accordion"][data-part="item-indicator"][data-open],
-  .accordion
-    [data-scope="accordion"][data-part="item"][data-state="closed"]
-    [data-scope="accordion"][data-part="item-indicator"][data-closed] {
+  .accordion [data-scope="accordion"][data-part="item"][data-state="open"] [data-scope="accordion"][data-part="item-indicator"][data-open],
+  .accordion [data-scope="accordion"][data-part="item"][data-state="closed"] [data-scope="accordion"][data-part="item-indicator"][data-closed] {
     transform: none;
   }
 
   .accordion [data-scope="accordion"][data-part="item-content"] {
     @apply ui-content;
+    border: 1px solid var(--color-root--border);
+    padding: var(--spacing-ui-padding);
+
     & p {
       margin-block: 0;
     }
@@ -61,7 +56,7 @@
 
     & [data-scope="accordion"][data-part="item-trigger"] {
       font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
+      line-height: --value(--text-ui-*--line-height, [length]);
       min-height: --value(--spacing-ui-*, [length]);
 
       &[data-disabled] {
@@ -79,18 +74,22 @@
       &:hover,
       &:active {
         background-color: --value(--color-ui-*, [color]);
-        color: --value(--color-ui-* --text, [color]);
+        color: --value(--color-ui-*--text, [color]);
       }
 
       &[data-highlighted]:not(:hover) {
-        outline: 2px solid --value(--color-ui-* --text, [color]);
+        outline: 2px solid --value(--color-ui-*--text, [color]);
       }
     }
 
+    & [data-scope="accordion"][data-part="item-content"] {
+      padding: --value(--spacing-ui-padding-*, [length]);
+    }
+
     & [data-scope="accordion"][data-part="item-content"],
-    & [data-scope="accordion"][data-part="item-content"] > p {
+    & [data-scope="accordion"][data-part="item-content"]>p {
       font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
+      line-height: --value(--text-ui-*--line-height, [length]);
     }
   }
 }
