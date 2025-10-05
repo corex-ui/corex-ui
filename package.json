@@ -8,11 +8,12 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,md,html,css}\"",
     "changeset": "changeset",
-    "version-packages": "changeset version", 
+    "version-packages": "changeset version",
     "release": "turbo run build && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
+    "globals": "^16.4.0",
     "prettier": "^3.2.5",
     "turbo": "^2.5.6"
   },
