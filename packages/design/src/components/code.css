@@ -40,15 +40,25 @@
     font-size: var(--text-ui);
     line-height: var(--text-ui--line-height);
     padding: var(--spacing-ui-padding);
-    background-color: var(--color-layer);
-    color: var(--color-layer--text);
+    background-color: var(--color-root);
+    color: var(--color-root--text);
     max-height: var(--container-mini);
     overflow: hidden;
+
+    background-image: linear-gradient(
+      var(--color-root) 50%,
+      var(--color-layer) 50%
+    );
+    background-size: 100% calc(var(--text-ui) * var(--text-ui--line-height));
+    background-origin: content-box;
+    background-attachment: local;
+    background-position: 0 calc(var(--spacing-ui-padding) / 2);
+
     @apply scrollbar scrollbar--sm;
   }
 
   pre:focus-visible {
-    outline: 2px solid var(--color-ui--focus);
+    outline: 2px solid var(--color-root--border);
     outline-offset: 1px;
     box-shadow: none;
   }
@@ -66,6 +76,8 @@
     padding-inline: var(--spacing-mini-padding);
     background-color: var(--color-root);
     color: var(--color-root--alert);
+    border: 1px solid var(--color-ui--border);
+    border-radius: var(--radius-ui);
     justify-content: start;
     align-items: start;
     white-space: wrap;

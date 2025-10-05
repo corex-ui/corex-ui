@@ -58,7 +58,7 @@
       }
     }
 
-    & [data-scope="tabs"][data-part="content"]>p {
+    & [data-scope="tabs"][data-part="content"] > p {
       font-size: --value(--text-ui-*, [length]);
       line-height: --value(--text-ui-* --line-height, [length]);
     }

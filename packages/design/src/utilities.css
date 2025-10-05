@@ -98,19 +98,22 @@
   }
 }
 
-@utility ui-trigger--square  {
-  aspect-ratio: 1/1;
+@utility ui-trigger--square {
+  display: inline-flex;     
+  aspect-ratio: 1 / 1;          
   padding: 0 !important;
-  appearance: none;
-  width: min-content;
+  justify-content: center;      
+  align-items: center;   
+  border-radius: var(--radius-full);
+
 }
 
 @utility ui-trigger--circle {
-  border-radius: var(--radius-full);
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;          
   padding: 0 !important;
-  width: min-content;
-  apprarence: none;
+  justify-content: center;      
+  align-items: center;   
+  border-radius: var(--radius-full);
 }
 
 @utility ui-icon {
@@ -303,7 +306,6 @@
     outline: 2px solid --value(--color-ui-* --border, [color]);
   }
 }
-
 
 @utility ui-link {
   display: inline-flex;
