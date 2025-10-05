@@ -1,5 +1,11 @@
 # @corex-ui/vite
 
+## 0.0.6
+
+### Patch Changes
+
+- Fix CSS
+
 ## 0.0.5
 
 ### Patch Changes

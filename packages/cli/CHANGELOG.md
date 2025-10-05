@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.0.6
+
+### Patch Changes
+
+- Fix CSS
+- Updated dependencies
+  - @corex-ui/static@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes
