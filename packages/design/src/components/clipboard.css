@@ -23,6 +23,7 @@
 
   .clipboard [data-scope="clipboard"][data-part="input"] {
     @apply ui-input;
+    max-width: var(--container-mini);
   }
 
   .clipboard [data-scope="clipboard"][data-part="trigger"] [data-copied] {
