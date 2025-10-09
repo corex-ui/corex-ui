@@ -15,7 +15,8 @@
     padding-inline: var(--spacing-mini-padding);
     border-radius: var(--radius-ui);
     text-decoration: none;
-    text-wrap-mode: nowrap;
+    text-wrap-mode: wrap;
+    word-break: break-word; 
   }
 
   .link::after {
