@@ -2,7 +2,7 @@
  * Do not edit directly, this file was auto-generated.
  */
 
-[data-theme="leo"][data-mode="dark"] {
+[data-theme=leo][data-mode=dark] {
   --theme-color-root--border: #2b3236; /** 1.4:1 contrast against root-default (#121517) */
   --theme-color-root--text: #b3b6b8; /** 9:1 contrast against root-default (#121517) */
   --theme-color-root--muted: #88959c; /** 6:1 contrast against root-default (#121517) */

@@ -2,7 +2,7 @@
  * Do not edit directly, this file was auto-generated.
  */
 
-[data-theme="uno"][data-mode="dark"] {
+[data-theme=uno][data-mode=dark] {
   --theme-color-root--border: #332f3d; /** 1.4:1 contrast against root-default (#17141c) */
   --theme-color-root--text: #b7b5bc; /** 9:1 contrast against root-default (#17141c) */
   --theme-color-root--muted: #9791a4; /** 6:1 contrast against root-default (#17141c) */
