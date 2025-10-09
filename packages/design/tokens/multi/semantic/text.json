@@ -3,7 +3,7 @@
     "ui": {
       "default": {
         "value": "{text.ui.md}",
-        "type": "dimension"
+        "type": "fontSizes"
       },
       "-line-height": {
         "value": "{text.ui.md--line-height}",
@@ -11,7 +11,7 @@
       },
       "sm": {
         "value": "1rem",
-        "type": "dimension"
+        "type": "fontSizes"
       },
       "sm--line-height": {
         "value": "calc(1.5 / 1)",
@@ -19,7 +19,7 @@
       },
       "md": {
         "value": "1.125rem",
-        "type": "dimension"
+        "type": "fontSizes"
       },
       "md--line-height": {
         "value": "calc(1.75 / 1.125)",
@@ -27,7 +27,7 @@
       },
       "lg": {
         "value": "1.25rem",
-        "type": "dimension"
+        "type": "fontSizes"
       },
       "lg--line-height": {
         "value": "calc(1.875 / 1.25)",
@@ -35,7 +35,7 @@
       },
       "xl": {
         "value": "1.75rem",
-        "type": "dimension"
+        "type": "fontSizes"
       },
       "xl--line-height": {
         "value": "calc(2.5 / 1.75)",

@@ -2,7 +2,7 @@
   "semantic/border": {
     "radius": {
       "ui": {
-        "value": "0.375rem",
+        "value": "6px",
         "type": "borderRadius"
       },
       "full": {
@@ -318,7 +318,7 @@
   "semantic/dimension": {
     "spacing": {
       "default": {
-        "value": "0.25rem",
+        "value": "4px",
         "type": "dimension"
       },
       "ui": {
@@ -527,19 +527,19 @@
           "type": "dimension"
         },
         "sm": {
-          "value": "20rem",
+          "value": "320px",
           "type": "dimension"
         },
         "md": {
-          "value": "24rem",
+          "value": "384px",
           "type": "dimension"
         },
         "lg": {
-          "value": "40rem",
+          "value": "640px",
           "type": "dimension"
         },
         "xl": {
-          "value": "60rem",
+          "value": "960px",
           "type": "dimension"
         }
       },
@@ -549,19 +549,19 @@
           "type": "dimension"
         },
         "sm": {
-          "value": "12rem",
+          "value": "192px",
           "type": "dimension"
         },
         "md": {
-          "value": "16rem",
+          "value": "256px",
           "type": "dimension"
         },
         "lg": {
-          "value": "20rem",
+          "value": "320px",
           "type": "dimension"
         },
         "xl": {
-          "value": "24rem",
+          "value": "384px",
           "type": "dimension"
         }
       },
@@ -571,19 +571,19 @@
           "type": "dimension"
         },
         "sm": {
-          "value": "6rem",
+          "value": "96px",
           "type": "dimension"
         },
         "md": {
-          "value": "8rem",
+          "value": "128px",
           "type": "dimension"
         },
         "lg": {
-          "value": "12rem",
+          "value": "192px",
           "type": "dimension"
         },
         "xl": {
-          "value": "16rem",
+          "value": "256px",
           "type": "dimension"
         }
       }
@@ -794,19 +794,19 @@
     },
     "breakpoint": {
       "sm": {
-        "value": "20rem",
+        "value": "320px",
         "type": "dimension"
       },
       "md": {
-        "value": "48rem",
+        "value": "768px",
         "type": "dimension"
       },
       "lg": {
-        "value": "64rem",
+        "value": "1024px",
         "type": "dimension"
       },
       "xl": {
-        "value": "106rem",
+        "value": "1696px",
         "type": "dimension"
       }
     }
@@ -951,7 +951,7 @@
           "type": "dimension"
         },
         "sm": {
-          "value": "1rem",
+          "value": "16px",
           "type": "fontSizes"
         },
         "sm--line-height": {
@@ -959,7 +959,7 @@
           "type": "dimension"
         },
         "md": {
-          "value": "1.125rem",
+          "value": "18px",
           "type": "fontSizes"
         },
         "md--line-height": {
@@ -967,7 +967,7 @@
           "type": "dimension"
         },
         "lg": {
-          "value": "1.25rem",
+          "value": "20px",
           "type": "fontSizes"
         },
         "lg--line-height": {
@@ -975,7 +975,7 @@
           "type": "dimension"
         },
         "xl": {
-          "value": "1.75rem",
+          "value": "28px",
           "type": "fontSizes"
         },
         "xl--line-height": {
@@ -3883,5 +3883,126 @@
       "themes/leo/dark"
     ]
   },
-  "$themes": []
+  "$themes": [
+    {
+      "name": "Light",
+      "group": "Neo",
+      "description": "",
+      "is-source": false,
+      "selectedTokenSets": {
+        "semantic/border": "enabled",
+        "semantic/text": "enabled",
+        "semantic/dimension": "enabled",
+        "semantic/effect": "enabled",
+        "semantic/font": "enabled",
+        "semantic/color": "enabled",
+        "themes/neo/light": "enabled"
+      }
+    },
+    {
+      "name": "Dark",
+      "group": "Neo",
+      "description": "",
+      "is-source": false,
+      "selectedTokenSets": {
+        "semantic/border": "enabled",
+        "semantic/text": "enabled",
+        "semantic/dimension": "enabled",
+        "semantic/effect": "enabled",
+        "semantic/font": "enabled",
+        "semantic/color": "enabled",
+        "themes/neo/dark": "enabled"
+      }
+    },
+    {
+      "name": "Light",
+      "group": "Uno",
+      "description": "",
+      "is-source": false,
+      "selectedTokenSets": {
+        "semantic/border": "enabled",
+        "semantic/text": "enabled",
+        "semantic/dimension": "enabled",
+        "semantic/effect": "enabled",
+        "semantic/font": "enabled",
+        "semantic/color": "enabled",
+        "themes/uno/light": "enabled"
+      }
+    },
+    {
+      "name": "Dark",
+      "group": "Uno",
+      "description": "",
+      "is-source": false,
+      "selectedTokenSets": {
+        "semantic/border": "enabled",
+        "semantic/text": "enabled",
+        "semantic/dimension": "enabled",
+        "semantic/effect": "enabled",
+        "semantic/font": "enabled",
+        "semantic/color": "enabled",
+        "themes/uno/dark": "enabled"
+      }
+    },
+    {
+      "name": "Light",
+      "group": "Duo",
+      "description": "",
+      "is-source": false,
+      "selectedTokenSets": {
+        "semantic/border": "enabled",
+        "semantic/text": "enabled",
+        "semantic/dimension": "enabled",
+        "semantic/effect": "enabled",
+        "semantic/font": "enabled",
+        "semantic/color": "enabled",
+        "themes/duo/light": "enabled"
+      }
+    },
+    {
+      "name": "Dark",
+      "group": "Duo",
+      "description": "",
+      "is-source": false,
+      "selectedTokenSets": {
+        "semantic/border": "enabled",
+        "semantic/text": "enabled",
+        "semantic/dimension": "enabled",
+        "semantic/effect": "enabled",
+        "semantic/font": "enabled",
+        "semantic/color": "enabled",
+        "themes/duo/dark": "enabled"
+      }
+    },
+    {
+      "name": "Light",
+      "group": "Leo",
+      "description": "",
+      "is-source": false,
+      "selectedTokenSets": {
+        "semantic/border": "enabled",
+        "semantic/text": "enabled",
+        "semantic/dimension": "enabled",
+        "semantic/effect": "enabled",
+        "semantic/font": "enabled",
+        "semantic/color": "enabled",
+        "themes/leo/light": "enabled"
+      }
+    },
+    {
+      "name": "Dark",
+      "group": "Leo",
+      "description": "",
+      "is-source": false,
+      "selectedTokenSets": {
+        "semantic/border": "enabled",
+        "semantic/text": "enabled",
+        "semantic/dimension": "enabled",
+        "semantic/effect": "enabled",
+        "semantic/font": "enabled",
+        "semantic/color": "enabled",
+        "themes/leo/dark": "enabled"
+      }
+    }
+  ]
 }

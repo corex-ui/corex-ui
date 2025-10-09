@@ -1,5 +1,11 @@
 # @corex-ui/design
 
+## 0.0.8
+
+### Patch Changes
+
+- Fix Timer and Design Tokens
+
 ## 0.0.7
 
 ### Patch Changes

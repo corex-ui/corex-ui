@@ -1,9 +1,7 @@
 @import "../main.css";
+
 @layer components {
   .listbox [data-scope="listbox"][data-part="root"] {
-    /* display: flex;
-    flex-direction: column;
-    width: 100%; */
     @apply ui-root;
     max-width: var(--container-mini);
     gap: var(--spacing-mini-gap);
@@ -88,15 +86,18 @@
       max-width: --value(--container-mini-*, [length]);
       gap: --value(--spacing-mini-gap-*, [length]);
     }
+
     & [data-scope="listbox"][data-part="label"] {
       font-size: --value(--text-ui-*, [length]);
       line-height: --value(--text-ui-* --line-height, [length]);
     }
+
     & [data-scope="listbox"][data-part="item"] {
       font-size: --value(--text-ui-*, [length]);
       line-height: --value(--text-ui-* --line-height, [length]);
       min-height: --value(--spacing-ui-*, [length]);
     }
+
     & [data-scope="listbox"][data-part="item"][data-selected] {
       background-color: --value(--color-ui-*, [color]);
       color: --value(--color-ui-* --text, [color]);

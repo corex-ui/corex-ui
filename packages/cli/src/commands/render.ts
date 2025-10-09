@@ -10,10 +10,10 @@ const logWarn = (msg: string) => console.warn(`  ⚠ ${msg}`)
 const resolvePath = (p: string) => pathResolve(process.cwd(), p)
 
 export default class Render extends Command {
-/* eslint-disable perfectionist/sort-objects */
+  /* eslint-disable perfectionist/sort-objects */
   static args = {
-    dist: Args.string({description: 'Output folder to prerender', default: "dist", required: false}),
-    components: Args.string({description: 'Components to prerender',  required: false, multiple: true}),
+    dist: Args.string({description: 'Output folder to prerender', default: 'dist', required: false}),
+    components: Args.string({description: 'Components to prerender', required: false, multiple: true}),
   }
   static description = 'Prerender Corex components in HTML files'
   static examples = [

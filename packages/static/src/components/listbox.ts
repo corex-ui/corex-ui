@@ -98,8 +98,9 @@ export class Listbox extends Component<listbox.Props, listbox.Api> {
       contentEl.setAttribute("data-part", "content");
       rootEl.appendChild(contentEl);
     } else {
-      contentEl.innerHTML = '';
+      contentEl.innerHTML = "";
     }
+    const noIcon = getBoolean(this.el, "noIcon");
 
     const groupMap: Record<string, HTMLElement> = {};
 
@@ -130,18 +131,20 @@ export class Listbox extends Component<listbox.Props, listbox.Api> {
       textEl.setAttribute("data-value", item.value);
       textEl.textContent = item.label || item.value;
 
-      const indicatorEl = document.createElement("span");
-      indicatorEl.setAttribute("data-part", "item-indicator");
-      indicatorEl.setAttribute("data-value", item.value);
-      indicatorEl.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-          stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-        </svg>
-      `;
-
       itemEl.appendChild(textEl);
-      itemEl.appendChild(indicatorEl);
+
+      if (!noIcon) {
+        const indicatorEl = document.createElement("span");
+        indicatorEl.setAttribute("data-part", "item-indicator");
+        indicatorEl.setAttribute("data-value", item.value);
+        indicatorEl.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+        `;
+        itemEl.appendChild(indicatorEl);
+      }
 
       if (item.group && groupMap[item.group]) {
         groupMap[item.group].appendChild(itemEl);
