@@ -2,7 +2,7 @@
  * Do not edit directly, this file was auto-generated.
  */
 
-[data-theme="duo"][data-mode="dark"] {
+[data-theme=duo][data-mode=dark] {
   --theme-color-root--border: #382f24; /** 1.4:1 contrast against root-default (#171411) */
   --theme-color-root--text: #b9b5b1; /** 9:1 contrast against root-default (#171411) */
   --theme-color-root--muted: #9d918a; /** 6:1 contrast against root-default (#171411) */
