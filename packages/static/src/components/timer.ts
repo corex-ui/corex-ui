@@ -26,7 +26,7 @@ function parseFlexibleDate(input: string | Partial<timer.Time>): number {
       if (isNaN(t)) throw new Error(`Unable to parse date: ${input}`);
       return t;
     }
-    
+
     // Otherwise parse as-is (handles ISO strings with timezone info)
     const t = new Date(input).getTime();
     if (isNaN(t)) throw new Error(`Unable to parse date: ${input}`);
@@ -34,8 +34,17 @@ function parseFlexibleDate(input: string | Partial<timer.Time>): number {
   }
 
   if (typeof input === "object") {
-    const { days = 0, hours = 0, minutes = 0, seconds = 0, milliseconds = 0 } = input;
-    return ((days * 24 + hours) * 60 * 60 + minutes * 60 + seconds) * 1000 + milliseconds;
+    const {
+      days = 0,
+      hours = 0,
+      minutes = 0,
+      seconds = 0,
+      milliseconds = 0,
+    } = input;
+    return (
+      ((days * 24 + hours) * 60 * 60 + minutes * 60 + seconds) * 1000 +
+      milliseconds
+    );
   }
 
   throw new Error("Invalid input");
@@ -104,7 +113,7 @@ export function initializeTimer(doc: HTMLElement | Document = document): void {
         milliseconds: getNumber(rootEl, "milliseconds") || 0,
       };
       // Only parse if at least one value is non-zero
-      if (Object.values(timeObj).some(v => v > 0)) {
+      if (Object.values(timeObj).some((v) => v > 0)) {
         startMs = parseFlexibleDate(timeObj);
       }
     }
@@ -118,7 +127,7 @@ export function initializeTimer(doc: HTMLElement | Document = document): void {
         milliseconds: getNumber(rootEl, "millisecondsTarget") || 0,
       };
       // Only parse if at least one value is non-zero
-      if (Object.values(timeObj).some(v => v > 0)) {
+      if (Object.values(timeObj).some((v) => v > 0)) {
         targetMs = parseFlexibleDate(timeObj);
       }
     }
@@ -128,7 +137,7 @@ export function initializeTimer(doc: HTMLElement | Document = document): void {
       // Countdown TO a future date: calculate duration from now
       const futureMs = parseFlexibleDate(targetAttr);
       const nowMs = Date.now();
-      
+
       if (futureMs > nowMs) {
         // Set startMs to the duration between now and target
         startMs = futureMs - nowMs;

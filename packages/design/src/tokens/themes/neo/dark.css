@@ -2,7 +2,7 @@
  * Do not edit directly, this file was auto-generated.
  */
 
-[data-theme=neo][data-mode=dark] {
+[data-theme="neo"][data-mode="dark"] {
   --theme-color-root--border: #2e323a; /** 1.4:1 contrast against root-default (#15171c) */
   --theme-color-root--text: #b6b7bb; /** 9:1 contrast against root-default (#15171c) */
   --theme-color-root--muted: #8f95a0; /** 6:1 contrast against root-default (#15171c) */
