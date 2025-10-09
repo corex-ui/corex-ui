@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.0.8
+
+### Patch Changes
+
+- Fix Timer and Design Tokens
+- Updated dependencies
+  - @corex-ui/static@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes
