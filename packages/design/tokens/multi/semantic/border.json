@@ -5,7 +5,7 @@
       "type": "borderRadius"
     },
     "full": {
-      "value": "calc(infinity * 1px)",
+      "value": "9999px",
       "type": "borderRadius"
     }
   }
