@@ -1,7 +1,7 @@
-import { spawn } from 'node:child_process'
+import {spawn} from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import {fileURLToPath} from 'node:url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -10,7 +10,6 @@ const tmpDir = path.join(__dirname, 'tmp')
 function runCLI(args: string[]): Promise<string> {
   return new Promise((resolve, reject) => {
     const child = spawn('pnpm', ['--filter', '@corex-ui/cli', 'exec', 'corex-ui', ...args], {
-
       cwd: process.cwd(),
       stdio: 'pipe',
     })
@@ -35,8 +34,8 @@ function runCLI(args: string[]): Promise<string> {
 
 describe('corex render CLI', () => {
   beforeEach(() => {
-    if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { force: true, recursive: true })
-    fs.mkdirSync(tmpDir, { recursive: true })
+    if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, {force: true, recursive: true})
+    fs.mkdirSync(tmpDir, {recursive: true})
 
     const html = `<html><body>
 <div class="accordion accordion-js">
@@ -58,7 +57,7 @@ describe('corex render CLI', () => {
   })
 
   afterEach(() => {
-    if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { force: true, recursive: true })
+    if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, {force: true, recursive: true})
   })
 
   it('should find components and render HTML files', async () => {
