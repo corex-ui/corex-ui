@@ -12,7 +12,7 @@ export default defineConfig({
       },
     },
   ],
-  reporter: [["html", { outputFolder: "e2e/report", open: "never" }]],
+  reporter: [["html", { outputFolder: "e2e/_report", open: "never" }]],
   webServer: {
     command:
       "pnpm --prefix examples/static-vite build && pnpm --prefix examples/static-vite preview --port 4173 --host",
