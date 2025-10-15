@@ -1,4 +1,5 @@
 @import "../main.css";
+
 @layer components {
   .link {
     display: inline-flex;
@@ -11,12 +12,15 @@
     height: inherit;
     font-size: inherit;
     line-height: inherit;
-    gap: var(--spacing-mini-gap);
-    padding-inline: var(--spacing-mini-padding);
+    gap: var(--spacing-ui-gap);
+    padding-inline: var(--spacing-ui-padding);
     border-radius: var(--radius-ui);
     text-decoration: none;
-    text-wrap-mode: wrap;
-    word-break: break-word; 
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
   }
 
   .link::after {
@@ -40,6 +44,7 @@
     outline-offset: 1px;
     box-shadow: none;
   }
+
   .link:focus-visible::after {
     display: none;
   }
@@ -65,8 +70,10 @@
 }
 
 @utility link--* {
+  color: --value(--color-layer--*, [color]);
   font-size: --value(--text-ui-*, [length]);
   line-height: --value(--text-ui-* --line-height, [length]);
-  gap: --value(--spacing-mini-gap-*, [length]);
-  color: --value(--color-layer--*, [color]);
+  min-height: --value(--spacing-ui-*, [length]);
+  padding-inline: --value(--spacing-ui-padding-*, [length]);
+  gap: --value(--spacing-ui-gap-*, [length]);
 }

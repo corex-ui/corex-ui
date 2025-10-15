@@ -2,14 +2,14 @@
 
 @layer components {
   .typo {
-    text-wrap-mode: wrap;
-    text-wrap-style: stable;
     font-family: var(--font-ui);
     font-size: var(--text-ui);
     line-height: var(--text-ui--line-height);
     font-weight: var(--font-weight-ui);
     color: var(--color-root--text);
-    background-color: var(--color-root);
+    /* background-color: var(--color-root); */
+    text-wrap: wrap;
+
 
     &:focus-visible {
       outline: none;
