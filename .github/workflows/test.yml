@@ -28,7 +28,7 @@ jobs:
         run: pnpm turbo run build
 
       - name: Link CLI globally
-        run: pnpm --filter @corex-ui/cli link --global
+        run: pnpm link --global --filter @corex-ui/cli
 
       - name: Run tests
         run: |
