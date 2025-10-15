@@ -1,41 +1,35 @@
-import {spawn} from 'node:child_process'
+import { spawn } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import {fileURLToPath} from 'node:url'
+import { fileURLToPath } from 'node:url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const tmpDir = path.join(__dirname, 'tmp')
+const cliPath = path.resolve(__dirname, '../../bin/run.js') // adjust to your CLI package
 
 function runCLI(args: string[]): Promise<string> {
   return new Promise((resolve, reject) => {
-    const child = spawn('pnpm', ['--filter', '@corex-ui/cli', 'exec', 'corex-ui', ...args], {
+    const child = spawn('node', [cliPath, ...args], {
       cwd: process.cwd(),
       stdio: 'pipe',
     })
 
     let output = ''
-    child.stdout?.on('data', (data) => {
-      output += data.toString()
-    })
-    child.stderr?.on('data', (data) => {
-      output += data.toString()
-    })
+    child.stdout?.on('data', (data) => { output += data.toString() })
+    child.stderr?.on('data', (data) => { output += data.toString() })
 
     child.on('close', (code) => {
-      if (code === 0) {
-        resolve(output)
-      } else {
-        reject(new Error(`Exit code: ${code}`))
-      }
+      if (code === 0) resolve(output)
+      else reject(new Error(`Exit code: ${code}\n${output}`))
     })
   })
 }
 
 describe('corex render CLI', () => {
   beforeEach(() => {
-    if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, {force: true, recursive: true})
-    fs.mkdirSync(tmpDir, {recursive: true})
+    if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { force: true, recursive: true })
+    fs.mkdirSync(tmpDir, { recursive: true })
 
     const html = `<html><body>
 <div class="accordion accordion-js">
@@ -53,17 +47,17 @@ describe('corex render CLI', () => {
   </div>
 </div>
 </body></html>`
+
     fs.writeFileSync(path.join(tmpDir, 'index.html'), html)
   })
 
   afterEach(() => {
-    if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, {force: true, recursive: true})
+    if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { force: true, recursive: true })
   })
 
   it('should find components and render HTML files', async () => {
     const output = await runCLI(['render', tmpDir])
 
-    // Extract numbers from output
     const componentsMatch = output.match(/Components:\s*(\d+)\s*found/)
     const htmlFilesMatch = output.match(/HTML files:\s*(\d+)\s*found/)
     const renderedMatch = output.match(/(\d+)\s*rendered/)
