@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.1.1
+
+### Patch Changes
+
+- Fix tests
+- Updated dependencies
+  - @corex-ui/static@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
