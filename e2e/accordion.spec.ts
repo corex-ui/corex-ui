@@ -169,4 +169,62 @@ test.describe("Accordion", () => {
       }
     });
   });
+  test.describe("events-accordion", () => {
+    test("should fire custom event on value change", async ({ page }) => {
+      const accordion = page.locator("#my-accordion");
+      const log = page.locator("#event-log");
+
+      const loremTrigger = accordion.locator(
+        '[data-part="item-trigger"][data-value="lorem"]',
+      );
+      await loremTrigger.click();
+
+      await expect(log).toHaveText('Value changed: {"value":["lorem"]}');
+
+      // Click the trigger with data-value="duis"
+      const duisTrigger = accordion.locator(
+        '[data-part="item-trigger"][data-value="duis"]',
+      );
+      await duisTrigger.click();
+
+      await expect(log).toHaveText('Value changed: {"value":["duis"]}');
+    });
+  });
+  test.describe("api-accordion", () => {
+    test.beforeEach(async ({ page }) => {
+      await page.goto("/pages/accordion.html");
+    });
+
+    test("should set single value via API button", async ({ page }) => {
+      const setDonec = page.locator(
+        'button[data-action="accordion-set-value"][data-value="donec"]',
+      );
+      const log = page.locator("#api-event-log");
+
+      await setDonec.click();
+      await expect(log).toHaveText('Set value: ["donec"]');
+    });
+
+    test("should set multiple values via API button", async ({ page }) => {
+      const setBoth = page.locator(
+        'button[data-action="accordion-set-value"][data-value="donec,duis"]',
+      );
+      const log = page.locator("#api-event-log");
+
+      await setBoth.click();
+      await expect(log).toHaveText('Set value: ["donec","duis"]');
+    });
+
+    test("should get current value via API button", async ({ page }) => {
+      const getValue = page.locator('button[data-action="accordion-value"]');
+      const setDonec = page.locator(
+        'button[data-action="accordion-set-value"][data-value="donec"]',
+      );
+      const log = page.locator("#api-event-log");
+
+      await setDonec.click();
+      await getValue.click();
+      await expect(log).toHaveText('Current value: ["donec"]');
+    });
+  });
 });

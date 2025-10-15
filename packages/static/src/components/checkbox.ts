@@ -1,6 +1,5 @@
 import * as checkbox from "@zag-js/checkbox";
 import type { Direction } from "@zag-js/types";
-
 import {
   Component,
   VanillaMachine,
@@ -11,7 +10,6 @@ import {
   renderPart,
   getPartIds,
 } from "../lib";
-
 const PARTS = [
   "root",
   "label",
@@ -19,68 +17,17 @@ const PARTS = [
   "indicator",
   "hidden-input",
 ] as const;
-
 export class Checkbox extends Component<checkbox.Props, checkbox.Api> {
   initMachine(props: checkbox.Props): VanillaMachine<any> {
     return new VanillaMachine(checkbox.machine, props);
   }
-
   initApi(): checkbox.Api {
     return checkbox.connect(this.machine.service, normalizeProps);
   }
-
   render(): void {
     PARTS.forEach((part) => renderPart(this.el, part, this.api));
   }
 }
-
-function registerEvents(el: HTMLElement, api: checkbox.Api): void {
-  el.addEventListener("checkbox:set-checked", (event) => {
-    const { value } = (event as CustomEvent<{ value: checkbox.CheckedState }>)
-      .detail;
-    api.setChecked(value);
-  });
-
-  el.addEventListener("checkbox:toggle-checked", () => {
-    api.toggleChecked();
-  });
-
-  el.addEventListener("checkbox:checked", (event) => {
-    const { callback } = (
-      event as CustomEvent<{ callback: (value: boolean) => void }>
-    ).detail;
-    if (typeof callback === "function") callback(api.checked);
-  });
-
-  el.addEventListener("checkbox:disabled", (event) => {
-    const { callback } = (
-      event as CustomEvent<{ callback: (value: boolean | undefined) => void }>
-    ).detail;
-    if (typeof callback === "function") callback(api.disabled);
-  });
-
-  el.addEventListener("checkbox:indeterminate", (event) => {
-    const { callback } = (
-      event as CustomEvent<{ callback: (value: boolean) => void }>
-    ).detail;
-    if (typeof callback === "function") callback(api.indeterminate);
-  });
-
-  el.addEventListener("checkbox:focused", (event) => {
-    const { callback } = (
-      event as CustomEvent<{ callback: (value: boolean | undefined) => void }>
-    ).detail;
-    if (typeof callback === "function") callback(api.focused);
-  });
-
-  el.addEventListener("checkbox:checked-state", (event) => {
-    const { callback } = (
-      event as CustomEvent<{ callback: (value: checkbox.CheckedState) => void }>
-    ).detail;
-    if (typeof callback === "function") callback(api.checkedState);
-  });
-}
-
 function parseCheckedState(
   el: HTMLElement,
   attr: "checked" | "defaultChecked",
@@ -88,7 +35,6 @@ function parseCheckedState(
   if (getBoolean(el, attr) === true) return true;
   return getString(el, attr, ["indeterminate"] as const);
 }
-
 export function initializeCheckbox(
   doc: HTMLElement | Document = document,
 ): void {
@@ -113,12 +59,49 @@ export function initializeCheckbox(
         }
       },
     });
-
     checkbox.init();
-    registerEvents(rootEl, checkbox.api);
+    rootEl.addEventListener("checkbox:set-checked", (event) => {
+      const { value } = (event as CustomEvent<{ value: checkbox.CheckedState }>)
+        .detail;
+      checkbox.api.setChecked(value);
+    });
+    rootEl.addEventListener("checkbox:toggle-checked", () => {
+      checkbox.api.toggleChecked();
+    });
+    rootEl.addEventListener("checkbox:checked", (event) => {
+      const { callback } = (
+        event as CustomEvent<{ callback: (value: boolean) => void }>
+      ).detail;
+      if (typeof callback === "function") callback(checkbox.api.checked);
+    });
+    rootEl.addEventListener("checkbox:disabled", (event) => {
+      const { callback } = (
+        event as CustomEvent<{ callback: (value: boolean | undefined) => void }>
+      ).detail;
+      if (typeof callback === "function") callback(checkbox.api.disabled);
+    });
+    rootEl.addEventListener("checkbox:indeterminate", (event) => {
+      const { callback } = (
+        event as CustomEvent<{ callback: (value: boolean) => void }>
+      ).detail;
+      if (typeof callback === "function") callback(checkbox.api.indeterminate);
+    });
+    rootEl.addEventListener("checkbox:focused", (event) => {
+      const { callback } = (
+        event as CustomEvent<{ callback: (value: boolean | undefined) => void }>
+      ).detail;
+      if (typeof callback === "function") callback(checkbox.api.focused);
+    });
+    rootEl.addEventListener("checkbox:checked-state", (event) => {
+      const { callback } = (
+        event as CustomEvent<{
+          callback: (value: checkbox.CheckedState) => void;
+        }>
+      ).detail;
+      if (typeof callback === "function") callback(checkbox.api.checkedState);
+    });
   });
 }
-
 if (typeof window !== "undefined") {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => initializeCheckbox());

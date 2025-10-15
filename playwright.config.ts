@@ -15,7 +15,7 @@ export default defineConfig({
   reporter: [["html", { outputFolder: "e2e/_report", open: "never" }]],
   webServer: {
     command:
-      "pnpm --prefix examples/static-vite build && pnpm --prefix examples/static-vite preview --port 4173 --host",
+      "pnpm --prefix tests/static-vite build && pnpm --prefix tests/static-vite preview --port 4173 --host",
     port: 4173,
     reuseExistingServer: !process.env.CI,
   },

@@ -462,6 +462,119 @@
           });
       </script>
     </section>
+
+    <!-- Test: API Buttons -->
+    <section data-test="api-accordion">
+      <h2>API Accordion</h2>
+
+      <!-- Buttons to interact with the API -->
+      <button
+        data-action="accordion-set-value"
+        data-value="donec"
+        class="button"
+      >
+        Set Donec
+      </button>
+      <button
+        data-action="accordion-set-value"
+        data-value="donec,duis"
+        class="button"
+      >
+        Set Donec and Duis
+      </button>
+      <button data-action="accordion-value" class="button">
+        Get current value
+      </button>
+
+      <!-- Accordion to test API -->
+      <div
+        id="accordion-api"
+        class="accordion accordion-js"
+        data-multiple="true"
+      >
+        <div data-part="root">
+          <div data-part="item" data-value="lorem">
+            <h3>
+              <button data-part="item-trigger" data-value="lorem">
+                Lorem ipsum dolor sit amet
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="lorem">
+              <p>Consectetur adipiscing elit...</p>
+            </div>
+          </div>
+          <div data-part="item" data-value="duis">
+            <h3>
+              <button data-part="item-trigger" data-value="duis">
+                Duis dictum gravida...
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="duis">
+              <p>Nullam eget vestibulum ligula...</p>
+            </div>
+          </div>
+          <div data-part="item" data-value="donec">
+            <h3>
+              <button data-part="item-trigger" data-value="donec">
+                Donec condimentum ex mi
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="donec">
+              <p>Congue molestie ipsum gravida...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="api-event-log"></div>
+
+      <script type="module">
+        const accordionState = document.getElementById("accordion-api");
+        const apiLog = document.getElementById("api-event-log");
+
+        if (accordionState) {
+          const buttons = document.querySelectorAll(
+            'button[data-action="accordion-set-value"]',
+          );
+          buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+              const value = button.dataset.value;
+              if (value) {
+                const values = value
+                  .split(",")
+                  .map((v) => v.trim())
+                  .filter(Boolean);
+                accordionState.dispatchEvent(
+                  new CustomEvent("accordion:set-value", {
+                    detail: { value: values },
+                  }),
+                );
+                apiLog.innerHTML = `<p>Set value: ${JSON.stringify(values)}</p>`;
+              }
+            });
+          });
+
+          const getBtns = document.querySelectorAll(
+            'button[data-action="accordion-value"]',
+          );
+          getBtns.forEach((btn) =>
+            btn.addEventListener("click", () => {
+              accordionState.dispatchEvent(
+                new CustomEvent("accordion:value", {
+                  detail: {
+                    callback: (value) =>
+                      (apiLog.innerHTML = `<p>Current value: ${JSON.stringify(value)}</p>`),
+                  },
+                }),
+              );
+            }),
+          );
+        } else {
+          console.warn("Element with ID 'accordion-api' not found");
+        }
+      </script>
+    </section>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
