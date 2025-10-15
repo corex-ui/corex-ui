@@ -1,5 +1,11 @@
 # @corex-ui/static
 
+## 0.1.0
+
+### Minor Changes
+
+- Added Test and Examples
+
 ## 0.0.9
 
 ### Patch Changes

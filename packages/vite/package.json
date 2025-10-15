@@ -1,6 +1,6 @@
 {
   "name": "@corex-ui/vite",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Vite plugin for rendering Corex UI static components post-build.",
   "publishConfig": {
     "access": "public"
@@ -20,7 +20,6 @@
     }
   },
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepublishOnly": "npm run build"

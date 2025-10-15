@@ -1,7 +1,7 @@
 {
   "name": "@corex-ui/cli",
   "description": "Corex CLI",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "publishConfig": {
     "access": "public"
   },

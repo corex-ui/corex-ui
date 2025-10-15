@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>static-vite</title>
+  </head>
+  <body>
+    <h1>Accordion Examples</h1>
+    <a href="/">← Back to index</a>
+
+    <!-- Test: Basic accordion -->
+    <section data-test="basic-accordion">
+      <h2>Basic Accordion</h2>
+      <div class="accordion accordion-js">
+        <div data-part="root">
+          <div data-part="item" data-value="lorem">
+            <h3>
+              <button data-part="item-trigger" data-value="lorem">
+                <span data-part="item-text">Lorem ipsum dolor sit amet</span>
+                <span data-part="item->" data-value="lorem"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="lorem">
+              <p>
+                Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
+                Proin quis risus feugiat tellus iaculis fringilla.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="duis">
+            <h3>
+              <button data-part="item-trigger" data-value="duis">
+                <span data-part="item-text"
+                  >Duis dictum gravida odio ac pharetra?</span
+                >
+                <span data-part="item->" data-value="duis"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="duis">
+              <p>
+                Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="donec">
+            <h3>
+              <button data-part="item-trigger" data-value="donec">
+                <span data-part="item-text">Donec condimentum ex mi</span>
+                <span data-part="item->" data-value="donec"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="donec">
+              <p>
+                Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                turpis non, pellentesque elit. Pellentesque sagittis fermentum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test: Multiple -->
+    <section data-test="multiple-accordion">
+      <h2>Multiple Items Expanded</h2>
+      <div class="accordion accordion-js" data-multiple>
+        <div data-part="root">
+          <div data-part="item" data-value="lorem">
+            <h3>
+              <button data-part="item-trigger" data-value="lorem">
+                <span data-part="item-text">Lorem ipsum dolor sit amet</span>
+                <span data-part="item->" data-value="lorem"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="lorem">
+              <p>
+                Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
+                Proin quis risus feugiat tellus iaculis fringilla.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="duis">
+            <h3>
+              <button data-part="item-trigger" data-value="duis">
+                <span data-part="item-text"
+                  >Duis dictum gravida odio ac pharetra?</span
+                >
+                <span data-part="item->" data-value="duis"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="duis">
+              <p>
+                Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="donec">
+            <h3>
+              <button data-part="item-trigger" data-value="donec">
+                <span data-part="item-text">Donec condimentum ex mi</span>
+                <span data-part="item->" data-value="donec"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="donec">
+              <p>
+                Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                turpis non, pellentesque elit. Pellentesque sagittis fermentum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test:  Default values -->
+    <section data-test="values-accordion">
+      <h2>Multiple Items Expanded</h2>
+      <div class="accordion accordion-js" data-default-value="lorem,duis">
+        <div data-part="root">
+          <div data-part="item" data-value="lorem">
+            <h3>
+              <button data-part="item-trigger" data-value="lorem">
+                <span data-part="item-text">Lorem ipsum dolor sit amet</span>
+                <span data-part="item->" data-value="lorem"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="lorem">
+              <p>
+                Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
+                Proin quis risus feugiat tellus iaculis fringilla.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="duis">
+            <h3>
+              <button data-part="item-trigger" data-value="duis">
+                <span data-part="item-text"
+                  >Duis dictum gravida odio ac pharetra?</span
+                >
+                <span data-part="item->" data-value="duis"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="duis">
+              <p>
+                Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="donec">
+            <h3>
+              <button data-part="item-trigger" data-value="donec">
+                <span data-part="item-text">Donec condimentum ex mi</span>
+                <span data-part="item->" data-value="donec"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="donec">
+              <p>
+                Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                turpis non, pellentesque elit. Pellentesque sagittis fermentum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test: Collapsible -->
+    <section data-test="collapsible-accordion">
+      <h2>Collapsible</h2>
+      <div class="accordion accordion-js" data-collapsible>
+        <div data-part="root">
+          <div data-part="item" data-value="lorem">
+            <h3>
+              <button data-part="item-trigger" data-value="lorem">
+                <span data-part="item-text">Lorem ipsum dolor sit amet</span>
+                <span data-part="item->" data-value="lorem"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="lorem">
+              <p>
+                Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
+                Proin quis risus feugiat tellus iaculis fringilla.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="duis">
+            <h3>
+              <button data-part="item-trigger" data-value="duis">
+                <span data-part="item-text"
+                  >Duis dictum gravida odio ac pharetra?</span
+                >
+                <span data-part="item->" data-value="duis"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="duis">
+              <p>
+                Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="donec">
+            <h3>
+              <button data-part="item-trigger" data-value="donec">
+                <span data-part="item-text">Donec condimentum ex mi</span>
+                <span data-part="item->" data-value="donec"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="donec">
+              <p>
+                Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                turpis non, pellentesque elit. Pellentesque sagittis fermentum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test: Disabled -->
+    <section data-test="disabled-accordion">
+      <h2>Disabled Accordion</h2>
+      <div class="accordion accordion-js" data-disabled="true">
+        <div data-part="root">
+          <div data-part="item" data-value="lorem">
+            <h3>
+              <button data-part="item-trigger" data-value="lorem">
+                <span data-part="item-text">Lorem ipsum dolor sit amet</span>
+                <span data-part="item-indicator" data-value="lorem"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="lorem">
+              <p>
+                Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
+                Proin quis risus feugiat tellus iaculis fringilla.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="duis">
+            <h3>
+              <button data-part="item-trigger" data-value="duis">
+                <span data-part="item-text"
+                  >Duis dictum gravida odio ac pharetra?</span
+                >
+                <span data-part="item-indicator" data-value="duis"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="duis">
+              <p>
+                Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="donec">
+            <h3>
+              <button data-part="item-trigger" data-value="donec">
+                <span data-part="item-text">Donec condimentum ex mi</span>
+                <span data-part="item-indicator" data-value="donec"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="donec">
+              <p>
+                Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                turpis non, pellentesque elit. Pellentesque sagittis fermentum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test: Disabled -->
+    <section data-test="disabled-item-accordion">
+      <h2>Disabled Item Accordion</h2>
+
+      <div class="accordion accordion-js">
+        <div data-part="root">
+          <div data-part="item" data-value="lorem" data-disabled="true">
+            <h3>
+              <button
+                data-part="item-trigger"
+                data-value="lorem"
+                data-disabled="true"
+              >
+                <span data-part="item-text">Lorem ipsum dolor sit amet</span>
+                <span
+                  data-part="item-indicator"
+                  data-value="lorem"
+                  data-disabled="true"
+                >
+                  >
+                </span>
+              </button>
+            </h3>
+            <div
+              data-part="item-content"
+              data-value="lorem"
+              data-disabled="true"
+            >
+              <p>
+                Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
+                Proin quis risus feugiat tellus iaculis fringilla.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="duis">
+            <h3>
+              <button data-part="item-trigger" data-value="duis">
+                <span data-part="item-text"
+                  >Duis dictum gravida odio ac pharetra?</span
+                >
+                <span data-part="item-indicator" data-value="duis"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="duis">
+              <p>
+                Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="donec">
+            <h3>
+              <button data-part="item-trigger" data-value="donec">
+                <span data-part="item-text">Donec condimentum ex mi</span>
+                <span data-part="item-indicator" data-value="donec"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="donec">
+              <p>
+                Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                turpis non, pellentesque elit. Pellentesque sagittis fermentum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test: Horizontal orientation -->
+    <section data-test="horizontal-accordion">
+      <h2>Horizontal Orientation</h2>
+      <div
+        class="accordion accordion-js"
+        data-orientation="horizontal"
+        data-default-value="lorem"
+      >
+        <div data-part="root" class="grid grid-cols-3">
+          <div data-part="item" data-value="lorem">
+            <h3>
+              <button data-part="item-trigger" data-value="lorem">
+                <span data-part="item-text">A</span>
+                <span data-part="item-indicator" data-value="lorem"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="lorem">
+              <p
+                class="w-16 h-52 my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
+              ></p>
+            </div>
+          </div>
+          <div data-part="item" data-value="duis">
+            <h3>
+              <button data-part="item-trigger" data-value="duis">
+                <span data-part="item-text">B</span>
+                <span data-part="item-indicator" data-value="duis"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="duis">
+              <p
+                class="w-16 h-52 my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
+              ></p>
+            </div>
+          </div>
+          <div data-part="item" data-value="donec">
+            <h3>
+              <button data-part="item-trigger" data-value="donec">
+                <span data-part="item-text">C</span>
+                <span data-part="item-indicator" data-value="donec"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="donec">
+              <p
+                class="w-16 h-52 my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
+              ></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test: Custom events -->
+    <section data-test="events-accordion">
+      <h2>Custom Events</h2>
+      <div
+        id="my-accordion"
+        class="accordion accordion-js"
+        data-on-value-change="my-accordion-event"
+      >
+        <div data-part="root">
+          <div data-part="item" data-value="lorem">
+            <h3>
+              <button data-part="item-trigger" data-value="lorem">
+                <span data-part="item-text">Lorem ipsum dolor sit amet</span>
+                <span data-part="item-indicator" data-value="lorem"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="lorem">
+              <p>
+                Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
+                Proin quis risus feugiat tellus iaculis fringilla.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="duis">
+            <h3>
+              <button data-part="item-trigger" data-value="duis">
+                <span data-part="item-text"
+                  >Duis dictum gravida odio ac pharetra?</span
+                >
+                <span data-part="item-indicator" data-value="duis"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="duis">
+              <p>
+                Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+              </p>
+            </div>
+          </div>
+          <div data-part="item" data-value="donec">
+            <h3>
+              <button data-part="item-trigger" data-value="donec">
+                <span data-part="item-text">Donec condimentum ex mi</span>
+                <span data-part="item-indicator" data-value="donec"> > </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="donec">
+              <p>
+                Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                turpis non, pellentesque elit. Pellentesque sagittis fermentum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="event-log"></div>
+      <script type="module">
+        const log = document.getElementById("event-log");
+
+        document
+          .getElementById("my-accordion")
+          ?.addEventListener("my-accordion-event", (event) => {
+            log.innerHTML = `<p>Value changed: ${JSON.stringify(event.detail)}</p>`;
+          });
+      </script>
+    </section>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

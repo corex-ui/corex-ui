@@ -221,7 +221,7 @@ export function initializeCombobox(
       disableLayer: getBoolean(rootEl, "disableLayer"),
       form: getString(rootEl, "form"),
       highlightedValue: getString(rootEl, "highlightedValue"),
-      inputBehavior: getString(rootEl, "dir", inputBehaviors),
+      inputBehavior: getString(rootEl, "inputBehavior", inputBehaviors),
       inputValue: getString(rootEl, "inputValue"),
       invalid: getBoolean(rootEl, "invalid"),
       loopFocus: getBoolean(rootEl, "loopFocus"),
@@ -234,7 +234,11 @@ export function initializeCombobox(
       openOnClick: getBoolean(rootEl, "openOnClick"),
       openOnKeyPress: getBoolean(rootEl, "openOnKeyPress"),
       value: getStringList(rootEl, "value"),
-      selectionBehavior: getString(rootEl, "dir", selectionBehaviors),
+      selectionBehavior: getString(
+        rootEl,
+        "selectionBehavior",
+        selectionBehaviors,
+      ),
       positioning: {
         hideWhenDetached: getBoolean(rootEl, "hideWhenDetached"),
         placement: getString(rootEl, "placement", placements),

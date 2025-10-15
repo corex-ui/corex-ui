@@ -51,22 +51,14 @@
     width: var(--container-micro);
   }
 
-  .color-picker
-    [data-scope="color-picker"][data-part="channel-input"][data-channel="alpha"],
-  .color-picker
-    [data-scope="color-picker"][data-part="channel-input"][data-channel="red"],
-  .color-picker
-    [data-scope="color-picker"][data-part="channel-input"][data-channel="blue"],
-  .color-picker
-    [data-scope="color-picker"][data-part="channel-input"][data-channel="green"],
-  .color-picker
-    [data-scope="color-picker"][data-part="channel-input"][data-channel="hue"],
-  .color-picker
-    [data-scope="color-picker"][data-part="channel-input"][data-channel="saturation"],
-  .color-picker
-    [data-scope="color-picker"][data-part="channel-input"][data-channel="lightness"],
-  .color-picker
-    [data-scope="color-picker"][data-part="channel-input"][data-channel="brightness"] {
+  .color-picker [data-scope="color-picker"][data-part="channel-input"][data-channel="alpha"],
+  .color-picker [data-scope="color-picker"][data-part="channel-input"][data-channel="red"],
+  .color-picker [data-scope="color-picker"][data-part="channel-input"][data-channel="blue"],
+  .color-picker [data-scope="color-picker"][data-part="channel-input"][data-channel="green"],
+  .color-picker [data-scope="color-picker"][data-part="channel-input"][data-channel="hue"],
+  .color-picker [data-scope="color-picker"][data-part="channel-input"][data-channel="saturation"],
+  .color-picker [data-scope="color-picker"][data-part="channel-input"][data-channel="lightness"],
+  .color-picker [data-scope="color-picker"][data-part="channel-input"][data-channel="brightness"] {
     width: calc(var(--container-micro-sm) * 0.6);
     min-height: var(--spacing-mini);
     padding-inline: var(--spacing-micro-padding-sm);
@@ -129,6 +121,12 @@
     @apply ui-trigger ui-trigger--square;
   }
 
+  @media (pointer: coarse) {
+    [data-part="eye-dropper-trigger"] {
+      display: none!important;
+    }
+  }
+
   .color-picker [data-part="pickers"] {
     display: flex;
     flex-direction: row;
@@ -169,7 +167,7 @@
     line-height: var(--text-ui-sm--line-height);
   }
 
-  .color-picker [data-part="input-group"] > input {
+  .color-picker [data-part="input-group"]>input {
     min-height: var(--spacing-mini-sm);
     font-size: var(--text-ui-sm);
     line-height: var(--text-ui-sm--line-height);

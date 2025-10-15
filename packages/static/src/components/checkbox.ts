@@ -9,48 +9,103 @@ import {
   generateId,
   normalizeProps,
   renderPart,
-  // getStringList,
+  getPartIds,
 } from "../lib";
+
+const PARTS = [
+  "root",
+  "label",
+  "control",
+  "indicator",
+  "hidden-input",
+] as const;
+
 export class Checkbox extends Component<checkbox.Props, checkbox.Api> {
   initMachine(props: checkbox.Props): VanillaMachine<any> {
     return new VanillaMachine(checkbox.machine, props);
   }
+
   initApi(): checkbox.Api {
-    const api = checkbox.connect(this.machine.service, normalizeProps);
-    return api;
+    return checkbox.connect(this.machine.service, normalizeProps);
   }
-  render() {
-    const parts = ["root", "label", "control", "indicator", "hidden-input"];
-    for (const part of parts) renderPart(this.el, part, this.api);
+
+  render(): void {
+    PARTS.forEach((part) => renderPart(this.el, part, this.api));
   }
 }
+
+function registerEvents(el: HTMLElement, api: checkbox.Api): void {
+  el.addEventListener("checkbox:set-checked", (event) => {
+    const { value } = (event as CustomEvent<{ value: checkbox.CheckedState }>)
+      .detail;
+    api.setChecked(value);
+  });
+
+  el.addEventListener("checkbox:toggle-checked", () => {
+    api.toggleChecked();
+  });
+
+  el.addEventListener("checkbox:checked", (event) => {
+    const { callback } = (
+      event as CustomEvent<{ callback: (value: boolean) => void }>
+    ).detail;
+    if (typeof callback === "function") callback(api.checked);
+  });
+
+  el.addEventListener("checkbox:disabled", (event) => {
+    const { callback } = (
+      event as CustomEvent<{ callback: (value: boolean | undefined) => void }>
+    ).detail;
+    if (typeof callback === "function") callback(api.disabled);
+  });
+
+  el.addEventListener("checkbox:indeterminate", (event) => {
+    const { callback } = (
+      event as CustomEvent<{ callback: (value: boolean) => void }>
+    ).detail;
+    if (typeof callback === "function") callback(api.indeterminate);
+  });
+
+  el.addEventListener("checkbox:focused", (event) => {
+    const { callback } = (
+      event as CustomEvent<{ callback: (value: boolean | undefined) => void }>
+    ).detail;
+    if (typeof callback === "function") callback(api.focused);
+  });
+
+  el.addEventListener("checkbox:checked-state", (event) => {
+    const { callback } = (
+      event as CustomEvent<{ callback: (value: checkbox.CheckedState) => void }>
+    ).detail;
+    if (typeof callback === "function") callback(api.checkedState);
+  });
+}
+
+function parseCheckedState(
+  el: HTMLElement,
+  attr: "checked" | "defaultChecked",
+): checkbox.CheckedState | undefined {
+  if (getBoolean(el, attr) === true) return true;
+  return getString(el, attr, ["indeterminate"] as const);
+}
+
 export function initializeCheckbox(
   doc: HTMLElement | Document = document,
 ): void {
   doc.querySelectorAll<HTMLElement>(".checkbox-js").forEach((rootEl) => {
-    const directions = ["ltr", "rtl"] as const;
     const checkbox = new Checkbox(rootEl, {
       id: generateId(rootEl, "checkbox"),
+      ids: getPartIds(rootEl, PARTS),
       name: getString(rootEl, "name"),
       form: getString(rootEl, "form"),
-      defaultChecked:
-        getBoolean(rootEl, "defaultChecked") === true
-          ? true
-          : getString(rootEl, "checked", ["indeterminate"]) === "indeterminate"
-            ? "indeterminate"
-            : undefined,
-      checked:
-        getBoolean(rootEl, "checked") === true
-          ? true
-          : getString(rootEl, "checked", ["indeterminate"]) === "indeterminate"
-            ? "indeterminate"
-            : undefined,
+      defaultChecked: parseCheckedState(rootEl, "defaultChecked"),
+      checked: parseCheckedState(rootEl, "checked"),
       disabled: getBoolean(rootEl, "disabled"),
       invalid: getBoolean(rootEl, "invalid"),
       readOnly: getBoolean(rootEl, "readOnly"),
       required: getBoolean(rootEl, "required"),
       value: getString(rootEl, "value"),
-      dir: getString<Direction>(rootEl, "dir", directions),
+      dir: getString<Direction>(rootEl, "dir", ["ltr", "rtl"]),
       onCheckedChange(details) {
         const eventName = getString(rootEl, "onCheckedChange");
         if (eventName) {
@@ -58,33 +113,16 @@ export function initializeCheckbox(
         }
       },
     });
+
     checkbox.init();
-    // checkbox.el.addEventListener("checkbox:set-value", (event) => {
-    //   const { value } = (event as CustomEvent<{ value: string[] }>).detail;
-    //   checkbox.api.setValue(value);
-    // });
-    // checkbox.el.addEventListener("checkbox:get-value", (event) => {
-    //   const detail = (event as CustomEvent<{ callback: (value: string[]) => void }>).detail;
-    //   const callback = detail.callback;
-    //   if (callback && typeof callback === "function") {
-    //     callback(checkbox.api.value);
-    //   }
-    // });
-    // checkbox.el.addEventListener("checkbox:get-focused-value", (event) => {
-    //   const detail = (event as CustomEvent<{ callback: (value: string | null) => void }>).detail;
-    //   const callback = detail.callback;
-    //   if (callback && typeof callback === "function") {
-    //     callback(checkbox.api.focusedValue);
-    //   }
-    // });
+    registerEvents(rootEl, checkbox.api);
   });
 }
+
 if (typeof window !== "undefined") {
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeCheckbox(document),
-    );
+    document.addEventListener("DOMContentLoaded", () => initializeCheckbox());
   } else {
-    initializeCheckbox(document);
+    initializeCheckbox();
   }
 }

@@ -1,4 +1,5 @@
 @import "../main.css";
+
 @layer components {
   .button {
     @apply ui-trigger;
@@ -9,7 +10,6 @@
   .button.button--circle {
     display: inline-flex;
     aspect-ratio: 1 / 1;
-    padding: 0 !important;
     justify-content: center;
     align-items: center;
   }

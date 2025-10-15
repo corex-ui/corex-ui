@@ -28,9 +28,9 @@
   font-weight: var(--font-weight-ui);
   border-radius: var(--radius-ui);
   border: 1px solid var(--color-ui--border);
-  padding-inline: var(--spacing-ui-padding);
+  padding: var(--spacing-ui-padding);
   gap: var(--spacing-ui-gap);
-  min-height: var(--spacing-ui);
+  max-height: var(--spacing-ui);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
@@ -71,7 +71,7 @@
 @utility ui-trigger--* {
   font-size: --value(--text-ui-*, [length]);
   line-height: --value(--text-ui-* --line-height, [length]);
-  min-height: --value(--spacing-ui-*, [length]);
+  max-height: --value(--spacing-ui-*, [length]);
   background-color: --value(--color-ui-*, [color]);
   color: --value(--color-ui-* --text, [color]);
   padding-inline: --value(--spacing-ui-padding-*, [length]);
@@ -101,7 +101,6 @@
 @utility ui-trigger--square {
   display: inline-flex;
   aspect-ratio: 1 / 1;
-  padding: 0 !important;
   justify-content: center;
   align-items: center;
   border-radius: var(--radius-full);
@@ -109,7 +108,6 @@
 
 @utility ui-trigger--circle {
   aspect-ratio: 1 / 1;
-  padding: 0 !important;
   justify-content: center;
   align-items: center;
   border-radius: var(--radius-full);
@@ -276,6 +274,7 @@
     text-align: start;
   }
 }
+
 @utility ui-item--* {
   font-size: --value(--text-ui-*, [length]);
   line-height: --value(--text-ui-* --line-height, [length]);
@@ -322,6 +321,7 @@
   border-radius: var(--radius-ui);
   text-decoration: none;
   text-wrap-mode: nowrap;
+
   &:hover {
     color: var(--color-layer--brand);
   }
