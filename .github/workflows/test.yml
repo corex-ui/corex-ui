@@ -7,31 +7,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      # Install pnpm BEFORE trying to use pnpm cache
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Setup pnpm cache
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
           cache-dependency-path: 'pnpm-lock.yaml'
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+          run_install: false
+
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build all packages
         run: pnpm turbo run build
 
+      - name: Link CLI globally
+        run: pnpm --filter @corex-ui/cli link --global
+
       - name: Run tests
-        run: pnpm turbo run test && pnpm run test:e2e
+        run: |
+          pnpm turbo run test
+          pnpm run test:e2e
         env:
           CI: true
