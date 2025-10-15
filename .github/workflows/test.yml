@@ -1,14 +1,25 @@
-- name: Setup Node.js and pnpm
-  uses: actions/setup-node@v3
-  with:
-    node-version: 20
-    cache: "pnpm"
-    cache-dependency-path: "pnpm-lock.yaml"
+name: Tests
 
-- name: Install dependencies
-  run: pnpm install
+on: [push, pull_request]
 
-- name: Run Playwright tests
-  run: pnpm test
-  env:
-    CI: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js and pnpm
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "pnpm"
+          cache-dependency-path: "pnpm-lock.yaml"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run Playwright tests
+        run: pnpm test
+        env:
+          CI: true
