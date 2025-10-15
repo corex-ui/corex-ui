@@ -20,7 +20,6 @@
     }
   },
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepublishOnly": "npm run build"
