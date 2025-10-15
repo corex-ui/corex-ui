@@ -220,15 +220,12 @@ export const renderItem = (root: HTMLElement, name: string, api: any) => {
   );
   const getterName = `get${camelizedName}Props`;
   if (typeof api[getterName] !== "function") return;
-  // Detect component class from root
   const componentClass = Array.from(root.classList).find((cls) =>
     cls.endsWith("-js"),
   );
-  // Get all items with this part name under root
   const parts = Array.from(
     root.querySelectorAll<HTMLElement>(`[data-part='${name}']`),
   );
-  // Filter out items that are nested inside another component of the same type
   const scopedParts = componentClass
     ? parts.filter((part) => part.closest(`.${componentClass}`) === root)
     : parts;
@@ -260,59 +257,7 @@ export const renderItem = (root: HTMLElement, name: string, api: any) => {
     spreadProps(part, props);
   });
 };
-// export const renderSwatch = (root: HTMLElement, name: string, api: any) => {
-//   const camelizedName = name.replace(
-//     /(^|-)([a-z])/g,
-//     (_match, _prefix, letter) => letter.toUpperCase(),
-//   );
-//   const getterName = `get${camelizedName}Props`;
-//   // Find the control container
-//   const control = root.querySelector<HTMLElement>('[data-part="control"]');
-//   if (!control) return;
-//   // Only select parts inside control
-//   const parts = control.querySelectorAll<HTMLElement>(`[data-part='${name}']`);
-//   parts.forEach((part) => {
-//     const preset = getString(part, "preset");
-//     const value = preset ?? api.value;
-//     spreadProps(
-//       part,
-//       api[getterName]({
-//         value,
-//       }),
-//     );
-//   });
-// };
-export const renderPage = (root: HTMLElement, name: string, api: any) => {
-  const camelizedName = name.replace(
-    /(^|-)([a-z])/g,
-    (_match, _prefix, letter) => letter.toUpperCase(),
-  );
-  const getterName = `get${camelizedName}Props`;
-  const parts = root.querySelectorAll<HTMLElement>(`[data-part='${name}']`);
-  parts.forEach((part) => {
-    const value = part.getAttribute("data-value");
-    const type = part.getAttribute("data-type");
-    if (type === "page" && value != null) {
-      spreadProps(
-        part,
-        api[getterName]({
-          type,
-          value: Number(value),
-          index: Number(value) - 1,
-        }),
-      );
-    }
-  });
-};
-export const renderEllipsis = (root: HTMLElement, api: any) => {
-  const parts = root.querySelectorAll<HTMLElement>(`[data-part='ellipsis']`);
-  parts.forEach((part) => {
-    const index = part.getAttribute("data-index");
-    if (index != null) {
-      spreadProps(part, api.getEllipsisProps({ index: Number(index) }));
-    }
-  });
-};
+
 /**
  * Renders a list of items inside the root element. Each item is identified by the `name`, and the
  * properties for each item are retrieved from the API based on its `data-value`, `data-disabled`, and `data-index` attributes.
@@ -337,38 +282,7 @@ export function renderList<T extends { value: string; label?: string }>(
     spreadProps(el, props);
   });
 }
-/**
- * Renders a list of groups inside the root element. Each group is identified by the `name`, and the
- * properties for each group are retrieved from the API based on its `data-id` attribute.
- * @param root - The root HTML element containing the groups.
- * @param name - The name of the group part to render (e.g., 'item-group', 'item-group-label').
- * @param api - The API object used to retrieve the properties for each group.
- * @param groups - Array of group objects with value property.
- */
-export function renderGroup<T extends { value: string }>(
-  root: HTMLElement,
-  name: string,
-  api: any,
-  groups: T[],
-) {
-  const parts = root.querySelectorAll<HTMLElement>(`[data-part='${name}']`);
-  const getter = api[`get${capitalize(name)}Props`];
-  if (!getter) {
-    console.warn(`API method get${capitalize(name)}Props not found`);
-    return;
-  }
-  parts.forEach((el, index) => {
-    const value = el.getAttribute("data-id") || groups[index]?.value;
-    const group = groups.find((group) => group.value === value);
-    if (!group) return;
-    // For group labels, we need to pass the group id/value
-    const props =
-      name === "item-group-label"
-        ? getter({ htmlFor: group.value })
-        : getter({ id: group.value });
-    spreadProps(el, props);
-  });
-}
+
 function capitalize(str: string): string {
   return str.replace(/(^|-)([a-z])/g, (_m, _p, l) => l.toUpperCase());
 }
@@ -442,12 +356,10 @@ export const renderNode = (
     const found = findNodeById(tree, id);
     if (!found) return;
     const { node, indexPath } = found;
-    // Pick the right props getter, fallback to generic
     const getPropsFn =
       typeof api[getterName] === "function" ? api[getterName] : api.getProps;
     const props = getPropsFn({ indexPath, node });
     spreadProps(part, props);
-    // If a `children` attribute is explicitly set, use it as text
     const label = part.getAttribute("children");
     if (label != null) {
       part.textContent = label;
@@ -524,8 +436,12 @@ export const getBoolean = (
   attrName: string,
 ): boolean | undefined => {
   const value = element.dataset[attrName];
+  if (value === "") return true;
   if (value === "true") return true;
   if (value === "false") return false;
+  if (element.hasAttribute(attrName)) return true;
+  if (element.hasAttribute(`data-${attrName}`)) return true;
+
   return undefined;
 };
 /**
@@ -542,7 +458,6 @@ export const generateId = (
   return `${fallbackId}-${Math.random().toString(36).substring(2, 9)}`;
 };
 
-// Equality helpers to guard redundant updates
 export function valuesEqual<T>(a: T, b: T): boolean {
   return a === b;
 }
@@ -554,8 +469,47 @@ export function arraysEqualUnordered(
   if (a === b) return true;
   if (!Array.isArray(a) || !Array.isArray(b)) return false;
   if (a.length !== b.length) return false;
-  // Compare as sets (preserve duplicates as not equal)
-  // To keep semantics identical to prior usage, we only ensure each value in a exists in b
-  // and lengths are equal.
   return a.every((v) => b.includes(v));
 }
+
+/**
+ * Parse element IDs from child parts with data-part and data-id attributes
+ * @param root - The root element containing the parts
+ * @param partNames - Array of part names to look for (e.g., ['root', 'control', 'label'])
+ * @returns Object with parsed IDs or undefined if no IDs found
+ *
+ * Example:
+ * ```html
+ * <div class="checkbox-js">
+ *   <div data-part="root" data-id="my-root"></div>
+ *   <div data-part="control" data-id="my-control"></div>
+ * </div>
+ * ```
+ * ```ts
+ * const ids = getPartIds(element, ['root', 'control', 'label']);
+ * // Returns: { root: 'my-root', control: 'my-control' }
+ * ```
+ */
+export const getPartIds = (
+  root: HTMLElement,
+  partNames: readonly string[],
+): Record<string, string> | undefined => {
+  const ids: Record<string, string> = {};
+  let hasAnyId = false;
+
+  for (const partName of partNames) {
+    const part = root.querySelector<HTMLElement>(`[data-part="${partName}"]`);
+    const id = part?.dataset.id;
+
+    if (id) {
+      // Convert kebab-case to camelCase: hidden-input -> hiddenInput
+      const camelKey = partName.replace(/-([a-z])/g, (_, letter) =>
+        letter.toUpperCase(),
+      );
+      ids[camelKey] = id;
+      hasAnyId = true;
+    }
+  }
+
+  return hasAnyId ? ids : undefined;
+};
