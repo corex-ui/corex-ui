@@ -12,7 +12,10 @@
     "vite": "^7.1.7"
   },
   "dependencies": {
+    "@corex-ui/design": "workspace:*",
     "@corex-ui/static": "workspace:*",
-    "@corex-ui/vite": "workspace:*"
+    "@corex-ui/vite": "workspace:*",
+    "@tailwindcss/vite": "^4.1.14",
+    "tailwindcss": "^4.1.14"
   }
 }

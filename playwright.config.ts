@@ -3,6 +3,7 @@ import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "./e2e",
   outputDir: "./e2e/_test-results",
+
   projects: [
     {
       name: "vite-chromium-dist",

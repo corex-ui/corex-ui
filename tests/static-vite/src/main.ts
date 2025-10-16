@@ -1,1 +1,2 @@
-import "@corex-ui/static/components/accordion";
+import "./style.css";
+import "@corex-ui/static";

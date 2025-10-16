@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkbox Examples</title>
+  </head>
+  <body class="typo">
+    <main>
+      <h1>Checkbox Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-checkbox">
+        <h2>Basic Checkbox</h2>
+        <div class="checkbox checkbox-js">
+          <label data-part="root">
+            <span data-part="label">Label</span>
+            <input data-part="hidden-input" />
+            <div data-part="control">
+              <svg
+                data-checked
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                ></path>
+              </svg>
+              <svg
+                data-indeterminate
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 12h14"
+                ></path>
+              </svg>
+            </div>
+          </label>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
