@@ -24,6 +24,7 @@ export class FileUpload extends Component<fileUpload.Props, fileUpload.Api> {
   render() {
     [
       "root",
+      "label",
       "dropzone",
       "hidden-input",
       "trigger",
