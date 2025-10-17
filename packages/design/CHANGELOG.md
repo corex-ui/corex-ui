@@ -1,5 +1,11 @@
 # @corex-ui/design
 
+## 0.1.2
+
+### Patch Changes
+
+- Add test and fix static components
+
 ## 0.1.1
 
 ### Patch Changes
