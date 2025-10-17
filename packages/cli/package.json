@@ -10,7 +10,6 @@
   "bin": {
     "corex-ui": "./bin/run.js"
   },
-  "bugs": "https://github.com/corex-ui/issues",
   "dependencies": {
     "@corex-ui/static": "workspace:*",
     "@oclif/core": "^4",
@@ -46,9 +45,18 @@
     "./dist",
     "./oclif.manifest.json"
   ],
-  "homepage": "https://github.com/corex-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corex-ui/corex-ui.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://corex-ui.com",
+  "bugs": {
+    "url": "https://github.com/corex-ui/corex-ui/issues"
+  },
   "keywords": [
-    "oclif"
+    "oclif",
+    "corex cli"
   ],
   "license": "MIT",
   "main": "dist/index.js",
@@ -68,7 +76,6 @@
       }
     }
   },
-  "repository": "netoum/cli",
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint",

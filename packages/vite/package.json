@@ -26,12 +26,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/corex-ui/corex-ui"
+    "url": "https://github.com/corex-ui/corex-ui.git",
+    "directory": "packages/vite"
   },
+  "homepage": "https://corex-ui.com",
   "bugs": {
     "url": "https://github.com/corex-ui/corex-ui/issues"
   },
-  "homepage": "https://corex-ui.com",
   "keywords": [
     "vite",
     "vite-plugin",

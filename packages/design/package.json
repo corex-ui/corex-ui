@@ -35,11 +35,12 @@
     }
   },
   "author": "Netoum <info@netoum.com> (https://www.netoum.com)",
-  "homepage": "https://corex-ui.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/corex-ui/corex-ui"
+    "url": "https://github.com/corex-ui/corex-ui.git",
+    "directory": "packages/design"
   },
+  "homepage": "https://corex-ui.com",
   "bugs": {
     "url": "https://github.com/corex-ui/corex-ui/issues"
   },

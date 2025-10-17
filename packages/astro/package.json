@@ -6,6 +6,15 @@
     "access": "public"
   },
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corex-ui/corex-ui.git",
+    "directory": "packages/astro"
+  },
+  "homepage": "https://corex-ui.com",
+  "bugs": {
+    "url": "https://github.com/corex-ui/corex-ui/issues"
+  },
   "type": "module",
   "files": [
     "dist"
@@ -24,14 +33,6 @@
     "build": "tsc && vite build",
     "prepublishOnly": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/corex-ui/corex-ui"
-  },
-  "bugs": {
-    "url": "https://github.com/corex-ui/corex-ui/issues"
-  },
-  "homepage": "https://corex-ui.com",
   "keywords": [
     "astro",
     "astro-integration",
