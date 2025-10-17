@@ -76,15 +76,14 @@
 
   [data-scope="color-picker"][data-part="area"] {
     @apply ui-trigger;
-    min-height: var(--spacing-ui);
-    aspect-ratio: 1/1;
-    width: auto;
+    padding: 0!important;
+    min-height: var(--container-mini);
+    width: var(--container-mini);
   }
 
   [data-scope="color-picker"][data-part="area-background"] {
-    height: 100%;
-    width: auto;
-    aspect-ratio: 1 / 1;
+    height: var(--container-mini);
+    width: var(--container-mini);
   }
 
   [data-scope="color-picker"][data-part="area-thumb"],

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Examples</title>
+  </head>
+  <body class="typo">
+    <main>
+      <h1>Select Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-select">
+        <h2>Basic Select</h2>
+        <div class="select-js select" data-same-width="true">
+          <div data-part="root">
+            <div data-part="control">
+              <div data-part="label">Your Currency</div>
+              <button data-part="trigger">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div data-part="positioner">
+              <ul data-part="content">
+                <li data-part="item" data-value="USD">
+                  <span data-part="item-text" data-value="USD">US Dollar</span>
+                </li>
+                <li data-part="item" data-value="EUR">
+                  <span data-part="item-text" data-value="EUR">Euro</span>
+                </li>
+                <li data-part="item" data-value="GBP">
+                  <span data-part="item-text" data-value="GBP"
+                    >British Pound</span
+                  >
+                </li>
+                <li data-part="item" data-value="JPY">
+                  <span data-part="item-text" data-value="JPY"
+                    >Japanese Yen</span
+                  >
+                </li>
+                <li data-part="item" data-value="INR">
+                  <span data-part="item-text" data-value="INR"
+                    >Indian Rupee</span
+                  >
+                </li>
+                <li data-part="item" data-value="CAD">
+                  <span data-part="item-text" data-value="CAD"
+                    >Canadian Dollar</span
+                  >
+                </li>
+                <li data-part="item" data-value="AUD">
+                  <span data-part="item-text" data-value="AUD"
+                    >Australian Dollar</span
+                  >
+                </li>
+                <li data-part="item" data-value="CHF">
+                  <span data-part="item-text" data-value="CHF"
+                    >Swiss Franc</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

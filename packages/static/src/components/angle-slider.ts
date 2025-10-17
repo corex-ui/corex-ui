@@ -1,5 +1,4 @@
 import * as angleSlider from "@zag-js/angle-slider";
-
 import {
   Component,
   VanillaMachine,
@@ -12,7 +11,6 @@ import {
   getPartIds,
   valuesEqual,
 } from "../lib";
-
 const PARTS = [
   "root",
   "label",
@@ -22,37 +20,27 @@ const PARTS = [
   "value-text",
   "hidden-input",
 ] as const;
-
 const ITEM_PARTS = ["marker"] as const;
-
 export class AngleSlider extends Component<angleSlider.Props, angleSlider.Api> {
   initMachine(props: angleSlider.Props): VanillaMachine<any> {
     return new VanillaMachine(angleSlider.machine, props);
   }
-
   initApi(): angleSlider.Api {
     return angleSlider.connect(this.machine.service, normalizeProps);
   }
-
   render(): void {
     PARTS.forEach((part) => renderPart(this.el, part, this.api));
-
     ITEM_PARTS.forEach((part) =>
       renderPart(this.el, part, this.api, { value: "number" }),
     );
-
     this.updateValueText();
   }
-
   private updateValueText(): void {
     const valueEl = this.el.querySelector<HTMLElement>(
       '[data-part="value-text"] [data-part="value"]',
     );
-
     if (!valueEl) return;
-
     const numberingSystem = getString(this.el, "numberingSystem");
-
     if (numberingSystem) {
       valueEl.textContent = new Intl.NumberFormat(undefined, {
         numberingSystem,
@@ -62,30 +50,6 @@ export class AngleSlider extends Component<angleSlider.Props, angleSlider.Api> {
     }
   }
 }
-
-function registerEvents(el: HTMLElement, api: angleSlider.Api): void {
-  el.addEventListener("angle-slider:set-value", (event) => {
-    const { value } = (event as CustomEvent<{ value: number }>).detail;
-    if (!valuesEqual(api.value, value)) {
-      api.setValue(value);
-    }
-  });
-
-  el.addEventListener("angle-slider:value", (event) => {
-    const { callback } = (
-      event as CustomEvent<{ callback: (value: number) => void }>
-    ).detail;
-    if (typeof callback === "function") callback(api.value);
-  });
-
-  el.addEventListener("angle-slider:value-degree", (event) => {
-    const { callback } = (
-      event as CustomEvent<{ callback: (value: string) => void }>
-    ).detail;
-    if (typeof callback === "function") callback(api.valueAsDegree);
-  });
-}
-
 export function initializeAngleSlider(
   doc: HTMLElement | Document = document,
 ): void {
@@ -113,12 +77,27 @@ export function initializeAngleSlider(
         }
       },
     });
-
     angleSlider.init();
-    registerEvents(rootEl, angleSlider.api);
+    angleSlider.el.addEventListener("angle-slider:set-value", (event) => {
+      const { value } = (event as CustomEvent<{ value: number }>).detail;
+      if (!valuesEqual(angleSlider.api.value, value)) {
+        angleSlider.api.setValue(value);
+      }
+    });
+    angleSlider.el.addEventListener("angle-slider:value", (event) => {
+      const callback = (
+        event as CustomEvent<{ callback: (value: number) => void }>
+      ).detail.callback;
+      if (callback) callback(angleSlider.api.value);
+    });
+    angleSlider.el.addEventListener("angle-slider:value-degree", (event) => {
+      const callback = (
+        event as CustomEvent<{ callback: (value: string) => void }>
+      ).detail.callback;
+      if (callback) callback(angleSlider.api.valueAsDegree);
+    });
   });
 }
-
 if (typeof window !== "undefined") {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () =>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signature Pad Examples</title>
+  </head>
+  <body class="typo">
+    <main>
+      <h1>Signature Pad Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-signature-pad">
+        <h2>Basic Signature Pad</h2>
+        <div
+          id="signature-anatomy"
+          class="signature-pad signature-pad-js"
+          data-on-draw-end="save-signature"
+        >
+          <div data-part="root">
+            <label data-part="label">Signature Pad</label>
+            <input data-part="hidden-input" />
+            <div data-part="control">
+              <svg data-part="segment"></svg>
+              <button data-part="clear-trigger">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+                  />
+                </svg>
+              </button>
+              <div data-part="guide"></div>
+            </div>
+            <div data-part="preview"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

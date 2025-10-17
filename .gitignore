@@ -11,3 +11,5 @@ server/dist
 public/dist
 apps
 templates
+e2e/_test-results
+e2e/_report

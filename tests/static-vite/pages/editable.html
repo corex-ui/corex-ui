@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editable Examples</title>
+  </head>
+  <body class="typo">
+    <main>
+      <h1>Editable Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-editable">
+        <h2>Basic Editable</h2>
+        <div class="editable editable-js" data-placeholder="Enter Value">
+          <div data-part="root">
+            <div data-part="area">
+              <input data-part="input" />
+              <span data-part="preview"></span>
+            </div>
+            <div data-part="triggers">
+              <button data-part="edit-trigger" aria-label="edit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"
+                  />
+                </svg>
+              </button>
+              <button data-part="submit-trigger" aria-label="Save">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  />
+                </svg>
+              </button>
+              <button data-part="cancel-trigger" aria-label="Cancel">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

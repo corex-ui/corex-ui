@@ -1,6 +1,5 @@
 import * as accordion from "@zag-js/accordion";
 import type { Direction, Orientation } from "@zag-js/types";
-
 import {
   Component,
   VanillaMachine,
@@ -13,7 +12,6 @@ import {
   getPartIds,
   arraysEqualUnordered,
 } from "../lib";
-
 const PARTS = ["root"] as const;
 const ITEM_PARTS = [
   "item",
@@ -21,19 +19,15 @@ const ITEM_PARTS = [
   "item-indicator",
   "item-content",
 ] as const;
-
 export class Accordion extends Component<accordion.Props, accordion.Api> {
   initMachine(props: accordion.Props): VanillaMachine<any> {
     return new VanillaMachine(accordion.machine, props);
   }
-
   initApi(): accordion.Api {
     return accordion.connect(this.machine.service, normalizeProps);
   }
-
   render(): void {
     PARTS.forEach((part) => renderPart(this.el, part, this.api));
-
     ITEM_PARTS.forEach((part) =>
       renderPart(this.el, part, this.api, {
         value: "string",
@@ -42,30 +36,6 @@ export class Accordion extends Component<accordion.Props, accordion.Api> {
     );
   }
 }
-
-function registerEvents(el: HTMLElement, api: accordion.Api): void {
-  el.addEventListener("accordion:set-value", (event) => {
-    const { value } = (event as CustomEvent<{ value: string[] }>).detail;
-    if (!arraysEqualUnordered(api.value, value)) {
-      api.setValue(value);
-    }
-  });
-
-  el.addEventListener("accordion:value", (event) => {
-    const { callback } = (
-      event as CustomEvent<{ callback: (value: string[]) => void }>
-    ).detail;
-    if (typeof callback === "function") callback(api.value);
-  });
-
-  el.addEventListener("accordion:focused-value", (event) => {
-    const { callback } = (
-      event as CustomEvent<{ callback: (value: string | null) => void }>
-    ).detail;
-    if (typeof callback === "function") callback(api.focusedValue);
-  });
-}
-
 export function initializeAccordion(
   doc: HTMLElement | Document = document,
 ): void {
@@ -96,12 +66,27 @@ export function initializeAccordion(
         }
       },
     });
-
     accordion.init();
-    registerEvents(rootEl, accordion.api);
+    accordion.el.addEventListener("accordion:set-value", (event) => {
+      const { value } = (event as CustomEvent<{ value: string[] }>).detail;
+      if (!arraysEqualUnordered(accordion.api.value, value)) {
+        accordion.api.setValue(value);
+      }
+    });
+    accordion.el.addEventListener("accordion:value", (event) => {
+      const callback = (
+        event as CustomEvent<{ callback: (value: string[]) => void }>
+      ).detail.callback;
+      if (callback) callback(accordion.api.value);
+    });
+    accordion.el.addEventListener("accordion:focused-value", (event) => {
+      const callback = (
+        event as CustomEvent<{ callback: (value: string | null) => void }>
+      ).detail.callback;
+      if (callback) callback(accordion.api.focusedValue);
+    });
   });
 }
-
 if (typeof window !== "undefined") {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => initializeAccordion());

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dialog Examples</title>
+  </head>
+  <body class="typo">
+    <main>
+      <h1>Dialog Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-dialog">
+        <h2>Basic Dialog</h2>
+        <div class="dialog dialog-js">
+          <button data-part="trigger" aria-label="Open dialog">
+            Open Dialog
+          </button>
+          <div data-part="backdrop"></div>
+          <div data-part="positioner">
+            <div data-part="content">
+              <div data-part="row">
+                <h3 data-part="title">Title</h3>
+                <button data-part="close-trigger" aria-label="Close dialog">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18 18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <p data-part="description">Description</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
+                Proin quis risus feugiat tellus iaculis fringilla.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

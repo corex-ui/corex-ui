@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.1.2
+
+### Patch Changes
+
+- Add test and fix static components
+- Updated dependencies
+  - @corex-ui/static@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes

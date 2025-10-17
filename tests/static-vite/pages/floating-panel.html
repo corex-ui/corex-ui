@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Panel Examples</title>
+  </head>
+  <body class="typo">
+    <main>
+      <h1>Floating Panel Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-floating-panel">
+        <h2>Basic Floating Panel</h2>
+        <div class="floating-panel floating-panel-js">
+          <button data-part="trigger">
+            <span data-open>Open Panel</span>
+            <span data-closed>Close Panel</span>
+          </button>
+          <div data-part="positioner">
+            <div data-part="content">
+              <div data-part="drag-trigger">
+                <div data-part="header">
+                  <div data-part="title">Floating Panel</div>
+                  <div data-part="control">
+                    <button data-part="stage-trigger" data-stage="minimized">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M5 12h14"
+                        />
+                      </svg>
+                    </button>
+                    <button data-part="stage-trigger" data-stage="maximized">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
+                        />
+                      </svg>
+                    </button>
+                    <button data-part="stage-trigger" data-stage="default">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9 9V4.5M9 9H4.5M9 9 3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5 5.25 5.25"
+                        />
+                      </svg>
+                    </button>
+                    <button data-part="close-trigger">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M6 18 18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div data-part="body">
+                <p>
+                  Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                  turpis non, pellentesque elit. Pellentesque sagittis
+                  fermentum.
+                </p>
+              </div>
+              <div data-part="resize-trigger" data-axis="n"></div>
+              <div data-part="resize-trigger" data-axis="e"></div>
+              <div data-part="resize-trigger" data-axis="w"></div>
+              <div data-part="resize-trigger" data-axis="s"></div>
+              <div data-part="resize-trigger" data-axis="ne"></div>
+              <div data-part="resize-trigger" data-axis="se"></div>
+              <div data-part="resize-trigger" data-axis="sw"></div>
+              <div data-part="resize-trigger" data-axis="nw"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

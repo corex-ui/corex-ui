@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs Examples</title>
+  </head>
+  <body class="typo">
+    <main>
+      <h1>Tabs Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-tabs">
+        <h2>Basic Tabs</h2>
+        <div class="tabs tabs-js" data-default-value="lorem">
+          <div data-part="root">
+            <div data-part="list">
+              <button data-part="trigger" data-value="lorem">Lorem</button>
+              <button data-part="trigger" data-value="duis">Duis</button>
+              <button data-part="trigger" data-value="donec">Donec</button>
+            </div>
+            <div data-part="content" data-value="lorem">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
+                Proin quis risus feugiat tellus iaculis fringilla.
+              </p>
+            </div>
+            <div data-part="content" data-value="duis">
+              <p>
+                Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+              </p>
+            </div>
+            <div data-part="content" data-value="donec">
+              <p>
+                Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                turpis non, pellentesque elit. Pellentesque sagittis fermentum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

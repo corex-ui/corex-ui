@@ -4,6 +4,8 @@
   .button {
     @apply ui-trigger;
     justify-content: center;
+    appearance: none;
+    -webkit-appearance: none;
   }
 
   .button.button--square,
@@ -12,10 +14,11 @@
     aspect-ratio: 1 / 1;
     justify-content: center;
     align-items: center;
+    width: auto;
   }
 
   .button.button--circle {
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-full)!important;
   }
 }
 
