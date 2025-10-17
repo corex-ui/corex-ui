@@ -44,15 +44,21 @@ We welcome contributions! All development happens in a monorepo structure using 
 pnpm install
 
 # Build all packages
-pnpm run build
+pnpm build
 
 # Start development playground
-pnpm run dev
+pnpm dev
 
 
-# Lint and type check
-pnpm run lint
-pnpm run format
+# Lint and format
+pnpm lint
+pnpm format
+
+# Test all packages
+pnpm test
+
+# Test e2e
+pnpm test:e2e
 ```
 
 ### Contributing
