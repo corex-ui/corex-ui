@@ -125,7 +125,7 @@
   color: currentColor;
   font-size: inherit;
   flex-shrink: 0;
-
+  max-width: fit-content;
   [dir="rtl"] & {
     transform: scaleX(-1);
   }
@@ -226,6 +226,7 @@
   line-height: var(--text-ui--line-height);
   font-weight: var(--font-weight-ui);
   padding-inline: var(--spacing-ui-padding);
+  padding-block: var(--spacing-ui-padding-sm);
   gap: var(--spacing-ui-gap);
   min-height: var(--spacing-ui);
   background-color: var(--color-ui);

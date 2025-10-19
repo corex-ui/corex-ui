@@ -2,7 +2,7 @@
 
 @layer components {
   .link {
-    display: inline-block;
+    display: inline-flex;
     justify-content: start;
     align-items: center;
     cursor: pointer;
@@ -23,7 +23,6 @@
     min-width: 0;
     width: max-content;
     max-width: 100%;
-    overflow: hidden;
   }
 
   .link::after {

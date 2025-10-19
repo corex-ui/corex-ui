@@ -96,7 +96,7 @@ export class TreeView extends Component<treeView.Props, treeView.Api> {
     const treeEl = this.el.querySelector('[data-part="tree"]');
     if (!treeEl || !(treeEl instanceof HTMLElement)) return;
     const noIcon = getBoolean(this.el, "noIcon");
-
+    const noIndicator = getBoolean(this.el, "noIndicator");
     treeEl.innerHTML = "";
     const folderIconSvg = `
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -112,7 +112,6 @@ export class TreeView extends Component<treeView.Props, treeView.Api> {
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
     </svg>`;
-
     const renderNodeRecursive = (node: Node, parentEl: HTMLElement) => {
       const isBranch = !!node.children?.length;
       if (isBranch) {
@@ -120,24 +119,20 @@ export class TreeView extends Component<treeView.Props, treeView.Api> {
         branchEl.setAttribute("data-part", "branch");
         branchEl.setAttribute("data-id", node.id);
         branchEl.setAttribute("data-name", node.name);
-
         const branchControl = document.createElement("div");
         branchControl.setAttribute("data-part", "branch-control");
         branchControl.setAttribute("data-id", node.id);
         branchControl.setAttribute("data-name", node.name);
-
         if (!noIcon)
           branchControl.insertAdjacentHTML("beforeend", folderIconSvg);
-
         const branchText = document.createElement("span");
         branchText.setAttribute("data-part", "branch-text");
         branchText.setAttribute("data-id", node.id);
         branchText.setAttribute("data-name", node.name);
         branchText.textContent = node.name;
-
         branchControl.appendChild(branchText);
 
-        if (!noIcon) {
+        if (!noIndicator) {
           const branchIndicator = document.createElement("span");
           branchIndicator.setAttribute("data-part", "branch-indicator");
           branchIndicator.setAttribute("data-id", node.id);
@@ -145,24 +140,19 @@ export class TreeView extends Component<treeView.Props, treeView.Api> {
           branchIndicator.insertAdjacentHTML("beforeend", chevronIconSvg);
           branchControl.appendChild(branchIndicator);
         }
-
         branchEl.appendChild(branchControl);
-
         const branchContent = document.createElement("div");
         branchContent.setAttribute("data-part", "branch-content");
         branchContent.setAttribute("data-id", node.id);
         branchContent.setAttribute("data-name", node.name);
-
         const branchIndentGuide = document.createElement("div");
         branchIndentGuide.setAttribute("data-part", "branch-indent-guide");
         branchIndentGuide.setAttribute("data-id", node.id);
         branchIndentGuide.setAttribute("data-name", node.name);
         branchContent.appendChild(branchIndentGuide);
-
         node.children!.forEach((child) =>
           renderNodeRecursive(child, branchContent),
         );
-
         branchEl.appendChild(branchContent);
         parentEl.appendChild(branchEl);
       } else {
@@ -171,13 +161,10 @@ export class TreeView extends Component<treeView.Props, treeView.Api> {
         itemEl.setAttribute("data-id", node.id);
         itemEl.setAttribute("data-name", node.name);
         itemEl.textContent = node.name;
-
         if (!noIcon) itemEl.insertAdjacentHTML("afterbegin", docIconSvg);
-
         parentEl.appendChild(itemEl);
       }
     };
-
     if (this.collection.rootNode.children) {
       this.collection.rootNode.children.forEach((childNode) => {
         renderNodeRecursive(childNode, treeEl);
@@ -238,7 +225,13 @@ export function initializeTreeView(
       selectionMode: getString(rootEl, "selectionMode", selectionModes),
       selectedValue: getStringList(rootEl, "selectedValue"),
       typeahead: getBoolean(rootEl, "typeahead"),
-      collection,
+      collection,   
+      onCheckedChange(details) {
+        const eventName = getString(rootEl, "onCheckedChange");
+        if (eventName) {
+          rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
+        }
+      },
       onExpandedChange(details) {
         const eventName = getString(rootEl, "onExpandedChange");
         if (eventName) {

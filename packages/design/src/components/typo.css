@@ -1,4 +1,5 @@
 @import "../main.css";
+@import "../components/scrollbar.css";
 
 @layer components {
   .typo {
@@ -194,7 +195,7 @@
 
   .typo ul,
   .typo ol {
-    list-style-position: inside;
+    list-style-position: outside;
   }
 
   .typo li {
@@ -212,5 +213,17 @@
 
   .typo li::marker {
     color: currentColor;
+  }
+
+  .typo pre {
+    font-family: var(--font-code);
+    font-size: var(--text-ui-sm);
+    line-height: var(--text-ui-sm--line-height);
+    padding: var(--spacing-ui-padding-sm);
+    background-color: var(--color-ui);
+    color: var(--color-ui--text);
+    border: 1px solid var(--color-ui--border);
+    overflow: auto;
+    @apply scrollbar scrollbar--sm
   }
 }
