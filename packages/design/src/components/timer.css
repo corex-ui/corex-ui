@@ -1,7 +1,9 @@
 @import "../main.css";
+
 @layer components {
   .timer [data-scope="timer"][data-part="root"] {
     @apply ui-root;
+
     max-width: var(--container-ui);
   }
 
@@ -27,6 +29,8 @@
     height: 2em;
     aspect-ratio: 1/1;
     overflow: hidden;
+
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     font-variation-settings: "tnum";
     text-align: center;
     position: relative;
@@ -60,24 +64,19 @@
     justify-content: center;
     gap: var(--spacing-micro-gap);
   }
+
   .timer [data-scope="timer"][data-part="action-trigger"] {
-    @apply ui-trigger ui-trigger--square;
-    min-height: var(--spacing-mini);
+    @apply ui-trigger ui-trigger--square ui-trigger--sm;
   }
 }
 
 @utility timer--* {
-  &.timer {
-    & [data-scope="timer"][data-part="root"] {
-      max-width: --value(--container-ui-*, [length]);
-      /* gap: --value(--spacing-ui-gap-*, [length]); */
-    }
-    & [data-scope="timer"][data-part="item"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-    }
-    & [data-scope="timer"][data-part="action-trigger"] {
-      min-height: --value(--spacing-mini-*, [length]);
-    }
+  [data-scope="timer"][data-part="root"] {
+    max-width: --value(--container-ui-*, [length]);
+  }
+
+  [data-scope="timer"][data-part="item"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
   }
 }

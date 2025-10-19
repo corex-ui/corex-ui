@@ -5,6 +5,7 @@
 @layer components {
   .combobox [data-scope="combobox"][data-part="root"] {
     @apply ui-root;
+
     max-width: var(--container-mini);
     gap: var(--spacing-ui-gap);
     width: auto;
@@ -22,6 +23,7 @@
 
   .combobox [data-scope="combobox"][data-part="input"] {
     @apply ui-input;
+
     max-width: 100%;
     width: 100%;
     padding-inline: var(--spacing-ui-padding);
@@ -29,6 +31,7 @@
 
   .combobox [data-scope="combobox"][data-part="trigger"] svg {
     @apply ui-icon;
+
     cursor: pointer;
     position: absolute;
     right: var(--spacing-mini-padding);
@@ -38,6 +41,7 @@
 
   .combobox [data-scope="combobox"][data-part="clear-trigger"] svg {
     @apply ui-icon;
+
     cursor: pointer;
     position: absolute;
     right: calc(var(--spacing-mini) + var(--spacing-mini-padding));
@@ -52,10 +56,12 @@
 
   .combobox [data-scope="combobox"][data-part="content"] {
     @apply ui-content scrollbar scrollbar--sm;
+
     z-index: 50;
     max-height: calc(var(--spacing) * 96);
     overflow: auto;
     padding: 0;
+    box-shadow: var(--shadow-ui);
   }
 
   .combobox [data-scope="combobox"][data-part="item"] {
@@ -64,73 +70,71 @@
 }
 
 @utility combobox--* {
-  &.combobox {
-    & [data-scope="combobox"][data-part="root"] {
-      max-width: --value(--container-mini-*, [length]);
-      gap: --value(--spacing-mini-gap-*, [length]);
-    }
+  [data-scope="combobox"][data-part="root"] {
+    max-width: --value(--container-mini-*, [length]);
+    gap: --value(--spacing-mini-gap-*, [length]);
+  }
 
-    & [data-scope="combobox"][data-part="label"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-    }
+  [data-scope="combobox"][data-part="label"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+  }
 
-    & [data-scope="combobox"][data-part="input"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-      min-height: --value(--spacing-ui-*, [length]);
-      color: --value(--color-root--*, [color]);
-      border-color: --value(--color-root-* --border, [color]);
+  [data-scope="combobox"][data-part="input"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    min-height: --value(--spacing-ui-*, [length]);
+    color: --value(--color-root--*, [color]);
+    border-color: --value(--color-root-* --border, [color]);
 
-      &::placeholder {
-        color: --value(--color-root--*, [color]);
-      }
-    }
-
-    & [data-scope="combobox"][data-part="trigger"],
-    & [data-scope="combobox"][data-part="clear-trigger"] {
+    ::placeholder {
       color: --value(--color-root--*, [color]);
     }
+  }
 
-    & [data-scope="combobox"][data-part="item"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-      min-height: --value(--spacing-ui-*, [length]);
+  [data-scope="combobox"][data-part="trigger"],
+  [data-scope="combobox"][data-part="clear-trigger"] {
+    color: --value(--color-root--*, [color]);
+  }
 
-      &[data-selected],
-      &[data-state="checked"] {
-        background-color: --value(--color-ui-*, [color]);
-        color: --value(--color-ui-* --text, [color]);
-      }
+  [data-scope="combobox"][data-part="item"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    min-height: --value(--spacing-ui-*, [length]);
+  }
 
-      &[data-selected]:hover,
-      &[data-state="checked"]:hover {
-        background-color: --value(--color-ui-* -hover, [color]);
-        color: --value(--color-ui-* --text, [color]);
-      }
+  [data-scope="combobox"][data-part="item"][data-selected],
+  [data-scope="combobox"][data-part="item"][data-state="checked"] {
+    background-color: --value(--color-ui-*, [color]);
+    color: --value(--color-ui-* --text, [color]);
+  }
 
-      &[data-selected]:active {
-        background-color: --value(--color-ui-* -active, [color]);
-        color: --value(--color-ui-* --text, [color]);
-      }
+  [data-scope="combobox"][data-part="item"][data-selected]:hover,
+  [data-scope="combobox"][data-part="item"][data-state="checked"]:hover {
+    background-color: --value(--color-ui-* -hover, [color]);
+    color: --value(--color-ui-* --text, [color]);
+  }
 
-      &[data-highlighted]:not(:hover) {
-        outline: 2px solid --value(--color-ui-* --text, [color]);
-        background-color: --value(--color-ui-* -hover, [color]);
-        color: --value(--color-ui-* --text, [color]);
-      }
+  [data-scope="combobox"][data-part="item"][data-selected]:active {
+    background-color: --value(--color-ui-* -active, [color]);
+    color: --value(--color-ui-* --text, [color]);
+  }
 
-      &[data-selected][data-highlighted],
-      &[data-state="checked"][data-highlighted] {
-        outline: 2px solid var(--color-ui-accent--text);
-        background-color: --value(--color-ui-* -hover, [color]);
-        color: --value(--color-ui-* --text, [color]);
-      }
-    }
+  [data-scope="combobox"][data-part="item"][data-highlighted]:not(:hover) {
+    outline: 2px solid --value(--color-ui-* --text, [color]);
+    background-color: --value(--color-ui-* -hover, [color]);
+    color: --value(--color-ui-* --text, [color]);
+  }
 
-    & [data-scope="combobox"][data-part="trigger"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-    }
+  [data-scope="combobox"][data-part="item"][data-selected][data-highlighted],
+  [data-scope="combobox"][data-part="item"][data-state="checked"][data-highlighted] {
+    outline: 2px solid var(--color-ui-accent--text);
+    background-color: --value(--color-ui-* -hover, [color]);
+    color: --value(--color-ui-* --text, [color]);
+  }
+
+  [data-scope="combobox"][data-part="trigger"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
   }
 }

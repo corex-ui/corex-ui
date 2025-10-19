@@ -1,0 +1,30 @@
+name: Release Changeset
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org/'
+
+      - run: npm ci
+
+      - name: Create Release
+        uses: changesets/action@v1
+        with:
+          publish: npm
+          access: public

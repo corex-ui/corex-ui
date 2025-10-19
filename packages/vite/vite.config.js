@@ -1,6 +1,6 @@
-import { defineConfig } from "vite"
-import dts from "vite-plugin-dts"
-import path from "path"
+import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
+import path from "path";
 
 export default defineConfig({
   build: {
@@ -11,11 +11,10 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
-      external: ["vite", "jsdom", "fs", "path", "url"], // keep Node deps external
+      external: ["vite", "jsdom", "fs", "path", "url"],
       output: {
         exports: "named",
       },
-
     },
     target: "esnext",
     sourcemap: true,
@@ -24,7 +23,6 @@ export default defineConfig({
   plugins: [
     dts({
       insertTypesEntry: true,
-      include: ["@types/chalk"]
     }),
   ],
-})
+});

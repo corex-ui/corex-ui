@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
-import corex from "@corex-ui/vite"
-import tailwindcss from "@tailwindcss/vite"
+import corex from "@corex-ui/vite";
+import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [corex(), tailwindcss()],
   build: {
@@ -35,7 +35,6 @@ export default defineConfig({
         timer: resolve(__dirname, "pages/timer.html"),
         "toggle-group": resolve(__dirname, "pages/toggle-group.html"),
         "tree-view": resolve(__dirname, "pages/tree-view.html"),
-
       },
     },
   },

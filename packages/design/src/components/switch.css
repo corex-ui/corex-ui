@@ -2,24 +2,24 @@
 
 @layer components {
   .switch [data-scope="switch"][data-part="root"] {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: fit-content;
-    gap: var(--spacing-ui-gap);
     --switch-track-width: calc(calc(var(--spacing-micro) * 1.5) * 2.5);
     --switch-track-height: calc(var(--spacing-micro) * 1.5);
     --switch-track-diff: calc(
       var(--switch-track-width) - var(--switch-track-height)
     );
     --switch-thumb-x: var(--switch-track-diff);
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    gap: var(--spacing-ui-gap);
   }
 
   .switch [data-scope="switch"][data-part="control"] {
     display: inline-flex;
     flex-shrink: 0;
     cursor: pointer;
-    -webkit-box-pack: start;
     justify-content: flex-start;
     box-sizing: content-box;
     border-radius: var(--radius-full);
@@ -73,6 +73,7 @@
 
   .switch [data-scope="switch"][data-part="label"] {
     @apply ui-label;
+
     cursor: pointer;
   }
 
@@ -82,32 +83,30 @@
 }
 
 @utility switch--* {
-  &.switch {
-    & [data-scope="switch"][data-part="root"] {
-      max-width: --value(--container-ui-*, [length]);
+  [data-scope="switch"][data-part="root"] {
+    max-width: --value(--container-ui-*, [length]);
+  }
+
+  [data-scope="switch"][data-part="control"][data-state="checked"] {
+    background-color: --value(--color-ui-*, [color]);
+
+    [data-scope="switch"][data-part="thumb"] {
+      background-color: --value(--color-ui-* --text, [color]);
     }
+  }
 
-    & [data-scope="switch"][data-part="control"][data-state="checked"] {
-      background-color: --value(--color-ui-*, [color]);
+  [data-scope="switch"][data-part="control"] {
+    --switch-track-width: calc(
+      calc(--value(--spacing-micro-*, [length]) * 1.5) * 2.5
+    );
+    --switch-track-height: calc(--value(--spacing-micro-*, [length]) * 1.5);
+    --switch-track-diff: calc(
+      var(--switch-track-width) - var(--switch-track-height)
+    );
+    --switch-thumb-x: var(--switch-track-diff);
 
-      & [data-scope="switch"][data-part="thumb"] {
-        background-color: --value(--color-ui-* --text, [color]);
-      }
-    }
-
-    & [data-scope="switch"][data-part="control"] {
-      --switch-track-width: calc(
-        calc(--value(--spacing-micro-*, [length]) * 1.5) * 2.5
-      );
-      --switch-track-height: calc(--value(--spacing-micro-*, [length]) * 1.5);
-      --switch-track-diff: calc(
-        var(--switch-track-width) - var(--switch-track-height)
-      );
-      --switch-thumb-x: var(--switch-track-diff);
-
-      & [data-scope="switch"][data-part="thumb"] {
-        background: --value(--color-ui-*, [color]);
-      }
+    & [data-scope="switch"][data-part="thumb"] {
+      background: --value(--color-ui-*, [color]);
     }
   }
 }

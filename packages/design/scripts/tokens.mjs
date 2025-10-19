@@ -108,7 +108,7 @@ async function theme() {
               destination: `themes/${theme}/${mode}.css`,
               format: 'css/variables',
               options: {
-                selector: `[data-theme=${theme}][data-mode=${mode}]`,
+                selector: `[data-theme="${theme}"][data-mode="${mode}"]`,
                 outputReferences: true
               },
               filter: token => token.filePath.endsWith(`themes/${theme}/${mode}.json`)

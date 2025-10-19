@@ -1,7 +1,9 @@
 @import "../main.css";
+
 @layer components {
   .clipboard [data-scope="clipboard"][data-part="root"] {
     @apply ui-root;
+
     gap: var(--spacing-ui-gap);
     max-width: var(--container-ui);
   }
@@ -9,20 +11,21 @@
   .clipboard [data-scope="clipboard"][data-part="trigger"] {
     @apply ui-trigger;
   }
+
   .clipboard [data-scope="clipboard"][data-part="label"] {
     @apply ui-label;
   }
 
   .clipboard [data-scope="clipboard"][data-part="control"] {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: center;
-    flex-wrap: wrap;
     gap: var(--spacing-ui-gap);
   }
 
   .clipboard [data-scope="clipboard"][data-part="input"] {
     @apply ui-input;
+
     max-width: var(--container-mini);
   }
 
@@ -35,6 +38,7 @@
     [data-copied] {
     display: inline-block;
   }
+
   .clipboard [data-scope="clipboard"][data-part="trigger"][data-copied] {
     background-color: var(--color-ui-success);
     color: var(--color-ui-success--text);

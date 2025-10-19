@@ -1,28 +1,28 @@
 @import "../main.css";
-@reference "../components/scrollbar.css";
+@import "../components/scrollbar.css";
 
 @layer components {
   .layout {
+    @apply scrollbar;
+
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     color: var(--color-root--text);
     background: var(--color-root);
-    @apply scrollbar;
   }
 
-  /* Header & Footer */
   .layout__header {
     position: sticky;
     top: 0;
     z-index: 20;
-    min-height: var(--spacing-ui-lg);
+    height: var(--spacing-ui-lg);
     background: var(--color-layer);
     color: var(--color-layer--text);
     border-bottom: 1px solid var(--color-layer--border);
     display: flex;
     align-items: center;
-    }
+  }
 
   .layout__header__content,
   .layout__footer__content,
@@ -34,17 +34,18 @@
     margin-inline: auto;
     width: 100%;
     padding-inline: var(--spacing-ui-padding);
+    padding-block: var(--spacing-ui-padding-sm);
   }
-
 
   .layout__footer {
     background: var(--color-layer);
     color: var(--color-layer--text);
-    border-top: 1px solid var(--color-layer--border);
-    width: 100%;
+    border-bottom: 1px solid var(--color-layer--border);
+    display: flex;
+    align-items: center;
+    min-height: var(--spacing-ui-lg);
   }
 
-  /* Wrapper controls column layout */
   .layout__wrapper {
     display: flex;
     flex: 1;
@@ -55,11 +56,12 @@
     position: relative;
   }
 
-  /* 1/2/3 column structure */
   .layout__side,
   .layout__aside {
+    @apply scrollbar scrollbar--sm;
+
     position: sticky;
-    top: var(--spacing-ui-lg);
+    top: calc(var(--spacing-ui-lg));
     align-self: flex-start;
     background: var(--color-layer);
     color: var(--color-layer--text);
@@ -68,8 +70,8 @@
     width: auto;
     height: calc(100vh - var(--spacing-ui-lg));
     overflow-y: auto;
-    @apply scrollbar scrollbar--sm;
   }
+
   .layout__aside-mobile {
     background: var(--color-layer);
     color: var(--color-layer--text);
@@ -80,7 +82,8 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    min-width: 0; /* Prevents overflow with sticky sidebars */
+    min-width: 0;
+    width: 100%;
     margin-inline: auto;
     position: relative;
   }
@@ -93,6 +96,7 @@
     justify-content: flex-start;
     align-items: center;
   }
+
   .layout__content {
     display: flex;
     flex-direction: column;
@@ -105,7 +109,7 @@
   }
 
   .layout__article {
-    width: 100%;
+    width: auto;
     padding: var(--spacing-ui-padding);
     color: var(--color-layer--text);
     border-radius: var(--radius-ui);
@@ -118,53 +122,52 @@
     gap: var(--spacing-ui-gap);
   }
 
-
-.layout .layout__side,
-.layout .layout__aside  {
-  display: none;
-}
-@media (min-width: theme('breakpoint.md')) {
-  .layout .layout__side {
-    display: flex;
-  }
-}
-@media (min-width: theme('breakpoint.lg')) {
+  .layout .layout__side,
   .layout .layout__aside {
+    display: none;
+  }
+
+  @media (min-width: theme("breakpoint.md")) {
+    .layout .layout__side {
+      display: flex;
+    }
+  }
+
+  @media (min-width: theme("breakpoint.lg")) {
+    .layout .layout__aside {
+      display: flex;
+    }
+  }
+
+  .layout .layout__aside-mobile {
     display: flex;
   }
-}
 
-
-.layout .layout__aside-mobile  {
-  display: flex;
-}
-@media (min-width: theme('breakpoint.lg')) {
-  .layout .layout__aside-mobile {
-    display: none;
+  @media (min-width: theme("breakpoint.lg")) {
+    .layout .layout__aside-mobile {
+      display: none;
+    }
   }
-}
 
-.layout .layout__side__mobile  {
-  display: flex;
-}
-@media (min-width: theme('breakpoint.md')) {
   .layout .layout__side__mobile {
-    display: none;
+    display: flex;
+  }
+
+  @media (min-width: theme("breakpoint.md")) {
+    .layout .layout__side__mobile {
+      display: none;
+    }
+  }
+
+  .layout--boxed {
+    .layout__header__content,
+    .layout__footer__content,
+    .layout__wrapper {
+      max-width: var(--breakpoint-xl);
+    }
+
+    .layout__article {
+      max-width: var(--breakpoint-lg);
+    }
   }
 }
-
-
-
-
-.layout--boxed {
-  .layout__header__content,
-  .layout__footer__content,
-  .layout__wrapper {
-    max-width: var(--breakpoint-xl);
-  }
-  .layout__article {
-    max-width: var(--breakpoint-lg);
-  }
-}
-}
-

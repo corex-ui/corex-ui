@@ -8,7 +8,8 @@
     "lint": "turbo run lint",
     "test": "turbo run test && pnpm run test:e2e",
     "test:e2e": "playwright test",
-    "format": "prettier --write \"**/*.{ts,html}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,html,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,html,css}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build && changeset publish"
@@ -16,12 +17,20 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
     "@changesets/cli": "^2.29.7",
+    "@eslint/js": "^9.38.0",
+    "@eslint/json": "^0.13.2",
     "@playwright/test": "^1.56.0",
     "@types/node": "^18.19.127",
     "axe-core": "^4.11.0",
+    "eslint": "^9.38.0",
     "globals": "^16.4.0",
-    "prettier": "^3.2.5",
-    "turbo": "^2.5.6"
+    "jiti": "^2.6.1",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-tailwindcss": "^1.0.0",
+    "turbo": "^2.5.8",
+    "typescript-eslint": "^8.46.1"
   },
   "packageManager": "pnpm@10.16.1"
 }
