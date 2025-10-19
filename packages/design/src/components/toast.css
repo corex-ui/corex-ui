@@ -1,15 +1,16 @@
 @import "../main.css";
 
 @layer components {
-  [data-scope="toast"][data-part="group"] {
+  .toast [data-scope="toast"][data-part="group"] {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
     width: var(--container-mini);
   }
 
-  [data-scope="toast"][data-part="root"] {
+  .toast [data-scope="toast"][data-part="root"] {
     @apply ui-root;
+
     position: relative;
     translate: var(--x) var(--y);
     z-index: var(--z-index);
@@ -31,16 +32,18 @@
     }
   }
 
-  [data-scope="toast"][data-part="content"] {
+  .toast [data-scope="toast"][data-part="content"] {
     @apply ui-content;
+
     padding: 0;
     border-radius: var(--radius-ui);
     overflow: hidden;
     box-shadow: var(--shadow-ui);
   }
 
-  [data-scope="toast"][data-part="title"] {
+  .toast [data-scope="toast"][data-part="title"] {
     @apply ui-label;
+
     justify-content: start;
     width: 100%;
     background-color: var(--color-layer);
@@ -50,28 +53,30 @@
     padding-inline-end: var(--spacing-ui-sm);
   }
 
-  [data-scope="toast"][data-part="description"] {
+  .toast [data-scope="toast"][data-part="description"] {
     font-size: var(--text-ui);
     line-height: var(--text-ui--line-height);
     font-weight: var(--font-weight-ui);
     padding: var(--spacing-mini-padding);
   }
 
-  [data-scope="toast"][data-part="close-trigger"] {
+  .toast [data-scope="toast"][data-part="close-trigger"] {
     @apply ui-trigger ui-trigger--sm ui-trigger--circle;
+
     position: absolute;
     min-height: var(--spacing-mini);
     right: var(--spacing-mini-gap);
     top: var(--spacing-mini-gap);
   }
 
-  /* Variants mapped to your button/listbox colors */
-  [data-scope="toast"][data-part="root"][data-type="error"]
+  .toast
+    [data-scope="toast"][data-part="root"][data-type="error"]
     [data-scope="toast"][data-part="title"] {
     color: var(--color-ui-alert);
   }
 
-  [data-scope="toast"][data-part="root"][data-type="error"]
+  .toast
+    [data-scope="toast"][data-part="root"][data-type="error"]
     [data-scope="toast"][data-part="progressbar"] {
     background: linear-gradient(
       to left,
@@ -80,12 +85,14 @@
     );
   }
 
-  [data-scope="toast"][data-part="root"][data-type="info"]
+  .toast
+    [data-scope="toast"][data-part="root"][data-type="info"]
     [data-scope="toast"][data-part="title"] {
     color: var(--color-ui-info);
   }
 
-  [data-scope="toast"][data-part="root"][data-type="info"]
+  .toast
+    [data-scope="toast"][data-part="root"][data-type="info"]
     [data-scope="toast"][data-part="progressbar"] {
     background: linear-gradient(
       to left,
@@ -94,12 +101,14 @@
     );
   }
 
-  [data-scope="toast"][data-part="root"][data-type="success"]
+  .toast
+    [data-scope="toast"][data-part="root"][data-type="success"]
     [data-scope="toast"][data-part="title"] {
     color: var(--color-ui-success);
   }
 
-  [data-scope="toast"][data-part="root"][data-type="success"]
+  .toast
+    [data-scope="toast"][data-part="root"][data-type="success"]
     [data-scope="toast"][data-part="progressbar"] {
     background: linear-gradient(
       to left,
@@ -108,7 +117,7 @@
     );
   }
 
-  [data-scope="toast"][data-part="progressbar"] {
+  .toast [data-scope="toast"][data-part="progressbar"] {
     height: var(--spacing-micro-sm);
     background: linear-gradient(
       to left,
@@ -134,12 +143,14 @@
     }
   }
 
-  [data-scope="toast"][data-part="root"][data-type="loading"]
+  .toast
+    [data-scope="toast"][data-part="root"][data-type="loading"]
     [data-scope="toast"][data-part="progressbar"] {
     display: none;
   }
 
-  [data-scope="toast"][data-part="root"][data-type="loading"]
+  .toast
+    [data-scope="toast"][data-part="root"][data-type="loading"]
     [data-scope="toast"][data-part="title"]::before {
     content: "";
     display: inline-flex;

@@ -22,7 +22,8 @@
   "scripts": {
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -46,7 +47,6 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
-    "@zag-js/dismissable": "^1.25.0",
     "typescript": "~5.8.3",
     "vite": "^7.1.2",
     "vite-plugin-dts": "^4.5.4"

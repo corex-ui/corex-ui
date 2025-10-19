@@ -10,8 +10,7 @@
   }
 
   &[data-orientation="horizontal"] {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     height: auto;
   }
 }
@@ -37,7 +36,6 @@
   color: var(--color-ui--text);
   background-color: var(--color-ui);
   appearance: none;
-  -webkit-appearance: none;
 
   &:hover {
     background-color: var(--color-ui-hover);
@@ -112,7 +110,7 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  border-radius: var(--radius-full)!important;
+  border-radius: var(--radius-full) !important;
 }
 
 @utility ui-icon {
@@ -122,10 +120,11 @@
   height: 1.2em;
   width: 1.2em;
   line-height: 5;
-  color: currentColor;
+  color: currentcolor;
   font-size: inherit;
   flex-shrink: 0;
   max-width: fit-content;
+
   [dir="rtl"] & {
     transform: scaleX(-1);
   }

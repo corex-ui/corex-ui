@@ -69,16 +69,16 @@ export class Menu extends Component<menu.Props, menu.Api> {
 
     rootNode.children.forEach((topLevelNode) => {
       const menuId = `${this.el.id}-${topLevelNode.id}`;
-      
+
       // Create a new menu wrapper
       const menuWrapper = document.createElement("div");
       menuWrapper.classList.add("menu-js", "menu");
       menuWrapper.id = menuId;
       menuWrapper.dataset.ariaLabel = `${topLevelNode.name} Menu`;
-      
+
       // Copy all data attributes from parent container
-      Array.from(this.el.attributes).forEach(attr => {
-        if (attr.name.startsWith('data-') && attr.name !== 'data-json') {
+      Array.from(this.el.attributes).forEach((attr) => {
+        if (attr.name.startsWith("data-") && attr.name !== "data-json") {
           menuWrapper.setAttribute(attr.name, attr.value);
         }
       });
@@ -110,7 +110,7 @@ export class Menu extends Component<menu.Props, menu.Api> {
 
       // Render children into this menu's content
       if (topLevelNode.children) {
-        topLevelNode.children.forEach(child => {
+        topLevelNode.children.forEach((child) => {
           this.renderNodeContent(child, content, menuWrapper, menuId);
         });
       }
@@ -121,7 +121,7 @@ export class Menu extends Component<menu.Props, menu.Api> {
     node: Node,
     parentEl: HTMLElement,
     menuWrapper: HTMLElement,
-    parentMenuId: string
+    parentMenuId: string,
   ) {
     const hasChildren = node.children && node.children.length > 0;
     const li = document.createElement("li");
@@ -148,7 +148,7 @@ export class Menu extends Component<menu.Props, menu.Api> {
       submenuEl.dataset.ariaLabel = `${node.name} Menu`;
       submenuEl.dataset.offsetMainAxis = "5";
       submenuEl.dataset.placement = "right-start";
-      
+
       const eventAttrs = [
         "onSelect",
         "onOpenChange",
@@ -158,10 +158,10 @@ export class Menu extends Component<menu.Props, menu.Api> {
         "onInteractOutside",
         "onPointerDownOutside",
         "navigate",
-        "sameWidth"
+        "sameWidth",
       ];
-      
-      eventAttrs.forEach(attr => {
+
+      eventAttrs.forEach((attr) => {
         const value = getString(menuWrapper, attr);
         if (value !== undefined) {
           submenuEl.dataset[attr] = value;
@@ -195,7 +195,9 @@ export class Menu extends Component<menu.Props, menu.Api> {
         ? menuWrapper.dataset.children.split(",")
         : [];
       if (!existingChildren.includes(submenuId)) {
-        menuWrapper.dataset.children = [...existingChildren, submenuId].join(",");
+        menuWrapper.dataset.children = [...existingChildren, submenuId].join(
+          ",",
+        );
       }
     } else {
       li.setAttribute("data-part", "item");
@@ -293,10 +295,10 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
   const menusMap = new Map<string, Menu>();
 
   // First pass: handle JSON-based menus that will generate DOM
-  doc.querySelectorAll<HTMLElement>('.menu-js[data-json]').forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(".menu-js[data-json]").forEach((rootEl) => {
     const id = generateId(rootEl, "menu");
     const jsonPath = getString(rootEl, "json");
-    
+
     if (jsonPath) {
       // Create a temporary instance just to generate the DOM
       const tempInstance = new Menu(rootEl, { id });
@@ -306,111 +308,130 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
   });
 
   // Second pass: initialize all actual menu instances (including generated ones)
-  doc.querySelectorAll<HTMLElement>(".menu-js:not([data-json])").forEach((rootEl) => {
-    const placements = [
-      "top",
-      "right",
-      "bottom",
-      "left",
-      "top-start",
-      "top-end",
-      "right-start",
-      "right-end",
-      "bottom-start",
-      "bottom-end",
-      "left-start",
-      "left-end",
-    ] as const;
-    const strategies = ["absolute", "fixed"] as const;
-    const directions = ["ltr", "rtl"] as const;
+  doc
+    .querySelectorAll<HTMLElement>(".menu-js:not([data-json])")
+    .forEach((rootEl) => {
+      const placements = [
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "top-start",
+        "top-end",
+        "right-start",
+        "right-end",
+        "bottom-start",
+        "bottom-end",
+        "left-start",
+        "left-end",
+      ] as const;
+      const strategies = ["absolute", "fixed"] as const;
+      const directions = ["ltr", "rtl"] as const;
 
-    const id = generateId(rootEl, "menu");
-    const instance = new Menu(rootEl, {
-      id,
-      "aria-label": getString(rootEl, "ariaLabel"),
-      closeOnSelect: getBoolean(rootEl, "closeOnSelect"),
-      composite: getBoolean(rootEl, "composite"),
-      defaultHighlightedValue: getString(rootEl, "defaultHighlightedValue"),
-      defaultOpen: getBoolean(rootEl, "defaultOpen"),
-      open: getBoolean(rootEl, "open"),
-      dir: getString<Direction>(rootEl, "dir", directions),
-      loopFocus: getBoolean(rootEl, "loopFocus"),
-      typeahead: getBoolean(rootEl, "typeahead"),
-      highlightedValue: getString(rootEl, "highlightedValue"),
-      positioning: {
-        hideWhenDetached: getBoolean(rootEl, "hideWhenDetached"),
-        placement: getString(rootEl, "placement", placements),
-        strategy: getString(rootEl, "strategy", strategies),
-        flip: getBoolean(rootEl, "flip"),
-        gutter: getNumber(rootEl, "gutter"),
-        arrowPadding: getNumber(rootEl, "arrowPadding"),
-        overflowPadding: getNumber(rootEl, "overflowPadding"),
-        offset: (() => {
-          const mainAxis = getNumber(rootEl, "offsetMainAxis");
-          const crossAxis = getNumber(rootEl, "offsetCrossAxis");
-          if (mainAxis !== undefined || crossAxis !== undefined) {
-            return { mainAxis, crossAxis };
+      const id = generateId(rootEl, "menu");
+      const instance = new Menu(rootEl, {
+        id,
+        "aria-label": getString(rootEl, "ariaLabel"),
+        closeOnSelect: getBoolean(rootEl, "closeOnSelect"),
+        composite: getBoolean(rootEl, "composite"),
+        defaultHighlightedValue: getString(rootEl, "defaultHighlightedValue"),
+        defaultOpen: getBoolean(rootEl, "defaultOpen"),
+        open: getBoolean(rootEl, "open"),
+        dir: getString<Direction>(rootEl, "dir", directions),
+        loopFocus: getBoolean(rootEl, "loopFocus"),
+        typeahead: getBoolean(rootEl, "typeahead"),
+        highlightedValue: getString(rootEl, "highlightedValue"),
+        positioning: {
+          hideWhenDetached: getBoolean(rootEl, "hideWhenDetached"),
+          placement: getString(rootEl, "placement", placements),
+          strategy: getString(rootEl, "strategy", strategies),
+          flip: getBoolean(rootEl, "flip"),
+          gutter: getNumber(rootEl, "gutter"),
+          arrowPadding: getNumber(rootEl, "arrowPadding"),
+          overflowPadding: getNumber(rootEl, "overflowPadding"),
+          offset: (() => {
+            const mainAxis = getNumber(rootEl, "offsetMainAxis");
+            const crossAxis = getNumber(rootEl, "offsetCrossAxis");
+            if (mainAxis !== undefined || crossAxis !== undefined) {
+              return { mainAxis, crossAxis };
+            }
+            return undefined;
+          })(),
+          sameWidth: getBoolean(rootEl, "sameWidth"),
+          overlap: getBoolean(rootEl, "overlap"),
+          fitViewport: getBoolean(rootEl, "fitViewport"),
+          slide: getBoolean(rootEl, "slide"),
+        },
+        onSelect(details) {
+          const eventName = getString(rootEl, "onSelect");
+          if (eventName) {
+            const event = new CustomEvent(eventName, {
+              detail: details,
+              bubbles: true,
+            });
+            rootEl.dispatchEvent(event);
           }
-          return undefined;
-        })(),
-        sameWidth: getBoolean(rootEl, "sameWidth"),
-        overlap: getBoolean(rootEl, "overlap"),
-        fitViewport: getBoolean(rootEl, "fitViewport"),
-        slide: getBoolean(rootEl, "slide"),
-      },
-      onSelect(details) {
-        const eventName = getString(rootEl, "onSelect");
-        if (eventName) {
-          const event = new CustomEvent(eventName, { detail: details, bubbles: true });
-          rootEl.dispatchEvent(event);
-        }
-      },
-      onOpenChange(details) {
-        const eventName = getString(rootEl, "onOpenChange");
-        if (eventName) {
-          rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
-        }
-      },
-      onEscapeKeyDown(details) {
-        const eventName = getString(rootEl, "onEscapeKeyDown");
-        if (eventName) {
-          rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
-        }
-      },
-      onFocusOutside(details) {
-        const eventName = getString(rootEl, "onFocusOutside");
-        if (eventName) {
-          rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
-        }
-      },
-      onHighlightChange(details) {
-        const eventName = getString(rootEl, "onHighlightChange");
-        if (eventName) {
-          rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
-        }
-      },
-      onInteractOutside(details) {
-        const eventName = getString(rootEl, "onInteractOutside");
-        if (eventName) {
-          rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
-        }
-      },
-      onPointerDownOutside(details) {
-        const eventName = getString(rootEl, "onPointerDownOutside");
-        if (eventName) {
-          rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
-        }
-      },
-      navigate(details) {
-        const eventName = getString(rootEl, "navigate");
-        if (eventName) {
-          rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
-        }
-      },
-    });
+        },
+        onOpenChange(details) {
+          const eventName = getString(rootEl, "onOpenChange");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        onEscapeKeyDown(details) {
+          const eventName = getString(rootEl, "onEscapeKeyDown");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        onFocusOutside(details) {
+          const eventName = getString(rootEl, "onFocusOutside");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        onHighlightChange(details) {
+          const eventName = getString(rootEl, "onHighlightChange");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        onInteractOutside(details) {
+          const eventName = getString(rootEl, "onInteractOutside");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        onPointerDownOutside(details) {
+          const eventName = getString(rootEl, "onPointerDownOutside");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        navigate(details) {
+          const eventName = getString(rootEl, "navigate");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+      });
 
-    menusMap.set(id, instance);
-  });
+      menusMap.set(id, instance);
+    });
 
   menusMap.forEach((menu) => menu.init());
 
@@ -437,14 +458,20 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
           onSelect(details) {
             const eventName = getString(rootEl, "onSelect");
             if (eventName) {
-              const event = new CustomEvent(eventName, { detail: details, bubbles: true });
+              const event = new CustomEvent(eventName, {
+                detail: details,
+                bubbles: true,
+              });
               rootEl.dispatchEvent(event);
-              
+
               const parentId = rootEl.dataset.parent;
               if (parentId) {
                 const parentMenu = doc.querySelector(`#${parentId}`);
                 if (parentMenu) {
-                  const parentEvent = new CustomEvent(eventName, { detail: details, bubbles: true });
+                  const parentEvent = new CustomEvent(eventName, {
+                    detail: details,
+                    bubbles: true,
+                  });
                   parentMenu.dispatchEvent(parentEvent);
                 }
               }
@@ -453,43 +480,57 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
           onOpenChange(details) {
             const eventName = getString(rootEl, "onOpenChange");
             if (eventName) {
-              rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
+              rootEl.dispatchEvent(
+                new CustomEvent(eventName, { detail: details }),
+              );
             }
           },
           onEscapeKeyDown(details) {
             const eventName = getString(rootEl, "onEscapeKeyDown");
             if (eventName) {
-              rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
+              rootEl.dispatchEvent(
+                new CustomEvent(eventName, { detail: details }),
+              );
             }
           },
           onFocusOutside(details) {
             const eventName = getString(rootEl, "onFocusOutside");
             if (eventName) {
-              rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
+              rootEl.dispatchEvent(
+                new CustomEvent(eventName, { detail: details }),
+              );
             }
           },
           onHighlightChange(details) {
             const eventName = getString(rootEl, "onHighlightChange");
             if (eventName) {
-              rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
+              rootEl.dispatchEvent(
+                new CustomEvent(eventName, { detail: details }),
+              );
             }
           },
           onInteractOutside(details) {
             const eventName = getString(rootEl, "onInteractOutside");
             if (eventName) {
-              rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
+              rootEl.dispatchEvent(
+                new CustomEvent(eventName, { detail: details }),
+              );
             }
           },
           onPointerDownOutside(details) {
             const eventName = getString(rootEl, "onPointerDownOutside");
             if (eventName) {
-              rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
+              rootEl.dispatchEvent(
+                new CustomEvent(eventName, { detail: details }),
+              );
             }
           },
           navigate(details) {
             const eventName = getString(rootEl, "navigate");
             if (eventName) {
-              rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
+              rootEl.dispatchEvent(
+                new CustomEvent(eventName, { detail: details }),
+              );
             }
           },
         });

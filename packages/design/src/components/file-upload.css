@@ -2,20 +2,22 @@
 @import "../components/scrollbar.css";
 
 @layer components {
-  /* File upload container */
   .file-upload [data-scope="file-upload"][data-part="root"] {
     @apply ui-root;
+
     max-width: var(--container-mini);
     gap: var(--spacing-mini-gap);
   }
 
   .file-upload [data-scope="file-upload"][data-part="trigger"] {
     @apply ui-trigger;
+
     margin-inline: auto;
   }
 
   [data-scope="file-upload"][data-part="dropzone"] {
     @apply ui-content;
+
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -40,7 +42,6 @@
     border-color: var(--color-root--alert);
   }
 
-  /* Upload previews container */
   [data-part="upload-previews"] {
     display: flex;
     flex-wrap: wrap;
@@ -79,12 +80,12 @@
     object-fit: contain;
   }
 
-  /* File name and size */
   [data-part="upload-preview"] [data-part="name"],
   [data-part="upload-preview"] [data-part="size"],
   [data-part="form-preview"] [data-part="name"],
   [data-part="form-preview"] [data-part="size"] {
     @apply ui-label;
+
     text-align: start;
     justify-content: start;
     width: 100%;
@@ -92,6 +93,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
   [data-part="upload-preview"] [data-part="url"],
   [data-part="form-preview"] [data-part="url"] {
     color: var(--color-layer--info);

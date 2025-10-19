@@ -3,6 +3,7 @@
 @layer components {
   .tree-view [data-scope="tree-view"][data-part="root"] {
     @apply ui-root;
+
     max-width: var(--container-mini);
     gap: var(--spacing-ui-gap);
   }
@@ -28,6 +29,7 @@
   .tree-view [data-scope="tree-view"][data-part="item"],
   .tree-view [data-scope="tree-view"][data-part="branch-control"] {
     @apply ui-item;
+
     border: 1px solid var(--color-ui--border);
     border-radius: 0 var(--radius-ui) var(--radius-ui) 0;
   }

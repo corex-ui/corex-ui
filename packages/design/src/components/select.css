@@ -21,6 +21,7 @@
 
   .select [data-scope="select"][data-part="trigger"] {
     @apply ui-trigger;
+
     justify-content: space-between;
     width: 100%;
   }
@@ -31,6 +32,7 @@
 
   .select [data-scope="select"][data-part="content"] {
     @apply ui-content;
+
     border: 1px solid var(--color-ui--border);
     z-index: 50;
     padding: 0;
@@ -54,61 +56,60 @@
 }
 
 @utility select--* {
-  &.select {
-    & [data-scope="select"][data-part="root"] {
-      max-width: --value(--container-mini-*, [length]);
-    }
+  [data-scope="select"][data-part="root"] {
+    max-width: --value(--container-mini-*, [length]);
+  }
 
-    & [data-scope="select"][data-part="label"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-    }
+  [data-scope="select"][data-part="label"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+  }
 
-    & [data-scope="select"][data-part="trigger"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-      min-height: --value(--spacing-ui-*, [length]);
-    }
+  [data-scope="select"][data-part="trigger"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    min-height: --value(--spacing-ui-*, [length]);
+  }
 
-    & [data-scope="select"][data-part="control"] {
-      max-width: --value(--container-mini-*, [length]);
-      gap: --value(--spacing-mini-gap-*, [length]);
-    }
+  [data-scope="select"][data-part="control"] {
+    max-width: --value(--container-mini-*, [length]);
+    gap: --value(--spacing-mini-gap-*, [length]);
+  }
 
-    & [data-scope="select"][data-part="item"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-      min-height: --value(--spacing-ui-*, [length]);
+  [data-scope="select"][data-part="item"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    min-height: --value(--spacing-ui-*, [length]);
+  }
 
-      &[data-selected],
-      &[data-state="checked"] {
-        background-color: --value(--color-ui-*, [color]);
-        color: --value(--color-ui-* --text, [color]);
-      }
+  /* States for item */
+  [data-scope="select"][data-part="item"][data-selected],
+  [data-scope="select"][data-part="item"][data-state="checked"] {
+    background-color: --value(--color-ui-*, [color]);
+    color: --value(--color-ui-* --text, [color]);
+  }
 
-      &[data-selected]:hover,
-      &[data-state="checked"]:hover {
-        background-color: --value(--color-ui-* -hover, [color]);
-        color: --value(--color-ui-* --text, [color]);
-      }
+  [data-scope="select"][data-part="item"][data-selected]:hover,
+  [data-scope="select"][data-part="item"][data-state="checked"]:hover {
+    background-color: --value(--color-ui-* -hover, [color]);
+    color: --value(--color-ui-* --text, [color]);
+  }
 
-      &[data-selected]:active {
-        background-color: --value(--color-ui-* -active, [color]);
-        color: --value(--color-ui-* --text, [color]);
-      }
+  [data-scope="select"][data-part="item"][data-selected]:active {
+    background-color: --value(--color-ui-* -active, [color]);
+    color: --value(--color-ui-* --text, [color]);
+  }
 
-      &[data-highlighted] {
-        outline: 2px solid --value(--color-ui-* --text, [color]);
-        background-color: --value(--color-ui-* -hover, [color]);
-        color: --value(--color-ui-* --text, [color]);
-      }
+  [data-scope="select"][data-part="item"][data-highlighted] {
+    outline: 2px solid --value(--color-ui-* --text, [color]);
+    background-color: --value(--color-ui-* -hover, [color]);
+    color: --value(--color-ui-* --text, [color]);
+  }
 
-      &[data-selected][data-highlighted],
-      &[data-state="checked"][data-highlighted] {
-        outline: 2px solid var(--color-ui-accent--text);
-        background-color: --value(--color-ui-* -hover, [color]);
-        color: --value(--color-ui-* --text, [color]);
-      }
-    }
+  [data-scope="select"][data-part="item"][data-selected][data-highlighted],
+  [data-scope="select"][data-part="item"][data-state="checked"][data-highlighted] {
+    outline: 2px solid var(--color-ui-accent--text);
+    background-color: --value(--color-ui-* -hover, [color]);
+    color: --value(--color-ui-* --text, [color]);
   }
 }

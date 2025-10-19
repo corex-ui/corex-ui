@@ -3,6 +3,7 @@
     width: var(--spacing-micro);
     height: var(--spacing-micro);
   }
+
   &::-webkit-scrollbar-track {
     background: var(--color-ui);
   }

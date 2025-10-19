@@ -16,9 +16,6 @@
     "url": "https://github.com/corex-ui/corex-ui/issues"
   },
   "type": "module",
-  "files": [
-    "dist"
-  ],
   "main": "./dist/render.cjs.js",
   "module": "./dist/render.es.js",
   "types": "./dist/main.d.ts",
@@ -31,7 +28,8 @@
   },
   "scripts": {
     "build": "tsc && vite build",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "lint": "eslint"
   },
   "keywords": [
     "astro",

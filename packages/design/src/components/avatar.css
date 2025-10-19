@@ -3,6 +3,7 @@
 @layer components {
   .avatar [data-scope="avatar"][data-part="root"] {
     @apply ui-root;
+
     max-width: var(--spacing-ui);
   }
 
@@ -41,20 +42,17 @@
 }
 
 @utility avatar--* {
-  &.avatar {
-    & [data-scope="avatar"][data-part="root"] {
-      max-width: --value(--spacing-ui-*, [length]);
-    }
+  [data-scope="avatar"][data-part="root"] {
+    max-width: --value(--spacing-ui-*, [length]);
+  }
 
-    & [data-scope="avatar"][data-part="fallback"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-      width: --value(--spacing-ui-*, [length]);
-      height: --value(--spacing-ui-*, [length]);
-
-      background-color: --value(--color-ui-*, [color]);
-      color: --value(--color-ui-* --text, [color]);
-      border-color: --value(--color-ui-* --border, [color]);
-    }
+  [data-scope="avatar"][data-part="fallback"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    width: --value(--spacing-ui-*, [length]);
+    height: --value(--spacing-ui-*, [length]);
+    background-color: --value(--color-ui-*, [color]);
+    color: --value(--color-ui-* --text, [color]);
+    border-color: --value(--color-ui-* --border, [color]);
   }
 }

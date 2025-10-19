@@ -1,4 +1,5 @@
 @import "../main.css";
+
 @layer components {
   .dialog [data-scope="dialog"][data-part="trigger"] {
     @apply ui-trigger;
@@ -6,6 +7,7 @@
 
   .dialog [data-scope="dialog"][data-part="close-trigger"] {
     @apply ui-trigger ui-trigger--circle ui-trigger--sm;
+
     flex-shrink: 0;
     height: fit-content;
   }
@@ -32,6 +34,7 @@
 
   .dialog [data-scope="dialog"][data-part="content"] {
     @apply ui-content;
+
     max-width: var(--container-ui);
     margin: var(--spacing-ui-padding);
     padding: var(--spacing-ui-padding);
@@ -41,11 +44,13 @@
   .dialog [data-scope="dialog"][data-part="content"]:not([data-state="open"]) {
     display: none;
   }
+
   .dialog [data-part="row"] {
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
   }
+
   .dialog [data-scope="dialog"][data-part="title"],
   .dialog [data-scope="dialog"][data-part="description"] {
     margin-block: 0;
@@ -56,6 +61,7 @@
     justify-content: flex-start;
     height: 100vh;
   }
+
   .dialog.dialog--side [data-scope="dialog"][data-part="content"] {
     height: 100%;
     overflow: hidden;

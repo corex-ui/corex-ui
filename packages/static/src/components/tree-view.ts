@@ -225,7 +225,7 @@ export function initializeTreeView(
       selectionMode: getString(rootEl, "selectionMode", selectionModes),
       selectedValue: getStringList(rootEl, "selectedValue"),
       typeahead: getBoolean(rootEl, "typeahead"),
-      collection,   
+      collection,
       onCheckedChange(details) {
         const eventName = getString(rootEl, "onCheckedChange");
         if (eventName) {

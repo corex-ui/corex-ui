@@ -52,7 +52,7 @@
 
     &:focus-visible {
       outline: 2px solid var(--color-ui--text);
-      outline-offset: 0px;
+      outline-offset: 0;
       border-radius: var(--radius-ui);
     }
   }
@@ -60,10 +60,13 @@
   .floating-panel [data-scope="floating-panel"][data-part="stage-trigger"],
   .floating-panel [data-scope="floating-panel"][data-part="close-trigger"] {
     @apply ui-trigger ui-trigger--square ui-trigger--sm;
+
     min-height: var(--spacing-mini);
   }
 
   [data-scope="floating-panel"][data-part="body"] {
+    @apply scrollbar scrollbar--sm;
+
     position: relative;
     overflow: auto;
     flex: 1 1 auto;
@@ -74,7 +77,7 @@
     border-radius: 0 0 var(--radius-ui) var(--radius-ui);
     border: 1px solid var(--color-ui--border);
     border-block-start: 0;
-    @apply scrollbar scrollbar--sm;
+
     & p {
       margin-block: 0;
     }
@@ -102,8 +105,7 @@
 
   [data-scope="floating-panel"][data-part="control"] {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     align-items: center;
     gap: var(--spacing-mini-gap);
   }

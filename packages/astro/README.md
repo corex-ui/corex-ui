@@ -81,7 +81,7 @@ npm run build
 
 **Output logs:**
 
-```
+```bash
 [Corex] Build output dir: dist/
 [Corex] HTML files: 12
 [Corex] dist/index.html → 2 rendered

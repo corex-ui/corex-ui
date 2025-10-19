@@ -3,6 +3,7 @@
 @layer components {
   .angle-slider [data-scope="angle-slider"][data-part="root"] {
     @apply ui-root;
+
     max-width: var(--container-micro);
     gap: var(--spacing-ui-gap);
     padding: var(--spacing-ui-padding);
@@ -20,6 +21,7 @@
     --size: calc(var(--spacing-ui) * 2);
     --thumb-size: var(--spacing-ui);
     --thumb-indicator-size: min(var(--thumb-size), calc(var(--size) / 2));
+
     width: var(--size);
     height: var(--size);
     border-radius: var(--radius-full);
@@ -35,10 +37,7 @@
 
   .angle-slider [data-scope="angle-slider"][data-part="thumb"] {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: calc(50% - 1px);
+    inset: 0 0 0 calc(50% - 1px);
     pointer-events: none;
     width: var(--spacing-micro-sm);
     color: var(--color-ui--text);
@@ -60,7 +59,7 @@
   }
 
   .angle-slider
-    [data-scope="angle-slider"][data-part="thumb"]:focus-visible:before {
+    [data-scope="angle-slider"][data-part="thumb"]:focus-visible::before {
     outline: 1px solid var(--color-ui--text);
     outline-offset: 2px;
   }
@@ -110,6 +109,7 @@
   .angle-slider
     [data-scope="angle-slider"][data-part="marker"][data-state="over-value"] {
     --marker-color: var(--color-ui--muted);
+
     width: var(--spacing-micro-sm);
   }
 
@@ -163,54 +163,52 @@
 }
 
 @utility angle-slider--* {
-  &.angle-slider {
-    & [data-scope="angle-slider"][data-part="root"] {
-      max-width: --value(--container-micro-*, [length]);
-      gap: --value(--spacing-micro-gap-*, [length]);
-      padding: --value(--spacing-micro-padding-*, [length]);
-    }
+  [data-scope="angle-slider"][data-part="root"] {
+    max-width: --value(--container-micro-*, [length]);
+    gap: --value(--spacing-micro-gap-*, [length]);
+    padding: --value(--spacing-micro-padding-*, [length]);
+  }
 
-    & [data-scope="angle-slider"][data-part="label"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-    }
+  [data-scope="angle-slider"][data-part="label"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+  }
 
-    & [data-scope="angle-slider"][data-part="control"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-      min-height: --value(--spacing-ui-*, [length]);
-      background-color: --value(--color-ui-*, [color]);
-      color: --value(--color-ui-* --text, [color]);
-      border-color: --value(--color-ui-* --border, [color]);
-      --size: calc(--value(--spacing-ui-*, [length]) * 2);
-      --thumb-size: --value(--spacing-ui-*, [length]);
-    }
+  [data-scope="angle-slider"][data-part="control"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    min-height: --value(--spacing-ui-*, [length]);
+    background-color: --value(--color-ui-*, [color]);
+    color: --value(--color-ui-* --text, [color]);
+    border-color: --value(--color-ui-* --border, [color]);
 
-    & [data-scope="angle-slider"][data-part="thumb"]::before {
-      background-color: --value(--color-ui-* --text, [color]);
-    }
+    --size: calc(--value(--spacing-ui-*, [length]) * 2);
+    --thumb-size: --value(--spacing-ui-*, [length]);
+  }
 
-    & [data-scope="angle-slider"][data-part="marker"] {
-      --marker-color: --value(--color-ui-* --muted, [color]);
-    }
+  [data-scope="angle-slider"][data-part="thumb"]::before {
+    background-color: --value(--color-ui-* --text, [color]);
+  }
 
-    &
-      [data-scope="angle-slider"][data-part="marker"][data-state="under-value"] {
-      --marker-color: --value(--color-ui-* --text, [color]);
-    }
+  [data-scope="angle-slider"][data-part="marker"] {
+    --marker-color: --value(--color-ui-* --muted, [color]);
+  }
 
-    & [data-scope="angle-slider"][data-part="marker"][data-state="over-value"] {
-      --marker-color: --value(--color-ui-* --muted, [color]);
-    }
+  [data-scope="angle-slider"][data-part="marker"][data-state="under-value"] {
+    --marker-color: --value(--color-ui-* --text, [color]);
+  }
 
-    & [data-scope="angle-slider"][data-part="value-text"] [data-part="value"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-    }
+  [data-scope="angle-slider"][data-part="marker"][data-state="over-value"] {
+    --marker-color: --value(--color-ui-* --muted, [color]);
+  }
 
-    & [data-scope="angle-slider"][data-part="value-text"] [data-part="text"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-    }
+  [data-scope="angle-slider"][data-part="value-text"] [data-part="value"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+  }
+
+  [data-scope="angle-slider"][data-part="value-text"] [data-part="text"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
   }
 }

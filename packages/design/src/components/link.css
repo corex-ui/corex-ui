@@ -7,7 +7,6 @@
     align-items: center;
     cursor: pointer;
     position: relative;
-    width: auto;
     color: var(--color-layer--info);
     height: inherit;
     font-size: inherit;
@@ -22,7 +21,6 @@
     white-space: nowrap;
     min-width: 0;
     width: max-content;
-    max-width: 100%;
   }
 
   .link::after {
@@ -32,7 +30,7 @@
     bottom: 0;
     height: 1px;
     width: 80%;
-    background-color: currentColor;
+    background-color: currentcolor;
     transform: translateX(-50%);
     transition: width 0.3s ease;
   }

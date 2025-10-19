@@ -1,21 +1,22 @@
 @import "../main.css";
-@reference "../components/scrollbar.css";
+@import "../components/scrollbar.css";
 
 @layer components {
   .layout {
+    @apply scrollbar;
+
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     color: var(--color-root--text);
     background: var(--color-root);
-    @apply scrollbar;
   }
 
   .layout__header {
     position: sticky;
     top: 0;
     z-index: 20;
-    min-height: var(--spacing-ui-lg);
+    height: var(--spacing-ui-lg);
     background: var(--color-layer);
     color: var(--color-layer--text);
     border-bottom: 1px solid var(--color-layer--border);
@@ -34,7 +35,6 @@
     width: 100%;
     padding-inline: var(--spacing-ui-padding);
     padding-block: var(--spacing-ui-padding-sm);
-
   }
 
   .layout__footer {
@@ -58,8 +58,10 @@
 
   .layout__side,
   .layout__aside {
+    @apply scrollbar scrollbar--sm;
+
     position: sticky;
-    top: var(--spacing-ui-lg);
+    top: calc(var(--spacing-ui-lg));
     align-self: flex-start;
     background: var(--color-layer);
     color: var(--color-layer--text);
@@ -68,7 +70,6 @@
     width: auto;
     height: calc(100vh - var(--spacing-ui-lg));
     overflow-y: auto;
-    @apply scrollbar scrollbar--sm;
   }
 
   .layout__aside-mobile {
@@ -126,13 +127,13 @@
     display: none;
   }
 
-  @media (min-width: theme('breakpoint.md')) {
+  @media (min-width: theme("breakpoint.md")) {
     .layout .layout__side {
       display: flex;
     }
   }
 
-  @media (min-width: theme('breakpoint.lg')) {
+  @media (min-width: theme("breakpoint.lg")) {
     .layout .layout__aside {
       display: flex;
     }
@@ -142,7 +143,7 @@
     display: flex;
   }
 
-  @media (min-width: theme('breakpoint.lg')) {
+  @media (min-width: theme("breakpoint.lg")) {
     .layout .layout__aside-mobile {
       display: none;
     }
@@ -152,14 +153,13 @@
     display: flex;
   }
 
-  @media (min-width: theme('breakpoint.md')) {
+  @media (min-width: theme("breakpoint.md")) {
     .layout .layout__side__mobile {
       display: none;
     }
   }
 
   .layout--boxed {
-
     .layout__header__content,
     .layout__footer__content,
     .layout__wrapper {

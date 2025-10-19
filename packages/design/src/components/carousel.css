@@ -3,6 +3,7 @@
 @layer components {
   .carousel [data-scope="carousel"][data-part="root"] {
     @apply ui-root;
+
     max-width: var(--container-ui);
     max-height: var(--container-ui);
     gap: var(--spacing-ui-gap);
@@ -22,18 +23,13 @@
     justify-content: center;
     border-radius: var(--radius-ui);
 
-    &[data-orientation="vertical"] {
-      flex-direction: column;
-    }
-
     &[data-orientation="horizontal"] {
       flex-direction: row;
       bottom: var(--spacing-mini-padding);
     }
 
     &[data-orientation="vertical"] {
-      flex-direction: column;
-      flex-wrap: nowrap;
+      flex-flow: column nowrap;
       max-height: var(--container-mini);
       right: var(--spacing-mini-padding);
 
@@ -49,6 +45,7 @@
   .carousel [data-scope="carousel"][data-part="next-trigger"],
   .carousel [data-scope="carousel"][data-part="autoplay-trigger"] {
     @apply ui-trigger;
+
     padding: 0;
     aspect-ratio: 1/1;
     gap: var(--spacing-min-gap);
@@ -122,6 +119,7 @@
 
   .carousel [data-scope="carousel"][data-part="indicator"] {
     @apply ui-trigger;
+
     min-height: var(--spacing-micro);
     min-width: var(--spacing-micro);
     aspect-ratio: 1/1;
@@ -149,62 +147,54 @@
 }
 
 @utility carousel--* {
-  &.carousel {
-    & [data-scope="carousel"][data-part="root"] {
-      max-width: --value(--container-ui-*, [length]);
-      max-height: --value(--container-ui-*, [length]);
-      gap: --value(--spacing-ui-gap-*, [length]);
-    }
+  [data-scope="carousel"][data-part="root"] {
+    max-width: --value(--container-ui-*, [length]);
+    max-height: --value(--container-ui-*, [length]);
+    gap: --value(--spacing-ui-gap-*, [length]);
+  }
 
-    & [data-scope="carousel"][data-part="control"] {
-      max-width: --value(--container-mini-*, [length]);
-      padding: --value(--spacing-mini-padding-*, [length]);
-      gap: --value(--spacing-mini-gap-*, [length]);
-    }
+  [data-scope="carousel"][data-part="control"] {
+    max-width: --value(--container-mini-*, [length]);
+    padding: --value(--spacing-mini-padding-*, [length]);
+    gap: --value(--spacing-mini-gap-*, [length]);
+  }
 
-    & [data-scope="carousel"][data-part="next-trigger"],
-    & [data-scope="carousel"][data-part="prev-trigger"],
-    & [data-scope="carousel"][data-part="autoplay-trigger"] {
-      gap: --value(--spacing-mini-gap-*, [length]);
-      min-height: --value(--spacing-mini-*, [length]);
-    }
+  [data-scope="carousel"][data-part="next-trigger"],
+  [data-scope="carousel"][data-part="prev-trigger"],
+  [data-scope="carousel"][data-part="autoplay-trigger"] {
+    gap: --value(--spacing-mini-gap-*, [length]);
+    min-height: --value(--spacing-mini-*, [length]);
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    background-color: --value(--color-ui-*, [color]);
+    color: --value(--color-ui-* --text, [color]);
+    border-color: --value(--color-ui-* --border, [color]);
+  }
 
-    & [data-scope="carousel"][data-part="next-trigger"],
-    & [data-scope="carousel"][data-part="prev-trigger"],
-    & [data-scope="carousel"][data-part="autoplay-trigger"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-      min-height: --value(--spacing-mini-*, [length]);
-      background-color: --value(--color-ui-*, [color]);
-      color: --value(--color-ui-* --text, [color]);
-      border-color: --value(--color-ui-* --border, [color]);
-    }
+  [data-scope="carousel"][data-part="next-trigger"]:hover,
+  [data-scope="carousel"][data-part="prev-trigger"]:hover,
+  [data-scope="carousel"][data-part="autoplay-trigger"]:hover {
+    background-color: --value(--color-ui-* -hover, [color]);
+  }
 
-    & [data-scope="carousel"][data-part="next-trigger"]:hover,
-    & [data-scope="carousel"][data-part="prev-trigger"]:hover,
-    & [data-scope="carousel"][data-part="autoplay-trigger"]:hover {
-      background-color: --value(--color-ui-* -hover, [color]);
-    }
+  [data-scope="carousel"][data-part="next-trigger"]:active,
+  [data-scope="carousel"][data-part="prev-trigger"]:active,
+  [data-scope="carousel"][data-part="autoplay-trigger"]:active {
+    background-color: --value(--color-ui-* -active, [color]);
+  }
 
-    & [data-scope="carousel"][data-part="next-trigger"]:active,
-    & [data-scope="carousel"][data-part="prev-trigger"]:active,
-    & [data-scope="carousel"][data-part="autoplay-trigger"]:active {
-      background-color: --value(--color-ui-* -active, [color]);
-    }
+  [data-scope="carousel"][data-part="next-trigger"]:focus-visible,
+  [data-scope="carousel"][data-part="prev-trigger"]:focus-visible,
+  [data-scope="carousel"][data-part="autoplay-trigger"]:focus-visible {
+    outline-color: --value(--color-ui-* --text, [color]);
+  }
 
-    & [data-scope="carousel"][data-part="next-trigger"]:focus-visible,
-    & [data-scope="carousel"][data-part="prev-trigger"]:focus-visible,
-    & [data-scope="carousel"][data-part="autoplay-trigger"]:focus-visible {
-      outline-color: --value(--color-ui-* --text, [color]);
-    }
+  [data-scope="carousel"][data-part="indicator"] {
+    min-height: --value(--spacing-micro-*, [length]);
+    min-width: --value(--spacing-micro-*, [length]);
+  }
 
-    & [data-scope="carousel"][data-part="indicator"] {
-      min-height: --value(--spacing-micro-*, [length]);
-      min-width: --value(--spacing-micro-*, [length]);
-    }
-
-    & [data-scope="carousel"][data-part="indicator"][data-current] {
-      background-color: --value(--color-ui-*, [color]);
-    }
+  [data-scope="carousel"][data-part="indicator"][data-current] {
+    background-color: --value(--color-ui-*, [color]);
   }
 }

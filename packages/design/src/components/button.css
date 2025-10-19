@@ -3,9 +3,9 @@
 @layer components {
   .button {
     @apply ui-trigger;
+
     justify-content: center;
     appearance: none;
-    -webkit-appearance: none;
   }
 
   .button.button--square,
@@ -18,7 +18,7 @@
   }
 
   .button.button--circle {
-    border-radius: var(--radius-full)!important;
+    border-radius: var(--radius-full);
   }
 }
 
@@ -31,20 +31,20 @@
   padding-inline: --value(--spacing-ui-padding-*, [length]);
   gap: --value(--spacing-ui-gap-*, [length]);
 
-  &:hover {
+  :hover {
     background-color: --value(--color-ui-* -hover, [color]);
   }
 
-  &:active {
+  :active {
     background-color: --value(--color-ui-* -active, [color]);
   }
 
-  &:focus-visible {
+  :focus-visible {
     outline-color: --value(--color-ui-* --text, [color]);
   }
 
-  &:disabled,
-  &[data-disabled] {
+  :disabled,
+  [data-disabled] {
     color: --value(--color-ui-* --muted, [color]);
     background-color: --alpha(--value(--color-ui-*, [color]) / 80%);
   }

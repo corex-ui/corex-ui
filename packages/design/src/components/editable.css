@@ -4,10 +4,9 @@
 @layer components {
   .editable [data-scope="editable"][data-part="root"] {
     @apply ui-root;
-    flex: 1 1 auto;
 
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex: 1 1 auto;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: start;
     max-width: var(--container-mini);
@@ -23,13 +22,16 @@
 
   .editable [data-scope="editable"][data-part="input"] {
     @apply ui-input;
+
     flex: 1 1 auto;
     width: 100%;
     min-width: 0;
     max-width: none;
   }
+
   .editable [data-scope="editable"][data-part="preview"] {
     @apply ui-input;
+
     width: 100%;
   }
 
@@ -48,42 +50,46 @@
   .editable [data-scope="editable"][data-part="cancel-trigger"] {
     @apply ui-trigger--alert;
   }
+
   .editable [data-scope="editable"][data-part="submit-trigger"] {
     @apply ui-trigger--success;
   }
 }
 
 @utility editable--* {
-  &.editable {
-    & [data-scope="editable"][data-part="root"] {
-      max-width: --value(--container-mini-*, [length]);
-      gap: --value(--spacing-mini-gap-*, [length]);
-    }
-    & [data-scope="editable"][data-part="edit-trigger"],
-    & [data-scope="editable"][data-part="cancel-trigger"],
-    & [data-scope="editable"][data-part="submit-trigger"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-      min-height: --value(--spacing-ui-*, [length]);
+  [data-scope="editable"][data-part="root"] {
+    max-width: --value(--container-mini-*, [length]);
+    gap: --value(--spacing-mini-gap-*, [length]);
+  }
 
-      &::placeholder {
-        color: --value(--color-root--*, [color]);
-      }
-    }
-    & [data-scope="editable"][data-part="area"] {
-      max-height: --value(--spacing-ui-*, [length]);
-    }
+  [data-scope="editable"][data-part="edit-trigger"],
+  [data-scope="editable"][data-part="cancel-trigger"],
+  [data-scope="editable"][data-part="submit-trigger"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    min-height: --value(--spacing-ui-*, [length]);
+  }
 
-    & [data-scope="editable"][data-part="preview"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-      min-height: --value(--spacing-ui-*, [length]);
-      max-width: --value(--container-mini-*, [length]);
-    }
-    & [data-scope="editable"][data-part="input"] {
-      font-size: --value(--text-ui-*, [length]);
-      line-height: --value(--text-ui-* --line-height, [length]);
-      min-height: --value(--spacing-ui-*, [length]);
-    }
+  [data-scope="editable"][data-part="edit-trigger"]::placeholder,
+  [data-scope="editable"][data-part="cancel-trigger"]::placeholder,
+  [data-scope="editable"][data-part="submit-trigger"]::placeholder {
+    color: --value(--color-root--*, [color]);
+  }
+
+  [data-scope="editable"][data-part="area"] {
+    max-height: --value(--spacing-ui-*, [length]);
+  }
+
+  [data-scope="editable"][data-part="preview"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    min-height: --value(--spacing-ui-*, [length]);
+    max-width: --value(--container-mini-*, [length]);
+  }
+
+  [data-scope="editable"][data-part="input"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    min-height: --value(--spacing-ui-*, [length]);
   }
 }

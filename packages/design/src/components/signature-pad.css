@@ -3,6 +3,7 @@
 @layer components {
   [data-scope="signature-pad"][data-part="root"] {
     @apply ui-root;
+
     width: var(--container-mini);
     gap: var(--spacing-mini-gap);
   }
@@ -35,6 +36,7 @@
 
   [data-scope="signature-pad"][data-part="clear-trigger"] {
     @apply ui-trigger ui-trigger--sm ui-trigger--circle;
+
     position: absolute;
     top: var(--spacing-mini-gap);
     right: var(--spacing-mini-gap);

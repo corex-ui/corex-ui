@@ -8,9 +8,7 @@
     line-height: var(--text-ui--line-height);
     font-weight: var(--font-weight-ui);
     color: var(--color-root--text);
-    /* background-color: var(--color-root); */
     text-wrap: wrap;
-
 
     &:focus-visible {
       outline: none;
@@ -148,6 +146,7 @@
     padding: var(--spacing-ui-padding);
     gap: var(--spacing-ui-gap);
     width: fit-content;
+
     & p {
       margin-block: 0;
     }
@@ -212,10 +211,12 @@
   }
 
   .typo li::marker {
-    color: currentColor;
+    color: currentcolor;
   }
 
   .typo pre {
+    @apply scrollbar scrollbar--sm;
+
     font-family: var(--font-code);
     font-size: var(--text-ui-sm);
     line-height: var(--text-ui-sm--line-height);
@@ -224,6 +225,5 @@
     color: var(--color-ui--text);
     border: 1px solid var(--color-ui--border);
     overflow: auto;
-    @apply scrollbar scrollbar--sm
   }
 }

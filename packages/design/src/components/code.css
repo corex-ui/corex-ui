@@ -10,8 +10,8 @@
     line-height: var(--text-ui-sm--line-height);
     text-align: left;
     white-space: pre-line;
-    word-break: break-word;
-    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
     hyphens: none;
   }
 
@@ -23,15 +23,10 @@
   pre {
     position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: nowrap;
+    flex-flow: column nowrap;
     width: auto;
-    align-content: start;
-    display: flex;
-    flex-direction: column;
-    justify-items: start;
-    justify-content: start;
+    place-items: start;
+    place-content: start;
     text-align: start;
     overflow-x: auto;
     border-radius: var(--radius-ui);
@@ -43,8 +38,6 @@
     background-color: var(--color-root);
     color: var(--color-root--text);
     max-height: var(--container-mini);
-    overflow: hidden;
-
     background-image: linear-gradient(
       var(--color-root) 50%,
       var(--color-layer) 50%
@@ -63,7 +56,6 @@
     box-shadow: none;
   }
 
-  :not(pre) > code,
   :not(pre) > code {
     display: inline-flex;
     width: fit-content;
@@ -81,7 +73,7 @@
     justify-content: start;
     align-items: start;
     white-space: wrap;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
     flex-wrap: wrap;
     user-select: all;
   }
@@ -195,7 +187,8 @@
   max-width: --value(--cointainer-ui-*, [length]);
   font-size: --value(--text-ui-*, [length]);
   line-height: --value(--text-ui-* --line-height, [length]);
-  & code {
+
+  code {
     font-size: --value(--text-ui-*, [length]);
     line-height: --value(--text-ui-* --line-height, [length]);
   }
