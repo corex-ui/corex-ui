@@ -1,5 +1,11 @@
 # @corex-ui/design
 
+## 0.1.3
+
+### Patch Changes
+
+- ac904b3: Update Lint
+
 ## 0.1.2
 
 ### Patch Changes

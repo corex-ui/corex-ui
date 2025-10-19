@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.1.3
+
+### Patch Changes
+
+- ac904b3: Update Lint
+- Updated dependencies [ac904b3]
+  - @corex-ui/static@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes

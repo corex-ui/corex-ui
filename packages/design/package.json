@@ -1,6 +1,6 @@
 {
   "name": "@corex-ui/design",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A comprehensive tool to transform design tokens into Tailwind CSS configuration and prebuilt CSS for Corex UI projects.",
   "publishConfig": {
     "access": "public"
