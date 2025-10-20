@@ -12,6 +12,7 @@ export function applyBrowserPolyfills(win: any) {
   g.Element = win.Element;
   g.Node = win.Node;
   g.CustomEvent = win.CustomEvent;
+  g.Navigator = win.Navigator;
   g.getComputedStyle =
     win.getComputedStyle ||
     (() => ({
