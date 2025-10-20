@@ -69,7 +69,7 @@
 @utility ui-trigger--* {
   font-size: --value(--text-ui-*, [length]);
   line-height: --value(--text-ui-* --line-height, [length]);
-  max-height: --value(--spacing-ui-*, [length]);
+  min-height: --value(--spacing-ui-*, [length]);
   background-color: --value(--color-ui-*, [color]);
   color: --value(--color-ui-* --text, [color]);
   padding-inline: --value(--spacing-ui-padding-*, [length]);
