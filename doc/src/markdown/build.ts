@@ -26,7 +26,6 @@ function logError(msg: string) {
   console.error(`  ✖ ${msg}`);
 }
 
-// Markdown-it config
 const md = markdownit({
   html: true,
   linkify: false,
@@ -59,7 +58,6 @@ function buildTOCTree(mdContent: string, allowedTags: string[] = ["h2", "h3"]) {
           level,
         };
 
-        // find parent at one level above
         while (stack.length > 1 && stack[stack.length - 1].level >= level) {
           stack.pop();
         }
@@ -70,7 +68,6 @@ function buildTOCTree(mdContent: string, allowedTags: string[] = ["h2", "h3"]) {
     }
   });
 
-  // remove temporary level properties
   function clean(node: any) {
     delete node.level;
     if (node.children) node.children.forEach(clean);
@@ -230,19 +227,17 @@ async function buildMarkdown(): Promise<void> {
       const match = file.match(/markdown\/content\/(.*?)\.md$/);
       if (!match) continue;
 
-      const elementId = match[1]; // e.g. components/button
+      const elementId = match[1];
       const outputDirPath = path.join(partialsDir, path.dirname(elementId));
       const baseName = path.basename(elementId);
 
       await fs.mkdir(outputDirPath, { recursive: true });
 
-      // main rendered HTML
       await fs.writeFile(
         path.join(partialsDir, `${elementId}.html`),
         htmlContent,
       );
 
-      // meta partial
       const metaHTML = Object.entries(frontmatter)
         .map(([key, value]) => {
           let content: string;
@@ -269,7 +264,6 @@ async function buildMarkdown(): Promise<void> {
         metaHTML,
       );
 
-      // Generate TOC tree from the raw markdown
       const tocTree = buildTOCTree(mdContent, ["h2", "h3"]);
 
       const tocScript = `<script type="application/json" data-tree-view="toc">
@@ -282,13 +276,11 @@ ${JSON.stringify(tocTree, null, 2)}
       );
 
       processed++;
-      // only log first 5 files in detail
       if (processed <= 5) {
         logSuccess(`Generated partials for ${elementId}`);
       }
     }
 
-    // summary logs
     if (processed > 5) {
       logInfo(`... and ${processed - 5} more files`);
     }

@@ -752,6 +752,10 @@ You can select locale to be displayed
     </div>
   </div>
 </div>
+```
+
+```html
+<!-- render:preview -->
 <div
   class="date-picker date-picker-js"
   data-locale="ar"
