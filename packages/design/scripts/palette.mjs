@@ -1005,7 +1005,7 @@ function generateAllThemes(config = THEMES_CONFIG) {
     const themes = generateThemes(themeConfig);
     const sd = toStyleDictionaryFormat(themes);
     ensureDirExists(themeConfig.output);
-    fs.writeFileSync(themeConfig.output, JSON.stringify(sd, null, themeConfig.indent));
+    fs.writeFileSync(themeConfig.output, JSON.stringify(sd, null, themeConfig.indent) + '\n');
     console.log(`✅ ${themeConfig.output} created!`);
   });
 
@@ -1027,7 +1027,7 @@ function generateAllThemes(config = THEMES_CONFIG) {
 
   const semanticFilename = 'tokens/multi/semantic/color.json';
   ensureDirExists(semanticFilename);
-  fs.writeFileSync(semanticFilename, JSON.stringify(semanticResult, null, 2));
+  fs.writeFileSync(semanticFilename, JSON.stringify(semanticResult, null, 2) + '\n');
   console.log(`✅ ${semanticFilename} created!`);
   console.log(`\n🎉 All themes and semantic tokens generated successfully!`);
 }
