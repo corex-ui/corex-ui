@@ -6,9 +6,9 @@ on:
       - main
 
 permissions:
+  id-token: write
   contents: write
   pull-requests: write
-  id-token: write
 
 jobs:
   release:
@@ -20,6 +20,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Update npm for OIDC support
+        run: npm install -g npm@latest
 
       - uses: pnpm/action-setup@v2
         with:
