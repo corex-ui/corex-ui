@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.1.5
+
+### Patch Changes
+
+- 2507476: Open source Documentation Site
+- Updated dependencies [2507476]
+  - @corex-ui/static@0.1.5
+
 ## 0.1.4
 
 ### Patch Changes
