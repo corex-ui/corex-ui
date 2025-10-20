@@ -12,7 +12,14 @@ export function applyBrowserPolyfills(win: any) {
   g.Element = win.Element;
   g.Node = win.Node;
   g.CustomEvent = win.CustomEvent;
-  g.Navigator = win.Navigator;
+  g.navigator = win.navigator || {
+    userAgent: "node.js",
+    clipboard: {
+      writeText: async () => {},
+      readText: async () => "",
+    },
+    language: "en-US",
+  };
   g.getComputedStyle =
     win.getComputedStyle ||
     (() => ({
