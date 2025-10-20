@@ -26,6 +26,7 @@ function logError(msg: string) {
   console.error(`  ✖ ${msg}`);
 }
 
+// Markdown-it config
 const md = markdownit({
   html: true,
   linkify: false,
@@ -58,6 +59,7 @@ function buildTOCTree(mdContent: string, allowedTags: string[] = ["h2", "h3"]) {
           level,
         };
 
+        // find parent at one level above
         while (stack.length > 1 && stack[stack.length - 1].level >= level) {
           stack.pop();
         }
@@ -68,6 +70,7 @@ function buildTOCTree(mdContent: string, allowedTags: string[] = ["h2", "h3"]) {
     }
   });
 
+  // remove temporary level properties
   function clean(node: any) {
     delete node.level;
     if (node.children) node.children.forEach(clean);
@@ -150,6 +153,17 @@ md.renderer.rules.link_close = function (tokens, idx, options, env, self) {
   return defaultLinkCloseRender(tokens, idx, options, env, self);
 };
 
+// Utility to escape content for HTML attributes
+function escapeAttribute(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+// Markdown-it fence renderer
 md.renderer.rules.fence = function (tokens: any[], idx: number): string {
   const token = tokens[idx];
   const info = token.info ? md.utils.unescapeAll(token.info).trim() : "";
@@ -158,51 +172,47 @@ md.renderer.rules.fence = function (tokens: any[], idx: number): string {
 
   const renderPreview = /<!--\s*render:preview\s*-->/.test(content);
   const cleanedContent = content.replace(/<!--\s*render:preview\s*-->\n?/, "");
-  const cleanedEscape = md.utils.escapeHtml(cleanedContent);
 
-  const clipboardButton = `<div class="clipboard clipboard-js" data-name="clipboard" data-default-value="${cleanedEscape}">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">${langName}</span>
-  <span data-copied >Copied</span>
+  // Escapes
+  const escapedHtml = md.utils.escapeHtml(cleanedContent); // for <pre><code>
+  const escapedAttr = escapeAttribute(cleanedContent); // for data-default-value
 
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
+  const clipboardButton = `
+<div class="clipboard clipboard-js" data-name="clipboard" data-default-value="${escapedAttr}">
+  <div data-part="control">
+    <button data-part="trigger" class="button button--sm">
+      <span data-copy class="uppercase">${langName}</span>
+      <span data-copied>Copied</span>
+      <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+        </path>
+      </svg>
+      <svg data-copied class="icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
 </div>`;
 
   if (renderPreview) {
     return `
-      <div class="preview">
-        <div class="preview__display">${cleanedContent}</div>
-        <div class="preview__code">
-          ${clipboardButton}
-          <pre><code class="code-js" data-lang="${langName}">${cleanedEscape}</code></pre>
-        </div>
-      </div>`;
+<div class="preview">
+  <div class="preview__display">${cleanedContent}</div>
+  <div class="preview__code">
+    ${clipboardButton}
+    <pre><code class="code-js" data-lang="${langName}">${escapedHtml}</code></pre>
+  </div>
+</div>`;
+  } else {
+    return `
+<div class="preview">
+  <div class="preview__code">
+    ${clipboardButton}
+    <pre><code class="code-js" data-lang="${langName}">${escapedHtml}</code></pre>
+  </div>
+</div>`;
   }
-
-  return `
-    <div class="preview">
-      <div class="preview__code">
-        ${clipboardButton}
-        <pre><code class="code-js" data-lang="${langName}">${cleanedEscape}</code></pre>
-      </div>
-    </div>`;
 };
 
 async function buildMarkdown(): Promise<void> {
@@ -227,17 +237,19 @@ async function buildMarkdown(): Promise<void> {
       const match = file.match(/markdown\/content\/(.*?)\.md$/);
       if (!match) continue;
 
-      const elementId = match[1];
+      const elementId = match[1]; // e.g. components/button
       const outputDirPath = path.join(partialsDir, path.dirname(elementId));
       const baseName = path.basename(elementId);
 
       await fs.mkdir(outputDirPath, { recursive: true });
 
+      // main rendered HTML
       await fs.writeFile(
         path.join(partialsDir, `${elementId}.html`),
         htmlContent,
       );
 
+      // meta partial
       const metaHTML = Object.entries(frontmatter)
         .map(([key, value]) => {
           let content: string;
@@ -264,6 +276,7 @@ async function buildMarkdown(): Promise<void> {
         metaHTML,
       );
 
+      // Generate TOC tree from the raw markdown
       const tocTree = buildTOCTree(mdContent, ["h2", "h3"]);
 
       const tocScript = `<script type="application/json" data-tree-view="toc">
@@ -276,11 +289,13 @@ ${JSON.stringify(tocTree, null, 2)}
       );
 
       processed++;
+      // only log first 5 files in detail
       if (processed <= 5) {
         logSuccess(`Generated partials for ${elementId}`);
       }
     }
 
+    // summary logs
     if (processed > 5) {
       logInfo(`... and ${processed - 5} more files`);
     }

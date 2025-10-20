@@ -338,7 +338,6 @@
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">html</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -842,7 +841,6 @@
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">html</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -1212,7 +1210,6 @@
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">ts</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -1561,7 +1558,6 @@
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">html</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -1906,6 +1902,133 @@
         </div>
       </div>
     </div>
+    <div
+      class="date-picker date-picker-js"
+      data-locale="ar"
+      data-fixed-weeks="true"
+      dir="rtl"
+      data-open="true"
+      data-inline="true"
+      data-close-on-select="false"
+    >
+      <div data-part="content">
+        <div class="date-picker__day-view">
+          <div data-part="view-control" data-view="day">
+            <button data-part="prev-trigger" data-view="day">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                ></path>
+              </svg>
+            </button>
+            <button data-part="view-trigger" data-view="day"></button>
+            <button data-part="next-trigger" data-view="day">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <table data-part="table" data-view="day">
+            <thead data-part="table-header" data-view="day"></thead>
+            <tbody data-part="table-body" data-view="day"></tbody>
+          </table>
+        </div>
+        <div class="date-picker__month-view">
+          <div data-part="view-control" data-view="month">
+            <button data-part="prev-trigger" data-view="month">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                ></path>
+              </svg>
+            </button>
+            <button data-part="view-trigger" data-view="month"></button>
+            <button data-part="next-trigger" data-view="month">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <table data-part="table" data-view="month" data-columns="4">
+            <tbody data-part="table-body" data-view="month"></tbody>
+          </table>
+        </div>
+        <div class="date-picker__year-view">
+          <div data-part="view-control" data-view="year">
+            <button data-part="prev-trigger" data-view="year">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                ></path>
+              </svg>
+            </button>
+            <button data-part="view-trigger" data-view="year"></button>
+            <button data-part="next-trigger" data-view="year">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <table data-part="table" data-view="year" data-columns="4">
+            <tbody data-part="table-body" data-view="year"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="preview__code">
     <div
@@ -2037,13 +2160,139 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+&lt;div
+  class="date-picker date-picker-js"
+  data-locale="ar"
+  data-fixed-weeks="true"
+  dir="rtl"
+  data-open="true"
+  data-inline="true"
+  data-close-on-select="false"
+&gt;
+  &lt;div data-part="content"&gt;
+    &lt;div class="date-picker__day-view"&gt;
+      &lt;div data-part="view-control" data-view="day"&gt;
+        &lt;button data-part="prev-trigger" data-view="day"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            &gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part="view-trigger" data-view="day"&gt;&lt;/button&gt;
+        &lt;button data-part="next-trigger" data-view="day"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            &gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;table data-part="table" data-view="day"&gt;
+        &lt;thead data-part="table-header" data-view="day"&gt;&lt;/thead&gt;
+        &lt;tbody data-part="table-body" data-view="day"&gt;&lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+    &lt;div class="date-picker__month-view"&gt;
+      &lt;div data-part="view-control" data-view="month"&gt;
+        &lt;button data-part="prev-trigger" data-view="month"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            &gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part="view-trigger" data-view="month"&gt;&lt;/button&gt;
+        &lt;button data-part="next-trigger" data-view="month"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            &gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;table data-part="table" data-view="month" data-columns="4"&gt;
+        &lt;tbody data-part="table-body" data-view="month"&gt;&lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+    &lt;div class="date-picker__year-view"&gt;
+      &lt;div data-part="view-control" data-view="year"&gt;
+        &lt;button data-part="prev-trigger" data-view="year"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            &gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part="view-trigger" data-view="year"&gt;&lt;/button&gt;
+        &lt;button data-part="next-trigger" data-view="year"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            &gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;table data-part="table" data-view="year" data-columns="4"&gt;
+        &lt;tbody data-part="table-body" data-view="year"&gt;&lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 '
     >
       <div data-part="control">
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">html</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -2209,317 +2458,7 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
-  </div>
-</div>
-<div class="preview">
-  <div class="preview__display">
-    <div
-      class="date-picker date-picker-js"
-      data-locale="ar"
-      data-fixed-weeks="true"
-      dir="rtl"
-      data-open="true"
-      data-inline="true"
-      data-close-on-select="false"
-    >
-      <div data-part="content">
-        <div class="date-picker__day-view">
-          <div data-part="view-control" data-view="day">
-            <button data-part="prev-trigger" data-view="day">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 19.5 8.25 12l7.5-7.5"
-                ></path>
-              </svg>
-            </button>
-            <button data-part="view-trigger" data-view="day"></button>
-            <button data-part="next-trigger" data-view="day">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <table data-part="table" data-view="day">
-            <thead data-part="table-header" data-view="day"></thead>
-            <tbody data-part="table-body" data-view="day"></tbody>
-          </table>
-        </div>
-        <div class="date-picker__month-view">
-          <div data-part="view-control" data-view="month">
-            <button data-part="prev-trigger" data-view="month">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 19.5 8.25 12l7.5-7.5"
-                ></path>
-              </svg>
-            </button>
-            <button data-part="view-trigger" data-view="month"></button>
-            <button data-part="next-trigger" data-view="month">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <table data-part="table" data-view="month" data-columns="4">
-            <tbody data-part="table-body" data-view="month"></tbody>
-          </table>
-        </div>
-        <div class="date-picker__year-view">
-          <div data-part="view-control" data-view="year">
-            <button data-part="prev-trigger" data-view="year">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 19.5 8.25 12l7.5-7.5"
-                ></path>
-              </svg>
-            </button>
-            <button data-part="view-trigger" data-view="year"></button>
-            <button data-part="next-trigger" data-view="year">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <table data-part="table" data-view="year" data-columns="4">
-            <tbody data-part="table-body" data-view="year"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div
-  class="date-picker date-picker-js"
-  data-locale="ar"
-  data-fixed-weeks="true"
-  dir="rtl"
-  data-open="true"
-  data-inline="true"
-  data-close-on-select="false"
-&gt;
-  &lt;div data-part="content"&gt;
-    &lt;div class="date-picker__day-view"&gt;
-      &lt;div data-part="view-control" data-view="day"&gt;
-        &lt;button data-part="prev-trigger" data-view="day"&gt;
-          &lt;svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          &gt;
-            &lt;path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 19.5 8.25 12l7.5-7.5"
-            &gt;&lt;/path&gt;
-          &lt;/svg&gt;
-        &lt;/button&gt;
-        &lt;button data-part="view-trigger" data-view="day"&gt;&lt;/button&gt;
-        &lt;button data-part="next-trigger" data-view="day"&gt;
-          &lt;svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          &gt;
-            &lt;path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m8.25 4.5 7.5 7.5-7.5 7.5"
-            &gt;&lt;/path&gt;
-          &lt;/svg&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-      &lt;table data-part="table" data-view="day"&gt;
-        &lt;thead data-part="table-header" data-view="day"&gt;&lt;/thead&gt;
-        &lt;tbody data-part="table-body" data-view="day"&gt;&lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/div&gt;
-    &lt;div class="date-picker__month-view"&gt;
-      &lt;div data-part="view-control" data-view="month"&gt;
-        &lt;button data-part="prev-trigger" data-view="month"&gt;
-          &lt;svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          &gt;
-            &lt;path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 19.5 8.25 12l7.5-7.5"
-            &gt;&lt;/path&gt;
-          &lt;/svg&gt;
-        &lt;/button&gt;
-        &lt;button data-part="view-trigger" data-view="month"&gt;&lt;/button&gt;
-        &lt;button data-part="next-trigger" data-view="month"&gt;
-          &lt;svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          &gt;
-            &lt;path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m8.25 4.5 7.5 7.5-7.5 7.5"
-            &gt;&lt;/path&gt;
-          &lt;/svg&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-      &lt;table data-part="table" data-view="month" data-columns="4"&gt;
-        &lt;tbody data-part="table-body" data-view="month"&gt;&lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/div&gt;
-    &lt;div class="date-picker__year-view"&gt;
-      &lt;div data-part="view-control" data-view="year"&gt;
-        &lt;button data-part="prev-trigger" data-view="year"&gt;
-          &lt;svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          &gt;
-            &lt;path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 19.5 8.25 12l7.5-7.5"
-            &gt;&lt;/path&gt;
-          &lt;/svg&gt;
-        &lt;/button&gt;
-        &lt;button data-part="view-trigger" data-view="year"&gt;&lt;/button&gt;
-        &lt;button data-part="next-trigger" data-view="year"&gt;
-          &lt;svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          &gt;
-            &lt;path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m8.25 4.5 7.5 7.5-7.5 7.5"
-            &gt;&lt;/path&gt;
-          &lt;/svg&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-      &lt;table data-part="table" data-view="year" data-columns="4"&gt;
-        &lt;tbody data-part="table-body" data-view="year"&gt;&lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
-
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="html">&lt;div
+&lt;div
   class=&quot;date-picker date-picker-js&quot;
   data-locale=&quot;ar&quot;
   data-fixed-weeks=&quot;true&quot;
@@ -2950,7 +2889,6 @@
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">html</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -3461,7 +3399,6 @@
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">html</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -3682,7 +3619,6 @@ if (formBirth &amp;&amp; resultBirth) {
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">ts</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -3764,7 +3700,6 @@ if (formBirth &amp;&amp; resultBirth) {
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">ts</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -3832,7 +3767,6 @@ if (formBirth &amp;&amp; resultBirth) {
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">css</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -3895,7 +3829,6 @@ if (formBirth &amp;&amp; resultBirth) {
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">html</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -3959,7 +3892,7 @@ if (formBirth &amp;&amp; resultBirth) {
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import { DatePicker } from &apos;@corex-ui/static/react&apos;;
+      data-default-value='import { DatePicker } from &#39;@corex-ui/static/react&#39;;
 export default function Home() {
   return (
     &lt;DatePicker&gt;
@@ -3976,7 +3909,6 @@ export default function Home() {
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">ts</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -4049,7 +3981,6 @@ export default function Home() {
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">css</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"
@@ -4107,7 +4038,6 @@ export default function Home() {
         <button data-part="trigger" class="button button--sm">
           <span data-copy class="uppercase">html</span>
           <span data-copied>Copied</span>
-
           <svg
             data-copy
             class="icon"

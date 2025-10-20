@@ -313,94 +313,111 @@ export class DatePicker extends Component<datePicker.Props, datePicker.Api> {
     );
     if (!tableBody || !this.api.weeks) return;
     tableBody.innerHTML = "";
+
     this.api.weeks.forEach((week, weekIndex) => {
       const tr = document.createElement("tr");
       tr.setAttribute("key", weekIndex.toString());
       const tableRowProps = this.api.getTableRowProps({ view: "day" });
       spreadProps(tr, tableRowProps);
+
       week.forEach((value, dayIndex) => {
         const td = document.createElement("td");
         td.setAttribute("key", dayIndex.toString());
+
         const cellProps = this.api.getDayTableCellProps({ value });
         spreadProps(td, cellProps);
-        const div = document.createElement("div");
-        div.textContent = value.day.toString();
+
         const triggerProps = this.api.getDayTableCellTriggerProps({ value });
-        spreadProps(div, triggerProps);
-        td.appendChild(div);
+        spreadProps(td, triggerProps);
+
+        td.textContent = value.day.toString();
         tr.appendChild(td);
       });
+
       tableBody.appendChild(tr);
     });
   }
+
   private renderMonthTableBody() {
     const tableBody = this.el.querySelector(
       '.date-picker__month-view [data-part="table-body"]',
     );
     if (!tableBody) return;
     tableBody.innerHTML = "";
+
+    const columns = getNumber(this.el, "columns") || 4;
+    const formatString = getString(this.el, "month-format");
+    const format: "short" | "long" | undefined =
+      formatString === "short" || formatString === "long"
+        ? formatString
+        : "short";
     this.api
-      .getMonthsGrid({
-        columns: getNumber(this.el, "columns") || 4,
-        format: getString(this.el, "month-format") || "short",
-      })
+      .getMonthsGrid({ columns, format })
       .forEach((months: any, row: any) => {
         const tr = document.createElement("tr");
         tr.setAttribute("key", row);
         const tableRowProps = this.api.getTableRowProps({ view: "month" });
         spreadProps(tr, tableRowProps);
+
         months.forEach((month: any, monthIndex: any) => {
           const td = document.createElement("td");
           td.setAttribute("key", monthIndex.toString());
+
           const cellProps = this.api.getMonthTableCellProps({
             value: month.value,
           });
           spreadProps(td, cellProps);
-          const div = document.createElement("div");
-          div.textContent = month.label.toString();
+
           const triggerProps = this.api.getMonthTableCellTriggerProps({
             value: month.value,
           });
-          spreadProps(div, triggerProps);
-          td.appendChild(div);
+          spreadProps(td, triggerProps);
+
+          td.textContent = month.label.toString();
           tr.appendChild(td);
         });
+
         tableBody.appendChild(tr);
       });
   }
+
   private renderYearTableBody() {
     const tableBody = this.el.querySelector(
       '.date-picker__year-view [data-part="table-body"]',
     );
     if (!tableBody) return;
     tableBody.innerHTML = "";
-    this.api
-      .getYearsGrid({ columns: getNumber(this.el, "columns") || 4 })
-      .forEach((years: any, row: any) => {
-        const tr = document.createElement("tr");
-        tr.setAttribute("key", row);
-        const tableRowProps = this.api.getTableRowProps({ view: "year" });
-        spreadProps(tr, tableRowProps);
-        years.forEach((year: any, yearIndex: any) => {
-          const td = document.createElement("td");
-          td.setAttribute("key", yearIndex.toString());
-          const cellProps = this.api.getYearTableCellProps({
-            value: year.value,
-            columns: getNumber(this.el, "columns") || 4,
-          });
-          spreadProps(td, cellProps);
-          const div = document.createElement("div");
-          div.textContent = year.label.toString();
-          const triggerProps = this.api.getYearTableCellTriggerProps({
-            value: year.value,
-            columns: getNumber(this.el, "columns") || 4,
-          });
-          spreadProps(div, triggerProps);
-          td.appendChild(div);
-          tr.appendChild(td);
+
+    const columns = getNumber(this.el, "columns") || 4;
+
+    this.api.getYearsGrid({ columns }).forEach((years: any, row: any) => {
+      const tr = document.createElement("tr");
+      tr.setAttribute("key", row);
+      const tableRowProps = this.api.getTableRowProps({ view: "year" });
+      spreadProps(tr, tableRowProps);
+
+      years.forEach((year: any, yearIndex: any) => {
+        const td = document.createElement("td");
+        td.setAttribute("key", yearIndex.toString());
+
+        const cellProps = this.api.getYearTableCellProps({
+          value: year.value,
+          columns,
         });
-        tableBody.appendChild(tr);
+        spreadProps(td, cellProps);
+
+        const triggerProps = this.api.getYearTableCellTriggerProps({
+          value: year.value,
+          columns,
+        });
+        spreadProps(td, triggerProps);
+
+        td.textContent = year.label.toString();
+        tr.appendChild(td);
       });
+
+      tableBody.appendChild(tr);
+    });
   }
 }
 export function initializeDatePicker(

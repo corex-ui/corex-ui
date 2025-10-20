@@ -6,19 +6,41 @@ import ResizeObserver from "resize-observer-polyfill";
 import "intersection-observer";
 export function applyBrowserPolyfills(win: any) {
   const g = globalThis as any;
+
   g.window = win;
   g.document = win.document;
   g.HTMLElement = win.HTMLElement;
   g.Element = win.Element;
   g.Node = win.Node;
   g.CustomEvent = win.CustomEvent;
+
+  if (!("navigator" in g) || !g.navigator) {
+    Object.defineProperty(g, "navigator", {
+      configurable: true,
+      writable: true,
+      value: win.navigator || {
+        userAgent: "node.js",
+        clipboard: {
+          writeText: async () => {},
+          readText: async () => "",
+        },
+      },
+    });
+  }
+
+  if (!("navigator" in win)) {
+    win.navigator = g.navigator;
+  }
+
   g.getComputedStyle =
     win.getComputedStyle ||
     (() => ({
       getPropertyValue: () => "",
     }));
+
   g.ResizeObserver = ResizeObserver;
   g.window.ResizeObserver = ResizeObserver;
+
   const raf = (cb: FrameRequestCallback) =>
     setTimeout(() => cb(Date.now()), 16);
   g.requestAnimationFrame = win.requestAnimationFrame || raf;
@@ -26,6 +48,7 @@ export function applyBrowserPolyfills(win: any) {
   g.window.requestAnimationFrame = g.requestAnimationFrame;
   g.window.cancelAnimationFrame = g.cancelAnimationFrame;
 }
+
 export async function processHtmlFile(
   htmlFilePath: string,
   targetFiles: string[],

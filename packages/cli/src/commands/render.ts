@@ -75,20 +75,6 @@ export default class Render extends Command {
         globalThis.document = document as any
         globalThis.HTMLElement = dom.window.HTMLElement
         globalThis.Node = dom.window.Node
-
-        // eslint-disable-next-line n/no-unsupported-features/node-builtins
-        globalThis.navigator = dom.window.navigator || {
-          userAgent: 'node.js',
-          clipboard: {
-            async writeText() {},
-            async readText() {
-              return ''
-            },
-          },
-          language: 'en-US',
-        }
-
-        // eslint-disable-next-line n/no-unsupported-features/node-builtins
         globalThis.Navigator = dom.window.Navigator
 
         // eslint-disable-next-line n/no-unsupported-features/node-builtins
