@@ -1,5 +1,5 @@
 @import "../main.css";
-@import "../components/scrollbar.css";
+@import "./scrollbar.css";
 
 @layer components {
   .typo {

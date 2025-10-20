@@ -1,6 +1,5 @@
-@import "@corex-ui/design/utilities.css";
-@import "@corex-ui/design/tokens.css";
-@import "@corex-ui/design/components/scrollbar.css";
+@import "../main.css";
+@import "./scrollbar.css";
 
 @layer components {
   code,

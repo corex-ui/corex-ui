@@ -1,5 +1,4 @@
-@import "@corex-ui/design/utilities.css";
-@import "@corex-ui/design/tokens.css";
+@import "../main.css";
 
 @layer components {
   .editable [data-scope="editable"][data-part="root"] {
