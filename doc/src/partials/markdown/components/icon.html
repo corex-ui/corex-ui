@@ -1,0 +1,1728 @@
+<h1 id="icon" tabindex="-1"><a class="link" href="#icon">#</a> Icon</h1>
+<blockquote>
+  <p>A pure Tailwind CSS component</p>
+</blockquote>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>
+  You can use any icon set, but we strongly recommend using inline SVGs. This
+  allows you to style icons according to your theme using CSS variables.
+</p>
+<blockquote>
+  <p>
+    Not sure where to start? Heroicons is a great library to explore.<br />
+    Tip: When copying icons from heroicons, make sure to replace
+    <code>class=&quot;size-6&quot;</code> to maintain proper styling.
+  </p>
+</blockquote>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon"
+      >
+        <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
+        <path
+          fill-rule="evenodd"
+          d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
+    /&gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon"
+  &gt;
+    &lt;path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" /&gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z&quot;
+    /&gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path d=&quot;M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z&quot; /&gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="rtl" tabindex="-1"><a class="link" href="#rtl">#</a> RTL</h2>
+<p>RTL support for button with icon</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div dir="rtl">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <div dir="rtl">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon"
+      >
+        <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
+        <path
+          fill-rule="evenodd"
+          d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div dir="rtl"&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div dir="rtl"&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
+    /&gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon"
+  &gt;
+    &lt;path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" /&gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div dir=&quot;rtl&quot;&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div dir=&quot;rtl&quot;&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z&quot;
+    /&gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon&quot;
+  &gt;
+    &lt;path d=&quot;M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z&quot; /&gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="modifiers" tabindex="-1">
+  <a class="link" href="#modifiers">#</a> Modifiers
+</h2>
+<p>
+  Icon support modifier classes that control their appearance.<br />
+  You can combine multiple modifiers on the same icon.
+</p>
+<p>
+  The default modifier is applied automatically, so you don’t need to include it
+  explicitly.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Modifier</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#color" class="link">Color</a></td>
+      <td>Sets the color theme of the icon.</td>
+    </tr>
+    <tr>
+      <td><a href="#size" class="link">Size</a></td>
+      <td>Adjusts the overall size of the icon.</td>
+    </tr>
+  </tbody>
+</table>
+<blockquote>
+  <p>
+    You may have noticed the double dash before the modifier name — this follows
+    the BEM (Block Element Modifier) naming convention
+  </p>
+</blockquote>
+<h3 id="color" tabindex="-1"><a class="link" href="#color">#</a> Color</h3>
+<p>
+  Use <code>class=&quot;button--{color}&quot;</code> to set the color of a
+  button.
+</p>
+<p>
+  Options: <strong>inherit</strong>(default) <strong>accent</strong>,
+  <strong>brand</strong>,, <strong>alert</strong>, <strong>info</strong>,<strong
+    >success</strong
+  >
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon icon--accent"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon icon--accent"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon icon--brand"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon icon--brand"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon icon--alert"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon icon--alert"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon icon--info"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon icon--info"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon icon--success"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon icon--success"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon icon--accent"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon icon--accent"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon icon--brand"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon icon--brand"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon icon--alert"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon icon--alert"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon icon--info"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon icon--info"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon icon--success"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon icon--success"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon icon--accent&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon icon--accent&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon icon--brand&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon icon--brand&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon icon--alert&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon icon--alert&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon icon--info&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon icon--info&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon icon--success&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon icon--success&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h3 id="size" tabindex="-1"><a class="link" href="#size">#</a> Size</h3>
+<p>
+  Use <code>class=&quot;button--{size}&quot;</code> to set the size of a button.
+</p>
+<p>
+  Available options:<br />
+  <strong>inherit</strong> (default), <strong>sm</strong>, <strong>md</strong>,
+  <strong>lg</strong>, <strong>xl</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon icon--sm"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon icon--sm"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon icon--md"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon icon--md"
+      >
+        ">
+        <path
+          fill-rule="evenodd"
+          d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon icon--lg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon icon--lg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon icon--xl"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon icon--xl"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon icon--sm"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon icon--sm"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon icon--md"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon icon--md"
+  &gt;
+    "&gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon icon--lg"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon icon--lg"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="icon icon--xl"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon icon--xl"
+  &gt;
+    &lt;path
+      fill-rule="evenodd"
+      d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+      clip-rule="evenodd"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon icon--sm&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon icon--sm&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon icon--md&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon icon--md&quot;
+  &gt;
+    &quot;&gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon icon--lg&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon icon--lg&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+    class=&quot;icon icon--xl&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  &lt;svg
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;currentColor&quot;
+    class=&quot;icon icon--xl&quot;
+  &gt;
+    &lt;path
+      fill-rule=&quot;evenodd&quot;
+      d=&quot;M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z&quot;
+      clip-rule=&quot;evenodd&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/icon.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/icon.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;svg class="icon" aria-hidden="true" viewBox="0 0 24 24"&gt;...&lt;/svg&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;...&lt;/svg&gt;
+</code></pre>
+  </div>
+</div>

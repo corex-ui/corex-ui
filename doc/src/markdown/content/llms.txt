@@ -1,0 +1,66 @@
+# Corex UI LLMs (Machine-Optimized Reference)
+
+> Single-source, machine-readable summary to ground coding assistants in Corex UI.
+
+- Canonical URL: https://corex-ui.com/llms.txt
+- Human docs: https://corex-ui.com
+- Scope: Installation, guides, conventions, component index
+- Goal: Improve suggestion accuracy, enforce accessibility and design-token usage, reduce hallucinations
+
+---
+
+## Installation
+
+- [Introduction](https://corex-ui.com/installation/introduction.md)
+- [Vite](https://corex-ui.com/installation/vite.md)
+- [Astro](https://corex-ui.com/installation/astro.md)
+- [Eleventy](https://corex-ui.com/installation/eleventy.md)
+- [Serve](https://corex-ui.com/installation/serve.md)
+- [Next SSG](https://corex-ui.com/installation/next-ssg.md)
+
+## Guides
+
+- [Tailwind](https://corex-ui.com/guides/tailwind.md)
+- [Theming](https://corex-ui.com/guides/theming.md)
+
+## Components
+
+- [Accordion](https://corex-ui.com/components/accordion.md)
+- [Angle Slider](https://corex-ui.com/components/angle-slider.md)
+- [Avatar](https://corex-ui.com/components/avatar.md)
+- [Badge](https://corex-ui.com/components/badge.md)
+- [Button](https://corex-ui.com/components/button.md)
+- [Carousel](https://corex-ui.com/components/carousel.md)
+- [Checkbox](https://corex-ui.com/components/checkbox.md)
+- [Clipboard](https://corex-ui.com/components/clipboard.md)
+- [Code](https://corex-ui.com/components/code.md)
+- [Collapsible](https://corex-ui.com/components/collapsible.md)
+- [Color Picker](https://corex-ui.com/components/color-picker.md)
+- [Combobox](https://corex-ui.com/components/combobox.md)
+- [Date Picker](https://corex-ui.com/components/date-picker.md)
+- [Dialog](https://corex-ui.com/components/dialog.md)
+- [Editable](https://corex-ui.com/components/editable.md)
+- [File Upload](https://corex-ui.com/components/file-upload.md)
+- [Floating Panel](https://corex-ui.com/components/floating-panel.md)
+- [Icon](https://corex-ui.com/components/icon.md)
+- [Link](https://corex-ui.com/components/link.md)
+- [Listbox](https://corex-ui.com/components/listbox.md)
+- [Menu](https://corex-ui.com/components/menu.md)
+- [Scrollbar](https://corex-ui.com/components/scrollbar.md)
+- [Select](https://corex-ui.com/components/select.md)
+- [Signature Pad](https://corex-ui.com/components/signature-pad.md)
+- [Site Search](https://corex-ui.com/components/site-search.md)
+- [Switch](https://corex-ui.com/components/switch.md)
+- [Tabs](https://corex-ui.com/components/tabs.md)
+- [Timer](https://corex-ui.com/components/timer.md)
+- [Toast](https://corex-ui.com/components/toast.md)
+- [Toggle Group](https://corex-ui.com/components/toggle-group.md)
+- [Tree View](https://corex-ui.com/components/tree-view.md)
+
+---
+
+## Sync & Versioning
+
+- This file is updated alongside Corex UI releases
+- Tools may cache content; refresh or re-add the URL after upgrades
+- If the URL is temporarily unavailable, copy its contents into the tool’s project knowledge

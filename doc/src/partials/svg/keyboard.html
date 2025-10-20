@@ -1,0 +1,317 @@
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Key gradient -->
+    <linearGradient id="keyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color: #ffffff; stop-opacity: 1" />
+      <stop offset="100%" style="stop-color: #f1f5f9; stop-opacity: 1" />
+    </linearGradient>
+
+    <!-- Pressed key gradient -->
+    <linearGradient id="pressedKeyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color: #e2e8f0; stop-opacity: 1" />
+      <stop offset="100%" style="stop-color: #cbd5e1; stop-opacity: 1" />
+    </linearGradient>
+
+    <!-- Shadow filter -->
+    <filter id="keyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" flood-opacity="0.15" flood-color="#000" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="300" fill="var(--color-light)" />
+
+  <!-- Keyboard base -->
+  <rect
+    x="50"
+    y="50"
+    width="700"
+    height="200"
+    rx="15"
+    fill="#334155"
+    stroke="#1e293b"
+    stroke-width="2"
+    filter="url(#keyShadow)"
+  />
+
+  <!-- Top row (Esc key) -->
+  <g transform="translate(70, 70)">
+    <!-- Esc key -->
+    <rect
+      x="0"
+      y="0"
+      width="50"
+      height="35"
+      rx="5"
+      fill="url(#keyGrad)"
+      stroke="#cbd5e1"
+      stroke-width="1"
+      filter="url(#keyShadow)"
+    />
+    <text
+      x="25"
+      y="23"
+      text-anchor="middle"
+      font-family="Arial, sans-serif"
+      font-size="11"
+      font-weight="600"
+      fill="#374151"
+    >
+      Esc
+    </text>
+  </g>
+
+  <!-- Main keyboard area -->
+  <g transform="translate(70, 120)">
+    <!-- Space bar -->
+    <rect
+      x="150"
+      y="105"
+      width="250"
+      height="35"
+      rx="5"
+      fill="url(#keyGrad)"
+      stroke="#cbd5e1"
+      stroke-width="1"
+      filter="url(#keyShadow)"
+    />
+    <text
+      x="275"
+      y="127"
+      text-anchor="middle"
+      font-family="Arial, sans-serif"
+      font-size="11"
+      font-weight="600"
+      fill="#374151"
+    >
+      Space
+    </text>
+
+    <!-- Enter key -->
+    <rect
+      x="450"
+      y="70"
+      width="60"
+      height="35"
+      rx="5"
+      fill="url(#keyGrad)"
+      stroke="#cbd5e1"
+      stroke-width="1"
+      filter="url(#keyShadow)"
+    />
+    <text
+      x="480"
+      y="92"
+      text-anchor="middle"
+      font-family="Arial, sans-serif"
+      font-size="11"
+      font-weight="600"
+      fill="#374151"
+    >
+      Enter
+    </text>
+
+    <!-- Arrow keys cluster -->
+    <g transform="translate(520, 70)">
+      <!-- Up arrow -->
+      <rect
+        x="35"
+        y="0"
+        width="35"
+        height="35"
+        rx="5"
+        fill="url(#keyGrad)"
+        stroke="#cbd5e1"
+        stroke-width="1"
+        filter="url(#keyShadow)"
+      />
+      <text
+        x="52.5"
+        y="22"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="16"
+        fill="#374151"
+      >
+        ↑
+      </text>
+
+      <!-- Left arrow -->
+      <rect
+        x="0"
+        y="35"
+        width="35"
+        height="35"
+        rx="5"
+        fill="url(#keyGrad)"
+        stroke="#cbd5e1"
+        stroke-width="1"
+        filter="url(#keyShadow)"
+      />
+      <text
+        x="17.5"
+        y="57"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="16"
+        fill="#374151"
+      >
+        ←
+      </text>
+
+      <!-- Down arrow -->
+      <rect
+        x="35"
+        y="35"
+        width="35"
+        height="35"
+        rx="5"
+        fill="url(#keyGrad)"
+        stroke="#cbd5e1"
+        stroke-width="1"
+        filter="url(#keyShadow)"
+      />
+      <text
+        x="52.5"
+        y="57"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="16"
+        fill="#374151"
+      >
+        ↓
+      </text>
+
+      <!-- Right arrow -->
+      <rect
+        x="70"
+        y="35"
+        width="35"
+        height="35"
+        rx="5"
+        fill="url(#keyGrad)"
+        stroke="#cbd5e1"
+        stroke-width="1"
+        filter="url(#keyShadow)"
+      />
+      <text
+        x="87.5"
+        y="57"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="16"
+        fill="#374151"
+      >
+        →
+      </text>
+    </g>
+
+    <!-- Some additional keys for context (QWERTY layout hints) -->
+    <g opacity="0.3">
+      <rect
+        x="0"
+        y="0"
+        width="35"
+        height="35"
+        rx="5"
+        fill="url(#keyGrad)"
+        stroke="#cbd5e1"
+        stroke-width="1"
+      />
+      <text
+        x="17.5"
+        y="22"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="11"
+        fill="#374151"
+      >
+        Q
+      </text>
+
+      <rect
+        x="35"
+        y="0"
+        width="35"
+        height="35"
+        rx="5"
+        fill="url(#keyGrad)"
+        stroke="#cbd5e1"
+        stroke-width="1"
+      />
+      <text
+        x="52.5"
+        y="22"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="11"
+        fill="#374151"
+      >
+        W
+      </text>
+
+      <rect
+        x="70"
+        y="0"
+        width="35"
+        height="35"
+        rx="5"
+        fill="url(#keyGrad)"
+        stroke="#cbd5e1"
+        stroke-width="1"
+      />
+      <text
+        x="87.5"
+        y="22"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="11"
+        fill="#374151"
+      >
+        E
+      </text>
+
+      <rect
+        x="0"
+        y="35"
+        width="50"
+        height="35"
+        rx="5"
+        fill="url(#keyGrad)"
+        stroke="#cbd5e1"
+        stroke-width="1"
+      />
+      <text
+        x="25"
+        y="57"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="11"
+        fill="#374151"
+      >
+        A
+      </text>
+
+      <rect
+        x="50"
+        y="35"
+        width="35"
+        height="35"
+        rx="5"
+        fill="url(#keyGrad)"
+        stroke="#cbd5e1"
+        stroke-width="1"
+      />
+      <text
+        x="67.5"
+        y="57"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="11"
+        fill="#374151"
+      >
+        S
+      </text>
+    </g>
+  </g>
+</svg>

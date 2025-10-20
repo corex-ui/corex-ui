@@ -1,0 +1,63 @@
+<div
+  id="pagination-header"
+  class="listbox listbox-js listbox--sm z-20"
+  data-column-count="{{#if prevUrl}}{{#if nextUrl}}2{{else}}1{{/if}}{{else}}1{{/if}}"
+  data-on-select="link"
+>
+  <div data-part="root">
+    <div data-part="label" class="sr-only">Pagination</div>
+    <div data-part="content">
+      {{#if prevName}}
+      <div
+        data-part="item"
+        class="ui-item--sm"
+        data-value="{{prevUrl}}"
+        data-label="{{prevName}}"
+        title="{{prevName}}"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          />
+        </svg>
+        <span data-part="item-text" data-value="{{prevUrl}}" class="sr-only"
+          >{{prevName}}</span
+        >
+      </div>
+
+      {{/if}} {{#if nextName}}
+      <div
+        data-part="item"
+        data-value="{{nextUrl}}"
+        data-label="{{nextName}}"
+        title="{{nextName}}"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          />
+        </svg>
+        <span data-part="item-text" data-value="{{nextUrl}}" class="sr-only"
+          >{{nextName}}</span
+        >
+      </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

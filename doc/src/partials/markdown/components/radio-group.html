@@ -1,0 +1,1860 @@
+<h1 id="tabs" tabindex="-1"><a class="link" href="#tabs">#</a> Tabs</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/tabs"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Tabs
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>
+  An accessible tabs component that follows the WAI-ARIA Tabs Design Pattern.
+  Each tab in the tab list has associated content, with only the selected tab's
+  content being displayed.
+</p>
+<p>
+  A tabs allows users to make a binary choice, i.e. a choice between one of two
+  possible mutually exclusive options.
+</p>
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Tabs component consists of the following data parts:</p>
+<p>
+  <code>root</code>, <code>list</code>, <code>trigger</code>,
+  <code>content</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="radio-group radio-group-js">
+      <div data-part="root">
+        <h3 data-part="label">Choose your payment</h3>
+        <div data-part="list">
+          <label data-part="item" data-value="credit-card">
+            <div data-part="item-control" data-value="credit-card"></div>
+            <span data-part="item-text" data-value="credit-card"
+              >Credit Card</span
+            >
+            <input data-part="item-hidden-input" data-value="credit-card" />
+          </label>
+          <label data-part="item" data-value="paypal">
+            <div data-part="item-control" data-value="paypal"></div>
+            <span data-part="item-text" data-value="paypal">Paypal</span>
+            <input data-part="item-hidden-input" data-value="paypal" />
+          </label>
+          <label data-part="item" data-value="bank-transfer">
+            <div data-part="item-control" data-value="bank-transfer"></div>
+            <span data-part="item-text" data-value="bank-transfer"
+              >Bank Transfer</span
+            >
+            <input data-part="item-hidden-input" data-value="bank-transfer" />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="radio-group radio-group-js"&gt;
+         &lt;div data-part="root"&gt;
+      &lt;h3 data-part="label"&gt;Choose your payment&lt;/h3&gt;
+      &lt;div data-part="list"&gt;
+
+      &lt;label data-part="item" data-value="credit-card"&gt;
+        &lt;div data-part="item-control" data-value="credit-card"&gt;&lt;/div&gt;
+        &lt;span data-part="item-text" data-value="credit-card"&gt;Credit Card&lt;/span&gt;
+        &lt;input data-part="item-hidden-input" data-value="credit-card" /&gt;
+      &lt;/label&gt;
+      &lt;label data-part="item" data-value="paypal"&gt;
+        &lt;div data-part="item-control" data-value="paypal" &gt;&lt;/div&gt;
+        &lt;span data-part="item-text" data-value="paypal"&gt;Paypal&lt;/span&gt;
+        &lt;input data-part="item-hidden-input" data-value="paypal" /&gt;
+      &lt;/label&gt;
+      &lt;label data-part="item" data-value="bank-transfer"&gt;
+        &lt;div data-part="item-control" data-value="bank-transfer"&gt;&lt;/div&gt;
+        &lt;span data-part="item-text" data-value="bank-transfer"&gt;Bank Transfer&lt;/span&gt;
+        &lt;input data-part="item-hidden-input" data-value="bank-transfer" /&gt;
+      &lt;/label&gt;
+      &lt;/div&gt;
+    
+         &lt;/div&gt;
+        &lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;radio-group radio-group-js&quot;&gt;
+         &lt;div data-part=&quot;root&quot;&gt;
+      &lt;h3 data-part=&quot;label&quot;&gt;Choose your payment&lt;/h3&gt;
+      &lt;div data-part=&quot;list&quot;&gt;
+
+      &lt;label data-part=&quot;item&quot; data-value=&quot;credit-card&quot;&gt;
+        &lt;div data-part=&quot;item-control&quot; data-value=&quot;credit-card&quot;&gt;&lt;/div&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;credit-card&quot;&gt;Credit Card&lt;/span&gt;
+        &lt;input data-part=&quot;item-hidden-input&quot; data-value=&quot;credit-card&quot; /&gt;
+      &lt;/label&gt;
+      &lt;label data-part=&quot;item&quot; data-value=&quot;paypal&quot;&gt;
+        &lt;div data-part=&quot;item-control&quot; data-value=&quot;paypal&quot; &gt;&lt;/div&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;paypal&quot;&gt;Paypal&lt;/span&gt;
+        &lt;input data-part=&quot;item-hidden-input&quot; data-value=&quot;paypal&quot; /&gt;
+      &lt;/label&gt;
+      &lt;label data-part=&quot;item&quot; data-value=&quot;bank-transfer&quot;&gt;
+        &lt;div data-part=&quot;item-control&quot; data-value=&quot;bank-transfer&quot;&gt;&lt;/div&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;bank-transfer&quot;&gt;Bank Transfer&lt;/span&gt;
+        &lt;input data-part=&quot;item-hidden-input&quot; data-value=&quot;bank-transfer&quot; /&gt;
+      &lt;/label&gt;
+      &lt;/div&gt;
+    
+         &lt;/div&gt;
+        &lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each tabs can be set with different settings with the following
+  data-attribute.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="tabs tabs-js"
+      data-default-value="duis"
+      data-loop-focus="true"
+      data-orientation="vertical"
+      data-dir="ltr"
+      data-activation-mode="manual"
+    >
+      <div data-part="root">
+        <div data-part="list">
+          <button data-part="trigger" data-value="lorem">Lorem</button>
+          <button data-part="trigger" data-value="duis">Duis</button>
+          <button data-part="trigger" data-value="donec">Donec</button>
+        </div>
+        <div data-part="content" data-value="lorem">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+        <div data-part="content" data-value="duis">
+          Duis a sem ut diam interdum ultricies sit amet id arcu.
+        </div>
+        <div data-part="content" data-value="donec">
+          Donec pretium magna cursus ante tincidunt porta.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="tabs tabs-js" data-default-value="duis" data-loop-focus="true" data-orientation="vertical" data-dir="ltr"
+    data-activation-mode="manual"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;div data-part="list"&gt;
+            &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+            &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+            &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div data-part="content" data-value="lorem"&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        &lt;/div&gt;
+        &lt;div data-part="content" data-value="duis"&gt;
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+            
+        &lt;/div&gt;
+        &lt;div data-part="content" data-value="donec"&gt;
+            Donec pretium magna cursus ante tincidunt porta.
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;tabs tabs-js&quot; data-default-value=&quot;duis&quot; data-loop-focus=&quot;true&quot; data-orientation=&quot;vertical&quot; data-dir=&quot;ltr&quot;
+    data-activation-mode=&quot;manual&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;list&quot;&gt;
+            &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+            &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+            &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        &lt;/div&gt;
+        &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+            
+        &lt;/div&gt;
+        &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+            Donec pretium magna cursus ante tincidunt porta.
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Description: Unique id of the component. Default generated if none is
+  provided.
+</p>
+<p>
+  <strong>data-default-value</strong><br />
+  Type: <code>string</code><br />
+  Description: The initial selected tab value.
+</p>
+<p>
+  <strong>data-value</strong><br />
+  Type: <code>string</code><br />
+  Description: The controlled selected tab value.
+</p>
+<p>
+  <strong>data-orientation</strong><br />
+  Type: <code>horizontal | vertical</code><br />
+  Description: The orientation of the tabs.
+</p>
+<ul>
+  <li>
+    <code>horizontal</code>: Only left and right arrow key navigation will work.
+  </li>
+  <li>
+    <code>vertical</code>: Only up and down arrow key navigation will work.
+  </li>
+</ul>
+<p>
+  <strong>data-dir</strong><br />
+  Type: <code>ltr | rtl</code><br />
+  Description: The orientation of the tabs. Can be <code>ltr</code> or
+  <code>rtl</code>.
+</p>
+<p>
+  <strong>data-loop-focus</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the keyboard navigation will loop from last tab to first,
+  and vice versa.
+</p>
+<p>
+  <strong>data-activation-mode</strong><br />
+  Type: <code>&quot;manual&quot; | &quot;automatic&quot;</code><br />
+  Description: The activation mode of the tabs.
+</p>
+<ul>
+  <li>
+    <code>manual</code>: Tabs are activated when clicked or when pressing the
+    <code>Enter</code> key.
+  </li>
+  <li><code>automatic</code>: Tabs are activated when receiving focus.</li>
+</ul>
+<hr />
+<h2 id="event-callbacks" tabindex="-1">
+  <a class="link" href="#event-callbacks">#</a> Event Callbacks
+</h2>
+<p>
+  Each tabs component can receive callbacks that can be used to respond to user
+  interaction with custom behavior.
+</p>
+<p>
+  You must add a custom id for the tabs and a event listener for your event name
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document.getElementById("my-tabs")
+?.addEventListener("my-tabs-event", (event) =&gt; {
+console.log("Received event:", (event as CustomEvent).detail);
+});
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">document.getElementById(&quot;my-tabs&quot;)
+?.addEventListener(&quot;my-tabs-event&quot;, (event) =&gt; {
+console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
+});
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div
+      id="my-tabs"
+      class="tabs tabs-js"
+      data-default-value="lorem"
+      data-on-value-change="my-tabs-event"
+    >
+      <div data-part="root">
+        <div data-part="list">
+          <button data-part="trigger" data-value="lorem">Lorem</button>
+          <button data-part="trigger" data-value="duis">Duis</button>
+          <button data-part="trigger" data-value="donec">Donec</button>
+        </div>
+        <div data-part="content" data-value="lorem">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+        <div data-part="content" data-value="duis">
+          Duis a sem ut diam interdum ultricies sit amet id arcu.
+        </div>
+        <div data-part="content" data-value="donec">
+          Donec pretium magna cursus ante tincidunt porta.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div id="my-tabs" class="tabs tabs-js" data-default-value="lorem" data-on-value-change="my-tabs-event"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;div data-part="list"&gt;
+            &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+            &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+            &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div data-part="content" data-value="lorem"&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        &lt;/div&gt;
+        &lt;div data-part="content" data-value="duis"&gt;
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+            
+        &lt;/div&gt;
+        &lt;div data-part="content" data-value="donec"&gt;
+            Donec pretium magna cursus ante tincidunt porta.
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div id=&quot;my-tabs&quot; class=&quot;tabs tabs-js&quot; data-default-value=&quot;lorem&quot; data-on-value-change=&quot;my-tabs-event&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;list&quot;&gt;
+            &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+            &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+            &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        &lt;/div&gt;
+        &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+            
+        &lt;/div&gt;
+        &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+            Donec pretium magna cursus ante tincidunt porta.
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<blockquote>
+  <p>
+    Open your browser's console to see the events received when select a tab
+  </p>
+</blockquote>
+<p>
+  <strong>data-on-value-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when the selected/active tab changes.
+</p>
+<p>
+  <strong>data-on-focus-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when the focused tab changes.
+</p>
+<p>
+  <strong>data-navigate</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent to navigate to the selected tab when
+  clicking on it. Useful if tab triggers are anchor elements.
+</p>
+<hr />
+<h2 id="modifiers" tabindex="-1">
+  <a class="link" href="#modifiers">#</a> Modifiers
+</h2>
+<p>Each tabs can be styled with modifiers.</p>
+<p>
+  You can mix as many modifiers on the same button, however you can choose only
+  one choice per modifer
+</p>
+<p>
+  For convenience the default variant name is omited, meaning there is no need
+  to add the default name class
+</p>
+<blockquote>
+  <p>
+    You may have noticed the double dash before the modifier name — this follows
+    the BEM (Block Element Modifier) naming convention
+  </p>
+</blockquote>
+<table>
+  <thead>
+    <tr>
+      <th>Modifier</th>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#variant" class="link">Variant</a></td>
+      <td>base (default), accent</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="#color" class="link">Color</a></td>
+      <td>base (default), brand, alert, info, success</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="#size" class="link">Size</a></td>
+      <td>md (default), sm, lg, xl</td>
+      <td>Modify the size of the tabs</td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+<h3 id="variant" tabindex="-1">
+  <a class="link" href="#variant">#</a> Variant
+</h3>
+<p>Set the variant of each tab</p>
+<p>Options: <strong>base(default)</strong>, <strong>accent</strong></p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <div class="tabs tabs-js" data-default-value="lorem">
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="tabs tabs-js tabs--accent" data-default-value="lorem">
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value=' &lt;div&gt;
+    &lt;div class="tabs tabs-js" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+                
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+                
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--accent" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+                
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+                
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html"> &lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+                
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+                
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--accent&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+                
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+                
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h3 id="color" tabindex="-1"><a class="link" href="#color">#</a> Color</h3>
+<p>Set the color of each tabs</p>
+<p>
+  Options: <strong>base(default)</strong>, <strong>brand</strong>,
+  <strong>alert</strong>, <strong>info</strong>,<strong>success</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <div class="tabs tabs-js tabs--brand" data-default-value="lorem">
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="tabs tabs-js tabs--alert" data-default-value="lorem">
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="tabs tabs-js tabs--info" data-default-value="lorem">
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="tabs tabs-js tabs--success" data-default-value="lorem">
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="tabs tabs-js tabs--accent tabs--brand"
+        data-default-value="lorem"
+      >
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="tabs tabs-js tabs--accent tabs--alert"
+        data-default-value="lorem"
+      >
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="tabs tabs-js tabs--accent tabs--info"
+        data-default-value="lorem"
+      >
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="tabs tabs-js tabs--accent tabs--success"
+        data-default-value="lorem"
+      >
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--brand" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--alert" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--info" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--success" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--accent tabs--brand" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--accent tabs--alert" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--accent tabs--info" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--accent tabs--success" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--brand&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--alert&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--info&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--success&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--accent tabs--brand&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--accent tabs--alert&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--accent tabs--info&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--accent tabs--success&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+  </div>
+</div>
+<hr />
+<h3 id="size" tabindex="-1"><a class="link" href="#size">#</a> Size</h3>
+<p>Set the size of each tabs</p>
+<p>
+  Options: <strong>md(default)</strong>, <strong>sm</strong>,
+  <strong>lg</strong>, <strong>xl</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <div class="tabs tabs-js tabs--sm" data-default-value="lorem">
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="tabs tabs-js" data-default-value="lorem">
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="tabs tabs-js tabs--lg" data-default-value="lorem">
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="tabs tabs-js tabs--xl" data-default-value="lorem">
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">Lorem</button>
+            <button data-part="trigger" data-value="duis">Duis</button>
+            <button data-part="trigger" data-value="donec">Donec</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div data-part="content" data-value="duis">
+            Duis a sem ut diam interdum ultricies sit amet id arcu.
+          </div>
+          <div data-part="content" data-value="donec">
+            Donec pretium magna cursus ante tincidunt porta.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value=' &lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--sm" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class="tabs tabs-js" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--lg" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class="tabs tabs-js tabs--xl" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;Duis&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html"> &lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--sm&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--lg&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div class=&quot;tabs tabs-js tabs--xl&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;Duis&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;Donec&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="rtl" tabindex="-1"><a class="link" href="#rtl">#</a> RTL</h2>
+<p>RTL support for tabs</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div dir="rtl">
+      <div class="tabs tabs-js" data-dir="rtl" data-default-value="lorem">
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">سقط</button>
+            <button data-part="trigger" data-value="duis">بين</button>
+            <button data-part="trigger" data-value="donec">دونيك</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            سقط وبلجيكا، أن ولم, يتم غضون الأوروبية عل, أن بين وقرى مكثّفة
+          </div>
+          <div data-part="content" data-value="duis">
+            ي وبدون الخاسرة الأعمال بعض, عن دول القوى القادة
+          </div>
+          <div data-part="content" data-value="donec">
+            حتى سعر الجري الرائع قبل بوابة المطورين.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div dir="rtl">
+      <div
+        class="tabs tabs-js"
+        data-dir="rtl"
+        data-orientation="vertical"
+        data-default-value="lorem"
+      >
+        <div data-part="root">
+          <div data-part="list">
+            <button data-part="trigger" data-value="lorem">سقط</button>
+            <button data-part="trigger" data-value="duis">بين</button>
+            <button data-part="trigger" data-value="donec">دونيك</button>
+          </div>
+          <div data-part="content" data-value="lorem">
+            سقط وبلجيكا، أن ولم, يتم غضون الأوروبية عل, أن بين وقرى مكثّفة
+          </div>
+          <div data-part="content" data-value="duis">
+            ي وبدون الخاسرة الأعمال بعض, عن دول القوى القادة
+          </div>
+          <div data-part="content" data-value="donec">
+            حتى سعر الجري الرائع قبل بوابة المطورين.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div dir="rtl"&gt;
+    &lt;div class="tabs tabs-js" data-dir="rtl" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;سقط&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;بين&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;دونيك&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                سقط وبلجيكا، أن ولم, يتم غضون الأوروبية عل, أن بين وقرى مكثّفة
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                ي وبدون الخاسرة الأعمال بعض, عن دول القوى القادة
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                حتى سعر الجري الرائع قبل بوابة المطورين.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div dir="rtl"&gt;
+    &lt;div class="tabs tabs-js" data-dir="rtl" data-orientation="vertical" data-default-value="lorem"&gt;
+        &lt;div data-part="root"&gt;
+            &lt;div data-part="list"&gt;
+                &lt;button data-part="trigger" data-value="lorem"&gt;سقط&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="duis"&gt;بين&lt;/button&gt;
+                &lt;button data-part="trigger" data-value="donec"&gt;دونيك&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="lorem"&gt;
+                سقط وبلجيكا، أن ولم, يتم غضون الأوروبية عل, أن بين وقرى مكثّفة
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="duis"&gt;
+                ي وبدون الخاسرة الأعمال بعض, عن دول القوى القادة
+            &lt;/div&gt;
+            &lt;div data-part="content" data-value="donec"&gt;
+                حتى سعر الجري الرائع قبل بوابة المطورين.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div dir=&quot;rtl&quot;&gt;
+    &lt;div class=&quot;tabs tabs-js&quot; data-dir=&quot;rtl&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;سقط&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;بين&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;دونيك&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                سقط وبلجيكا، أن ولم, يتم غضون الأوروبية عل, أن بين وقرى مكثّفة
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                ي وبدون الخاسرة الأعمال بعض, عن دول القوى القادة
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                حتى سعر الجري الرائع قبل بوابة المطورين.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div dir=&quot;rtl&quot;&gt;
+    &lt;div class=&quot;tabs tabs-js&quot; data-dir=&quot;rtl&quot; data-orientation=&quot;vertical&quot; data-default-value=&quot;lorem&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+            &lt;div data-part=&quot;list&quot;&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;سقط&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;duis&quot;&gt;بين&lt;/button&gt;
+                &lt;button data-part=&quot;trigger&quot; data-value=&quot;donec&quot;&gt;دونيك&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+                سقط وبلجيكا، أن ولم, يتم غضون الأوروبية عل, أن بين وقرى مكثّفة
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;duis&quot;&gt;
+                ي وبدون الخاسرة الأعمال بعض, عن دول القوى القادة
+            &lt;/div&gt;
+            &lt;div data-part=&quot;content&quot; data-value=&quot;donec&quot;&gt;
+                حتى سعر الجري الرائع قبل بوابة المطورين.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<form
+  id="form-cookies"
+  class="flex flex-col items-start max-w-(--container-ui) m-ui-padding bg-ui border-1 border-root--border rounded-ui p-ui-padding"
+>
+  <h3 class="my-0">Cookie Preferences</h3>
+  <p class="text-ui--muted text-ui-sm my-0">
+    Choose how cookies are used on this site.
+  </p>
+
+  <div
+    class="switch switch-js py-ui-padding"
+    data-form="form-cookies"
+    data-name="required"
+    data-value="accepted"
+  >
+    <label data-part="root">
+      <span
+        data-part="label"
+        class="flex flex-col items-start justify-start my-0"
+        >Essential Cookies
+        <span class="text-ui--muted text-ui-sm">
+          Needed for the site to work properly and to enable basic features.
+        </span>
+      </span>
+      <input data-part="hidden-input" />
+      <span data-part="control">
+        <span data-part="thumb"></span>
+      </span>
+    </label>
+  </div>
+
+  <div
+    class="switch switch-js py-ui-padding"
+    data-form="form-cookies"
+    data-name="functional"
+    data-value="accepted"
+  >
+    <label data-part="root">
+      <span
+        data-part="label"
+        class="flex flex-col items-start justify-start my-0"
+        >Performance & Features
+        <span class="text-ui--muted text-ui-sm">
+          Help us improve your experience by remembering preferences and
+          enhancing functionality.
+        </span>
+      </span>
+      <input data-part="hidden-input" />
+      <span data-part="control">
+        <span data-part="thumb"></span>
+      </span>
+    </label>
+  </div>
+  <button class="button button--sm w-full mt-ui-padding" type="submit">
+    Confirm choices
+  </button>
+</form>

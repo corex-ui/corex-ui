@@ -1,0 +1,3457 @@
+<h1 id="carousel" tabindex="-1">
+  <a class="link" href="#carousel">#</a> Carousel
+</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/carousel"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Carousel
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>
+  An accessible carousel component that leverages native CSS Scroll Snap for
+  smooth, performant scrolling between slides.
+</p>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Carousel component consists of the following data parts:</p>
+<p>
+  <code>root</code>, <code>control</code>, <code>prev-trigger</code>,
+  <code>next-trigger</code>, <code>autoplay-trigger</code>
+  <code>item-group</code>, <code>item</code>, <code>indicator-group</code>,
+  <code>indicator</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="carousel carousel-js">
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="carousel carousel-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;carousel carousel-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each carousel can be set with different settings with the following
+  data-attribute.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="carousel carousel-js"
+      data-orientation="horizontal"
+      data-loop="true"
+      data-allow-mouse-drag="true"
+      data-slides-per-page="2"
+      data-padding="var(--spacing-ui)"
+      data-spacing="var(--spacing-ui-gap)"
+      data-autoplay="false"
+    >
+      <div data-part="root" class="max-w-full">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="carousel carousel-js"
+  data-orientation="horizontal"
+  data-loop="true"
+  data-allow-mouse-drag="true"
+  data-slides-per-page="2"
+  data-padding="var(--spacing-ui)"
+  data-spacing="var(--spacing-ui-gap)"
+  data-autoplay="false"
+&gt;
+  &lt;div data-part="root" class="max-w-full"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;carousel carousel-js&quot;
+  data-orientation=&quot;horizontal&quot;
+  data-loop=&quot;true&quot;
+  data-allow-mouse-drag=&quot;true&quot;
+  data-slides-per-page=&quot;2&quot;
+  data-padding=&quot;var(--spacing-ui)&quot;
+  data-spacing=&quot;var(--spacing-ui-gap)&quot;
+  data-autoplay=&quot;false&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot; class=&quot;max-w-full&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Description: Unique id of the carousel. Default generated if none is
+  provided..
+</p>
+<p>
+  <strong>data-slides-per-page</strong><br />
+  Type: <code>number</code><br />
+  Description: The number of slides to show at a time.
+</p>
+<p>
+  <strong>data-loop</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the carousel should loop around.
+</p>
+<p>
+  <strong>data-orientation</strong><br />
+  Type: <code>string</code><br />
+  Description: The orientation of the carousel. Can be
+  <code>horizontal</code> or <code>vertical</code> - <code>horizontal</code>:
+  only left and right arrow key navigation will work. - <code>vertical</code>:
+  only up and down arrow key navigation will work.
+</p>
+<p>
+  <strong>data-allow-mouse-drag</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to allow scrolling via dragging with mouse. Default: true
+</p>
+<p>
+  <strong>data-autoplay</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to scroll automatically. The default delay is 4000ms.
+</p>
+<p>
+  <strong>data-delay</strong><br />
+  Type: <code>number</code><br />
+  Description: The delay for autoplay. The default delay is 4000ms.
+</p>
+<p>
+  <strong>data-loop</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the carousel should loop around.
+</p>
+<p>
+  <strong>data-default-page</strong><br />
+  Type: <code>number</code><br />
+  Description: The initial page to scroll to when rendered. Use when you don't
+  need to control the page of the carousel.
+</p>
+<p>
+  <strong>data-padding</strong><br />
+  Type: <code>string</code><br />
+  Description: Defines the extra space added around the scrollable area,
+  enabling nearby items to remain partially in view.
+</p>
+<p>
+  <strong>data-page</strong><br />
+  Type: <code>number</code><br />
+  Description: The controlled page of the carousel.
+</p>
+<p>
+  <strong>data-slides-per-move</strong><br />
+  Type: <code>number</code> || <code>string</code><br />
+  Description: The number of slides to scroll at a time. When set to auto, the
+  number of slides to scroll is determined by the slidesPerPage property.
+  Default: &quot;auto&quot;
+</p>
+<p>
+  <strong>data-snap-type</strong><br />
+  Type: <code>string</code> ||<br />
+  Description: The snap type of the item. &quot;proximity&quot; |
+  &quot;mandatory&quot;. Default: &quot;mandatory&quot;
+</p>
+<p>
+  <strong>data-spacing</strong><br />
+  Type: <code>string</code><br />
+  Description: The amount of space between items. Default: &quot;0px&quot;
+</p>
+<p>
+  <strong>data-in-view-threshold</strong><br />
+  Type: <code>number</code><br />
+  Description: The threshold for determining if an item is in view. Default:
+  &quot;0.6&quot;
+</p>
+<hr />
+<h2 id="event-callbacks" tabindex="-1">
+  <a class="link" href="#event-callbacks">#</a> Event Callbacks
+</h2>
+<p>
+  Each carousel component can receive callbacks that can be used to respond to
+  user interaction with custom behavior.
+</p>
+<p>
+  You must add a custom id for the carousel and a event listener for your event
+  name
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document
+  .getElementById("my-carousel")
+  ?.addEventListener("my-carousel-event", (event) =&gt; {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">document
+  .getElementById(&quot;my-carousel&quot;)
+  ?.addEventListener(&quot;my-carousel-event&quot;, (event) =&gt; {
+    console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
+  });
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div
+      id="my-carousel"
+      class="carousel carousel-js"
+      data-on-page-change="my-carousel-event"
+    >
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  id="my-carousel"
+  class="carousel carousel-js"
+  data-on-page-change="my-carousel-event"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  id=&quot;my-carousel&quot;
+  class=&quot;carousel carousel-js&quot;
+  data-on-page-change=&quot;my-carousel-event&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<blockquote>
+  <p>
+    Open your browser's console to see the events received when the carousel
+    page changes
+  </p>
+</blockquote>
+<p>
+  <strong>data-on-page-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be send when the page changes.
+</p>
+<p>
+  <strong>data-on-drag-status-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be send when the drag status changes.
+</p>
+<p>
+  <strong>data-on-autoplay-status-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be send when the autoplay status changes.
+</p>
+<hr />
+<h2 id="orientation" tabindex="-1">
+  <a class="link" href="#orientation">#</a> Orientation
+</h2>
+<p>
+  By default, the carousel is displayed on a
+  <strong>horizontal</strong> layout.<br />
+  You can also switch it to a <strong>vertical</strong> layout.
+</p>
+<p>When using changing layout, keyboard navigation changes accordingly:</p>
+<ul>
+  <li>
+    <strong>Vertical:</strong> use <kbd>↑</kbd> / <kbd>↓</kbd> to move between
+    items
+  </li>
+  <li>
+    <strong>Horizontal:</strong> use <kbd>←</kbd> / <kbd>→</kbd> to move between
+    items
+  </li>
+</ul>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="carousel carousel-js" data-orientation="vertical">
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="carousel carousel-js" data-orientation="vertical"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;carousel carousel-js&quot; data-orientation=&quot;vertical&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="autoplay" tabindex="-1">
+  <a class="link" href="#autoplay">#</a> Autoplay
+</h2>
+<p>
+  You can add a play and pause button along with the
+  <code>data-autoplay</code> and <code>data-delay</code> options.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="carousel carousel-js" data-autoplay="true" data-delay="1000">
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+          <button data-part="autoplay-trigger" aria-label="Autoplay">
+            <svg
+              data-play
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
+              />
+            </svg>
+            <svg
+              data-pause
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 5.25v13.5m-7.5-13.5v13.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="carousel carousel-js" data-autoplay="true" data-delay="1000"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;button data-part="autoplay-trigger" aria-label="Autoplay"&gt;
+        &lt;svg
+          data-play
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
+          /&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-pause
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 5.25v13.5m-7.5-13.5v13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;carousel carousel-js&quot; data-autoplay=&quot;true&quot; data-delay=&quot;1000&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;button data-part=&quot;autoplay-trigger&quot; aria-label=&quot;Autoplay&quot;&gt;
+        &lt;svg
+          data-play
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z&quot;
+          /&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-pause
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 5.25v13.5m-7.5-13.5v13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="modifiers" tabindex="-1">
+  <a class="link" href="#modifiers">#</a> Modifiers
+</h2>
+<p>
+  Carousel support modifier classes that control their appearance.<br />
+  You can combine multiple modifiers on the same carousel.
+</p>
+<p>
+  The default modifier is applied automatically, so you don’t need to include it
+  explicitly.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Modifier</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#color" class="link">Color</a></td>
+      <td>Sets the color theme of the carousel.</td>
+    </tr>
+    <tr>
+      <td><a href="#size" class="link">Size</a></td>
+      <td>Adjusts the overall size of the carousel.</td>
+    </tr>
+  </tbody>
+</table>
+<blockquote>
+  <p>
+    You may have noticed the double dash before the modifier name — this follows
+    the BEM (Block Element Modifier) naming convention
+  </p>
+</blockquote>
+<h3 id="color" tabindex="-1"><a class="link" href="#color">#</a> Color</h3>
+<p>
+  Use <code>class=&quot;carousel--{color}&quot;</code> to set the color of an
+  carousel.
+</p>
+<p>
+  Available options:<br />
+  <strong>accent</strong>(default), <strong>brand</strong>,
+  <strong>alert</strong>, <strong>info</strong>, <strong>success</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="carousel carousel-js carousel--brand">
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel carousel-js carousel--alert">
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel carousel-js carousel--info">
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel carousel-js carousel--success">
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="carousel carousel-js carousel--brand"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="carousel carousel-js carousel--alert"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="carousel carousel-js carousel--info"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="carousel carousel-js carousel--success"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;carousel carousel-js carousel--brand&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;carousel carousel-js carousel--alert&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;carousel carousel-js carousel--info&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;carousel carousel-js carousel--success&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h3 id="size" tabindex="-1"><a class="link" href="#size">#</a> Size</h3>
+<p>
+  Use <code>class=&quot;carousel--{size}&quot;</code> to set the size of a
+  carousel.
+</p>
+<p>
+  Available options:<br />
+  <strong>sm</strong>, <strong>md</strong> (default), <strong>lg</strong>,
+  <strong>xl</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="carousel carousel-js carousel--sm">
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel carousel-js">
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel carousel-js carousel--lg">
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel carousel-js carousel--xl">
+      <div data-part="root">
+        <div data-part="item-group">
+          <div data-part="item">
+            <img src="/images/bg/beach.jpg" alt="beach" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/winter.jpg" alt="winter" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/star.jpg" alt="star" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/sand.jpg" alt="sand" />
+          </div>
+          <div data-part="item">
+            <img src="/images/bg/fall.jpg" alt="fall" />
+          </div>
+        </div>
+        <div data-part="control">
+          <button data-part="prev-trigger" aria-label="Previous Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div data-part="indicator-group"></div>
+          <button data-part="next-trigger" aria-label="Next Slide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="carousel carousel-js carousel--sm"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="carousel carousel-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="carousel carousel-js carousel--lg"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="carousel carousel-js carousel--xl"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/winter.jpg" alt="winter" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/star.jpg" alt="star" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/sand.jpg" alt="sand" /&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item"&gt;
+        &lt;img src="/images/bg/fall.jpg" alt="fall" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="control"&gt;
+      &lt;button data-part="prev-trigger" aria-label="Previous Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="indicator-group"&gt;&lt;/div&gt;
+      &lt;button data-part="next-trigger" aria-label="Next Slide"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;carousel carousel-js carousel--sm&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;carousel carousel-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;carousel carousel-js carousel--lg&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;carousel carousel-js carousel--xl&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/winter.jpg&quot; alt=&quot;winter&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/star.jpg&quot; alt=&quot;star&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/sand.jpg&quot; alt=&quot;sand&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot;&gt;
+        &lt;img src=&quot;/images/bg/fall.jpg&quot; alt=&quot;fall&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;button data-part=&quot;prev-trigger&quot; aria-label=&quot;Previous Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M15.75 19.5 8.25 12l7.5-7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;indicator-group&quot;&gt;&lt;/div&gt;
+      &lt;button data-part=&quot;next-trigger&quot; aria-label=&quot;Next Slide&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+          class=&quot;icon&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
+<h3 id="static" tabindex="-1"><a class="link" href="#static">#</a> Static</h3>
+<ol>
+  <li>Import the Carousel component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import "@corex-ui/static/components/carousel";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/carousel&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  This will automatically initialize all elements with
+  <code>class=&quot;carousel-js&quot;</code> and add the necessary interaction
+  behavior.
+</p>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/carousel.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/carousel.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="carousel carousel-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="item-group"&gt;
+      &lt;div data-part="item"&gt;&lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;carousel carousel-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;item-group&quot;&gt;
+      &lt;div data-part=&quot;item&quot;&gt;&lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<h3 id="static-react" tabindex="-1">
+  <a class="link" href="#static-react">#</a> Static React
+</h3>
+<blockquote>
+  <p>Experimental! Only works with React static export (eg. Next.js SSG.)</p>
+</blockquote>
+<ol>
+  <li>Import the Carousel component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { Carousel } from &apos;@corex-ui/static/react&apos;;
+export default function Home() {
+  return (
+    &lt;Carousel&gt;
+      &lt;div data-part="root"&gt;
+        &lt;div data-part="item-group"&gt;
+          &lt;div data-part="item"&gt;&lt;img src="/images/bg/beach.jpg" alt="beach" /&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/Carousel&gt;
+  );
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { Carousel } from '@corex-ui/static/react';
+export default function Home() {
+  return (
+    &lt;Carousel&gt;
+      &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;item-group&quot;&gt;
+          &lt;div data-part=&quot;item&quot;&gt;&lt;img src=&quot;/images/bg/beach.jpg&quot; alt=&quot;beach&quot; /&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/Carousel&gt;
+  );
+}
+</code></pre>
+  </div>
+</div>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/carousel.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/carousel.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;Carousel className="carousel"&gt; {/* content */} &lt;/Carousel&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;Carousel className=&quot;carousel&quot;&gt; {/* content */} &lt;/Carousel&gt;
+</code></pre>
+  </div>
+</div>

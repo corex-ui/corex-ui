@@ -1,0 +1,4713 @@
+<h1 id="listbox" tabindex="-1">
+  <a class="link" href="#listbox">#</a> Listbox
+</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/listbox"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Listbox
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>
+  A listbox component that displays a list of selectable options, supporting
+  both single and multiple selection modes.
+</p>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Listbox component consists of the following data parts:</p>
+<p>
+  <code>root</code>, <code>label</code>, <code>content</code>,
+  <code>item-group</code>, <code>item-group-label</code>, <code>item</code>,
+  <code>item-text</code>, <code>item-indicator</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="listbox listbox-js">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item" data-value="a">
+            <span data-part="item-text" data-value="a"> Item A </span>
+            <span data-part="item-indicator" data-value="a">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="b">
+            <span data-part="item-text" data-value="b"> Item B </span>
+            <span data-part="item-indicator" data-value="b">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="c">
+            <span data-part="item-text" data-value="c"> Item C </span>
+            <span data-part="item-indicator" data-value="c">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="d">
+            <span data-part="item-text" data-value="d"> Item D </span>
+            <span data-part="item-indicator" data-value="d">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="listbox listbox-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="a"&gt;
+        &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="a"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="b"&gt;
+        &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="b"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="c"&gt;
+        &lt;span data-part="item-text" data-value="c"&gt; Item C &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="c"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="d"&gt;
+        &lt;span data-part="item-text" data-value="d"&gt; Item D &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="d"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;listbox listbox-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;c&quot;&gt; Item C &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;c&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;d&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;d&quot;&gt; Item D &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;d&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>Another example without <code>item-indicator</code> and additional image</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="listbox listbox-js">
+      <div data-part="root">
+        <div data-part="label">
+          Choose your <br />
+          favorite technology
+        </div>
+        <div data-part="content">
+          <div data-part="item" data-value="vite">
+            <img src="/images/tech/vite.svg" alt="Vite" />
+            <span data-part="item-text" data-value="vite"> Vite </span>
+          </div>
+          <div data-part="item" data-value="html5">
+            <img src="/images/tech/html5.svg" alt="HTML" />
+            <span data-part="item-text" data-value="html5"> HTML </span>
+          </div>
+          <div data-part="item" data-value="typescript">
+            <img src="/images/tech/typescript.svg" alt="Typescript" />
+            <span data-part="item-text" data-value="typescript">
+              Typescript
+            </span>
+          </div>
+          <div data-part="item" data-value="css">
+            <img src="/images/tech/css.svg" alt="CSS" />
+            <span data-part="item-text" data-value="css"> CSS </span>
+          </div>
+          <div data-part="item" data-value="tailwind">
+            <img src="/images/tech/tailwind.svg" alt="Tailwind" />
+            <span data-part="item-text" data-value="tailwind"> Tailwind </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="listbox listbox-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;
+      Choose your &lt;br /&gt;
+      favorite technology
+    &lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="vite"&gt;
+        &lt;img src="/images/tech/vite.svg" alt="Vite" /&gt;
+        &lt;span data-part="item-text" data-value="vite"&gt; Vite &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="html5"&gt;
+        &lt;img src="/images/tech/html5.svg" alt="HTML" /&gt;
+        &lt;span data-part="item-text" data-value="html5"&gt; HTML &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="typescript"&gt;
+        &lt;img src="/images/tech/typescript.svg" alt="Typescript" /&gt;
+        &lt;span data-part="item-text" data-value="typescript"&gt; Typescript &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="css"&gt;
+        &lt;img src="/images/tech/css.svg" alt="CSS" /&gt;
+        &lt;span data-part="item-text" data-value="css"&gt; CSS &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="tailwind"&gt;
+        &lt;img src="/images/tech/tailwind.svg" alt="Tailwind" /&gt;
+        &lt;span data-part="item-text" data-value="tailwind"&gt; Tailwind &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;listbox listbox-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;
+      Choose your &lt;br /&gt;
+      favorite technology
+    &lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;vite&quot;&gt;
+        &lt;img src=&quot;/images/tech/vite.svg&quot; alt=&quot;Vite&quot; /&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;vite&quot;&gt; Vite &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;html5&quot;&gt;
+        &lt;img src=&quot;/images/tech/html5.svg&quot; alt=&quot;HTML&quot; /&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;html5&quot;&gt; HTML &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;typescript&quot;&gt;
+        &lt;img src=&quot;/images/tech/typescript.svg&quot; alt=&quot;Typescript&quot; /&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;typescript&quot;&gt; Typescript &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;css&quot;&gt;
+        &lt;img src=&quot;/images/tech/css.svg&quot; alt=&quot;CSS&quot; /&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;css&quot;&gt; CSS &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;tailwind&quot;&gt;
+        &lt;img src=&quot;/images/tech/tailwind.svg&quot; alt=&quot;Tailwind&quot; /&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;tailwind&quot;&gt; Tailwind &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="load-from-json" tabindex="-1">
+  <a class="link" href="#load-from-json">#</a> Load from JSON
+</h2>
+<p>
+  You can initialize the Listbox component by embedding your JSON data directly
+  in your HTML using a <code>&lt;script&gt;</code> tag with
+  <code>type=&quot;application/json&quot;</code> and a unique
+  <code>data-listbox</code> attribute. Then, reference this JSON in your Listbox
+  container via the corresponding <code>data-json</code> attribute.
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;script type="application/json" data-listbox="my-listbox"&gt;
+  [
+    {
+      "value": "apple",
+      "label": "Apple",
+      "group": "Fruits"
+    },
+    {
+      "value": "banana",
+      "label": "Banana",
+      "group": "Fruits"
+    },
+    {
+      "value": "carrot",
+      "label": "Carrot",
+      "group": "Vegetables"
+    },
+    {
+      "value": "broccoli",
+      "label": "Broccoli",
+      "group": "Vegetables",
+      "disabled": true
+    },
+    {
+      "value": "water",
+      "label": "Water"
+    }
+  ]
+&lt;/script&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;script type=&quot;application/json&quot; data-listbox=&quot;my-listbox&quot;&gt;
+  [
+    {
+      &quot;value&quot;: &quot;apple&quot;,
+      &quot;label&quot;: &quot;Apple&quot;,
+      &quot;group&quot;: &quot;Fruits&quot;
+    },
+    {
+      &quot;value&quot;: &quot;banana&quot;,
+      &quot;label&quot;: &quot;Banana&quot;,
+      &quot;group&quot;: &quot;Fruits&quot;
+    },
+    {
+      &quot;value&quot;: &quot;carrot&quot;,
+      &quot;label&quot;: &quot;Carrot&quot;,
+      &quot;group&quot;: &quot;Vegetables&quot;
+    },
+    {
+      &quot;value&quot;: &quot;broccoli&quot;,
+      &quot;label&quot;: &quot;Broccoli&quot;,
+      &quot;group&quot;: &quot;Vegetables&quot;,
+      &quot;disabled&quot;: true
+    },
+    {
+      &quot;value&quot;: &quot;water&quot;,
+      &quot;label&quot;: &quot;Water&quot;
+    }
+  ]
+&lt;/script&gt;
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div class="listbox listbox-js" data-json="my-listbox">
+      <div data-part="root">
+        <div data-part="label">Your dessert</div>
+        <div data-part="content"></div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="listbox listbox-js" data-json="my-listbox"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Your dessert&lt;/div&gt;
+    &lt;div data-part="content"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;listbox listbox-js&quot; data-json=&quot;my-listbox&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Your dessert&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="group-items" tabindex="-1">
+  <a class="link" href="#group-items">#</a> Group items
+</h2>
+<p>The Listbox items can be grouped with a label to identify each group</p>
+<p>
+  Please note you must provide a unique <code>data-id</code> to the
+  <code>item-group</code> and <code>item-group-label</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="listbox listbox-js">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item-group-label" data-id="group-1">Group Label</div>
+          <div data-part="item-group" data-id="group-1">
+            <div data-part="item" data-value="a">
+              <span data-part="item-text" data-value="a"> Item A </span>
+              <span data-part="item-indicator" data-value="a">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div data-part="item" data-value="b">
+              <span data-part="item-text" data-value="b"> Item B </span>
+              <span data-part="item-indicator" data-value="b">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div data-part="item-group-label" data-id="group-2">Group Label</div>
+          <div data-part="item-group" data-id="group-2">
+            <div data-part="item" data-value="c">
+              <span data-part="item-text" data-value="c"> Item C </span>
+              <span data-part="item-indicator" data-value="c">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div data-part="item" data-value="d" data-label="item-d">
+              <span data-part="item-text" data-value="d" data-label="item-d">
+                Item D
+              </span>
+              <span
+                data-part="item-indicator"
+                data-value="d"
+                data-label="item-d"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="listbox listbox-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item-group-label" data-id="group-1"&gt;Group Label&lt;/div&gt;
+      &lt;div data-part="item-group" data-id="group-1"&gt;
+        &lt;div data-part="item" data-value="a"&gt;
+          &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="a"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="b"&gt;
+          &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="b"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div data-part="item-group-label" data-id="group-2"&gt;Group Label&lt;/div&gt;
+      &lt;div data-part="item-group" data-id="group-2"&gt;
+        &lt;div data-part="item" data-value="c"&gt;
+          &lt;span data-part="item-text" data-value="c"&gt; Item C &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="c"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="d" data-label="item-d"&gt;
+          &lt;span data-part="item-text" data-value="d" data-label="item-d"&gt;
+            Item D
+          &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="d" data-label="item-d"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;listbox listbox-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item-group-label&quot; data-id=&quot;group-1&quot;&gt;Group Label&lt;/div&gt;
+      &lt;div data-part=&quot;item-group&quot; data-id=&quot;group-1&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div data-part=&quot;item-group-label&quot; data-id=&quot;group-2&quot;&gt;Group Label&lt;/div&gt;
+      &lt;div data-part=&quot;item-group&quot; data-id=&quot;group-2&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;c&quot;&gt; Item C &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;c&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;d&quot; data-label=&quot;item-d&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;d&quot; data-label=&quot;item-d&quot;&gt;
+            Item D
+          &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;d&quot; data-label=&quot;item-d&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="column-layout" tabindex="-1">
+  <a class="link" href="#column-layout">#</a> Column Layout
+</h2>
+<p>
+  The Listbox can use the grid layout by adding <code>data-column-count</code
+  ><br />
+  The column count will also be available as a CSS variable
+  <code>--column-count</code> which is used in the component css
+</p>
+<blockquote>
+  <p>
+    The column layout not only modify the visual onthe listbox but also the
+    keyboard navigation with the addition or right and left keypad
+  </p>
+</blockquote>
+<p>You can use without or without <code>item-group</code></p>
+<h3 id="column-layout-without-group-items" tabindex="-1">
+  <a class="link" href="#column-layout-without-group-items">#</a> Column Layout
+  without group items
+</h3>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="listbox listbox-js" data-column-count="2">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item" data-value="a">
+            <span data-part="item-text" data-value="a"> Item A </span>
+            <span data-part="item-indicator" data-value="a">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="b">
+            <span data-part="item-text" data-value="b"> Item B </span>
+            <span data-part="item-indicator" data-value="b">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="c">
+            <span data-part="item-text" data-value="c"> Item C </span>
+            <span data-part="item-indicator" data-value="c">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="d">
+            <span data-part="item-text" data-value="d"> Item D </span>
+            <span data-part="item-indicator" data-value="d">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="listbox listbox-js" data-column-count="2"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="a"&gt;
+        &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="a"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="b"&gt;
+        &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="b"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="c"&gt;
+        &lt;span data-part="item-text" data-value="c"&gt; Item C &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="c"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="d"&gt;
+        &lt;span data-part="item-text" data-value="d"&gt; Item D &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="d"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;listbox listbox-js&quot; data-column-count=&quot;2&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;c&quot;&gt; Item C &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;c&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;d&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;d&quot;&gt; Item D &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;d&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<h3 id="column-layout-with-group-items" tabindex="-1">
+  <a class="link" href="#column-layout-with-group-items">#</a> Column Layout
+  with group items
+</h3>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="listbox listbox-js" data-column-count="2">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item-group-label" data-id="group-1">Group Label</div>
+          <div data-part="item-group" data-id="group-1">
+            <div data-part="item" data-value="a">
+              <span data-part="item-text" data-value="a"> Item A </span>
+              <span data-part="item-indicator" data-value="a">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div data-part="item" data-value="b">
+              <span data-part="item-text" data-value="b"> Item B </span>
+              <span data-part="item-indicator" data-value="b">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div data-part="item-group-label" data-id="group-2">Group Label</div>
+          <div data-part="item-group" data-id="group-2">
+            <div data-part="item" data-value="c">
+              <span data-part="item-text" data-value="c"> Item C </span>
+              <span data-part="item-indicator" data-value="c">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div data-part="item" data-value="d" data-label="item-d">
+              <span data-part="item-text" data-value="d" data-label="item-d">
+                Item D
+              </span>
+              <span
+                data-part="item-indicator"
+                data-value="d"
+                data-label="item-d"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="listbox listbox-js" data-column-count="2"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item-group-label" data-id="group-1"&gt;Group Label&lt;/div&gt;
+      &lt;div data-part="item-group" data-id="group-1"&gt;
+        &lt;div data-part="item" data-value="a"&gt;
+          &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="a"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="b"&gt;
+          &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="b"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item-group-label" data-id="group-2"&gt;Group Label&lt;/div&gt;
+      &lt;div data-part="item-group" data-id="group-2"&gt;
+        &lt;div data-part="item" data-value="c"&gt;
+          &lt;span data-part="item-text" data-value="c"&gt; Item C &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="c"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="d" data-label="item-d"&gt;
+          &lt;span data-part="item-text" data-value="d" data-label="item-d"&gt;
+            Item D
+          &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="d" data-label="item-d"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;listbox listbox-js&quot; data-column-count=&quot;2&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item-group-label&quot; data-id=&quot;group-1&quot;&gt;Group Label&lt;/div&gt;
+      &lt;div data-part=&quot;item-group&quot; data-id=&quot;group-1&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item-group-label&quot; data-id=&quot;group-2&quot;&gt;Group Label&lt;/div&gt;
+      &lt;div data-part=&quot;item-group&quot; data-id=&quot;group-2&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;c&quot;&gt; Item C &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;c&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;d&quot; data-label=&quot;item-d&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;d&quot; data-label=&quot;item-d&quot;&gt;
+            Item D
+          &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;d&quot; data-label=&quot;item-d&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each listbox can be set with different settings with the following
+  data-attribute.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="listbox listbox-js"
+      id="custom-listbox"
+      data-default-highlighted-value="a"
+      data-default-value="b,d"
+      data-dir="ltr"
+      data-orientation="vertical"
+      data-select-on-highlight="true"
+      data-loop-focus="false"
+      data-typeahead="true"
+      data-deselectable="true"
+      data-disabled="false"
+      data-disallow-select-all="false"
+      data-selection-mode="multiple"
+    >
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item" data-value="a">
+            <span data-part="item-text" data-value="a"> Item A </span>
+            <span data-part="item-indicator" data-value="a">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="b">
+            <span data-part="item-text" data-value="b"> Item B </span>
+            <span data-part="item-indicator" data-value="b">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="c">
+            <span data-part="item-text" data-value="c"> Item C </span>
+            <span data-part="item-indicator" data-value="c">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="d">
+            <span data-part="item-text" data-value="d"> Item D </span>
+            <span data-part="item-indicator" data-value="d">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="listbox listbox-js"
+  id="custom-listbox"
+  data-default-highlighted-value="a"
+  data-default-value="b,d"
+  data-dir="ltr"
+  data-orientation="vertical"
+  data-select-on-highlight="true"
+  data-loop-focus="false"
+  data-typeahead="true"
+  data-deselectable="true"
+  data-disabled="false"
+  data-disallow-select-all="false"
+  data-selection-mode="multiple"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="a"&gt;
+        &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="a"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="b"&gt;
+        &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="b"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="c"&gt;
+        &lt;span data-part="item-text" data-value="c"&gt; Item C &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="c"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="d"&gt;
+        &lt;span data-part="item-text" data-value="d"&gt; Item D &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="d"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;listbox listbox-js&quot;
+  id=&quot;custom-listbox&quot;
+  data-default-highlighted-value=&quot;a&quot;
+  data-default-value=&quot;b,d&quot;
+  data-dir=&quot;ltr&quot;
+  data-orientation=&quot;vertical&quot;
+  data-select-on-highlight=&quot;true&quot;
+  data-loop-focus=&quot;false&quot;
+  data-typeahead=&quot;true&quot;
+  data-deselectable=&quot;true&quot;
+  data-disabled=&quot;false&quot;
+  data-disallow-select-all=&quot;false&quot;
+  data-selection-mode=&quot;multiple&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;c&quot;&gt; Item C &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;c&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;d&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;d&quot;&gt; Item D &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;d&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Description: Unique id of the component. Default generated if none is
+  provided.
+</p>
+<p>
+  <strong>data-dir</strong><br />
+  Type: <code>string</code><br />
+  Description: The orientation of the listbox. Can be <code>ltr</code> or
+  <code>rtl</code>.
+</p>
+<p>
+  <strong>data-disabled</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the listbox is disabled.
+</p>
+<p>
+  <strong>data-disallow-select-all</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to disallow selecting all items when <kbd>meta+a</kbd> is
+  pressed.
+</p>
+<p>
+  <strong>data-value</strong><br />
+  Type: <code>string[]</code><br />
+  Description: Controlled keys of the selected items.
+</p>
+<p>
+  <strong>data-default-value</strong><br />
+  Type: <code>string[]</code><br />
+  Description: Initial default value of the listbox when rendered. Use when you
+  don't need to control the value.
+</p>
+<p>
+  <strong>data-highlighted-value</strong><br />
+  Type: <code>string</code><br />
+  Description: Controlled key of the highlighted item.
+</p>
+<p>
+  <strong>data-default-highlighted-value</strong><br />
+  Type: <code>string</code><br />
+  Description: Initial value of the highlighted item when opened. Use when you
+  don't need to control it.
+</p>
+<p>
+  <strong>data-loop-focus</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to loop keyboard navigation through the options.
+</p>
+<p>
+  <strong>data-selection-mode</strong><br />
+  Type: <code>string</code><br />
+  Description: How multiple selection should behave:
+  <code>&quot;single&quot;</code>, <code>&quot;multiple&quot;</code>, or
+  <code>&quot;extended&quot;</code>.
+</p>
+<p>
+  <strong>data-select-on-highlight</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to select the item when it is highlighted.
+</p>
+<p>
+  <strong>data-deselectable</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to disallow empty selection.
+</p>
+<p>
+  <strong>data-typeahead</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to enable typeahead on the listbox.
+</p>
+<hr />
+<h2 id="event-callbacks" tabindex="-1">
+  <a class="link" href="#event-callbacks">#</a> Event Callbacks
+</h2>
+<p>
+  Each Listbox component can receive callbacks that can be used to respond to
+  user interaction with custom behavior.
+</p>
+<p>
+  You must add a custom id for the listbox and a event listener for your event
+  name
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document
+  .getElementById("my-listbox")
+  ?.addEventListener("my-listbox-event", (event) =&gt; {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">document
+  .getElementById(&quot;my-listbox&quot;)
+  ?.addEventListener(&quot;my-listbox-event&quot;, (event) =&gt; {
+    console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
+  });
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div
+      id="my-listbox"
+      class="listbox listbox-js"
+      data-on-select="my-listbox-event"
+    >
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item" data-value="a">
+            <span data-part="item-text" data-value="a"> Item A </span>
+            <span data-part="item-indicator" data-value="a">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="b">
+            <span data-part="item-text" data-value="b"> Item B </span>
+            <span data-part="item-indicator" data-value="b">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="c">
+            <span data-part="item-text" data-value="c"> Item C </span>
+            <span data-part="item-indicator" data-value="c">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="d">
+            <span data-part="item-text" data-value="d"> Item D </span>
+            <span data-part="item-indicator" data-value="d">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  id="my-listbox"
+  class="listbox listbox-js"
+  data-on-select="my-listbox-event"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="a"&gt;
+        &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="a"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="b"&gt;
+        &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="b"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="c"&gt;
+        &lt;span data-part="item-text" data-value="c"&gt; Item C &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="c"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="d"&gt;
+        &lt;span data-part="item-text" data-value="d"&gt; Item D &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="d"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  id=&quot;my-listbox&quot;
+  class=&quot;listbox listbox-js&quot;
+  data-on-select=&quot;my-listbox-event&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;c&quot;&gt; Item C &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;c&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;d&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;d&quot;&gt; Item D &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;d&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<blockquote>
+  <p>
+    Open your browser's console to see the events received when a listbox item
+    is selected
+  </p>
+</blockquote>
+<p>
+  <strong>data-on-select</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be send when an item is selected.
+</p>
+<p>
+  <strong>data-on-value-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be send when the selected item changes.
+</p>
+<p>
+  <strong>data-on-highlight-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be send when the highlighted item changes.
+</p>
+<hr />
+<h2 id="rtl" tabindex="-1"><a class="link" href="#rtl">#</a> RTL</h2>
+<p>RTL support for listbox</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="listbox listbox-js" data-dir="rtl">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item-group-label" data-id="group-1">Group Label</div>
+          <div data-part="item-group" data-id="group-1">
+            <div data-part="item" data-value="a">
+              <span data-part="item-text" data-value="a"> Item A </span>
+              <span data-part="item-indicator" data-value="a">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div data-part="item" data-value="b">
+              <span data-part="item-text" data-value="b"> Item B </span>
+              <span data-part="item-indicator" data-value="b">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div data-part="item-group-label" data-id="group-2">Group Label</div>
+          <div data-part="item-group" data-id="group-2">
+            <div data-part="item" data-value="c">
+              <span data-part="item-text" data-value="c"> Item C </span>
+              <span data-part="item-indicator" data-value="c">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div data-part="item" data-value="d" data-label="item-d">
+              <span data-part="item-text" data-value="d" data-label="item-d">
+                Item D
+              </span>
+              <span
+                data-part="item-indicator"
+                data-value="d"
+                data-label="item-d"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="listbox listbox-js" data-dir="rtl"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item-group-label" data-id="group-1"&gt;Group Label&lt;/div&gt;
+      &lt;div data-part="item-group" data-id="group-1"&gt;
+        &lt;div data-part="item" data-value="a"&gt;
+          &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="a"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="b"&gt;
+          &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="b"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item-group-label" data-id="group-2"&gt;Group Label&lt;/div&gt;
+      &lt;div data-part="item-group" data-id="group-2"&gt;
+        &lt;div data-part="item" data-value="c"&gt;
+          &lt;span data-part="item-text" data-value="c"&gt; Item C &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="c"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="d" data-label="item-d"&gt;
+          &lt;span data-part="item-text" data-value="d" data-label="item-d"&gt;
+            Item D
+          &lt;/span&gt;
+          &lt;span data-part="item-indicator" data-value="d" data-label="item-d"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;listbox listbox-js&quot; data-dir=&quot;rtl&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item-group-label&quot; data-id=&quot;group-1&quot;&gt;Group Label&lt;/div&gt;
+      &lt;div data-part=&quot;item-group&quot; data-id=&quot;group-1&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item-group-label&quot; data-id=&quot;group-2&quot;&gt;Group Label&lt;/div&gt;
+      &lt;div data-part=&quot;item-group&quot; data-id=&quot;group-2&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;c&quot;&gt; Item C &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;c&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;d&quot; data-label=&quot;item-d&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;d&quot; data-label=&quot;item-d&quot;&gt;
+            Item D
+          &lt;/span&gt;
+          &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;d&quot; data-label=&quot;item-d&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="disabled" tabindex="-1">
+  <a class="link" href="#disabled">#</a> Disabled
+</h2>
+<p>Each listbox can be disabled either globally or per item.</p>
+<ul>
+  <li>
+    To disable the entire listbox, add
+    <code>data-disabled=&quot;true&quot;</code> to the listbox element.
+  </li>
+  <li>
+    To disable a specific item, add
+    <code>data-disabled=&quot;true&quot;</code> to that item’s element.
+  </li>
+</ul>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="listbox listbox-js" data-disabled="true">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item" data-value="a">
+            <span data-part="item-text" data-value="a"> Item A </span>
+            <span data-part="item-indicator" data-value="a">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="b">
+            <span data-part="item-text" data-value="b"> Item B </span>
+            <span data-part="item-indicator" data-value="b">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="c">
+            <span data-part="item-text" data-value="c"> Item C </span>
+            <span data-part="item-indicator" data-value="c">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="d">
+            <span data-part="item-text" data-value="d"> Item D </span>
+            <span data-part="item-indicator" data-value="d">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="listbox listbox-js">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item" data-value="a" data-disabled="true">
+            <span data-part="item-text" data-value="a" data-disabled="true">
+              Item A
+            </span>
+            <span
+              data-part="item-indicator"
+              data-value="a"
+              data-disabled="true"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="b">
+            <span data-part="item-text" data-value="b"> Item B </span>
+            <span data-part="item-indicator" data-value="b">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="c" data-disabled="true">
+            <span data-part="item-text" data-value="c" data-disabled="true">
+              Item C
+            </span>
+            <span
+              data-part="item-indicator"
+              data-value="c"
+              data-disabled="true"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="d">
+            <span data-part="item-text" data-value="d"> Item D </span>
+            <span data-part="item-indicator" data-value="d">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="listbox listbox-js" data-disabled="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="a"&gt;
+        &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="a"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="b"&gt;
+        &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="b"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="c"&gt;
+        &lt;span data-part="item-text" data-value="c"&gt; Item C &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="c"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="d"&gt;
+        &lt;span data-part="item-text" data-value="d"&gt; Item D &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="d"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="listbox listbox-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="a" data-disabled="true"&gt;
+        &lt;span data-part="item-text" data-value="a" data-disabled="true"&gt;
+          Item A
+        &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="a" data-disabled="true"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="b"&gt;
+        &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="b"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="c" data-disabled="true"&gt;
+        &lt;span data-part="item-text" data-value="c" data-disabled="true"&gt;
+          Item C
+        &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="c" data-disabled="true"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="d"&gt;
+        &lt;span data-part="item-text" data-value="d"&gt; Item D &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="d"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;listbox listbox-js&quot; data-disabled=&quot;true&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;c&quot;&gt; Item C &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;c&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;d&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;d&quot;&gt; Item D &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;d&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;listbox listbox-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot; data-disabled=&quot;true&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot; data-disabled=&quot;true&quot;&gt;
+          Item A
+        &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot; data-disabled=&quot;true&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;c&quot; data-disabled=&quot;true&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;c&quot; data-disabled=&quot;true&quot;&gt;
+          Item C
+        &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;c&quot; data-disabled=&quot;true&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;d&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;d&quot;&gt; Item D &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;d&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="modifiers" tabindex="-1">
+  <a class="link" href="#modifiers">#</a> Modifiers
+</h2>
+<p>
+  Listbox support modifier classes that control their appearance.<br />
+  You can combine multiple modifiers on the same listbox.
+</p>
+<p>
+  The default modifier is applied automatically, so you don’t need to include it
+  explicitly.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Modifier</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#color" class="link">Color</a></td>
+      <td>Sets the color theme of the listbox.</td>
+    </tr>
+    <tr>
+      <td><a href="#size" class="link">Size</a></td>
+      <td>Adjusts the overall size of the listbox.</td>
+    </tr>
+  </tbody>
+</table>
+<blockquote>
+  <p>
+    You may have noticed the double dash before the modifier name — this follows
+    the BEM (Block Element Modifier) naming convention
+  </p>
+</blockquote>
+<h3 id="color" tabindex="-1"><a class="link" href="#color">#</a> Color</h3>
+<p>
+  Use <code>class=&quot;listbox--{color}&quot;</code> to set the color of an
+  listbox.
+</p>
+<p>
+  Available options:<br />
+  <strong>accent(default)</strong>, <strong>brand</strong>,
+  <strong>alert</strong>, <strong>info</strong>, <strong>success</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="listbox listbox-js listbox--alert">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item" data-value="a">
+            <span data-part="item-text" data-value="a"> Item A </span>
+            <span data-part="item-indicator" data-value="a">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="b">
+            <span data-part="item-text" data-value="b"> Item B </span>
+            <span data-part="item-indicator" data-value="b">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="c">
+            <span data-part="item-text" data-value="c"> Item C </span>
+            <span data-part="item-indicator" data-value="c">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="d">
+            <span data-part="item-text" data-value="d"> Item D </span>
+            <span data-part="item-indicator" data-value="d">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="listbox listbox-js listbox--alert"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="a"&gt;
+        &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="a"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="b"&gt;
+        &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="b"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="c"&gt;
+        &lt;span data-part="item-text" data-value="c"&gt; Item C &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="c"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="d"&gt;
+        &lt;span data-part="item-text" data-value="d"&gt; Item D &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="d"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;listbox listbox-js listbox--alert&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;c&quot;&gt; Item C &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;c&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;d&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;d&quot;&gt; Item D &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;d&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h3 id="size" tabindex="-1"><a class="link" href="#size">#</a> Size</h3>
+<p>
+  Use <code>class=&quot;listbox--{size}&quot;</code> to set the size of an
+  listbox.
+</p>
+<p>
+  Available options:<br />
+  <strong>md</strong> (default), <strong>sm</strong>, <strong>lg</strong>,
+  <strong>xl</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="listbox listbox-js listbox--sm">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item" data-value="a">
+            <span data-part="item-text" data-value="a"> Item A </span>
+            <span data-part="item-indicator" data-value="a">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="b">
+            <span data-part="item-text" data-value="b"> Item B </span>
+            <span data-part="item-indicator" data-value="b">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="listbox listbox-js">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item" data-value="a">
+            <span data-part="item-text" data-value="a"> Item A </span>
+            <span data-part="item-indicator" data-value="a">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="b">
+            <span data-part="item-text" data-value="b"> Item B </span>
+            <span data-part="item-indicator" data-value="b">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="listbox listbox-js listbox--lg">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item" data-value="a">
+            <span data-part="item-text" data-value="a"> Item A </span>
+            <span data-part="item-indicator" data-value="a">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="b">
+            <span data-part="item-text" data-value="b"> Item B </span>
+            <span data-part="item-indicator" data-value="b">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="listbox listbox-js listbox--xl">
+      <div data-part="root">
+        <div data-part="label">Listbox Label</div>
+        <div data-part="content">
+          <div data-part="item" data-value="a">
+            <span data-part="item-text" data-value="a"> Item A </span>
+            <span data-part="item-indicator" data-value="a">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div data-part="item" data-value="b">
+            <span data-part="item-text" data-value="b"> Item B </span>
+            <span data-part="item-indicator" data-value="b">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="listbox listbox-js listbox--sm"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="a"&gt;
+        &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="a"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="b"&gt;
+        &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="b"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="listbox listbox-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="a"&gt;
+        &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="a"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="b"&gt;
+        &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="b"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="listbox listbox-js listbox--lg"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="a"&gt;
+        &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="a"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="b"&gt;
+        &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="b"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="listbox listbox-js listbox--xl"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item" data-value="a"&gt;
+        &lt;span data-part="item-text" data-value="a"&gt; Item A &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="a"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part="item" data-value="b"&gt;
+        &lt;span data-part="item-text" data-value="b"&gt; Item B &lt;/span&gt;
+        &lt;span data-part="item-indicator" data-value="b"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;listbox listbox-js listbox--sm&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listbox listbox-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listbox listbox-js listbox--lg&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listbox listbox-js listbox--xl&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Listbox Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;a&quot;&gt; Item A &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;a&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;
+        &lt;span data-part=&quot;item-text&quot; data-value=&quot;b&quot;&gt; Item B &lt;/span&gt;
+        &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;b&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
+<h3 id="static" tabindex="-1"><a class="link" href="#static">#</a> Static</h3>
+<ol>
+  <li>Import the Listbox component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import "@corex-ui/static/components/listbox";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/listbox&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  This will automatically initialize all elements with
+  <code>class=&quot;listbox-js&quot;</code> and add the necessary interaction
+  behavior.
+</p>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/listbox.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/listbox.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="listbox listbox-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Label&lt;/div&gt;
+    &lt;div data-part="content"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;listbox listbox-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Label&lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<h3 id="static-react" tabindex="-1">
+  <a class="link" href="#static-react">#</a> Static React
+</h3>
+<blockquote>
+  <p>Experimental! Only works with React static export (eg. Next.js SSG.)</p>
+</blockquote>
+<ol>
+  <li>Import the Listbox component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { Listbox } from &apos;@corex-ui/static/react&apos;;
+export default function Home() {
+  return (
+    &lt;Listbox&gt;
+      &lt;div data-part="root"&gt;
+        &lt;div data-part="label"&gt;Label&lt;/div&gt;
+        &lt;div data-part="content" /&gt;
+      &lt;/div&gt;
+    &lt;/Listbox&gt;
+  );
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { Listbox } from '@corex-ui/static/react';
+export default function Home() {
+  return (
+    &lt;Listbox&gt;
+      &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;label&quot;&gt;Label&lt;/div&gt;
+        &lt;div data-part=&quot;content&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/Listbox&gt;
+  );
+}
+</code></pre>
+  </div>
+</div>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/listbox.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/listbox.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;Listbox className="listbox listbox-js"&gt; {/* content */} &lt;/Listbox&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;Listbox className=&quot;listbox listbox-js&quot;&gt; {/* content */} &lt;/Listbox&gt;
+</code></pre>
+  </div>
+</div>

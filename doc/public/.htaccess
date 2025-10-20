@@ -1,0 +1,15 @@
+# Serve custom 404 page
+ErrorDocument 404 /404.html
+
+# Enable rewriting
+Options +MultiViews
+RewriteEngine On
+
+# Try to serve .html files when extension is missing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L,QSA]
+
+# Optional: redirect folders without trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/$ $1 [R=301,L]

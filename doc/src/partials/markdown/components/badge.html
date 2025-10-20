@@ -1,0 +1,2559 @@
+<h1 id="badge" tabindex="-1"><a class="link" href="#badge">#</a> Badge</h1>
+<blockquote>
+  <p>A pure Tailwind CSS component</p>
+</blockquote>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>
+  There are 4 different badge anatomies, each requiring specific classes and
+  accessibility attributes.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <span class="badge"> Text </span>
+
+    <span class="badge">
+      <svg
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+        />
+      </svg>
+      Text and SVG
+    </span>
+
+    <span
+      class="badge badge--square"
+      role="img"
+      aria-label="Info about icon only badge"
+    >
+      <svg
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+        />
+      </svg>
+    </span>
+
+    <span
+      class="badge badge--square"
+      role="img"
+      aria-label="Info about icon only badge"
+    >
+      B
+    </span>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;span class="badge"&gt; Text &lt;/span&gt;
+
+&lt;span class="badge"&gt;
+  &lt;svg
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+    /&gt;
+  &lt;/svg&gt;
+  Text and SVG
+&lt;/span&gt;
+
+&lt;span
+  class="badge badge--square"
+  role="img"
+  aria-label="Info about icon only badge"
+&gt;
+  &lt;svg
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/span&gt;
+
+&lt;span
+  class="badge badge--square"
+  role="img"
+  aria-label="Info about icon only badge"
+&gt;
+  B
+&lt;/span&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;span class=&quot;badge&quot;&gt; Text &lt;/span&gt;
+
+&lt;span class=&quot;badge&quot;&gt;
+  &lt;svg
+    aria-hidden=&quot;true&quot;
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  Text and SVG
+&lt;/span&gt;
+
+&lt;span
+  class=&quot;badge badge--square&quot;
+  role=&quot;img&quot;
+  aria-label=&quot;Info about icon only badge&quot;
+&gt;
+  &lt;svg
+    aria-hidden=&quot;true&quot;
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/span&gt;
+
+&lt;span
+  class=&quot;badge badge--square&quot;
+  role=&quot;img&quot;
+  aria-label=&quot;Info about icon only badge&quot;
+&gt;
+  B
+&lt;/span&gt;
+</code></pre>
+  </div>
+</div>
+<p><strong>Text badges</strong></p>
+<ul>
+  <li>Text badges do not require additional attributes.</li>
+</ul>
+<p><strong>Text and SVG</strong></p>
+<ul>
+  <li>
+    <code>svg</code> tag requires <code>aria-hidden=&quot;true&quot;</code> to
+    hide it from screen readers as the text already includes the necessary
+    information
+  </li>
+  <li><code>svg</code> tag requires <code>class=&quot;icon&quot;</code></li>
+</ul>
+<p><strong>SVG</strong></p>
+<ul>
+  <li>
+    <code>span</code> tag requires
+    <code>aria-label=&quot;Login to your account&quot;</code> to indicate the
+    content to the user
+  </li>
+  <li>
+    <code>svg</code> tag requires <code>aria-hidden=&quot;true&quot;</code> to
+    hide it from screen readers as the text already includes the necessary
+    information
+  </li>
+  <li><code>svg</code> tag requires <code>class=&quot;icon&quot;</code></li>
+</ul>
+<p><strong>One Character</strong></p>
+<ul>
+  <li>
+    <code>span</code> tag requires
+    <code>aria-label=&quot;Login to your account&quot;</code> to indicate the
+    content to the user
+  </li>
+</ul>
+<hr />
+<h2 id="rtl" tabindex="-1"><a class="link" href="#rtl">#</a> RTL</h2>
+<p>RTL support for badge</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div dir="rtl">
+      <span class="badge"> نص </span>
+
+      <span class="badge">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+        نص وأيقونة
+      </span>
+
+      <span
+        class="badge badge--square"
+        role="img"
+        aria-label="معلومات حول أيقونة فقط"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--square"
+        role="img"
+        aria-label="معلومات حول أيقونة فقط"
+      >
+        ب
+      </span>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div dir="rtl"&gt;
+  &lt;span class="badge"&gt; نص &lt;/span&gt;
+
+  &lt;span class="badge"&gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+    نص وأيقونة
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square"
+    role="img"
+    aria-label="معلومات حول أيقونة فقط"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square"
+    role="img"
+    aria-label="معلومات حول أيقونة فقط"
+  &gt;
+    ب
+  &lt;/span&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div dir=&quot;rtl&quot;&gt;
+  &lt;span class=&quot;badge&quot;&gt; نص &lt;/span&gt;
+
+  &lt;span class=&quot;badge&quot;&gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+    نص وأيقونة
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;معلومات حول أيقونة فقط&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;معلومات حول أيقونة فقط&quot;
+  &gt;
+    ب
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="disabled" tabindex="-1">
+  <a class="link" href="#disabled">#</a> Disabled
+</h2>
+<p>Disabled support for badge.</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <span class="badge" disabled> Text </span>
+
+    <span class="badge" disabled>
+      <svg
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+        />
+      </svg>
+      Text and SVG
+    </span>
+
+    <span
+      class="badge badge--square"
+      role="img"
+      aria-label="Info about icon only badge"
+      disabled
+    >
+      <svg
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+        />
+      </svg>
+    </span>
+
+    <span
+      class="badge badge--square"
+      role="img"
+      aria-label="Info about icon only badge"
+      disabled
+    >
+      B
+    </span>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;span class="badge" disabled&gt; Text &lt;/span&gt;
+
+&lt;span class="badge" disabled&gt;
+  &lt;svg
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+    /&gt;
+  &lt;/svg&gt;
+  Text and SVG
+&lt;/span&gt;
+
+&lt;span
+  class="badge badge--square"
+  role="img"
+  aria-label="Info about icon only badge"
+  disabled
+&gt;
+  &lt;svg
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+  &gt;
+    &lt;path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+    /&gt;
+  &lt;/svg&gt;
+&lt;/span&gt;
+
+&lt;span
+  class="badge badge--square"
+  role="img"
+  aria-label="Info about icon only badge"
+  disabled
+&gt;
+  B
+&lt;/span&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;span class=&quot;badge&quot; disabled&gt; Text &lt;/span&gt;
+
+&lt;span class=&quot;badge&quot; disabled&gt;
+  &lt;svg
+    aria-hidden=&quot;true&quot;
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+  Text and SVG
+&lt;/span&gt;
+
+&lt;span
+  class=&quot;badge badge--square&quot;
+  role=&quot;img&quot;
+  aria-label=&quot;Info about icon only badge&quot;
+  disabled
+&gt;
+  &lt;svg
+    aria-hidden=&quot;true&quot;
+    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+    fill=&quot;none&quot;
+    viewBox=&quot;0 0 24 24&quot;
+    stroke-width=&quot;1.5&quot;
+    stroke=&quot;currentColor&quot;
+  &gt;
+    &lt;path
+      stroke-linecap=&quot;round&quot;
+      stroke-linejoin=&quot;round&quot;
+      d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/span&gt;
+
+&lt;span
+  class=&quot;badge badge--square&quot;
+  role=&quot;img&quot;
+  aria-label=&quot;Info about icon only badge&quot;
+  disabled
+&gt;
+  B
+&lt;/span&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="modifiers" tabindex="-1">
+  <a class="link" href="#modifiers">#</a> Modifiers
+</h2>
+<p>
+  Badges support modifier classes that control their appearance.<br />
+  You can combine multiple modifiers on the same badge.
+</p>
+<p>
+  The default modifier is applied automatically, so you don’t need to include it
+  explicitly.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Modifier</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#color" class="link">Color</a></td>
+      <td>Sets the color theme of the badge.</td>
+    </tr>
+    <tr>
+      <td><a href="#size" class="link">Size</a></td>
+      <td>Adjusts the overall size of the badge.</td>
+    </tr>
+    <tr>
+      <td><a href="#shape" class="link">Shape</a></td>
+      <td>Set the shape of the badge</td>
+    </tr>
+  </tbody>
+</table>
+<blockquote>
+  <p>
+    You may have noticed the double dash before the modifier name — this follows
+    the BEM (Block Element Modifier) naming convention
+  </p>
+</blockquote>
+<h3 id="color" tabindex="-1"><a class="link" href="#color">#</a> Color</h3>
+<p>
+  Use <code>class=&quot;badge--{color}&quot;</code> to set the color of a badge.
+</p>
+<p>
+  Available options:<br />
+  <strong>default</strong>, <strong>accent</strong>, <strong>brand</strong>,
+  <strong>alert</strong>, <strong>info</strong>, <strong>success</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <span class="badge badge--accent"> Text </span>
+
+      <span class="badge badge--accent">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+        Text and SVG
+      </span>
+
+      <span
+        class="badge badge--square badge--accent"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--square badge--accent"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        B
+      </span>
+    </div>
+    <div>
+      <span class="badge badge--brand"> Text </span>
+
+      <span class="badge badge--brand">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+        Text and SVG
+      </span>
+
+      <span
+        class="badge badge--square badge--brand"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--square badge--brand"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        B
+      </span>
+    </div>
+    <div>
+      <span class="badge badge--alert"> Text </span>
+
+      <span class="badge badge--alert">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+        Text and SVG
+      </span>
+
+      <span
+        class="badge badge--square badge--alert"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--square badge--alert"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        B
+      </span>
+    </div>
+    <div>
+      <span class="badge badge--info"> Text </span>
+
+      <span class="badge badge--info">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+        Text and SVG
+      </span>
+
+      <span
+        class="badge badge--square badge--info"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--square badge--info"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        B
+      </span>
+    </div>
+    <div>
+      <span class="badge badge--success"> Text </span>
+
+      <span class="badge badge--success">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+        Text and SVG
+      </span>
+
+      <span
+        class="badge badge--square badge--success"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--square badge--success"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        B
+      </span>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div&gt;
+  &lt;span class="badge badge--accent"&gt; Text &lt;/span&gt;
+
+  &lt;span class="badge badge--accent"&gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--accent"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--accent"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class="badge badge--brand"&gt; Text &lt;/span&gt;
+
+  &lt;span class="badge badge--brand"&gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--brand"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--brand"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class="badge badge--alert"&gt; Text &lt;/span&gt;
+
+  &lt;span class="badge badge--alert"&gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--alert"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--alert"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class="badge badge--info"&gt; Text &lt;/span&gt;
+
+  &lt;span class="badge badge--info"&gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--info"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--info"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class="badge badge--success"&gt; Text &lt;/span&gt;
+
+  &lt;span class="badge badge--success"&gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--success"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--success"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+  &lt;span class=&quot;badge badge--accent&quot;&gt; Text &lt;/span&gt;
+
+  &lt;span class=&quot;badge badge--accent&quot;&gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--accent&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--accent&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class=&quot;badge badge--brand&quot;&gt; Text &lt;/span&gt;
+
+  &lt;span class=&quot;badge badge--brand&quot;&gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--brand&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--brand&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class=&quot;badge badge--alert&quot;&gt; Text &lt;/span&gt;
+
+  &lt;span class=&quot;badge badge--alert&quot;&gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--alert&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--alert&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class=&quot;badge badge--info&quot;&gt; Text &lt;/span&gt;
+
+  &lt;span class=&quot;badge badge--info&quot;&gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--info&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--info&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class=&quot;badge badge--success&quot;&gt; Text &lt;/span&gt;
+
+  &lt;span class=&quot;badge badge--success&quot;&gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--success&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--success&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h3 id="size" tabindex="-1"><a class="link" href="#size">#</a> Size</h3>
+<p>
+  Use <code>class=&quot;badge--{size}&quot;</code> to set the size of a badge.
+</p>
+<p>
+  Available options:<br />
+  <strong>sm</strong>, <strong>md</strong> (default), <strong>lg</strong>,
+  <strong>xl</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <span class="badge badge--sm"> Text </span>
+
+      <span class="badge badge--sm">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+        Text and SVG
+      </span>
+
+      <span
+        class="badge badge--square badge--sm"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--square badge--sm"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        B
+      </span>
+    </div>
+    <div>
+      <span class="badge"> Text </span>
+
+      <span class="badge">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+        Text and SVG
+      </span>
+
+      <span
+        class="badge badge--square"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--square"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        B
+      </span>
+    </div>
+    <div>
+      <span class="badge badge--lg"> Text </span>
+
+      <span class="badge badge--lg">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+        Text and SVG
+      </span>
+
+      <span
+        class="badge badge--square badge--lg"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--square badge--lg"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        B
+      </span>
+    </div>
+    <div>
+      <span class="badge badge--xl"> Text </span>
+
+      <span class="badge badge--xl">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+        Text and SVG
+      </span>
+
+      <span
+        class="badge badge--square badge--xl"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--square badge--xl"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        B
+      </span>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div&gt;
+  &lt;span class="badge badge--sm"&gt; Text &lt;/span&gt;
+
+  &lt;span class="badge badge--sm"&gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--sm"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--sm"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class="badge"&gt; Text &lt;/span&gt;
+
+  &lt;span class="badge"&gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class="badge badge--lg"&gt; Text &lt;/span&gt;
+
+  &lt;span class="badge badge--lg"&gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--lg"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--lg"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class="badge badge--xl"&gt; Text &lt;/span&gt;
+
+  &lt;span class="badge badge--xl"&gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--xl"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square badge--xl"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+  &lt;span class=&quot;badge badge--sm&quot;&gt; Text &lt;/span&gt;
+
+  &lt;span class=&quot;badge badge--sm&quot;&gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--sm&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--sm&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class=&quot;badge&quot;&gt; Text &lt;/span&gt;
+
+  &lt;span class=&quot;badge&quot;&gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class=&quot;badge badge--lg&quot;&gt; Text &lt;/span&gt;
+
+  &lt;span class=&quot;badge badge--lg&quot;&gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--lg&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--lg&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class=&quot;badge badge--xl&quot;&gt; Text &lt;/span&gt;
+
+  &lt;span class=&quot;badge badge--xl&quot;&gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+    Text and SVG
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--xl&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square badge--xl&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h3 id="shape" tabindex="-1"><a class="link" href="#shape">#</a> Shape</h3>
+<p>
+  Set the shape of each button. This modifier will only work on SVG only and one
+  carater badge.
+</p>
+<p>Options: <strong>square(default)</strong>, <strong>circle</strong></p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <span
+        class="badge badge--square"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--square"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        B
+      </span>
+    </div>
+    <div>
+      <span
+        class="badge badge--circle"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+      </span>
+
+      <span
+        class="badge badge--circlel"
+        role="img"
+        aria-label="Info about icon only badge"
+      >
+        B
+      </span>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div&gt;
+  &lt;span
+    class="badge badge--square"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--square"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span
+    class="badge badge--circle"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    &lt;svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    &gt;
+      &lt;path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class="badge badge--circlel"
+    role="img"
+    aria-label="Info about icon only badge"
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+  &lt;span
+    class=&quot;badge badge--square&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--square&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span
+    class=&quot;badge badge--circle&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    &lt;svg
+      aria-hidden=&quot;true&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      fill=&quot;none&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      stroke-width=&quot;1.5&quot;
+      stroke=&quot;currentColor&quot;
+    &gt;
+      &lt;path
+        stroke-linecap=&quot;round&quot;
+        stroke-linejoin=&quot;round&quot;
+        d=&quot;m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    class=&quot;badge badge--circlel&quot;
+    role=&quot;img&quot;
+    aria-label=&quot;Info about icon only badge&quot;
+  &gt;
+    B
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/badge.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/badge.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;span class="badge"&gt;...&lt;/span&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;span class=&quot;badge&quot;&gt;...&lt;/span&gt;
+</code></pre>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<script type="application/json" data-tree-view="tree-view-data">
+  {
+    "id": "root",
+    "name": "",
+    "children": [
+      {
+        "id": "menu",
+        "name": "Menu",
+        "children": [
+          { "id": "menu/item", "name": "Item" },
+          {
+            "id": "submenu",
+            "name": "Sub Menu",
+            "children": [
+              { "id": "menu/submenu/item", "name": "Item" },
+              { "id": "layouts/submenu/item-2", "name": "Item" },
+              {
+                "id": "nestedmenu",
+                "name": "Nested  Menu",
+
+                "children": [
+                  { "id": "menu/submenu/nestedmenu/item", "name": "Item" },
+                  { "id": "menu/submenu/nestedmenu/item-2", "name": "Item" },
+
+                  {
+                    "id": "subnested",
+                    "name": "Sub Nested",
+                    "children": [
+                      {
+                        "id": "menu/submenu/nestedmenu/subnested/nested-item",
+                        "name": "Nested Item"
+                      },
+                      {
+                        "id": "menu/submenu/nestedmenu/subnested/nested-item-2",
+                        "name": "Nested Item"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+</script>

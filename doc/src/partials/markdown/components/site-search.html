@@ -1,0 +1,385 @@
+<h1 id="site-search" tabindex="-1">
+  <a class="link" href="#site-search">#</a> Site Search
+</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://pagefind.app/"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Pagefind API
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+    and
+    <a
+      href="https://zagjs.com/components/react/combobox"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Combobox
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>
+  It allows indexing and searching static sites without third parties and no
+  database.
+</p>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Menu component consists of the following data parts:</p>
+<p>
+  <code>root</code>, <code>label</code>, <code>control</code>,
+  <code>title</code>, <code>input</code>, <code>trigger</code>,
+  <code>positioner</code>, <code>content</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="site-search-js site-search"
+      data-placeholder="Search documentation"
+    >
+      <div data-part="root">
+        <div data-part="control">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="site-search__icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+            ></path>
+          </svg>
+          <input data-part="input" />
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content" class="scrollbar"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="site-search-js site-search" data-placeholder="Search documentation"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="site-search__icon"
+      &gt;
+        &lt;path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+      &lt;input data-part="input" /&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content" class="scrollbar"&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;site-search-js site-search&quot; data-placeholder=&quot;Search documentation&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;svg
+        xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        fill=&quot;none&quot;
+        viewBox=&quot;0 0 24 24&quot;
+        stroke-width=&quot;1.5&quot;
+        stroke=&quot;currentColor&quot;
+        class=&quot;site-search__icon&quot;
+      &gt;
+        &lt;path
+          stroke-linecap=&quot;round&quot;
+          stroke-linejoin=&quot;round&quot;
+          d=&quot;m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z&quot;
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;positioner&quot;&gt;
+      &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each site-search can be set with different settings with the following
+  data-attribute.
+</p>
+<p>
+  In addition to the
+  <a href="/components/combobox" class="link">Combobox data attributes</a>, you
+  can also set:
+</p>
+<p>
+  <strong>data-max-results</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>20</code><br />
+  Description: The maximum number of results to be displayed.
+</p>
+<hr />
+<h2 id="usage" tabindex="-1"><a class="link" href="#usage">#</a> Usage</h2>
+<p>Before using Site fearch you will need setup Pagefind</p>
+<p><code>pnpm i -D pagefind vite-plugin-pagefind</code></p>
+<p>You can then add vite-plugin-pagefind to your vite config</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='pagefind({
+  outputDirectory: "dist",
+  assetsDirectory: "public",
+  bundleDirectory: "pagefind",
+  buildScript: "build",
+  developStrategy: "eager", //set "lazy" during dev
+});
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">js</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="js">pagefind({
+  outputDirectory: &quot;dist&quot;,
+  assetsDirectory: &quot;public&quot;,
+  bundleDirectory: &quot;pagefind&quot;,
+  buildScript: &quot;build&quot;,
+  developStrategy: &quot;eager&quot;, //set &quot;lazy&quot; during dev
+});
+</code></pre>
+  </div>
+</div>
+<p>You then need initialize Pagefind</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initializeSiteSearch } from "@corex-ui/static/components/site-search";
+import type { Pagefind } from "vite-plugin-pagefind/types";
+
+(async () =&gt; {
+  try {
+    // @ts-expect-error Vanilla JS
+    const pagefind: Pagefind = await import("/pagefind/pagefind.js");
+    await pagefind.options({
+      excerptLength: 5,
+      highlightParam: "highlight",
+    });
+    initializeSiteSearch(pagefind, window.document);
+  } catch (error) {
+    console.error("Failed to initialize Pagefind:", error);
+  }
+})();
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initializeSiteSearch } from &quot;@corex-ui/static/components/site-search&quot;;
+import type { Pagefind } from &quot;vite-plugin-pagefind/types&quot;;
+
+(async () =&gt; {
+  try {
+    // @ts-expect-error Vanilla JS
+    const pagefind: Pagefind = await import(&quot;/pagefind/pagefind.js&quot;);
+    await pagefind.options({
+      excerptLength: 5,
+      highlightParam: &quot;highlight&quot;,
+    });
+    initializeSiteSearch(pagefind, window.document);
+  } catch (error) {
+    console.error(&quot;Failed to initialize Pagefind:&quot;, error);
+  }
+})();
+</code></pre>
+  </div>
+</div>
+<hr />

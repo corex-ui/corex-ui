@@ -1,0 +1,713 @@
+<h1 id="serve-installation-guide" tabindex="-1">
+  <a class="link" href="#serve-installation-guide">#</a> Serve Installation
+  Guide
+</h1>
+<p>
+  Corex UI can be seamlessly integrated into your static HTML projects using
+  Serve. This guide walks you through installing Corex UI packages, applying
+  styles, using components, and configuring the Corex CLI for post-build
+  hydration.
+</p>
+<h2 id="1.-new-serve-project" tabindex="-1">
+  <a class="link" href="#1.-new-serve-project">#</a> 1. New Serve Project
+</h2>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value="mkdir corex-serve-demo &amp;&amp; cd corex-serve-demo &amp;&amp; pnpm init --init-type module &amp;&amp; pnpm add -D serve cpx npm-run-all rimraf &amp;&amp; mkdir src &amp;&amp; touch src/index.html src/style.css
+"
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">bash</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="bash">mkdir corex-serve-demo &amp;&amp; cd corex-serve-demo &amp;&amp; pnpm init --init-type module &amp;&amp; pnpm add -D serve cpx npm-run-all rimraf &amp;&amp; mkdir src &amp;&amp; touch src/index.html src/style.css
+</code></pre>
+  </div>
+</div>
+<h2 id="2.-install-corex-ui" tabindex="-1">
+  <a class="link" href="#2.-install-corex-ui">#</a> 2. Install Corex UI
+</h2>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value="pnpm add @corex-ui/static @corex-ui/design @corex-ui/cli tailwindcss @tailwindcss/cli
+"
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">bash</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="bash">pnpm add @corex-ui/static @corex-ui/design @corex-ui/cli tailwindcss @tailwindcss/cli
+</code></pre>
+  </div>
+</div>
+<p><strong>Package Overview:</strong></p>
+<ul>
+  <li><code>@corex-ui/static</code> – Vanilla JS web components.</li>
+  <li>
+    <code>@corex-ui/design</code> – Design tokens, CSS variables, and optional
+    component styles.
+  </li>
+  <li>
+    <code>@corex-ui/cli</code> – Post-build hydration for Corex components.
+  </li>
+  <li>
+    <code>tailwindcss</code> + <code>@tailwindcss/cli</code> – Tailwind
+    integration.
+  </li>
+</ul>
+<h2 id="3.-tailwind-styles" tabindex="-1">
+  <a class="link" href="#3.-tailwind-styles">#</a> 3. Tailwind Styles
+</h2>
+<p>Apply Corex and Tailwind styles in <code>src/style.css</code>:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "tailwindcss";
+@import "@corex-ui/design";
+@import "@corex-ui/design/themes/neo/light.css";
+@import "@corex-ui/design/components/accordion.css";
+@import "@corex-ui/design/components/typo.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;tailwindcss&quot;;
+@import &quot;@corex-ui/design&quot;;
+@import &quot;@corex-ui/design/themes/neo/light.css&quot;;
+@import &quot;@corex-ui/design/components/accordion.css&quot;;
+@import &quot;@corex-ui/design/components/typo.css&quot;;
+</code></pre>
+  </div>
+</div>
+<h2 id="4.-build-scripts" tabindex="-1">
+  <a class="link" href="#4.-build-scripts">#</a> 4. Build Scripts
+</h2>
+<p>Configure build scripts in <code>package.json</code>:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='"scripts": {
+  "clean": "rimraf dist",
+  "copy:accordion": "cpx &apos;node_modules/@corex-ui/static/dist/components/accordion.min.mjs*&apos; dist/js/corex-ui",
+  "copy": "cpx &apos;src/**/*.{html,js,png,jpg,svg,json}&apos; dist &amp;&amp; run-s copy:*",
+  "tailwind": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css",
+  "corex": "pnpm corex-ui render dist",
+  "build": "pnpm run clean &amp;&amp; pnpm run copy &amp;&amp; pnpm run tailwind &amp;&amp; pnpm run corex",
+  "preview": "npx serve dist -l 3000"
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">json</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="json">&quot;scripts&quot;: {
+  &quot;clean&quot;: &quot;rimraf dist&quot;,
+  &quot;copy:accordion&quot;: &quot;cpx 'node_modules/@corex-ui/static/dist/components/accordion.min.mjs*' dist/js/corex-ui&quot;,
+  &quot;copy&quot;: &quot;cpx 'src/**/*.{html,js,png,jpg,svg,json}' dist &amp;&amp; run-s copy:*&quot;,
+  &quot;tailwind&quot;: &quot;npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css&quot;,
+  &quot;corex&quot;: &quot;pnpm corex-ui render dist&quot;,
+  &quot;build&quot;: &quot;pnpm run clean &amp;&amp; pnpm run copy &amp;&amp; pnpm run tailwind &amp;&amp; pnpm run corex&quot;,
+  &quot;preview&quot;: &quot;npx serve dist -l 3000&quot;
+}
+</code></pre>
+  </div>
+</div>
+<p><strong>CLI Features:</strong></p>
+<ul>
+  <li>Executes after the build process completes.</li>
+  <li>Scans generated HTML to locate Corex components.</li>
+  <li>Hydrates components in a JSDOM instance.</li>
+  <li>Writes the hydrated HTML back to disk.</li>
+</ul>
+<h2 id="5.-component-html" tabindex="-1">
+  <a class="link" href="#5.-component-html">#</a> 5. Component HTML
+</h2>
+<p>Create your main page in <code>src/index.html</code> with Corex theming:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;!doctype html&gt;
+&lt;html lang="en" data-theme="neo" data-mode="light"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;link rel="icon" type="image/svg+xml" href="/logo.svg" /&gt;
+    &lt;link rel="stylesheet" href="/style.css" /&gt;
+    &lt;title&gt;Corex UI — Serve Demo&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body class="typo"&gt;
+    &lt;main&gt;
+      &lt;div class="accordion accordion-js"&gt;
+        &lt;div data-part="root"&gt;
+          &lt;div data-part="item" data-value="lorem"&gt;
+            &lt;h3&gt;
+              &lt;button data-part="item-trigger" data-value="lorem"&gt;
+                &lt;span data-part="item-text"&gt;Lorem ipsum dolor sit amet&lt;/span&gt;
+                &lt;span data-part="item-indicator" data-value="lorem"&gt;
+                  &lt;svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  &gt;
+                    &lt;path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    &gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                &lt;/span&gt;
+              &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="lorem"&gt;
+              &lt;p&gt;
+                Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
+                Proin quis risus feugiat tellus iaculis fringilla.
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div data-part="item" data-value="duis"&gt;
+            &lt;h3&gt;
+              &lt;button data-part="item-trigger" data-value="duis"&gt;
+                &lt;span data-part="item-text"
+                  &gt;Duis dictum gravida odio ac pharetra?&lt;/span
+                &gt;
+                &lt;span data-part="item-indicator" data-value="duis"&gt;
+                  &lt;svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  &gt;
+                    &lt;path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    &gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                &lt;/span&gt;
+              &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="duis"&gt;
+              &lt;p&gt;
+                Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div data-part="item" data-value="donec"&gt;
+            &lt;h3&gt;
+              &lt;button data-part="item-trigger" data-value="donec"&gt;
+                &lt;span data-part="item-text"&gt;Donec condimentum ex mi&lt;/span&gt;
+                &lt;span data-part="item-indicator" data-value="donec"&gt;
+                  &lt;svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  &gt;
+                    &lt;path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    &gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                &lt;/span&gt;
+              &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="donec"&gt;
+              &lt;p&gt;
+                Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                turpis non, pellentesque elit. Pellentesque sagittis fermentum.
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;script type="module" src="/js/corex-ui/accordion.min.mjs"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-theme=&quot;neo&quot; data-mode=&quot;light&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;/logo.svg&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/style.css&quot; /&gt;
+    &lt;title&gt;Corex UI — Serve Demo&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body class=&quot;typo&quot;&gt;
+    &lt;main&gt;
+      &lt;div class=&quot;accordion accordion-js&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+          &lt;div data-part=&quot;item&quot; data-value=&quot;lorem&quot;&gt;
+            &lt;h3&gt;
+              &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;lorem&quot;&gt;
+                &lt;span data-part=&quot;item-text&quot;&gt;Lorem ipsum dolor sit amet&lt;/span&gt;
+                &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;lorem&quot;&gt;
+                  &lt;svg
+                    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+                    fill=&quot;none&quot;
+                    viewBox=&quot;0 0 24 24&quot;
+                    stroke-width=&quot;1.5&quot;
+                    stroke=&quot;currentColor&quot;
+                  &gt;
+                    &lt;path
+                      stroke-linecap=&quot;round&quot;
+                      stroke-linejoin=&quot;round&quot;
+                      d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+                    &gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                &lt;/span&gt;
+              &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;lorem&quot;&gt;
+              &lt;p&gt;
+                Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
+                Proin quis risus feugiat tellus iaculis fringilla.
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div data-part=&quot;item&quot; data-value=&quot;duis&quot;&gt;
+            &lt;h3&gt;
+              &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;duis&quot;&gt;
+                &lt;span data-part=&quot;item-text&quot;
+                  &gt;Duis dictum gravida odio ac pharetra?&lt;/span
+                &gt;
+                &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;duis&quot;&gt;
+                  &lt;svg
+                    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+                    fill=&quot;none&quot;
+                    viewBox=&quot;0 0 24 24&quot;
+                    stroke-width=&quot;1.5&quot;
+                    stroke=&quot;currentColor&quot;
+                  &gt;
+                    &lt;path
+                      stroke-linecap=&quot;round&quot;
+                      stroke-linejoin=&quot;round&quot;
+                      d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+                    &gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                &lt;/span&gt;
+              &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;duis&quot;&gt;
+              &lt;p&gt;
+                Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div data-part=&quot;item&quot; data-value=&quot;donec&quot;&gt;
+            &lt;h3&gt;
+              &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;donec&quot;&gt;
+                &lt;span data-part=&quot;item-text&quot;&gt;Donec condimentum ex mi&lt;/span&gt;
+                &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;donec&quot;&gt;
+                  &lt;svg
+                    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+                    fill=&quot;none&quot;
+                    viewBox=&quot;0 0 24 24&quot;
+                    stroke-width=&quot;1.5&quot;
+                    stroke=&quot;currentColor&quot;
+                  &gt;
+                    &lt;path
+                      stroke-linecap=&quot;round&quot;
+                      stroke-linejoin=&quot;round&quot;
+                      d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+                    &gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                &lt;/span&gt;
+              &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;donec&quot;&gt;
+              &lt;p&gt;
+                Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                turpis non, pellentesque elit. Pellentesque sagittis fermentum.
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;script type=&quot;module&quot; src=&quot;/js/corex-ui/accordion.min.mjs&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  </div>
+</div>
+<h2 id="6.-build-app" tabindex="-1">
+  <a class="link" href="#6.-build-app">#</a> 6. Build App
+</h2>
+<p>
+  Now that Corex UI is integrated into your Serve project, you can build it for
+  production and preview the results.
+</p>
+<ol>
+  <li>Build production:</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value="pnpm build
+"
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">bash</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="bash">pnpm build
+</code></pre>
+  </div>
+</div>
+<p>During this process, the <strong>Corex CLI runs after the build</strong>:</p>
+<ul>
+  <li>It scans your built HTML for Corex components.</li>
+  <li>Hydrates them in a JSDOM instance.</li>
+  <li>Writes the updated markup back to disk.</li>
+</ul>
+<p>
+  This ensures your Corex web components are
+  <strong>interactive out of the box</strong>, even in the static output.
+</p>
+<ol start="2">
+  <li>Preview production:</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value="pnpm preview
+"
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">bash</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="bash">pnpm preview
+</code></pre>
+  </div>
+</div>
+<p>
+  Visit the printed URL (usually <code>http://localhost:3000</code>).<br />
+  This serves the optimized files from the <code>dist/</code> folder.<br />
+  Always preview your build before deployment.
+</p>

@@ -1,0 +1,563 @@
+<h1 id="color-picker" tabindex="-1">
+  <a class="link" href="#color-picker">#</a> Color Picker
+</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/color-picker"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Color Picker
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>
+  An color-picker is a vertically stacked set of interactive headings containing
+  a title, content snippet, or thumbnail representing a section of content.
+</p>
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Color Picker component consists of the following data parts:</p>
+<p>
+  <code>root</code>, <code>item</code>, <code>item-content</code>,
+  <code>item-trigger</code>, <code>item-indicator</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="color-picker color-picker-js">
+      <div data-part="root">
+        <label data-part="label">Select Color</label>
+        <input data-part="hidden-input" />
+        <div data-part="control">
+          <button data-part="trigger">
+            <div data-part="transparency-grid" data-size="10px"></div>
+            <div data-part="swatch"></div>
+          </button>
+          <input
+            data-part="channel-input"
+            data-channel="hex"
+            name="channel-input-hex"
+          />
+          <input
+            data-part="channel-input"
+            data-channel="alpha"
+            name="channel-input-alpha"
+          />
+        </div>
+        <div data-part="positioner">
+          <div data-part="content">
+            <div data-part="area">
+              <div data-part="area-background"></div>
+              <div data-part="area-thumb"></div>
+            </div>
+            <div data-part="channel-slider" data-channel="hue">
+              <div data-part="channel-slider-track" data-channel="hue"></div>
+              <div data-part="channel-slider-thumb" data-channel="hue"></div>
+            </div>
+            <div data-part="channel-slider" data-channel="alpha">
+              <div data-part="transparency-grid" data-size="12px"></div>
+              <div data-part="channel-slider-track" data-channel="alpha"></div>
+              <div data-part="channel-slider-thumb" data-channel="alpha"></div>
+            </div>
+            <button data-part="eye-dropper-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m15 11.25 1.5 1.5.75-.75V8.758l2.276-.61a3 3 0 1 0-3.675-3.675l-.61 2.277H12l-.75.75 1.5 1.5M15 11.25l-8.47 8.47c-.34.34-.8.53-1.28.53s-.94.19-1.28.53l-.97.97-.75-.75.97-.97c.34-.34.53-.8.53-1.28s.19-.94.53-1.28L12.75 9M15 11.25 12.75 9"
+                />
+              </svg>
+            </button>
+            <div data-part="swatch-group">
+              <button data-part="swatch-trigger" data-value="#ff0000">
+                <div>
+                  <div data-part="transparency-grid" data-size="4px"></div>
+                  <div data-part="swatch" data-value="#ff0000"></div>
+                </div>
+              </button>
+              <button data-part="swatch-trigger" data-value="#00ff00">
+                <div>
+                  <div data-part="transparency-grid" data-size="4px"></div>
+                  <div data-part="swatch" data-value="#00ff00"></div>
+                </div>
+              </button>
+              <button data-part="swatch-trigger" data-value="#0000ff">
+                <div>
+                  <div data-part="transparency-grid" data-size="4px"></div>
+                  <div data-part="swatch" data-value="#0000ff"></div>
+                </div>
+              </button>
+            </div>
+            <div>
+              <div>
+                <span>R</span>
+                <input data-part="channel-input" data-channel="red" />
+              </div>
+              <div>
+                <span>G</span>
+                <input data-part="channel-input" data-channel="green" />
+              </div>
+              <div>
+                <span>B</span>
+                <input data-part="channel-input" data-channel="blue" />
+              </div>
+              <div>
+                <span>A</span>
+                <input data-part="channel-input" data-channel="alpha" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="color-picker color-picker-js" data-default-format="hsla">
+      <div data-part="root">
+        <label data-part="label">Label</label>
+        <input data-part="hidden-input" />
+        <div data-part="control">
+          <button data-part="trigger">
+            <div data-part="transparency-grid" data-size="10px"></div>
+            <div data-part="swatch"></div>
+          </button>
+          <input
+            data-part="channel-input"
+            data-channel="hex"
+            name="channel-input-hsba"
+          />
+          <input
+            data-part="channel-input"
+            data-channel="alpha"
+            name="channel-input-alpha"
+          />
+        </div>
+        <div data-part="positioner">
+          <div data-part="content">
+            <div data-part="area">
+              <div data-part="area-background"></div>
+              <div data-part="area-thumb"></div>
+            </div>
+            <div data-part="channel-slider" data-channel="hue">
+              <div data-part="channel-slider-track" data-channel="hue"></div>
+              <div data-part="channel-slider-thumb" data-channel="hue"></div>
+            </div>
+            <div data-part="channel-slider" data-channel="alpha">
+              <div data-part="transprency-grid" data-size="12px"></div>
+              <div data-part="channel-slider-track" data-channel="alpha"></div>
+              <div data-part="channel-slider-thumb" data-channel="alpha"></div>
+            </div>
+            <div data-part="swatch-group">
+              <button data-part="swatch-trigger" data-value="#ff0000">
+                <div>
+                  <div data-part="transparency-grid" data-size="4px"></div>
+                  <div data-part="swatch" data-value="#ff0000"></div>
+                </div>
+              </button>
+              <button data-part="swatch-trigger" data-value="#00ff00">
+                <div>
+                  <div data-part="transparency-grid" data-size="4px"></div>
+                  <div data-part="swatch" data-value="#00ff00"></div>
+                </div>
+              </button>
+              <button data-part="swatch-trigger" data-value="#0000ff">
+                <div>
+                  <div data-part="transparency-grid" data-size="4px"></div>
+                  <div data-part="swatch" data-value="#0000ff"></div>
+                </div>
+              </button>
+            </div>
+            <div>
+              <div>
+                <span>H</span>
+                <input data-part="channel-input" data-channel="hue" />
+              </div>
+              <div>
+                <span>S</span>
+                <input data-part="channel-input" data-channel="saturation" />
+              </div>
+              <div>
+                <span>L</span>
+                <input data-part="channel-input" data-channel="lightness" />
+              </div>
+              <div>
+                <span>A</span>
+                <input data-part="channel-input" data-channel="alpha" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="color-picker color-picker-js"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;label data-part="label"&gt;Select Color&lt;/label&gt;
+        &lt;input data-part="hidden-input" /&gt;
+        &lt;div data-part="control"&gt;
+            &lt;button data-part="trigger"&gt;
+                &lt;div data-part="transparency-grid" data-size="10px"&gt;&lt;/div&gt;
+                &lt;div data-part="swatch"&gt;&lt;/div&gt;
+            &lt;/button&gt;
+            &lt;input data-part="channel-input" data-channel="hex" name="channel-input-hex" /&gt;
+            &lt;input data-part="channel-input" data-channel="alpha" name="channel-input-alpha" /&gt;
+        &lt;/div&gt;
+        &lt;div data-part="positioner"&gt;
+            &lt;div data-part="content"&gt;
+                &lt;div data-part="area"&gt;
+                    &lt;div data-part="area-background"&gt;&lt;/div&gt;
+                    &lt;div data-part="area-thumb"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-part="channel-slider" data-channel="hue"&gt;
+                    &lt;div data-part="channel-slider-track" data-channel="hue"&gt;&lt;/div&gt;
+                    &lt;div data-part="channel-slider-thumb" data-channel="hue"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-part="channel-slider" data-channel="alpha"&gt;
+                    &lt;div data-part="transparency-grid" data-size="12px"&gt;&lt;/div&gt;
+                    &lt;div data-part="channel-slider-track" data-channel="alpha"&gt;&lt;/div&gt;
+                    &lt;div data-part="channel-slider-thumb" data-channel="alpha"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button data-part="eye-dropper-trigger"&gt;
+                    &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="icon"&gt;
+                        &lt;path stroke-linecap="round" stroke-linejoin="round"
+                            d="m15 11.25 1.5 1.5.75-.75V8.758l2.276-.61a3 3 0 1 0-3.675-3.675l-.61 2.277H12l-.75.75 1.5 1.5M15 11.25l-8.47 8.47c-.34.34-.8.53-1.28.53s-.94.19-1.28.53l-.97.97-.75-.75.97-.97c.34-.34.53-.8.53-1.28s.19-.94.53-1.28L12.75 9M15 11.25 12.75 9" /&gt;
+                    &lt;/svg&gt;
+                &lt;/button&gt;
+                &lt;div data-part="swatch-group"&gt;
+                    &lt;button data-part="swatch-trigger" data-value="#ff0000"&gt;
+                        &lt;div&gt;
+                            &lt;div data-part="transparency-grid" data-size="4px"&gt;&lt;/div&gt;
+                            &lt;div data-part="swatch" data-value="#ff0000"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                    &lt;button data-part="swatch-trigger" data-value="#00ff00"&gt;
+                        &lt;div&gt;
+                            &lt;div data-part="transparency-grid" data-size="4px"&gt;&lt;/div&gt;
+                            &lt;div data-part="swatch" data-value="#00ff00"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                    &lt;button data-part="swatch-trigger" data-value="#0000ff"&gt;
+                        &lt;div&gt;
+                            &lt;div data-part="transparency-grid" data-size="4px"&gt;&lt;/div&gt;
+                            &lt;div data-part="swatch" data-value="#0000ff"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;R&lt;/span&gt;
+                        &lt;input data-part="channel-input" data-channel="red" /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;G&lt;/span&gt;
+                        &lt;input data-part="channel-input" data-channel="green" /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;B&lt;/span&gt;
+                        &lt;input data-part="channel-input" data-channel="blue" /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;A&lt;/span&gt;
+                        &lt;input data-part="channel-input" data-channel="alpha" /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="color-picker color-picker-js" data-default-format="hsla"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;label data-part="label"&gt;Label&lt;/label&gt;
+        &lt;input data-part="hidden-input" /&gt;
+        &lt;div data-part="control"&gt;
+            &lt;button data-part="trigger"&gt;
+                &lt;div data-part="transparency-grid" data-size="10px"&gt;&lt;/div&gt;
+                &lt;div data-part="swatch"&gt;&lt;/div&gt;
+            &lt;/button&gt;
+            &lt;input data-part="channel-input" data-channel="hex" name="channel-input-hsba" /&gt;
+            &lt;input data-part="channel-input" data-channel="alpha" name="channel-input-alpha" /&gt;
+        &lt;/div&gt;
+        &lt;div data-part="positioner"&gt;
+            &lt;div data-part="content"&gt;
+                &lt;div data-part="area"&gt;
+                    &lt;div data-part="area-background"&gt;&lt;/div&gt;
+                    &lt;div data-part="area-thumb"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-part="channel-slider" data-channel="hue"&gt;
+                    &lt;div data-part="channel-slider-track" data-channel="hue"&gt;&lt;/div&gt;
+                    &lt;div data-part="channel-slider-thumb" data-channel="hue"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-part="channel-slider" data-channel="alpha"&gt;
+                    &lt;div data-part="transprency-grid" data-size="12px"&gt;&lt;/div&gt;
+                    &lt;div data-part="channel-slider-track" data-channel="alpha"&gt;&lt;/div&gt;
+                    &lt;div data-part="channel-slider-thumb" data-channel="alpha"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-part="swatch-group"&gt;
+                    &lt;button data-part="swatch-trigger" data-value="#ff0000"&gt;
+                        &lt;div&gt;
+                            &lt;div data-part="transparency-grid" data-size="4px"&gt;&lt;/div&gt;
+                            &lt;div data-part="swatch" data-value="#ff0000"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                    &lt;button data-part="swatch-trigger" data-value="#00ff00"&gt;
+                        &lt;div&gt;
+                            &lt;div data-part="transparency-grid" data-size="4px"&gt;&lt;/div&gt;
+                            &lt;div data-part="swatch" data-value="#00ff00"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                    &lt;button data-part="swatch-trigger" data-value="#0000ff"&gt;
+                        &lt;div&gt;
+                            &lt;div data-part="transparency-grid" data-size="4px"&gt;&lt;/div&gt;
+                            &lt;div data-part="swatch" data-value="#0000ff"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;H&lt;/span&gt;
+                        &lt;input data-part="channel-input" data-channel="hue" /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;S&lt;/span&gt;
+                        &lt;input data-part="channel-input" data-channel="saturation" /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;L&lt;/span&gt;
+                        &lt;input data-part="channel-input" data-channel="lightness" /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;A&lt;/span&gt;
+                        &lt;input data-part="channel-input" data-channel="alpha" /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;color-picker color-picker-js&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;label data-part=&quot;label&quot;&gt;Select Color&lt;/label&gt;
+        &lt;input data-part=&quot;hidden-input&quot; /&gt;
+        &lt;div data-part=&quot;control&quot;&gt;
+            &lt;button data-part=&quot;trigger&quot;&gt;
+                &lt;div data-part=&quot;transparency-grid&quot; data-size=&quot;10px&quot;&gt;&lt;/div&gt;
+                &lt;div data-part=&quot;swatch&quot;&gt;&lt;/div&gt;
+            &lt;/button&gt;
+            &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;hex&quot; name=&quot;channel-input-hex&quot; /&gt;
+            &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;alpha&quot; name=&quot;channel-input-alpha&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;positioner&quot;&gt;
+            &lt;div data-part=&quot;content&quot;&gt;
+                &lt;div data-part=&quot;area&quot;&gt;
+                    &lt;div data-part=&quot;area-background&quot;&gt;&lt;/div&gt;
+                    &lt;div data-part=&quot;area-thumb&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-part=&quot;channel-slider&quot; data-channel=&quot;hue&quot;&gt;
+                    &lt;div data-part=&quot;channel-slider-track&quot; data-channel=&quot;hue&quot;&gt;&lt;/div&gt;
+                    &lt;div data-part=&quot;channel-slider-thumb&quot; data-channel=&quot;hue&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-part=&quot;channel-slider&quot; data-channel=&quot;alpha&quot;&gt;
+                    &lt;div data-part=&quot;transparency-grid&quot; data-size=&quot;12px&quot;&gt;&lt;/div&gt;
+                    &lt;div data-part=&quot;channel-slider-track&quot; data-channel=&quot;alpha&quot;&gt;&lt;/div&gt;
+                    &lt;div data-part=&quot;channel-slider-thumb&quot; data-channel=&quot;alpha&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button data-part=&quot;eye-dropper-trigger&quot;&gt;
+                    &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                        stroke=&quot;currentColor&quot; class=&quot;icon&quot;&gt;
+                        &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;
+                            d=&quot;m15 11.25 1.5 1.5.75-.75V8.758l2.276-.61a3 3 0 1 0-3.675-3.675l-.61 2.277H12l-.75.75 1.5 1.5M15 11.25l-8.47 8.47c-.34.34-.8.53-1.28.53s-.94.19-1.28.53l-.97.97-.75-.75.97-.97c.34-.34.53-.8.53-1.28s.19-.94.53-1.28L12.75 9M15 11.25 12.75 9&quot; /&gt;
+                    &lt;/svg&gt;
+                &lt;/button&gt;
+                &lt;div data-part=&quot;swatch-group&quot;&gt;
+                    &lt;button data-part=&quot;swatch-trigger&quot; data-value=&quot;#ff0000&quot;&gt;
+                        &lt;div&gt;
+                            &lt;div data-part=&quot;transparency-grid&quot; data-size=&quot;4px&quot;&gt;&lt;/div&gt;
+                            &lt;div data-part=&quot;swatch&quot; data-value=&quot;#ff0000&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                    &lt;button data-part=&quot;swatch-trigger&quot; data-value=&quot;#00ff00&quot;&gt;
+                        &lt;div&gt;
+                            &lt;div data-part=&quot;transparency-grid&quot; data-size=&quot;4px&quot;&gt;&lt;/div&gt;
+                            &lt;div data-part=&quot;swatch&quot; data-value=&quot;#00ff00&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                    &lt;button data-part=&quot;swatch-trigger&quot; data-value=&quot;#0000ff&quot;&gt;
+                        &lt;div&gt;
+                            &lt;div data-part=&quot;transparency-grid&quot; data-size=&quot;4px&quot;&gt;&lt;/div&gt;
+                            &lt;div data-part=&quot;swatch&quot; data-value=&quot;#0000ff&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;R&lt;/span&gt;
+                        &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;red&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;G&lt;/span&gt;
+                        &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;green&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;B&lt;/span&gt;
+                        &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;blue&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;A&lt;/span&gt;
+                        &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;alpha&quot; /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;color-picker color-picker-js&quot; data-default-format=&quot;hsla&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;label data-part=&quot;label&quot;&gt;Label&lt;/label&gt;
+        &lt;input data-part=&quot;hidden-input&quot; /&gt;
+        &lt;div data-part=&quot;control&quot;&gt;
+            &lt;button data-part=&quot;trigger&quot;&gt;
+                &lt;div data-part=&quot;transparency-grid&quot; data-size=&quot;10px&quot;&gt;&lt;/div&gt;
+                &lt;div data-part=&quot;swatch&quot;&gt;&lt;/div&gt;
+            &lt;/button&gt;
+            &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;hex&quot; name=&quot;channel-input-hsba&quot; /&gt;
+            &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;alpha&quot; name=&quot;channel-input-alpha&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;positioner&quot;&gt;
+            &lt;div data-part=&quot;content&quot;&gt;
+                &lt;div data-part=&quot;area&quot;&gt;
+                    &lt;div data-part=&quot;area-background&quot;&gt;&lt;/div&gt;
+                    &lt;div data-part=&quot;area-thumb&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-part=&quot;channel-slider&quot; data-channel=&quot;hue&quot;&gt;
+                    &lt;div data-part=&quot;channel-slider-track&quot; data-channel=&quot;hue&quot;&gt;&lt;/div&gt;
+                    &lt;div data-part=&quot;channel-slider-thumb&quot; data-channel=&quot;hue&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-part=&quot;channel-slider&quot; data-channel=&quot;alpha&quot;&gt;
+                    &lt;div data-part=&quot;transprency-grid&quot; data-size=&quot;12px&quot;&gt;&lt;/div&gt;
+                    &lt;div data-part=&quot;channel-slider-track&quot; data-channel=&quot;alpha&quot;&gt;&lt;/div&gt;
+                    &lt;div data-part=&quot;channel-slider-thumb&quot; data-channel=&quot;alpha&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-part=&quot;swatch-group&quot;&gt;
+                    &lt;button data-part=&quot;swatch-trigger&quot; data-value=&quot;#ff0000&quot;&gt;
+                        &lt;div&gt;
+                            &lt;div data-part=&quot;transparency-grid&quot; data-size=&quot;4px&quot;&gt;&lt;/div&gt;
+                            &lt;div data-part=&quot;swatch&quot; data-value=&quot;#ff0000&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                    &lt;button data-part=&quot;swatch-trigger&quot; data-value=&quot;#00ff00&quot;&gt;
+                        &lt;div&gt;
+                            &lt;div data-part=&quot;transparency-grid&quot; data-size=&quot;4px&quot;&gt;&lt;/div&gt;
+                            &lt;div data-part=&quot;swatch&quot; data-value=&quot;#00ff00&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                    &lt;button data-part=&quot;swatch-trigger&quot; data-value=&quot;#0000ff&quot;&gt;
+                        &lt;div&gt;
+                            &lt;div data-part=&quot;transparency-grid&quot; data-size=&quot;4px&quot;&gt;&lt;/div&gt;
+                            &lt;div data-part=&quot;swatch&quot; data-value=&quot;#0000ff&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;H&lt;/span&gt;
+                        &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;hue&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;S&lt;/span&gt;
+                        &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;saturation&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;L&lt;/span&gt;
+                        &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;lightness&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;A&lt;/span&gt;
+                        &lt;input data-part=&quot;channel-input&quot; data-channel=&quot;alpha&quot; /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+  </div>
+</div>

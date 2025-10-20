@@ -5,6 +5,8 @@ export default {
 ignoreFiles: [
   "**/dist/**",
   "**/node_modules/**",
+  "**/public/**",
+
 ],
 rules: {
   'custom-property-pattern': null,

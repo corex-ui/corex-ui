@@ -1,0 +1,1851 @@
+<h1 id="accordion" tabindex="-1">
+  <a class="link" href="#accordion">#</a> Accordion
+</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/accordion"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Accordion
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>
+  An accordion is a vertically stacked set of interactive headings containing a
+  title, content snippet, or thumbnail representing a section of content.
+</p>
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Accordion component consists of the following data parts:</p>
+<p>
+  <code>root</code>, <code>item</code>, <code>item-content</code>,
+  <code>item-trigger</code>, <code>item-indicator</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="pagination pagination-js"
+      id="pagination-blog"
+      data-on-page-change="update-blog"
+    >
+      <nav data-part="root">
+        <ul>
+          <li>
+            <a href="#previous" data-part="prev-trigger">
+              Previous <span class="visually-hidden">Page</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#next" data-part="next-trigger">
+              Next <span class="visually-hidden">Page</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="blog-pagination"></div>
+    <div class="preview__code">
+      <div
+        class="clipboard clipboard-js"
+        data-name="clipboard"
+        data-default-value='        &lt;div class="pagination pagination-js" id="pagination-blog" data-on-page-change="update-blog"&gt;
+          &lt;nav data-part="root"&gt;
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;a href="#previous" data-part="prev-trigger"&gt;
+                  Previous &lt;span class="visually-hidden"&gt;Page&lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/li&gt;
+
+              &lt;li&gt;
+                &lt;a href="#next" data-part="next-trigger"&gt;
+                  Next &lt;span class="visually-hidden"&gt;Page&lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/nav&gt;
+        &lt;/div&gt;
+
+        &lt;div id="blog-pagination"&gt;
+'
+      >
+        <div data-part="control">
+          <button data-part="trigger" class="button button--sm">
+            <span data-copy class="uppercase">html</span>
+            <span data-copied>Copied</span>
+
+            <svg
+              data-copy
+              class="icon"
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+            <svg
+              data-copied
+              class="icon"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <pre><code class="code-js" data-lang="html">        &lt;div class=&quot;pagination pagination-js&quot; id=&quot;pagination-blog&quot; data-on-page-change=&quot;update-blog&quot;&gt;
+          &lt;nav data-part=&quot;root&quot;&gt;
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;a href=&quot;#previous&quot; data-part=&quot;prev-trigger&quot;&gt;
+                  Previous &lt;span class=&quot;visually-hidden&quot;&gt;Page&lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/li&gt;
+
+              &lt;li&gt;
+                &lt;a href=&quot;#next&quot; data-part=&quot;next-trigger&quot;&gt;
+                  Next &lt;span class=&quot;visually-hidden&quot;&gt;Page&lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/nav&gt;
+        &lt;/div&gt;
+
+        &lt;div id=&quot;blog-pagination&quot;&gt;
+</code></pre>
+    </div>
+  </div>
+  <hr />
+  <h2 id="data-attributes" tabindex="-1">
+    <a class="link" href="#data-attributes">#</a> Data attributes
+  </h2>
+  <p>
+    Each accordion can be set with different settings with the following
+    data-attribute.
+  </p>
+
+  <div class="preview">
+    <div class="preview__display">
+      <div
+        class="accordion accordion-js"
+        id="custom-accordion"
+        data-default-value="item-1, item-3"
+        data-dir="ltr"
+        data-orientation="vertical"
+        data-collapsible="true"
+        data-disabled="false"
+        data-multiple="true"
+      >
+        <div data-part="root">
+          <div data-part="item" data-value="item-1">
+            <h3>
+              <button data-part="item-trigger" data-value="item-1">
+                Lorem
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-2">
+            <h3>
+              <button data-part="item-trigger" data-value="item-2">
+                Duis
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-2">
+              Duis a sem ut diam interdum ultricies sit amet id arcu.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-3">
+            <h3>
+              <button data-part="item-trigger" data-value="item-3">
+                Donec
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-3">
+              Donec pretium magna cursus ante tincidunt porta.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="preview__code">
+      <div
+        class="clipboard clipboard-js"
+        data-name="clipboard"
+        data-default-value='&lt;div class="accordion accordion-js" id="custom-accordion" data-default-value="item-1, item-3" data-dir="ltr"
+    data-orientation="vertical" data-collapsible="true" data-disabled="false" data-multiple="true"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;div data-part="item" data-value="item-1"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-1"&gt;
+                    Lorem
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-1"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-2"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-2"&gt;
+                    Duis
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-2"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-3"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-3"&gt;
+                    Donec
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-3"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+      >
+        <div data-part="control">
+          <button data-part="trigger" class="button button--sm">
+            <span data-copy class="uppercase">html</span>
+            <span data-copied>Copied</span>
+
+            <svg
+              data-copy
+              class="icon"
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+            <svg
+              data-copied
+              class="icon"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <pre><code class="code-js" data-lang="html">&lt;div class=&quot;accordion accordion-js&quot; id=&quot;custom-accordion&quot; data-default-value=&quot;item-1, item-3&quot; data-dir=&quot;ltr&quot;
+    data-orientation=&quot;vertical&quot; data-collapsible=&quot;true&quot; data-disabled=&quot;false&quot; data-multiple=&quot;true&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-1&quot;&gt;
+                    Lorem
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-1&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-2&quot;&gt;
+                    Duis
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-2&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-3&quot;&gt;
+                    Donec
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-3&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+  </div>
+  <p>
+    <strong>id</strong><br />
+    Type: <code>string</code><br />
+    Description: Unique id of the accordion. Default generated if none is
+    provided.
+  </p>
+  <p>
+    <strong>data-dir</strong><br />
+    Type: <code>string</code><br />
+    Description: The orientation of the accordion. Can be <code>ltr</code> or
+    <code>rtl</code>.
+  </p>
+  <p>
+    <strong>data-disabled</strong><br />
+    Type: <code>boolean</code><br />
+    Description: Whether the accordion is disabled.
+  </p>
+  <p>
+    <strong>data-multiple</strong><br />
+    Type: <code>boolean</code><br />
+    Description: Whether multiple accordion items can be expanded at the same
+    time.
+  </p>
+  <p>
+    <strong>data-collapsible</strong><br />
+    Type: <code>boolean</code><br />
+    Description: Whether an accordion item can be closed after it has been
+    expanded.
+  </p>
+  <p>
+    <strong>data-default-value</strong><br />
+    Type: <code>string[]</code><br />
+    Description: Initial default value of the accordion when rendered. Use when
+    you don't need to control the value.
+  </p>
+  <p>
+    <strong>data-value</strong><br />
+    Type: <code>string[]</code><br />
+    Description: Initial default value of the accordion when rendered. Use when
+    you don't need to control the value.
+  </p>
+  <p>
+    <strong>data-orientation</strong><br />
+    Type: <code>string</code><br />
+    Description: The orientation of the accordion. Can be
+    <code>horizontal</code> or <code>vertical</code> - <code>horizontal</code>:
+    only left and right arrow key navigation will work. - <code>vertical</code>:
+    only up and down arrow key navigation will work.
+  </p>
+  <hr />
+  <h2 id="event-callbacks" tabindex="-1">
+    <a class="link" href="#event-callbacks">#</a> Event Callbacks
+  </h2>
+  <p>
+    Each accordion component can receive callbacks that can be used to respond
+    to user interaction with custom behavior.
+  </p>
+  <p>
+    You must add a custom id for the accordion and a event listener for your
+    event name
+  </p>
+
+  <div class="preview">
+    <div class="preview__code">
+      <div
+        class="clipboard clipboard-js"
+        data-name="clipboard"
+        data-default-value='document.getElementById("my-accordion")
+?.addEventListener("my-accordion-event", (event) =&gt; {
+console.log("Received event:", (event as CustomEvent).detail);
+});
+'
+      >
+        <div data-part="control">
+          <button data-part="trigger" class="button button--sm">
+            <span data-copy class="uppercase">ts</span>
+            <span data-copied>Copied</span>
+
+            <svg
+              data-copy
+              class="icon"
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+            <svg
+              data-copied
+              class="icon"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <pre><code class="code-js" data-lang="ts">document.getElementById(&quot;my-accordion&quot;)
+?.addEventListener(&quot;my-accordion-event&quot;, (event) =&gt; {
+console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
+});
+</code></pre>
+    </div>
+  </div>
+  <div class="preview">
+    <div class="preview__display">
+      <div
+        id="my-accordion"
+        class="accordion accordion-js"
+        data-on-value-change="my-accordion-event"
+      >
+        <div data-part="root">
+          <div data-part="item" data-value="item-1">
+            <h3>
+              <button data-part="item-trigger" data-value="item-1">
+                Lorem
+                <span data-part="item-indicator" data-value="item-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-2">
+            <h3>
+              <button data-part="item-trigger" data-value="item-2">
+                Duis
+                <span data-part="item-indicator" data-value="item-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-2">
+              Duis a sem ut diam interdum ultricies sit amet id arcu.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-3">
+            <h3>
+              <button data-part="item-trigger" data-value="item-3">
+                Donec
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-3">
+              Donec pretium magna cursus ante tincidunt porta.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="preview__code">
+      <div
+        class="clipboard clipboard-js"
+        data-name="clipboard"
+        data-default-value='&lt;div id="my-accordion" class="accordion accordion-js" data-on-value-change="my-accordion-event"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;div data-part="item" data-value="item-1"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-1"&gt;
+                    Lorem
+                    &lt;span data-part="item-indicator" data-value="item-1"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-1"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-2"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-2"&gt;
+                    Duis
+                    &lt;span data-part="item-indicator" data-value="item-2"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-2"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-3"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-3"&gt;
+                    Donec
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-3"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+      >
+        <div data-part="control">
+          <button data-part="trigger" class="button button--sm">
+            <span data-copy class="uppercase">html</span>
+            <span data-copied>Copied</span>
+
+            <svg
+              data-copy
+              class="icon"
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+            <svg
+              data-copied
+              class="icon"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <pre><code class="code-js" data-lang="html">&lt;div id=&quot;my-accordion&quot; class=&quot;accordion accordion-js&quot; data-on-value-change=&quot;my-accordion-event&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-1&quot;&gt;
+                    Lorem
+                    &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;item-1&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-1&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-2&quot;&gt;
+                    Duis
+                    &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;item-2&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-2&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-3&quot;&gt;
+                    Donec
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-3&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+  </div>
+  <blockquote>
+    <p>
+      Open your browser's console to see the events received when the accordion
+      value changes
+    </p>
+  </blockquote>
+  <p>
+    <strong>data-on-value-change</strong><br />
+    Type: <code>string</code><br />
+    Description: Event name to be send when the focused accordion item changes.
+  </p>
+  <p>
+    <strong>data-on-focus-change</strong><br />
+    Type: <code>string</code><br />
+    Description: Event name to be send when the state of expanded/collapsed
+    accordion items changes.
+  </p>
+  <hr />
+  <h2 id="rtl" tabindex="-1"><a class="link" href="#rtl">#</a> RTL</h2>
+  <p>RTL support for accordion</p>
+
+  <div class="preview">
+    <div class="preview__display">
+      <div class="accordion accordion-js" data-dir="rtl">
+        <div data-part="root">
+          <div data-part="item" data-value="item-1">
+            <h3>
+              <button data-part="item-trigger" data-value="item-1">
+                Lorem
+                <span data-part="item-indicator" data-value="item-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-2">
+            <h3>
+              <button data-part="item-trigger" data-value="item-2">
+                Duis
+                <span data-part="item-indicator" data-value="item-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-2">
+              Duis a sem ut diam interdum ultricies sit amet id arcu.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-3">
+            <h3>
+              <button data-part="item-trigger" data-value="item-3">
+                Donec
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-3">
+              Donec pretium magna cursus ante tincidunt porta.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="preview__code">
+      <div
+        class="clipboard clipboard-js"
+        data-name="clipboard"
+        data-default-value='&lt;div class="accordion accordion-js" data-dir="rtl"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;div data-part="item" data-value="item-1"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-1"&gt;
+                    Lorem
+                    &lt;span data-part="item-indicator" data-value="item-1"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-1"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-2"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-2"&gt;
+                    Duis
+                    &lt;span data-part="item-indicator" data-value="item-2"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-2"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-3"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-3"&gt;
+                    Donec
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-3"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+      >
+        <div data-part="control">
+          <button data-part="trigger" class="button button--sm">
+            <span data-copy class="uppercase">html</span>
+            <span data-copied>Copied</span>
+
+            <svg
+              data-copy
+              class="icon"
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+            <svg
+              data-copied
+              class="icon"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <pre><code class="code-js" data-lang="html">&lt;div class=&quot;accordion accordion-js&quot; data-dir=&quot;rtl&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-1&quot;&gt;
+                    Lorem
+                    &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;item-1&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-1&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-2&quot;&gt;
+                    Duis
+                    &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;item-2&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-2&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-3&quot;&gt;
+                    Donec
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-3&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+  </div>
+  <hr />
+  <h2 id="disabled" tabindex="-1">
+    <a class="link" href="#disabled">#</a> Disabled
+  </h2>
+  <p>Each accordion can be disabled globally or per item.</p>
+
+  <div class="preview">
+    <div class="preview__display">
+      <div class="accordion accordion-js" data-disabled="true">
+        <div data-part="root">
+          <div data-part="item" data-value="item-1">
+            <h3>
+              <button data-part="item-trigger" data-value="item-1">
+                Lorem
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-2">
+            <h3>
+              <button data-part="item-trigger" data-value="item-2">
+                Duis
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-2">
+              Duis a sem ut diam interdum ultricies sit amet id arcu.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-3">
+            <h3>
+              <button data-part="item-trigger" data-value="item-3">
+                Donec
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-3">
+              Donec pretium magna cursus ante tincidunt porta.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion accordion-js">
+        <div data-part="root">
+          <div data-part="item" data-value="item-1">
+            <h3>
+              <button data-part="item-trigger" data-value="item-1">
+                Lorem
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-2" data-disabled="true">
+            <h3>
+              <button
+                data-part="item-trigger"
+                data-value="item-2"
+                data-disabled="true"
+              >
+                Duis
+                <span data-part="item-indicator" data-disabled="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div
+              data-part="item-content"
+              data-value="item-2"
+              data-disabled="true"
+            >
+              Duis a sem ut diam interdum ultricies sit amet id arcu.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-3">
+            <h3>
+              <button data-part="item-trigger" data-value="item-3">
+                Donec
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-3">
+              Donec pretium magna cursus ante tincidunt porta.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="preview__code">
+      <div
+        class="clipboard clipboard-js"
+        data-name="clipboard"
+        data-default-value=' &lt;div class="accordion accordion-js" data-disabled="true"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;div data-part="item" data-value="item-1"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-1"&gt;
+                    Lorem
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-1"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-2"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-2"&gt;
+                    Duis
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-2"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-3"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-3"&gt;
+                    Donec
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-3"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="accordion accordion-js"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;div data-part="item" data-value="item-1"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-1"&gt;
+                    Lorem
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-1"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-2" data-disabled="true"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-2" data-disabled="true"&gt;
+                    Duis
+                    &lt;span data-part="item-indicator" data-disabled="true"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-2" data-disabled="true"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-3"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-3"&gt;
+                    Donec
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-3"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+      >
+        <div data-part="control">
+          <button data-part="trigger" class="button button--sm">
+            <span data-copy class="uppercase">html</span>
+            <span data-copied>Copied</span>
+
+            <svg
+              data-copy
+              class="icon"
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+            <svg
+              data-copied
+              class="icon"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <pre><code class="code-js" data-lang="html"> &lt;div class=&quot;accordion accordion-js&quot; data-disabled=&quot;true&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-1&quot;&gt;
+                    Lorem
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-1&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-2&quot;&gt;
+                    Duis
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-2&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-3&quot;&gt;
+                    Donec
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-3&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;accordion accordion-js&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-1&quot;&gt;
+                    Lorem
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-1&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-2&quot; data-disabled=&quot;true&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-2&quot; data-disabled=&quot;true&quot;&gt;
+                    Duis
+                    &lt;span data-part=&quot;item-indicator&quot; data-disabled=&quot;true&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-2&quot; data-disabled=&quot;true&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-3&quot;&gt;
+                    Donec
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-3&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+  </div>
+  <hr />
+  <h2 id="orientation" tabindex="-1">
+    <a class="link" href="#orientation">#</a> Orientation
+  </h2>
+  <p>Each accordion can be set as horizontal or vertical.</p>
+
+  <div class="preview">
+    <div class="preview__display">
+      <div class="accordion accordion-js" data-orientation="vertical">
+        <div data-part="root">
+          <div data-part="item" data-value="item-1">
+            <h3>
+              <button data-part="item-trigger" data-value="item-1">
+                Lorem
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-2">
+            <h3>
+              <button data-part="item-trigger" data-value="item-2">
+                Duis
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-2">
+              Duis a sem ut diam interdum ultricies sit amet id arcu.
+            </div>
+          </div>
+          <div data-part="item" data-value="item-3">
+            <h3>
+              <button data-part="item-trigger" data-value="item-3">
+                Donec
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-3">
+              Donec pretium magna cursus ante tincidunt porta.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion accordion-js" data-orientation="horizontal">
+        <div data-part="root">
+          <div data-part="item" data-value="item-1">
+            <h3>
+              <button data-part="item-trigger" data-value="item-1">
+                A
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-1">a</div>
+          </div>
+          <div data-part="item" data-value="item-2">
+            <h3>
+              <button data-part="item-trigger" data-value="item-2">
+                B
+                <span data-part="item-indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div data-part="item-content" data-value="item-2">b</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="preview__code">
+      <div
+        class="clipboard clipboard-js"
+        data-name="clipboard"
+        data-default-value='&lt;div class="accordion accordion-js" data-orientation="vertical"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;div data-part="item" data-value="item-1"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-1"&gt;
+                    Lorem
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-1"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-2"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-2"&gt;
+                    Duis
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-2"&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-3"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-3"&gt;
+                    Donec
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-3"&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="accordion accordion-js" data-orientation="horizontal"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;div data-part="item" data-value="item-1"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-1"&gt;
+                    A
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-1"&gt;
+                a
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item" data-value="item-2"&gt;
+            &lt;h3&gt;
+                &lt;button data-part="item-trigger" data-value="item-2"&gt;
+                    B
+                    &lt;span data-part="item-indicator"&gt;
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part="item-content" data-value="item-2"&gt;
+                b
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+      >
+        <div data-part="control">
+          <button data-part="trigger" class="button button--sm">
+            <span data-copy class="uppercase">html</span>
+            <span data-copied>Copied</span>
+
+            <svg
+              data-copy
+              class="icon"
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+            <svg
+              data-copied
+              class="icon"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <pre><code class="code-js" data-lang="html">&lt;div class=&quot;accordion accordion-js&quot; data-orientation=&quot;vertical&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-1&quot;&gt;
+                    Lorem
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-1&quot;&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-2&quot;&gt;
+                    Duis
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-2&quot;&gt;
+                Duis a sem ut diam interdum ultricies sit amet id arcu.
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-3&quot;&gt;
+                    Donec
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-3&quot;&gt;
+                Donec pretium magna cursus ante tincidunt porta.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;accordion accordion-js&quot; data-orientation=&quot;horizontal&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-1&quot;&gt;
+                    A
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-1&quot;&gt;
+                a
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+            &lt;h3&gt;
+                &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;item-2&quot;&gt;
+                    B
+                    &lt;span data-part=&quot;item-indicator&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot;
+                            stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/h3&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;item-2&quot;&gt;
+                b
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+  </div>
+</div>
