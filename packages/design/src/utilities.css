@@ -27,9 +27,9 @@
   font-weight: var(--font-weight-ui);
   border-radius: var(--radius-ui);
   border: 1px solid var(--color-ui--border);
-  padding: var(--spacing-ui-padding);
+  padding-inline: var(--spacing-ui-padding);
   gap: var(--spacing-ui-gap);
-  max-height: var(--spacing-ui);
+  min-height: var(--spacing-ui);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
@@ -225,7 +225,6 @@
   line-height: var(--text-ui--line-height);
   font-weight: var(--font-weight-ui);
   padding-inline: var(--spacing-ui-padding);
-  padding-block: var(--spacing-ui-padding-sm);
   gap: var(--spacing-ui-gap);
   min-height: var(--spacing-ui);
   background-color: var(--color-ui);
