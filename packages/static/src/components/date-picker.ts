@@ -313,27 +313,23 @@ export class DatePicker extends Component<datePicker.Props, datePicker.Api> {
     );
     if (!tableBody || !this.api.weeks) return;
     tableBody.innerHTML = "";
-
     this.api.weeks.forEach((week, weekIndex) => {
       const tr = document.createElement("tr");
       tr.setAttribute("key", weekIndex.toString());
       const tableRowProps = this.api.getTableRowProps({ view: "day" });
       spreadProps(tr, tableRowProps);
-
       week.forEach((value, dayIndex) => {
         const td = document.createElement("td");
         td.setAttribute("key", dayIndex.toString());
-
         const cellProps = this.api.getDayTableCellProps({ value });
         spreadProps(td, cellProps);
-
+        const div = document.createElement("div");
+        div.textContent = value.day.toString();
         const triggerProps = this.api.getDayTableCellTriggerProps({ value });
-        spreadProps(td, triggerProps);
-
-        td.textContent = value.day.toString();
+        spreadProps(div, triggerProps);
+        td.appendChild(div);
         tr.appendChild(td);
       });
-
       tableBody.appendChild(tr);
     });
   }
