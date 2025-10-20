@@ -582,19 +582,26 @@ root.addEventListener(&quot;upload-to-supabase&quot;, async (event) =&gt; {
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value=' &lt;form id="my-form" class="flex flex-col items-center gap-(--spacing-ui-gap)"&gt;
-  &lt;div id="my-form-file-upload" class="file-upload file-upload-js" data-accept="image/*" data-max-files="5" data-name="image" data-on-file-accept="preview-image"&gt;
-        &lt;div data-part="root"&gt;
-          &lt;label data-part="label"&gt;Upload File&lt;/label&gt;
-          &lt;input data-part="hidden-input" /&gt;
-          &lt;div data-part="dropzone"&gt;
-                &lt;span&gt;Drag your file(s) here&lt;/span&gt;
-            &lt;/div&gt;
-            &lt;button data-part="trigger"&gt;Choose file(s)&lt;/button&gt;
-        &lt;/div&gt;
+      data-default-value='&lt;form id="my-form" class="flex flex-col items-center gap-(--spacing-ui-gap)"&gt;
+  &lt;div
+    id="my-form-file-upload"
+    class="file-upload file-upload-js"
+    data-accept="image/*"
+    data-max-files="5"
+    data-name="image"
+    data-on-file-accept="preview-image"
+  &gt;
+    &lt;div data-part="root"&gt;
+      &lt;label data-part="label"&gt;Upload File&lt;/label&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="dropzone"&gt;
+        &lt;span&gt;Drag your file(s) here&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;button data-part="trigger"&gt;Choose file(s)&lt;/button&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
-&lt;div data-part="form-previews"&gt;&lt;/div&gt;
-&lt;button class="button button--accent" type="submit"&gt;Submit&lt;/button&gt;
+  &lt;div data-part="form-previews"&gt;&lt;/div&gt;
+  &lt;button class="button button--accent" type="submit"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;
 &lt;div id="result"&gt;&lt;/div&gt;
 '
@@ -643,19 +650,26 @@ root.addEventListener(&quot;upload-to-supabase&quot;, async (event) =&gt; {
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="html"> &lt;form id=&quot;my-form&quot; class=&quot;flex flex-col items-center gap-(--spacing-ui-gap)&quot;&gt;
-  &lt;div id=&quot;my-form-file-upload&quot; class=&quot;file-upload file-upload-js&quot; data-accept=&quot;image/*&quot; data-max-files=&quot;5&quot; data-name=&quot;image&quot; data-on-file-accept=&quot;preview-image&quot;&gt;
-        &lt;div data-part=&quot;root&quot;&gt;
-          &lt;label data-part=&quot;label&quot;&gt;Upload File&lt;/label&gt;
-          &lt;input data-part=&quot;hidden-input&quot; /&gt;
-          &lt;div data-part=&quot;dropzone&quot;&gt;
-                &lt;span&gt;Drag your file(s) here&lt;/span&gt;
-            &lt;/div&gt;
-            &lt;button data-part=&quot;trigger&quot;&gt;Choose file(s)&lt;/button&gt;
-        &lt;/div&gt;
+    <pre><code class="code-js" data-lang="html">&lt;form id=&quot;my-form&quot; class=&quot;flex flex-col items-center gap-(--spacing-ui-gap)&quot;&gt;
+  &lt;div
+    id=&quot;my-form-file-upload&quot;
+    class=&quot;file-upload file-upload-js&quot;
+    data-accept=&quot;image/*&quot;
+    data-max-files=&quot;5&quot;
+    data-name=&quot;image&quot;
+    data-on-file-accept=&quot;preview-image&quot;
+  &gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+      &lt;label data-part=&quot;label&quot;&gt;Upload File&lt;/label&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;dropzone&quot;&gt;
+        &lt;span&gt;Drag your file(s) here&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;button data-part=&quot;trigger&quot;&gt;Choose file(s)&lt;/button&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
-&lt;div data-part=&quot;form-previews&quot;&gt;&lt;/div&gt;
-&lt;button class=&quot;button button--accent&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+  &lt;div data-part=&quot;form-previews&quot;&gt;&lt;/div&gt;
+  &lt;button class=&quot;button button--accent&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
 &lt;/form&gt;
 &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
 </code></pre>

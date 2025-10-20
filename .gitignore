@@ -13,4 +13,5 @@ apps
 templates
 e2e/_test-results
 e2e/_report
+e2e/report
 doc/public/pagefind
