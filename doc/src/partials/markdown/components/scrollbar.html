@@ -1,60 +1,47 @@
-<h1 id="scrollbar" tabindex="-1">
-  <a class="link" href="#scrollbar">#</a> Scrollbar
-</h1>
+<h1 id="scrollbar" tabindex="-1"><a class="link" href="#scrollbar">#</a> Scrollbar</h1>
 <blockquote>
-  <p>A pure Tailwind CSS component</p>
+<p>A pure Tailwind CSS component</p>
 </blockquote>
-<hr />
-<h2 id="anatomy" tabindex="-1">
-  <a class="link" href="#anatomy">#</a> Anatomy
-</h2>
-<p>
-  The Scrollbar component can be configured to scroll vertically, horizontally,
-  or in both directions.
-</p>
+<hr>
+<h2 id="anatomy" tabindex="-1"><a class="link" href="#anatomy">#</a> Anatomy</h2>
+<p>The Scrollbar component can be configured to scroll vertically, horizontally, or in both directions.</p>
 
-<div class="preview">
-  <div class="preview__display">
-    <div>
-      <div
-        class="scrollbar w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-        risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-        luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-        efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-        blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-        nibh.
-      </div>
+      <div class="preview">
+        <div class="preview__display"><div>
+  <div
+    class="scrollbar w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  </div>
 
-      <div class="scrollbar w-[150px] overflow-x-auto flex justify-start p-1">
-        <div class="min-w-[300px] inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus.
-        </div>
-      </div>
-
-      <div
-        class="scrollbar w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] min-h-[300px] block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-          luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-          efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-          blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-          nibh.
-        </div>
-      </div>
+  <div class="scrollbar w-[150px] overflow-x-auto flex justify-start p-1">
+    <div class="min-w-[300px] inline-block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
     </div>
   </div>
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div&gt;
+
+  <div
+    class="scrollbar w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] min-h-[300px] block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    </div>
+  </div>
+</div>
+</div>
+        <div class="preview__code">
+          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div&gt;
   &lt;div
-    class="scrollbar w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+    class=&quot;scrollbar w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
   &gt;
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
     aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
@@ -63,17 +50,17 @@
     nisi, eu lacinia odio felis sed nibh.
   &lt;/div&gt;
 
-  &lt;div class="scrollbar w-[150px] overflow-x-auto flex justify-start p-1"&gt;
-    &lt;div class="min-w-[300px] inline-block"&gt;
+  &lt;div class=&quot;scrollbar w-[150px] overflow-x-auto flex justify-start p-1&quot;&gt;
+    &lt;div class=&quot;min-w-[300px] inline-block&quot;&gt;
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus.
     &lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div
-    class="scrollbar w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+    class=&quot;scrollbar w-[150px] h-[150px] overflow-auto flex justify-start p-1&quot;
   &gt;
-    &lt;div class="min-w-[300px] min-h-[300px] block"&gt;
+    &lt;div class=&quot;min-w-[300px] min-h-[300px] block&quot;&gt;
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
@@ -82,53 +69,31 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">html</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+          <pre><code class="code-js" data-lang="html">&lt;div&gt;
   &lt;div
     class=&quot;scrollbar w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
   &gt;
@@ -159,371 +124,322 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-  </div>
-</div>
-<hr />
-<h2 id="modifiers" tabindex="-1">
-  <a class="link" href="#modifiers">#</a> Modifiers
-</h2>
+        </div>
+      </div><hr>
+<h2 id="modifiers" tabindex="-1"><a class="link" href="#modifiers">#</a> Modifiers</h2>
 <p>Each scrollbar can be styled with modifiers.</p>
-<p>
-  You can mix as many modifiers on the same scrollbar, however you can choose
-  only one choice per modifer
-</p>
-<p>
-  For convenience the default variant name is omited, meaning there is no need
-  to add the default name class
-</p>
+<p>You can mix as many modifiers on the same scrollbar, however you can choose only one choice per modifer</p>
+<p>For convenience the default variant name is omited, meaning there is no need to add the default name class</p>
 <blockquote>
-  <p>
-    You may have noticed the double dash before the modifier name — this follows
-    the BEM (Block Element Modifier) naming convention
-  </p>
+<p>You may have noticed the double dash before the modifier name — this follows the BEM (Block Element Modifier) naming convention</p>
 </blockquote>
 <table>
-  <thead>
-    <tr>
-      <th>Modifier</th>
-      <th>Option</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="#color" class="link">Color</a></td>
-      <td>default, accent, alert, info, success</td>
-    </tr>
-    <tr>
-      <td><a href="#size" class="link">Size</a></td>
-      <td>md (default), sm, lg, xl</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Option</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#color" class="link">Color</a></td>
+<td>default, accent, alert, info, success</td>
+</tr>
+<tr>
+<td><a href="#size" class="link">Size</a></td>
+<td>md (default), sm, lg, xl</td>
+</tr>
+</tbody>
 </table>
-<hr />
+<hr>
 <h3 id="color" tabindex="-1"><a class="link" href="#color">#</a> Color</h3>
 <p>Set the color of each scrollbar</p>
-<p>
-  Options: <strong>base(default)</strong>, <strong>accent</strong>,
-  <strong>alert</strong>, <strong>info</strong>,<strong>success</strong>
-</p>
+<p>Options: <strong>base(default)</strong>, <strong>accent</strong>, <strong>alert</strong>, <strong>info</strong>,<strong>success</strong></p>
 
-<div class="preview">
-  <div class="preview__display">
-    <div>
-      <div
-        class="scrollbar scrollbar--accent w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-        risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-        luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-        efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-        blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-        nibh.
-      </div>
+      <div class="preview">
+        <div class="preview__display"><div>
+  <div
+    class="scrollbar scrollbar--accent w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  </div>
 
-      <div
-        class="scrollbar scrollbar--accent w-[150px] overflow-x-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus.
-        </div>
-      </div>
-
-      <div
-        class="scrollbar scrollbar--accent w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] min-h-[300px] block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-          luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-          efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-          blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-          nibh.
-        </div>
-      </div>
-    </div>
-    <div>
-      <div
-        class="scrollbar scrollbar--alert w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-        risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-        luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-        efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-        blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-        nibh.
-      </div>
-
-      <div
-        class="scrollbar scrollbar--alert w-[150px] overflow-x-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus.
-        </div>
-      </div>
-
-      <div
-        class="scrollbar scrollbar--alert w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] min-h-[300px] block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-          luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-          efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-          blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-          nibh.
-        </div>
-      </div>
-    </div>
-    <div>
-      <div
-        class="scrollbar scrollbar--info w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-        risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-        luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-        efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-        blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-        nibh.
-      </div>
-
-      <div
-        class="scrollbar scrollbar--info w-[150px] overflow-x-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus.
-        </div>
-      </div>
-
-      <div
-        class="scrollbar scrollbar--info w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] min-h-[300px] block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-          luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-          efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-          blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-          nibh.
-        </div>
-      </div>
-    </div>
-    <div>
-      <div
-        class="scrollbar scrollbar--success w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-        risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-        luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-        efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-        blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-        nibh.
-      </div>
-
-      <div
-        class="scrollbar scrollbar--success w-[150px] overflow-x-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus.
-        </div>
-      </div>
-
-      <div
-        class="scrollbar scrollbar--success w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] min-h-[300px] block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-          luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-          efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-          blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-          nibh.
-        </div>
-      </div>
+  <div
+    class="scrollbar scrollbar--accent w-[150px] overflow-x-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] inline-block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
     </div>
   </div>
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div&gt;
-  &lt;div
-    class="scrollbar scrollbar--accent w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-  &gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
-    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
-    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
-    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
-    nisi, eu lacinia odio felis sed nibh.
-  &lt;/div&gt;
 
-  &lt;div
-    class="scrollbar scrollbar--accent w-[150px] overflow-x-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] inline-block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus.
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div
+  <div
     class="scrollbar scrollbar--accent w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] min-h-[300px] block"&gt;
+  >
+    <div class="min-w-[300px] min-h-[300px] block">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
       faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
       urna neque posuere nisi, eu lacinia odio felis sed nibh.
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;div
-    class="scrollbar scrollbar--alert w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-  &gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
-    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
-    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
-    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
-    nisi, eu lacinia odio felis sed nibh.
-  &lt;/div&gt;
-
-  &lt;div
-    class="scrollbar scrollbar--alert w-[150px] overflow-x-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] inline-block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus.
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div
-    class="scrollbar scrollbar--alert w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] min-h-[300px] block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
-      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
-      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
-      urna neque posuere nisi, eu lacinia odio felis sed nibh.
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;div
-    class="scrollbar scrollbar--info w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-  &gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
-    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
-    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
-    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
-    nisi, eu lacinia odio felis sed nibh.
-  &lt;/div&gt;
-
-  &lt;div
-    class="scrollbar scrollbar--info w-[150px] overflow-x-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] inline-block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus.
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div
-    class="scrollbar scrollbar--info w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] min-h-[300px] block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
-      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
-      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
-      urna neque posuere nisi, eu lacinia odio felis sed nibh.
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;div
-    class="scrollbar scrollbar--success w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-  &gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
-    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
-    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
-    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
-    nisi, eu lacinia odio felis sed nibh.
-  &lt;/div&gt;
-
-  &lt;div
-    class="scrollbar scrollbar--success w-[150px] overflow-x-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] inline-block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus.
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div
-    class="scrollbar scrollbar--success w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] min-h-[300px] block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
-      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
-      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
-      urna neque posuere nisi, eu lacinia odio felis sed nibh.
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
-
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
     </div>
-    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+  </div>
+</div>
+<div>
+  <div
+    class="scrollbar scrollbar--alert w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  </div>
+
+  <div
+    class="scrollbar scrollbar--alert w-[150px] overflow-x-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] inline-block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    </div>
+  </div>
+
+  <div
+    class="scrollbar scrollbar--alert w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] min-h-[300px] block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    </div>
+  </div>
+</div>
+<div>
+  <div
+    class="scrollbar scrollbar--info w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  </div>
+
+  <div
+    class="scrollbar scrollbar--info w-[150px] overflow-x-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] inline-block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    </div>
+  </div>
+
+  <div
+    class="scrollbar scrollbar--info w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] min-h-[300px] block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    </div>
+  </div>
+</div>
+<div>
+  <div
+    class="scrollbar scrollbar--success w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  </div>
+
+  <div
+    class="scrollbar scrollbar--success w-[150px] overflow-x-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] inline-block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    </div>
+  </div>
+
+  <div
+    class="scrollbar scrollbar--success w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] min-h-[300px] block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    </div>
+  </div>
+</div>
+</div>
+        <div class="preview__code">
+          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div&gt;
+  &lt;div
+    class=&quot;scrollbar scrollbar--accent w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
+  &gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--accent w-[150px] overflow-x-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] inline-block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--accent w-[150px] h-[150px] overflow-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] min-h-[300px] block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;div
+    class=&quot;scrollbar scrollbar--alert w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
+  &gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--alert w-[150px] overflow-x-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] inline-block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--alert w-[150px] h-[150px] overflow-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] min-h-[300px] block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;div
+    class=&quot;scrollbar scrollbar--info w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
+  &gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--info w-[150px] overflow-x-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] inline-block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--info w-[150px] h-[150px] overflow-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] min-h-[300px] block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;div
+    class=&quot;scrollbar scrollbar--success w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
+  &gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--success w-[150px] overflow-x-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] inline-block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--success w-[150px] h-[150px] overflow-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] min-h-[300px] block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">html</span>
+  <span data-copied >Copied</span>
+
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+          <pre><code class="code-js" data-lang="html">&lt;div&gt;
   &lt;div
     class=&quot;scrollbar scrollbar--accent w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
   &gt;
@@ -652,330 +568,292 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-  </div>
-</div>
-<hr />
+        </div>
+      </div><hr>
 <h3 id="size" tabindex="-1"><a class="link" href="#size">#</a> Size</h3>
 <p>Set the size of each scrollbar</p>
-<p>
-  Options: <strong>md(default)</strong>, <strong>sm</strong>,
-  <strong>lg</strong>, <strong>xl</strong>
-</p>
+<p>Options: <strong>md(default)</strong>, <strong>sm</strong>, <strong>lg</strong>, <strong>xl</strong></p>
 
-<div class="preview">
-  <div class="preview__display">
-    <div>
-      <div
-        class="scrollbar scrollbar--sm w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-        risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-        luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-        efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-        blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-        nibh.
-      </div>
+      <div class="preview">
+        <div class="preview__display"><div>
+  <div
+    class="scrollbar scrollbar--sm w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  </div>
 
-      <div
-        class="scrollbar scrollbar--sm w-[150px] overflow-x-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus.
-        </div>
-      </div>
-
-      <div
-        class="scrollbar scrollbar--sm w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] min-h-[300px] block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-          luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-          efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-          blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-          nibh.
-        </div>
-      </div>
-    </div>
-    <div>
-      <div
-        class="scrollbar w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-        risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-        luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-        efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-        blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-        nibh.
-      </div>
-
-      <div class="scrollbar w-[150px] overflow-x-auto flex justify-start p-1">
-        <div class="min-w-[300px] inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus.
-        </div>
-      </div>
-
-      <div
-        class="scrollbar w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] min-h-[300px] block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-          luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-          efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-          blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-          nibh.
-        </div>
-      </div>
-    </div>
-    <div>
-      <div
-        class="scrollbar scrollbar--lg w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-        risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-        luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-        efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-        blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-        nibh.
-      </div>
-
-      <div
-        class="scrollbar scrollbar--lg w-[150px] overflow-x-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus.
-        </div>
-      </div>
-
-      <div
-        class="scrollbar scrollbar--lg w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] min-h-[300px] block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-          luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-          efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-          blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-          nibh.
-        </div>
-      </div>
-    </div>
-    <div>
-      <div
-        class="scrollbar scrollbar--xl w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-        risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-        luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-        efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-        blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-        nibh.
-      </div>
-
-      <div
-        class="scrollbar scrollbar--xl w-[150px] overflow-x-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus.
-        </div>
-      </div>
-
-      <div
-        class="scrollbar scrollbar--xl w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-      >
-        <div class="min-w-[300px] min-h-[300px] block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-          risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo
-          luctus, accumsan neque varius, fringilla lorem. Duis eros ipsum,
-          efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed
-          blandit rhoncus, urna neque posuere nisi, eu lacinia odio felis sed
-          nibh.
-        </div>
-      </div>
+  <div
+    class="scrollbar scrollbar--sm w-[150px] overflow-x-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] inline-block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
     </div>
   </div>
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div&gt;
-  &lt;div
-    class="scrollbar scrollbar--sm w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-  &gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
-    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
-    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
-    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
-    nisi, eu lacinia odio felis sed nibh.
-  &lt;/div&gt;
 
-  &lt;div
-    class="scrollbar scrollbar--sm w-[150px] overflow-x-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] inline-block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus.
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div
+  <div
     class="scrollbar scrollbar--sm w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] min-h-[300px] block"&gt;
+  >
+    <div class="min-w-[300px] min-h-[300px] block">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
       faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
       urna neque posuere nisi, eu lacinia odio felis sed nibh.
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;div
-    class="scrollbar w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-  &gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
-    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
-    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
-    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
-    nisi, eu lacinia odio felis sed nibh.
-  &lt;/div&gt;
-
-  &lt;div class="scrollbar w-[150px] overflow-x-auto flex justify-start p-1"&gt;
-    &lt;div class="min-w-[300px] inline-block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus.
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div
-    class="scrollbar w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] min-h-[300px] block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
-      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
-      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
-      urna neque posuere nisi, eu lacinia odio felis sed nibh.
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;div
-    class="scrollbar scrollbar--lg w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-  &gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
-    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
-    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
-    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
-    nisi, eu lacinia odio felis sed nibh.
-  &lt;/div&gt;
-
-  &lt;div
-    class="scrollbar scrollbar--lg w-[150px] overflow-x-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] inline-block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus.
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div
-    class="scrollbar scrollbar--lg w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] min-h-[300px] block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
-      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
-      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
-      urna neque posuere nisi, eu lacinia odio felis sed nibh.
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;div
-    class="scrollbar scrollbar--xl w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
-  &gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
-    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
-    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
-    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
-    nisi, eu lacinia odio felis sed nibh.
-  &lt;/div&gt;
-
-  &lt;div
-    class="scrollbar scrollbar--xl w-[150px] overflow-x-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] inline-block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus.
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div
-    class="scrollbar scrollbar--xl w-[150px] h-[150px] overflow-auto flex justify-start p-1"
-  &gt;
-    &lt;div class="min-w-[300px] min-h-[300px] block"&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
-      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
-      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
-      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
-      urna neque posuere nisi, eu lacinia odio felis sed nibh.
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
-
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
     </div>
-    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+  </div>
+</div>
+<div>
+  <div
+    class="scrollbar w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  </div>
+
+  <div class="scrollbar w-[150px] overflow-x-auto flex justify-start p-1">
+    <div class="min-w-[300px] inline-block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    </div>
+  </div>
+
+  <div
+    class="scrollbar w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] min-h-[300px] block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    </div>
+  </div>
+</div>
+<div>
+  <div
+    class="scrollbar scrollbar--lg w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  </div>
+
+  <div
+    class="scrollbar scrollbar--lg w-[150px] overflow-x-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] inline-block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    </div>
+  </div>
+
+  <div
+    class="scrollbar scrollbar--lg w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] min-h-[300px] block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    </div>
+  </div>
+</div>
+<div>
+  <div
+    class="scrollbar scrollbar--xl w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  </div>
+
+  <div
+    class="scrollbar scrollbar--xl w-[150px] overflow-x-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] inline-block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    </div>
+  </div>
+
+  <div
+    class="scrollbar scrollbar--xl w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+  >
+    <div class="min-w-[300px] min-h-[300px] block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    </div>
+  </div>
+</div>
+</div>
+        <div class="preview__code">
+          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div&gt;
+  &lt;div
+    class=&quot;scrollbar scrollbar--sm w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
+  &gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--sm w-[150px] overflow-x-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] inline-block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--sm w-[150px] h-[150px] overflow-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] min-h-[300px] block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;div
+    class=&quot;scrollbar w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
+  &gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  &lt;/div&gt;
+
+  &lt;div class=&quot;scrollbar w-[150px] overflow-x-auto flex justify-start p-1&quot;&gt;
+    &lt;div class=&quot;min-w-[300px] inline-block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar w-[150px] h-[150px] overflow-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] min-h-[300px] block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;div
+    class=&quot;scrollbar scrollbar--lg w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
+  &gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--lg w-[150px] overflow-x-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] inline-block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--lg w-[150px] h-[150px] overflow-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] min-h-[300px] block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;div
+    class=&quot;scrollbar scrollbar--xl w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
+  &gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
+    aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
+    neque varius, fringilla lorem. Duis eros ipsum, efficitur non faucibus vel,
+    eleifend nec urna. Nunc varius, nisl sed blandit rhoncus, urna neque posuere
+    nisi, eu lacinia odio felis sed nibh.
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--xl w-[150px] overflow-x-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] inline-block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div
+    class=&quot;scrollbar scrollbar--xl w-[150px] h-[150px] overflow-auto flex justify-start p-1&quot;
+  &gt;
+    &lt;div class=&quot;min-w-[300px] min-h-[300px] block&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
+      risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
+      accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
+      faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit rhoncus,
+      urna neque posuere nisi, eu lacinia odio felis sed nibh.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">html</span>
+  <span data-copied >Copied</span>
+
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+          <pre><code class="code-js" data-lang="html">&lt;div&gt;
   &lt;div
     class=&quot;scrollbar scrollbar--sm w-[150px] h-[150px] overflow-y-auto flex justify-start p-1&quot;
   &gt;
@@ -1102,127 +980,71 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-  </div>
+        </div>
+      </div><hr>
+<h2 id="installation" tabindex="-1"><a class="link" href="#installation">#</a> Installation</h2>
+<p>To apply the default Corex UI design system styles, import the stylesheet:</p>
+
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@import &quot;@corex-ui/design/components/scrollbar.css&quot;;
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">css</span>
+  <span data-copied >Copied</span>
+
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
 </div>
-<hr />
-<h2 id="installation" tabindex="-1">
-  <a class="link" href="#installation">#</a> Installation
-</h2>
-<p>
-  To apply the default Corex UI design system styles, import the stylesheet:
-</p>
+        <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/scrollbar.css&quot;;
+</code></pre>
+      </div>
+    </div><p>Then apply the base class along with any desired modifiers:</p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='@import "@corex-ui/design/components/scrollbar.css";
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">css</span>
-          <span data-copied>Copied</span>
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;scrollbar&quot;&gt;...&lt;/div&gt;
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">html</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="html">&lt;div class=&quot;scrollbar&quot;&gt;...&lt;/div&gt;
+</code></pre>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/scrollbar.css&quot;;
-</code></pre>
-  </div>
-</div>
-<p>Then apply the base class along with any desired modifiers:</p>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div class="scrollbar"&gt;...&lt;/div&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
-
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;scrollbar&quot;&gt;...&lt;/div&gt;
-</code></pre>
-  </div>
-</div>

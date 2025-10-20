@@ -1,139 +1,77 @@
-<h1 id="theming" tabindex="-1">
-  <a class="link" href="#theming">#</a> Theming
-</h1>
-<p>
-  Corex UI design system is built to be fully themeable.<br />
-  We offer over different themes, each available in <strong>light</strong> and
-  <strong>dark</strong> modes.
-</p>
+<h1 id="theming" tabindex="-1"><a class="link" href="#theming">#</a> Theming</h1>
+<p>Corex UI design system is built to be fully themeable.<br>
+We offer over different themes, each available in <strong>light</strong> and <strong>dark</strong> modes.</p>
 <p><code>neo</code>, <code>uno</code>, <code>duo</code>, <code>leo</code></p>
-<h2 id="apply-theme" tabindex="-1">
-  <a class="link" href="#apply-theme">#</a> Apply Theme
-</h2>
-<p>
-  To apply a theme globally, add the following attributes to your
-  <code>&lt;html&gt;</code> tag replacing <code>neo</code> and
-  <code>light</code> by the theme name and mode:
-</p>
+<h2 id="apply-theme" tabindex="-1"><a class="link" href="#apply-theme">#</a> Apply Theme</h2>
+<p>To apply a theme globally, add the following attributes to your <code>&lt;html&gt;</code> tag replacing <code>neo</code> and <code>light</code> by the theme name and mode:</p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;html data-theme="neo" data-mode="light"&gt;&lt;/html&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;html data-theme=&quot;neo&quot; data-mode=&quot;light&quot;&gt;&lt;/html&gt;
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">html</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="html">&lt;html data-theme=&quot;neo&quot; data-mode=&quot;light&quot;&gt;&lt;/html&gt;
-</code></pre>
-  </div>
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
 </div>
-<p>Then, import the desired theme CSS:</p>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='@import "@corex-ui/design/themes/neo/light.css";
-@import "@corex-ui/design/themes/neo/dark.css";
-@import "@corex-ui/design/themes/uno/light.css";
-@import "@corex-ui/design/themes/uno/dark.css";
-@import "@corex-ui/design/themes/duo/light.css";
-@import "@corex-ui/design/themes/duo/dark.css";
-@import "@corex-ui/design/themes/leo/light.css";
-@import "@corex-ui/design/themes/leo/dark.css";
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">css</span>
-          <span data-copied>Copied</span>
-
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
+        <pre><code class="code-js" data-lang="html">&lt;html data-theme=&quot;neo&quot; data-mode=&quot;light&quot;&gt;&lt;/html&gt;
+</code></pre>
       </div>
-    </div>
-    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/themes/neo/light.css&quot;;
+    </div><p>Then, import the desired theme CSS:</p>
+
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@import &quot;@corex-ui/design/themes/neo/light.css&quot;;
+@import &quot;@corex-ui/design/themes/neo/dark.css&quot;;
+@import &quot;@corex-ui/design/themes/uno/light.css&quot;;
+@import &quot;@corex-ui/design/themes/uno/dark.css&quot;;
+@import &quot;@corex-ui/design/themes/duo/light.css&quot;;
+@import &quot;@corex-ui/design/themes/duo/dark.css&quot;;
+@import &quot;@corex-ui/design/themes/leo/light.css&quot;;
+@import &quot;@corex-ui/design/themes/leo/dark.css&quot;;
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">css</span>
+  <span data-copied >Copied</span>
+
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/themes/neo/light.css&quot;;
 @import &quot;@corex-ui/design/themes/neo/dark.css&quot;;
 @import &quot;@corex-ui/design/themes/uno/light.css&quot;;
 @import &quot;@corex-ui/design/themes/uno/dark.css&quot;;
@@ -142,73 +80,61 @@
 @import &quot;@corex-ui/design/themes/leo/light.css&quot;;
 @import &quot;@corex-ui/design/themes/leo/dark.css&quot;;
 </code></pre>
-  </div>
-</div>
-<h2 id="theme-switching" tabindex="-1">
-  <a class="link" href="#theme-switching">#</a> Theme Switching
-</h2>
+      </div>
+    </div><h2 id="theme-switching" tabindex="-1"><a class="link" href="#theme-switching">#</a> Theme Switching</h2>
 <p>Corex UI supports dynamic theme and mode switching using:</p>
 <ul>
-  <li><strong>Select</strong> component for themes</li>
-  <li><strong>Toggle Group</strong> component for modes</li>
+<li><strong>Select</strong> component for themes</li>
+<li><strong>Toggle Group</strong> component for modes</li>
 </ul>
-<p>
-  We also synchronize all components through the
-  <strong>Machine API</strong> when a value changes.
-</p>
-<p>
-  Finally, an inline script is required to prevent
-  <strong>Flash of Unstyled Content (FOUC)</strong>.
-</p>
+<p>We also synchronize all components through the <strong>Machine API</strong> when a value changes.</p>
+<p>Finally, an inline script is required to prevent <strong>Flash of Unstyled Content (FOUC)</strong>.</p>
 <ol>
-  <li>Add HTML</li>
+<li>Add HTML</li>
 </ol>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div
-  id="selecter-theming"
-  class="select-js select select--sm hidden lg:flex"
-  data-on-value-change="update-selecter"
-  data-close-on-select="false"
-  data-no-trigger-update="true"
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div
+  id=&quot;selecter-theming&quot;
+  class=&quot;select-js select select--sm hidden lg:flex&quot;
+  data-on-value-change=&quot;update-selecter&quot;
+  data-close-on-select=&quot;false&quot;
+  data-no-trigger-update=&quot;true&quot;
 &gt;
-  &lt;div data-part="root" class="max-w-(--container-micro-sm)"&gt;
-    &lt;div data-part="control" class="max-w-(--container-micro-sm)"&gt;
-      &lt;div data-part="label" class="sr-only"&gt;Select theme&lt;/div&gt;
-      &lt;button data-part="trigger" class="gap-ui-gap-sm"&gt;
+  &lt;div data-part=&quot;root&quot; class=&quot;max-w-(--container-micro-sm)&quot;&gt;
+    &lt;div data-part=&quot;control&quot; class=&quot;max-w-(--container-micro-sm)&quot;&gt;
+      &lt;div data-part=&quot;label&quot; class=&quot;sr-only&quot;&gt;Select theme&lt;/div&gt;
+      &lt;button data-part=&quot;trigger&quot; class=&quot;gap-ui-gap-sm&quot;&gt;
         Theme
         &lt;svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
         &gt;
           &lt;path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
           &gt;&lt;/path&gt;
         &lt;/svg&gt;
       &lt;/button&gt;
     &lt;/div&gt;
-    &lt;div data-part="positioner"&gt;
-      &lt;ul data-part="content" class="scrollbar"&gt;
-        &lt;li data-part="item" data-value="neo" class="flex items-center gap-2"&gt;
-          &lt;span data-part="item-text" data-value="neo"&gt;Neo&lt;/span&gt;
+    &lt;div data-part=&quot;positioner&quot;&gt;
+      &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;neo&quot; class=&quot;flex items-center gap-2&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;neo&quot;&gt;Neo&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part="item" data-value="uno" class="group"&gt;
-          &lt;span data-part="item-text" data-value="uno"&gt;Uno&lt;/span&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;uno&quot; class=&quot;group&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;uno&quot;&gt;Uno&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part="item" data-value="duo"&gt;
-          &lt;span data-part="item-text" data-value="duo"&gt;Duo&lt;/span&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;duo&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;duo&quot;&gt;Duo&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part="item" data-value="leo"&gt;
-          &lt;span data-part="item-text" data-value="leo"&gt;Leo&lt;/span&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;leo&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;leo&quot;&gt;Leo&lt;/span&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
@@ -216,106 +142,106 @@
 &lt;/div&gt;
 &lt;script&gt;
   try {
-    const theme = localStorage.getItem("data-theme");
+    const theme = localStorage.getItem(&quot;data-theme&quot;);
     console.log;
-    const switcher = document.querySelector("#selecter-theming");
+    const switcher = document.querySelector(&quot;#selecter-theming&quot;);
     if (switcher &amp;&amp; theme) {
-      switcher.setAttribute("data-default-value", theme);
+      switcher.setAttribute(&quot;data-default-value&quot;, theme);
     }
   } catch (_) {}
 &lt;/script&gt;
 
 &lt;div
-  id="switcher-theming"
-  class="toggle-group toggle-group-js toggle-group--sm hidden lg:flex"
-  data-on-value-change="update-switcher"
+  id=&quot;switcher-theming&quot;
+  class=&quot;toggle-group toggle-group-js toggle-group--sm hidden lg:flex&quot;
+  data-on-value-change=&quot;update-switcher&quot;
 &gt;
-  &lt;div data-part="root" class="rounded-full"&gt;
+  &lt;div data-part=&quot;root&quot; class=&quot;rounded-full&quot;&gt;
     &lt;button
-      data-part="item"
-      data-value="dark"
-      aria-label="Toggle light mode"
-      class="group aspect-square rounded-full data-[state=on]:bg-ui data-[state=on]:text-ui--text p-0"
+      data-part=&quot;item&quot;
+      data-value=&quot;dark&quot;
+      aria-label=&quot;Toggle light mode&quot;
+      class=&quot;group aspect-square rounded-full data-[state=on]:bg-ui data-[state=on]:text-ui--text p-0&quot;
     &gt;
       &lt;svg
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        version="1.1"
-        width="256"
-        height="256"
-        viewBox="0 0 256 256"
-        xml:space="preserve"
+        aria-hidden=&quot;true&quot;
+        xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+        version=&quot;1.1&quot;
+        width=&quot;256&quot;
+        height=&quot;256&quot;
+        viewBox=&quot;0 0 256 256&quot;
+        xml:space=&quot;preserve&quot;
       &gt;
         &lt;g
-          style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
-          transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+          style=&quot;stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;&quot;
+          transform=&quot;translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)&quot;
         &gt;
           &lt;rect
-            x="42"
-            y="0"
-            rx="0"
-            ry="0"
-            width="6"
-            height="15.79"
-            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-            transform=" matrix(1 0 0 1 0 0) "
+            x=&quot;42&quot;
+            y=&quot;0&quot;
+            rx=&quot;0&quot;
+            ry=&quot;0&quot;
+            width=&quot;6&quot;
+            height=&quot;15.79&quot;
+            style=&quot;stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;&quot;
+            transform=&quot; matrix(1 0 0 1 0 0) &quot;
           /&gt;
           &lt;rect
-            x="42"
-            y="74.21"
-            rx="0"
-            ry="0"
-            width="6"
-            height="15.79"
-            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-            transform=" matrix(1 0 0 1 0 0) "
+            x=&quot;42&quot;
+            y=&quot;74.21&quot;
+            rx=&quot;0&quot;
+            ry=&quot;0&quot;
+            width=&quot;6&quot;
+            height=&quot;15.79&quot;
+            style=&quot;stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;&quot;
+            transform=&quot; matrix(1 0 0 1 0 0) &quot;
           /&gt;
           &lt;rect
-            x="0"
-            y="42"
-            rx="0"
-            ry="0"
-            width="15.79"
-            height="6"
-            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-            transform=" matrix(1 0 0 1 0 0) "
+            x=&quot;0&quot;
+            y=&quot;42&quot;
+            rx=&quot;0&quot;
+            ry=&quot;0&quot;
+            width=&quot;15.79&quot;
+            height=&quot;6&quot;
+            style=&quot;stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;&quot;
+            transform=&quot; matrix(1 0 0 1 0 0) &quot;
           /&gt;
           &lt;rect
-            x="74.21"
-            y="42"
-            rx="0"
-            ry="0"
-            width="15.79"
-            height="6"
-            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-            transform=" matrix(1 0 0 1 0 0) "
+            x=&quot;74.21&quot;
+            y=&quot;42&quot;
+            rx=&quot;0&quot;
+            ry=&quot;0&quot;
+            width=&quot;15.79&quot;
+            height=&quot;6&quot;
+            style=&quot;stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;&quot;
+            transform=&quot; matrix(1 0 0 1 0 0) &quot;
           /&gt;
           &lt;path
-            d="M 74.698 11.059 l -15.71 15.71 C 54.99 23.689 50.129 22 45 22 c -12.682 0 -23 10.318 -23 23 c 0 5.13 1.689 9.991 4.769 13.989 L 11.059 74.698 l 4.242 4.242 L 78.94 15.301 L 74.698 11.059 z"
-            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-            transform=" matrix(1 0 0 1 0 0) "
-            stroke-linecap="round"
+            d=&quot;M 74.698 11.059 l -15.71 15.71 C 54.99 23.689 50.129 22 45 22 c -12.682 0 -23 10.318 -23 23 c 0 5.13 1.689 9.991 4.769 13.989 L 11.059 74.698 l 4.242 4.242 L 78.94 15.301 L 74.698 11.059 z&quot;
+            style=&quot;stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;&quot;
+            transform=&quot; matrix(1 0 0 1 0 0) &quot;
+            stroke-linecap=&quot;round&quot;
           /&gt;
           &lt;rect
-            x="15.76"
-            y="10.87"
-            rx="0"
-            ry="0"
-            width="6"
-            height="15.79"
-            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-            transform=" matrix(0.7071 -0.7071 0.7071 0.7071 -7.7721 18.7634) "
+            x=&quot;15.76&quot;
+            y=&quot;10.87&quot;
+            rx=&quot;0&quot;
+            ry=&quot;0&quot;
+            width=&quot;6&quot;
+            height=&quot;15.79&quot;
+            style=&quot;stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;&quot;
+            transform=&quot; matrix(0.7071 -0.7071 0.7071 0.7071 -7.7721 18.7634) &quot;
           /&gt;
           &lt;rect
-            x="68.24"
-            y="63.34"
-            rx="0"
-            ry="0"
-            width="6"
-            height="15.79"
-            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-            transform=" matrix(0.7071 -0.7071 0.7071 0.7071 -29.5071 71.2363) "
+            x=&quot;68.24&quot;
+            y=&quot;63.34&quot;
+            rx=&quot;0&quot;
+            ry=&quot;0&quot;
+            width=&quot;6&quot;
+            height=&quot;15.79&quot;
+            style=&quot;stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;&quot;
+            transform=&quot; matrix(0.7071 -0.7071 0.7071 0.7071 -29.5071 71.2363) &quot;
           /&gt;
         &lt;/g&gt;
       &lt;/svg&gt;
@@ -324,60 +250,38 @@
 &lt;/div&gt;
 &lt;script&gt;
   try {
-    const mode = localStorage.getItem("data-mode");
-    const switcher = document.querySelector("#switcher-theming");
+    const mode = localStorage.getItem(&quot;data-mode&quot;);
+    const switcher = document.querySelector(&quot;#switcher-theming&quot;);
     if (switcher) {
-      switcher.setAttribute("data-default-value", mode);
+      switcher.setAttribute(&quot;data-default-value&quot;, mode);
     }
   } catch (_) {}
 &lt;/script&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">html</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="html">&lt;div
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="html">&lt;div
   id=&quot;selecter-theming&quot;
   class=&quot;select-js select select--sm hidden lg:flex&quot;
   data-on-value-change=&quot;update-selecter&quot;
@@ -540,117 +444,88 @@
   } catch (_) {}
 &lt;/script&gt;
 </code></pre>
-  </div>
-</div>
-<blockquote>
-  <p>
-    Inline script immediately after HTML ensures current values are populated
-    from <code>localStorage</code>.
-  </p>
+      </div>
+    </div><blockquote>
+<p>Inline script immediately after HTML ensures current values are populated from <code>localStorage</code>.</p>
 </blockquote>
 <ol start="2">
-  <li>Add TypeScript</li>
+<li>Add TypeScript</li>
 </ol>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='const ids = ["switcher-theming", "switcher-other"];
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="const ids = [&quot;switcher-theming&quot;, &quot;switcher-other&quot;];
 const elements = ids
   .map((id) =&gt; document.getElementById(id))
   .filter(Boolean) as HTMLElement[];
 
 elements.forEach((el) =&gt; {
-  el.addEventListener("update-switcher", (event) =&gt; {
+  el.addEventListener(&quot;update-switcher&quot;, (event) =&gt; {
     const { value } = (event as CustomEvent&lt;{ value: string[] }&gt;).detail;
-    const mode = value?.[0] ?? "light";
+    const mode = value?.[0] ?? &quot;light&quot;;
 
-    document.documentElement.setAttribute("data-mode", mode);
-    localStorage.setItem("data-mode", mode);
+    document.documentElement.setAttribute(&quot;data-mode&quot;, mode);
+    localStorage.setItem(&quot;data-mode&quot;, mode);
 
     const source = event.currentTarget as HTMLElement;
     elements.forEach((other) =&gt; {
       if (other !== source) {
         other.dispatchEvent(
-          new CustomEvent("toggle-group:set-value", { detail: { value } }),
+          new CustomEvent(&quot;toggle-group:set-value&quot;, { detail: { value } }),
         );
       }
     });
   });
 });
 
-const selecterIds = ["selecter-theming", "selecter-other"];
+const selecterIds = [&quot;selecter-theming&quot;, &quot;selecter-other&quot;];
 const selecterElements = selecterIds
   .map((id) =&gt; document.getElementById(id))
   .filter(Boolean) as HTMLElement[];
 
 selecterElements.forEach((el) =&gt; {
-  el.addEventListener("update-selecter", (event) =&gt; {
+  el.addEventListener(&quot;update-selecter&quot;, (event) =&gt; {
     const { value } = (event as CustomEvent&lt;{ value: string[] }&gt;).detail;
-    const theme = value?.[0] ?? "neo";
+    const theme = value?.[0] ?? &quot;neo&quot;;
 
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("data-theme", theme);
+    document.documentElement.setAttribute(&quot;data-theme&quot;, theme);
+    localStorage.setItem(&quot;data-theme&quot;, theme);
 
     const source = event.currentTarget as HTMLElement;
     selecterElements.forEach((other) =&gt; {
       if (other !== source) {
         other.dispatchEvent(
-          new CustomEvent("select:set-value", { detail: { value } }),
+          new CustomEvent(&quot;select:set-value&quot;, { detail: { value } }),
         );
       }
     });
   });
 });
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">ts</span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">ts</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="ts">const ids = [&quot;switcher-theming&quot;, &quot;switcher-other&quot;];
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="ts">const ids = [&quot;switcher-theming&quot;, &quot;switcher-other&quot;];
 const elements = ids
   .map((id) =&gt; document.getElementById(id))
   .filter(Boolean) as HTMLElement[];
@@ -698,84 +573,58 @@ selecterElements.forEach((el) =&gt; {
   });
 });
 </code></pre>
-  </div>
-</div>
-<ol start="3">
-  <li>Add Inline Script to Prevent FOUC</li>
+      </div>
+    </div><ol start="3">
+<li>Add Inline Script to Prevent FOUC</li>
 </ol>
 <p>Add this script at the very top of your <code>&lt;head&gt;</code>:</p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;script&gt;
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;script&gt;
   try {
-    const themeStored = localStorage.getItem("data-theme");
-    const theme = themeStored || "neo";
-    document.documentElement.setAttribute("data-theme", theme);
+    const themeStored = localStorage.getItem(&quot;data-theme&quot;);
+    const theme = themeStored || &quot;neo&quot;;
+    document.documentElement.setAttribute(&quot;data-theme&quot;, theme);
     if (!themeStored) {
-      localStorage.setItem("data-theme", theme);
+      localStorage.setItem(&quot;data-theme&quot;, theme);
     }
-    const modeStored = localStorage.getItem("data-mode");
+    const modeStored = localStorage.getItem(&quot;data-mode&quot;);
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
+      &quot;(prefers-color-scheme: dark)&quot;,
     ).matches;
-    const mode = modeStored || (prefersDark ? "dark" : "light");
-    document.documentElement.setAttribute("data-mode", mode);
+    const mode = modeStored || (prefersDark ? &quot;dark&quot; : &quot;light&quot;);
+    document.documentElement.setAttribute(&quot;data-mode&quot;, mode);
     if (!modeStored) {
-      localStorage.setItem("data-mode", mode);
+      localStorage.setItem(&quot;data-mode&quot;, mode);
     }
   } catch (_) {}
 &lt;/script&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">html</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="html">&lt;script&gt;
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="html">&lt;script&gt;
   try {
     const themeStored = localStorage.getItem(&quot;data-theme&quot;);
     const theme = themeStored || &quot;neo&quot;;
@@ -795,147 +644,84 @@ selecterElements.forEach((el) =&gt; {
   } catch (_) {}
 &lt;/script&gt;
 </code></pre>
-  </div>
-</div>
-<h2 id="custom-dark-variant" tabindex="-1">
-  <a class="link" href="#custom-dark-variant">#</a> Custom Dark Variant
-</h2>
-<p>
-  If you wish to use the Tailwind custom variant such as <code>dark:</code> you
-  must add the following to your main css
-</p>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="@custom-variant dark (&amp;:where([data-mode=dark], [data-mode=dark] *));
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">css</span>
-          <span data-copied>Copied</span>
-
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
       </div>
-    </div>
-    <pre><code class="code-js" data-lang="css">@custom-variant dark (&amp;:where([data-mode=dark], [data-mode=dark] *));
-</code></pre>
-  </div>
-</div>
-<h2 id="automatic-mode-switching" tabindex="-1">
-  <a class="link" href="#automatic-mode-switching">#</a> Automatic Mode
-  Switching
-</h2>
-<p>
-  If you want to automatically switch modes based on the user’s system
-  preference you can use the following script
-</p>
+    </div><h2 id="custom-dark-variant" tabindex="-1"><a class="link" href="#custom-dark-variant">#</a> Custom Dark Variant</h2>
+<p>If you wish to use the Tailwind custom variant such as <code>dark:</code> you must add the following to your main css</p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;script&gt;
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@custom-variant dark (&amp;:where([data-mode=dark], [data-mode=dark] *));
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">css</span>
+  <span data-copied >Copied</span>
+
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="css">@custom-variant dark (&amp;:where([data-mode=dark], [data-mode=dark] *));
+</code></pre>
+      </div>
+    </div><h2 id="automatic-mode-switching" tabindex="-1"><a class="link" href="#automatic-mode-switching">#</a> Automatic Mode Switching</h2>
+<p>If you want to automatically switch modes based on the user’s system preference you can use the following script</p>
+
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;script&gt;
   try {
-    const stored = localStorage.getItem("data-mode");
+    const stored = localStorage.getItem(&quot;data-mode&quot;);
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
+      &quot;(prefers-color-scheme: dark)&quot;,
     ).matches;
-    const mode = stored || (prefersDark ? "dark" : "light");
-    document.documentElement.setAttribute("data-mode", mode);
+    const mode = stored || (prefersDark ? &quot;dark&quot; : &quot;light&quot;);
+    document.documentElement.setAttribute(&quot;data-mode&quot;, mode);
 
     if (!stored) {
-      localStorage.setItem("data-mode", mode);
+      localStorage.setItem(&quot;data-mode&quot;, mode);
     }
   } catch (_) {}
 &lt;/script&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">html</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="html">&lt;script&gt;
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="html">&lt;script&gt;
   try {
     const stored = localStorage.getItem(&quot;data-mode&quot;);
     const prefersDark = window.matchMedia(
@@ -950,13 +736,12 @@ selecterElements.forEach((el) =&gt; {
   } catch (_) {}
 &lt;/script&gt;
 </code></pre>
-  </div>
-</div>
-<p>This setup ensures that:</p>
+      </div>
+    </div><p>This setup ensures that:</p>
 <ul>
-  <li>Themes and modes are synchronized across all components.</li>
-  <li>User preferences are stored in <code>localStorage</code>.</li>
-  <li>The page prevents FOUC on load.</li>
-  <li>Automatic mode switching respects system preferences.</li>
+<li>Themes and modes are synchronized across all components.</li>
+<li>User preferences are stored in <code>localStorage</code>.</li>
+<li>The page prevents FOUC on load.</li>
+<li>Automatic mode switching respects system preferences.</li>
 </ul>
-<hr />
+<hr>

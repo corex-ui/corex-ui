@@ -1,282 +1,152 @@
-<h1 id="ai-powered-development-with-corex-ui" tabindex="-1">
-  <a class="link" href="#ai-powered-development-with-corex-ui">#</a> AI-Powered
-  Development with Corex UI
-</h1>
-<p>
-  Corex UI provides machine-readable documentation at
-  <code>https://corex-ui.com/llms.txt</code> so AI coding assistants can deliver
-  accurate component implementations with built-in accessibility and design
-  system patterns.
-</p>
-<h2 id="what-is-llms.txt%3F" tabindex="-1">
-  <a class="link" href="#what-is-llms.txt%3F">#</a> What is LLMs.txt?
-</h2>
-<p>
-  LLMs.txt is a standardized format optimized for AI consumption. It includes
-  component APIs, usage patterns, accessibility guidelines, and design tokens in
-  a structured format that reduces hallucinations and aligns AI suggestions with
-  Corex UI conventions.
-</p>
-<p>
-  <strong>Benefits</strong>: Accurate prop suggestions, accessibility-first
-  code, consistent design token usage, and idiomatic patterns.
-</p>
-<h2 id="quick-setup" tabindex="-1">
-  <a class="link" href="#quick-setup">#</a> Quick Setup
-</h2>
+<h1 id="ai-powered-development-with-corex-ui" tabindex="-1"><a class="link" href="#ai-powered-development-with-corex-ui">#</a> AI-Powered Development with Corex UI</h1>
+<p>Corex UI provides machine-readable documentation at <code>https://corex-ui.com/llms.txt</code> so AI coding assistants can deliver accurate component implementations with built-in accessibility and design system patterns.</p>
+<h2 id="what-is-llms.txt%3F" tabindex="-1"><a class="link" href="#what-is-llms.txt%3F">#</a> What is LLMs.txt?</h2>
+<p>LLMs.txt is a standardized format optimized for AI consumption. It includes component APIs, usage patterns, accessibility guidelines, and design tokens in a structured format that reduces hallucinations and aligns AI suggestions with Corex UI conventions.</p>
+<p><strong>Benefits</strong>: Accurate prop suggestions, accessibility-first code, consistent design token usage, and idiomatic patterns.</p>
+<h2 id="quick-setup" tabindex="-1"><a class="link" href="#quick-setup">#</a> Quick Setup</h2>
 <p><strong>Cursor</strong></p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="@Docs https://corex-ui.com/llms.txt
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase"></span>
-          <span data-copied>Copied</span>
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@Docs https://corex-ui.com/llms.txt
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase"></span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="">@Docs https://corex-ui.com/llms.txt
-</code></pre>
-  </div>
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
 </div>
-<p><strong>Windsurf</strong> (<code>.windsurfrules</code>):</p>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="docs:
-  - https://corex-ui.com/llms.txt
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">yaml</span>
-          <span data-copied>Copied</span>
-
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
+        <pre><code class="code-js" data-lang="">@Docs https://corex-ui.com/llms.txt
+</code></pre>
       </div>
-    </div>
-    <pre><code class="code-js" data-lang="yaml">docs:
+    </div><p><strong>Windsurf</strong> (<code>.windsurfrules</code>):</p>
+
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="docs:
+  - https://corex-ui.com/llms.txt
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">yaml</span>
+  <span data-copied >Copied</span>
+
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="yaml">docs:
   - https://corex-ui.com/llms.txt
 </code></pre>
-  </div>
-</div>
-<p>
-  <strong>Claude Projects</strong><br />
-  Add the URL contents to Project Knowledge and reference it in conversations.
-</p>
-<p>
-  <strong>ChatGPT Custom GPTs</strong><br />
-  Upload LLMs.txt content to the knowledge base during GPT creation.
-</p>
-<p>
-  <strong>GitHub Copilot</strong>
-  (<code>.github/copilot-instructions.md</code>):
-</p>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="Reference Corex UI documentation: https://corex-ui.com/llms.txt
-Use design tokens, include accessibility, follow composition patterns.
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">markdown</span>
-          <span data-copied>Copied</span>
-
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
       </div>
-    </div>
-    <pre><code class="code-js" data-lang="markdown">Reference Corex UI documentation: https://corex-ui.com/llms.txt
+    </div><p><strong>Claude Projects</strong><br>
+Add the URL contents to Project Knowledge and reference it in conversations.</p>
+<p><strong>ChatGPT Custom GPTs</strong><br>
+Upload LLMs.txt content to the knowledge base during GPT creation.</p>
+<p><strong>GitHub Copilot</strong> (<code>.github/copilot-instructions.md</code>):</p>
+
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="Reference Corex UI documentation: https://corex-ui.com/llms.txt
+Use design tokens, include accessibility, follow composition patterns.
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">markdown</span>
+  <span data-copied >Copied</span>
+
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="markdown">Reference Corex UI documentation: https://corex-ui.com/llms.txt
 Use design tokens, include accessibility, follow composition patterns.
 </code></pre>
-  </div>
-</div>
-<p><strong>Continue</strong> (<code>~/.continue/config.json</code>):</p>
+      </div>
+    </div><p><strong>Continue</strong> (<code>~/.continue/config.json</code>):</p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='{
-  "contextProviders": [
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="{
+  &quot;contextProviders&quot;: [
     {
-      "name": "url",
-      "params": {
-        "url": "https://corex-ui.com/llms.txt"
+      &quot;name&quot;: &quot;url&quot;,
+      &quot;params&quot;: {
+        &quot;url&quot;: &quot;https://corex-ui.com/llms.txt&quot;
       }
     }
   ]
 }
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">json</span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">json</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="json">{
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="json">{
   &quot;contextProviders&quot;: [
     {
       &quot;name&quot;: &quot;url&quot;,
@@ -287,290 +157,142 @@ Use design tokens, include accessibility, follow composition patterns.
   ]
 }
 </code></pre>
-  </div>
-</div>
-<h2 id="effective-prompts" tabindex="-1">
-  <a class="link" href="#effective-prompts">#</a> Effective Prompts
-</h2>
+      </div>
+    </div><h2 id="effective-prompts" tabindex="-1"><a class="link" href="#effective-prompts">#</a> Effective Prompts</h2>
 <p><strong>Component Implementation</strong></p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="Using Corex UI from https://corex-ui.com/llms.txt,
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="Using Corex UI from https://corex-ui.com/llms.txt,
 create a [component] with:
 - Proper accessibility (ARIA, keyboard nav)
 - Design token styling
 - Minimal, idiomatic code
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase"></span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase"></span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="">Using Corex UI from https://corex-ui.com/llms.txt,
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="">Using Corex UI from https://corex-ui.com/llms.txt,
 create a [component] with:
 - Proper accessibility (ARIA, keyboard nav)
 - Design token styling
 - Minimal, idiomatic code
 </code></pre>
-  </div>
-</div>
-<p><strong>Refactoring</strong></p>
+      </div>
+    </div><p><strong>Refactoring</strong></p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="Refactor this to match Corex UI patterns from https://corex-ui.com/llms.txt:
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="Refactor this to match Corex UI patterns from https://corex-ui.com/llms.txt:
 [paste code]
 - Use design tokens
 - Add accessibility features
 - Follow official composition patterns
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase"></span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase"></span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="">Refactor this to match Corex UI patterns from https://corex-ui.com/llms.txt:
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="">Refactor this to match Corex UI patterns from https://corex-ui.com/llms.txt:
 [paste code]
 - Use design tokens
 - Add accessibility features
 - Follow official composition patterns
 </code></pre>
-  </div>
-</div>
-<p><strong>Debugging</strong></p>
+      </div>
+    </div><p><strong>Debugging</strong></p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="This Corex UI [component] isn't working correctly:
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="This Corex UI [component] isn't working correctly:
 [paste code]
 Compare to https://corex-ui.com/llms.txt and fix the issues.
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase"></span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase"></span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="">This Corex UI [component] isn't working correctly:
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="">This Corex UI [component] isn't working correctly:
 [paste code]
 Compare to https://corex-ui.com/llms.txt and fix the issues.
 </code></pre>
-  </div>
-</div>
-<h2 id="best-practices" tabindex="-1">
-  <a class="link" href="#best-practices">#</a> Best Practices
-</h2>
-<p>
-  Always include the LLMs.txt URL in prompts to ground the AI in official
-  documentation. Request minimal examples to avoid over-engineering. Verify that
-  generated code uses design tokens instead of hardcoded values and includes
-  proper accessibility attributes.
-</p>
-<p>
-  For team workflows, create a shared prompt library. For code reviews, check
-  that AI-generated components follow Corex patterns and include keyboard
-  navigation and ARIA attributes.
-</p>
-<h2 id="troubleshooting" tabindex="-1">
-  <a class="link" href="#troubleshooting">#</a> Troubleshooting
-</h2>
-<p>
-  <strong>AI suggests non-existent props</strong>: Ask it to re-check the
-  documentation and use only documented APIs.
-</p>
-<p>
-  <strong>Missing accessibility</strong>: Request explicit ARIA attributes,
-  keyboard handlers, and focus management per the official patterns.
-</p>
-<p>
-  <strong>Wrong styling</strong>: Ask it to replace all hardcoded styles with
-  design tokens from the documentation.
-</p>
-<p>
-  <strong>Cached documentation</strong>: Re-add the URL to your tool after Corex
-  UI updates.
-</p>
-<h2 id="resources-and-community" tabindex="-1">
-  <a class="link" href="#resources-and-community">#</a> Resources and Community
-</h2>
+      </div>
+    </div><h2 id="best-practices" tabindex="-1"><a class="link" href="#best-practices">#</a> Best Practices</h2>
+<p>Always include the LLMs.txt URL in prompts to ground the AI in official documentation. Request minimal examples to avoid over-engineering. Verify that generated code uses design tokens instead of hardcoded values and includes proper accessibility attributes.</p>
+<p>For team workflows, create a shared prompt library. For code reviews, check that AI-generated components follow Corex patterns and include keyboard navigation and ARIA attributes.</p>
+<h2 id="troubleshooting" tabindex="-1"><a class="link" href="#troubleshooting">#</a> Troubleshooting</h2>
+<p><strong>AI suggests non-existent props</strong>: Ask it to re-check the documentation and use only documented APIs.</p>
+<p><strong>Missing accessibility</strong>: Request explicit ARIA attributes, keyboard handlers, and focus management per the official patterns.</p>
+<p><strong>Wrong styling</strong>: Ask it to replace all hardcoded styles with design tokens from the documentation.</p>
+<p><strong>Cached documentation</strong>: Re-add the URL to your tool after Corex UI updates.</p>
+<h2 id="resources-and-community" tabindex="-1"><a class="link" href="#resources-and-community">#</a> Resources and Community</h2>
 <ul>
-  <li>
-    <strong>LLMs.txt (machine-readable)</strong>:
-    <code>https://corex-ui.com/llms.txt</code>
-  </li>
-  <li>
-    <strong>Documentation (human-readable)</strong>:
-    <code>https://corex-ui.com/docs</code>
-  </li>
-  <li>
-    <strong>Component Examples</strong>:
-    <code>https://corex-ui.com/examples</code>
-  </li>
-  <li>
-    <strong>GitHub Repository</strong>: <code>https://github.com/corex/ui</code>
-  </li>
-  <li>
-    <strong>Discussions</strong>:
-    <code>https://github.com/corex/ui/discussions</code>
-  </li>
+<li><strong>LLMs.txt (machine-readable)</strong>: <code>https://corex-ui.com/llms.txt</code></li>
+<li><strong>Documentation (human-readable)</strong>: <code>https://corex-ui.com/docs</code></li>
+<li><strong>Component Examples</strong>: <code>https://corex-ui.com/examples</code></li>
+<li><strong>GitHub Repository</strong>: <code>https://github.com/corex/ui</code></li>
+<li><strong>Discussions</strong>: <code>https://github.com/corex/ui/discussions</code></li>
 </ul>
-<p>
-  The LLMs.txt format is continuously improved based on community feedback. If
-  you discover cases where AI assistants generate incorrect code, hallucinate
-  APIs, or miss important patterns, please open an issue with the
-  <code>llm-docs</code> label. Your feedback helps improve the documentation for
-  everyone.
-</p>
-<p>
-  We also welcome contributions for prompt patterns that work well. If you've
-  developed effective ways to interact with AI assistants using Corex UI,
-  consider sharing them in GitHub Discussions so other developers can benefit
-  from your experience.
-</p>
-<p>
-  The documentation is versioned alongside Corex UI releases. Each update
-  includes improvements to component descriptions, additional usage examples,
-  and refined patterns based on real-world usage. Check the changelog section in
-  LLMs.txt to see what's changed between versions.
-</p>
-<p>
-  For questions about integrating Corex UI with specific AI tools not covered in
-  this guide, or for help troubleshooting integration issues, join the community
-  discussions. The team and community members actively help with setup questions
-  and share configuration tips for various development environments.
-</p>
-<p>
-  When reporting issues with AI-generated code, include the tool you're using,
-  the prompt you provided, and the generated output. This context helps identify
-  whether the issue is with the LLMs.txt content, the AI tool's interpretation,
-  or the prompt structure itself.
-</p>
+<p>The LLMs.txt format is continuously improved based on community feedback. If you discover cases where AI assistants generate incorrect code, hallucinate APIs, or miss important patterns, please open an issue with the <code>llm-docs</code> label. Your feedback helps improve the documentation for everyone.</p>
+<p>We also welcome contributions for prompt patterns that work well. If you've developed effective ways to interact with AI assistants using Corex UI, consider sharing them in GitHub Discussions so other developers can benefit from your experience.</p>
+<p>The documentation is versioned alongside Corex UI releases. Each update includes improvements to component descriptions, additional usage examples, and refined patterns based on real-world usage. Check the changelog section in LLMs.txt to see what's changed between versions.</p>
+<p>For questions about integrating Corex UI with specific AI tools not covered in this guide, or for help troubleshooting integration issues, join the community discussions. The team and community members actively help with setup questions and share configuration tips for various development environments.</p>
+<p>When reporting issues with AI-generated code, include the tool you're using, the prompt you provided, and the generated output. This context helps identify whether the issue is with the LLMs.txt content, the AI tool's interpretation, or the prompt structure itself.</p>

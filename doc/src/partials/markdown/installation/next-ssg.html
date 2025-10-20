@@ -1,215 +1,119 @@
-<h1 id="next-ssg-installation-guide" tabindex="-1">
-  <a class="link" href="#next-ssg-installation-guide">#</a> Next SSG
-  Installation Guide
-</h1>
-<p>
-  Corex UI can be seamlessly integrated into your Next.js static site generation
-  (SSG) projects. This guide walks you through installing Corex UI packages,
-  applying styles, using components, and configuring the Corex CLI for
-  post-build hydration.
-</p>
-<h2 id="1.-new-next-ssg-project" tabindex="-1">
-  <a class="link" href="#1.-new-next-ssg-project">#</a> 1. New Next SSG Project
-</h2>
+<h1 id="next-ssg-installation-guide" tabindex="-1"><a class="link" href="#next-ssg-installation-guide">#</a> Next SSG Installation Guide</h1>
+<p>Corex UI can be seamlessly integrated into your Next.js static site generation (SSG) projects. This guide walks you through installing Corex UI packages, applying styles, using components, and configuring the Corex CLI for post-build hydration.</p>
+<h2 id="1.-new-next-ssg-project" tabindex="-1"><a class="link" href="#1.-new-next-ssg-project">#</a> 1. New Next SSG Project</h2>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="npx create-next-app@latest corex-next-ssg --yes
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="npx create-next-app@latest corex-next-ssg --yes
 cd corex-next-ssg
 pnpm install
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">bash</span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">bash</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="bash">npx create-next-app@latest corex-next-ssg --yes
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="bash">npx create-next-app@latest corex-next-ssg --yes
 cd corex-next-ssg
 pnpm install
 </code></pre>
-  </div>
-</div>
-<p>Tailwind will be installed automatically by the Next.js CLI.</p>
-<h2 id="2.-install-corex-ui" tabindex="-1">
-  <a class="link" href="#2.-install-corex-ui">#</a> 2. Install Corex UI
-</h2>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="pnpm add @corex-ui/static @corex-ui/design @corex-ui/cli serve
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">bash</span>
-          <span data-copied>Copied</span>
-
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
       </div>
-    </div>
-    <pre><code class="code-js" data-lang="bash">pnpm add @corex-ui/static @corex-ui/design @corex-ui/cli serve
-</code></pre>
-  </div>
+    </div><p>Tailwind will be installed automatically by the Next.js CLI.</p>
+<h2 id="2.-install-corex-ui" tabindex="-1"><a class="link" href="#2.-install-corex-ui">#</a> 2. Install Corex UI</h2>
+
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="pnpm add @corex-ui/static @corex-ui/design @corex-ui/cli serve
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">bash</span>
+  <span data-copied >Copied</span>
+
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
 </div>
-<p><strong>Package Overview:</strong></p>
+        <pre><code class="code-js" data-lang="bash">pnpm add @corex-ui/static @corex-ui/design @corex-ui/cli serve
+</code></pre>
+      </div>
+    </div><p><strong>Package Overview:</strong></p>
 <ul>
-  <li><code>@corex-ui/static</code> – Vanilla JS web components.</li>
-  <li>
-    <code>@corex-ui/design</code> – Design tokens, CSS variables, and optional
-    component styles.
-  </li>
-  <li>
-    <code>@corex-ui/cli</code> – Post-build hydration for Corex components.
-  </li>
-  <li><code>serve</code> – Preview server for the Next SSG build.</li>
+<li><code>@corex-ui/static</code> – Vanilla JS web components.</li>
+<li><code>@corex-ui/design</code> – Design tokens, CSS variables, and optional component styles.</li>
+<li><code>@corex-ui/cli</code> – Post-build hydration for Corex components.</li>
+<li><code>serve</code> – Preview server for the Next SSG build.</li>
 </ul>
-<h2 id="3.-next-configuration" tabindex="-1">
-  <a class="link" href="#3.-next-configuration">#</a> 3. Next Configuration
-</h2>
+<h2 id="3.-next-configuration" tabindex="-1"><a class="link" href="#3.-next-configuration">#</a> 3. Next Configuration</h2>
 <p>Configure Next.js for static export in <code>next.config.ts</code>:</p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='import type { NextConfig } from "next";
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="import type { NextConfig } from &quot;next&quot;;
 
 const nextConfig: NextConfig = {
-  output: "export",
-  distDir: "dist",
+  output: &quot;export&quot;,
+  distDir: &quot;dist&quot;,
 };
 
 export default nextConfig;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">ts</span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">ts</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="ts">import type { NextConfig } from &quot;next&quot;;
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="ts">import type { NextConfig } from &quot;next&quot;;
 
 const nextConfig: NextConfig = {
   output: &quot;export&quot;,
@@ -218,142 +122,86 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 </code></pre>
-  </div>
-</div>
-<h2 id="4.-tailwind-styles" tabindex="-1">
-  <a class="link" href="#4.-tailwind-styles">#</a> 4. Tailwind Styles
-</h2>
+      </div>
+    </div><h2 id="4.-tailwind-styles" tabindex="-1"><a class="link" href="#4.-tailwind-styles">#</a> 4. Tailwind Styles</h2>
 <p>Apply Corex and Tailwind styles in <code>src/app/globals.css</code>:</p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='@import "tailwindcss";
-@import "@corex-ui/design";
-@import "@corex-ui/design/themes/neo/light.css";
-@import "@corex-ui/design/components/accordion.css";
-@import "@corex-ui/design/components/typo.css";
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">css</span>
-          <span data-copied>Copied</span>
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@import &quot;tailwindcss&quot;;
+@import &quot;@corex-ui/design&quot;;
+@import &quot;@corex-ui/design/themes/neo/light.css&quot;;
+@import &quot;@corex-ui/design/components/accordion.css&quot;;
+@import &quot;@corex-ui/design/components/typo.css&quot;;
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">css</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="css">@import &quot;tailwindcss&quot;;
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="css">@import &quot;tailwindcss&quot;;
 @import &quot;@corex-ui/design&quot;;
 @import &quot;@corex-ui/design/themes/neo/light.css&quot;;
 @import &quot;@corex-ui/design/components/accordion.css&quot;;
 @import &quot;@corex-ui/design/components/typo.css&quot;;
 </code></pre>
-  </div>
-</div>
-<h2 id="5.-build-scripts" tabindex="-1">
-  <a class="link" href="#5.-build-scripts">#</a> 5. Build Scripts
-</h2>
+      </div>
+    </div><h2 id="5.-build-scripts" tabindex="-1"><a class="link" href="#5.-build-scripts">#</a> 5. Build Scripts</h2>
 <p>Configure build scripts in <code>package.json</code>:</p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='"scripts": {
-  "dev": "next dev --turbopack",
-  "build": "next build --turbopack &amp;&amp; npm run corex",
-  "corex": "pnpm corex-ui render dist",
-  "preview": "serve dist -l 3000",
-  "start": "next start",
-  "lint": "eslint"
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&quot;scripts&quot;: {
+  &quot;dev&quot;: &quot;next dev --turbopack&quot;,
+  &quot;build&quot;: &quot;next build --turbopack &amp;&amp; npm run corex&quot;,
+  &quot;corex&quot;: &quot;pnpm corex-ui render dist&quot;,
+  &quot;preview&quot;: &quot;serve dist -l 3000&quot;,
+  &quot;start&quot;: &quot;next start&quot;,
+  &quot;lint&quot;: &quot;eslint&quot;
 }
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">json</span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">json</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="json">&quot;scripts&quot;: {
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="json">&quot;scripts&quot;: {
   &quot;dev&quot;: &quot;next dev --turbopack&quot;,
   &quot;build&quot;: &quot;next build --turbopack &amp;&amp; npm run corex&quot;,
   &quot;corex&quot;: &quot;pnpm corex-ui render dist&quot;,
@@ -362,33 +210,25 @@ export default nextConfig;
   &quot;lint&quot;: &quot;eslint&quot;
 }
 </code></pre>
-  </div>
-</div>
-<p><strong>CLI Features:</strong></p>
+      </div>
+    </div><p><strong>CLI Features:</strong></p>
 <ul>
-  <li>Executes after Next.js finishes building.</li>
-  <li>Scans generated HTML to locate Corex components.</li>
-  <li>Hydrates components in a JSDOM instance.</li>
-  <li>Writes the hydrated HTML back to disk.</li>
+<li>Executes after Next.js finishes building.</li>
+<li>Scans generated HTML to locate Corex components.</li>
+<li>Hydrates components in a JSDOM instance.</li>
+<li>Writes the hydrated HTML back to disk.</li>
 </ul>
-<h2 id="6.-layout-configuration" tabindex="-1">
-  <a class="link" href="#6.-layout-configuration">#</a> 6. Layout Configuration
-</h2>
-<p>
-  Set up your root layout with Corex theming in <code>src/app/layout.tsx</code>:
-</p>
+<h2 id="6.-layout-configuration" tabindex="-1"><a class="link" href="#6.-layout-configuration">#</a> 6. Layout Configuration</h2>
+<p>Set up your root layout with Corex theming in <code>src/app/layout.tsx</code>:</p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='import type { Metadata } from "next";
-import "./globals.css";
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="import type { Metadata } from &quot;next&quot;;
+import &quot;./globals.css&quot;;
 
 export const metadata: Metadata = {
-  title: "Corex UI — Next SSG Demo",
-  description: "Next.js static site with Corex UI",
+  title: &quot;Corex UI — Next SSG Demo&quot;,
+  description: &quot;Next.js static site with Corex UI&quot;,
 };
 
 export default function RootLayout({
@@ -397,58 +237,36 @@ export default function RootLayout({
   children: React.ReactNode;
 }&gt;) {
   return (
-    &lt;html lang="en" data-theme="neo" data-mode="light"&gt;
-      &lt;body className="typo"&gt;{children}&lt;/body&gt;
+    &lt;html lang=&quot;en&quot; data-theme=&quot;neo&quot; data-mode=&quot;light&quot;&gt;
+      &lt;body className=&quot;typo&quot;&gt;{children}&lt;/body&gt;
     &lt;/html&gt;
   );
 }
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">tsx</span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">tsx</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="tsx">import type { Metadata } from &quot;next&quot;;
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="tsx">import type { Metadata } from &quot;next&quot;;
 import &quot;./globals.css&quot;;
 
 export const metadata: Metadata = {
@@ -468,47 +286,41 @@ export default function RootLayout({
   );
 }
 </code></pre>
-  </div>
-</div>
-<h2 id="7.-component-usage" tabindex="-1">
-  <a class="link" href="#7.-component-usage">#</a> 7. Component Usage
-</h2>
+      </div>
+    </div><h2 id="7.-component-usage" tabindex="-1"><a class="link" href="#7.-component-usage">#</a> 7. Component Usage</h2>
 <p>Import and use Corex components in <code>src/app/page.tsx</code>:</p>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='import { Accordion } from "@corex-ui/static/react";
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="import { Accordion } from &quot;@corex-ui/static/react&quot;;
 
 export default function Home() {
   return (
     &lt;main&gt;
-      &lt;Accordion className="accordion"&gt;
-        &lt;div data-part="root"&gt;
-          &lt;div data-part="item" data-value="lorem"&gt;
+      &lt;Accordion className=&quot;accordion&quot;&gt;
+        &lt;div data-part=&quot;root&quot;&gt;
+          &lt;div data-part=&quot;item&quot; data-value=&quot;lorem&quot;&gt;
             &lt;h3&gt;
-              &lt;button data-part="item-trigger" data-value="lorem"&gt;
-                &lt;span data-part="item-text"&gt;Lorem ipsum dolor sit amet&lt;/span&gt;
-                &lt;span data-part="item-indicator" data-value="lorem"&gt;
+              &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;lorem&quot;&gt;
+                &lt;span data-part=&quot;item-text&quot;&gt;Lorem ipsum dolor sit amet&lt;/span&gt;
+                &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;lorem&quot;&gt;
                   &lt;svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
+                    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+                    fill=&quot;none&quot;
+                    viewBox=&quot;0 0 24 24&quot;
+                    strokeWidth=&quot;1.5&quot;
+                    stroke=&quot;currentColor&quot;
                   &gt;
                     &lt;path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      strokeLinecap=&quot;round&quot;
+                      strokeLinejoin=&quot;round&quot;
+                      d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
                     &gt;&lt;/path&gt;
                   &lt;/svg&gt;
                 &lt;/span&gt;
               &lt;/button&gt;
             &lt;/h3&gt;
-            &lt;div data-part="item-content" data-value="lorem"&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;lorem&quot;&gt;
               &lt;p&gt;
                 Consectetur adipiscing elit. Sed sodales ullamcorper tristique.
                 Proin quis risus feugiat tellus iaculis fringilla.
@@ -516,30 +328,30 @@ export default function Home() {
             &lt;/div&gt;
           &lt;/div&gt;
 
-          &lt;div data-part="item" data-value="duis"&gt;
+          &lt;div data-part=&quot;item&quot; data-value=&quot;duis&quot;&gt;
             &lt;h3&gt;
-              &lt;button data-part="item-trigger" data-value="duis"&gt;
-                &lt;span data-part="item-text"&gt;
+              &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;duis&quot;&gt;
+                &lt;span data-part=&quot;item-text&quot;&gt;
                   Duis dictum gravida odio ac pharetra?
                 &lt;/span&gt;
-                &lt;span data-part="item-indicator" data-value="duis"&gt;
+                &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;duis&quot;&gt;
                   &lt;svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
+                    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+                    fill=&quot;none&quot;
+                    viewBox=&quot;0 0 24 24&quot;
+                    strokeWidth=&quot;1.5&quot;
+                    stroke=&quot;currentColor&quot;
                   &gt;
                     &lt;path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      strokeLinecap=&quot;round&quot;
+                      strokeLinejoin=&quot;round&quot;
+                      d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
                     &gt;&lt;/path&gt;
                   &lt;/svg&gt;
                 &lt;/span&gt;
               &lt;/button&gt;
             &lt;/h3&gt;
-            &lt;div data-part="item-content" data-value="duis"&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;duis&quot;&gt;
               &lt;p&gt;
                 Nullam eget vestibulum ligula, at interdum tellus. Quisque
                 feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
@@ -547,28 +359,28 @@ export default function Home() {
             &lt;/div&gt;
           &lt;/div&gt;
 
-          &lt;div data-part="item" data-value="donec"&gt;
+          &lt;div data-part=&quot;item&quot; data-value=&quot;donec&quot;&gt;
             &lt;h3&gt;
-              &lt;button data-part="item-trigger" data-value="donec"&gt;
-                &lt;span data-part="item-text"&gt;Donec condimentum ex mi&lt;/span&gt;
-                &lt;span data-part="item-indicator" data-value="donec"&gt;
+              &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;donec&quot;&gt;
+                &lt;span data-part=&quot;item-text&quot;&gt;Donec condimentum ex mi&lt;/span&gt;
+                &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;donec&quot;&gt;
                   &lt;svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
+                    xmlns=&quot;http://www.w3.org/2000/svg&quot;
+                    fill=&quot;none&quot;
+                    viewBox=&quot;0 0 24 24&quot;
+                    strokeWidth=&quot;1.5&quot;
+                    stroke=&quot;currentColor&quot;
                   &gt;
                     &lt;path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      strokeLinecap=&quot;round&quot;
+                      strokeLinejoin=&quot;round&quot;
+                      d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
                     &gt;&lt;/path&gt;
                   &lt;/svg&gt;
                 &lt;/span&gt;
               &lt;/button&gt;
             &lt;/h3&gt;
-            &lt;div data-part="item-content" data-value="donec"&gt;
+            &lt;div data-part=&quot;item-content&quot; data-value=&quot;donec&quot;&gt;
               &lt;p&gt;
                 Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
                 turpis non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -580,53 +392,31 @@ export default function Home() {
     &lt;/main&gt;
   );
 }
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">tsx</span>
-          <span data-copied>Copied</span>
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">tsx</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="tsx">import { Accordion } from &quot;@corex-ui/static/react&quot;;
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
+</div>
+        <pre><code class="code-js" data-lang="tsx">import { Accordion } from &quot;@corex-ui/static/react&quot;;
 
 export default function Home() {
   return (
@@ -727,208 +517,119 @@ export default function Home() {
   );
 }
 </code></pre>
-  </div>
-</div>
-<h2 id="8.-build-app" tabindex="-1">
-  <a class="link" href="#8.-build-app">#</a> 8. Build App
-</h2>
-<p>
-  Now that Corex UI is integrated into your Next SSG project, you can run it
-  locally, build it for production, and preview the results.
-</p>
+      </div>
+    </div><h2 id="8.-build-app" tabindex="-1"><a class="link" href="#8.-build-app">#</a> 8. Build App</h2>
+<p>Now that Corex UI is integrated into your Next SSG project, you can run it locally, build it for production, and preview the results.</p>
 <ol>
-  <li>Start the dev server:</li>
+<li>Start the dev server:</li>
 </ol>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="pnpm dev
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">bash</span>
-          <span data-copied>Copied</span>
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="pnpm dev
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">bash</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="bash">pnpm dev
-</code></pre>
-  </div>
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
 </div>
-<p>Visit the printed URL (usually <code>http://localhost:3000</code>).</p>
+        <pre><code class="code-js" data-lang="bash">pnpm dev
+</code></pre>
+      </div>
+    </div><p>Visit the printed URL (usually <code>http://localhost:3000</code>).</p>
 <ol start="2">
-  <li>Build production:</li>
+<li>Build production:</li>
 </ol>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="pnpm build
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">bash</span>
-          <span data-copied>Copied</span>
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="pnpm build
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">bash</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="bash">pnpm build
-</code></pre>
-  </div>
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
 </div>
-<p>During this process, the <strong>Corex CLI runs after the build</strong>:</p>
+        <pre><code class="code-js" data-lang="bash">pnpm build
+</code></pre>
+      </div>
+    </div><p>During this process, the <strong>Corex CLI runs after the build</strong>:</p>
 <ul>
-  <li>It scans your built HTML for Corex components.</li>
-  <li>Hydrates them in a JSDOM instance.</li>
-  <li>Writes the updated markup back to disk.</li>
+<li>It scans your built HTML for Corex components.</li>
+<li>Hydrates them in a JSDOM instance.</li>
+<li>Writes the updated markup back to disk.</li>
 </ul>
-<p>
-  This ensures your Corex web components are
-  <strong>interactive out of the box</strong>, even in the static output.
-</p>
+<p>This ensures your Corex web components are <strong>interactive out of the box</strong>, even in the static output.</p>
 <ol start="3">
-  <li>Preview production:</li>
+<li>Preview production:</li>
 </ol>
 
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="pnpm preview
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">bash</span>
-          <span data-copied>Copied</span>
+    <div class="preview">
+      <div class="preview__code">
+        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="pnpm preview
+">
+ <div data-part="control">
+   <button data-part="trigger" class="button button--sm">
+   <span data-copy class="uppercase">bash</span>
+  <span data-copied >Copied</span>
 
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="bash">pnpm preview
-</code></pre>
-  </div>
+   
+     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
+         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+         xmlns="http://www.w3.org/2000/svg">
+       <path stroke-linecap="round" stroke-linejoin="round"
+           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+       </path>
+     </svg>
+     <svg data-copied class="icon" stroke="currentColor"
+         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+         width="1em" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd"
+           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+           clip-rule="evenodd"></path>
+     </svg>
+   </button>
+ </div>
 </div>
-<p>
-  Visit the printed URL (usually <code>http://localhost:3000</code>).<br />
-  This serves the optimized files from the <code>dist/</code> folder.<br />
-  Always preview your build before deployment.
-</p>
+        <pre><code class="code-js" data-lang="bash">pnpm preview
+</code></pre>
+      </div>
+    </div><p>Visit the printed URL (usually <code>http://localhost:3000</code>).<br>
+This serves the optimized files from the <code>dist/</code> folder.<br>
+Always preview your build before deployment.</p>
