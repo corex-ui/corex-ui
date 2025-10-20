@@ -1,7 +1,6 @@
 {
-  "name": "corex-ui.com",
+  "name": "doc",
   "private": true,
-  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "build-md": "tsx src/markdown/build.ts",
