@@ -6,7 +6,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/corex-ui/corex-ui.git",
-    "directory": "packages/cli"
+    "directory": "packages/static"
   },
   "homepage": "https://corex-ui.com",
   "bugs": {
