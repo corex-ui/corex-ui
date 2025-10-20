@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.1.4
+
+### Patch Changes
+
+- 7ad3aa0: Fix CSS imports and Tokens format
+- Updated dependencies [7ad3aa0]
+  - @corex-ui/static@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes

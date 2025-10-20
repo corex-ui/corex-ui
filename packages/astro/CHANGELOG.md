@@ -1,5 +1,11 @@
 # @corex-ui/astro
 
+## 0.1.4
+
+### Patch Changes
+
+- 7ad3aa0: Fix CSS imports and Tokens format
+
 ## 0.1.3
 
 ### Patch Changes
