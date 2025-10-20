@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{>markdown/components/file-upload.meta}} {{>head/global}}
+    {{>scripts/theme}} {{>markdown/components/file-upload.toc}}
+  </head>
+
+  <body class="typo layout">
+    {{>header}}
+    <div class="layout__wrapper">
+      <div class="layout__side hidden lg:flex">{{> navigation/desktop}}</div>
+      <main class="layout__main">
+        <div class="layout__content">
+          {{>sticky}}
+          <article class="layout__article">
+            {{>markdown/components/file-upload}}
+          </article>
+        </div>
+        {{>footer}}
+      </main>
+    </div>
+    <script type="module" src="/src/pages/file-upload.ts"></script>
+  </body>
+</html>

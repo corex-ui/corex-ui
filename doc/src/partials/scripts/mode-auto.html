@@ -1,0 +1,15 @@
+<script>
+  try {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+    // Set initial mode based on system preference
+    const mode = prefersDark.matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-mode", mode);
+
+    // Listen for system preference changes
+    prefersDark.addEventListener("change", (e) => {
+      const newMode = e.matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-mode", newMode);
+    });
+  } catch (_) {}
+</script>

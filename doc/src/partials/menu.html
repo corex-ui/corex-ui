@@ -1,0 +1,111 @@
+<div class="dialog dialog-js dialog--side lg:hidden">
+  <button
+    data-part="trigger"
+    class="ui-trigger ui-trigger--circle ui-trigger--sm"
+    aria-label="Open menu"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
+      />
+    </svg>
+  </button>
+  <div data-scope="dialog" data-part="backdrop"></div>
+  <div data-part="positioner">
+    <div
+      data-scope="dialog"
+      data-part="content"
+      class="border-none h-dvh z-50 w-auto"
+    >
+      <div class="layout__header">
+        <div class="layout__header__content">
+          <div class="layout__row">
+            <button data-part="close-trigger" aria-label="Open menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            {{>logo/corex}}
+          </div>
+        </div>
+      </div>
+      <div
+        class="site-search-js site-search self-center py-ui-padding"
+        data-name="site-search"
+        data-placeholder="Search documentation"
+        data-name="site-search"
+      >
+        <div data-part="root" class="p-ui-padding">
+          <div data-part="control">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="site-search__icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              ></path>
+            </svg>
+            <input data-part="input" />
+          </div>
+          <div data-part="positioner">
+            <div data-part="content" class="scrollbar scrollbar--sm"></div>
+          </div>
+        </div>
+      </div>
+      {{>navigation/mobile}}
+      <div class="layout__footer">
+        <div class="layout__content">
+          <div class="layout__row flex-wrap justify-between w-full">
+            <a
+              class="link link--sm link--success"
+              href="https://netoum.com"
+              target="_blank"
+              >Netoum
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <title>Opens in a new window</title>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                ></path>
+              </svg>
+            </a>
+            <div class="layout__row">
+              {{>selecter/mobile}} {{>switcher/mobile}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

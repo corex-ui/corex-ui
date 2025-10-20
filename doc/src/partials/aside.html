@@ -1,0 +1,38 @@
+<div class="menu menu-js z-20" data-composite="true">
+  <button data-part="trigger" class="ui-trigger--sm">
+    On this page
+    <span data-part="indicator">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        ></path>
+      </svg>
+    </span>
+  </button>
+  <div data-part="positioner">
+    <div data-part="content">
+      <div
+        id="toc-mobile"
+        class="tree-view-js tree-view tree-view--sm navigation"
+        data-json="toc"
+        data-no-icon
+        data-no-indicator
+        data-default-expanded-value="modifiers, anatomy, installation"
+        data-expand-on-click="false"
+      >
+        <div data-part="root" class="!p-0">
+          <div data-part="label" class="sr-only">On this page</div>
+          <div data-part="tree"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

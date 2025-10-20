@@ -1,0 +1,68 @@
+<div
+  class="flex flex-col items-start max-w-(--container-ui) m-ui-padding bg-ui border-1 border-root--border rounded-ui p-ui-padding"
+>
+  <div
+    class="carousel carousel-js"
+    data-orientation="vertical"
+    data-loop="true"
+    data-allow-mouse-drag="true"
+    data-slides-per-page="2"
+    data-spacing="var(--spacing-ui-gap)"
+    data-autoplay="false"
+  >
+    <div data-part="root" class="max-w-full">
+      <div data-part="item-group">
+        <div data-part="item">
+          <img src="/images/bg/beach.jpg" alt="beach" />
+        </div>
+        <div data-part="item">
+          <img src="/images/bg/winter.jpg" alt="winter" />
+        </div>
+        <div data-part="item">
+          <img src="/images/bg/star.jpg" alt="star" />
+        </div>
+        <div data-part="item">
+          <img src="/images/bg/sand.jpg" alt="sand" />
+        </div>
+        <div data-part="item">
+          <img src="/images/bg/fall.jpg" alt="fall" />
+        </div>
+      </div>
+      <div data-part="control">
+        <button data-part="prev-trigger" aria-label="Previous Slide">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+        </button>
+        <div data-part="indicator-group"></div>
+        <button data-part="next-trigger" aria-label="Next Slide">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

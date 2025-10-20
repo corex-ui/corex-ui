@@ -1,0 +1,65 @@
+<div
+  class="flex flex-col items-center justify-center max-w-(--container-ui) gap-ui-gap m-ui-padding bg-ui border-1 border-root--border rounded-ui p-ui-padding"
+>
+  <div class="flex flex-row gap-ui-gap p-ui-padding items-center">
+    <img
+      class="size-(--container-micro) rounded-full"
+      id="rotate"
+      src="/images/avatar.png"
+      alt="Avatar"
+    />
+    <div
+      id="angle-slider-rotate"
+      class="angle-slider angle-slider-js"
+      data-on-value-change="rotate-image"
+    >
+      <div data-part="root">
+        <div data-part="label">Rotate</div>
+        <div data-part="control">
+          <div data-part="thumb"></div>
+        </div>
+        <div data-part="value-text">
+          <span data-part="value"></span>
+          <span data-part="text">°</span>
+        </div>
+        <input data-part="hidden-input" />
+      </div>
+    </div>
+  </div>
+  {{>demo/timer}}
+  <div
+    class="listbox listbox-js w-full justify-center flex"
+    data-default-value="css"
+  >
+    <div data-part="root">
+      <div data-part="label" class="sr-only">
+        Choose your <br />
+        favorite technology
+      </div>
+      <div data-part="content">
+        <div data-part="item" data-value="vite">
+          <img src="/images/tech/vite.svg" alt="Vite" />
+          <span data-part="item-text" data-value="vite"> Vite </span>
+        </div>
+        <div data-part="item" data-value="html5">
+          <img src="/images/tech/html5.svg" alt="HTML" />
+          <span data-part="item-text" data-value="html5"> HTML </span>
+        </div>
+        <div data-part="item" data-value="typescript">
+          <img src="/images/tech/typescript.svg" alt="Typescript" />
+          <span data-part="item-text" data-value="typescript">
+            Typescript
+          </span>
+        </div>
+        <div data-part="item" data-value="css">
+          <img src="/images/tech/css.svg" alt="CSS" />
+          <span data-part="item-text" data-value="css"> CSS </span>
+        </div>
+        <div data-part="item" data-value="tailwind">
+          <img src="/images/tech/tailwind.svg" alt="Tailwind" />
+          <span data-part="item-text" data-value="tailwind"> Tailwind </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

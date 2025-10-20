@@ -1,0 +1,55 @@
+<div
+  id="selecter"
+  class="select-js select select--sm hidden lg:flex"
+  data-on-value-change="update-selecter"
+  data-close-on-select="false"
+  data-no-trigger-update="true"
+>
+  <div data-part="root" class="max-w-(--container-micro-sm)">
+    <div data-part="control" class="max-w-(--container-micro-sm)">
+      <div data-part="label" class="sr-only">Select theme</div>
+      <button data-part="trigger" class="gap-ui-gap-sm">
+        Theme
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div data-part="positioner">
+      <ul data-part="content" class="scrollbar">
+        <li data-part="item" data-value="neo" class="flex items-center gap-2">
+          <span data-part="item-text" data-value="neo">Neo</span>
+        </li>
+        <li data-part="item" data-value="uno" class="group">
+          <span data-part="item-text" data-value="uno">Uno</span>
+        </li>
+        <li data-part="item" data-value="duo">
+          <span data-part="item-text" data-value="duo">Duo</span>
+        </li>
+        <li data-part="item" data-value="leo">
+          <span data-part="item-text" data-value="leo">Leo</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+  try {
+    const theme = localStorage.getItem("data-theme");
+    console.log;
+    const switcher = document.querySelector("#selecter");
+    if (switcher && theme) {
+      switcher.setAttribute("data-default-value", theme);
+    }
+  } catch (_) {}
+</script>

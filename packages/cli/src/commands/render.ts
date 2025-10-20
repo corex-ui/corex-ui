@@ -75,6 +75,8 @@ export default class Render extends Command {
         globalThis.document = document as any
         globalThis.HTMLElement = dom.window.HTMLElement
         globalThis.Node = dom.window.Node
+        globalThis.Navigator = dom.window.Navigator
+
         // eslint-disable-next-line n/no-unsupported-features/node-builtins
         globalThis.CustomEvent = dom.window.CustomEvent
         globalThis.Element = dom.window.Element

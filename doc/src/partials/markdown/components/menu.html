@@ -1,0 +1,2483 @@
+<h1 id="menu" tabindex="-1"><a class="link" href="#menu">#</a> Menu</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/menu"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Menu
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>
+  An accessible dropdown and context menu that is used to display a list of
+  actions or options that a user can choose.
+</p>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Menu component consists of the following data parts:</p>
+<p>
+  <code>trigger</code>, <code>context-trigger</code>, <code>indicator</code>,
+  <code>positioner</code>, <code>content</code>, <code>separator</code>,
+  <code>item</code>, <code>item-group</code>, <code>item-group-label</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="menu menu-js">
+      <button data-part="trigger">
+        File
+        <span data-part="indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            ></path>
+          </svg>
+        </span>
+      </button>
+      <div data-part="positioner">
+        <ul data-part="content">
+          <li data-part="item" data-value="new">New Document</li>
+          <li data-part="item" data-value="open">Open</li>
+          <li data-part="item" data-value="save">Save</li>
+          <div data-part="separator"></div>
+          <li data-part="item" data-value="export">Export</li>
+          <li data-part="item" data-value="exit">Exit</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="menu menu-js"&gt;
+  &lt;button data-part="trigger"&gt;
+    File
+    &lt;span data-part="indicator"&gt;
+      &lt;svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      &gt;
+        &lt;path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;
+      &lt;li data-part="item" data-value="new"&gt;New Document&lt;/li&gt;
+      &lt;li data-part="item" data-value="open"&gt;Open&lt;/li&gt;
+      &lt;li data-part="item" data-value="save"&gt;Save&lt;/li&gt;
+      &lt;div data-part="separator"&gt;&lt;/div&gt;
+      &lt;li data-part="item" data-value="export"&gt;Export&lt;/li&gt;
+      &lt;li data-part="item" data-value="exit"&gt;Exit&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;menu menu-js&quot;&gt;
+  &lt;button data-part=&quot;trigger&quot;&gt;
+    File
+    &lt;span data-part=&quot;indicator&quot;&gt;
+      &lt;svg
+        xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        fill=&quot;none&quot;
+        viewBox=&quot;0 0 24 24&quot;
+        stroke-width=&quot;1.5&quot;
+        stroke=&quot;currentColor&quot;
+      &gt;
+        &lt;path
+          stroke-linecap=&quot;round&quot;
+          stroke-linejoin=&quot;round&quot;
+          d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;new&quot;&gt;New Document&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;open&quot;&gt;Open&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;save&quot;&gt;Save&lt;/li&gt;
+      &lt;div data-part=&quot;separator&quot;&gt;&lt;/div&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;export&quot;&gt;Export&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;exit&quot;&gt;Exit&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="load-from-json" tabindex="-1">
+  <a class="link" href="#load-from-json">#</a> Load from JSON
+</h2>
+<p>
+  You can initialize the Menu component by embedding your JSON data directly in
+  your HTML using a <code>&lt;script&gt;</code> tag with
+  <code>type=&quot;application/json&quot;</code> and a unique
+  <code>data-menu</code> attribute. Then, reference this JSON in your Tree View
+  container via the corresponding <code>data-json</code> attribute.
+</p>
+<blockquote>
+  <p>
+    <strong>Did you know?</strong><br />
+    You can use the same JSON format and data as the
+    <a href="/components/tree-view#load-from-json" class="link"
+      >Tree View Component</a
+    >.<br />
+    This allows you for exapmle to render a navigation as a
+    <strong>Tree View</strong> on mobile and as a <strong>Menu</strong> on
+    desktop.
+  </p>
+</blockquote>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;script type="application/json" data-menu="menu-data"&gt;
+  {
+    "id": "root",
+    "name": "",
+    "children": [
+      {
+        "id": "menu",
+        "name": "Menu",
+        "children": [
+          { "id": "menu/item", "name": "Item" },
+          {
+            "id": "submenu",
+            "name": "Sub Menu",
+            "children": [
+              { "id": "menu/submenu/item", "name": "Item" },
+              { "id": "layouts/submenu/item-2", "name": "Item" },
+              {
+                "id": "nestedmenu",
+                "name": "Nested  Menu",
+
+                "children": [
+                  { "id": "menu/submenu/nestedmenu/item", "name": "Item" },
+                  { "id": "menu/submenu/nestedmenu/item-2", "name": "Item" },
+
+                  {
+                    "id": "subnested",
+                    "name": "Sub Nested",
+                    "children": [
+                      {
+                        "id": "menu/submenu/nestedmenu/subnested/nested-item",
+                        "name": "Nested Item"
+                      },
+                      {
+                        "id": "menu/submenu/nestedmenu/subnested/nested-item-2",
+                        "name": "Nested Item"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+&lt;/script&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;script type=&quot;application/json&quot; data-menu=&quot;menu-data&quot;&gt;
+  {
+    &quot;id&quot;: &quot;root&quot;,
+    &quot;name&quot;: &quot;&quot;,
+    &quot;children&quot;: [
+      {
+        &quot;id&quot;: &quot;menu&quot;,
+        &quot;name&quot;: &quot;Menu&quot;,
+        &quot;children&quot;: [
+          { &quot;id&quot;: &quot;menu/item&quot;, &quot;name&quot;: &quot;Item&quot; },
+          {
+            &quot;id&quot;: &quot;submenu&quot;,
+            &quot;name&quot;: &quot;Sub Menu&quot;,
+            &quot;children&quot;: [
+              { &quot;id&quot;: &quot;menu/submenu/item&quot;, &quot;name&quot;: &quot;Item&quot; },
+              { &quot;id&quot;: &quot;layouts/submenu/item-2&quot;, &quot;name&quot;: &quot;Item&quot; },
+              {
+                &quot;id&quot;: &quot;nestedmenu&quot;,
+                &quot;name&quot;: &quot;Nested  Menu&quot;,
+
+                &quot;children&quot;: [
+                  { &quot;id&quot;: &quot;menu/submenu/nestedmenu/item&quot;, &quot;name&quot;: &quot;Item&quot; },
+                  { &quot;id&quot;: &quot;menu/submenu/nestedmenu/item-2&quot;, &quot;name&quot;: &quot;Item&quot; },
+
+                  {
+                    &quot;id&quot;: &quot;subnested&quot;,
+                    &quot;name&quot;: &quot;Sub Nested&quot;,
+                    &quot;children&quot;: [
+                      {
+                        &quot;id&quot;: &quot;menu/submenu/nestedmenu/subnested/nested-item&quot;,
+                        &quot;name&quot;: &quot;Nested Item&quot;
+                      },
+                      {
+                        &quot;id&quot;: &quot;menu/submenu/nestedmenu/subnested/nested-item-2&quot;,
+                        &quot;name&quot;: &quot;Nested Item&quot;
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+&lt;/script&gt;
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div id="menu" class="menu menu-js" data-json="menu-data">
+      <div data-part="positioner">
+        <ul data-part="content"></ul>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div id="menu" class="menu menu-js" data-json="menu-data"&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;&lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div id=&quot;menu&quot; class=&quot;menu menu-js&quot; data-json=&quot;menu-data&quot;&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;&lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="group-items" tabindex="-1">
+  <a class="link" href="#group-items">#</a> Group items
+</h2>
+<p>The Menu items can be grouped with a label to identify each group</p>
+<p>
+  Please note you must provide and <code>data-id</code> to
+  <code>item-group</code> and <code>data-htmlFor</code> to
+  <code>item-group-label</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="menu menu-js">
+      <button data-part="trigger">
+        View
+        <span data-part="indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            ></path>
+          </svg>
+        </span>
+      </button>
+      <div data-part="positioner">
+        <div data-part="content">
+          <div data-part="item-group" data-id="layout">
+            <div data-part="item-group-label" data-htmlFor="layout">Layout</div>
+            <li data-part="item" data-value="grid-view" data-id="layout">
+              Grid View
+            </li>
+            <li data-part="item" data-value="list-view">List View</li>
+          </div>
+
+          <div data-part="item-group" data-id="zoom">
+            <div data-part="item-group-label" data-htmlFor="zoom">Zoom</div>
+
+            <li data-part="item" data-value="zoom-in" data-id="zoom">
+              Zoom In
+            </li>
+            <li data-part="item" data-value="zoom-out" data-id="zoom">
+              Zoom Out
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="menu menu-js"&gt;
+  &lt;button data-part="trigger"&gt;
+    View
+    &lt;span data-part="indicator"&gt;
+      &lt;svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      &gt;
+        &lt;path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item-group" data-id="layout"&gt;
+        &lt;div data-part="item-group-label" data-htmlFor="layout"&gt;Layout&lt;/div&gt;
+        &lt;li data-part="item" data-value="grid-view" data-id="layout"&gt;
+          Grid View
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="list-view"&gt;List View&lt;/li&gt;
+      &lt;/div&gt;
+
+      &lt;div data-part="item-group" data-id="zoom"&gt;
+        &lt;div data-part="item-group-label" data-htmlFor="zoom"&gt;Zoom&lt;/div&gt;
+
+        &lt;li data-part="item" data-value="zoom-in" data-id="zoom"&gt;Zoom In&lt;/li&gt;
+        &lt;li data-part="item" data-value="zoom-out" data-id="zoom"&gt;Zoom Out&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;menu menu-js&quot;&gt;
+  &lt;button data-part=&quot;trigger&quot;&gt;
+    View
+    &lt;span data-part=&quot;indicator&quot;&gt;
+      &lt;svg
+        xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        fill=&quot;none&quot;
+        viewBox=&quot;0 0 24 24&quot;
+        stroke-width=&quot;1.5&quot;
+        stroke=&quot;currentColor&quot;
+      &gt;
+        &lt;path
+          stroke-linecap=&quot;round&quot;
+          stroke-linejoin=&quot;round&quot;
+          d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item-group&quot; data-id=&quot;layout&quot;&gt;
+        &lt;div data-part=&quot;item-group-label&quot; data-htmlFor=&quot;layout&quot;&gt;Layout&lt;/div&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;grid-view&quot; data-id=&quot;layout&quot;&gt;
+          Grid View
+        &lt;/li&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;list-view&quot;&gt;List View&lt;/li&gt;
+      &lt;/div&gt;
+
+      &lt;div data-part=&quot;item-group&quot; data-id=&quot;zoom&quot;&gt;
+        &lt;div data-part=&quot;item-group-label&quot; data-htmlFor=&quot;zoom&quot;&gt;Zoom&lt;/div&gt;
+
+        &lt;li data-part=&quot;item&quot; data-value=&quot;zoom-in&quot; data-id=&quot;zoom&quot;&gt;Zoom In&lt;/li&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;zoom-out&quot; data-id=&quot;zoom&quot;&gt;Zoom Out&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="nested-menu" tabindex="-1">
+  <a class="link" href="#nested-menu">#</a> Nested Menu
+</h2>
+<p>
+  The Menus can be nested with <code>data-children</code> on the parent menu and
+  <code>data-child</code> on the <code>trigger-item</code> and
+  <code>indicator</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="menu menu-js"
+      data-children="preferences"
+      data-aria-label="Main Menu"
+    >
+      <button data-part="trigger">
+        Tools
+        <span data-part="indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            ></path>
+          </svg>
+        </span>
+      </button>
+      <div data-part="positioner">
+        <ul data-part="content">
+          <li data-part="trigger-item" data-child="preferences">
+            Preferences
+            <span data-part="indicator" data-child="preferences">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      id="preferences"
+      class="menu menu-js"
+      data-aria-label="Preferences Menu"
+      data-offset-main-axis="5"
+      data-placement="right-start"
+    >
+      <div data-part="positioner">
+        <ul data-part="content">
+          <li data-part="item" data-value="general">General</li>
+          <li data-part="item" data-value="appearance">Appearance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="menu menu-js"
+  data-children="preferences"
+  data-aria-label="Main Menu"
+&gt;
+  &lt;button data-part="trigger"&gt;
+    Tools
+    &lt;span data-part="indicator"&gt;
+      &lt;svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      &gt;
+        &lt;path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;
+      &lt;li data-part="trigger-item" data-child="preferences"&gt;
+        Preferences
+        &lt;span data-part="indicator" data-child="preferences"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icon"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div
+  id="preferences"
+  class="menu menu-js"
+  data-aria-label="Preferences Menu"
+  data-offset-main-axis="5"
+  data-placement="right-start"
+&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;
+      &lt;li data-part="item" data-value="general"&gt;General&lt;/li&gt;
+      &lt;li data-part="item" data-value="appearance"&gt;Appearance&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;menu menu-js&quot;
+  data-children=&quot;preferences&quot;
+  data-aria-label=&quot;Main Menu&quot;
+&gt;
+  &lt;button data-part=&quot;trigger&quot;&gt;
+    Tools
+    &lt;span data-part=&quot;indicator&quot;&gt;
+      &lt;svg
+        xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        fill=&quot;none&quot;
+        viewBox=&quot;0 0 24 24&quot;
+        stroke-width=&quot;1.5&quot;
+        stroke=&quot;currentColor&quot;
+      &gt;
+        &lt;path
+          stroke-linecap=&quot;round&quot;
+          stroke-linejoin=&quot;round&quot;
+          d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;
+      &lt;li data-part=&quot;trigger-item&quot; data-child=&quot;preferences&quot;&gt;
+        Preferences
+        &lt;span data-part=&quot;indicator&quot; data-child=&quot;preferences&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+            class=&quot;icon&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div
+  id=&quot;preferences&quot;
+  class=&quot;menu menu-js&quot;
+  data-aria-label=&quot;Preferences Menu&quot;
+  data-offset-main-axis=&quot;5&quot;
+  data-placement=&quot;right-start&quot;
+&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;general&quot;&gt;General&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;appearance&quot;&gt;Appearance&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="subnested-menu" tabindex="-1">
+  <a class="link" href="#subnested-menu">#</a> Subnested Menu
+</h2>
+<p>
+  You can nest as many menus, please note that you must provide unique ids for
+  each menu
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="menu menu-js"
+      data-children="developer-tools"
+      data-aria-label="Main Menu"
+    >
+      <button data-part="trigger">
+        Developer
+        <span data-part="indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            ></path>
+          </svg>
+        </span>
+      </button>
+      <div data-part="positioner">
+        <ul data-part="content">
+          <li data-part="trigger-item" data-child="developer-tools">
+            Developer Tools
+            <span data-part="indicator" data-child="developer-tools">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      id="developer-tools"
+      class="menu menu-js"
+      data-children="debugging-options"
+      data-aria-label="Developer Tools Menu"
+      data-offset-main-axis="5"
+      data-placement="right-start"
+    >
+      <div data-part="positioner">
+        <ul data-part="content">
+          <li data-part="item" data-value="console">Console</li>
+          <li data-part="item" data-value="network">Network Tab</li>
+          <li data-part="trigger-item" data-child="debugging-options">
+            Debugging
+            <span data-part="indicator" data-child="debugging-options">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      id="debugging-options"
+      class="menu menu-js"
+      data-aria-label="Debugging Options Menu"
+      data-offset-main-axis="5"
+      data-placement="right-start"
+    >
+      <div data-part="positioner">
+        <ul data-part="content">
+          <li data-part="item" data-value="breakpoints">Set Breakpoint</li>
+          <li data-part="item" data-value="step-over">Step Over</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="menu menu-js"
+  data-children="developer-tools"
+  data-aria-label="Main Menu"
+&gt;
+  &lt;button data-part="trigger"&gt;
+    Developer
+    &lt;span data-part="indicator"&gt;
+      &lt;svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      &gt;
+        &lt;path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;
+      &lt;li data-part="trigger-item" data-child="developer-tools"&gt;
+        Developer Tools
+        &lt;span data-part="indicator" data-child="developer-tools"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icon"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div
+  id="developer-tools"
+  class="menu menu-js"
+  data-children="debugging-options"
+  data-aria-label="Developer Tools Menu"
+  data-offset-main-axis="5"
+  data-placement="right-start"
+&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;
+      &lt;li data-part="item" data-value="console"&gt;Console&lt;/li&gt;
+      &lt;li data-part="item" data-value="network"&gt;Network Tab&lt;/li&gt;
+      &lt;li data-part="trigger-item" data-child="debugging-options"&gt;
+        Debugging
+        &lt;span data-part="indicator" data-child="debugging-options"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icon"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div
+  id="debugging-options"
+  class="menu menu-js"
+  data-aria-label="Debugging Options Menu"
+  data-offset-main-axis="5"
+  data-placement="right-start"
+&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;
+      &lt;li data-part="item" data-value="breakpoints"&gt;Set Breakpoint&lt;/li&gt;
+      &lt;li data-part="item" data-value="step-over"&gt;Step Over&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;menu menu-js&quot;
+  data-children=&quot;developer-tools&quot;
+  data-aria-label=&quot;Main Menu&quot;
+&gt;
+  &lt;button data-part=&quot;trigger&quot;&gt;
+    Developer
+    &lt;span data-part=&quot;indicator&quot;&gt;
+      &lt;svg
+        xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        fill=&quot;none&quot;
+        viewBox=&quot;0 0 24 24&quot;
+        stroke-width=&quot;1.5&quot;
+        stroke=&quot;currentColor&quot;
+      &gt;
+        &lt;path
+          stroke-linecap=&quot;round&quot;
+          stroke-linejoin=&quot;round&quot;
+          d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;
+      &lt;li data-part=&quot;trigger-item&quot; data-child=&quot;developer-tools&quot;&gt;
+        Developer Tools
+        &lt;span data-part=&quot;indicator&quot; data-child=&quot;developer-tools&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+            class=&quot;icon&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div
+  id=&quot;developer-tools&quot;
+  class=&quot;menu menu-js&quot;
+  data-children=&quot;debugging-options&quot;
+  data-aria-label=&quot;Developer Tools Menu&quot;
+  data-offset-main-axis=&quot;5&quot;
+  data-placement=&quot;right-start&quot;
+&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;console&quot;&gt;Console&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;network&quot;&gt;Network Tab&lt;/li&gt;
+      &lt;li data-part=&quot;trigger-item&quot; data-child=&quot;debugging-options&quot;&gt;
+        Debugging
+        &lt;span data-part=&quot;indicator&quot; data-child=&quot;debugging-options&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+            class=&quot;icon&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div
+  id=&quot;debugging-options&quot;
+  class=&quot;menu menu-js&quot;
+  data-aria-label=&quot;Debugging Options Menu&quot;
+  data-offset-main-axis=&quot;5&quot;
+  data-placement=&quot;right-start&quot;
+&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;breakpoints&quot;&gt;Set Breakpoint&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;step-over&quot;&gt;Step Over&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="context-menu" tabindex="-1">
+  <a class="link" href="#context-menu">#</a> Context Menu
+</h2>
+<p>
+  An accessible dropdown and context menu that is used to display a list of
+  actions or options that a user can choose when a trigger element is
+  right-clicked or long pressed.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="menu menu-js">
+      <div data-part="context-trigger">Right Click/ Long Press</div>
+      <div data-part="positioner">
+        <ul data-part="content">
+          <li data-part="item" data-value="copy">Copy</li>
+          <li data-part="item" data-value="paste">Paste</li>
+          <li data-part="item" data-value="duplicate">Duplicate</li>
+          <div data-part="separator"></div>
+          <li data-part="item" data-value="inspect">Inspect Element</li>
+          <li data-part="item" data-value="bookmark">Bookmark Page</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="menu menu-js"&gt;
+  &lt;div data-part="context-trigger"&gt;Right Click/ Long Press&lt;/div&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;
+      &lt;li data-part="item" data-value="copy"&gt;Copy&lt;/li&gt;
+      &lt;li data-part="item" data-value="paste"&gt;Paste&lt;/li&gt;
+      &lt;li data-part="item" data-value="duplicate"&gt;Duplicate&lt;/li&gt;
+      &lt;div data-part="separator"&gt;&lt;/div&gt;
+      &lt;li data-part="item" data-value="inspect"&gt;Inspect Element&lt;/li&gt;
+      &lt;li data-part="item" data-value="bookmark"&gt;Bookmark Page&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;menu menu-js&quot;&gt;
+  &lt;div data-part=&quot;context-trigger&quot;&gt;Right Click/ Long Press&lt;/div&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;copy&quot;&gt;Copy&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;paste&quot;&gt;Paste&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;duplicate&quot;&gt;Duplicate&lt;/li&gt;
+      &lt;div data-part=&quot;separator&quot;&gt;&lt;/div&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;inspect&quot;&gt;Inspect Element&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;bookmark&quot;&gt;Bookmark Page&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p><strong>With groups</strong></p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="menu menu-js">
+      <div data-part="context-trigger">
+        <div>Right Click/ Long Press</div>
+      </div>
+      <div data-part="positioner">
+        <div data-part="content">
+          <div data-part="item-group-label" data-htmlFor="format">Format</div>
+          <div data-part="item-group" data-id="format">
+            <div data-part="item-group-label" data-htmlFor="format">Format</div>
+
+            <li data-part="item" data-value="bold">Bold</li>
+            <li data-part="item" data-value="italic">Italic</li>
+          </div>
+          <div data-part="separator"></div>
+          <div data-part="item-group" data-id="align">
+            <div data-part="item-group-label" data-htmlFor="align">Align</div>
+
+            <li data-part="item" data-value="align-left">Align Left</li>
+            <li data-part="item" data-value="align-center">Align Center</li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="menu menu-js"&gt;
+  &lt;div data-part="context-trigger"&gt;
+    &lt;div&gt;Right Click/ Long Press&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;div data-part="content"&gt;
+      &lt;div data-part="item-group-label" data-htmlFor="format"&gt;Format&lt;/div&gt;
+      &lt;div data-part="item-group" data-id="format"&gt;
+        &lt;div data-part="item-group-label" data-htmlFor="format"&gt;Format&lt;/div&gt;
+
+        &lt;li data-part="item" data-value="bold"&gt;Bold&lt;/li&gt;
+        &lt;li data-part="item" data-value="italic"&gt;Italic&lt;/li&gt;
+      &lt;/div&gt;
+      &lt;div data-part="separator"&gt;&lt;/div&gt;
+      &lt;div data-part="item-group" data-id="align"&gt;
+        &lt;div data-part="item-group-label" data-htmlFor="align"&gt;Align&lt;/div&gt;
+
+        &lt;li data-part="item" data-value="align-left"&gt;Align Left&lt;/li&gt;
+        &lt;li data-part="item" data-value="align-center"&gt;Align Center&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;menu menu-js&quot;&gt;
+  &lt;div data-part=&quot;context-trigger&quot;&gt;
+    &lt;div&gt;Right Click/ Long Press&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;div data-part=&quot;item-group-label&quot; data-htmlFor=&quot;format&quot;&gt;Format&lt;/div&gt;
+      &lt;div data-part=&quot;item-group&quot; data-id=&quot;format&quot;&gt;
+        &lt;div data-part=&quot;item-group-label&quot; data-htmlFor=&quot;format&quot;&gt;Format&lt;/div&gt;
+
+        &lt;li data-part=&quot;item&quot; data-value=&quot;bold&quot;&gt;Bold&lt;/li&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;italic&quot;&gt;Italic&lt;/li&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;separator&quot;&gt;&lt;/div&gt;
+      &lt;div data-part=&quot;item-group&quot; data-id=&quot;align&quot;&gt;
+        &lt;div data-part=&quot;item-group-label&quot; data-htmlFor=&quot;align&quot;&gt;Align&lt;/div&gt;
+
+        &lt;li data-part=&quot;item&quot; data-value=&quot;align-left&quot;&gt;Align Left&lt;/li&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;align-center&quot;&gt;Align Center&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each menu can be set with different settings with the following
+  data-attribute.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="menu menu-js"
+      id="custom-menu"
+      data-aria-label="Demo menu"
+      data-close-on-select="false"
+      data-composite="true"
+      data-default-highlighted-value="profile"
+      data-highlighted-value="profile"
+      data-default-open="true"
+      data-dir="ltr"
+      data-loop-focus="false"
+      data-typehead="true"
+      data-placement="top-end"
+      data-strategy="absolute"
+      data-flip="true"
+      data-hide-when-detached="true"
+      data-gutter="1"
+      data-arrow-padding="1"
+      data-overflow-padding="1"
+      data-slide="true"
+      data-fit-viewport="true"
+      data-overlap="true"
+      data-same-width="true"
+    >
+      <button data-part="trigger">
+        Custom Menu
+        <span data-part="indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            ></path>
+          </svg>
+        </span>
+      </button>
+      <div data-part="positioner">
+        <ul data-part="content">
+          <li data-part="item" data-value="new">New</li>
+          <li data-part="item" data-value="open">Open</li>
+          <li data-part="item" data-value="save">Save</li>
+          <div data-part="separator"></div>
+          <li data-part="item" data-value="export">Export</li>
+          <li data-part="item" data-value="exit">Exit</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="menu menu-js"
+  id="custom-menu"
+  data-aria-label="Demo menu"
+  data-close-on-select="false"
+  data-composite="true"
+  data-default-highlighted-value="profile"
+  data-highlighted-value="profile"
+  data-default-open="true"
+  data-dir="ltr"
+  data-loop-focus="false"
+  data-typehead="true"
+  data-placement="top-end"
+  data-strategy="absolute"
+  data-flip="true"
+  data-hide-when-detached="true"
+  data-gutter="1"
+  data-arrow-padding="1"
+  data-overflow-padding="1"
+  data-slide="true"
+  data-fit-viewport="true"
+  data-overlap="true"
+  data-same-width="true"
+&gt;
+  &lt;button data-part="trigger"&gt;
+    Custom Menu
+    &lt;span data-part="indicator"&gt;
+      &lt;svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      &gt;
+        &lt;path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;
+      &lt;li data-part="item" data-value="new"&gt;New&lt;/li&gt;
+      &lt;li data-part="item" data-value="open"&gt;Open&lt;/li&gt;
+      &lt;li data-part="item" data-value="save"&gt;Save&lt;/li&gt;
+      &lt;div data-part="separator"&gt;&lt;/div&gt;
+      &lt;li data-part="item" data-value="export"&gt;Export&lt;/li&gt;
+      &lt;li data-part="item" data-value="exit"&gt;Exit&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;menu menu-js&quot;
+  id=&quot;custom-menu&quot;
+  data-aria-label=&quot;Demo menu&quot;
+  data-close-on-select=&quot;false&quot;
+  data-composite=&quot;true&quot;
+  data-default-highlighted-value=&quot;profile&quot;
+  data-highlighted-value=&quot;profile&quot;
+  data-default-open=&quot;true&quot;
+  data-dir=&quot;ltr&quot;
+  data-loop-focus=&quot;false&quot;
+  data-typehead=&quot;true&quot;
+  data-placement=&quot;top-end&quot;
+  data-strategy=&quot;absolute&quot;
+  data-flip=&quot;true&quot;
+  data-hide-when-detached=&quot;true&quot;
+  data-gutter=&quot;1&quot;
+  data-arrow-padding=&quot;1&quot;
+  data-overflow-padding=&quot;1&quot;
+  data-slide=&quot;true&quot;
+  data-fit-viewport=&quot;true&quot;
+  data-overlap=&quot;true&quot;
+  data-same-width=&quot;true&quot;
+&gt;
+  &lt;button data-part=&quot;trigger&quot;&gt;
+    Custom Menu
+    &lt;span data-part=&quot;indicator&quot;&gt;
+      &lt;svg
+        xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        fill=&quot;none&quot;
+        viewBox=&quot;0 0 24 24&quot;
+        stroke-width=&quot;1.5&quot;
+        stroke=&quot;currentColor&quot;
+      &gt;
+        &lt;path
+          stroke-linecap=&quot;round&quot;
+          stroke-linejoin=&quot;round&quot;
+          d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;new&quot;&gt;New&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;open&quot;&gt;Open&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;save&quot;&gt;Save&lt;/li&gt;
+      &lt;div data-part=&quot;separator&quot;&gt;&lt;/div&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;export&quot;&gt;Export&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;exit&quot;&gt;Exit&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Description: Unique id of the component. Default generated if none is
+  provided.
+</p>
+<p>
+  <strong>data-aria-label</strong><br />
+  Type: <code>string</code><br />
+  Description: The accessibility label for the menu.
+</p>
+<p>
+  <strong>data-close-on-select</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>true</code><br />
+  Description: Whether to close the menu when an option is selected.
+</p>
+<p>
+  <strong>data-composite</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>true</code><br />
+  Description: Whether the menu is composed with other composite widgets like a
+  combobox or tabs.
+</p>
+<p>
+  <strong>data-default-highlighted-value</strong><br />
+  Type: <code>string | null</code><br />
+  Description: The initial highlighted value of the menu item when rendered. Use
+  when you don't need to control the highlighted value.
+</p>
+<p>
+  <strong>data-highlighted-value</strong><br />
+  Type: <code>string | null</code><br />
+  Description: The controlled highlighted value of the menu item.
+</p>
+<p>
+  <strong>data-default-open</strong><br />
+  Type: <code>boolean</code><br />
+  Description: The initial open state of the menu when rendered. Use when you
+  don't need to control the open state.
+</p>
+<p>
+  <strong>data-dir</strong><br />
+  Type: <code>&quot;ltr&quot; | &quot;rtl&quot;</code><br />
+  Default: <code>&quot;ltr&quot;</code><br />
+  Description: The text direction of the menu.
+</p>
+<p>
+  <strong>data-loop-focus</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>false</code><br />
+  Description: Whether to loop the keyboard navigation.
+</p>
+<p>
+  <strong>data-typehead</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>true</code><br />
+  Description: Whether pressing printable characters should trigger typeahead
+  navigation.
+</p>
+<p>
+  <strong>data-placement</strong><br />
+  Type: <code>Placement</code><br />
+  Default: <code>&quot;bottom-start&quot;</code><br />
+  Description: The placement of the menu relative to its trigger.
+</p>
+<p>
+  <strong>data-strategy</strong><br />
+  Type: <code>&quot;absolute&quot; | &quot;fixed&quot;</code><br />
+  Default: <code>&quot;absolute&quot;</code><br />
+  Description: The CSS positioning strategy for the menu.
+</p>
+<p>
+  <strong>data-flip</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>true</code><br />
+  Description: Whether to flip the placement of the menu when it overflows.
+</p>
+<p>
+  <strong>data-hide-when-detached</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>false</code><br />
+  Description: Whether to hide the menu when its trigger is no longer in the DOM
+  or detached from layout.
+</p>
+<p>
+  <strong>data-gutter</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>8</code><br />
+  Description: The offset (in pixels) between the menu and its trigger.
+</p>
+<p>
+  <strong>data-arrow-padding</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>0</code><br />
+  Description: The minimum padding (in pixels) between the arrow and the edges
+  of the menu.
+</p>
+<p>
+  <strong>data-overflow-padding</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>8</code><br />
+  Description: The minimum padding (in pixels) between the menu and the
+  viewport.
+</p>
+<p>
+  <strong>data-slide</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>false</code><br />
+  Description: Whether to animate the menu with a slide effect.
+</p>
+<p>
+  <strong>data-fit-viewport</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>false</code><br />
+  Description: Whether to resize the menu to fit within the viewport.
+</p>
+<p>
+  <strong>data-overlap</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>false</code><br />
+  Description: Whether the menu can overlap its trigger.
+</p>
+<p>
+  <strong>data-same-width</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>false</code><br />
+  Description: Whether the menu should match the width of its trigger.
+</p>
+<hr />
+<h2 id="event-callbacks" tabindex="-1">
+  <a class="link" href="#event-callbacks">#</a> Event Callbacks
+</h2>
+<p>
+  Each Menu component can receive callbacks that can be used to respond to user
+  interaction with custom behavior.
+</p>
+<p>
+  You must add a custom id for the menu and a event listener for your event name
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document
+  .getElementById("my-menu")
+  ?.addEventListener("my-menu-event", (event) =&gt; {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">document
+  .getElementById(&quot;my-menu&quot;)
+  ?.addEventListener(&quot;my-menu-event&quot;, (event) =&gt; {
+    console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
+  });
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div id="my-menu" class="menu menu-js" data-on-select="my-menu-event">
+      <button data-part="trigger">
+        File
+        <span data-part="indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            ></path>
+          </svg>
+        </span>
+      </button>
+      <div data-part="positioner">
+        <ul data-part="content">
+          <li data-part="item" data-value="new">New Document</li>
+          <li data-part="item" data-value="open">Open</li>
+          <li data-part="item" data-value="save">Save</li>
+          <div data-part="separator"></div>
+          <li data-part="item" data-value="export">Export</li>
+          <li data-part="item" data-value="exit">Exit</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div id="my-menu" class="menu menu-js" data-on-select="my-menu-event"&gt;
+  &lt;button data-part="trigger"&gt;
+    File
+    &lt;span data-part="indicator"&gt;
+      &lt;svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      &gt;
+        &lt;path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;
+      &lt;li data-part="item" data-value="new"&gt;New Document&lt;/li&gt;
+      &lt;li data-part="item" data-value="open"&gt;Open&lt;/li&gt;
+      &lt;li data-part="item" data-value="save"&gt;Save&lt;/li&gt;
+      &lt;div data-part="separator"&gt;&lt;/div&gt;
+      &lt;li data-part="item" data-value="export"&gt;Export&lt;/li&gt;
+      &lt;li data-part="item" data-value="exit"&gt;Exit&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div id=&quot;my-menu&quot; class=&quot;menu menu-js&quot; data-on-select=&quot;my-menu-event&quot;&gt;
+  &lt;button data-part=&quot;trigger&quot;&gt;
+    File
+    &lt;span data-part=&quot;indicator&quot;&gt;
+      &lt;svg
+        xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        fill=&quot;none&quot;
+        viewBox=&quot;0 0 24 24&quot;
+        stroke-width=&quot;1.5&quot;
+        stroke=&quot;currentColor&quot;
+      &gt;
+        &lt;path
+          stroke-linecap=&quot;round&quot;
+          stroke-linejoin=&quot;round&quot;
+          d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;new&quot;&gt;New Document&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;open&quot;&gt;Open&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;save&quot;&gt;Save&lt;/li&gt;
+      &lt;div data-part=&quot;separator&quot;&gt;&lt;/div&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;export&quot;&gt;Export&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;exit&quot;&gt;Exit&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<blockquote>
+  <p>
+    Open your browser's console to see the events received when an item is
+    selected
+  </p>
+</blockquote>
+<p>
+  <strong>data-on-select</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when a menu item is selected. The event
+  detail contains the selected item's value.
+</p>
+<p>
+  <strong>data-on-open-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when the menu opens or closes. The event
+  detail contains the menu's open state.
+</p>
+<p>
+  <strong>data-on-escape-key-down</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when the Escape key is pressed while the
+  menu is focused.
+</p>
+<p>
+  <strong>data-on-focus-outside</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when focus moves outside the menu.
+</p>
+<p>
+  <strong>data-on-highlight-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when the highlighted menu item changes. The
+  event detail contains the current highlighted value.
+</p>
+<p>
+  <strong>data-on-interact-outside</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when an interaction happens outside the
+  menu.
+</p>
+<p>
+  <strong>data-on-pointer-down-outside</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when a pointer down event occurs outside
+  the menu.
+</p>
+<p>
+  <strong>data-on-navigate</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent to navigate to the selected item if it's an
+  ancho
+</p>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
+<h3 id="static" tabindex="-1"><a class="link" href="#static">#</a> Static</h3>
+<ol>
+  <li>Import the Menu component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import "@corex-ui/static/components/menu";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/menu&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  This will automatically initialize all elements with
+  <code>class=&quot;menu-js&quot;</code> and add the necessary interaction
+  behavior.
+</p>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/menu.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/menu.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="menu menu-js"&gt;
+  &lt;button data-part="trigger"&gt;File&lt;/button&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;&lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;menu menu-js&quot;&gt;
+  &lt;button data-part=&quot;trigger&quot;&gt;File&lt;/button&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;&lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<h3 id="static-react" tabindex="-1">
+  <a class="link" href="#static-react">#</a> Static React
+</h3>
+<blockquote>
+  <p>Experimental! Only works with React static export (eg. Next.js SSG.)</p>
+</blockquote>
+<ol>
+  <li>Import the Menu component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { Menu } from &#39;@corex-ui/static/react&#39;;
+export default function Home() {
+  return (
+    &lt;Menu&gt;
+      &lt;button data-part="trigger"&gt;File&lt;/button&gt;
+      &lt;div data-part="positioner"&gt;
+        &lt;ul data-part="content" /&gt;
+      &lt;/div&gt;
+    &lt;/Menu&gt;
+  );
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { Menu } from '@corex-ui/static/react';
+export default function Home() {
+  return (
+    &lt;Menu&gt;
+      &lt;button data-part=&quot;trigger&quot;&gt;File&lt;/button&gt;
+      &lt;div data-part=&quot;positioner&quot;&gt;
+        &lt;ul data-part=&quot;content&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/Menu&gt;
+  );
+}
+</code></pre>
+  </div>
+</div>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/menu.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/menu.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;menu className="menu"&gt;{/* content */}&lt;/menu&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;menu className=&quot;menu&quot;&gt;{/* content */}&lt;/menu&gt;
+</code></pre>
+  </div>
+</div>

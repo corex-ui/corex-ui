@@ -1,0 +1,153 @@
+<h1 id="penpot-guide" tabindex="-1">
+  <a class="link" href="#penpot-guide">#</a> Penpot Guide
+</h1>
+<p>
+  In this guide, we’ll learn how to work with <strong>Penpot</strong> and
+  <strong>Corex UI Design Tokens</strong>.
+</p>
+<p>
+  Because we love open source, we adapted our design token scripts to generate a
+  <strong>Penpot-compatible JSON file</strong>.<br />
+  This file includes <strong>unit calculations</strong>,
+  <strong>theme creation</strong>, and <strong>automatic conversions</strong> to
+  match Penpot’s supported format.
+</p>
+<p>
+  You can find more information about the Penpot tokens format in the
+  <a
+    href="https://help.penpot.app/user-guide/design-tokens/"
+    class="link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="External link, opens in a new window"
+    >official Penpot documentation
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <title>Opens in a new window</title>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+      ></path>
+    </svg> </a
+  >.
+</p>
+<blockquote>
+  <p>
+    Penpot is evolving quickly, with a growing community and rapid feature
+    development.<br />
+    Please note that some features such as synchronization, shadows, and
+    <code>rem</code> units are not yet available.
+  </p>
+</blockquote>
+<hr />
+<h2 id="tokens-file" tabindex="-1">
+  <a class="link" href="#tokens-file">#</a> Tokens File
+</h2>
+<p>
+  You can find the Penpot token file in the Corex UI GitHub repository inside
+  the <code>@corex-ui/design</code> package:
+</p>
+<p>
+  <a
+    href="https://github.com/corex-ui/corex-ui/blob/main/packages/design/tokens/tokens-penpot.json"
+    class="link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="External link, opens in a new window"
+    >tokens-penpot.json
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <title>Opens in a new window</title>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+      ></path>
+    </svg>
+  </a>
+</p>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>Open your <strong>Penpot</strong> account and create or open a project.</p>
+<ul>
+  <li>
+    Navigate to the <strong>Design Tokens</strong> tab in the left sidebar.
+  </li>
+</ul>
+<p><img src="/images/penpot/tokens-tab.png" alt="Tokens Tab" /></p>
+<hr />
+<h2 id="import" tabindex="-1"><a class="link" href="#import">#</a> Import</h2>
+<ul>
+  <li>
+    Scroll to the bottom of the left sidebar and open the
+    <strong>Tools</strong> menu.
+  </li>
+</ul>
+<p><img src="/images/penpot/tools.png" alt="Tools" /></p>
+<ul>
+  <li>Choose <strong>Import / Export Design Tokens</strong>.</li>
+  <li>
+    In the import modal, select <strong>Import a single JSON file</strong>.
+  </li>
+  <li>
+    Choose the <code>tokens-penpot.json</code> file you downloaded earlier.
+  </li>
+</ul>
+<p><img src="/images/penpot/single-file.png" alt="Single File Import" /></p>
+<p>
+  Penpot will automatically import the token groups (colors, typography,
+  effects, etc.) into your project.
+</p>
+<p><img src="/images/penpot/result.png" alt="Result" /></p>
+<hr />
+<h2 id="apply-tokens" tabindex="-1">
+  <a class="link" href="#apply-tokens">#</a> Apply Tokens
+</h2>
+<p>Once imported, you can:</p>
+<ul>
+  <li>Apply <strong>color tokens</strong> to fills, borders, or text</li>
+  <li>Apply <strong>text style tokens</strong> to text layers.</li>
+  <li>
+    Apply <strong>radius and spacing tokens</strong> to shapes and containers.
+  </li>
+  <li>
+    Use <strong>theme tokens</strong> to quickly swap between modes (e.g.,
+    light/dark).
+  </li>
+</ul>
+<hr />
+<h2 id="export" tabindex="-1"><a class="link" href="#export">#</a> Export</h2>
+<p>You can also export your updated Penpot tokens:</p>
+<ul>
+  <li>
+    Go back to the <strong>Tools</strong> menu.<br />
+    <img src="/images/penpot/tools.png" alt="Tools" />
+  </li>
+  <li>Select <strong>Export</strong>.</li>
+  <li>
+    Penpot will generate a JSON file you can use to update your local Corex UI
+    design tokens.
+  </li>
+</ul>
+<p>
+  With this setup, <strong>Corex UI</strong> integrates seamlessly with
+  <strong>Penpot</strong>, giving open-source designers and developers a shared
+  token foundation.
+</p>

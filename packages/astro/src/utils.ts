@@ -4,22 +4,8 @@ import { join } from "path";
 import { pathToFileURL } from "url";
 import ResizeObserver from "resize-observer-polyfill";
 import "intersection-observer";
-
-type WindowLike = Window & typeof globalThis;
-
-export function applyBrowserPolyfills(win: WindowLike) {
-  const g = globalThis as typeof globalThis & {
-    window: WindowLike;
-    document: Document;
-    HTMLElement: typeof HTMLElement;
-    Element: typeof Element;
-    Node: typeof Node;
-    CustomEvent: typeof CustomEvent;
-    getComputedStyle: typeof getComputedStyle;
-    ResizeObserver: typeof ResizeObserver;
-    requestAnimationFrame: typeof requestAnimationFrame;
-    cancelAnimationFrame: typeof cancelAnimationFrame;
-  };
+export function applyBrowserPolyfills(win: any) {
+  const g = globalThis as any;
 
   g.window = win;
   g.document = win.document;
@@ -27,25 +13,40 @@ export function applyBrowserPolyfills(win: WindowLike) {
   g.Element = win.Element;
   g.Node = win.Node;
   g.CustomEvent = win.CustomEvent;
+
+  if (!("navigator" in g) || !g.navigator) {
+    Object.defineProperty(g, "navigator", {
+      configurable: true,
+      writable: true,
+      value: win.navigator || {
+        userAgent: "node.js",
+        clipboard: {
+          writeText: async () => {},
+          readText: async () => "",
+        },
+      },
+    });
+  }
+
+  if (!("navigator" in win)) {
+    win.navigator = g.navigator;
+  }
+
   g.getComputedStyle =
     win.getComputedStyle ||
     (() => ({
       getPropertyValue: () => "",
     }));
+
   g.ResizeObserver = ResizeObserver;
   g.window.ResizeObserver = ResizeObserver;
+
   const raf = (cb: FrameRequestCallback) =>
     setTimeout(() => cb(Date.now()), 16);
   g.requestAnimationFrame = win.requestAnimationFrame || raf;
   g.cancelAnimationFrame = win.cancelAnimationFrame || clearTimeout;
   g.window.requestAnimationFrame = g.requestAnimationFrame;
   g.window.cancelAnimationFrame = g.cancelAnimationFrame;
-}
-
-interface UIModule {
-  [key: string]: unknown;
-  default?: Record<string, unknown>;
-  init?: (doc: Document) => void | Promise<void>;
 }
 
 export async function processHtmlFile(
@@ -58,7 +59,7 @@ export async function processHtmlFile(
     runScripts: "outside-only",
     url: "http://localhost",
   });
-  applyBrowserPolyfills(dom.window as unknown as WindowLike);
+  applyBrowserPolyfills(dom.window);
   let renderedCount = 0;
   for (const file of targetFiles) {
     const baseName = file.replace(/(\.min)?\.mjs$/, "");
@@ -67,9 +68,7 @@ export async function processHtmlFile(
     try {
       const filePath = join(componentsDir, file);
       const fileUrl = pathToFileURL(filePath).href;
-      const uiModule = (await import(
-        `${fileUrl}?cache_bust=${Date.now()}`
-      )) as UIModule;
+      const uiModule: any = await import(`${fileUrl}?cache_bust=${Date.now()}`);
       const initName =
         "initialize" +
         baseName
@@ -82,12 +81,10 @@ export async function processHtmlFile(
         uiModule.init ||
         uiModule.default;
       if (typeof initFn !== "function") continue;
-      await (initFn as (doc: Document) => void | Promise<void>)(
-        dom.window.document,
-      );
+      await initFn(dom.window.document);
       renderedCount++;
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : "";
+    } catch (err: any) {
+      const msg = err.message || "";
       if (
         msg.includes("IntersectionObserver is not a constructor") ||
         msg.includes("i.IntersectionObserver is not a constructor") ||
@@ -104,7 +101,6 @@ export async function processHtmlFile(
   console.log(`[Corex] ${htmlFilePath} → ${renderedCount} rendered`);
   dom.window.close();
 }
-
 /**
  * Recursively finds all HTML files in a directory.
  * @param dirPath Directory to search

@@ -1,0 +1,628 @@
+<h1 id="code" tabindex="-1"><a class="link" href="#code">#</a> Code</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://prismjs.com/"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >PrismJS
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>Prism is a lightweight, extensible syntax highlighter</p>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Code component can be configured as a code block or a inline code.</p>
+<p>The code block must wrapped in a <code>pre</code> tag</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <code data-lang="html" class="code-js"
+      >&lt;button class=&quot;button&quot;&gt;Text&lt;&#47;button&gt;
+    </code>
+    <pre>
+<code  data-lang="html" class="code-js">&lt;button class=&quot;button&quot;&gt;Text&lt;&#47;button&gt;
+</code>
+</pre>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;code data-lang="html" class="code-js"
+  &gt;&amp;lt;button class=&amp;quot;button&amp;quot;&amp;gt;Text&amp;lt;&amp;#47;button&amp;gt;
+&lt;/code&gt;
+&lt;pre&gt;
+&lt;code  data-lang="html" class="code-js"&gt;&amp;lt;button class=&amp;quot;button&amp;quot;&amp;gt;Text&amp;lt;&amp;#47;button&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;code data-lang=&quot;html&quot; class=&quot;code-js&quot;
+  &gt;&amp;lt;button class=&amp;quot;button&amp;quot;&amp;gt;Text&amp;lt;&amp;#47;button&amp;gt;
+&lt;/code&gt;
+&lt;pre&gt;
+&lt;code  data-lang=&quot;html&quot; class=&quot;code-js&quot;&gt;&amp;lt;button class=&amp;quot;button&amp;quot;&amp;gt;Text&amp;lt;&amp;#47;button&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each code can be set with different settings with the following
+  data-attribute.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <pre>
+<code data-lang="bash" class="code-js">npm install @corex-ui/static</code>
+</pre>
+    <pre>
+<code data-lang="js" class="code-js">import "@corex-ui/static";</code>
+</pre>
+    <pre>
+<code data-lang="ts" class="code-js">import "@corex-ui/static";</code>
+</pre>
+    <pre>
+<code data-lang="css" class="code-js">@import "@corex-ui/static-css";</code>
+</pre>
+    <pre>
+<code data-lang="html" class="code-js">&lt;button class="button"&gt;Text&lt;/button&gt;</code>
+</pre>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;pre&gt;
+&lt;code data-lang="bash" class="code-js"&gt;npm install @corex-ui/static&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code data-lang="js" class="code-js"&gt;import "@corex-ui/static";&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code data-lang="ts" class="code-js"&gt;import "@corex-ui/static";&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code data-lang="css" class="code-js"&gt;@import "@corex-ui/static-css";&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code data-lang="html" class="code-js"&gt;&amp;lt;button class="button"&amp;gt;Text&amp;lt;/button&amp;gt;&lt;/code&gt;
+&lt;/pre&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;pre&gt;
+&lt;code data-lang=&quot;bash&quot; class=&quot;code-js&quot;&gt;npm install @corex-ui/static&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code data-lang=&quot;js&quot; class=&quot;code-js&quot;&gt;import &quot;@corex-ui/static&quot;;&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code data-lang=&quot;ts&quot; class=&quot;code-js&quot;&gt;import &quot;@corex-ui/static&quot;;&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code data-lang=&quot;css&quot; class=&quot;code-js&quot;&gt;@import &quot;@corex-ui/static-css&quot;;&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code data-lang=&quot;html&quot; class=&quot;code-js&quot;&gt;&amp;lt;button class=&quot;button&quot;&amp;gt;Text&amp;lt;/button&amp;gt;&lt;/code&gt;
+&lt;/pre&gt;
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>data-lang</strong><br />
+  Type: <code>string</code><br />
+  Description: The language code used for code highlighting. Default to
+  &quot;html&quot;
+</p>
+<hr />
+<h2 id="custom-languages" tabindex="-1">
+  <a class="link" href="#custom-languages">#</a> Custom Languages
+</h2>
+<p>By default the following languages are available</p>
+<p>
+  <code>html</code>, <code>js</code>, <code>ts</code>, <code>css</code>,
+  <code>markup</code>, <code>bash</code>, <code>shell-session</code>
+</p>
+<p>
+  To add more languages you will need to install and import to required
+  languages
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value="pnpm install prismjs @types/prismjs
+"
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">bash</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="bash">pnpm install prismjs @types/prismjs
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import "prismjs/components/prism-go";
+import "prismjs/components/prism-halm";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import &quot;prismjs/components/prism-go&quot;;
+import &quot;prismjs/components/prism-halm&quot;;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="modifiers" tabindex="-1">
+  <a class="link" href="#modifiers">#</a> Modifiers
+</h2>
+<p>
+  Code block support modifier classes that control their appearance.<br />
+  You can combine multiple modifiers on the same code block.
+</p>
+<p>
+  The default modifier is applied automatically, so you don’t need to include it
+  explicitly.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Modifier</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#size" class="link">Size</a></td>
+      <td>Adjusts the overall size of the code block.</td>
+    </tr>
+  </tbody>
+</table>
+<blockquote>
+  <p>
+    You may have noticed the double dash before the modifier name — this follows
+    the BEM (Block Element Modifier) naming convention
+  </p>
+</blockquote>
+<h3 id="size" tabindex="-1"><a class="link" href="#size">#</a> Size</h3>
+<p>
+  Use <code>class=&quot;code--{size}&quot;</code> to set the size of a code.
+</p>
+<p>
+  Available options:<br />
+  <strong>sm</strong>, <strong>inherit</strong>(default), <strong>md</strong>,
+  <strong>lg</strong>, <strong>xl</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <code data-lang="css" class="code-js code--sm"
+        >@import "@corex-ui/static-css";</code
+      >
+    </div>
+    <div>
+      <code data-lang="css" class="code-js"
+        >@import "@corex-ui/static-css";</code
+      >
+    </div>
+    <div>
+      <code data-lang="css" class="code-js code--md"
+        >@import "@corex-ui/static-css";</code
+      >
+    </div>
+    <div>
+      <code data-lang="css" class="code-js code--lg"
+        >@import "@corex-ui/static-css";</code
+      >
+    </div>
+    <div>
+      <code data-lang="css" class="code-js code--xl"
+        >@import "@corex-ui/static-css";</code
+      >
+    </div>
+    <div>
+      <pre class="code--sm">
+<code data-lang="css" class="code-js">@import "@corex-ui/static-css";
+    @import "@tailwindcss";
+</code>
+</pre>
+    </div>
+    <div>
+      <pre>
+<code data-lang="css" class="code-js">@import "@corex-ui/static-css";
+    @import "@tailwindcss";
+</code>
+</pre>
+    </div>
+    <div>
+      <pre>
+<code data-lang="css" class="code-js code--md">@import "@corex-ui/static-css";
+    @import "@tailwindcss";
+</code>
+</pre>
+    </div>
+    <div>
+      <pre class="code--lg">
+<code data-lang="css" class="code-js">@import "@corex-ui/static-css";
+    @import "@tailwindcss";
+</code>
+</pre>
+    </div>
+    <div>
+      <pre class="code--xl">
+<code data-lang="css" class="code-js">@import "@corex-ui/static-css";
+    @import "@tailwindcss";
+</code>
+</pre>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div&gt;
+  &lt;code data-lang="css" class="code-js code--sm"
+    &gt;@import "@corex-ui/static-css";&lt;/code
+  &gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;code data-lang="css" class="code-js"&gt;@import "@corex-ui/static-css";&lt;/code&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;code data-lang="css" class="code-js code--md"
+    &gt;@import "@corex-ui/static-css";&lt;/code
+  &gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;code data-lang="css" class="code-js code--lg"
+    &gt;@import "@corex-ui/static-css";&lt;/code
+  &gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;code data-lang="css" class="code-js code--xl"
+    &gt;@import "@corex-ui/static-css";&lt;/code
+  &gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;pre class="code--sm"&gt;
+&lt;code data-lang="css" class="code-js"&gt;@import "@corex-ui/static-css";
+    @import "@tailwindcss";
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;pre&gt;
+&lt;code data-lang="css" class="code-js"&gt;@import "@corex-ui/static-css";
+    @import "@tailwindcss";
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;pre&gt;
+&lt;code data-lang="css" class="code-js code--md"&gt;@import "@corex-ui/static-css";
+    @import "@tailwindcss";
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;pre class="code--lg"&gt;
+&lt;code data-lang="css" class="code-js"&gt;@import "@corex-ui/static-css";
+    @import "@tailwindcss";
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;pre class="code--xl"&gt;
+&lt;code data-lang="css" class="code-js"&gt;@import "@corex-ui/static-css";
+    @import "@tailwindcss";
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+  &lt;code data-lang=&quot;css&quot; class=&quot;code-js code--sm&quot;
+    &gt;@import &quot;@corex-ui/static-css&quot;;&lt;/code
+  &gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;code data-lang=&quot;css&quot; class=&quot;code-js&quot;&gt;@import &quot;@corex-ui/static-css&quot;;&lt;/code&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;code data-lang=&quot;css&quot; class=&quot;code-js code--md&quot;
+    &gt;@import &quot;@corex-ui/static-css&quot;;&lt;/code
+  &gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;code data-lang=&quot;css&quot; class=&quot;code-js code--lg&quot;
+    &gt;@import &quot;@corex-ui/static-css&quot;;&lt;/code
+  &gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;code data-lang=&quot;css&quot; class=&quot;code-js code--xl&quot;
+    &gt;@import &quot;@corex-ui/static-css&quot;;&lt;/code
+  &gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;pre class=&quot;code--sm&quot;&gt;
+&lt;code data-lang=&quot;css&quot; class=&quot;code-js&quot;&gt;@import &quot;@corex-ui/static-css&quot;;
+    @import &quot;@tailwindcss&quot;;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;pre&gt;
+&lt;code data-lang=&quot;css&quot; class=&quot;code-js&quot;&gt;@import &quot;@corex-ui/static-css&quot;;
+    @import &quot;@tailwindcss&quot;;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;pre&gt;
+&lt;code data-lang=&quot;css&quot; class=&quot;code-js code--md&quot;&gt;@import &quot;@corex-ui/static-css&quot;;
+    @import &quot;@tailwindcss&quot;;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;pre class=&quot;code--lg&quot;&gt;
+&lt;code data-lang=&quot;css&quot; class=&quot;code-js&quot;&gt;@import &quot;@corex-ui/static-css&quot;;
+    @import &quot;@tailwindcss&quot;;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;pre class=&quot;code--xl&quot;&gt;
+&lt;code data-lang=&quot;css&quot; class=&quot;code-js&quot;&gt;@import &quot;@corex-ui/static-css&quot;;
+    @import &quot;@tailwindcss&quot;;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>

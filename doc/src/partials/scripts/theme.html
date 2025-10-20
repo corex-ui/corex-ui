@@ -1,0 +1,19 @@
+<script>
+  try {
+    const themeStored = localStorage.getItem("data-theme");
+    const theme = themeStored || "neo";
+    document.documentElement.setAttribute("data-theme", theme);
+    if (!themeStored) {
+      localStorage.setItem("data-theme", theme);
+    }
+    const modeStored = localStorage.getItem("data-mode");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    const mode = modeStored || (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-mode", mode);
+    if (!modeStored) {
+      localStorage.setItem("data-mode", mode);
+    }
+  } catch (_) {}
+</script>

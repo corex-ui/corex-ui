@@ -1,0 +1,937 @@
+<h1 id="switcher" tabindex="-1">
+  <a class="link" href="#switcher">#</a> Switcher
+</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation based of
+    <a href="/components/toggle-group" class="link">Toggle Group Component</a>
+  </p>
+</blockquote>
+<p>
+  Switcher component enables dynamic updating of data attributes while
+  automatically saving preferences to local storage. It's ideal for implementing
+  theme switching functionality such as light/dark mode toggles or custom theme
+  selectors across your application.
+</p>
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Switcher component consists of the following data parts:</p>
+<p><code>root</code>, <code>item</code></p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="switcher switcher-js"
+      data-default-value="a"
+      data-key="key-anatomy"
+    >
+      <div data-part="root">
+        <button data-part="item" data-value="a">A</button>
+        <button data-part="item" data-value="b">B</button>
+        <button data-part="item" data-value="c">C</button>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="switcher switcher-js" data-default-value="a" data-key="key-anatomy"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;button data-part="item" data-value="a"&gt;A&lt;/button&gt;
+        &lt;button data-part="item" data-value="b"&gt;B&lt;/button&gt;
+        &lt;button data-part="item" data-value="c"&gt;C&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;switcher switcher-js&quot; data-default-value=&quot;a&quot; data-key=&quot;key-anatomy&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;A&lt;/button&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;B&lt;/button&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;C&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<blockquote>
+  <p>Check the changes of the values of the attribute of the html tag</p>
+</blockquote>
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each switcher can be set with different settings with the following
+  data-attribute.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="switcher switcher-js"
+      data-key="key-attributes"
+      data-default-value="a"
+      data-orientation="vertical"
+      data-dir="rtl"
+      data-deselectable="true"
+      data-loop-focus="false"
+      data-rowing-focus="false"
+      data-multiple="true"
+    >
+      <div data-part="root">
+        <button data-part="item" data-value="a">A</button>
+        <button data-part="item" data-value="b">B</button>
+        <button data-part="item" data-value="c">C</button>
+        <button data-part="item" data-value="d">D</button>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="switcher switcher-js" data-key="key-attributes" data-default-value="a" data-orientation="vertical"
+    data-dir="rtl" data-deselectable="true" data-loop-focus="false" data-rowing-focus="false" data-multiple="true"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;button data-part="item" data-value="a"&gt;A&lt;/button&gt;
+        &lt;button data-part="item" data-value="b"&gt;B&lt;/button&gt;
+        &lt;button data-part="item" data-value="c"&gt;C&lt;/button&gt;
+        &lt;button data-part="item" data-value="d"&gt;D&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;switcher switcher-js&quot; data-key=&quot;key-attributes&quot; data-default-value=&quot;a&quot; data-orientation=&quot;vertical&quot;
+    data-dir=&quot;rtl&quot; data-deselectable=&quot;true&quot; data-loop-focus=&quot;false&quot; data-rowing-focus=&quot;false&quot; data-multiple=&quot;true&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;A&lt;/button&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;B&lt;/button&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;C&lt;/button&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;d&quot;&gt;D&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Description: The unique id of the component. Default generated if none is
+  provided.
+</p>
+<p>
+  <strong>data-key</strong><br />
+  Type: <code>string</code><br />
+  Description: The attribute key used to apply the values to the document:
+  <code>data-${key}</code>.
+</p>
+<p>
+  <strong>data-default-value</strong><br />
+  Type: <code>string</code><br />
+  Description: The initial selected switcher value/values. Separated by comma.
+</p>
+<p>
+  <strong>data-value</strong><br />
+  Type: <code>string</code><br />
+  Description: The controlled switcher value/values. Separated by comma.
+</p>
+<p>
+  <strong>data-orientation</strong><br />
+  Type: <code>horizontal</code> | <code>vertical</code><br />
+  Description: The orientation of the switcher.
+</p>
+<ul>
+  <li>
+    <code>horizontal</code>: only left and right arrow key navigation will work.
+  </li>
+  <li>
+    <code>vertical</code>: only up and down arrow key navigation will work.
+  </li>
+</ul>
+<p>
+  <strong>data-dir</strong><br />
+  Type: <code>ltr</code> | <code>rtl</code><br />
+  Description: The orientation of the switcher. Can be <code>ltr</code> or
+  <code>rtl</code>.
+</p>
+<p>
+  <strong>data-loop-focus</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the keyboard navigation will loop from last tab to first,
+  and vice versa.
+</p>
+<p>
+  <strong>data-roving-focus</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to use roving tab index to manage focus.
+</p>
+<p>
+  <strong>data-multiple</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to allow multiple toggles to be selected.
+</p>
+<p>
+  <strong>data-deselectable</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the switcher allows empty selection. Note: This is
+  ignored if multiple is true.
+</p>
+<p>
+  <strong>data-disabled</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the toggle is disabled.
+</p>
+<hr />
+<h2 id="event-callbacks" tabindex="-1">
+  <a class="link" href="#event-callbacks">#</a> Event Callbacks
+</h2>
+<p>
+  Each switcher component can receive callbacks that can be used to respond to
+  user interaction with custom behavior.
+</p>
+<p>
+  You must add a custom id for the switcher and a event listener for your event
+  name
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document.getElementById("my-switcher")
+?.addEventListener("my-switcher-event", (event) =&gt; {
+console.log("Received event:", (event as CustomEvent).detail);
+});
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">document.getElementById(&quot;my-switcher&quot;)
+?.addEventListener(&quot;my-switcher-event&quot;, (event) =&gt; {
+console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
+});
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div
+      id="my-switcher"
+      data-on-value-change="my-switcher-event"
+      class="switcher switcher-js"
+      data-default-value="a"
+      data-key="key-callback"
+    >
+      <div data-part="root">
+        <button data-part="item" data-value="a">A</button>
+        <button data-part="item" data-value="b">B</button>
+        <button data-part="item" data-value="c">C</button>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div id="my-switcher" data-on-value-change="my-switcher-event" class="switcher switcher-js" data-default-value="a" data-key="key-callback"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;button data-part="item" data-value="a"&gt;A&lt;/button&gt;
+        &lt;button data-part="item" data-value="b"&gt;B&lt;/button&gt;
+        &lt;button data-part="item" data-value="c"&gt;C&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div id=&quot;my-switcher&quot; data-on-value-change=&quot;my-switcher-event&quot; class=&quot;switcher switcher-js&quot; data-default-value=&quot;a&quot; data-key=&quot;key-callback&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;A&lt;/button&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;B&lt;/button&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;c&quot;&gt;C&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<blockquote>
+  <p>
+    Open your browser's console to see the events received when the value
+    changes
+  </p>
+</blockquote>
+<p>
+  <strong>data-on-value-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to send when the switcher's value changes
+</p>
+<hr />
+<h2 id="value-control" tabindex="-1">
+  <a class="link" href="#value-control">#</a> Value Control
+</h2>
+<p>Switcher value can be control with event dispatch</p>
+<p>
+  You must set a custom <code>id</code> for your switcher, as the default is
+  randomly generated
+</p>
+<p><code>switcher:set-value</code></p>
+<p>The detail of the event must contain a value</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='value = ["light"]
+const targetEl = document.getElementById("my-switcher");
+if (targetEl &amp;&amp; targetEl !== event.target) {
+targetEl.dispatchEvent(new CustomEvent("switcher:set-value", {
+detail: { value }
+}));
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">value = [&quot;light&quot;]
+const targetEl = document.getElementById(&quot;my-switcher&quot;);
+if (targetEl &amp;&amp; targetEl !== event.target) {
+targetEl.dispatchEvent(new CustomEvent(&quot;switcher:set-value&quot;, {
+detail: { value }
+}));
+}
+</code></pre>
+  </div>
+</div>
+<p>
+  You also dispatch an event named switcher:set-checked to the switcher id with
+  a boolean value
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='const el = document.getElementById("my-switcher");
+if (el) {
+el.dispatchEvent(
+new CustomEvent("switcher:set-checked", {
+detail: { value: true },
+})
+);
+} else {
+console.warn("Element with ID &apos;my-switcher&apos; not found");
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">const el = document.getElementById(&quot;my-switcher&quot;);
+if (el) {
+el.dispatchEvent(
+new CustomEvent(&quot;switcher:set-checked&quot;, {
+detail: { value: true },
+})
+);
+} else {
+console.warn(&quot;Element with ID 'my-switcher' not found&quot;);
+}
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="synchronize" tabindex="-1">
+  <a class="link" href="#synchronize">#</a> Synchronize
+</h2>
+<p>
+  Due to another switcher with the same key on the same page, we must
+  synchronise them using the id and callback and set value
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      id="switcher-demo"
+      class="switcher switcher-js"
+      data-default-value="light"
+      data-key="mode"
+      data-deselectable="false"
+      data-on-value-change="update-switcher"
+    >
+      <div data-part="root">
+        <button
+          data-part="item"
+          data-value="light"
+          aria-label="Switch to light color mode"
+        >
+          <svg
+            class="item__icon"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            ></path>
+          </svg>
+        </button>
+        <button
+          data-part="item"
+          data-value="dark"
+          aria-label="Switch to dark color mode"
+        >
+          <svg
+            class="item__icon"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div id="switcher-demo" class="switcher switcher-js" data-default-value="light" data-key="mode" data-deselectable="false"
+    data-on-value-change="update-switcher"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;button data-part="item" data-value="light" aria-label="Switch to light color mode"&gt;
+            &lt;svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;
+                &lt;path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"&gt;
+                &lt;/path&gt;
+            &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part="item" data-value="dark" aria-label="Switch to dark color mode"&gt;
+            &lt;svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;
+                &lt;path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"&gt;
+                &lt;/path&gt;
+            &lt;/svg&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div id=&quot;switcher-demo&quot; class=&quot;switcher switcher-js&quot; data-default-value=&quot;light&quot; data-key=&quot;mode&quot; data-deselectable=&quot;false&quot;
+    data-on-value-change=&quot;update-switcher&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;light&quot; aria-label=&quot;Switch to light color mode&quot;&gt;
+            &lt;svg class=&quot;item__icon&quot; aria-hidden=&quot;true&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot;
+                viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;currentColor&quot;&gt;
+                &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;
+                    d=&quot;M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z&quot;&gt;
+                &lt;/path&gt;
+            &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;dark&quot; aria-label=&quot;Switch to dark color mode&quot;&gt;
+            &lt;svg class=&quot;item__icon&quot; aria-hidden=&quot;true&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot;
+                viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;currentColor&quot;&gt;
+                &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;
+                    d=&quot;M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z&quot;&gt;
+                &lt;/path&gt;
+            &lt;/svg&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>Using all components <code>id</code>, we can synchronize them</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='  const ids = ["switcher", "switcher-mobile", "switcher-demo"];
+  const elements = ids.map(id =&gt; document.getElementById(id)).filter(Boolean) as HTMLElement[];
+  
+  elements.forEach(el =&gt; {
+    el.addEventListener("update-switcher", (event) =&gt; {
+      const { value } = (event as CustomEvent&lt;{ value: string[] }&gt;).detail;
+  
+      elements.forEach(target =&gt; {
+        if (target !== event.target) {
+          target.dispatchEvent(new CustomEvent("switcher:set-value", {
+            detail: { value }
+          }));
+        }
+      });
+    });
+  });
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">  const ids = [&quot;switcher&quot;, &quot;switcher-mobile&quot;, &quot;switcher-demo&quot;];
+  const elements = ids.map(id =&gt; document.getElementById(id)).filter(Boolean) as HTMLElement[];
+  
+  elements.forEach(el =&gt; {
+    el.addEventListener(&quot;update-switcher&quot;, (event) =&gt; {
+      const { value } = (event as CustomEvent&lt;{ value: string[] }&gt;).detail;
+  
+      elements.forEach(target =&gt; {
+        if (target !== event.target) {
+          target.dispatchEvent(new CustomEvent(&quot;switcher:set-value&quot;, {
+            detail: { value }
+          }));
+        }
+      });
+    });
+  });
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="duo-switch" tabindex="-1">
+  <a class="link" href="#duo-switch">#</a> Duo Switch
+</h2>
+<p>
+  If you only have 2 values and you wish to hide the active one, you can add the
+  switcher--duo class
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="switcher switcher-js switcher--duo switcher--circle"
+      data-default-value="a"
+      data-key="key-duo"
+    >
+      <div data-part="root">
+        <button data-part="item" data-value="a">A</button>
+        <button data-part="item" data-value="b">B</button>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value=' &lt;div class="switcher switcher-js switcher--duo switcher--circle" data-default-value="a" data-key="key-duo"&gt;
+    &lt;div data-part="root"&gt;
+        &lt;button data-part="item" data-value="a"&gt;A&lt;/button&gt;
+        &lt;button data-part="item" data-value="b"&gt;B&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html"> &lt;div class=&quot;switcher switcher-js switcher--duo switcher--circle&quot; data-default-value=&quot;a&quot; data-key=&quot;key-duo&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;a&quot;&gt;A&lt;/button&gt;
+        &lt;button data-part=&quot;item&quot; data-value=&quot;b&quot;&gt;B&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>

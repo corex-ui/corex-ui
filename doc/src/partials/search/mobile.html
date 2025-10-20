@@ -1,0 +1,85 @@
+<div class="hidden sm:flex xl:hidden dialog dialog-js">
+  <button
+    data-part="trigger"
+    class="ui-trigger ui-trigger--sm ui-trigger--circle"
+    aria-label="Open site search"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+      />
+    </svg>
+  </button>
+  <div data-part="backdrop"></div>
+  <div data-part="positioner">
+    <div data-part="content">
+      <div data-part="row">
+        <h3 data-part="title" class="mx-auto my-ui-sm">Corex Documentation</h3>
+        <button data-part="close-trigger" aria-label="Close menu">
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div
+        class="site-search-js site-search self-center"
+        data-name="site-search"
+        data-placeholder="Search documentation"
+        data-name="site-search"
+      >
+        <div data-part="root">
+          <div data-part="control">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="site-search__icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              ></path>
+            </svg>
+            <input data-part="input" />
+          </div>
+          <div data-part="positioner">
+            <div data-part="content" class="scrollbar scrollbar--sm"></div>
+          </div>
+        </div>
+      </div>
+      <blockquote>
+        Did you know that this search box is using Corex
+        <a href="/components/site-search" class="link link--font-brand"
+          >Site Search</a
+        >
+        component.
+        <br />
+        Based of Combobox and Pagefind API, no third party required and works on
+        static websites
+      </blockquote>
+    </div>
+  </div>
+</div>

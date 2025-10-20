@@ -1,0 +1,1420 @@
+<h1 id="signature-pad" tabindex="-1">
+  <a class="link" href="#signature-pad">#</a> Signature Pad
+</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/signature-pad"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Signature Pad
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>
+  The signature pad component allows users to draw handwritten signatures using
+  touch or pointer devices. The signature can be saved as an image or cleared.
+</p>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Signature Pad component consists of the following data parts:</p>
+<p>
+  <code>root</code>, <code>label</code>, <code>hidden-input</code>,
+  <code>control</code>, <code>segment</code>, <code>clear-trigger</code>,
+  <code>guide</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      id="signature-anatomy"
+      class="signature-pad signature-pad-js"
+      data-on-draw-end="save-signature"
+    >
+      <div data-part="root">
+        <label data-part="label">Signature Pad</label>
+        <input data-part="hidden-input" />
+        <div data-part="control">
+          <svg data-part="segment"></svg>
+          <button data-part="clear-trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+              />
+            </svg>
+          </button>
+          <div data-part="guide"></div>
+        </div>
+        <div data-part="preview"></div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  id="signature-anatomy"
+  class="signature-pad signature-pad-js"
+  data-on-draw-end="save-signature"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Signature Pad&lt;/label&gt;
+    &lt;input data-part="hidden-input" /&gt;
+    &lt;div data-part="control"&gt;
+      &lt;svg data-part="segment"&gt;&lt;/svg&gt;
+      &lt;button data-part="clear-trigger"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="guide"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="preview"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  id=&quot;signature-anatomy&quot;
+  class=&quot;signature-pad signature-pad-js&quot;
+  data-on-draw-end=&quot;save-signature&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Signature Pad&lt;/label&gt;
+    &lt;input data-part=&quot;hidden-input&quot; /&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;svg data-part=&quot;segment&quot;&gt;&lt;/svg&gt;
+      &lt;button data-part=&quot;clear-trigger&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;guide&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;preview&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document
+  .getElementById("signature-anatomy")
+  ?.addEventListener("save-signature", async (event) =&gt; {
+    const details = (event as CustomEvent).detail;
+    console.log(details);
+    const dataUrl = await details.getDataUrl("image/png");
+    const preview = document.querySelector&lt;HTMLElement&gt;(
+      &#39;[data-part="preview"]&#39;,
+    );
+    console.log(preview);
+    console.log(dataUrl);
+    if (!preview || !dataUrl) return;
+    preview.innerHTML = `
+      &lt;img src="${dataUrl}" alt="Signature preview" /&gt;
+      &lt;button class="button button--sm button--accent" id="download-signature"&gt;Save Signature&lt;/button&gt;
+    `;
+    const downloadBtn = document.getElementById("download-signature");
+    downloadBtn?.addEventListener("click", () =&gt; {
+      const link = document.createElement("a");
+      link.href = dataUrl;
+      link.download = "signature.png";
+      link.click();
+    });
+    console.log("Signature preview populated with save button.");
+  });
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">document
+  .getElementById(&quot;signature-anatomy&quot;)
+  ?.addEventListener(&quot;save-signature&quot;, async (event) =&gt; {
+    const details = (event as CustomEvent).detail;
+    console.log(details);
+    const dataUrl = await details.getDataUrl(&quot;image/png&quot;);
+    const preview = document.querySelector&lt;HTMLElement&gt;(
+      '[data-part=&quot;preview&quot;]',
+    );
+    console.log(preview);
+    console.log(dataUrl);
+    if (!preview || !dataUrl) return;
+    preview.innerHTML = `
+      &lt;img src=&quot;${dataUrl}&quot; alt=&quot;Signature preview&quot; /&gt;
+      &lt;button class=&quot;button button--sm button--accent&quot; id=&quot;download-signature&quot;&gt;Save Signature&lt;/button&gt;
+    `;
+    const downloadBtn = document.getElementById(&quot;download-signature&quot;);
+    downloadBtn?.addEventListener(&quot;click&quot;, () =&gt; {
+      const link = document.createElement(&quot;a&quot;);
+      link.href = dataUrl;
+      link.download = &quot;signature.png&quot;;
+      link.click();
+    });
+    console.log(&quot;Signature preview populated with save button.&quot;);
+  });
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each signature pad can be set with different settings with the following
+  data-attribute.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="signature-pad signature-pad-js"
+      data-fill="red"
+      data-simulate-pressure="true"
+      data-size="6"
+    >
+      <div data-part="root">
+        <label data-part="label">Signature Pad</label>
+        <input data-part="hidden-input" />
+        <div data-part="control">
+          <svg data-part="segment"></svg>
+          <button data-part="clear-trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+              />
+            </svg>
+          </button>
+          <div data-part="guide"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="signature-pad signature-pad-js"
+  data-fill="red"
+  data-simulate-pressure="true"
+  data-size="6"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Signature Pad&lt;/label&gt;
+    &lt;input data-part="hidden-input" /&gt;
+    &lt;div data-part="control"&gt;
+      &lt;svg data-part="segment"&gt;&lt;/svg&gt;
+      &lt;button data-part="clear-trigger"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="guide"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;signature-pad signature-pad-js&quot;
+  data-fill=&quot;red&quot;
+  data-simulate-pressure=&quot;true&quot;
+  data-size=&quot;6&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Signature Pad&lt;/label&gt;
+    &lt;input data-part=&quot;hidden-input&quot; /&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;svg data-part=&quot;segment&quot;&gt;&lt;/svg&gt;
+      &lt;button data-part=&quot;clear-trigger&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;guide&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Description: Unique id of the signature pad. Default generated if none is
+  provided.
+</p>
+<p>
+  <strong>data-dir</strong><br />
+  Type: <code>string</code><br />
+  Description: The orientation of the signature pad. Can be <code>ltr</code> or
+  <code>rtl</code>.
+</p>
+<p>
+  <strong>data-name</strong><br />
+  Type: <code>string</code><br />
+  Description: The name of the signature pad useful for form submission.
+</p>
+<p>
+  <strong>data-disabled</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the signature pad is disabled.
+</p>
+<p>
+  <strong>data-required</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the signature pad is required.
+</p>
+<p>
+  <strong>data-read-only</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the signature pad is read-only.
+</p>
+<p>
+  <strong>data-default-paths</strong><br />
+  Type: <code>string[]</code><br />
+  Description: Default signature paths (uncontrolled).
+</p>
+<p>
+  <strong>data-paths</strong><br />
+  Type: <code>string[]</code><br />
+  Description: Controlled signature paths.
+</p>
+<p>
+  <strong>data-fill</strong><br />
+  Type: <code>string</code><br />
+  Description: Stroke color of the signature.
+</p>
+<p>
+  <strong>data-size</strong><br />
+  Type: <code>number</code><br />
+  Description: Stroke size of the signature.
+</p>
+<p>
+  <strong>data-simulate-pressure</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to simulate pressure in stroke drawing.
+</p>
+<hr />
+<h2 id="event-callbacks" tabindex="-1">
+  <a class="link" href="#event-callbacks">#</a> Event Callbacks
+</h2>
+<p>
+  Each signature pad component can receive callbacks that can be used to respond
+  to user interaction with custom behavior.
+</p>
+<p>
+  You must add a custom id for the signature pad and a event listener for your
+  event name
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document
+  .getElementById("my-signature-pad")
+  ?.addEventListener("my-signature-pad-event", (event) =&gt; {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">document
+  .getElementById(&quot;my-signature-pad&quot;)
+  ?.addEventListener(&quot;my-signature-pad-event&quot;, (event) =&gt; {
+    console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
+  });
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div
+      id="my-signature-pad"
+      class="signature-pad signature-pad-js"
+      data-on-draw-end="my-signature-pad-event"
+    >
+      <div data-part="root">
+        <label data-part="label">Signature Pad</label>
+        <input data-part="hidden-input" />
+        <div data-part="control">
+          <svg data-part="segment"></svg>
+          <button data-part="clear-trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+              />
+            </svg>
+          </button>
+          <div data-part="guide"></div>
+        </div>
+        <div data-part="preview"></div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  id="my-signature-pad"
+  class="signature-pad signature-pad-js"
+  data-on-draw-end="my-signature-pad-event"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Signature Pad&lt;/label&gt;
+    &lt;input data-part="hidden-input" /&gt;
+    &lt;div data-part="control"&gt;
+      &lt;svg data-part="segment"&gt;&lt;/svg&gt;
+      &lt;button data-part="clear-trigger"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part="guide"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part="preview"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  id=&quot;my-signature-pad&quot;
+  class=&quot;signature-pad signature-pad-js&quot;
+  data-on-draw-end=&quot;my-signature-pad-event&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Signature Pad&lt;/label&gt;
+    &lt;input data-part=&quot;hidden-input&quot; /&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;svg data-part=&quot;segment&quot;&gt;&lt;/svg&gt;
+      &lt;button data-part=&quot;clear-trigger&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div data-part=&quot;guide&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;preview&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<blockquote>
+  <p>
+    Open your browser's console to see the events received when the siganture
+    pad draw ends
+  </p>
+</blockquote>
+<p>
+  <strong>data-on-draw</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name triggered while drawing on the signature pad.
+</p>
+<p>
+  <strong>data-on-draw-end</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name triggered when drawing ends.
+</p>
+<hr />
+<h2 id="form-usage" tabindex="-1">
+  <a class="link" href="#form-usage">#</a> Form usage
+</h2>
+<p>Signature pad can be used inside a form</p>
+<p>You must set the id of the form and the name of the Signature pad</p>
+<p><code>data-name=&quot;signature&quot;</code></p>
+
+<div class="preview">
+  <div class="preview__display">
+    <form
+      id="my-form"
+      class="flex flex-col items-center gap-(--spacing-ui-gap) max-w-(--container-mini)"
+    >
+      <div class="signature-pad signature-pad-js" data-name="signature">
+        <div data-part="root">
+          <label data-part="label">Signature Pad</label>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg data-part="segment"></svg>
+            <button data-part="clear-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+                />
+              </svg>
+            </button>
+            <div data-part="guide"></div>
+          </div>
+        </div>
+      </div>
+      <button class="button button--accent" type="submit">Submit</button>
+      <div id="result"></div>
+    </form>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;form
+  id="my-form"
+  class="flex flex-col items-center gap-(--spacing-ui-gap) max-w-(--container-mini)"
+&gt;
+  &lt;div class="signature-pad signature-pad-js" data-name="signature"&gt;
+    &lt;div data-part="root"&gt;
+      &lt;label data-part="label"&gt;Signature Pad&lt;/label&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg data-part="segment"&gt;&lt;/svg&gt;
+        &lt;button data-part="clear-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;div data-part="guide"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="button button--accent" type="submit"&gt;Submit&lt;/button&gt;
+  &lt;div id="result"&gt;&lt;/div&gt;
+&lt;/form&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;form
+  id=&quot;my-form&quot;
+  class=&quot;flex flex-col items-center gap-(--spacing-ui-gap) max-w-(--container-mini)&quot;
+&gt;
+  &lt;div class=&quot;signature-pad signature-pad-js&quot; data-name=&quot;signature&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+      &lt;label data-part=&quot;label&quot;&gt;Signature Pad&lt;/label&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;svg data-part=&quot;segment&quot;&gt;&lt;/svg&gt;
+        &lt;button data-part=&quot;clear-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;div data-part=&quot;guide&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;button button--accent&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+  &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+  </div>
+</div>
+<p>You can use the results from the form as you wish</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='const signaturePadForm = document.getElementById(
+  "my-form",
+) as HTMLFormElement | null;
+const signatureResult = document.getElementById(
+  "result",
+) as HTMLDivElement | null;
+
+if (signaturePadForm &amp;&amp; signatureResult) {
+  signaturePadForm.addEventListener("submit", (e: Event) =&gt; {
+    e.preventDefault();
+    const formData = new FormData(signaturePadForm);
+    console.log(formData.getAll("signature"));
+    const signature = (formData.get("signature") as string) || "none";
+    signatureResult.innerHTML = `Submitted: signature: &lt;span class="overflow-scroll scrollbar scrollbar--sm max-h-(--container-mini) block max-w-(--container-mini) break-all"&gt;${signature}&lt;/span&gt;`;
+  });
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">const signaturePadForm = document.getElementById(
+  &quot;my-form&quot;,
+) as HTMLFormElement | null;
+const signatureResult = document.getElementById(
+  &quot;result&quot;,
+) as HTMLDivElement | null;
+
+if (signaturePadForm &amp;&amp; signatureResult) {
+  signaturePadForm.addEventListener(&quot;submit&quot;, (e: Event) =&gt; {
+    e.preventDefault();
+    const formData = new FormData(signaturePadForm);
+    console.log(formData.getAll(&quot;signature&quot;));
+    const signature = (formData.get(&quot;signature&quot;) as string) || &quot;none&quot;;
+    signatureResult.innerHTML = `Submitted: signature: &lt;span class=&quot;overflow-scroll scrollbar scrollbar--sm max-h-(--container-mini) block max-w-(--container-mini) break-all&quot;&gt;${signature}&lt;/span&gt;`;
+  });
+}
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
+<h3 id="static" tabindex="-1"><a class="link" href="#static">#</a> Static</h3>
+<ol>
+  <li>Import the Signature Pad component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import "@corex-ui/static/components/signature-pad";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/signature-pad&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  This will automatically initialize all elements with
+  <code>class=&quot;signature-pad-js&quot;</code> and add the necessary
+  interaction behavior.
+</p>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/signature-pad.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/signature-pad.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="signature-pad signature-pad-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Signature Pad&lt;/label&gt;
+    &lt;input data-part="hidden-input" /&gt;
+    &lt;div data-part="control"&gt;
+      &lt;svg data-part="segment"&gt;&lt;/svg&gt;
+      &lt;button data-part="clear-trigger"&gt;&lt;/button&gt;
+      &lt;div data-part="guide"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;signature-pad signature-pad-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Signature Pad&lt;/label&gt;
+    &lt;input data-part=&quot;hidden-input&quot; /&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;svg data-part=&quot;segment&quot;&gt;&lt;/svg&gt;
+      &lt;button data-part=&quot;clear-trigger&quot;&gt;&lt;/button&gt;
+      &lt;div data-part=&quot;guide&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<h3 id="static-react" tabindex="-1">
+  <a class="link" href="#static-react">#</a> Static React
+</h3>
+<blockquote>
+  <p>Experimental! Only works with React static export (eg. Next.js SSG.)</p>
+</blockquote>
+<ol>
+  <li>Import the Signature Pad component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { SignaturePad } from &#39;@corex-ui/static/react&#39;;
+export default function Home() {
+  return (
+    &lt;SignaturePad&gt;
+      &lt;div data-part="root"&gt;
+        &lt;label data-part="label"&gt;Signature Pad&lt;/label&gt;
+        &lt;input data-part="hidden-input" /&gt;
+        &lt;div data-part="control"&gt;
+          &lt;svg data-part="segment" /&gt;
+          &lt;button data-part="clear-trigger" /&gt;
+          &lt;div data-part="guide" /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/SignaturePad&gt;
+  );
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { SignaturePad } from '@corex-ui/static/react';
+export default function Home() {
+  return (
+    &lt;SignaturePad&gt;
+      &lt;div data-part=&quot;root&quot;&gt;
+        &lt;label data-part=&quot;label&quot;&gt;Signature Pad&lt;/label&gt;
+        &lt;input data-part=&quot;hidden-input&quot; /&gt;
+        &lt;div data-part=&quot;control&quot;&gt;
+          &lt;svg data-part=&quot;segment&quot; /&gt;
+          &lt;button data-part=&quot;clear-trigger&quot; /&gt;
+          &lt;div data-part=&quot;guide&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/SignaturePad&gt;
+  );
+}
+</code></pre>
+  </div>
+</div>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/signature-pad.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/signature-pad.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;SignaturePad className="signature-pad signature-pad-js"&gt;
+  {/* content */}
+&lt;/SignaturePad&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;SignaturePad className=&quot;signature-pad signature-pad-js&quot;&gt;
+  {/* content */}
+&lt;/SignaturePad&gt;
+</code></pre>
+  </div>
+</div>

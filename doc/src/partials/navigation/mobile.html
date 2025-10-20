@@ -1,0 +1,51 @@
+<div
+  id="navigation-mobile"
+  class="tree-view-js tree-view navigation overflow-y-auto scrollbar scrollbar--sm pb-ui-padding"
+  style="scrollbar-gutter: stable both-edges"
+  data-on-selection-change="link"
+  data-selected-value="{{ page }}"
+  data-expand-on-click="false"
+  data-default-expanded-value="Installation,Guides,Components"
+  data-default-focused-value="{{ section }}"
+>
+  <div data-part="root" class="shadow-none p-0">
+    <h3 data-part="label" class="sr-only">Tree View Label</h3>
+    <div data-part="tree" class="gap-ui-gap">
+      {{#each group as |group| }}
+      <div
+        data-part="branch"
+        data-id="{{ group.label }}"
+        data-name="{{ group.label }}"
+      >
+        <div
+          data-part="branch-control"
+          data-id="{{ group.label }}"
+          data-name="{{ group.label }}"
+        >
+          <span
+            data-part="branch-text"
+            data-id="{{ group.label }}"
+            data-name="{{ group.label }}"
+            >{{ group.label }}</span
+          >
+        </div>
+        <div
+          data-part="branch-content"
+          data-id="{{ group.label }}"
+          data-name="{{ group.label }}"
+        >
+          {{#each group.link as |link| }}
+          <div
+            data-part="item"
+            data-id="{{ link.url }}"
+            data-name="{{ link.url }}"
+          >
+            {{ link.label }}
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
