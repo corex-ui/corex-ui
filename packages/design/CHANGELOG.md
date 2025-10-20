@@ -1,5 +1,11 @@
 # @corex-ui/design
 
+## 0.1.5
+
+### Patch Changes
+
+- 2507476: Open source Documentation Site
+
 ## 0.1.4
 
 ### Patch Changes
