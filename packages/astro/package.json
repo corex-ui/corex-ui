@@ -1,6 +1,6 @@
 {
   "name": "@corex-ui/astro",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Astro integration for rendering Corex UI static components post build.",
   "publishConfig": {
     "access": "public"
