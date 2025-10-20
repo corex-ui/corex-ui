@@ -1,74 +1,120 @@
 <h1 id="toast" tabindex="-1"><a class="link" href="#toast">#</a> Toast</h1>
 <blockquote>
-<p>A pure HTML and vanilla JS implementation of <a href="https://zagjs.com/components/react/tabs" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">Zag JS Toast
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <title>Opens in a new window</title>
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-    ></path>
-  </svg>
-</a></p>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/tabs"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Toast
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
 </blockquote>
-<p>The toast component is used to give feedback to users after an action has taken place.</p>
-<hr>
-<h2 id="anatomy" tabindex="-1"><a class="link" href="#anatomy">#</a> Anatomy</h2>
+<p>
+  The toast component is used to give feedback to users after an action has
+  taken place.
+</p>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
 <p>The Toast component consists of the following data parts:</p>
-<p><code>group</code>, <code>root</code>, <code>content</code>, <code>title</code>, <code>description</code>, <code>progessbar</code></p>
+<p>
+  <code>group</code>, <code>root</code>, <code>content</code>,
+  <code>title</code>, <code>description</code>, <code>progessbar</code>
+</p>
 <p>You can created 4 different types of toast:</p>
-<p><code>info</code>, <code>error</code>, <code>success</code> and <code>loading</code></p>
+<p>
+  <code>info</code>, <code>error</code>, <code>success</code> and
+  <code>loading</code>
+</p>
 
-      <div class="preview">
-        <div class="preview__display"><div class="toast toast-js" data-max="5">
-  <div data-part="group"></div>
-</div>
-<button class="button toast-info">Info Toast</button>
-<button class="button toast-alert">Alert Toast</button>
-<button class="button toast-success">Success Toast</button>
-<button class="button toast-loading">Loading Toast</button>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;toast toast-js&quot; data-max=&quot;5&quot;&gt;
-  &lt;div data-part=&quot;group&quot;&gt;&lt;/div&gt;
+<div class="preview">
+  <div class="preview__display">
+    <div class="toast toast-js" data-max="5">
+      <div data-part="group"></div>
+    </div>
+    <button class="button toast-info">Info Toast</button>
+    <button class="button toast-alert">Alert Toast</button>
+    <button class="button toast-success">Success Toast</button>
+    <button class="button toast-loading">Loading Toast</button>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="toast toast-js" data-max="5"&gt;
+  &lt;div data-part="group"&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;button class=&quot;button toast-info&quot;&gt;Info Toast&lt;/button&gt;
-&lt;button class=&quot;button toast-alert&quot;&gt;Alert Toast&lt;/button&gt;
-&lt;button class=&quot;button toast-success&quot;&gt;Success Toast&lt;/button&gt;
-&lt;button class=&quot;button toast-loading&quot;&gt;Loading Toast&lt;/button&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
+&lt;button class="button toast-info"&gt;Info Toast&lt;/button&gt;
+&lt;button class="button toast-alert"&gt;Alert Toast&lt;/button&gt;
+&lt;button class="button toast-success"&gt;Success Toast&lt;/button&gt;
+&lt;button class="button toast-loading"&gt;Loading Toast&lt;/button&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
 
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div class=&quot;toast toast-js&quot; data-max=&quot;5&quot;&gt;
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;toast toast-js&quot; data-max=&quot;5&quot;&gt;
   &lt;div data-part=&quot;group&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;button class=&quot;button toast-info&quot;&gt;Info Toast&lt;/button&gt;
@@ -76,11 +122,101 @@
 &lt;button class=&quot;button toast-success&quot;&gt;Success Toast&lt;/button&gt;
 &lt;button class=&quot;button toast-loading&quot;&gt;Loading Toast&lt;/button&gt;
 </code></pre>
-        </div>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document.querySelectorAll&lt;HTMLElement&gt;(".toast-info").forEach((btn) =&gt; {
+  btn.addEventListener("click", () =&gt; {
+    createToast({
+      title: "Profile Updated",
+      description: "Your account settings have been saved successfully.",
+      type: "info",
+      duration: 5000,
+    });
+  });
+});
+document.querySelectorAll&lt;HTMLElement&gt;(".toast-alert").forEach((btn) =&gt; {
+  btn.addEventListener("click", () =&gt; {
+    createToast({
+      title: "Failed to Save Changes",
+      description:
+        "There was a problem updating your profile. Please try again later.",
+      type: "error",
+      duration: 5000,
+    });
+  });
+});
+document.querySelectorAll&lt;HTMLElement&gt;(".toast-success").forEach((btn) =&gt; {
+  btn.addEventListener("click", () =&gt; {
+    createToast({
+      title: "Payment Completed",
+      description:
+        "Your payment was processed successfully. Thank you for your purchase!",
+      type: "success",
+      duration: 5000,
+    });
+  });
+});
+document.querySelectorAll&lt;HTMLElement&gt;(".toast-loading").forEach((btn) =&gt; {
+  btn.addEventListener("click", () =&gt; {
+    createToast({
+      title: "Uploading File",
+      description: "Your document is currently being uploaded. Please wait…",
+      type: "loading",
+    });
+  });
+});
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
       </div>
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-info&quot;).forEach((btn) =&gt; {
+    </div>
+    <pre><code class="code-js" data-lang="ts">document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-info&quot;).forEach((btn) =&gt; {
   btn.addEventListener(&quot;click&quot;, () =&gt; {
     createToast({
       title: &quot;Profile Updated&quot;,
@@ -121,636 +257,882 @@ document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-loading&quot;).forEach
     });
   });
 });
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="ts">document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-info&quot;).forEach((btn) =&gt; {
-  btn.addEventListener(&quot;click&quot;, () =&gt; {
-    createToast({
-      title: &quot;Profile Updated&quot;,
-      description: &quot;Your account settings have been saved successfully.&quot;,
-      type: &quot;info&quot;,
-      duration: 5000,
-    });
-  });
-});
-document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-alert&quot;).forEach((btn) =&gt; {
-  btn.addEventListener(&quot;click&quot;, () =&gt; {
-    createToast({
-      title: &quot;Failed to Save Changes&quot;,
-      description:
-        &quot;There was a problem updating your profile. Please try again later.&quot;,
-      type: &quot;error&quot;,
-      duration: 5000,
-    });
-  });
-});
-document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-success&quot;).forEach((btn) =&gt; {
-  btn.addEventListener(&quot;click&quot;, () =&gt; {
-    createToast({
-      title: &quot;Payment Completed&quot;,
-      description:
-        &quot;Your payment was processed successfully. Thank you for your purchase!&quot;,
-      type: &quot;success&quot;,
-      duration: 5000,
-    });
-  });
-});
-document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-loading&quot;).forEach((btn) =&gt; {
-  btn.addEventListener(&quot;click&quot;, () =&gt; {
-    createToast({
-      title: &quot;Uploading File&quot;,
-      description: &quot;Your document is currently being uploaded. Please wait…&quot;,
-      type: &quot;loading&quot;,
-    });
-  });
-});
 </code></pre>
-      </div>
-    </div><hr>
-<h2 id="data-attributes" tabindex="-1"><a class="link" href="#data-attributes">#</a> Data attributes</h2>
-<p>Each toast can be set with different settings with the following data-attribute.</p>
+  </div>
+</div>
+<hr />
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each toast can be set with different settings with the following
+  data-attribute.
+</p>
 
-      <div class="preview">
-        <div class="preview__display"><div
+<div class="preview">
+  <div class="preview__display">
+    <div
+      id="toast-attributes"
+      class="toast toast-js"
+      data-placement="top-start"
+      data-gap="5"
+      data-max="2"
+      data-offsets="20px"
+    >
+      <div data-part="group"></div>
+    </div>
+    <button class="button toast-info-attributes">Info Toast</button>
+    <button class="button toast-alert-attributes">Alert Toast</button>
+    <button class="button toast-success-attributes">Success Toast</button>
+    <button class="button toast-loading-attributes">Loading Toast</button>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
   id="toast-attributes"
   class="toast toast-js"
   data-placement="top-start"
   data-gap="5"
   data-max="2"
   data-offsets="20px"
->
-  <div data-part="group"></div>
-</div>
-<button class="button toast-info-attributes">Info Toast</button>
-<button class="button toast-alert-attributes">Alert Toast</button>
-<button class="button toast-success-attributes">Success Toast</button>
-<button class="button toast-loading-attributes">Loading Toast</button>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div
-  id=&quot;toast-attributes&quot;
-  class=&quot;toast toast-js&quot;
-  data-placement=&quot;top-start&quot;
-  data-gap=&quot;5&quot;
-  data-max=&quot;2&quot;
-  data-offsets=&quot;20px&quot;
 &gt;
-  &lt;div data-part=&quot;group&quot;&gt;&lt;/div&gt;
+  &lt;div data-part="group"&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;button class=&quot;button toast-info-attributes&quot;&gt;Info Toast&lt;/button&gt;
-&lt;button class=&quot;button toast-alert-attributes&quot;&gt;Alert Toast&lt;/button&gt;
-&lt;button class=&quot;button toast-success-attributes&quot;&gt;Success Toast&lt;/button&gt;
-&lt;button class=&quot;button toast-loading-attributes&quot;&gt;Loading Toast&lt;/button&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
+&lt;button class="button toast-info-attributes"&gt;Info Toast&lt;/button&gt;
+&lt;button class="button toast-alert-attributes"&gt;Alert Toast&lt;/button&gt;
+&lt;button class="button toast-success-attributes"&gt;Success Toast&lt;/button&gt;
+&lt;button class="button toast-loading-attributes"&gt;Loading Toast&lt;/button&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
 
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div
-  id=&quot;toast-attributes&quot;
-  class=&quot;toast toast-js&quot;
-  data-placement=&quot;top-start&quot;
-  data-gap=&quot;5&quot;
-  data-max=&quot;2&quot;
-  data-offsets=&quot;20px&quot;
-&gt;
-  &lt;div data-part=&quot;group&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;button class=&quot;button toast-info-attributes&quot;&gt;Info Toast&lt;/button&gt;
-&lt;button class=&quot;button toast-alert-attributes&quot;&gt;Alert Toast&lt;/button&gt;
-&lt;button class=&quot;button toast-success-attributes&quot;&gt;Success Toast&lt;/button&gt;
-&lt;button class=&quot;button toast-loading-attributes&quot;&gt;Loading Toast&lt;/button&gt;
-</code></pre>
-        </div>
-      </div>
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="document
-  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-info-attributes&quot;)
-  .forEach((btn) =&gt; {
-    btn.addEventListener(&quot;click&quot;, () =&gt; {
-      createToast({
-        title: &quot;Profile Updated&quot;,
-        description: &quot;Your account settings have been saved successfully.&quot;,
-        type: &quot;info&quot;,
-        duration: 5000,
-        groupId: &quot;toast-attributes&quot;,
-      });
-    });
-  });
-document
-  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-alert-attributes&quot;)
-  .forEach((btn) =&gt; {
-    btn.addEventListener(&quot;click&quot;, () =&gt; {
-      createToast({
-        title: &quot;Failed to Save Changes&quot;,
-        description:
-          &quot;There was a problem updating your profile. Please try again later.&quot;,
-        type: &quot;error&quot;,
-        duration: 5000,
-        groupId: &quot;toast-attributes&quot;,
-      });
-    });
-  });
-document
-  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-success-attributes&quot;)
-  .forEach((btn) =&gt; {
-    btn.addEventListener(&quot;click&quot;, () =&gt; {
-      createToast({
-        title: &quot;Payment Completed&quot;,
-        description:
-          &quot;Your payment was processed successfully. Thank you for your purchase!&quot;,
-        type: &quot;success&quot;,
-        duration: 5000,
-        groupId: &quot;toast-attributes&quot;,
-      });
-    });
-  });
-document
-  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-loading-attributes&quot;)
-  .forEach((btn) =&gt; {
-    btn.addEventListener(&quot;click&quot;, () =&gt; {
-      createToast({
-        title: &quot;Uploading File&quot;,
-        description: &quot;Your document is currently being uploaded. Please wait…&quot;,
-        type: &quot;loading&quot;,
-        groupId: &quot;toast-attributes&quot;,
-      });
-    });
-  });
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="ts">document
-  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-info-attributes&quot;)
-  .forEach((btn) =&gt; {
-    btn.addEventListener(&quot;click&quot;, () =&gt; {
-      createToast({
-        title: &quot;Profile Updated&quot;,
-        description: &quot;Your account settings have been saved successfully.&quot;,
-        type: &quot;info&quot;,
-        duration: 5000,
-        groupId: &quot;toast-attributes&quot;,
-      });
-    });
-  });
-document
-  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-alert-attributes&quot;)
-  .forEach((btn) =&gt; {
-    btn.addEventListener(&quot;click&quot;, () =&gt; {
-      createToast({
-        title: &quot;Failed to Save Changes&quot;,
-        description:
-          &quot;There was a problem updating your profile. Please try again later.&quot;,
-        type: &quot;error&quot;,
-        duration: 5000,
-        groupId: &quot;toast-attributes&quot;,
-      });
-    });
-  });
-document
-  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-success-attributes&quot;)
-  .forEach((btn) =&gt; {
-    btn.addEventListener(&quot;click&quot;, () =&gt; {
-      createToast({
-        title: &quot;Payment Completed&quot;,
-        description:
-          &quot;Your payment was processed successfully. Thank you for your purchase!&quot;,
-        type: &quot;success&quot;,
-        duration: 5000,
-        groupId: &quot;toast-attributes&quot;,
-      });
-    });
-  });
-document
-  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-loading-attributes&quot;)
-  .forEach((btn) =&gt; {
-    btn.addEventListener(&quot;click&quot;, () =&gt; {
-      createToast({
-        title: &quot;Uploading File&quot;,
-        description: &quot;Your document is currently being uploaded. Please wait…&quot;,
-        type: &quot;loading&quot;,
-        groupId: &quot;toast-attributes&quot;,
-      });
-    });
-  });
-</code></pre>
-      </div>
-    </div><p><strong>data-placement</strong><br>
-Type: <code>&quot;top-start&quot; | &quot;top&quot; | &quot;top-end&quot; | &quot;bottom-start&quot; | &quot;bottom&quot; | &quot;bottom-end&quot;</code><br>
-Description: The placement of the toast.</p>
-<p><strong>data-max</strong><br>
-Type: <code>string</code><br>
-Description: The maximum number of toasts. When the number of toasts exceeds this limit, the new toasts are queued.</p>
-<p><strong>data-gap</strong><br>
-Type: <code>number</code><br>
-Description: The gap between the toasts.</p>
-<p><strong>data-offsets</strong><br>
-Type: <code>string</code><br>
-Description: The offset from the safe environment edge of the viewport</p>
-<hr>
-<h2 id="toast-settings" tabindex="-1"><a class="link" href="#toast-settings">#</a> Toast Settings</h2>
-<p>Each individual toast can be set with different options:</p>
-
-      <div class="preview">
-        <div class="preview__display"><button class="button toast-settings">Custom Toast</button>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;button class=&quot;button toast-settings&quot;&gt;Custom Toast&lt;/button&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;button class=&quot;button toast-settings&quot;&gt;Custom Toast&lt;/button&gt;
-</code></pre>
-        </div>
-      </div>
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-settings&quot;).forEach((btn) =&gt; {
-  btn.addEventListener(&quot;click&quot;, () =&gt; {
-    createToast({
-      title: &quot;This is custom toast&quot;,
-      description: &quot;Open you console to see the event received.&quot;,
-      type: &quot;loading&quot;,
-      duration: 10000,
-      removeDelay: 0,
-      onStatusChange(details) {
-        console.log(details);
-      },
-    });
-  });
-});
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="ts">document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-settings&quot;).forEach((btn) =&gt; {
-  btn.addEventListener(&quot;click&quot;, () =&gt; {
-    createToast({
-      title: &quot;This is custom toast&quot;,
-      description: &quot;Open you console to see the event received.&quot;,
-      type: &quot;loading&quot;,
-      duration: 10000,
-      removeDelay: 0,
-      onStatusChange(details) {
-        console.log(details);
-      },
-    });
-  });
-});
-</code></pre>
-      </div>
-    </div><p><strong>id</strong><br>
-Type: <code>string</code><br>
-Description: Custom id for the toast.</p>
-<p><strong>title</strong><br>
-Type: <code>string</code><br>
-Description: The title of the toast.</p>
-<p><strong>description</strong><br>
-Type: <code>string</code><br>
-Description: The description of the toast.</p>
-<p><strong>duration</strong><br>
-Type: <code>number</code><br>
-Description: The duration of the toast.</p>
-<p><strong>removeDelay</strong><br>
-Type: <code>number</code><br>
-Description: The duration for the toast to kept alive before it is removed. Useful for exit transitions.</p>
-<p><strong>onStatusChange(details)</strong><br>
-Type: <code>function</code><br>
-Description: Function called when the toast is visible</p>
-<p><strong>groupId</strong><br>
-Type: <code>string</code><br>
-Description: The id of the toast. Default to the first toast.</p>
-<hr>
-<h2 id="installation" tabindex="-1"><a class="link" href="#installation">#</a> Installation</h2>
-<p>First, complete the Corex UI <a href="/installation/introduction" class="link">initial installation</a> guide for your platform, bundler, or framework.</p>
-<h3 id="static" tabindex="-1"><a class="link" href="#static">#</a> Static</h3>
-<ol>
-<li>Import the Toast component</li>
-</ol>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="import &quot;@corex-ui/static/components/toast&quot;;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/toast&quot;;
-</code></pre>
-      </div>
-    </div><p>This will automatically initialize all elements with <code>class=&quot;toast-js&quot;</code> and add the necessary interaction behavior.</p>
-<ol start="2">
-<li>Add styling</li>
-</ol>
-<p>To apply the default Corex UI design system styles, import the stylesheet:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@import &quot;@corex-ui/design/components/toast.css&quot;;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">css</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/toast.css&quot;;
-</code></pre>
-      </div>
-    </div><p>Then apply the base class along with any desired modifiers:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;toast toast-js&quot; data-max=&quot;5&quot;&gt;
-  &lt;div data-part=&quot;group&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="html">&lt;div class=&quot;toast toast-js&quot; data-max=&quot;5&quot;&gt;
-  &lt;div data-part=&quot;group&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-      </div>
-    </div><h3 id="static-react" tabindex="-1"><a class="link" href="#static-react">#</a> Static React</h3>
-<blockquote>
-<p>Experimental! Only works with React static export (eg. Next.js SSG.)</p>
-</blockquote>
-<ol>
-<li>Import the Toast component</li>
-</ol>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="import { Toast } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    &lt;Toast data-max={5}&gt;
-      &lt;div data-part=&quot;group&quot; /&gt;
-    &lt;/Toast&gt;
-  );
-}
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="ts">import { Toast } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    &lt;Toast data-max={5}&gt;
-      &lt;div data-part=&quot;group&quot; /&gt;
-    &lt;/Toast&gt;
-  );
-}
-</code></pre>
-      </div>
-    </div><ol start="2">
-<li>Add styling</li>
-</ol>
-<p>To apply the default Corex UI design system styles, import the stylesheet:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@import &quot;@corex-ui/design/components/toast.css&quot;;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">css</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/toast.css&quot;;
-</code></pre>
-      </div>
-    </div><p>Then apply the base class along with any desired modifiers:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;Toast className=&quot;toast&quot;&gt; {/* content */} &lt;/Toast&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="html">&lt;Toast className=&quot;toast&quot;&gt; {/* content */} &lt;/Toast&gt;
-</code></pre>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
       </div>
     </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  id=&quot;toast-attributes&quot;
+  class=&quot;toast toast-js&quot;
+  data-placement=&quot;top-start&quot;
+  data-gap=&quot;5&quot;
+  data-max=&quot;2&quot;
+  data-offsets=&quot;20px&quot;
+&gt;
+  &lt;div data-part=&quot;group&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;button class=&quot;button toast-info-attributes&quot;&gt;Info Toast&lt;/button&gt;
+&lt;button class=&quot;button toast-alert-attributes&quot;&gt;Alert Toast&lt;/button&gt;
+&lt;button class=&quot;button toast-success-attributes&quot;&gt;Success Toast&lt;/button&gt;
+&lt;button class=&quot;button toast-loading-attributes&quot;&gt;Loading Toast&lt;/button&gt;
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document
+  .querySelectorAll&lt;HTMLElement&gt;(".toast-info-attributes")
+  .forEach((btn) =&gt; {
+    btn.addEventListener("click", () =&gt; {
+      createToast({
+        title: "Profile Updated",
+        description: "Your account settings have been saved successfully.",
+        type: "info",
+        duration: 5000,
+        groupId: "toast-attributes",
+      });
+    });
+  });
+document
+  .querySelectorAll&lt;HTMLElement&gt;(".toast-alert-attributes")
+  .forEach((btn) =&gt; {
+    btn.addEventListener("click", () =&gt; {
+      createToast({
+        title: "Failed to Save Changes",
+        description:
+          "There was a problem updating your profile. Please try again later.",
+        type: "error",
+        duration: 5000,
+        groupId: "toast-attributes",
+      });
+    });
+  });
+document
+  .querySelectorAll&lt;HTMLElement&gt;(".toast-success-attributes")
+  .forEach((btn) =&gt; {
+    btn.addEventListener("click", () =&gt; {
+      createToast({
+        title: "Payment Completed",
+        description:
+          "Your payment was processed successfully. Thank you for your purchase!",
+        type: "success",
+        duration: 5000,
+        groupId: "toast-attributes",
+      });
+    });
+  });
+document
+  .querySelectorAll&lt;HTMLElement&gt;(".toast-loading-attributes")
+  .forEach((btn) =&gt; {
+    btn.addEventListener("click", () =&gt; {
+      createToast({
+        title: "Uploading File",
+        description: "Your document is currently being uploaded. Please wait…",
+        type: "loading",
+        groupId: "toast-attributes",
+      });
+    });
+  });
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">document
+  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-info-attributes&quot;)
+  .forEach((btn) =&gt; {
+    btn.addEventListener(&quot;click&quot;, () =&gt; {
+      createToast({
+        title: &quot;Profile Updated&quot;,
+        description: &quot;Your account settings have been saved successfully.&quot;,
+        type: &quot;info&quot;,
+        duration: 5000,
+        groupId: &quot;toast-attributes&quot;,
+      });
+    });
+  });
+document
+  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-alert-attributes&quot;)
+  .forEach((btn) =&gt; {
+    btn.addEventListener(&quot;click&quot;, () =&gt; {
+      createToast({
+        title: &quot;Failed to Save Changes&quot;,
+        description:
+          &quot;There was a problem updating your profile. Please try again later.&quot;,
+        type: &quot;error&quot;,
+        duration: 5000,
+        groupId: &quot;toast-attributes&quot;,
+      });
+    });
+  });
+document
+  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-success-attributes&quot;)
+  .forEach((btn) =&gt; {
+    btn.addEventListener(&quot;click&quot;, () =&gt; {
+      createToast({
+        title: &quot;Payment Completed&quot;,
+        description:
+          &quot;Your payment was processed successfully. Thank you for your purchase!&quot;,
+        type: &quot;success&quot;,
+        duration: 5000,
+        groupId: &quot;toast-attributes&quot;,
+      });
+    });
+  });
+document
+  .querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-loading-attributes&quot;)
+  .forEach((btn) =&gt; {
+    btn.addEventListener(&quot;click&quot;, () =&gt; {
+      createToast({
+        title: &quot;Uploading File&quot;,
+        description: &quot;Your document is currently being uploaded. Please wait…&quot;,
+        type: &quot;loading&quot;,
+        groupId: &quot;toast-attributes&quot;,
+      });
+    });
+  });
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>data-placement</strong><br />
+  Type:
+  <code
+    >&quot;top-start&quot; | &quot;top&quot; | &quot;top-end&quot; |
+    &quot;bottom-start&quot; | &quot;bottom&quot; | &quot;bottom-end&quot;</code
+  ><br />
+  Description: The placement of the toast.
+</p>
+<p>
+  <strong>data-max</strong><br />
+  Type: <code>string</code><br />
+  Description: The maximum number of toasts. When the number of toasts exceeds
+  this limit, the new toasts are queued.
+</p>
+<p>
+  <strong>data-gap</strong><br />
+  Type: <code>number</code><br />
+  Description: The gap between the toasts.
+</p>
+<p>
+  <strong>data-offsets</strong><br />
+  Type: <code>string</code><br />
+  Description: The offset from the safe environment edge of the viewport
+</p>
+<hr />
+<h2 id="toast-settings" tabindex="-1">
+  <a class="link" href="#toast-settings">#</a> Toast Settings
+</h2>
+<p>Each individual toast can be set with different options:</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <button class="button toast-settings">Custom Toast</button>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;button class="button toast-settings"&gt;Custom Toast&lt;/button&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;button class=&quot;button toast-settings&quot;&gt;Custom Toast&lt;/button&gt;
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document.querySelectorAll&lt;HTMLElement&gt;(".toast-settings").forEach((btn) =&gt; {
+  btn.addEventListener("click", () =&gt; {
+    createToast({
+      title: "This is custom toast",
+      description: "Open you console to see the event received.",
+      type: "loading",
+      duration: 10000,
+      removeDelay: 0,
+      onStatusChange(details) {
+        console.log(details);
+      },
+    });
+  });
+});
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-settings&quot;).forEach((btn) =&gt; {
+  btn.addEventListener(&quot;click&quot;, () =&gt; {
+    createToast({
+      title: &quot;This is custom toast&quot;,
+      description: &quot;Open you console to see the event received.&quot;,
+      type: &quot;loading&quot;,
+      duration: 10000,
+      removeDelay: 0,
+      onStatusChange(details) {
+        console.log(details);
+      },
+    });
+  });
+});
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Description: Custom id for the toast.
+</p>
+<p>
+  <strong>title</strong><br />
+  Type: <code>string</code><br />
+  Description: The title of the toast.
+</p>
+<p>
+  <strong>description</strong><br />
+  Type: <code>string</code><br />
+  Description: The description of the toast.
+</p>
+<p>
+  <strong>duration</strong><br />
+  Type: <code>number</code><br />
+  Description: The duration of the toast.
+</p>
+<p>
+  <strong>removeDelay</strong><br />
+  Type: <code>number</code><br />
+  Description: The duration for the toast to kept alive before it is removed.
+  Useful for exit transitions.
+</p>
+<p>
+  <strong>onStatusChange(details)</strong><br />
+  Type: <code>function</code><br />
+  Description: Function called when the toast is visible
+</p>
+<p>
+  <strong>groupId</strong><br />
+  Type: <code>string</code><br />
+  Description: The id of the toast. Default to the first toast.
+</p>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
+<h3 id="static" tabindex="-1"><a class="link" href="#static">#</a> Static</h3>
+<ol>
+  <li>Import the Toast component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import "@corex-ui/static/components/toast";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/toast&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  This will automatically initialize all elements with
+  <code>class=&quot;toast-js&quot;</code> and add the necessary interaction
+  behavior.
+</p>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/toast.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/toast.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="toast toast-js" data-max="5"&gt;
+  &lt;div data-part="group"&gt;&lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;toast toast-js&quot; data-max=&quot;5&quot;&gt;
+  &lt;div data-part=&quot;group&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<h3 id="static-react" tabindex="-1">
+  <a class="link" href="#static-react">#</a> Static React
+</h3>
+<blockquote>
+  <p>Experimental! Only works with React static export (eg. Next.js SSG.)</p>
+</blockquote>
+<ol>
+  <li>Import the Toast component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value="import { Toast } from '@corex-ui/static/react';
+export default function Home() {
+  return (
+    &lt;Toast data-max={5}&gt;
+      &lt;div data-part=&quot;group&quot; /&gt;
+    &lt;/Toast&gt;
+  );
+}
+"
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { Toast } from '@corex-ui/static/react';
+export default function Home() {
+  return (
+    &lt;Toast data-max={5}&gt;
+      &lt;div data-part=&quot;group&quot; /&gt;
+    &lt;/Toast&gt;
+  );
+}
+</code></pre>
+  </div>
+</div>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/toast.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/toast.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;Toast className="toast"&gt; {/* content */} &lt;/Toast&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;Toast className=&quot;toast&quot;&gt; {/* content */} &lt;/Toast&gt;
+</code></pre>
+  </div>
+</div>

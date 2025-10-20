@@ -1,308 +1,206 @@
 <h1 id="select" tabindex="-1"><a class="link" href="#select">#</a> Select</h1>
 <blockquote>
-<p>A pure HTML and vanilla JS implementation of <a href="https://zagjs.com/components/react/select" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">ZagJS Select
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <title>Opens in a new window</title>
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-    ></path>
-  </svg>
-</a></p>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/select"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >ZagJS Select
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
 </blockquote>
 <p>A Select component allows users pick a value from predefined options.</p>
-<hr>
-<h2 id="anatomy" tabindex="-1"><a class="link" href="#anatomy">#</a> Anatomy</h2>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
 <p>The select component consists of the following data parts:</p>
-<p><code>root</code>, <code>control</code>, <code>label</code>, <code>trigger</code>, <code>positioner</code>, <code>content</code>, <code>item</code></p>
+<p>
+  <code>root</code>, <code>control</code>, <code>label</code>,
+  <code>trigger</code>, <code>positioner</code>, <code>content</code>,
+  <code>item</code>
+</p>
 
-      <div class="preview">
-        <div class="preview__display"><div class="select-js select" data-same-width="true">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;select-js select&quot; data-same-width=&quot;true&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select-js select&quot; data-same-width=&quot;true&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="preview">
+  <div class="preview__display">
+    <div class="select-js select" data-same-width="true">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Currency</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
         </div>
-      </div><hr>
-<h2 id="load-from-json" tabindex="-1"><a class="link" href="#load-from-json">#</a> Load from JSON</h2>
-<p>You can initialize the Select component by embedding your JSON data directly in your HTML using a <code>&lt;script&gt;</code> tag with <code>type=&quot;application/json&quot;</code> and a unique <code>data-select</code> attribute. Then, reference this JSON in your Select container via the corresponding <code>data-json</code> attribute.</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;script type=&quot;application/json&quot; data-select=&quot;countries&quot;&gt;
-  [
-    { &quot;label&quot;: &quot;France&quot;, &quot;value&quot;: &quot;FR&quot; },
-    { &quot;label&quot;: &quot;Belgium&quot;, &quot;value&quot;: &quot;BE&quot; },
-    { &quot;label&quot;: &quot;Germany&quot;, &quot;value&quot;: &quot;DE&quot; },
-    { &quot;label&quot;: &quot;Italy&quot;, &quot;value&quot;: &quot;IT&quot; },
-    { &quot;label&quot;: &quot;Spain&quot;, &quot;value&quot;: &quot;ES&quot; },
-    { &quot;label&quot;: &quot;Portugal&quot;, &quot;value&quot;: &quot;PT&quot; },
-    { &quot;label&quot;: &quot;Netherlands&quot;, &quot;value&quot;: &quot;NL&quot; },
-    { &quot;label&quot;: &quot;Switzerland&quot;, &quot;value&quot;: &quot;CH&quot; },
-    { &quot;label&quot;: &quot;Austria&quot;, &quot;value&quot;: &quot;AT&quot; },
-    { &quot;label&quot;: &quot;Poland&quot;, &quot;value&quot;: &quot;PL&quot; },
-    { &quot;label&quot;: &quot;Czech Republic&quot;, &quot;value&quot;: &quot;CZ&quot; },
-    { &quot;label&quot;: &quot;Hungary&quot;, &quot;value&quot;: &quot;HU&quot; },
-    { &quot;label&quot;: &quot;Greece&quot;, &quot;value&quot;: &quot;GR&quot; }
-  ]
-&lt;/script&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="html">&lt;script type=&quot;application/json&quot; data-select=&quot;countries&quot;&gt;
-  [
-    { &quot;label&quot;: &quot;France&quot;, &quot;value&quot;: &quot;FR&quot; },
-    { &quot;label&quot;: &quot;Belgium&quot;, &quot;value&quot;: &quot;BE&quot; },
-    { &quot;label&quot;: &quot;Germany&quot;, &quot;value&quot;: &quot;DE&quot; },
-    { &quot;label&quot;: &quot;Italy&quot;, &quot;value&quot;: &quot;IT&quot; },
-    { &quot;label&quot;: &quot;Spain&quot;, &quot;value&quot;: &quot;ES&quot; },
-    { &quot;label&quot;: &quot;Portugal&quot;, &quot;value&quot;: &quot;PT&quot; },
-    { &quot;label&quot;: &quot;Netherlands&quot;, &quot;value&quot;: &quot;NL&quot; },
-    { &quot;label&quot;: &quot;Switzerland&quot;, &quot;value&quot;: &quot;CH&quot; },
-    { &quot;label&quot;: &quot;Austria&quot;, &quot;value&quot;: &quot;AT&quot; },
-    { &quot;label&quot;: &quot;Poland&quot;, &quot;value&quot;: &quot;PL&quot; },
-    { &quot;label&quot;: &quot;Czech Republic&quot;, &quot;value&quot;: &quot;CZ&quot; },
-    { &quot;label&quot;: &quot;Hungary&quot;, &quot;value&quot;: &quot;HU&quot; },
-    { &quot;label&quot;: &quot;Greece&quot;, &quot;value&quot;: &quot;GR&quot; }
-  ]
-&lt;/script&gt;
-</code></pre>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-      <div class="preview">
-        <div class="preview__display"><div class="select-js select" data-json="countries" data-same-width="true">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Country</div>
-      <button data-part="trigger">
-        <svg
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="select-js select" data-same-width="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
     </div>
-    <div data-part="positioner">
-      <ul data-part="content"></ul>
-    </div>
-  </div>
-</div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;select-js select&quot; data-json=&quot;countries&quot; data-same-width=&quot;true&quot;&gt;
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select-js select&quot; data-same-width=&quot;true&quot;&gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Country&lt;/div&gt;
+      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
       &lt;button data-part=&quot;trigger&quot;&gt;
         &lt;svg
           xmlns=&quot;http://www.w3.org/2000/svg&quot;
@@ -320,35 +218,242 @@
       &lt;/button&gt;
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;&lt;/ul&gt;
+      &lt;ul data-part=&quot;content&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
+          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
+</code></pre>
+  </div>
 </div>
-          <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select-js select&quot; data-json=&quot;countries&quot; data-same-width=&quot;true&quot;&gt;
+<hr />
+<h2 id="load-from-json" tabindex="-1">
+  <a class="link" href="#load-from-json">#</a> Load from JSON
+</h2>
+<p>
+  You can initialize the Select component by embedding your JSON data directly
+  in your HTML using a <code>&lt;script&gt;</code> tag with
+  <code>type=&quot;application/json&quot;</code> and a unique
+  <code>data-select</code> attribute. Then, reference this JSON in your Select
+  container via the corresponding <code>data-json</code> attribute.
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;script type="application/json" data-select="countries"&gt;
+  [
+    { "label": "France", "value": "FR" },
+    { "label": "Belgium", "value": "BE" },
+    { "label": "Germany", "value": "DE" },
+    { "label": "Italy", "value": "IT" },
+    { "label": "Spain", "value": "ES" },
+    { "label": "Portugal", "value": "PT" },
+    { "label": "Netherlands", "value": "NL" },
+    { "label": "Switzerland", "value": "CH" },
+    { "label": "Austria", "value": "AT" },
+    { "label": "Poland", "value": "PL" },
+    { "label": "Czech Republic", "value": "CZ" },
+    { "label": "Hungary", "value": "HU" },
+    { "label": "Greece", "value": "GR" }
+  ]
+&lt;/script&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;script type=&quot;application/json&quot; data-select=&quot;countries&quot;&gt;
+  [
+    { &quot;label&quot;: &quot;France&quot;, &quot;value&quot;: &quot;FR&quot; },
+    { &quot;label&quot;: &quot;Belgium&quot;, &quot;value&quot;: &quot;BE&quot; },
+    { &quot;label&quot;: &quot;Germany&quot;, &quot;value&quot;: &quot;DE&quot; },
+    { &quot;label&quot;: &quot;Italy&quot;, &quot;value&quot;: &quot;IT&quot; },
+    { &quot;label&quot;: &quot;Spain&quot;, &quot;value&quot;: &quot;ES&quot; },
+    { &quot;label&quot;: &quot;Portugal&quot;, &quot;value&quot;: &quot;PT&quot; },
+    { &quot;label&quot;: &quot;Netherlands&quot;, &quot;value&quot;: &quot;NL&quot; },
+    { &quot;label&quot;: &quot;Switzerland&quot;, &quot;value&quot;: &quot;CH&quot; },
+    { &quot;label&quot;: &quot;Austria&quot;, &quot;value&quot;: &quot;AT&quot; },
+    { &quot;label&quot;: &quot;Poland&quot;, &quot;value&quot;: &quot;PL&quot; },
+    { &quot;label&quot;: &quot;Czech Republic&quot;, &quot;value&quot;: &quot;CZ&quot; },
+    { &quot;label&quot;: &quot;Hungary&quot;, &quot;value&quot;: &quot;HU&quot; },
+    { &quot;label&quot;: &quot;Greece&quot;, &quot;value&quot;: &quot;GR&quot; }
+  ]
+&lt;/script&gt;
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div class="select-js select" data-json="countries" data-same-width="true">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Country</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="select-js select" data-json="countries" data-same-width="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Country&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select-js select&quot; data-json=&quot;countries&quot; data-same-width=&quot;true&quot;&gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;div data-part=&quot;control&quot;&gt;
       &lt;div data-part=&quot;label&quot;&gt;Your Country&lt;/div&gt;
@@ -374,146 +479,182 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-        </div>
-      </div><h2 id="data-attributes" tabindex="-1"><a class="link" href="#data-attributes">#</a> Data attributes</h2>
-<p>Each select can be set with different settings with the following data-attribute.</p>
+  </div>
+</div>
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each select can be set with different settings with the following
+  data-attribute.
+</p>
 
-      <div class="preview">
-        <div class="preview__display"><div
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="select-js select"
+      data-same-width="true"
+      data-close-on-select="false"
+    >
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Currency</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
   class="select-js select"
   data-same-width="true"
   data-close-on-select="false"
->
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger">
-        <svg
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div
-  class=&quot;select-js select&quot;
-  data-same-width=&quot;true&quot;
-  data-close-on-select=&quot;false&quot;
-&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
           &gt;&lt;/path&gt;
         &lt;/svg&gt;
       &lt;/button&gt;
     &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
 
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
   class=&quot;select-js select&quot;
   data-same-width=&quot;true&quot;
   data-close-on-select=&quot;false&quot;
@@ -568,192 +709,265 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-        </div>
-      </div><p><strong>id</strong><br>
-Type: <code>string</code><br>
-Description: The unique id of the component. Default generated if none is provided.</p>
-<p><strong>data-close-on-select</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the select should close after an item is selected. Default: <code>true</code>.</p>
-<p><strong>data-composite</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the select is composed with other composite widgets like tabs or combobox. Default: <code>true</code>.</p>
-<p><strong>data-default-highlighted-value</strong><br>
-Type: <code>string | null</code><br>
-Description: The initial value of the highlighted item when opened. Use when you don't need to control the highlighted value.</p>
-<p><strong>data-default-open</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the select menu is open by default.</p>
-<p><strong>data-default-value</strong><br>
-Type: <code>string[]</code><br>
-Description: The initial value of the select when rendered. Use when you don't need to control the value.</p>
-<p><strong>data-dir</strong><br>
-Type: <code>ltr | rtl</code><br>
-Description: Text direction for the select component.</p>
-<p><strong>data-disabled</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the select is disabled.</p>
-<p><strong>data-form</strong><br>
-Type: <code>string</code><br>
-Description: The associated form of the underlying select.</p>
-<p><strong>data-highlighted-value</strong><br>
-Type: <code>string | null</code><br>
-Description: The controlled key of the highlighted item.</p>
-<p><strong>data-invalid</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the select is invalid.</p>
-<p><strong>data-loop-focus</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether to loop the keyboard navigation through options. Default: <code>false</code>.</p>
-<p><strong>data-multiple</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether to allow multiple selection.</p>
-<p><strong>data-name</strong><br>
-Type: <code>string</code><br>
-Description: The <code>name</code> attribute of the underlying select.</p>
-<p><strong>data-read-only</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the select is read-only.</p>
-<p><strong>data-required</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the select is required.</p>
-<p><strong>data-open</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the select menu is open.</p>
-<p><strong>data-value</strong><br>
-Type: <code>string[]</code><br>
-Description: The controlled keys of the selected items.</p>
+  </div>
+</div>
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Description: The unique id of the component. Default generated if none is
+  provided.
+</p>
+<p>
+  <strong>data-close-on-select</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the select should close after an item is selected.
+  Default: <code>true</code>.
+</p>
+<p>
+  <strong>data-composite</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the select is composed with other composite widgets like
+  tabs or combobox. Default: <code>true</code>.
+</p>
+<p>
+  <strong>data-default-highlighted-value</strong><br />
+  Type: <code>string | null</code><br />
+  Description: The initial value of the highlighted item when opened. Use when
+  you don't need to control the highlighted value.
+</p>
+<p>
+  <strong>data-default-open</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the select menu is open by default.
+</p>
+<p>
+  <strong>data-default-value</strong><br />
+  Type: <code>string[]</code><br />
+  Description: The initial value of the select when rendered. Use when you don't
+  need to control the value.
+</p>
+<p>
+  <strong>data-dir</strong><br />
+  Type: <code>ltr | rtl</code><br />
+  Description: Text direction for the select component.
+</p>
+<p>
+  <strong>data-disabled</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the select is disabled.
+</p>
+<p>
+  <strong>data-form</strong><br />
+  Type: <code>string</code><br />
+  Description: The associated form of the underlying select.
+</p>
+<p>
+  <strong>data-highlighted-value</strong><br />
+  Type: <code>string | null</code><br />
+  Description: The controlled key of the highlighted item.
+</p>
+<p>
+  <strong>data-invalid</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the select is invalid.
+</p>
+<p>
+  <strong>data-loop-focus</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to loop the keyboard navigation through options. Default:
+  <code>false</code>.
+</p>
+<p>
+  <strong>data-multiple</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to allow multiple selection.
+</p>
+<p>
+  <strong>data-name</strong><br />
+  Type: <code>string</code><br />
+  Description: The <code>name</code> attribute of the underlying select.
+</p>
+<p>
+  <strong>data-read-only</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the select is read-only.
+</p>
+<p>
+  <strong>data-required</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the select is required.
+</p>
+<p>
+  <strong>data-open</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the select menu is open.
+</p>
+<p>
+  <strong>data-value</strong><br />
+  Type: <code>string[]</code><br />
+  Description: The controlled keys of the selected items.
+</p>
 <h2 id="rtl" tabindex="-1"><a class="link" href="#rtl">#</a> RTL</h2>
 <p>RTL support for select</p>
 
-      <div class="preview">
-        <div class="preview__display"><div class="select-js select" data-same-width="true" data-dir="rtl">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">عملتك</div>
-      <button data-part="trigger">
-        <svg
+<div class="preview">
+  <div class="preview__display">
+    <div class="select-js select" data-same-width="true" data-dir="rtl">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">عملتك</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="select-js select" data-same-width="true" data-dir="rtl"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;عملتك&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;select-js select&quot; data-same-width=&quot;true&quot; data-dir=&quot;rtl&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;عملتك&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
           &gt;&lt;/path&gt;
         &lt;/svg&gt;
       &lt;/button&gt;
     &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
 
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select-js select&quot; data-same-width=&quot;true&quot; data-dir=&quot;rtl&quot;&gt;
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select-js select&quot; data-same-width=&quot;true&quot; data-dir=&quot;rtl&quot;&gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;div data-part=&quot;control&quot;&gt;
       &lt;div data-part=&quot;label&quot;&gt;عملتك&lt;/div&gt;
@@ -804,824 +1018,949 @@ Description: The controlled keys of the selected items.</p>
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-        </div>
-      </div><hr>
-<h2 id="form-usage" tabindex="-1"><a class="link" href="#form-usage">#</a> Form usage</h2>
+  </div>
+</div>
+<hr />
+<h2 id="form-usage" tabindex="-1">
+  <a class="link" href="#form-usage">#</a> Form usage
+</h2>
 <p>Select can be used inside a form</p>
 <p>You must set the id of the form and the name of the Select</p>
-<p><code>data-form=&quot;form-id&quot;</code><br>
-<code>data-name=&quot;select-name&quot;</code></p>
+<p>
+  <code>data-form=&quot;form-id&quot;</code><br />
+  <code>data-name=&quot;select-name&quot;</code>
+</p>
 
-      <div class="preview">
-        <div class="preview__display"><form id="my-form" class="flex flex-col items-center gap-(--spacing-ui-gap)">
-  <div class="select select-js" data-form="my-form" data-name="currency">
-    <div data-part="root">
-      <div data-part="control">
-        <div data-part="label">Your Currency</div>
-        <button data-part="trigger">
-          <svg
+<div class="preview">
+  <div class="preview__display">
+    <form
+      id="my-form"
+      class="flex flex-col items-center gap-(--spacing-ui-gap)"
+    >
+      <div class="select select-js" data-form="my-form" data-name="currency">
+        <div data-part="root">
+          <div data-part="control">
+            <div data-part="label">Your Currency</div>
+            <button data-part="trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div data-part="positioner">
+            <ul data-part="content">
+              <li data-part="item" data-value="USD">
+                <span data-part="item-text" data-value="USD">US Dollar</span>
+              </li>
+              <li data-part="item" data-value="EUR">
+                <span data-part="item-text" data-value="EUR">Euro</span>
+              </li>
+              <li data-part="item" data-value="GBP">
+                <span data-part="item-text" data-value="GBP"
+                  >British Pound</span
+                >
+              </li>
+              <li data-part="item" data-value="JPY">
+                <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+              </li>
+              <li data-part="item" data-value="INR">
+                <span data-part="item-text" data-value="INR">Indian Rupee</span>
+              </li>
+              <li data-part="item" data-value="CAD">
+                <span data-part="item-text" data-value="CAD"
+                  >Canadian Dollar</span
+                >
+              </li>
+              <li data-part="item" data-value="AUD">
+                <span data-part="item-text" data-value="AUD"
+                  >Australian Dollar</span
+                >
+              </li>
+              <li data-part="item" data-value="CHF">
+                <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <button class="button button--accent" type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;form id="my-form" class="flex flex-col items-center gap-(--spacing-ui-gap)"&gt;
+  &lt;div class="select select-js" data-form="my-form" data-name="currency"&gt;
+    &lt;div data-part="root"&gt;
+      &lt;div data-part="control"&gt;
+        &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+        &lt;button data-part="trigger"&gt;
+          &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            &gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div data-part="positioner"&gt;
+        &lt;ul data-part="content"&gt;
+          &lt;li data-part="item" data-value="USD"&gt;
+            &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="EUR"&gt;
+            &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="GBP"&gt;
+            &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="JPY"&gt;
+            &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="INR"&gt;
+            &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="CAD"&gt;
+            &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="AUD"&gt;
+            &lt;span data-part="item-text" data-value="AUD"
+              &gt;Australian Dollar&lt;/span
+            &gt;
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="CHF"&gt;
+            &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="button button--accent" type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+&lt;div id="result"&gt;&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
             ></path>
           </svg>
         </button>
       </div>
-      <div data-part="positioner">
-        <ul data-part="content">
-          <li data-part="item" data-value="USD">
-            <span data-part="item-text" data-value="USD">US Dollar</span>
-          </li>
-          <li data-part="item" data-value="EUR">
-            <span data-part="item-text" data-value="EUR">Euro</span>
-          </li>
-          <li data-part="item" data-value="GBP">
-            <span data-part="item-text" data-value="GBP">British Pound</span>
-          </li>
-          <li data-part="item" data-value="JPY">
-            <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-          </li>
-          <li data-part="item" data-value="INR">
-            <span data-part="item-text" data-value="INR">Indian Rupee</span>
-          </li>
-          <li data-part="item" data-value="CAD">
-            <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-          </li>
-          <li data-part="item" data-value="AUD">
-            <span data-part="item-text" data-value="AUD"
-              >Australian Dollar</span
-            >
-          </li>
-          <li data-part="item" data-value="CHF">
-            <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-          </li>
-        </ul>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;form id=&quot;my-form&quot; class=&quot;flex flex-col items-center gap-(--spacing-ui-gap)&quot;&gt;
+  &lt;div class=&quot;select select-js&quot; data-form=&quot;my-form&quot; data-name=&quot;currency&quot;&gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
+        &lt;button data-part=&quot;trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+            &gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div data-part=&quot;positioner&quot;&gt;
+        &lt;ul data-part=&quot;content&quot;&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
+            &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
+            &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
+            &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
+            &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
+            &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
+            &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
+            &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;
+              &gt;Australian Dollar&lt;/span
+            &gt;
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
+            &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;button button--accent&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+&lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>You can use the results from the form as you wish</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='const selectForm = document.getElementById("my-form") as HTMLFormElement | null;
+const seectResult = document.getElementById("result") as HTMLDivElement | null;
+
+if (selectForm &amp;&amp; seectResult) {
+  selectForm.addEventListener("submit", (e: Event) =&gt; {
+    e.preventDefault();
+    const formData = new FormData(selectForm);
+    console.log(formData.getAll("currency"));
+    const currency = (formData.get("currency") as string) || "none";
+    seectResult.textContent = `Submitted: currency: ${currency}`;
+  });
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
       </div>
     </div>
+    <pre><code class="code-js" data-lang="ts">const selectForm = document.getElementById(&quot;my-form&quot;) as HTMLFormElement | null;
+const seectResult = document.getElementById(&quot;result&quot;) as HTMLDivElement | null;
+
+if (selectForm &amp;&amp; seectResult) {
+  selectForm.addEventListener(&quot;submit&quot;, (e: Event) =&gt; {
+    e.preventDefault();
+    const formData = new FormData(selectForm);
+    console.log(formData.getAll(&quot;currency&quot;));
+    const currency = (formData.get(&quot;currency&quot;) as string) || &quot;none&quot;;
+    seectResult.textContent = `Submitted: currency: ${currency}`;
+  });
+}
+</code></pre>
   </div>
-  <button class="button button--accent" type="submit">Submit</button>
-</form>
-<div id="result"></div>
 </div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;form id=&quot;my-form&quot; class=&quot;flex flex-col items-center gap-(--spacing-ui-gap)&quot;&gt;
-  &lt;div class=&quot;select select-js&quot; data-form=&quot;my-form&quot; data-name=&quot;currency&quot;&gt;
-    &lt;div data-part=&quot;root&quot;&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-        &lt;button data-part=&quot;trigger&quot;&gt;
-          &lt;svg
-            xmlns=&quot;http://www.w3.org/2000/svg&quot;
-            fill=&quot;none&quot;
-            viewBox=&quot;0 0 24 24&quot;
-            stroke-width=&quot;1.5&quot;
-            stroke=&quot;currentColor&quot;
-          &gt;
-            &lt;path
-              stroke-linecap=&quot;round&quot;
-              stroke-linejoin=&quot;round&quot;
-              d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
-            &gt;&lt;/path&gt;
-          &lt;/svg&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div data-part=&quot;positioner&quot;&gt;
-        &lt;ul data-part=&quot;content&quot;&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;
-              &gt;Australian Dollar&lt;/span
-            &gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;button class=&quot;button button--accent&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
-&lt;/form&gt;
-&lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;form id=&quot;my-form&quot; class=&quot;flex flex-col items-center gap-(--spacing-ui-gap)&quot;&gt;
-  &lt;div class=&quot;select select-js&quot; data-form=&quot;my-form&quot; data-name=&quot;currency&quot;&gt;
-    &lt;div data-part=&quot;root&quot;&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-        &lt;button data-part=&quot;trigger&quot;&gt;
-          &lt;svg
-            xmlns=&quot;http://www.w3.org/2000/svg&quot;
-            fill=&quot;none&quot;
-            viewBox=&quot;0 0 24 24&quot;
-            stroke-width=&quot;1.5&quot;
-            stroke=&quot;currentColor&quot;
-          &gt;
-            &lt;path
-              stroke-linecap=&quot;round&quot;
-              stroke-linejoin=&quot;round&quot;
-              d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
-            &gt;&lt;/path&gt;
-          &lt;/svg&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div data-part=&quot;positioner&quot;&gt;
-        &lt;ul data-part=&quot;content&quot;&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;
-              &gt;Australian Dollar&lt;/span
-            &gt;
-          &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;button class=&quot;button button--accent&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
-&lt;/form&gt;
-&lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
-</code></pre>
-        </div>
-      </div><p>You can use the results from the form as you wish</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="const selectForm = document.getElementById(&quot;my-form&quot;) as HTMLFormElement | null;
-const seectResult = document.getElementById(&quot;result&quot;) as HTMLDivElement | null;
-
-if (selectForm &amp;&amp; seectResult) {
-  selectForm.addEventListener(&quot;submit&quot;, (e: Event) =&gt; {
-    e.preventDefault();
-    const formData = new FormData(selectForm);
-    console.log(formData.getAll(&quot;currency&quot;));
-    const currency = (formData.get(&quot;currency&quot;) as string) || &quot;none&quot;;
-    seectResult.textContent = `Submitted: currency: ${currency}`;
-  });
-}
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="ts">const selectForm = document.getElementById(&quot;my-form&quot;) as HTMLFormElement | null;
-const seectResult = document.getElementById(&quot;result&quot;) as HTMLDivElement | null;
-
-if (selectForm &amp;&amp; seectResult) {
-  selectForm.addEventListener(&quot;submit&quot;, (e: Event) =&gt; {
-    e.preventDefault();
-    const formData = new FormData(selectForm);
-    console.log(formData.getAll(&quot;currency&quot;));
-    const currency = (formData.get(&quot;currency&quot;) as string) || &quot;none&quot;;
-    seectResult.textContent = `Submitted: currency: ${currency}`;
-  });
-}
-</code></pre>
-      </div>
-    </div><hr>
-<h2 id="modifiers" tabindex="-1"><a class="link" href="#modifiers">#</a> Modifiers</h2>
+<hr />
+<h2 id="modifiers" tabindex="-1">
+  <a class="link" href="#modifiers">#</a> Modifiers
+</h2>
 <p>Each select can be styled with modifiers.</p>
-<p>You can mix as many modifiers on the same button, however you can choose only one choice per modifer</p>
-<p>For convenience the default variant name is omited, meaning there is no need to add the default name class</p>
+<p>
+  You can mix as many modifiers on the same button, however you can choose only
+  one choice per modifer
+</p>
+<p>
+  For convenience the default variant name is omited, meaning there is no need
+  to add the default name class
+</p>
 <blockquote>
-<p>You may have noticed the double dash before the modifier name — this follows the BEM (Block Element Modifier) naming convention</p>
+  <p>
+    You may have noticed the double dash before the modifier name — this follows
+    the BEM (Block Element Modifier) naming convention
+  </p>
 </blockquote>
 <table>
-<thead>
-<tr>
-<th>Modifier</th>
-<th>Option</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#color" class="link">Color</a></td>
-<td>base (default), brand, alert, info, success</td>
-</tr>
-<tr>
-<td><a href="#size" class="link">Size</a></td>
-<td>md (default), sm, lg, xl</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Modifier</th>
+      <th>Option</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#color" class="link">Color</a></td>
+      <td>base (default), brand, alert, info, success</td>
+    </tr>
+    <tr>
+      <td><a href="#size" class="link">Size</a></td>
+      <td>md (default), sm, lg, xl</td>
+    </tr>
+  </tbody>
 </table>
-<hr>
+<hr />
 <h3 id="color" tabindex="-1"><a class="link" href="#color">#</a> Color</h3>
 <p>Set the color of each select</p>
-<p>Options: <strong>accent(default)</strong>, <strong>brand</strong>, <strong>alert</strong>, <strong>info</strong>,<strong>success</strong></p>
+<p>
+  Options: <strong>accent(default)</strong>, <strong>brand</strong>,
+  <strong>alert</strong>, <strong>info</strong>,<strong>success</strong>
+</p>
 
-      <div class="preview">
-        <div class="preview__display"><div class="select-js select select--accent" data-same-width="true">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger">
-        <svg
+<div class="preview">
+  <div class="preview__display">
+    <div class="select-js select select--accent" data-same-width="true">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Currency</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="select-js select select--brand" data-same-width="true">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Currency</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="select-js select select--alert" data-same-width="true">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Currency</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="select-js select select--info" data-same-width="true">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Currency</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="select-js select select--success" data-same-width="true">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Currency</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="select-js select select--accent" data-same-width="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="select-js select select--brand" data-same-width="true">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger">
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="select-js select select--brand" data-same-width="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="select-js select select--alert" data-same-width="true">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger">
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="select-js select select--alert" data-same-width="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="select-js select select--info" data-same-width="true">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger">
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="select-js select select--info" data-same-width="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="select-js select select--success" data-same-width="true">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger">
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="select-js select select--success" data-same-width="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;select-js select select--accent&quot; data-same-width=&quot;true&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
           &gt;&lt;/path&gt;
         &lt;/svg&gt;
       &lt;/button&gt;
     &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;select-js select select--brand&quot; data-same-width=&quot;true&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;select-js select select--alert&quot; data-same-width=&quot;true&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;select-js select select--info&quot; data-same-width=&quot;true&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;select-js select select--success&quot; data-same-width=&quot;true&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
 
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select-js select select--accent&quot; data-same-width=&quot;true&quot;&gt;
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select-js select select--accent&quot; data-same-width=&quot;true&quot;&gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;div data-part=&quot;control&quot;&gt;
       &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
@@ -1872,440 +2211,486 @@ if (selectForm &amp;&amp; seectResult) {
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-        </div>
-      </div><hr>
+  </div>
+</div>
+<hr />
 <h3 id="size" tabindex="-1"><a class="link" href="#size">#</a> Size</h3>
 <p>Set the size of each select</p>
-<p>Options: <strong>md(default)</strong>, <strong>sm</strong>, <strong>lg</strong>, <strong>xl</strong></p>
+<p>
+  Options: <strong>md(default)</strong>, <strong>sm</strong>,
+  <strong>lg</strong>, <strong>xl</strong>
+</p>
 
-      <div class="preview">
-        <div class="preview__display"><div class="select-js select select--sm" data-same-width="true">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger">
-        <svg
+<div class="preview">
+  <div class="preview__display">
+    <div class="select-js select select--sm" data-same-width="true">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Currency</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="select-js select select--md" data-same-width="true">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Currency</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="select-js select select--lg" data-same-width="true">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Currency</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="select-js select select--xl" data-same-width="true">
+      <div data-part="root">
+        <div data-part="control">
+          <div data-part="label">Your Currency</div>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content">
+            <li data-part="item" data-value="USD">
+              <span data-part="item-text" data-value="USD">US Dollar</span>
+            </li>
+            <li data-part="item" data-value="EUR">
+              <span data-part="item-text" data-value="EUR">Euro</span>
+            </li>
+            <li data-part="item" data-value="GBP">
+              <span data-part="item-text" data-value="GBP">British Pound</span>
+            </li>
+            <li data-part="item" data-value="JPY">
+              <span data-part="item-text" data-value="JPY">Japanese Yen</span>
+            </li>
+            <li data-part="item" data-value="INR">
+              <span data-part="item-text" data-value="INR">Indian Rupee</span>
+            </li>
+            <li data-part="item" data-value="CAD">
+              <span data-part="item-text" data-value="CAD"
+                >Canadian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="AUD">
+              <span data-part="item-text" data-value="AUD"
+                >Australian Dollar</span
+              >
+            </li>
+            <li data-part="item" data-value="CHF">
+              <span data-part="item-text" data-value="CHF">Swiss Franc</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="select-js select select--sm" data-same-width="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="select-js select select--md" data-same-width="true">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger">
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="select-js select select--md" data-same-width="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="select-js select select--lg" data-same-width="true">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger">
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="select-js select select--lg" data-same-width="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="select-js select select--xl" data-same-width="true">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger">
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="select-js select select--xl" data-same-width="true"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m19.5 8.25-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div data-part="positioner">
-      <ul data-part="content">
-        <li data-part="item" data-value="USD">
-          <span data-part="item-text" data-value="USD">US Dollar</span>
-        </li>
-        <li data-part="item" data-value="EUR">
-          <span data-part="item-text" data-value="EUR">Euro</span>
-        </li>
-        <li data-part="item" data-value="GBP">
-          <span data-part="item-text" data-value="GBP">British Pound</span>
-        </li>
-        <li data-part="item" data-value="JPY">
-          <span data-part="item-text" data-value="JPY">Japanese Yen</span>
-        </li>
-        <li data-part="item" data-value="INR">
-          <span data-part="item-text" data-value="INR">Indian Rupee</span>
-        </li>
-        <li data-part="item" data-value="CAD">
-          <span data-part="item-text" data-value="CAD">Canadian Dollar</span>
-        </li>
-        <li data-part="item" data-value="AUD">
-          <span data-part="item-text" data-value="AUD">Australian Dollar</span>
-        </li>
-        <li data-part="item" data-value="CHF">
-          <span data-part="item-text" data-value="CHF">Swiss Franc</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;select-js select select--sm&quot; data-same-width=&quot;true&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
           &gt;&lt;/path&gt;
         &lt;/svg&gt;
       &lt;/button&gt;
     &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content"&gt;
+        &lt;li data-part="item" data-value="USD"&gt;
+          &lt;span data-part="item-text" data-value="USD"&gt;US Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
+        &lt;li data-part="item" data-value="EUR"&gt;
+          &lt;span data-part="item-text" data-value="EUR"&gt;Euro&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
+        &lt;li data-part="item" data-value="GBP"&gt;
+          &lt;span data-part="item-text" data-value="GBP"&gt;British Pound&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
+        &lt;li data-part="item" data-value="JPY"&gt;
+          &lt;span data-part="item-text" data-value="JPY"&gt;Japanese Yen&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
+        &lt;li data-part="item" data-value="INR"&gt;
+          &lt;span data-part="item-text" data-value="INR"&gt;Indian Rupee&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
+        &lt;li data-part="item" data-value="CAD"&gt;
+          &lt;span data-part="item-text" data-value="CAD"&gt;Canadian Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
+        &lt;li data-part="item" data-value="AUD"&gt;
+          &lt;span data-part="item-text" data-value="AUD"&gt;Australian Dollar&lt;/span&gt;
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
+        &lt;li data-part="item" data-value="CHF"&gt;
+          &lt;span data-part="item-text" data-value="CHF"&gt;Swiss Franc&lt;/span&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;select-js select select--md&quot; data-same-width=&quot;true&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;select-js select select--lg&quot; data-same-width=&quot;true&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;select-js select select--xl&quot; data-same-width=&quot;true&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;
-        &lt;svg
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;ul data-part=&quot;content&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;USD&quot;&gt;US Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;EUR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;EUR&quot;&gt;Euro&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;GBP&quot;&gt;British Pound&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;JPY&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;JPY&quot;&gt;Japanese Yen&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;INR&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;INR&quot;&gt;Indian Rupee&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CAD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CAD&quot;&gt;Canadian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;AUD&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;AUD&quot;&gt;Australian Dollar&lt;/span&gt;
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;CHF&quot;&gt;
-          &lt;span data-part=&quot;item-text&quot; data-value=&quot;CHF&quot;&gt;Swiss Franc&lt;/span&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
 
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select-js select select--sm&quot; data-same-width=&quot;true&quot;&gt;
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select-js select select--sm&quot; data-same-width=&quot;true&quot;&gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;div data-part=&quot;control&quot;&gt;
       &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
@@ -2506,258 +2891,430 @@ if (selectForm &amp;&amp; seectResult) {
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-        </div>
-      </div><hr>
-<h2 id="installation" tabindex="-1"><a class="link" href="#installation">#</a> Installation</h2>
-<p>First, complete the Corex UI <a href="/installation/introduction" class="link">initial installation</a> guide for your platform, bundler, or framework.</p>
+  </div>
+</div>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
 <h3 id="static" tabindex="-1"><a class="link" href="#static">#</a> Static</h3>
 <ol>
-<li>Import the Select component</li>
+  <li>Import the Select component</li>
 </ol>
 
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="import &quot;@corex-ui/static/components/select&quot;;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import "@corex-ui/static/components/select";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
 
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/select&quot;;
-</code></pre>
-      </div>
-    </div><p>This will automatically initialize all elements with <code>class=&quot;select-js&quot;</code> and add the necessary interaction behavior.</p>
-<ol start="2">
-<li>Add styling</li>
-</ol>
-<p>To apply the default Corex UI design system styles, import the stylesheet:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@import &quot;@corex-ui/design/components/select.css&quot;;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">css</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/select.css&quot;;
-</code></pre>
-      </div>
-    </div><p>Then apply the base class along with any desired modifiers:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;select select-js&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select select-js&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-      &lt;button data-part=&quot;trigger&quot;&gt;&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-      </div>
-    </div><h3 id="static-react" tabindex="-1"><a class="link" href="#static-react">#</a> Static React</h3>
-<blockquote>
-<p>Experimental! Only works with React static export (eg. Next.js SSG.)</p>
-</blockquote>
-<ol>
-<li>Import the Select component</li>
-</ol>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="import { Select } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    &lt;Select&gt;
-      &lt;div data-part=&quot;root&quot;&gt;
-        &lt;div data-part=&quot;control&quot;&gt;
-          &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-          &lt;button data-part=&quot;trigger&quot; /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/Select&gt;
-  );
-}
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="ts">import { Select } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    &lt;Select&gt;
-      &lt;div data-part=&quot;root&quot;&gt;
-        &lt;div data-part=&quot;control&quot;&gt;
-          &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
-          &lt;button data-part=&quot;trigger&quot; /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/Select&gt;
-  );
-}
-</code></pre>
-      </div>
-    </div><ol start="2">
-<li>Add styling</li>
-</ol>
-<p>To apply the default Corex UI design system styles, import the stylesheet:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@import &quot;@corex-ui/design/components/select.css&quot;;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">css</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/select.css&quot;;
-</code></pre>
-      </div>
-    </div><p>Then apply the base class along with any desired modifiers:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;select className=&quot;select&quot;&gt;
-  {/* content */}
-&lt;/select&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="html">&lt;select className=&quot;select&quot;&gt;
-  {/* content */}
-&lt;/select&gt;
-</code></pre>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
       </div>
     </div>
+    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/select&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  This will automatically initialize all elements with
+  <code>class=&quot;select-js&quot;</code> and add the necessary interaction
+  behavior.
+</p>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/select.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/select.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="select select-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="control"&gt;
+      &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part="trigger"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;select select-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
+      &lt;button data-part=&quot;trigger&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<h3 id="static-react" tabindex="-1">
+  <a class="link" href="#static-react">#</a> Static React
+</h3>
+<blockquote>
+  <p>Experimental! Only works with React static export (eg. Next.js SSG.)</p>
+</blockquote>
+<ol>
+  <li>Import the Select component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { Select } from &apos;@corex-ui/static/react&apos;;
+export default function Home() {
+  return (
+    &lt;Select&gt;
+      &lt;div data-part="root"&gt;
+        &lt;div data-part="control"&gt;
+          &lt;div data-part="label"&gt;Your Currency&lt;/div&gt;
+          &lt;button data-part="trigger" /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/Select&gt;
+  );
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { Select } from '@corex-ui/static/react';
+export default function Home() {
+  return (
+    &lt;Select&gt;
+      &lt;div data-part=&quot;root&quot;&gt;
+        &lt;div data-part=&quot;control&quot;&gt;
+          &lt;div data-part=&quot;label&quot;&gt;Your Currency&lt;/div&gt;
+          &lt;button data-part=&quot;trigger&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/Select&gt;
+  );
+}
+</code></pre>
+  </div>
+</div>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/select.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/select.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;select className="select"&gt;
+  {/* content */}
+&lt;/select&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;select className=&quot;select&quot;&gt;
+  {/* content */}
+&lt;/select&gt;
+</code></pre>
+  </div>
+</div>

@@ -1,130 +1,175 @@
-<h1 id="checkbox" tabindex="-1"><a class="link" href="#checkbox">#</a> Checkbox</h1>
+<h1 id="checkbox" tabindex="-1">
+  <a class="link" href="#checkbox">#</a> Checkbox
+</h1>
 <blockquote>
-<p>A pure HTML and vanilla JS implementation of <a href="https://zagjs.com/components/react/checkbox" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">Zag JS Checkbox
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <title>Opens in a new window</title>
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-    ></path>
-  </svg>
-</a></p>
-</blockquote>
-<p>A checkbox allows users to make a binary choice, i.e. a choice between one of two possible mutually exclusive options.</p>
-<hr>
-<h2 id="anatomy" tabindex="-1"><a class="link" href="#anatomy">#</a> Anatomy</h2>
-<p>The Checkbox component consists of the following data parts:</p>
-<p><code>root</code>, <code>label</code>, <code>hidden-input</code>, <code>control</code></p>
-
-      <div class="preview">
-        <div class="preview__display"><div class="checkbox checkbox-js">
-  <label data-part="root">
-    <span data-part="label">Label</span>
-    <input data-part="hidden-input" />
-    <div data-part="control">
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/checkbox"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Checkbox
       <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>
+  A checkbox allows users to make a binary choice, i.e. a choice between one of
+  two possible mutually exclusive options.
+</p>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Checkbox component consists of the following data parts:</p>
+<p>
+  <code>root</code>, <code>label</code>, <code>hidden-input</code>,
+  <code>control</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="checkbox checkbox-js">
+      <label data-part="root">
+        <span data-part="label">Label</span>
+        <input data-part="hidden-input" />
+        <div data-part="control">
+          <svg
+            data-checked
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            ></path>
+          </svg>
+          <svg
+            data-indeterminate
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M5 12h14"
+            ></path>
+          </svg>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="checkbox checkbox-js"&gt;
+  &lt;label data-part="root"&gt;
+    &lt;span data-part="label"&gt;Label&lt;/span&gt;
+    &lt;input data-part="hidden-input" /&gt;
+    &lt;div data-part="control"&gt;
+      &lt;svg
         data-checked
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-      >
-        <path
+      &gt;
+        &lt;path
           stroke-linecap="round"
           stroke-linejoin="round"
           d="m4.5 12.75 6 6 9-13.5"
-        ></path>
-      </svg>
-      <svg
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+      &lt;svg
         data-indeterminate
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-      >
-        <path
+      &gt;
+        &lt;path
           stroke-linecap="round"
           stroke-linejoin="round"
           d="M5 12h14"
-        ></path>
-      </svg>
-    </div>
-  </label>
-</div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;checkbox checkbox-js&quot;&gt;
-  &lt;label data-part=&quot;root&quot;&gt;
-    &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-    &lt;input data-part=&quot;hidden-input&quot; /&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;svg
-        data-checked
-        xmlns=&quot;http://www.w3.org/2000/svg&quot;
-        fill=&quot;none&quot;
-        viewBox=&quot;0 0 24 24&quot;
-        stroke-width=&quot;1.5&quot;
-        stroke=&quot;currentColor&quot;
-      &gt;
-        &lt;path
-          stroke-linecap=&quot;round&quot;
-          stroke-linejoin=&quot;round&quot;
-          d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-        &gt;&lt;/path&gt;
-      &lt;/svg&gt;
-      &lt;svg
-        data-indeterminate
-        xmlns=&quot;http://www.w3.org/2000/svg&quot;
-        fill=&quot;none&quot;
-        viewBox=&quot;0 0 24 24&quot;
-        stroke-width=&quot;1.5&quot;
-        stroke=&quot;currentColor&quot;
-      &gt;
-        &lt;path
-          stroke-linecap=&quot;round&quot;
-          stroke-linejoin=&quot;round&quot;
-          d=&quot;M5 12h14&quot;
         &gt;&lt;/path&gt;
       &lt;/svg&gt;
     &lt;/div&gt;
   &lt;/label&gt;
 &lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
 
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div class=&quot;checkbox checkbox-js&quot;&gt;
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;checkbox checkbox-js&quot;&gt;
   &lt;label data-part=&quot;root&quot;&gt;
     &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
     &lt;input data-part=&quot;hidden-input&quot; /&gt;
@@ -161,161 +206,363 @@
   &lt;/label&gt;
 &lt;/div&gt;
 </code></pre>
-        </div>
-      </div><hr>
-<h2 id="data-attributes" tabindex="-1"><a class="link" href="#data-attributes">#</a> Data attributes</h2>
-<p>Each checkbox can be set with different settings with the following data-attribute.</p>
+  </div>
+</div>
+<hr />
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each checkbox can be set with different settings with the following
+  data-attribute.
+</p>
 
-      <div class="preview">
-        <div class="preview__display"><div>
-  <div class="checkbox checkbox-js" data-default-checked="true">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <div class="checkbox checkbox-js" data-default-checked="true">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div class="checkbox checkbox-js" data-invalid="true">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div class="checkbox checkbox-js" data-required="true">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div class="checkbox checkbox-js" data-checked="indeterminate">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div&gt;
+  &lt;div class="checkbox checkbox-js" data-default-checked="true"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
           data-checked
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
           data-indeterminate
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  <div class="checkbox checkbox-js" data-invalid="true">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox checkbox-js" data-invalid="true"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
           data-checked
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
           data-indeterminate
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  <div class="checkbox checkbox-js" data-required="true">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox checkbox-js" data-required="true"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
           data-checked
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
           data-indeterminate
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  <div class="checkbox checkbox-js" data-checked="indeterminate">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox checkbox-js" data-checked="indeterminate"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
           data-checked
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
           data-indeterminate
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-        >
-          <path
+        &gt;
+          &lt;path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="M5 12h14"
-          ></path>
-        </svg>
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
       </div>
-    </label>
-  </div>
-</div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div&gt;
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div&gt;
   &lt;div class=&quot;checkbox checkbox-js&quot; data-default-checked=&quot;true&quot;&gt;
     &lt;label data-part=&quot;root&quot;&gt;
       &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
@@ -461,363 +708,278 @@
     &lt;/label&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div&gt;
-  &lt;div class=&quot;checkbox checkbox-js&quot; data-default-checked=&quot;true&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js&quot; data-invalid=&quot;true&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js&quot; data-required=&quot;true&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js&quot; data-checked=&quot;indeterminate&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
 </code></pre>
-        </div>
-      </div><p><strong>id</strong><br>
-Type: <code>string</code><br>
-Description: Unique id of the checkbox. Default generated if none is provided.</p>
-<p><strong>data-dir</strong><br>
-Type: <code>string</code><br>
-Description: The orientation of the checkbox. Can be <code>ltr</code> or <code>rtl</code>.</p>
-<p><strong>data-disabled</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the checkbox is disabled.</p>
-<p><strong>data-invalid</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the checkbox is invalid.</p>
-<p><strong>data-required</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the checkbox is required</p>
-<p><strong>data-read-only</strong><br>
-Type: <code>boolean</code><br>
-Description: Whether the checkbox is read only</p>
-<p><strong>data-form</strong><br>
-Type: <code>string</code><br>
-Description: The id of the form that the checkbox belongs to.</p>
-<p><strong>data-name</strong><br>
-Type: <code>string</code><br>
-Description: The name of the input field in a checkbox. Useful for form submission.</p>
-<p><strong>data-value</strong><br>
-Type: <code>string</code><br>
-Description: The value of checkbox input. Useful for form submission. Default to &quot;on&quot;</p>
-<p><strong>data-default-checked</strong><br>
-Type: <code>boolean || &quot;indeterminate</code><br>
-Description: The initial checked state of the checkbox</p>
-<p><strong>data-checked</strong><br>
-Type: <code>boolean || &quot;indeterminate</code><br>
-Description: The controlled checked state of the checkbox</p>
-<hr>
-<h2 id="event-callbacks" tabindex="-1"><a class="link" href="#event-callbacks">#</a> Event Callbacks</h2>
-<p>Each checkbox component can receive callbacks that can be used to respond to user interaction with custom behavior.</p>
-<p>You must add a custom id for the checkbox and a event listener for your event name</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="document
-  .getElementById(&quot;my-checkbox&quot;)
-  ?.addEventListener(&quot;my-checkbox-event&quot;, (event) =&gt; {
-    console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
-  });
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
+  </div>
 </div>
-        <pre><code class="code-js" data-lang="ts">document
-  .getElementById(&quot;my-checkbox&quot;)
-  ?.addEventListener(&quot;my-checkbox-event&quot;, (event) =&gt; {
-    console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Description: Unique id of the checkbox. Default generated if none is provided.
+</p>
+<p>
+  <strong>data-dir</strong><br />
+  Type: <code>string</code><br />
+  Description: The orientation of the checkbox. Can be <code>ltr</code> or
+  <code>rtl</code>.
+</p>
+<p>
+  <strong>data-disabled</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the checkbox is disabled.
+</p>
+<p>
+  <strong>data-invalid</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the checkbox is invalid.
+</p>
+<p>
+  <strong>data-required</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the checkbox is required
+</p>
+<p>
+  <strong>data-read-only</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the checkbox is read only
+</p>
+<p>
+  <strong>data-form</strong><br />
+  Type: <code>string</code><br />
+  Description: The id of the form that the checkbox belongs to.
+</p>
+<p>
+  <strong>data-name</strong><br />
+  Type: <code>string</code><br />
+  Description: The name of the input field in a checkbox. Useful for form
+  submission.
+</p>
+<p>
+  <strong>data-value</strong><br />
+  Type: <code>string</code><br />
+  Description: The value of checkbox input. Useful for form submission. Default
+  to &quot;on&quot;
+</p>
+<p>
+  <strong>data-default-checked</strong><br />
+  Type: <code>boolean || &quot;indeterminate</code><br />
+  Description: The initial checked state of the checkbox
+</p>
+<p>
+  <strong>data-checked</strong><br />
+  Type: <code>boolean || &quot;indeterminate</code><br />
+  Description: The controlled checked state of the checkbox
+</p>
+<hr />
+<h2 id="event-callbacks" tabindex="-1">
+  <a class="link" href="#event-callbacks">#</a> Event Callbacks
+</h2>
+<p>
+  Each checkbox component can receive callbacks that can be used to respond to
+  user interaction with custom behavior.
+</p>
+<p>
+  You must add a custom id for the checkbox and a event listener for your event
+  name
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document
+  .getElementById("my-checkbox")
+  ?.addEventListener("my-checkbox-event", (event) =&gt; {
+    console.log("Received event:", (event as CustomEvent).detail);
   });
-</code></pre>
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
       </div>
     </div>
-      <div class="preview">
-        <div class="preview__display"><div
+    <pre><code class="code-js" data-lang="ts">document
+  .getElementById(&quot;my-checkbox&quot;)
+  ?.addEventListener(&quot;my-checkbox-event&quot;, (event) =&gt; {
+    console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
+  });
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div
+      id="my-checkbox"
+      class="checkbox checkbox-js"
+      data-on-checked-change="my-checkbox-event"
+    >
+      <label data-part="root">
+        <span data-part="label">Label</span>
+        <input data-part="hidden-input" />
+        <div data-part="control">
+          <svg
+            data-checked
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            ></path>
+          </svg>
+          <svg
+            data-indeterminate
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M5 12h14"
+            ></path>
+          </svg>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
   id="my-checkbox"
   class="checkbox checkbox-js"
   data-on-checked-change="my-checkbox-event"
->
-  <label data-part="root">
-    <span data-part="label">Label</span>
-    <input data-part="hidden-input" />
-    <div data-part="control">
-      <svg
+&gt;
+  &lt;label data-part="root"&gt;
+    &lt;span data-part="label"&gt;Label&lt;/span&gt;
+    &lt;input data-part="hidden-input" /&gt;
+    &lt;div data-part="control"&gt;
+      &lt;svg
         data-checked
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-      >
-        <path
+      &gt;
+        &lt;path
           stroke-linecap="round"
           stroke-linejoin="round"
           d="m4.5 12.75 6 6 9-13.5"
-        ></path>
-      </svg>
-      <svg
-        data-indeterminate
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M5 12h14"
-        ></path>
-      </svg>
-    </div>
-  </label>
-</div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div
-  id=&quot;my-checkbox&quot;
-  class=&quot;checkbox checkbox-js&quot;
-  data-on-checked-change=&quot;my-checkbox-event&quot;
-&gt;
-  &lt;label data-part=&quot;root&quot;&gt;
-    &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-    &lt;input data-part=&quot;hidden-input&quot; /&gt;
-    &lt;div data-part=&quot;control&quot;&gt;
-      &lt;svg
-        data-checked
-        xmlns=&quot;http://www.w3.org/2000/svg&quot;
-        fill=&quot;none&quot;
-        viewBox=&quot;0 0 24 24&quot;
-        stroke-width=&quot;1.5&quot;
-        stroke=&quot;currentColor&quot;
-      &gt;
-        &lt;path
-          stroke-linecap=&quot;round&quot;
-          stroke-linejoin=&quot;round&quot;
-          d=&quot;m4.5 12.75 6 6 9-13.5&quot;
         &gt;&lt;/path&gt;
       &lt;/svg&gt;
       &lt;svg
         data-indeterminate
-        xmlns=&quot;http://www.w3.org/2000/svg&quot;
-        fill=&quot;none&quot;
-        viewBox=&quot;0 0 24 24&quot;
-        stroke-width=&quot;1.5&quot;
-        stroke=&quot;currentColor&quot;
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
       &gt;
         &lt;path
-          stroke-linecap=&quot;round&quot;
-          stroke-linejoin=&quot;round&quot;
-          d=&quot;M5 12h14&quot;
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 12h14"
         &gt;&lt;/path&gt;
       &lt;/svg&gt;
     &lt;/div&gt;
   &lt;/label&gt;
 &lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
 
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
   id=&quot;my-checkbox&quot;
   class=&quot;checkbox checkbox-js&quot;
   data-on-checked-change=&quot;my-checkbox-event&quot;
@@ -858,1562 +1020,1881 @@ Description: The controlled checked state of the checkbox</p>
   &lt;/label&gt;
 &lt;/div&gt;
 </code></pre>
-        </div>
-      </div><blockquote>
-<p>Open your browser's console to see the events received when the checked status changes</p>
+  </div>
+</div>
+<blockquote>
+  <p>
+    Open your browser's console to see the events received when the checked
+    status changes
+  </p>
 </blockquote>
-<p><strong>data-on-checked-change</strong><br>
-Type: <code>string</code><br>
-Description: Event name to be send when the checked state changes.</p>
-<hr>
-<h2 id="form-usage" tabindex="-1"><a class="link" href="#form-usage">#</a> Form usage</h2>
+<p>
+  <strong>data-on-checked-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be send when the checked state changes.
+</p>
+<hr />
+<h2 id="form-usage" tabindex="-1">
+  <a class="link" href="#form-usage">#</a> Form usage
+</h2>
 <p>Checkbox can be used inside a form</p>
 <p>You must set the id of the form and the name of the Checkbox</p>
-<p><code>data-form=&quot;form-id&quot;</code><br>
-<code>data-name=&quot;checkbox-name&quot;</code></p>
+<p>
+  <code>data-form=&quot;form-id&quot;</code><br />
+  <code>data-name=&quot;checkbox-name&quot;</code>
+</p>
 
-      <div class="preview">
-        <div class="preview__display"><form id="my-form" class="flex flex-col items-center gap-(--spacing-ui-gap)">
-  <div
+<div class="preview">
+  <div class="preview__display">
+    <form
+      id="my-form"
+      class="flex flex-col items-center gap-(--spacing-ui-gap)"
+    >
+      <div
+        class="checkbox checkbox-js"
+        data-form="my-form"
+        data-name="terms"
+        data-value="yes"
+      >
+        <label data-part="root">
+          <span data-part="label">Accepts Terms</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <button class="button button--accent" type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;form id="my-form" class="flex flex-col items-center gap-(--spacing-ui-gap)"&gt;
+  &lt;div
     class="checkbox checkbox-js"
     data-form="my-form"
     data-name="terms"
     data-value="yes"
-  >
-    <label data-part="root">
-      <span data-part="label">Accepts Terms</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
-          data-checked
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
-          data-indeterminate
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  <button class="button button--accent" type="submit">Submit</button>
-</form>
-<div id="result"></div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;form id=&quot;my-form&quot; class=&quot;flex flex-col items-center gap-(--spacing-ui-gap)&quot;&gt;
-  &lt;div
-    class=&quot;checkbox checkbox-js&quot;
-    data-form=&quot;my-form&quot;
-    data-name=&quot;terms&quot;
-    data-value=&quot;yes&quot;
   &gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Accepts Terms&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Accepts Terms&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
         &lt;svg
           data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
         &gt;
           &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
           &gt;&lt;/path&gt;
         &lt;/svg&gt;
         &lt;svg
           data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
         &gt;
           &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 12h14"
           &gt;&lt;/path&gt;
         &lt;/svg&gt;
       &lt;/div&gt;
     &lt;/label&gt;
   &lt;/div&gt;
-  &lt;button class=&quot;button button--accent&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+  &lt;button class="button button--accent" type="submit"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;
-&lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;form id=&quot;my-form&quot; class=&quot;flex flex-col items-center gap-(--spacing-ui-gap)&quot;&gt;
-  &lt;div
-    class=&quot;checkbox checkbox-js&quot;
-    data-form=&quot;my-form&quot;
-    data-name=&quot;terms&quot;
-    data-value=&quot;yes&quot;
-  &gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Accepts Terms&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;button class=&quot;button button--accent&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
-&lt;/form&gt;
-&lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
-</code></pre>
-        </div>
-      </div><p>You can use the results from the form as you wish</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="const form = document.getElementById(&quot;my-form&quot;) as HTMLFormElement | null;
-const resultCurrency = document.getElementById(
-  &quot;result&quot;,
-) as HTMLDivElement | null;
-if (form &amp;&amp; resultCurrency) {
-  form.addEventListener(&quot;submit&quot;, (e: Event) =&gt; {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const terms = (formData.get(&quot;terms&quot;) as string) || &quot;none&quot;;
-    resultCurrency.textContent = `Terms accepted: ${terms}`;
-  });
-}
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="ts">const form = document.getElementById(&quot;my-form&quot;) as HTMLFormElement | null;
-const resultCurrency = document.getElementById(
-  &quot;result&quot;,
-) as HTMLDivElement | null;
-if (form &amp;&amp; resultCurrency) {
-  form.addEventListener(&quot;submit&quot;, (e: Event) =&gt; {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const terms = (formData.get(&quot;terms&quot;) as string) || &quot;none&quot;;
-    resultCurrency.textContent = `Terms accepted: ${terms}`;
-  });
-}
-</code></pre>
-      </div>
-    </div><hr>
-<h2 id="modifiers" tabindex="-1"><a class="link" href="#modifiers">#</a> Modifiers</h2>
-<p>Checkbox support modifier classes that control their appearance.<br>
-You can combine multiple modifiers on the same checkbox.</p>
-<p>The default modifier is applied automatically, so you don’t need to include it explicitly.</p>
-<table>
-<thead>
-<tr>
-<th>Modifier</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#color" class="link">Color</a></td>
-<td>Sets the color theme of the checkbox.</td>
-</tr>
-<tr>
-<td><a href="#size" class="link">Size</a></td>
-<td>Adjusts the overall size of the checkbox.</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>You may have noticed the double dash before the modifier name — this follows the BEM (Block Element Modifier) naming convention</p>
-</blockquote>
-<h3 id="color" tabindex="-1"><a class="link" href="#color">#</a> Color</h3>
-<p>Use <code>class=&quot;checkbox--{color}&quot;</code> to set the color of an checkbox.</p>
-<p>Available options:<br>
-<strong>accent</strong>, <strong>brand</strong>, <strong>alert</strong>, <strong>info</strong>, <strong>success</strong></p>
-
-      <div class="preview">
-        <div class="preview__display"><div>
-  <div class="checkbox checkbox-js checkbox--accent">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
+&lt;div id="result"&gt;&lt;/div&gt;
+'
+    >
       <div data-part="control">
-        <svg
-          data-checked
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
-          data-indeterminate
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  <div class="checkbox checkbox-js checkbox--brand">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
-          data-checked
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
-          data-indeterminate
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  <div class="checkbox checkbox-js checkbox--alert">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
-          data-checked
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
-          data-indeterminate
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  <div class="checkbox checkbox-js checkbox--info">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
-          data-checked
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
-          data-indeterminate
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  <div class="checkbox checkbox-js checkbox--success">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
-          data-checked
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
-          data-indeterminate
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-</div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--accent&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--brand&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--alert&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--info&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--success&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
 
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--accent&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--brand&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--alert&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--info&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--success&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-        </div>
-      </div><hr>
-<h3 id="size" tabindex="-1"><a class="link" href="#size">#</a> Size</h3>
-<p>Use <code>class=&quot;checkbox--{size}&quot;</code> to set the size of a checkbox.</p>
-<p>Available options:<br>
-<strong>sm</strong>, <strong>md</strong> (default), <strong>lg</strong>, <strong>xl</strong></p>
-
-      <div class="preview">
-        <div class="preview__display"><div>
-  <div class="checkbox checkbox-js checkbox--sm">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
-          data-checked
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
-          data-indeterminate
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  <div class="checkbox checkbox-js">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
-          data-checked
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
-          data-indeterminate
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  <div class="checkbox checkbox-js checkbox--lg">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
-          data-checked
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
-          data-indeterminate
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  <div class="checkbox checkbox-js checkbox--xl">
-    <label data-part="root">
-      <span data-part="label">Label</span>
-      <input data-part="hidden-input" />
-      <div data-part="control">
-        <svg
-          data-checked
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m4.5 12.75 6 6 9-13.5"
-          ></path>
-        </svg>
-        <svg
-          data-indeterminate
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 12h14"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-</div>
-</div>
-        <div class="preview__code">
-          <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--sm&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--lg&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--xl&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-          <pre><code class="code-js" data-lang="html">&lt;div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--sm&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--lg&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;checkbox checkbox-js checkbox--xl&quot;&gt;
-    &lt;label data-part=&quot;root&quot;&gt;
-      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-      &lt;input data-part=&quot;hidden-input&quot; /&gt;
-      &lt;div data-part=&quot;control&quot;&gt;
-        &lt;svg
-          data-checked
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-        &lt;svg
-          data-indeterminate
-          xmlns=&quot;http://www.w3.org/2000/svg&quot;
-          fill=&quot;none&quot;
-          viewBox=&quot;0 0 24 24&quot;
-          stroke-width=&quot;1.5&quot;
-          stroke=&quot;currentColor&quot;
-        &gt;
-          &lt;path
-            stroke-linecap=&quot;round&quot;
-            stroke-linejoin=&quot;round&quot;
-            d=&quot;M5 12h14&quot;
-          &gt;&lt;/path&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-        </div>
-      </div><hr>
-<h2 id="installation" tabindex="-1"><a class="link" href="#installation">#</a> Installation</h2>
-<p>First, complete the Corex UI <a href="/installation/introduction" class="link">initial installation</a> guide for your platform, bundler, or framework.</p>
-<h3 id="static" tabindex="-1"><a class="link" href="#static">#</a> Static</h3>
-<ol>
-<li>Import the Checkbox component</li>
-</ol>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="import &quot;@corex-ui/static/components/checkbox&quot;;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/checkbox&quot;;
-</code></pre>
-      </div>
-    </div><p>This will automatically initialize all elements with <code>class=&quot;checkbox-js&quot;</code> and add the necessary interaction behavior.</p>
-<ol start="2">
-<li>Add styling</li>
-</ol>
-<p>The Checkbox component is unstyled by default for maximum customization flexibility.</p>
-<p>To apply the default Corex UI design system styles, import the stylesheet:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@import &quot;@corex-ui/design/components/checkbox.css&quot;;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">css</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/checkbox.css&quot;;
-</code></pre>
-      </div>
-    </div><p>Then apply the base class along with any desired modifiers:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;checkbox checkbox-js&quot;&gt;
-  &lt;label data-part=&quot;root&quot;&gt;
-    &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-    &lt;input data-part=&quot;hidden-input&quot; /&gt;
-    &lt;div data-part=&quot;control&quot;&gt;&lt;/div&gt;
-  &lt;/label&gt;
-&lt;/div&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="html">&lt;div class=&quot;checkbox checkbox-js&quot;&gt;
-  &lt;label data-part=&quot;root&quot;&gt;
-    &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
-    &lt;input data-part=&quot;hidden-input&quot; /&gt;
-    &lt;div data-part=&quot;control&quot;&gt;&lt;/div&gt;
-  &lt;/label&gt;
-&lt;/div&gt;
-</code></pre>
-      </div>
-    </div><h3 id="static-react" tabindex="-1"><a class="link" href="#static-react">#</a> Static React</h3>
-<blockquote>
-<p>Experimental! Only works with React static export (eg. Next.js SSG.)</p>
-</blockquote>
-<ol>
-<li>Import the Checkbox component</li>
-</ol>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="import { Checkbox } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    &lt;Checkbox&gt;
-      &lt;div data-part=&quot;root&quot;&gt;
-        &lt;label data-part=&quot;label&quot;&gt;Label&lt;/label&gt;
-        &lt;input data-part=&quot;hidden-input&quot; /&gt;
-        &lt;div data-part=&quot;control&quot; /&gt;
-      &lt;/div&gt;
-    &lt;/Checkbox&gt;
-  );
-}
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">ts</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="ts">import { Checkbox } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    &lt;Checkbox&gt;
-      &lt;div data-part=&quot;root&quot;&gt;
-        &lt;label data-part=&quot;label&quot;&gt;Label&lt;/label&gt;
-        &lt;input data-part=&quot;hidden-input&quot; /&gt;
-        &lt;div data-part=&quot;control&quot; /&gt;
-      &lt;/div&gt;
-    &lt;/Checkbox&gt;
-  );
-}
-</code></pre>
-      </div>
-    </div><ol start="2">
-<li>Add styling</li>
-</ol>
-<p>The Checkbox component is unstyled by default for maximum customization flexibility.</p>
-<p>To apply the default Corex UI design system styles, import the stylesheet:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@import &quot;@corex-ui/design/components/checkbox.css&quot;;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">css</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/checkbox.css&quot;;
-</code></pre>
-      </div>
-    </div><p>Then apply the base class along with any desired modifiers:</p>
-
-    <div class="preview">
-      <div class="preview__code">
-        <div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;Checkbox className=&quot;checkbox&quot;&gt; {/* content */} &lt;/Checkbox&gt;
-">
- <div data-part="control">
-   <button data-part="trigger" class="button button--sm">
-   <span data-copy class="uppercase">html</span>
-  <span data-copied >Copied</span>
-
-   
-     <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2"
-         viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-       <path stroke-linecap="round" stroke-linejoin="round"
-           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-       </path>
-     </svg>
-     <svg data-copied class="icon" stroke="currentColor"
-         fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
-         width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path fill-rule="evenodd"
-           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-           clip-rule="evenodd"></path>
-     </svg>
-   </button>
- </div>
-</div>
-        <pre><code class="code-js" data-lang="html">&lt;Checkbox className=&quot;checkbox&quot;&gt; {/* content */} &lt;/Checkbox&gt;
-</code></pre>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
       </div>
     </div>
+    <pre><code class="code-js" data-lang="html">&lt;form id=&quot;my-form&quot; class=&quot;flex flex-col items-center gap-(--spacing-ui-gap)&quot;&gt;
+  &lt;div
+    class=&quot;checkbox checkbox-js&quot;
+    data-form=&quot;my-form&quot;
+    data-name=&quot;terms&quot;
+    data-value=&quot;yes&quot;
+  &gt;
+    &lt;label data-part=&quot;root&quot;&gt;
+      &lt;span data-part=&quot;label&quot;&gt;Accepts Terms&lt;/span&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M5 12h14&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;button button--accent&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+&lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>You can use the results from the form as you wish</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='const form = document.getElementById("my-form") as HTMLFormElement | null;
+const resultCurrency = document.getElementById(
+  "result",
+) as HTMLDivElement | null;
+if (form &amp;&amp; resultCurrency) {
+  form.addEventListener("submit", (e: Event) =&gt; {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const terms = (formData.get("terms") as string) || "none";
+    resultCurrency.textContent = `Terms accepted: ${terms}`;
+  });
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">const form = document.getElementById(&quot;my-form&quot;) as HTMLFormElement | null;
+const resultCurrency = document.getElementById(
+  &quot;result&quot;,
+) as HTMLDivElement | null;
+if (form &amp;&amp; resultCurrency) {
+  form.addEventListener(&quot;submit&quot;, (e: Event) =&gt; {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const terms = (formData.get(&quot;terms&quot;) as string) || &quot;none&quot;;
+    resultCurrency.textContent = `Terms accepted: ${terms}`;
+  });
+}
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="modifiers" tabindex="-1">
+  <a class="link" href="#modifiers">#</a> Modifiers
+</h2>
+<p>
+  Checkbox support modifier classes that control their appearance.<br />
+  You can combine multiple modifiers on the same checkbox.
+</p>
+<p>
+  The default modifier is applied automatically, so you don’t need to include it
+  explicitly.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Modifier</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#color" class="link">Color</a></td>
+      <td>Sets the color theme of the checkbox.</td>
+    </tr>
+    <tr>
+      <td><a href="#size" class="link">Size</a></td>
+      <td>Adjusts the overall size of the checkbox.</td>
+    </tr>
+  </tbody>
+</table>
+<blockquote>
+  <p>
+    You may have noticed the double dash before the modifier name — this follows
+    the BEM (Block Element Modifier) naming convention
+  </p>
+</blockquote>
+<h3 id="color" tabindex="-1"><a class="link" href="#color">#</a> Color</h3>
+<p>
+  Use <code>class=&quot;checkbox--{color}&quot;</code> to set the color of an
+  checkbox.
+</p>
+<p>
+  Available options:<br />
+  <strong>accent</strong>, <strong>brand</strong>, <strong>alert</strong>,
+  <strong>info</strong>, <strong>success</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <div class="checkbox checkbox-js checkbox--accent">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div class="checkbox checkbox-js checkbox--brand">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div class="checkbox checkbox-js checkbox--alert">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div class="checkbox checkbox-js checkbox--info">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div class="checkbox checkbox-js checkbox--success">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div&gt;
+  &lt;div class="checkbox checkbox-js checkbox--accent"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 12h14"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox checkbox-js checkbox--brand"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 12h14"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox checkbox-js checkbox--alert"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 12h14"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox checkbox-js checkbox--info"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 12h14"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox checkbox-js checkbox--success"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 12h14"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+  &lt;div class=&quot;checkbox checkbox-js checkbox--accent&quot;&gt;
+    &lt;label data-part=&quot;root&quot;&gt;
+      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M5 12h14&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox checkbox-js checkbox--brand&quot;&gt;
+    &lt;label data-part=&quot;root&quot;&gt;
+      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M5 12h14&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox checkbox-js checkbox--alert&quot;&gt;
+    &lt;label data-part=&quot;root&quot;&gt;
+      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M5 12h14&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox checkbox-js checkbox--info&quot;&gt;
+    &lt;label data-part=&quot;root&quot;&gt;
+      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M5 12h14&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox checkbox-js checkbox--success&quot;&gt;
+    &lt;label data-part=&quot;root&quot;&gt;
+      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M5 12h14&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h3 id="size" tabindex="-1"><a class="link" href="#size">#</a> Size</h3>
+<p>
+  Use <code>class=&quot;checkbox--{size}&quot;</code> to set the size of a
+  checkbox.
+</p>
+<p>
+  Available options:<br />
+  <strong>sm</strong>, <strong>md</strong> (default), <strong>lg</strong>,
+  <strong>xl</strong>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div>
+      <div class="checkbox checkbox-js checkbox--sm">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div class="checkbox checkbox-js">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div class="checkbox checkbox-js checkbox--lg">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div class="checkbox checkbox-js checkbox--xl">
+        <label data-part="root">
+          <span data-part="label">Label</span>
+          <input data-part="hidden-input" />
+          <div data-part="control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+            <svg
+              data-indeterminate
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              ></path>
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div&gt;
+  &lt;div class="checkbox checkbox-js checkbox--sm"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 12h14"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox checkbox-js"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 12h14"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox checkbox-js checkbox--lg"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 12h14"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox checkbox-js checkbox--xl"&gt;
+    &lt;label data-part="root"&gt;
+      &lt;span data-part="label"&gt;Label&lt;/span&gt;
+      &lt;input data-part="hidden-input" /&gt;
+      &lt;div data-part="control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 12h14"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div&gt;
+  &lt;div class=&quot;checkbox checkbox-js checkbox--sm&quot;&gt;
+    &lt;label data-part=&quot;root&quot;&gt;
+      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M5 12h14&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox checkbox-js&quot;&gt;
+    &lt;label data-part=&quot;root&quot;&gt;
+      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M5 12h14&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox checkbox-js checkbox--lg&quot;&gt;
+    &lt;label data-part=&quot;root&quot;&gt;
+      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M5 12h14&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox checkbox-js checkbox--xl&quot;&gt;
+    &lt;label data-part=&quot;root&quot;&gt;
+      &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
+      &lt;input data-part=&quot;hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;svg
+          data-indeterminate
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M5 12h14&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
+<h3 id="static" tabindex="-1"><a class="link" href="#static">#</a> Static</h3>
+<ol>
+  <li>Import the Checkbox component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import "@corex-ui/static/components/checkbox";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/checkbox&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  This will automatically initialize all elements with
+  <code>class=&quot;checkbox-js&quot;</code> and add the necessary interaction
+  behavior.
+</p>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  The Checkbox component is unstyled by default for maximum customization
+  flexibility.
+</p>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/checkbox.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/checkbox.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="checkbox checkbox-js"&gt;
+  &lt;label data-part="root"&gt;
+    &lt;span data-part="label"&gt;Label&lt;/span&gt;
+    &lt;input data-part="hidden-input" /&gt;
+    &lt;div data-part="control"&gt;&lt;/div&gt;
+  &lt;/label&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;checkbox checkbox-js&quot;&gt;
+  &lt;label data-part=&quot;root&quot;&gt;
+    &lt;span data-part=&quot;label&quot;&gt;Label&lt;/span&gt;
+    &lt;input data-part=&quot;hidden-input&quot; /&gt;
+    &lt;div data-part=&quot;control&quot;&gt;&lt;/div&gt;
+  &lt;/label&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<h3 id="static-react" tabindex="-1">
+  <a class="link" href="#static-react">#</a> Static React
+</h3>
+<blockquote>
+  <p>Experimental! Only works with React static export (eg. Next.js SSG.)</p>
+</blockquote>
+<ol>
+  <li>Import the Checkbox component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { Checkbox } from &apos;@corex-ui/static/react&apos;;
+export default function Home() {
+  return (
+    &lt;Checkbox&gt;
+      &lt;div data-part="root"&gt;
+        &lt;label data-part="label"&gt;Label&lt;/label&gt;
+        &lt;input data-part="hidden-input" /&gt;
+        &lt;div data-part="control" /&gt;
+      &lt;/div&gt;
+    &lt;/Checkbox&gt;
+  );
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { Checkbox } from '@corex-ui/static/react';
+export default function Home() {
+  return (
+    &lt;Checkbox&gt;
+      &lt;div data-part=&quot;root&quot;&gt;
+        &lt;label data-part=&quot;label&quot;&gt;Label&lt;/label&gt;
+        &lt;input data-part=&quot;hidden-input&quot; /&gt;
+        &lt;div data-part=&quot;control&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/Checkbox&gt;
+  );
+}
+</code></pre>
+  </div>
+</div>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  The Checkbox component is unstyled by default for maximum customization
+  flexibility.
+</p>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/checkbox.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/checkbox.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>Then apply the base class along with any desired modifiers:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;Checkbox className="checkbox"&gt; {/* content */} &lt;/Checkbox&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;Checkbox className=&quot;checkbox&quot;&gt; {/* content */} &lt;/Checkbox&gt;
+</code></pre>
+  </div>
+</div>

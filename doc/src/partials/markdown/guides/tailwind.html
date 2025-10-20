@@ -1,189 +1,348 @@
-<h1 id="tailwind-guide" tabindex="-1"><a class="link" href="#tailwind-guide">#</a> Tailwind Guide</h1>
-<p>Corex UI leverages Tailwind v4 namespaces extensively to create a modular, scalable, and themeable design system. We use Tailwind v4 theme variables while respecting namespaces, which allows them to behave just like any standard Tailwind variable—examples include h-ui, h-ui-sm, and other namespace-prefixed variables.</p>
-<p>By combining these namespaced variables with Tailwind v4 utilities, Corex UI achieves several key benefits:</p>
+<h1 id="tailwind-guide" tabindex="-1">
+  <a class="link" href="#tailwind-guide">#</a> Tailwind Guide
+</h1>
+<p>
+  Corex UI leverages Tailwind v4 namespaces extensively to create a modular,
+  scalable, and themeable design system. We use Tailwind v4 theme variables
+  while respecting namespaces, which allows them to behave just like any
+  standard Tailwind variable—examples include h-ui, h-ui-sm, and other
+  namespace-prefixed variables.
+</p>
+<p>
+  By combining these namespaced variables with Tailwind v4 utilities, Corex UI
+  achieves several key benefits:
+</p>
 <ul>
-<li>Reduced CSS build size – Only the utilities and variables actually used in your components are included.</li>
-<li>Automatic modifiers – Component states and variants can automatically adapt without writing extra CSS.</li>
-<li>Dynamic theming – Themes can be switched or updated on the fly, enabling flexible styling across applications.</li>
+  <li>
+    Reduced CSS build size – Only the utilities and variables actually used in
+    your components are included.
+  </li>
+  <li>
+    Automatic modifiers – Component states and variants can automatically adapt
+    without writing extra CSS.
+  </li>
+  <li>
+    Dynamic theming – Themes can be switched or updated on the fly, enabling
+    flexible styling across applications.
+  </li>
 </ul>
-<p>This approach ensures that Corex UI remains lightweight, highly maintainable, and fully compatible with standard Tailwind workflows, while giving developers powerful tools for rapid UI development.</p>
-<p>See <a href="https://tailwindcss.com/docs/theme" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">Tailwind Documentation
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <title>Opens in a new window</title>
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-    ></path>
-  </svg>
-</a></p>
-<hr>
-<h2 id="utilities" tabindex="-1"><a class="link" href="#utilities">#</a> Utilities</h2>
-<p>Corex UI provides a set of <strong>utility classes</strong> built on these variables:</p>
+<p>
+  This approach ensures that Corex UI remains lightweight, highly maintainable,
+  and fully compatible with standard Tailwind workflows, while giving developers
+  powerful tools for rapid UI development.
+</p>
+<p>
+  See
+  <a
+    href="https://tailwindcss.com/docs/theme"
+    class="link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="External link, opens in a new window"
+    >Tailwind Documentation
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <title>Opens in a new window</title>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+      ></path>
+    </svg>
+  </a>
+</p>
+<hr />
+<h2 id="utilities" tabindex="-1">
+  <a class="link" href="#utilities">#</a> Utilities
+</h2>
+<p>
+  Corex UI provides a set of <strong>utility classes</strong> built on these
+  variables:
+</p>
 <ul>
-<li><strong>Layout utilities</strong> handle flex direction, spacing, width, and alignment.</li>
-<li><strong>Interactive utilities</strong> manage hover, active, focus, and disabled states for buttons, items, and triggers.</li>
-<li><strong>Content utilities</strong> style containers with padding, border, radius, background, and typography.</li>
-<li><strong>Icon utilities</strong> ensure scalable, color-inheriting icons that integrate smoothly with triggers and items.</li>
+  <li>
+    <strong>Layout utilities</strong> handle flex direction, spacing, width, and
+    alignment.
+  </li>
+  <li>
+    <strong>Interactive utilities</strong> manage hover, active, focus, and
+    disabled states for buttons, items, and triggers.
+  </li>
+  <li>
+    <strong>Content utilities</strong> style containers with padding, border,
+    radius, background, and typography.
+  </li>
+  <li>
+    <strong>Icon utilities</strong> ensure scalable, color-inheriting icons that
+    integrate smoothly with triggers and items.
+  </li>
 </ul>
-<p>By referencing CSS variables, these utilities <strong>automatically inherit themes</strong>, reducing the need for additional CSS and enabling <strong>dynamic styling</strong>.</p>
-<p>See <a href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/utilities.css" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">Utilities
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <title>Opens in a new window</title>
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-    ></path>
-  </svg>
-</a></p>
-<hr>
-<h2 id="components" tabindex="-1"><a class="link" href="#components">#</a> Components</h2>
-<p>Components in Corex UI are built using <strong>Tailwind variables and utilities</strong> for rapid customization:</p>
+<p>
+  By referencing CSS variables, these utilities
+  <strong>automatically inherit themes</strong>, reducing the need for
+  additional CSS and enabling <strong>dynamic styling</strong>.
+</p>
+<p>
+  See
+  <a
+    href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/utilities.css"
+    class="link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="External link, opens in a new window"
+    >Utilities
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <title>Opens in a new window</title>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+      ></path>
+    </svg>
+  </a>
+</p>
+<hr />
+<h2 id="components" tabindex="-1">
+  <a class="link" href="#components">#</a> Components
+</h2>
+<p>
+  Components in Corex UI are built using
+  <strong>Tailwind variables and utilities</strong> for rapid customization:
+</p>
 <ul>
-<li>All components are fully styled with <strong>layout, spacing, typography, and state utilities</strong>.</li>
-<li><strong>Item triggers and content areas</strong> automatically reflect hover, active, disabled, and selected states.</li>
-<li>Components are <strong>responsive</strong> and <strong>theme-aware</strong>, adapting seamlessly using the provided semantic tokens</li>
-<li>RTL support and state-driven modifiers ensure <strong>accessibility and internationalization</strong> are maintained.</li>
+  <li>
+    All components are fully styled with
+    <strong>layout, spacing, typography, and state utilities</strong>.
+  </li>
+  <li>
+    <strong>Item triggers and content areas</strong> automatically reflect
+    hover, active, disabled, and selected states.
+  </li>
+  <li>
+    Components are <strong>responsive</strong> and <strong>theme-aware</strong>,
+    adapting seamlessly using the provided semantic tokens
+  </li>
+  <li>
+    RTL support and state-driven modifiers ensure
+    <strong>accessibility and internationalization</strong> are maintained.
+  </li>
 </ul>
-<p>See <a href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/components" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">Components
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <title>Opens in a new window</title>
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-    ></path>
-  </svg>
-</a></p>
-<hr>
-<h2 id="variables" tabindex="-1"><a class="link" href="#variables">#</a> Variables</h2>
-<p>Corex UI provides a comprehensive set of variables that power the design system.</p>
+<p>
+  See
+  <a
+    href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/components"
+    class="link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="External link, opens in a new window"
+    >Components
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <title>Opens in a new window</title>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+      ></path>
+    </svg>
+  </a>
+</p>
+<hr />
+<h2 id="variables" tabindex="-1">
+  <a class="link" href="#variables">#</a> Variables
+</h2>
+<p>
+  Corex UI provides a comprehensive set of variables that power the design
+  system.
+</p>
 <p>These are organized by <strong>semantic categories</strong>:</p>
 <ul>
-<li>Color<br>
-Colors define the <strong>visual identity</strong> of the UI, including backgrounds, borders, text, accents, and status indicators. Root, layer, and UI-specific colors ensure components <strong>adapt automatically to themes and modes</strong>, with hover, active, and disabled states included.<br>
-See the <a href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/tokens/semantic/color.css" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">color tokens
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <title>Opens in a new window</title>
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-    ></path>
-  </svg>
-</a> for full definitions.</li>
-<li>Dimension<br>
-Spacing variables provide <strong>consistent padding, gaps, and container sizes</strong> across all components. Responsive breakpoints and multiple scales (UI, mini, micro) enable <strong>flexible layouts</strong> and <strong>adaptive spacing</strong> that adjusts seamlessly across devices.<br>
-Refer to the <a href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/tokens/semantic/dimension.css" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">spacing tokens
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <title>Opens in a new window</title>
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-    ></path>
-  </svg>
-</a> for details.</li>
-<li>Font<br>
-Typography variables control <strong>families, and weights</strong>. They ensure <strong>text consistency</strong> across UI and code elements while allowing scalable, responsive adjustments based on theme or component context.<br>
-Check the <a href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/tokens/semantic/font.css" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">font tokens
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <title>Opens in a new window</title>
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-    ></path>
-  </svg>
-</a> for full references.</li>
-<li>Text<br>
-Typography variables control <strong>font sizes, line heights</strong>. They ensure <strong>text consistency</strong> across UI and code elements while allowing scalable, responsive adjustments based on theme or component context.<br>
-Check the <a href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/tokens/semantic/text.css" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">text tokens
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <title>Opens in a new window</title>
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-    ></path>
-  </svg>
-</a> for full references.</li>
-<li>Effect<br>
-Shadow variables create <strong>depth and hierarchy</strong> for both layer and interactive UI elements. They provide hover and active state variations to maintain visual clarity and component prominence.<br>
-See <a href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/tokens/semantic/effect.css" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">shadow tokens
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <title>Opens in a new window</title>
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-    ></path>
-  </svg>
-</a>.</li>
+  <li>
+    Color<br />
+    Colors define the <strong>visual identity</strong> of the UI, including
+    backgrounds, borders, text, accents, and status indicators. Root, layer, and
+    UI-specific colors ensure components
+    <strong>adapt automatically to themes and modes</strong>, with hover,
+    active, and disabled states included.<br />
+    See the
+    <a
+      href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/tokens/semantic/color.css"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >color tokens
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+    for full definitions.
+  </li>
+  <li>
+    Dimension<br />
+    Spacing variables provide
+    <strong>consistent padding, gaps, and container sizes</strong> across all
+    components. Responsive breakpoints and multiple scales (UI, mini, micro)
+    enable <strong>flexible layouts</strong> and
+    <strong>adaptive spacing</strong> that adjusts seamlessly across devices.<br />
+    Refer to the
+    <a
+      href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/tokens/semantic/dimension.css"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >spacing tokens
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+    for details.
+  </li>
+  <li>
+    Font<br />
+    Typography variables control <strong>families, and weights</strong>. They
+    ensure <strong>text consistency</strong> across UI and code elements while
+    allowing scalable, responsive adjustments based on theme or component
+    context.<br />
+    Check the
+    <a
+      href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/tokens/semantic/font.css"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >font tokens
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+    for full references.
+  </li>
+  <li>
+    Text<br />
+    Typography variables control <strong>font sizes, line heights</strong>. They
+    ensure <strong>text consistency</strong> across UI and code elements while
+    allowing scalable, responsive adjustments based on theme or component
+    context.<br />
+    Check the
+    <a
+      href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/tokens/semantic/text.css"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >text tokens
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+    for full references.
+  </li>
+  <li>
+    Effect<br />
+    Shadow variables create <strong>depth and hierarchy</strong> for both layer
+    and interactive UI elements. They provide hover and active state variations
+    to maintain visual clarity and component prominence.<br />
+    See
+    <a
+      href="https://github.com/corex-ui/corex-ui/tree/main/packages/design/src/tokens/semantic/effect.css"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >shadow tokens
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg> </a
+    >.
+  </li>
 </ul>
-<hr>
+<hr />

@@ -201,18 +201,26 @@ You must set the id of the form and the name of the file upload
 
 ```html
 <!-- render:preview -->
- <form id="my-form" class="flex flex-col items-center gap-(--spacing-ui-gap)">
-  <div id="my-form-file-upload" class="file-upload file-upload-js" data-accept="image/*" data-max-files="5" data-name="image" data-on-file-accept="preview-image">
-        <div data-part="root">
-          <label data-part="label">Upload File</label>
-          <input data-part="hidden-input" />
-          <div data-part="dropzone">
-                <span>Drag your file(s) here</span>
-            </div>
-            <button data-part="trigger">Choose file(s)</button>
-        </div>
-<div data-part="form-previews"></div>
-<button class="button button--accent" type="submit">Submit</button>
+<form id="my-form" class="flex flex-col items-center gap-(--spacing-ui-gap)">
+  <div
+    id="my-form-file-upload"
+    class="file-upload file-upload-js"
+    data-accept="image/*"
+    data-max-files="5"
+    data-name="image"
+    data-on-file-accept="preview-image"
+  >
+    <div data-part="root">
+      <label data-part="label">Upload File</label>
+      <input data-part="hidden-input" />
+      <div data-part="dropzone">
+        <span>Drag your file(s) here</span>
+      </div>
+      <button data-part="trigger">Choose file(s)</button>
+    </div>
+  </div>
+  <div data-part="form-previews"></div>
+  <button class="button button--accent" type="submit">Submit</button>
 </form>
 <div id="result"></div>
 ```
