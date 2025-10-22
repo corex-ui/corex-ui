@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.1.8
+
+### Patch Changes
+
+- 14834d2: fix @corex-ui/static/react import
+- Updated dependencies [14834d2]
+  - @corex-ui/static@0.1.8
+
 ## 0.1.7
 
 ### Patch Changes

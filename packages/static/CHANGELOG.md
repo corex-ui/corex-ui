@@ -1,5 +1,11 @@
 # @corex-ui/static
 
+## 0.1.8
+
+### Patch Changes
+
+- 14834d2: fix @corex-ui/static/react import
+
 ## 0.1.7
 
 ### Patch Changes
