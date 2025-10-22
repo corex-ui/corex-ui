@@ -17,6 +17,12 @@
     "access": "public"
   },
   "type": "module",
+  "files": [
+    "README.md",
+    "LICENSE.md",
+    "package.json",
+    "dist"
+  ],
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.mjs",
   "unpkg": "./dist/index.min.js",
