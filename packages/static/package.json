@@ -46,7 +46,7 @@
       "types": "./dist/components/*.d.ts"
     },
     "./react": {
-      "import": "./dist/react/index.ts",
+      "import": "./dist/react/index.mjs",
       "types": "./dist/react/index.d.ts"
     }
   },
