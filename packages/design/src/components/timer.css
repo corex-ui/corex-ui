@@ -79,4 +79,10 @@
     font-size: --value(--text-ui-*, [length]);
     line-height: --value(--text-ui-* --line-height, [length]);
   }
+
+  [data-scope="timer"][data-part="action-trigger"] {
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    min-height: --value(--spacing-ui-*, [length]);
+  }
 }
