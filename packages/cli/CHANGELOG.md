@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.1.7
+
+### Patch Changes
+
+- 2e968e6: Fix @corex-ui/astro files
+- Updated dependencies [2e968e6]
+  - @corex-ui/static@0.1.7
+
 ## 0.1.6
 
 ### Patch Changes
