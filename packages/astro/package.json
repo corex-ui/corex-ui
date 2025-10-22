@@ -40,6 +40,12 @@
     "static",
     "render"
   ],
+  "files": [
+    "README.md",
+    "LICENSE.md",
+    "package.json",
+    "dist/*"
+  ],
   "author": "Netoum <info@netoum.com>",
   "license": "MIT",
   "devDependencies": {
