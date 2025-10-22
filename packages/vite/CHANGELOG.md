@@ -1,5 +1,11 @@
 # @corex-ui/vite
 
+## 0.1.6
+
+### Patch Changes
+
+- 1e5eba3: Fix dist folder for static package
+
 ## 0.1.5
 
 ### Patch Changes

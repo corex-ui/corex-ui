@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.1.6
+
+### Patch Changes
+
+- 1e5eba3: Fix dist folder for static package
+- Updated dependencies [1e5eba3]
+  - @corex-ui/static@0.1.6
+
 ## 0.1.5
 
 ### Patch Changes
