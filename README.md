@@ -6,12 +6,11 @@ Official documentation at [corex-ui.com](https://corex-ui.com).
 
 ---
 
-## 📦 Packages
+## Packages
 
 Corex UI is a monorepo with multiple packages:
 
 - **[@corex-ui/static](./packages/static)** – Vanilla JS/HTML components. Works on any static website
-- **[@corex-ui/static/react](./packages/static)** – (Experimental) React wrapper for static site exports (e.g., Next.js SSG)
 - **[@corex-ui/design](./packages/design)** – Design tokens, Tailwind v4 configuration and components styling
 - **[@corex-ui/cli](./packages/cli)** – CLI tools for rendering components post-build
 - **[@corex-ui/vite](./packages/vite)** – Vite integration for rendering components post-build
@@ -19,11 +18,11 @@ Corex UI is a monorepo with multiple packages:
 
 ---
 
-## 🚧 Coming Soon
+## Coming Soon
 
 We are actively working on official integrations for more frameworks and libraries:
 
-- **React (full support beyond static exports)**
+- **React**
 - **Svelte**
 - **Solid**
 - **Vue**
@@ -33,7 +32,7 @@ Stay tuned! All new integrations will follow the same accessibility-first, unsty
 
 ---
 
-## 🛠️ Development & Contributing
+## Development & Contributing
 
 We welcome contributions! All development happens in a monorepo structure using Node.js >=18 and pnpm.
 
@@ -46,7 +45,7 @@ pnpm install
 # Build all packages
 pnpm build
 
-# Start development playground
+# Start development
 pnpm dev
 
 
