@@ -663,8 +663,6 @@ Description: Event name to be sent to navigate to the selected item if it's an a
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Menu component
 
 ```ts
@@ -690,38 +688,4 @@ Then apply the base class along with any desired modifiers:
     <ul data-part="content"></ul>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Menu component
-
-```ts
-import { Menu } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <Menu>
-      <button data-part="trigger">File</button>
-      <div data-part="positioner">
-        <ul data-part="content" />
-      </div>
-    </Menu>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/menu.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<menu className="menu">{/* content */}</menu>
 ```

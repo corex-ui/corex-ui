@@ -7,7 +7,6 @@ import { Clipboard } from "./components/clipboard";
 import { Code } from "./components/code";
 import { Collapsible } from "./components/collapsible";
 import { ColorPicker } from "./components/color-picker";
-
 import { Combobox } from "./components/combobox";
 import { DatePicker } from "./components/date-picker";
 import { Dialog } from "./components/dialog";
@@ -17,7 +16,6 @@ import { FloatingPanel } from "./components/floating-panel";
 import { Listbox } from "./components/listbox";
 import { Menu } from "./components/menu";
 import { SignaturePad } from "./components/signature-pad";
-
 import { Select } from "./components/select";
 import { SiteSearch } from "./components/site-search";
 import { ZagSwitch } from "./components/switch";

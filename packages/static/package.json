@@ -44,10 +44,6 @@
     "./components/*": {
       "import": "./dist/components/*.mjs",
       "types": "./dist/components/*.d.ts"
-    },
-    "./react": {
-      "import": "./dist/react/index.mjs",
-      "types": "./dist/react/index.d.ts"
     }
   },
   "scripts": {
@@ -67,7 +63,6 @@
     "typescript"
   ],
   "devDependencies": {
-    "@types/react": "^19",
     "esbuild": "^0.17.11",
     "tsup": "^8.1.0",
     "typescript": "~5.8.3"
@@ -105,8 +100,7 @@
     "@zag-js/tree-view": "^1.25.0",
     "@zag-js/types": "^1.25.0",
     "@zag-js/utils": "^1.25.0",
-    "prismjs": "^1.30.0",
-    "react": "19.1.0"
+    "prismjs": "^1.30.0"
   },
   "packageManager": "pnpm@10.12.4"
 }

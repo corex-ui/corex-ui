@@ -199,9 +199,9 @@ export class VanillaMachine<T extends MachineSchema> {
       const currentState = this.state.get();
 
       const transitions =
-        // @ts-expect-error Vanilla JS
+        // @ts-expect-error: dynamic key on generic machine
         this.machine.states[currentState].on?.[event.type] ??
-        // @ts-expect-error Vanilla JS
+        // @ts-expect-error: dynamic key on generic machine
         this.machine.on?.[event.type];
 
       const transition = this.choose(transitions);

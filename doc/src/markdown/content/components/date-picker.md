@@ -1220,8 +1220,6 @@ if (formBirth && resultBirth) {
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Date Picker component
 
 ```ts
@@ -1247,38 +1245,4 @@ Then apply the base class along with any desired modifiers:
     <button data-part="trigger" aria-label="Date Picker"></button>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Date Picker component
-
-```ts
-import { DatePicker } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <DatePicker>
-      <div data-part="control">
-        <input data-part="input" />
-        <button data-part="trigger" aria-label="Date Picker" />
-      </div>
-    </DatePicker>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/date-picker.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<DatePicker className="date-picker"> {/* content */} </DatePicker>
 ```

@@ -448,8 +448,6 @@ Options: **circle(default)**, **square**
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Switch component
 
 ```ts
@@ -476,39 +474,4 @@ Then apply the base class along with any desired modifiers:
     <span data-part="control"><span data-part="thumb"></span></span>
   </label>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Switch component
-
-```ts
-import { Switch } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <Switch>
-      <label data-part="root">
-        <span data-part="label">Label</span>
-        <input data-part="hidden-input" />
-        <span data-part="control"><span data-part="thumb" /></span>
-      </label>
-    </Switch>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/switch.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<Switch className="switch switch-js"> {/* content */} </Switch>
 ```

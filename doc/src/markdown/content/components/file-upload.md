@@ -292,8 +292,6 @@ formImage?.addEventListener("submit", (e) => {
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the File Upload component
 
 ```ts
@@ -323,42 +321,4 @@ Then apply the base class along with any desired modifiers:
     <button data-part="trigger">Choose file(s)</button>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the File Upload component
-
-```ts
-import { FileUpload } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <FileUpload>
-        <div data-part="root">
-          <label data-part="label">Upload File</label>
-          <input data-part="hidden-input" />
-          <div data-part="dropzone">
-                <span>Drag your file(s) here</span>
-            </div>
-            <button data-part="trigger">Choose file(s)</button>
-        </div>
-    </FileUpload>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/file-upload.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<FileUpload className="file-upload"> {/* content */} </FileUpload>
 ```

@@ -6,7 +6,6 @@ export const rollupInput = (dirname) => ({
   astro: resolve(dirname, "installation/astro.html"),
   eleventy: resolve(dirname, "installation/eleventy.html"),
   serve: resolve(dirname, "installation/serve.html"),
-  "next-ssg": resolve(dirname, "installation/next-ssg.html"),
   llms: resolve(dirname, "guides/llms.html"),
   penpot: resolve(dirname, "guides/penpot.html"),
   tailwind: resolve(dirname, "guides/tailwind.html"),

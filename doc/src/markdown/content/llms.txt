@@ -16,8 +16,6 @@
 - [Astro](https://corex-ui.com/installation/astro.md)
 - [Eleventy](https://corex-ui.com/installation/eleventy.md)
 - [Serve](https://corex-ui.com/installation/serve.md)
-- [Next SSG](https://corex-ui.com/installation/next-ssg.md)
-
 ## Guides
 
 - [Tailwind](https://corex-ui.com/guides/tailwind.md)
