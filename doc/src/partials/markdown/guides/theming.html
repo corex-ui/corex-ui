@@ -792,6 +792,155 @@ selecterElements.forEach((el) =&gt; {
 </code></pre>
   </div>
 </div>
+<ol start="4">
+  <li>Import Components</li>
+</ol>
+<p>Import Toggle Group and Select components in your <code>main.ts</code></p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import "@corex-ui/static/components/select";
+import "@corex-ui/static/components/toggle-group";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/select&quot;;
+import &quot;@corex-ui/static/components/toggle-group&quot;;
+</code></pre>
+  </div>
+</div>
+<ol start="5">
+  <li>Import CSS</li>
+</ol>
+<p>
+  Import Toggle Group and Select style and all themes needed in your
+  <code>style.css</code>
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/themes/neo/light.css";
+@import "@corex-ui/design/themes/neo/dark.css";
+@import "@corex-ui/design/themes/uno/light.css";
+@import "@corex-ui/design/themes/uno/dark.css";
+@import "@corex-ui/design/themes/duo/light.css";
+@import "@corex-ui/design/themes/duo/dark.css";
+@import "@corex-ui/design/themes/leo/light.css";
+@import "@corex-ui/design/themes/leo/dark.css";
+
+@import "@corex-ui/design/components/select.css";
+@import "@corex-ui/design/components/toggle-group.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/themes/neo/light.css&quot;;
+@import &quot;@corex-ui/design/themes/neo/dark.css&quot;;
+@import &quot;@corex-ui/design/themes/uno/light.css&quot;;
+@import &quot;@corex-ui/design/themes/uno/dark.css&quot;;
+@import &quot;@corex-ui/design/themes/duo/light.css&quot;;
+@import &quot;@corex-ui/design/themes/duo/dark.css&quot;;
+@import &quot;@corex-ui/design/themes/leo/light.css&quot;;
+@import &quot;@corex-ui/design/themes/leo/dark.css&quot;;
+
+@import &quot;@corex-ui/design/components/select.css&quot;;
+@import &quot;@corex-ui/design/components/toggle-group.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  You can also add a background to your body
+  <code>&lt;body class=&quot;typo bg-root&quot;&gt;</code>
+</p>
 <h2 id="custom-dark-variant" tabindex="-1">
   <a class="link" href="#custom-dark-variant">#</a> Custom Dark Variant
 </h2>
