@@ -1,5 +1,11 @@
 # @corex-ui/vite
 
+## 0.1.9
+
+### Patch Changes
+
+- e19fac2: remove Static React
+
 ## 0.1.8
 
 ### Patch Changes

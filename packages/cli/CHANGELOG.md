@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.1.9
+
+### Patch Changes
+
+- e19fac2: remove Static React
+- Updated dependencies [e19fac2]
+  - @corex-ui/static@0.1.9
+
 ## 0.1.8
 
 ### Patch Changes
