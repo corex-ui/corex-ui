@@ -625,8 +625,6 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Angle Slider component
 
 ```ts
@@ -654,40 +652,4 @@ Then apply the base class along with any desired modifiers:
     </div>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Angle Slider component
-
-```ts
-import { AngleSlider } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <AngleSlider>
-      <div data-part="root">
-        <div data-part="label">Label</div>
-        <div data-part="control">
-          <div data-part="thumb"></div>
-        </div>
-      </div>
-    </AngleSlider>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/angle-slider.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<AngleSlider className="angle-slider"> {/* content */} </AngleSlider>
 ```

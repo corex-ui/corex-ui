@@ -804,8 +804,6 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Timer component
 
 ```ts
@@ -830,37 +828,4 @@ Then apply the base class along with any desired modifiers:
     <div data-part="area"></div>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Timer component
-
-```ts
-import { Timer } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <Timer>
-      <div data-part="root">
-        <div data-part="area" />
-      </div>
-    </Timer>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/timer.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<Timer className="timer"> {/* content */} </Timer>
 ```

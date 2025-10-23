@@ -425,7 +425,7 @@ Use `class="editable--{size}"` to set the size of an editable.
 Available options:  
 **sm**, **md** (default), **lg**, **xl**
 
-````html
+```html
 <!-- render:preview -->
 <div class="editable editable-js editable--sm" data-placeholder="Enter Value">
   <div data-part="root">
@@ -647,12 +647,20 @@ Available options:
     </div>
   </div>
 </div>
+```
 
---- ## Installation First, complete the Corex UI [initial
-installation](/installation/introduction) guide for your platform, bundler, or
-framework. ### Static 1. Import the Editable component ```ts import
-"@corex-ui/static/components/editable"
-````
+---
+
+## Installation
+
+First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or
+framework.
+
+1. Import the Editable component
+
+```ts import
+"@corex-ui/static/components/editable";
+```
 
 This will automatically initialize all elements with `class="editable-js"` and add the necessary interaction behavior.
 
@@ -675,40 +683,4 @@ Then apply the base class along with any desired modifiers:
     </div>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Editable component
-
-```ts
-import { Editable } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <Editable data-placeholder="Enter Value">
-      <div data-part="root">
-        <div data-part="area">
-          <input data-part="input" />
-          <span data-part="preview" />
-        </div>
-      </div>
-    </Editable>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/editable.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<Editable className="editable"> {/* content */} </Editable>
 ```

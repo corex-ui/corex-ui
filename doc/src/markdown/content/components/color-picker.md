@@ -841,21 +841,17 @@ Description: Event name to send when the value changes.
 Type: `string`  
 Description: Event name to send when the value change ends.
 
-````
-
 ---
 
 ## Installation
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Color Picker component
 
 ```ts
-import "@corex-ui/static/components/color-picker"
-````
+import "@corex-ui/static/components/color-picker";
+```
 
 This will automatically initialize all elements with `class="color-picker-js"` and add the necessary interaction behavior.
 
@@ -878,40 +874,4 @@ Then apply the base class along with any desired modifiers:
     </div>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Color Picker component
-
-```ts
-import { ColorPicker } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <ColorPicker>
-      <div data-part="root">
-        <label data-part="label">Select Color</label>
-        <div data-part="control">
-          <button data-part="trigger" />
-        </div>
-      </div>
-    </ColorPicker>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/color-picker.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<ColorPicker className="color-picker"> {/* content */} </ColorPicker>
 ```

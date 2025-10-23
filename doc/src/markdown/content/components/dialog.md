@@ -329,8 +329,6 @@ Description: Get the current open state of the dialog
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Dialog component
 
 ```ts
@@ -358,40 +356,4 @@ Then apply the base class along with any desired modifiers:
     </div>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Dialog component
-
-```ts
-import { Dialog } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <Dialog>
-      <div data-part="root">
-        <button data-part="trigger" />
-        <div data-part="positioner">
-          <div data-part="content" />
-        </div>
-      </div>
-    </Dialog>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/dialog.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<dialog className="dialog">{/* content */}</dialog>
 ```

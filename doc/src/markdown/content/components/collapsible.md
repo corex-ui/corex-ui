@@ -666,8 +666,6 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Collapsible component
 
 ```ts
@@ -693,38 +691,4 @@ Then apply the base class along with any desired modifiers:
     <div data-part="content"></div>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Collapsible component
-
-```ts
-import { Collapsible } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <Collapsible>
-      <div data-part="root">
-        <button data-part="trigger" />
-        <div data-part="content" />
-      </div>
-    </Collapsible>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/collapsible.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<Collapsible className="collapsible"> {/* content */} </Collapsible>
 ```

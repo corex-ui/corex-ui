@@ -282,8 +282,6 @@ Description: Event name to send when the value changes
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Clipboard component
 
 ```ts
@@ -312,41 +310,4 @@ Then apply the base class along with any desired modifiers:
     </div>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Clipboard component
-
-```ts
-import { Clipboard } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <Clipboard>
-      <div data-part="root">
-        <label data-part="label">Contact</label>
-        <div data-part="control">
-          <input data-part="input" />
-          <button data-part="trigger" />
-        </div>
-      </div>
-    </Clipboard>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/clipboard.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<Clipboard className="clipboard"> {/* content */} </Clipboard>
 ```

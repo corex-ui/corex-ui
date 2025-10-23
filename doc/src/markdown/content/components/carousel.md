@@ -979,8 +979,6 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Carousel component
 
 ```ts
@@ -1007,39 +1005,4 @@ Then apply the base class along with any desired modifiers:
     </div>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Carousel component
-
-```ts
-import { Carousel } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <Carousel>
-      <div data-part="root">
-        <div data-part="item-group">
-          <div data-part="item"><img src="/images/bg/beach.jpg" alt="beach" /></div>
-        </div>
-      </div>
-    </Carousel>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/carousel.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<Carousel className="carousel"> {/* content */} </Carousel>
 ```

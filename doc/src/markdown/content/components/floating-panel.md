@@ -574,8 +574,6 @@ Description: Event name triggered when the panel stage changes (`minimized`, `ma
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Floating Panel component
 
 ```ts
@@ -601,38 +599,4 @@ Then apply the base class along with any desired modifiers:
     <div data-part="content"></div>
   </div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Floating Panel component
-
-```ts
-import { FloatingPanel } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <FloatingPanel>
-      <button data-part="trigger" />
-      <div data-part="positioner">
-        <div data-part="content" />
-      </div>
-    </FloatingPanel>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/floating-panel.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<FloatingPanel className="floating-panel"> {/* content */} </FloatingPanel>
 ```

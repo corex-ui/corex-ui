@@ -400,8 +400,6 @@ RTL support for toggle-group
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Toggle Group component
 
 ```ts
@@ -424,35 +422,4 @@ Then apply the base class along with any desired modifiers:
 <div class="toggle-group toggle-group-js">
   <div data-part="root"></div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Toggle Group component
-
-```ts
-import { ToggleGroup } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <ToggleGroup>
-      <div data-part="root" />
-    </ToggleGroup>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/toggle-group.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<ToggleGroup className="toggle-group"> {/* content */} </ToggleGroup>
 ```

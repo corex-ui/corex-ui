@@ -243,8 +243,6 @@ Description: The id of the toast. Default to the first toast.
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-### Static
-
 1. Import the Toast component
 
 ```ts
@@ -267,35 +265,4 @@ Then apply the base class along with any desired modifiers:
 <div class="toast toast-js" data-max="5">
   <div data-part="group"></div>
 </div>
-```
-
-### Static React
-
-> Experimental! Only works with React static export (eg. Next.js SSG.)
-
-1. Import the Toast component
-
-```ts
-import { Toast } from '@corex-ui/static/react';
-export default function Home() {
-  return (
-    <Toast data-max={5}>
-      <div data-part="group" />
-    </Toast>
-  );
-}
-```
-
-2. Add styling
-
-To apply the default Corex UI design system styles, import the stylesheet:
-
-```css
-@import "@corex-ui/design/components/toast.css";
-```
-
-Then apply the base class along with any desired modifiers:
-
-```html
-<Toast className="toast"> {/* content */} </Toast>
 ```
