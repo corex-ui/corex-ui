@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 0.1.10
+
+### Patch Changes
+
+- c62e664: Improve documentation and upgrade Zagjs deps
+- Updated dependencies [c62e664]
+  - @corex-ui/static@0.1.10
+
 ## 0.1.9
 
 ### Patch Changes

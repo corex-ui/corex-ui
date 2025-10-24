@@ -1,5 +1,11 @@
 # @corex-ui/vite
 
+## 0.1.10
+
+### Patch Changes
+
+- c62e664: Improve documentation and upgrade Zagjs deps
+
 ## 0.1.9
 
 ### Patch Changes
