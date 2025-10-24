@@ -102,6 +102,7 @@
   justify-content: center;
   align-items: center;
   width: auto;
+  padding: 0;
 }
 
 @utility ui-trigger--circle {
@@ -110,6 +111,7 @@
   justify-content: center;
   align-items: center;
   width: auto;
+  padding: 0;
   border-radius: var(--radius-full) !important;
 }
 

@@ -15,12 +15,11 @@
     padding-inline: var(--spacing-ui-padding);
     border-radius: var(--radius-ui);
     text-decoration: none;
-    max-width: 100%;
+    max-width: fit-content;
+    min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    min-width: 0;
-    width: max-content;
+    word-break: break-all;
   }
 
   .link::after {

@@ -949,7 +949,7 @@
           "type": "fontSizes"
         },
         "sm--line-height": {
-          "value": "calc(1.5 / 1)",
+          "value": "1.7",
           "type": "dimension"
         },
         "md": {
@@ -957,7 +957,7 @@
           "type": "fontSizes"
         },
         "md--line-height": {
-          "value": "calc(1.75 / 1.125)",
+          "value": "1.8",
           "type": "dimension"
         },
         "lg": {
@@ -965,15 +965,15 @@
           "type": "fontSizes"
         },
         "lg--line-height": {
-          "value": "calc(1.875 / 1.25)",
+          "value": "1.9",
           "type": "dimension"
         },
         "xl": {
-          "value": "28px",
+          "value": "28.8px",
           "type": "fontSizes"
         },
         "xl--line-height": {
-          "value": "calc(2.5 / 1.75)",
+          "value": "2",
           "type": "dimension"
         }
       }

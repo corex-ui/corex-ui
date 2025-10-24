@@ -4,13 +4,13 @@
 
 @theme inline {
   --text-ui-sm: 1rem;
-  --text-ui-sm--line-height: 1.5;
+  --text-ui-sm--line-height: 1.7;
   --text-ui-md: 1.125rem;
-  --text-ui-md--line-height: 1.5556;
+  --text-ui-md--line-height: 1.8;
   --text-ui-lg: 1.25rem;
-  --text-ui-lg--line-height: 1.5;
-  --text-ui-xl: 1.75rem;
-  --text-ui-xl--line-height: 1.4286;
+  --text-ui-lg--line-height: 1.9;
+  --text-ui-xl: 1.8rem;
+  --text-ui-xl--line-height: 2;
   --text-ui: var(--text-ui-md);
   --text-ui--line-height: var(--text-ui-md--line-height);
 }
