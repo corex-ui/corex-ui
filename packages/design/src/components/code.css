@@ -62,8 +62,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-family: var(--font-code);
-    font-size: inherit;
-    line-height: inherit;
     padding-inline: var(--spacing-mini-padding);
     background-color: var(--color-root);
     color: var(--color-root--alert);

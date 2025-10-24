@@ -298,6 +298,35 @@ Add this script at the very top of your `<head>`:
 </script>
 ```
 
+4. Import Components
+
+Import Toggle Group and Select components in your `main.ts`
+
+```ts
+import "@corex-ui/static/components/select";
+import "@corex-ui/static/components/toggle-group";
+```
+
+5. Import CSS
+
+Import Toggle Group and Select style and all themes needed in your `style.css`
+
+```css
+@import "@corex-ui/design/themes/neo/light.css";
+@import "@corex-ui/design/themes/neo/dark.css";
+@import "@corex-ui/design/themes/uno/light.css";
+@import "@corex-ui/design/themes/uno/dark.css";
+@import "@corex-ui/design/themes/duo/light.css";
+@import "@corex-ui/design/themes/duo/dark.css";
+@import "@corex-ui/design/themes/leo/light.css";
+@import "@corex-ui/design/themes/leo/dark.css";
+
+@import "@corex-ui/design/components/select.css";
+@import "@corex-ui/design/components/toggle-group.css";
+```
+
+You can also add a background to your body `<body class="typo bg-root">`
+
 ## Custom Dark Variant
 
 If you wish to use the Tailwind custom variant such as `dark:` you must add the following to your main css
