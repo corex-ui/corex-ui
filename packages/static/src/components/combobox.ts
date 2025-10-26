@@ -84,7 +84,10 @@ export class Combobox extends Component<combobox.Props, combobox.Api> {
         if (!details.inputValue.trim()) {
           self.options = self.allItems;
         } else {
-          const filter = createFilter({ sensitivity: "base", locale: "en-US" });
+          const filter = createFilter({
+            sensitivity: getString(self.el, "base") || "base",
+            locale: getString(self.el, "locale") || "en-US",
+          });
           const filtered = self.allItems.filter((item) =>
             filter.contains(item.label, details.inputValue),
           );
@@ -115,8 +118,6 @@ export class Combobox extends Component<combobox.Props, combobox.Api> {
         const item = this.options[i];
         if (!el || !item) continue;
         el.textContent = item.label;
-        el.setAttribute("data-label", item.label);
-        el.setAttribute("data-code", item.code);
         renderPart(el, "item", this.api, { item });
       }
     } else {
@@ -125,8 +126,6 @@ export class Combobox extends Component<combobox.Props, combobox.Api> {
         const li = document.createElement("li");
         li.textContent = item.label;
         li.setAttribute("data-part", "item");
-        li.setAttribute("data-label", item.label);
-        li.setAttribute("data-code", item.code);
         contentEl.appendChild(li);
         renderPart(li, "item", this.api, { item });
       }
