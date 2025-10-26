@@ -7,7 +7,6 @@ import {
   generateId,
   normalizeProps,
   renderPart,
-  // renderItem,
   getNumber,
   getStringList,
   spreadProps,
