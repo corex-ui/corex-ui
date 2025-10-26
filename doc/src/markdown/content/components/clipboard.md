@@ -282,7 +282,7 @@ Description: Event name to send when the value changes
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Clipboard component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/clipboard";
@@ -292,22 +292,12 @@ This will automatically initialize all elements with `class="clipboard-js"` and 
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/clipboard.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="clipboard clipboard-js" data-default-value="info@netoum.com">
-  <div data-part="root">
-    <label data-part="label">Contact</label>
-    <div data-part="control">
-      <input data-part="input" />
-      <button data-part="trigger"></button>
-    </div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `clipboard` class.

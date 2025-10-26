@@ -897,14 +897,12 @@ Options: **default**, **square**, **circle**
 
 ## Installation
 
-Required: include the stylesheet.
+First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
+
+To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/button.css";
 ```
 
-Use the base class:
-
-```html
-<button class="button">...</button>
-```
+These styles will be applied to all elements with the `button` class.

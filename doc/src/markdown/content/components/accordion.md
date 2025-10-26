@@ -1976,7 +1976,7 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Accordion component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/accordion";
@@ -1986,7 +1986,7 @@ This will automatically initialize all elements with `class="accordion-js"` and 
 
 2. Add styling
 
-The Accordion component is **unstyled by default** for maximum customization flexibility.
+The component is **unstyled by default** for maximum customization flexibility.
 
 To apply the default Corex UI design system styles, import the stylesheet:
 
@@ -1994,97 +1994,4 @@ To apply the default Corex UI design system styles, import the stylesheet:
 @import "@corex-ui/design/components/accordion.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="accordion accordion-js accordion--sm">
-  <div data-part="root">
-    <div data-part="item">
-      <h3>
-        <button data-part="item-trigger">
-          <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-indicator="item-trigger">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-              ></path>
-            </svg>
-          </span>
-        </button>
-      </h3>
-      <div data-part="item-content">
-        <p>
-          Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
-          quis risus feugiat tellus iaculis fringilla.
-        </p>
-      </div>
-    </div>
-    <div data-part="item">
-      <h3>
-        <button data-part="item-trigger">
-          <span data-part="item-text"
-            >Duis dictum gravida odio ac pharetra?</span
-          >
-          <span data-indicator="item-trigger">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-              ></path>
-            </svg>
-          </span>
-        </button>
-      </h3>
-      <div data-part="item-content">
-        <p>
-          Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
-          dui ut fermentum sodales, lectus metus dignissim ex.
-        </p>
-      </div>
-    </div>
-    <div data-part="item">
-      <h3>
-        <button data-part="item-trigger">
-          <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-indicator="item-trigger">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-              ></path>
-            </svg>
-          </span>
-        </button>
-      </h3>
-      <div data-part="item-content">
-        <p>
-          Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
-          non, pellentesque elit. Pellentesque sagittis fermentum.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `accordion` class.

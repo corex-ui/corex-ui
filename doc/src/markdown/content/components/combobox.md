@@ -705,21 +705,21 @@ if (formCurrency && resultCurrency) {
 
 ## Modifiers
 
-Accordions support modifier classes that control their appearance.  
-You can combine multiple modifiers on the same accordion.
+comboboxs support modifier classes that control their appearance.  
+You can combine multiple modifiers on the same combobox.
 
 The default modifier is applied automatically, so you don’t need to include it explicitly.
 
-| Modifier        | Description                                |
-| --------------- | ------------------------------------------ |
-| [Color](#color) | Sets the color theme of the accordion.     |
-| [Size](#size)   | Adjusts the overall size of the accordion. |
+| Modifier        | Description                               |
+| --------------- | ----------------------------------------- |
+| [Color](#color) | Sets the color theme of the combobox.     |
+| [Size](#size)   | Adjusts the overall size of the combobox. |
 
 > You may have noticed the double dash before the modifier name — this follows the BEM (Block Element Modifier) naming convention
 
 ### Color
 
-Use `class="accordion--{color}"` to set the color of an accordion.
+Use `class="combobox--{color}"` to set the color of an combobox.
 
 Available options:  
 **accent**(default), **brand**, **alert**, **info**, **success**
@@ -1232,7 +1232,7 @@ Available options:
 
 ### Size
 
-Use `class="accordion--{size}"` to set the size of an accordion.
+Use `class="combobox--{size}"` to set the size of an combobox.
 
 Available options:  
 **sm**, **md** (default), **lg**, **xl**
@@ -1737,3 +1737,29 @@ Available options:
   </div>
 </div>
 ```
+
+---
+
+## Installation
+
+First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
+
+1. Import the component
+
+```ts
+import "@corex-ui/static/components/combobox";
+```
+
+This will automatically initialize all elements with `class="combobox-js"` and add the necessary interaction behavior.
+
+2. Add styling
+
+The component is **unstyled by default** for maximum customization flexibility.
+
+To apply the default Corex UI design system styles, import the stylesheet:
+
+```css
+@import "@corex-ui/design/components/combobox.css";
+```
+
+These styles will be applied to all elements with the `combobox` class.
