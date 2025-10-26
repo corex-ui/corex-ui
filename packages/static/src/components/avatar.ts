@@ -16,8 +16,9 @@ export class Avatar extends Component<avatar.Props, avatar.Api> {
     return avatar.connect(this.machine.service, normalizeProps);
   }
   render() {
-    const parts = ["root", "fallback", "image"];
-    for (const part of parts) renderPart(this.el, part, this.api);
+    ["root", "fallback", "image"].forEach((part) =>
+      renderPart(this.el, part, this.api),
+    );
   }
 }
 export function initializeAvatar(doc: HTMLElement | Document = document): void {
