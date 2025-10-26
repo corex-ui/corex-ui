@@ -7,6 +7,7 @@ import {
   normalizeProps,
   renderPart,
   getNumber,
+  getPartIds,
 } from "../lib";
 export class Clipboard extends Component<clipboard.Props, clipboard.Api> {
   initMachine(props: clipboard.Props): VanillaMachine<any> {
@@ -26,6 +27,7 @@ export function initializeClipboard(
   doc.querySelectorAll<HTMLElement>(".clipboard-js").forEach((rootEl) => {
     const clipboard = new Clipboard(rootEl, {
       id: generateId(rootEl, "clipboard"),
+      ids: getPartIds(rootEl, ["root", "control", "trigger", "label", "input"]),
       defaultValue: getString(rootEl, "defaultValue"),
       value: getString(rootEl, "value"),
       timeout: getNumber(rootEl, "timeout"),
