@@ -400,7 +400,7 @@ RTL support for toggle-group
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Toggle Group component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/toggle-group";
@@ -410,16 +410,12 @@ This will automatically initialize all elements with `class="toggle-group-js"` a
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/toggle-group.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="toggle-group toggle-group-js">
-  <div data-part="root"></div>
-</div>
-```
+These styles will be applied to all elements with the `toggle-group` class.

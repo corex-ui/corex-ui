@@ -243,7 +243,7 @@ Description: The id of the toast. Default to the first toast.
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Toast component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/toast";
@@ -253,16 +253,12 @@ This will automatically initialize all elements with `class="toast-js"` and add 
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/toast.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="toast toast-js" data-max="5">
-  <div data-part="group"></div>
-</div>
-```
+These styles will be applied to all elements with the `toast` class.

@@ -305,7 +305,7 @@ if (signaturePadForm && signatureResult) {
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Signature Pad component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/signature-pad";
@@ -315,24 +315,12 @@ This will automatically initialize all elements with `class="signature-pad-js"` 
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/signature-pad.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="signature-pad signature-pad-js">
-  <div data-part="root">
-    <label data-part="label">Signature Pad</label>
-    <input data-part="hidden-input" />
-    <div data-part="control">
-      <svg data-part="segment"></svg>
-      <button data-part="clear-trigger"></button>
-      <div data-part="guide"></div>
-    </div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `signature-pad` class.

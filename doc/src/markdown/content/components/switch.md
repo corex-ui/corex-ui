@@ -448,7 +448,7 @@ Options: **circle(default)**, **square**
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Switch component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/switch";
@@ -458,20 +458,12 @@ This will automatically initialize all elements with `class="switch-js"` and add
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/switch.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="switch switch-js">
-  <label data-part="root">
-    <span data-part="label">Label</span>
-    <input data-part="hidden-input" />
-    <span data-part="control"><span data-part="thumb"></span></span>
-  </label>
-</div>
-```
+These styles will be applied to all elements with the `switch` class.

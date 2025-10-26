@@ -912,7 +912,7 @@ Options: **md(default)**, **sm**, **lg**, **xl**
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Select component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/select";
@@ -922,21 +922,12 @@ This will automatically initialize all elements with `class="select-js"` and add
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/select.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="select select-js">
-  <div data-part="root">
-    <div data-part="control">
-      <div data-part="label">Your Currency</div>
-      <button data-part="trigger"></button>
-    </div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `select` class.

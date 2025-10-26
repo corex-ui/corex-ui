@@ -663,7 +663,7 @@ Description: Event name to be sent to navigate to the selected item if it's an a
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Menu component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/menu";
@@ -673,19 +673,12 @@ This will automatically initialize all elements with `class="menu-js"` and add t
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/menu.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="menu menu-js">
-  <button data-part="trigger">File</button>
-  <div data-part="positioner">
-    <ul data-part="content"></ul>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `menu` class.

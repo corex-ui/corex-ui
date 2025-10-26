@@ -1324,7 +1324,7 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Listbox component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/listbox";
@@ -1334,19 +1334,12 @@ This will automatically initialize all elements with `class="listbox-js"` and ad
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/listbox.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="listbox listbox-js">
-  <div data-part="root">
-    <div data-part="label">Label</div>
-    <div data-part="content"></div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `listbox` class.
