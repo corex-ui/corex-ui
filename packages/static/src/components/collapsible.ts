@@ -8,6 +8,7 @@ import {
   renderPart,
   getBoolean,
   valuesEqual,
+  getPartIds,
 } from "../lib";
 export class Collapsible extends Component<collapsible.Props, collapsible.Api> {
   initMachine(props: collapsible.Props): VanillaMachine<any> {
@@ -27,6 +28,7 @@ export function initializeCollapsible(
   doc.querySelectorAll<HTMLElement>(".collapsible-js").forEach((rootEl) => {
     const collapsible = new Collapsible(rootEl, {
       id: generateId(rootEl, "collapsible"),
+      ids: getPartIds(rootEl, ["root", "trigger", "content", "indicator"]),
       defaultOpen: getBoolean(rootEl, "defaultOpen"),
       open: getBoolean(rootEl, "open"),
       disabled: getBoolean(rootEl, "disabled"),
@@ -52,7 +54,7 @@ export function initializeCollapsible(
         collapsible.api.setOpen(value);
       }
     });
-    collapsible.el.addEventListener("collapsible:get-open", (event) => {
+    collapsible.el.addEventListener("collapsible:open", (event) => {
       const detail = (
         event as CustomEvent<{ callback: (value: boolean) => void }>
       ).detail;
