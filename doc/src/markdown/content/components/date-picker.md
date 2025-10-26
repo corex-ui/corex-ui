@@ -1220,7 +1220,7 @@ if (formBirth && resultBirth) {
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Date Picker component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/date-picker";
@@ -1230,19 +1230,12 @@ This will automatically initialize all elements with `class="date-picker-js"` an
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/date-picker.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="date-picker date-picker-js">
-  <div data-part="control">
-    <input data-part="input" />
-    <button data-part="trigger" aria-label="Date Picker"></button>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `date-picker` class.
