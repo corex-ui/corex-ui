@@ -3,7 +3,7 @@ import fs from "fs";
 import { join } from "path";
 import { pathToFileURL } from "url";
 import ResizeObserver from "resize-observer-polyfill";
-import "intersection-observer";
+import "node:intersection-observer";
 export function applyBrowserPolyfills(win: any) {
   const g = globalThis as any;
 
