@@ -656,19 +656,13 @@
 
 <div class="preview">
   <div class="preview__display">
-    <button data-action="collapsible-set-open" data-value="true" class="button">
+    <button data-action="collapsible-set-open" data-value="true">
       Open Collapsible
     </button>
-    <button
-      data-action="collapsible-set-open"
-      data-value="false"
-      class="button"
-    >
+    <button data-action="collapsible-set-open" data-value="false">
       Close Collapsible
     </button>
-    <button data-action="collapsible-open" class="button">
-      Get open status
-    </button>
+    <button data-action="collapsible-open">Get open status</button>
     <div id="collapsible-api" class="collapsible collapsible-js">
       <div data-part="root">
         <button data-part="trigger">
@@ -706,13 +700,13 @@
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='&lt;button data-action="collapsible-set-open" data-value="true" class="button"&gt;
+      data-default-value='&lt;button data-action="collapsible-set-open" data-value="true"&gt;
   Open Collapsible
 &lt;/button&gt;
-&lt;button data-action="collapsible-set-open" data-value="false" class="button"&gt;
+&lt;button data-action="collapsible-set-open" data-value="false"&gt;
   Close Collapsible
 &lt;/button&gt;
-&lt;button data-action="collapsible-open" class="button"&gt;Get open status&lt;/button&gt;
+&lt;button data-action="collapsible-open"&gt;Get open status&lt;/button&gt;
 &lt;div id="collapsible-api" class="collapsible collapsible-js"&gt;
   &lt;div data-part="root"&gt;
     &lt;button data-part="trigger"&gt;
@@ -790,13 +784,13 @@
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="html">&lt;button data-action=&quot;collapsible-set-open&quot; data-value=&quot;true&quot; class=&quot;button&quot;&gt;
+    <pre><code class="code-js" data-lang="html">&lt;button data-action=&quot;collapsible-set-open&quot; data-value=&quot;true&quot;&gt;
   Open Collapsible
 &lt;/button&gt;
-&lt;button data-action=&quot;collapsible-set-open&quot; data-value=&quot;false&quot; class=&quot;button&quot;&gt;
+&lt;button data-action=&quot;collapsible-set-open&quot; data-value=&quot;false&quot;&gt;
   Close Collapsible
 &lt;/button&gt;
-&lt;button data-action=&quot;collapsible-open&quot; class=&quot;button&quot;&gt;Get open status&lt;/button&gt;
+&lt;button data-action=&quot;collapsible-open&quot;&gt;Get open status&lt;/button&gt;
 &lt;div id=&quot;collapsible-api&quot; class=&quot;collapsible collapsible-js&quot;&gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;button data-part=&quot;trigger&quot;&gt;
@@ -840,14 +834,14 @@
       data-default-value='const collapsibleState = document.getElementById("collapsible-api");
 if (collapsibleState) {
   const buttons = document.querySelectorAll&lt;HTMLButtonElement&gt;(
-    &#39;button[data-action="collapsible-open"]&#39;,
+    &#39;button[data-action="collapsible-set-open"]&#39;,
   );
   buttons.forEach((button) =&gt; {
     button.addEventListener("click", () =&gt; {
       const value = button.dataset.value;
       if (value) {
         collapsibleState.dispatchEvent(
-          new CustomEvent("collapsible:open", {
+          new CustomEvent("collapsible:set-open", {
             detail: { value: value },
           }),
         );
@@ -855,12 +849,12 @@ if (collapsibleState) {
     });
   });
   const getBtns = document.querySelectorAll&lt;HTMLButtonElement&gt;(
-    &#39;button[data-action="collapsible-get-open"]&#39;,
+    &#39;button[data-action="collapsible-open"]&#39;,
   );
   getBtns.forEach((btn) =&gt;
     btn.addEventListener("click", () =&gt; {
       collapsibleState.dispatchEvent(
-        new CustomEvent("collapsible:get-open", {
+        new CustomEvent("collapsible:open", {
           detail: {
             callback: (value: string[]) =&gt; {
               alert("Collapsible value: " + JSON.stringify(value));
@@ -921,14 +915,14 @@ if (collapsibleState) {
     <pre><code class="code-js" data-lang="ts">const collapsibleState = document.getElementById(&quot;collapsible-api&quot;);
 if (collapsibleState) {
   const buttons = document.querySelectorAll&lt;HTMLButtonElement&gt;(
-    'button[data-action=&quot;collapsible-open&quot;]',
+    'button[data-action=&quot;collapsible-set-open&quot;]',
   );
   buttons.forEach((button) =&gt; {
     button.addEventListener(&quot;click&quot;, () =&gt; {
       const value = button.dataset.value;
       if (value) {
         collapsibleState.dispatchEvent(
-          new CustomEvent(&quot;collapsible:open&quot;, {
+          new CustomEvent(&quot;collapsible:set-open&quot;, {
             detail: { value: value },
           }),
         );
@@ -936,12 +930,12 @@ if (collapsibleState) {
     });
   });
   const getBtns = document.querySelectorAll&lt;HTMLButtonElement&gt;(
-    'button[data-action=&quot;collapsible-get-open&quot;]',
+    'button[data-action=&quot;collapsible-open&quot;]',
   );
   getBtns.forEach((btn) =&gt;
     btn.addEventListener(&quot;click&quot;, () =&gt; {
       collapsibleState.dispatchEvent(
-        new CustomEvent(&quot;collapsible:get-open&quot;, {
+        new CustomEvent(&quot;collapsible:open&quot;, {
           detail: {
             callback: (value: string[]) =&gt; {
               alert(&quot;Collapsible value: &quot; + JSON.stringify(value));
@@ -963,7 +957,7 @@ if (collapsibleState) {
   Description: Sets the open state of the collapsible
 </p>
 <p>
-  <strong>collapsible:get-open</strong><br />
+  <strong>collapsible:open</strong><br />
   Type: <code>callback</code><br />
   Description: Get the current open state of the collapsible
 </p>
@@ -2167,7 +2161,7 @@ if (collapsibleState) {
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the Collapsible component</li>
+  <li>Import the component</li>
 </ol>
 
 <div class="preview">
@@ -2234,6 +2228,10 @@ if (collapsibleState) {
   <li>Add styling</li>
 </ol>
 <p>
+  The component is <strong>unstyled by default</strong> for maximum
+  customization flexibility.
+</p>
+<p>
   To apply the default Corex UI design system styles, import the stylesheet:
 </p>
 
@@ -2292,70 +2290,7 @@ if (collapsibleState) {
 </code></pre>
   </div>
 </div>
-<p>Then apply the base class along with any desired modifiers:</p>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div class="collapsible collapsible-js"&gt;
-  &lt;div data-part="root"&gt;
-    &lt;button data-part="trigger"&gt;&lt;/button&gt;
-    &lt;div data-part="content"&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;collapsible collapsible-js&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;button data-part=&quot;trigger&quot;&gt;&lt;/button&gt;
-    &lt;div data-part=&quot;content&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-</div>
+<p>
+  These styles will be applied to all elements with the
+  <code>collapsible</code> class.
+</p>
