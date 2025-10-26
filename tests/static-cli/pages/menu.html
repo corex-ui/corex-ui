@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Examples</title>
+  </head>
+  <body class="typo layout">
+    <main class="layout__main">
+      <h1>Menu Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-menu">
+        <h2>Basic Menu</h2>
+        <div class="menu menu-js">
+          <button data-part="trigger">
+            File
+            <span data-part="indicator">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                ></path>
+              </svg>
+            </span>
+          </button>
+          <div data-part="positioner">
+            <ul data-part="content">
+              <li data-part="item" data-value="new">New Document</li>
+              <li data-part="item" data-value="open">Open</li>
+              <li data-part="item" data-value="save">Save</li>
+              <div data-part="separator"></div>
+              <li data-part="item" data-value="export">Export</li>
+              <li data-part="item" data-value="exit">Exit</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

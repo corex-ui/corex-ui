@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import "@corex-ui/design";
+@import "@corex-ui/design/themes/neo/light.css";
+@import "@corex-ui/design/components.css";

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angle Slider Examples</title>
+  </head>
+  <body class="typo layout">
+    <main class="layout__main">
+      <h1>Angle Slider Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-angle-slider">
+        <h2>Basic Angle Slider</h2>
+        <div class="angle-slider angle-slider-js">
+          <div data-part="root">
+            <div data-part="label">Label</div>
+            <div data-part="control">
+              <div data-part="thumb"></div>
+            </div>
+            <div data-part="value-text">
+              <span data-part="value"></span>
+              <span data-part="text">°</span>
+            </div>
+            <input data-part="hidden-input" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

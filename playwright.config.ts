@@ -12,12 +12,27 @@ export default defineConfig({
         baseURL: "http://localhost:4173",
       },
     },
+    {
+      name: "cli-chromium-dist",
+      use: {
+        ...devices["Desktop Chrome"],
+        baseURL: "http://localhost:4174",
+      },
+    },
   ],
   reporter: [["html", { outputFolder: "e2e/_report", open: "never" }]],
-  webServer: {
-    command:
-      "pnpm --prefix tests/static-vite build && pnpm --prefix tests/static-vite preview --port 4173 --host",
-    port: 4173,
-    reuseExistingServer: !process.env.CI,
-  },
+  webServer: [
+    {
+      command:
+        "pnpm --prefix tests/static-vite build && pnpm --prefix tests/static-vite preview --port 4173 --host",
+      port: 4173,
+      reuseExistingServer: !process.env.CI,
+    },
+    {
+      command:
+        "pnpm --prefix tests/static-cli build && pnpm --prefix tests/static-cli preview --port 4174 --host",
+      port: 4174,
+      reuseExistingServer: !process.env.CI,
+    },
+  ],
 });

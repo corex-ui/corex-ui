@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Picker Examples</title>
+  </head>
+  <body class="typo layout">
+    <main class="layout__main">
+      <h1>Date Picker Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-date-picker">
+        <h2>Basic Date Picker</h2>
+        <div class="date-picker date-picker-js">
+          <div data-part="control">
+            <input data-part="input" />
+            <button data-part="trigger" aria-label="Date Picker">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div data-part="positioner">
+            <div data-part="content">
+              <div class="date-picker__day-view">
+                <div data-part="view-control" data-view="day">
+                  <button data-part="prev-trigger" data-view="day">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 19.5 8.25 12l7.5-7.5"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button data-part="view-trigger" data-view="day"></button>
+                  <button data-part="next-trigger" data-view="day">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <table data-part="table" data-view="day">
+                  <thead data-part="table-header" data-view="day"></thead>
+                  <tbody data-part="table-body" data-view="day"></tbody>
+                </table>
+              </div>
+              <div class="date-picker__month-view">
+                <div data-part="view-control" data-view="month">
+                  <button data-part="prev-trigger" data-view="month">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 19.5 8.25 12l7.5-7.5"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button data-part="view-trigger" data-view="month"></button>
+                  <button data-part="next-trigger" data-view="month">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <table data-part="table" data-view="month" data-columns="4">
+                  <tbody data-part="table-body" data-view="month"></tbody>
+                </table>
+              </div>
+              <div class="date-picker__year-view">
+                <div data-part="view-control" data-view="year">
+                  <button data-part="prev-trigger" data-view="year">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 19.5 8.25 12l7.5-7.5"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button data-part="view-trigger" data-view="year"></button>
+                  <button data-part="next-trigger" data-view="year">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <table data-part="table" data-view="year" data-columns="4">
+                  <tbody data-part="table-body" data-view="year"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

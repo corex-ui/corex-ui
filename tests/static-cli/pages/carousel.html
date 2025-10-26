@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Examples</title>
+  </head>
+  <body class="typo layout">
+    <main class="layout__main">
+      <h1>Carousel Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-carousel">
+        <h2>Basic Carousel</h2>
+        <div class="carousel carousel-js">
+          <div data-part="root">
+            <div data-part="item-group">
+              <div data-part="item">
+                <img src="/images/bg/beach.jpg" alt="beach" />
+              </div>
+              <div data-part="item">
+                <img src="/images/bg/winter.jpg" alt="winter" />
+              </div>
+              <div data-part="item">
+                <img src="/images/bg/star.jpg" alt="star" />
+              </div>
+              <div data-part="item">
+                <img src="/images/bg/sand.jpg" alt="sand" />
+              </div>
+              <div data-part="item">
+                <img src="/images/bg/fall.jpg" alt="fall" />
+              </div>
+            </div>
+            <div data-part="control">
+              <button data-part="prev-trigger" aria-label="Previous Slide">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 19.5 8.25 12l7.5-7.5"
+                  />
+                </svg>
+              </button>
+              <div data-part="indicator-group"></div>
+              <button data-part="next-trigger" aria-label="Next Slide">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
