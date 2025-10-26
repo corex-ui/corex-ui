@@ -10,13 +10,7 @@ import {
   renderPart,
   getPartIds,
 } from "../lib";
-const PARTS = [
-  "root",
-  "label",
-  "control",
-  "indicator",
-  "hidden-input",
-] as const;
+
 export class Checkbox extends Component<checkbox.Props, checkbox.Api> {
   initMachine(props: checkbox.Props): VanillaMachine<any> {
     return new VanillaMachine(checkbox.machine, props);
@@ -25,7 +19,9 @@ export class Checkbox extends Component<checkbox.Props, checkbox.Api> {
     return checkbox.connect(this.machine.service, normalizeProps);
   }
   render(): void {
-    PARTS.forEach((part) => renderPart(this.el, part, this.api));
+    ["root", "label", "control", "indicator", "hidden-input"].forEach((part) =>
+      renderPart(this.el, part, this.api),
+    );
   }
 }
 function parseCheckedState(
@@ -41,7 +37,13 @@ export function initializeCheckbox(
   doc.querySelectorAll<HTMLElement>(".checkbox-js").forEach((rootEl) => {
     const checkbox = new Checkbox(rootEl, {
       id: generateId(rootEl, "checkbox"),
-      ids: getPartIds(rootEl, PARTS),
+      ids: getPartIds(rootEl, [
+        "root",
+        "label",
+        "control",
+        "indicator",
+        "hidden-input",
+      ]),
       name: getString(rootEl, "name"),
       form: getString(rootEl, "form"),
       defaultChecked: parseCheckedState(rootEl, "defaultChecked"),
