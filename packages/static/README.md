@@ -142,7 +142,6 @@ import "@corex-ui/static";
 </div>
 ```
 
-
 ## 📝 License
 
 [MIT](./LICENSE) © [Netoum.com](https://netoum.com)
