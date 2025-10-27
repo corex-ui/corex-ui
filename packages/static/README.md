@@ -40,7 +40,7 @@ import "@corex-ui/static/components/accordion";
 // Initializes Accordion automatically
 ```
 
-#### Import all components (for development / preview)
+#### Import all components (for development only)
 
 ```ts
 import "@corex-ui/static";
@@ -52,11 +52,11 @@ import "@corex-ui/static";
 ```html
 <div class="accordion accordion-js">
   <div data-part="root">
-    <div data-part="item" data-value="lorem">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -73,21 +73,20 @@ import "@corex-ui/static";
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -104,19 +103,18 @@ import "@corex-ui/static";
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -133,7 +131,7 @@ import "@corex-ui/static";
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -144,50 +142,6 @@ import "@corex-ui/static";
 </div>
 ```
 
----
-
-## ⚛️ React SSG (Highly Experimental)
-
-> Only works with React static export (Next.js SSG, etc.)
-
-### Installation
-
-```bash
-npm install @corex-ui/static
-# or
-pnpm add @corex-ui/static
-```
-
-### Usage
-
-```ts
-import { Accordion } from '@corex-ui/static/react';
-
-export default function Home() {
-  return (
-    <Accordion>
-      <div data-part="root">
-        <div data-part="item" data-value="lorem">
-          <h3>
-            <button data-part="item-trigger" data-value="lorem">
-              <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-              <span data-part="item-indicator" data-value="lorem">...</span>
-            </button>
-          </h3>
-          <div data-part="item-content" data-value="lorem">
-            <p>Consectetur adipiscing elit...</p>
-          </div>
-        </div>
-        <!-- Add more items as needed -->
-      </div>
-    </Accordion>
-  );
-}
-```
-
-> ⚠️ React wrappers are auto-generated from static components. They only work in SSG/static export. Use at your own risk.
-
----
 
 ## 📝 License
 

@@ -8,7 +8,6 @@ import {
   generateId,
   normalizeProps,
   renderPart,
-  renderItem,
 } from "../lib";
 export class Tabs extends Component<tabs.Props, tabs.Api> {
   initMachine(props: tabs.Props): VanillaMachine<any> {
@@ -21,14 +20,11 @@ export class Tabs extends Component<tabs.Props, tabs.Api> {
     const parts = ["root", "list"];
     for (const part of parts) renderPart(this.el, part, this.api);
     const items = ["trigger", "content"];
-    for (const item of items) renderItem(this.el, item, this.api);
-    this.el.addEventListener("tabs:set-value", (event) => {
-      const { value } = (event as CustomEvent<{ value: string }>).detail;
-      const currentValue = this.api.value;
-      if (currentValue !== value) {
-        this.api.setValue(value);
-      }
-    });
+    for (const item of items)
+      renderPart(this.el, item, this.api, {
+        value: "string",
+        disabled: "boolean",
+      });
   }
 }
 export function initializeTabs(doc: HTMLElement | Document = document): void {
@@ -69,6 +65,19 @@ export function initializeTabs(doc: HTMLElement | Document = document): void {
       },
     });
     tabs.init();
+    tabs.el.addEventListener("tabs:set-value", (event) => {
+      const { value } = (event as CustomEvent<{ value: string }>).detail;
+      const currentValue = tabs.api.value;
+      if (currentValue !== value) {
+        tabs.api.setValue(value);
+      }
+    });
+    tabs.el.addEventListener("tabs:value", (event) => {
+      const callback = (
+        event as CustomEvent<{ callback: (value: string | null) => void }>
+      ).detail.callback;
+      if (callback) callback(tabs.api.value);
+    });
   });
 }
 if (typeof window !== "undefined") {

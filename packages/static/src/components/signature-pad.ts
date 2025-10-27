@@ -9,7 +9,6 @@ import {
   normalizeProps,
   renderPart,
   getString,
-  // renderItem,
   getStringList,
 } from "../lib";
 export class SignaturePad extends Component<

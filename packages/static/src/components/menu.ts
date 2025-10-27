@@ -64,26 +64,22 @@ export class Menu extends Component<menu.Props, menu.Api> {
     const rootNode = loadJsonTreeNodes(jsonPath);
     if (!rootNode.children || rootNode.children.length === 0) return;
 
-    // This container will hold multiple menu instances
     this.el.innerHTML = "";
 
     rootNode.children.forEach((topLevelNode) => {
       const menuId = `${this.el.id}-${topLevelNode.id}`;
 
-      // Create a new menu wrapper
       const menuWrapper = document.createElement("div");
       menuWrapper.classList.add("menu-js", "menu");
       menuWrapper.id = menuId;
       menuWrapper.dataset.ariaLabel = `${topLevelNode.name} Menu`;
 
-      // Copy all data attributes from parent container
       Array.from(this.el.attributes).forEach((attr) => {
         if (attr.name.startsWith("data-") && attr.name !== "data-json") {
           menuWrapper.setAttribute(attr.name, attr.value);
         }
       });
 
-      // Create trigger button
       const trigger = document.createElement("button");
       trigger.setAttribute("data-part", "trigger");
       trigger.innerHTML = `
@@ -96,7 +92,6 @@ export class Menu extends Component<menu.Props, menu.Api> {
         </span>
       `;
 
-      // Create positioner and content
       const positioner = document.createElement("div");
       positioner.setAttribute("data-part", "positioner");
 
@@ -108,7 +103,6 @@ export class Menu extends Component<menu.Props, menu.Api> {
       menuWrapper.appendChild(positioner);
       this.el.appendChild(menuWrapper);
 
-      // Render children into this menu's content
       if (topLevelNode.children) {
         topLevelNode.children.forEach((child) => {
           this.renderNodeContent(child, content, menuWrapper, menuId);
@@ -190,7 +184,6 @@ export class Menu extends Component<menu.Props, menu.Api> {
         submenuEl.dataset.children = childrenIds.join(",");
       }
 
-      // Track children on parent menu
       const existingChildren = menuWrapper.dataset.children
         ? menuWrapper.dataset.children.split(",")
         : [];
@@ -293,21 +286,17 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
   hasInitialized = true;
 
   const menusMap = new Map<string, Menu>();
-
-  // First pass: handle JSON-based menus that will generate DOM
   doc.querySelectorAll<HTMLElement>(".menu-js[data-json]").forEach((rootEl) => {
     const id = generateId(rootEl, "menu");
     const jsonPath = getString(rootEl, "json");
 
     if (jsonPath) {
-      // Create a temporary instance just to generate the DOM
       const tempInstance = new Menu(rootEl, { id });
       tempInstance.renderFromJson();
       tempInstance.domInitialized = true;
     }
   });
 
-  // Second pass: initialize all actual menu instances (including generated ones)
   doc
     .querySelectorAll<HTMLElement>(".menu-js:not([data-json])")
     .forEach((rootEl) => {

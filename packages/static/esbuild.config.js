@@ -25,7 +25,6 @@ async function build() {
 
     const builds = [];
 
-    // Bundle main index
     ["index.ts"].forEach((entry) => {
       ["esm", "cjs"].forEach((format) => {
         builds.push(
@@ -45,7 +44,6 @@ async function build() {
       });
     });
 
-    // Bundle individual components
     components.forEach((component) => {
       const input = join(componentsDir, `${component}.ts`);
       ["esm", "cjs"].forEach((format) => {
@@ -66,7 +64,6 @@ async function build() {
       });
     });
 
-    // Bundle libs
     libs.forEach((lib) => {
       const input = join(libDir, `${lib}.ts`);
       ["esm", "cjs"].forEach((format) => {

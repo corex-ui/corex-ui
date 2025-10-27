@@ -15,19 +15,16 @@ declare global {
   var IS_PRERENDER: boolean;
 }
 
-/** Flexible parser for user input dates or times */
 function parseFlexibleDate(input: string | Partial<timer.Time>): number {
   if (!input) throw new Error("Invalid date");
 
   if (typeof input === "string") {
-    // If it contains a space, treat as local time
     if (input.includes(" ")) {
       const t = new Date(input).getTime();
       if (isNaN(t)) throw new Error(`Unable to parse date: ${input}`);
       return t;
     }
 
-    // Otherwise parse as-is (handles ISO strings with timezone info)
     const t = new Date(input).getTime();
     if (isNaN(t)) throw new Error(`Unable to parse date: ${input}`);
     return t;
@@ -88,14 +85,12 @@ export function initializeTimer(doc: HTMLElement | Document = document): void {
   doc.querySelectorAll<HTMLElement>(".timer-js").forEach((rootEl) => {
     const countdown = getBoolean(rootEl, "countdown") ?? false;
 
-    // Check for date string attributes first
     const startAttr = getString(rootEl, "start");
     const targetAttr = getString(rootEl, "target");
 
     let startMs: number | undefined;
     let targetMs: number | undefined;
 
-    // Priority 1: Parse date strings if provided
     if (startAttr) {
       startMs = parseFlexibleDate(startAttr);
     }
@@ -103,7 +98,6 @@ export function initializeTimer(doc: HTMLElement | Document = document): void {
       targetMs = parseFlexibleDate(targetAttr);
     }
 
-    // Priority 2: Fall back to individual time unit attributes
     if (!startMs) {
       const timeObj = {
         days: getNumber(rootEl, "days") || 0,
@@ -112,7 +106,6 @@ export function initializeTimer(doc: HTMLElement | Document = document): void {
         seconds: getNumber(rootEl, "seconds") || 0,
         milliseconds: getNumber(rootEl, "milliseconds") || 0,
       };
-      // Only parse if at least one value is non-zero
       if (Object.values(timeObj).some((v) => v > 0)) {
         startMs = parseFlexibleDate(timeObj);
       }
@@ -132,18 +125,14 @@ export function initializeTimer(doc: HTMLElement | Document = document): void {
       }
     }
 
-    // Handle countdown to future date logic
     if (countdown && targetAttr && !startAttr) {
-      // Countdown TO a future date: calculate duration from now
       const futureMs = parseFlexibleDate(targetAttr);
       const nowMs = Date.now();
 
       if (futureMs > nowMs) {
-        // Set startMs to the duration between now and target
         startMs = futureMs - nowMs;
         targetMs = 0; // Count down to zero
       } else {
-        // Target is in the past
         startMs = 0;
         targetMs = 0;
       }
