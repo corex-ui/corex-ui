@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>static-vite</title>
   </head>
+
   <body class="typo layout">
     <main class="layout__main">
       <h1>Accordion Examples</h1>
@@ -15,44 +16,86 @@
         <h2>Basic Accordion</h2>
         <div class="accordion accordion-js">
           <div data-part="root">
-            <div data-part="item" data-value="lorem">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="lorem">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-                  <span data-part="item->" data-value="lorem"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="lorem">
+              <div data-part="item-content">
                 <p>
                   Consectetur adipiscing elit. Sed sodales ullamcorper
                   tristique. Proin quis risus feugiat tellus iaculis fringilla.
                 </p>
               </div>
             </div>
-            <div data-part="item" data-value="duis">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="duis">
+                <button data-part="item-trigger">
                   <span data-part="item-text"
                     >Duis dictum gravida odio ac pharetra?</span
                   >
-                  <span data-part="item->" data-value="duis"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="duis">
+              <div data-part="item-content">
                 <p>
                   Nullam eget vestibulum ligula, at interdum tellus. Quisque
                   feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
                 </p>
               </div>
             </div>
-            <div data-part="item" data-value="donec">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="donec">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Donec condimentum ex mi</span>
-                  <span data-part="item->" data-value="donec"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="donec">
+              <div data-part="item-content">
                 <p>
                   Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
                   turpis non, pellentesque elit. Pellentesque sagittis
@@ -69,44 +112,86 @@
         <h2>Multiple Items Expanded</h2>
         <div class="accordion accordion-js" data-multiple>
           <div data-part="root">
-            <div data-part="item" data-value="lorem">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="lorem">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-                  <span data-part="item->" data-value="lorem"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="lorem">
+              <div data-part="item-content">
                 <p>
                   Consectetur adipiscing elit. Sed sodales ullamcorper
                   tristique. Proin quis risus feugiat tellus iaculis fringilla.
                 </p>
               </div>
             </div>
-            <div data-part="item" data-value="duis">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="duis">
+                <button data-part="item-trigger">
                   <span data-part="item-text"
                     >Duis dictum gravida odio ac pharetra?</span
                   >
-                  <span data-part="item->" data-value="duis"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="duis">
+              <div data-part="item-content">
                 <p>
                   Nullam eget vestibulum ligula, at interdum tellus. Quisque
                   feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
                 </p>
               </div>
             </div>
-            <div data-part="item" data-value="donec">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="donec">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Donec condimentum ex mi</span>
-                  <span data-part="item->" data-value="donec"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="donec">
+              <div data-part="item-content">
                 <p>
                   Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
                   turpis non, pellentesque elit. Pellentesque sagittis
@@ -125,12 +210,26 @@
           <div data-part="root">
             <div data-part="item" data-value="lorem">
               <h3>
-                <button data-part="item-trigger" data-value="lorem">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-                  <span data-part="item->" data-value="lorem"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="lorem">
+              <div data-part="item-content">
                 <p>
                   Consectetur adipiscing elit. Sed sodales ullamcorper
                   tristique. Proin quis risus feugiat tellus iaculis fringilla.
@@ -139,14 +238,28 @@
             </div>
             <div data-part="item" data-value="duis">
               <h3>
-                <button data-part="item-trigger" data-value="duis">
+                <button data-part="item-trigger">
                   <span data-part="item-text"
                     >Duis dictum gravida odio ac pharetra?</span
                   >
-                  <span data-part="item->" data-value="duis"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="duis">
+              <div data-part="item-content">
                 <p>
                   Nullam eget vestibulum ligula, at interdum tellus. Quisque
                   feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
@@ -155,12 +268,26 @@
             </div>
             <div data-part="item" data-value="donec">
               <h3>
-                <button data-part="item-trigger" data-value="donec">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Donec condimentum ex mi</span>
-                  <span data-part="item->" data-value="donec"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="donec">
+              <div data-part="item-content">
                 <p>
                   Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
                   turpis non, pellentesque elit. Pellentesque sagittis
@@ -177,44 +304,86 @@
         <h2>Collapsible</h2>
         <div class="accordion accordion-js" data-collapsible>
           <div data-part="root">
-            <div data-part="item" data-value="lorem">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="lorem">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-                  <span data-part="item->" data-value="lorem"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="lorem">
+              <div data-part="item-content">
                 <p>
                   Consectetur adipiscing elit. Sed sodales ullamcorper
                   tristique. Proin quis risus feugiat tellus iaculis fringilla.
                 </p>
               </div>
             </div>
-            <div data-part="item" data-value="duis">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="duis">
+                <button data-part="item-trigger">
                   <span data-part="item-text"
                     >Duis dictum gravida odio ac pharetra?</span
                   >
-                  <span data-part="item->" data-value="duis"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="duis">
+              <div data-part="item-content">
                 <p>
                   Nullam eget vestibulum ligula, at interdum tellus. Quisque
                   feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
                 </p>
               </div>
             </div>
-            <div data-part="item" data-value="donec">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="donec">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Donec condimentum ex mi</span>
-                  <span data-part="item->" data-value="donec"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="donec">
+              <div data-part="item-content">
                 <p>
                   Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
                   turpis non, pellentesque elit. Pellentesque sagittis
@@ -231,44 +400,86 @@
         <h2>Disabled Accordion</h2>
         <div class="accordion accordion-js" data-disabled="true">
           <div data-part="root">
-            <div data-part="item" data-value="lorem">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="lorem">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-                  <span data-part="item-indicator" data-value="lorem"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="lorem">
+              <div data-part="item-content">
                 <p>
                   Consectetur adipiscing elit. Sed sodales ullamcorper
                   tristique. Proin quis risus feugiat tellus iaculis fringilla.
                 </p>
               </div>
             </div>
-            <div data-part="item" data-value="duis">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="duis">
+                <button data-part="item-trigger">
                   <span data-part="item-text"
                     >Duis dictum gravida odio ac pharetra?</span
                   >
-                  <span data-part="item-indicator" data-value="duis"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="duis">
+              <div data-part="item-content">
                 <p>
                   Nullam eget vestibulum ligula, at interdum tellus. Quisque
                   feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
                 </p>
               </div>
             </div>
-            <div data-part="item" data-value="donec">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="donec">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Donec condimentum ex mi</span>
-                  <span data-part="item-indicator" data-value="donec"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="donec">
+              <div data-part="item-content">
                 <p>
                   Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
                   turpis non, pellentesque elit. Pellentesque sagittis
@@ -286,58 +497,86 @@
 
         <div class="accordion accordion-js">
           <div data-part="root">
-            <div data-part="item" data-value="lorem" data-disabled="true">
+            <div data-part="item" data-disabled>
               <h3>
-                <button
-                  data-part="item-trigger"
-                  data-value="lorem"
-                  data-disabled="true"
-                >
+                <button data-part="item-trigger">
                   <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-                  <span
-                    data-part="item-indicator"
-                    data-value="lorem"
-                    data-disabled="true"
-                  >
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
                     >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
                   </span>
                 </button>
               </h3>
-              <div
-                data-part="item-content"
-                data-value="lorem"
-                data-disabled="true"
-              >
+              <div data-part="item-content">
                 <p>
                   Consectetur adipiscing elit. Sed sodales ullamcorper
                   tristique. Proin quis risus feugiat tellus iaculis fringilla.
                 </p>
               </div>
             </div>
-            <div data-part="item" data-value="duis">
+            <div data-part="item" data-disabled>
               <h3>
-                <button data-part="item-trigger" data-value="duis">
+                <button data-part="item-trigger">
                   <span data-part="item-text"
                     >Duis dictum gravida odio ac pharetra?</span
                   >
-                  <span data-part="item-indicator" data-value="duis"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="duis">
+              <div data-part="item-content">
                 <p>
                   Nullam eget vestibulum ligula, at interdum tellus. Quisque
                   feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
                 </p>
               </div>
             </div>
-            <div data-part="item" data-value="donec">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="donec">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Donec condimentum ex mi</span>
-                  <span data-part="item-indicator" data-value="donec"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="donec">
+              <div data-part="item-content">
                 <p>
                   Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
                   turpis non, pellentesque elit. Pellentesque sagittis
@@ -352,49 +591,93 @@
       <!-- Test: Horizontal orientation -->
       <section data-test="horizontal-accordion">
         <h2>Horizontal Orientation</h2>
-        <div
-          class="accordion accordion-js"
-          data-orientation="horizontal"
-          data-default-value="lorem"
-        >
-          <div data-part="root" class="grid grid-cols-3">
-            <div data-part="item" data-value="lorem">
+        <div class="accordion accordion-js" data-orientation="horizontal">
+          <div data-part="root">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="lorem">
-                  <span data-part="item-text">A</span>
-                  <span data-part="item-indicator" data-value="lorem"> > </span>
+                <button data-part="item-trigger">
+                  <span data-part="item-text">Lorem ipsum dolor sit amet</span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="lorem">
-                <p
-                  class="w-16 h-52 my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
-                ></p>
+              <div data-part="item-content">
+                <p>
+                  Consectetur adipiscing elit. Sed sodales ullamcorper
+                  tristique. Proin quis risus feugiat tellus iaculis fringilla.
+                </p>
               </div>
             </div>
-            <div data-part="item" data-value="duis">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="duis">
-                  <span data-part="item-text">B</span>
-                  <span data-part="item-indicator" data-value="duis"> > </span>
+                <button data-part="item-trigger">
+                  <span data-part="item-text"
+                    >Duis dictum gravida odio ac pharetra?</span
+                  >
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="duis">
-                <p
-                  class="w-16 h-52 my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
-                ></p>
+              <div data-part="item-content">
+                <p>
+                  Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                  feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+                </p>
               </div>
             </div>
-            <div data-part="item" data-value="donec">
+            <div data-part="item">
               <h3>
-                <button data-part="item-trigger" data-value="donec">
-                  <span data-part="item-text">C</span>
-                  <span data-part="item-indicator" data-value="donec"> > </span>
+                <button data-part="item-trigger">
+                  <span data-part="item-text">Donec condimentum ex mi</span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="donec">
-                <p
-                  class="w-16 h-52 my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
-                ></p>
+              <div data-part="item-content">
+                <p>
+                  Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                  turpis non, pellentesque elit. Pellentesque sagittis
+                  fermentum.
+                </p>
               </div>
             </div>
           </div>
@@ -412,12 +695,26 @@
           <div data-part="root">
             <div data-part="item" data-value="lorem">
               <h3>
-                <button data-part="item-trigger" data-value="lorem">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-                  <span data-part="item-indicator" data-value="lorem"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="lorem">
+              <div data-part="item-content">
                 <p>
                   Consectetur adipiscing elit. Sed sodales ullamcorper
                   tristique. Proin quis risus feugiat tellus iaculis fringilla.
@@ -426,14 +723,28 @@
             </div>
             <div data-part="item" data-value="duis">
               <h3>
-                <button data-part="item-trigger" data-value="duis">
+                <button data-part="item-trigger">
                   <span data-part="item-text"
                     >Duis dictum gravida odio ac pharetra?</span
                   >
-                  <span data-part="item-indicator" data-value="duis"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="duis">
+              <div data-part="item-content">
                 <p>
                   Nullam eget vestibulum ligula, at interdum tellus. Quisque
                   feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
@@ -442,12 +753,26 @@
             </div>
             <div data-part="item" data-value="donec">
               <h3>
-                <button data-part="item-trigger" data-value="donec">
+                <button data-part="item-trigger">
                   <span data-part="item-text">Donec condimentum ex mi</span>
-                  <span data-part="item-indicator" data-value="donec"> > </span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="donec">
+              <div data-part="item-content">
                 <p>
                   Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
                   turpis non, pellentesque elit. Pellentesque sagittis
@@ -502,32 +827,89 @@
           <div data-part="root">
             <div data-part="item" data-value="lorem">
               <h3>
-                <button data-part="item-trigger" data-value="lorem">
-                  Lorem ipsum dolor sit amet
+                <button data-part="item-trigger">
+                  <span data-part="item-text">Lorem ipsum dolor sit amet</span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="lorem">
-                <p>Consectetur adipiscing elit...</p>
+              <div data-part="item-content">
+                <p>
+                  Consectetur adipiscing elit. Sed sodales ullamcorper
+                  tristique. Proin quis risus feugiat tellus iaculis fringilla.
+                </p>
               </div>
             </div>
             <div data-part="item" data-value="duis">
               <h3>
-                <button data-part="item-trigger" data-value="duis">
-                  Duis dictum gravida...
+                <button data-part="item-trigger">
+                  <span data-part="item-text"
+                    >Duis dictum gravida odio ac pharetra?</span
+                  >
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="duis">
-                <p>Nullam eget vestibulum ligula...</p>
+              <div data-part="item-content">
+                <p>
+                  Nullam eget vestibulum ligula, at interdum tellus. Quisque
+                  feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
+                </p>
               </div>
             </div>
             <div data-part="item" data-value="donec">
               <h3>
-                <button data-part="item-trigger" data-value="donec">
-                  Donec condimentum ex mi
+                <button data-part="item-trigger">
+                  <span data-part="item-text">Donec condimentum ex mi</span>
+                  <span data-part="item-indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </h3>
-              <div data-part="item-content" data-value="donec">
-                <p>Congue molestie ipsum gravida...</p>
+              <div data-part="item-content">
+                <p>
+                  Congue molestie ipsum gravida a. Sed ac eros luctus, cursus
+                  turpis non, pellentesque elit. Pellentesque sagittis
+                  fermentum.
+                </p>
               </div>
             </div>
           </div>
