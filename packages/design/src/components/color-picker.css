@@ -37,6 +37,7 @@
     & [data-scope="color-picker"][data-part="swatch"] {
       min-height: var(--spacing-ui);
       width: auto;
+      height: 100%;
       aspect-ratio: 1 / 1;
     }
 
@@ -203,7 +204,7 @@
     position: relative;
 
     & [data-scope="color-picker"][data-part="swatch"] {
-      min-height: var(--spacing-mini);
+      height: 100%;
       width: auto;
       aspect-ratio: 1 / 1;
     }

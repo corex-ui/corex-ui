@@ -147,6 +147,7 @@
   .date-picker [data-scope="date-picker"][data-part="prev-trigger"],
   .date-picker [data-scope="date-picker"][data-part="next-trigger"] {
     @apply ui-trigger ui-trigger--sm ui-trigger--square;
+    
     padding: 0;
   }
 
