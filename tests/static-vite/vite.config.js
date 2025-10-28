@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [corex(), tailwindcss()],
   build: {
     outDir: "./dist",
+    chunkSizeWarningLimit: 700,
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
