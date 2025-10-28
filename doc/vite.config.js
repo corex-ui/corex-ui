@@ -26,6 +26,7 @@ export default defineConfig(() => ({
     minify: true,
     cssMinify: true,
     cssCodeSplit: true,
+    chunkSizeWarningLimit: 550,
     rollupOptions: {
       input: rollupInput(__dirname),
       output: {
