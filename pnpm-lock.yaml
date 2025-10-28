@@ -147,9 +147,6 @@ importers:
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
-      resize-observer-polyfill:
-        specifier: ^1.5.1
-        version: 1.5.1
     devDependencies:
       '@types/jsdom':
         specifier: ^21.1.7
@@ -181,9 +178,6 @@ importers:
       jsdom:
         specifier: ^22.1.0
         version: 22.1.0
-      resize-observer-polyfill:
-        specifier: ^1.5.1
-        version: 1.5.1
     devDependencies:
       '@eslint/compat':
         specifier: ^1
@@ -370,9 +364,6 @@ importers:
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
-      resize-observer-polyfill:
-        specifier: ^1.5.1
-        version: 1.5.1
     devDependencies:
       '@types/jsdom':
         specifier: ^21.1.7

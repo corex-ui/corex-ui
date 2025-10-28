@@ -52,7 +52,6 @@
     "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
-    "resize-observer-polyfill": "^1.5.1",
     "jsdom": "^26.1.0"
   }
 }

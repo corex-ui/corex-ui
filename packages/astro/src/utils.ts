@@ -2,51 +2,114 @@ import { JSDOM } from "jsdom";
 import fs from "fs";
 import { join } from "path";
 import { pathToFileURL } from "url";
-import ResizeObserver from "resize-observer-polyfill";
-import "node:intersection-observer";
-export function applyBrowserPolyfills(win: any) {
-  const g = globalThis as any;
+
+const createRaf = (cb: (time: number) => void) =>
+  setTimeout(() => cb(Date.now()), 16) as unknown as number;
+
+/* eslint-disable no-undef, n/no-unsupported-features/node-builtins */
+interface PolyfillWindow extends Record<string, unknown> {
+  CustomEvent: typeof CustomEvent;
+  document: Document;
+  Element: typeof Element;
+  HTMLElement: typeof HTMLElement;
+  Node: typeof Node;
+}
+
+interface GlobalWithWindow extends Record<string, unknown> {
+  CustomEvent: typeof CustomEvent;
+  document: Document;
+  Element: typeof Element;
+  HTMLElement: typeof HTMLElement;
+  Node: typeof Node;
+  window: PolyfillWindow;
+}
+/* eslint-enable no-undef, n/no-unsupported-features/node-builtins */
+
+export function applyBrowserPolyfills(win: PolyfillWindow) {
+  const g = globalThis as unknown as GlobalWithWindow;
 
   g.window = win;
   g.document = win.document;
   g.HTMLElement = win.HTMLElement;
   g.Element = win.Element;
   g.Node = win.Node;
+  // eslint-disable-next-line n/no-unsupported-features/node-builtins
   g.CustomEvent = win.CustomEvent;
 
+  // eslint-disable-next-line n/no-unsupported-features/node-builtins
   if (!("navigator" in g) || !g.navigator) {
     Object.defineProperty(g, "navigator", {
       configurable: true,
-      writable: true,
       value: win.navigator || {
-        userAgent: "node.js",
         clipboard: {
-          writeText: async () => {},
-          readText: async () => "",
+          async readText() {
+            return "";
+          },
+          async writeText() {},
         },
+        userAgent: "node.js",
       },
+      writable: true,
     });
   }
 
   if (!("navigator" in win)) {
-    win.navigator = g.navigator;
+    // eslint-disable-next-line n/no-unsupported-features/node-builtins
+    (win as Record<string, unknown>).navigator = g.navigator;
   }
 
+  /* eslint-disable no-undef */
   g.getComputedStyle =
     win.getComputedStyle ||
-    (() => ({
+    ((() => ({
       getPropertyValue: () => "",
-    }));
+    })) as unknown as typeof getComputedStyle);
+  /* eslint-enable no-undef */
 
-  g.ResizeObserver = ResizeObserver;
-  g.window.ResizeObserver = ResizeObserver;
+  if (!("IntersectionObserver" in g)) {
+    class NoopIntersectionObserver {
+      disconnect() {}
 
-  const raf = (cb: FrameRequestCallback) =>
-    setTimeout(() => cb(Date.now()), 16);
-  g.requestAnimationFrame = win.requestAnimationFrame || raf;
-  g.cancelAnimationFrame = win.cancelAnimationFrame || clearTimeout;
-  g.window.requestAnimationFrame = g.requestAnimationFrame;
-  g.window.cancelAnimationFrame = g.cancelAnimationFrame;
+      observe() {}
+
+      takeRecords() {
+        return [];
+      }
+
+      unobserve() {}
+    }
+    /* eslint-disable no-undef */
+    g.IntersectionObserver =
+      NoopIntersectionObserver as unknown as typeof IntersectionObserver;
+    /* eslint-enable no-undef */
+    (win as Record<string, unknown>).IntersectionObserver =
+      NoopIntersectionObserver;
+  }
+
+  if (!("ResizeObserver" in g)) {
+    class NoopResizeObserver {
+      disconnect() {}
+
+      observe() {}
+
+      unobserve() {}
+    }
+    /* eslint-disable no-undef */
+    g.ResizeObserver = NoopResizeObserver as unknown as typeof ResizeObserver;
+    /* eslint-enable no-undef */
+    (win as Record<string, unknown>).ResizeObserver = NoopResizeObserver;
+  }
+
+  /* eslint-disable no-undef */
+  g.requestAnimationFrame = (win.requestAnimationFrame ||
+    createRaf) as typeof requestAnimationFrame;
+  g.cancelAnimationFrame = (win.cancelAnimationFrame ||
+    clearTimeout) as typeof cancelAnimationFrame;
+  /* eslint-enable no-undef */
+  (win as Record<string, unknown>).requestAnimationFrame =
+    g.requestAnimationFrame;
+  (win as Record<string, unknown>).cancelAnimationFrame =
+    g.cancelAnimationFrame;
 }
 
 export async function processHtmlFile(
@@ -54,21 +117,29 @@ export async function processHtmlFile(
   targetFiles: string[],
   componentsDir: string,
 ) {
-  const htmlContent = fs.readFileSync(htmlFilePath, "utf-8");
+  const htmlContent = fs.readFileSync(htmlFilePath, "utf8");
   const dom = new JSDOM(htmlContent, {
     runScripts: "outside-only",
     url: "http://localhost",
   });
-  applyBrowserPolyfills(dom.window);
+
+  applyBrowserPolyfills(dom.window as unknown as PolyfillWindow);
+
   let renderedCount = 0;
+
   for (const file of targetFiles) {
     const baseName = file.replace(/(\.min)?\.mjs$/, "");
     const hasComponent = dom.window.document.querySelector(`.${baseName}-js`);
+
     if (!hasComponent) continue;
+
     try {
       const filePath = join(componentsDir, file);
       const fileUrl = pathToFileURL(filePath).href;
-      const uiModule: any = await import(`${fileUrl}?cache_bust=${Date.now()}`);
+      // eslint-disable-next-line no-await-in-loop
+      const uiModule: Record<string, unknown> = await import(
+        `${fileUrl}?cache_bust=${Date.now()}`
+      );
       const initName =
         "initialize" +
         baseName
@@ -77,14 +148,17 @@ export async function processHtmlFile(
           .join("");
       const initFn =
         uiModule[initName] ||
-        uiModule.default?.[initName] ||
+        (uiModule.default as Record<string, unknown>)?.[initName] ||
         uiModule.init ||
         uiModule.default;
+
       if (typeof initFn !== "function") continue;
+
+      // eslint-disable-next-line no-await-in-loop
       await initFn(dom.window.document);
       renderedCount++;
-    } catch (err: any) {
-      const msg = err.message || "";
+    } catch (error: unknown) {
+      const msg = error instanceof Error ? error.message : "";
       if (
         msg.includes("IntersectionObserver is not a constructor") ||
         msg.includes("i.IntersectionObserver is not a constructor") ||
@@ -97,10 +171,12 @@ export async function processHtmlFile(
       }
     }
   }
-  fs.writeFileSync(htmlFilePath, dom.serialize(), "utf-8");
+
+  fs.writeFileSync(htmlFilePath, dom.serialize(), "utf8");
   console.log(`[Corex] ${htmlFilePath} → ${renderedCount} rendered`);
   dom.window.close();
 }
+
 /**
  * Recursively finds all HTML files in a directory.
  * @param dirPath Directory to search
@@ -108,14 +184,18 @@ export async function processHtmlFile(
  */
 export function findHtmlFiles(dirPath: string): string[] {
   const htmlFiles: string[] = [];
+
   if (!fs.existsSync(dirPath)) return htmlFiles;
+
   for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
     const fullPath = join(dirPath, entry.name);
+
     if (entry.isDirectory()) {
       htmlFiles.push(...findHtmlFiles(fullPath));
     } else if (entry.name.endsWith(".html")) {
       htmlFiles.push(fullPath);
     }
   }
+
   return htmlFiles;
 }
