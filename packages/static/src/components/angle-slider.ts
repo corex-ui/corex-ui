@@ -11,16 +11,7 @@ import {
   getPartIds,
   valuesEqual,
 } from "../lib";
-const PARTS = [
-  "root",
-  "label",
-  "control",
-  "thumb",
-  "marker-group",
-  "value-text",
-  "hidden-input",
-] as const;
-const ITEM_PARTS = ["marker"] as const;
+
 export class AngleSlider extends Component<angleSlider.Props, angleSlider.Api> {
   initMachine(props: angleSlider.Props): VanillaMachine<any> {
     return new VanillaMachine(angleSlider.machine, props);
@@ -29,8 +20,16 @@ export class AngleSlider extends Component<angleSlider.Props, angleSlider.Api> {
     return angleSlider.connect(this.machine.service, normalizeProps);
   }
   render(): void {
-    PARTS.forEach((part) => renderPart(this.el, part, this.api));
-    ITEM_PARTS.forEach((part) =>
+    [
+      "root",
+      "label",
+      "control",
+      "thumb",
+      "marker-group",
+      "value-text",
+      "hidden-input",
+    ].forEach((part) => renderPart(this.el, part, this.api));
+    ["marker"].forEach((part) =>
       renderPart(this.el, part, this.api, { value: "number" }),
     );
     this.updateValueText();
@@ -56,7 +55,16 @@ export function initializeAngleSlider(
   doc.querySelectorAll<HTMLElement>(".angle-slider-js").forEach((rootEl) => {
     const angleSlider = new AngleSlider(rootEl, {
       id: generateId(rootEl, "angleSlider"),
-      ids: getPartIds(rootEl, PARTS),
+      ids: getPartIds(rootEl, [
+        "root",
+        "label",
+        "control",
+        "thumb",
+        "marker-group",
+        "value-text",
+        "hidden-input",
+        "marker",
+      ]),
       defaultValue: getNumber(rootEl, "defaultValue"),
       disabled: getBoolean(rootEl, "disabled"),
       invalid: getBoolean(rootEl, "invalid"),
