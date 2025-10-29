@@ -17,9 +17,14 @@
   }
 
   .listbox [data-scope="listbox"][data-part="item-group-label"] {
+    display: block;
+    grid-column: 1 / -1;
+    width: 100%;
     color: var(--color-ui--text);
     font-size: var(--text-ui-sm);
     line-height: var(--text-ui-sm--line-height);
+    padding-inline: var(--spacing-ui-padding);
+    padding-block: var(--spacing-ui-padding-sm);
     text-align: start;
   }
 

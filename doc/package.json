@@ -15,8 +15,8 @@
     "@corex-ui/design": "workspace:*",
     "@corex-ui/static": "workspace:*",
     "@supabase/supabase-js": "^2.56.0",
-    "@tailwindcss/vite": "^4.1.11",
-    "tailwindcss": "^4.1.11"
+    "@tailwindcss/vite": "^4.1.16",
+    "tailwindcss": "^4.1.16"
   },
   "devDependencies": {
     "@corex-ui/vite": "workspace:*",

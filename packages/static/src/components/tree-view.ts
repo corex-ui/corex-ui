@@ -34,13 +34,24 @@ function buildNodeTreeFromDOM(container: HTMLElement): Node {
   if (!rootEl) {
     return { id: "root", name: "Root" };
   }
-  function processElement(element: HTMLElement): Node | null {
+
+  function processElement(element: HTMLElement, index: number): Node | null {
     const part = element.getAttribute("data-part");
-    const id = element.getAttribute("data-id");
-    const name = element.getAttribute("data-name");
-    if (!id || !name) {
-      return null;
+    let id = element.getAttribute("data-id");
+    let name = element.getAttribute("data-name");
+
+    // ✅ auto-generate id if missing
+    if (!id) {
+      id = generateId(element, `${part || "node"}-${index}`);
+      element.setAttribute("data-id", id);
     }
+
+    // ✅ auto-generate name if missing
+    if (!name) {
+      name = id.replace(/^.*-/, "").replace(/^\w/, (c) => c.toUpperCase());
+      element.setAttribute("data-name", name);
+    }
+
     if (part === "branch") {
       const branchContent = element.querySelector(
         `[data-part="branch-content"][data-id="${id}"]`,
@@ -53,7 +64,7 @@ function buildNodeTreeFromDOM(container: HTMLElement): Node {
           },
         );
         const childNodes = childElements
-          .map((childEl) => processElement(childEl as HTMLElement))
+          .map((childEl, i) => processElement(childEl as HTMLElement, i))
           .filter(Boolean) as Node[];
         return {
           id,
@@ -63,26 +74,27 @@ function buildNodeTreeFromDOM(container: HTMLElement): Node {
       }
       return { id, name };
     } else if (part === "item") {
-      return {
-        id,
-        name,
-      };
+      return { id, name };
     }
     return null;
   }
+
   const topElements = Array.from(rootEl.children).filter((child) => {
     const childPart = child.getAttribute("data-part");
     return childPart === "item" || childPart === "branch";
   });
+
   const children = topElements
-    .map((el) => processElement(el as HTMLElement))
+    .map((el, i) => processElement(el as HTMLElement, i))
     .filter(Boolean) as Node[];
+
   return {
     id: getString(rootEl, "nodeRootId") || "root",
     name: getString(rootEl, "nodeRootName") || "Root",
     children,
   };
 }
+
 export class TreeView extends Component<treeView.Props, treeView.Api> {
   collection!: ReturnType<typeof treeView.collection<Node>>;
   private domInitialized = false;

@@ -486,7 +486,7 @@ You must add a custom id for the accordion and a event listener for your event n
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donex">
+    <div data-part="item" data-value="donec">
       <h3>
         <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>

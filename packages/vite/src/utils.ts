@@ -6,7 +6,6 @@ import { pathToFileURL } from "url";
 const createRaf = (cb: (time: number) => void) =>
   setTimeout(() => cb(Date.now()), 16) as unknown as number;
 
-/* eslint-disable no-undef, n/no-unsupported-features/node-builtins */
 interface PolyfillWindow extends Record<string, unknown> {
   CustomEvent: typeof CustomEvent;
   document: Document;
@@ -23,7 +22,6 @@ interface GlobalWithWindow extends Record<string, unknown> {
   Node: typeof Node;
   window: PolyfillWindow;
 }
-/* eslint-enable no-undef, n/no-unsupported-features/node-builtins */
 
 export function applyBrowserPolyfills(win: PolyfillWindow) {
   const g = globalThis as unknown as GlobalWithWindow;
@@ -33,10 +31,8 @@ export function applyBrowserPolyfills(win: PolyfillWindow) {
   g.HTMLElement = win.HTMLElement;
   g.Element = win.Element;
   g.Node = win.Node;
-  // eslint-disable-next-line n/no-unsupported-features/node-builtins
   g.CustomEvent = win.CustomEvent;
 
-  // eslint-disable-next-line n/no-unsupported-features/node-builtins
   if (!("navigator" in g) || !g.navigator) {
     Object.defineProperty(g, "navigator", {
       configurable: true,
@@ -54,17 +50,14 @@ export function applyBrowserPolyfills(win: PolyfillWindow) {
   }
 
   if (!("navigator" in win)) {
-    // eslint-disable-next-line n/no-unsupported-features/node-builtins
     (win as Record<string, unknown>).navigator = g.navigator;
   }
 
-  /* eslint-disable no-undef */
   g.getComputedStyle =
     win.getComputedStyle ||
     ((() => ({
       getPropertyValue: () => "",
     })) as unknown as typeof getComputedStyle);
-  /* eslint-enable no-undef */
 
   if (!("IntersectionObserver" in g)) {
     class NoopIntersectionObserver {
@@ -78,10 +71,8 @@ export function applyBrowserPolyfills(win: PolyfillWindow) {
 
       unobserve() {}
     }
-    /* eslint-disable no-undef */
     g.IntersectionObserver =
       NoopIntersectionObserver as unknown as typeof IntersectionObserver;
-    /* eslint-enable no-undef */
     (win as Record<string, unknown>).IntersectionObserver =
       NoopIntersectionObserver;
   }
@@ -94,18 +85,14 @@ export function applyBrowserPolyfills(win: PolyfillWindow) {
 
       unobserve() {}
     }
-    /* eslint-disable no-undef */
     g.ResizeObserver = NoopResizeObserver as unknown as typeof ResizeObserver;
-    /* eslint-enable no-undef */
     (win as Record<string, unknown>).ResizeObserver = NoopResizeObserver;
   }
 
-  /* eslint-disable no-undef */
   g.requestAnimationFrame = (win.requestAnimationFrame ||
     createRaf) as typeof requestAnimationFrame;
   g.cancelAnimationFrame = (win.cancelAnimationFrame ||
     clearTimeout) as typeof cancelAnimationFrame;
-  /* eslint-enable no-undef */
   (win as Record<string, unknown>).requestAnimationFrame =
     g.requestAnimationFrame;
   (win as Record<string, unknown>).cancelAnimationFrame =
@@ -136,7 +123,6 @@ export async function processHtmlFile(
     try {
       const filePath = join(componentsDir, file);
       const fileUrl = pathToFileURL(filePath).href;
-      // eslint-disable-next-line no-await-in-loop
       const uiModule: Record<string, unknown> = await import(
         `${fileUrl}?cache_bust=${Date.now()}`
       );
@@ -154,7 +140,6 @@ export async function processHtmlFile(
 
       if (typeof initFn !== "function") continue;
 
-      // eslint-disable-next-line no-await-in-loop
       await initFn(dom.window.document);
       renderedCount++;
     } catch (error: unknown) {

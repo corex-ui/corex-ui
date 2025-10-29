@@ -42,6 +42,11 @@
   <code>positioner</code>, <code>content</code>, <code>separator</code>,
   <code>item</code>, <code>item-group</code>, <code>item-group-label</code>
 </p>
+<p>
+  An optional <code>data-value</code> and can be added to each
+  <code>data-part=&quot;item&quot;</code>, this is useful when using the API or
+  setting default values.
+</p>
 
 <div class="preview">
   <div class="preview__display">
@@ -66,12 +71,12 @@
       </button>
       <div data-part="positioner">
         <ul data-part="content">
-          <li data-part="item" data-value="new">New Document</li>
-          <li data-part="item" data-value="open">Open</li>
-          <li data-part="item" data-value="save">Save</li>
+          <li data-part="item">New Document</li>
+          <li data-part="item">Open</li>
+          <li data-part="item">Save</li>
           <div data-part="separator"></div>
-          <li data-part="item" data-value="export">Export</li>
-          <li data-part="item" data-value="exit">Exit</li>
+          <li data-part="item">Export</li>
+          <li data-part="item">Exit</li>
         </ul>
       </div>
     </div>
@@ -101,12 +106,12 @@
   &lt;/button&gt;
   &lt;div data-part="positioner"&gt;
     &lt;ul data-part="content"&gt;
-      &lt;li data-part="item" data-value="new"&gt;New Document&lt;/li&gt;
-      &lt;li data-part="item" data-value="open"&gt;Open&lt;/li&gt;
-      &lt;li data-part="item" data-value="save"&gt;Save&lt;/li&gt;
+      &lt;li data-part="item"&gt;New Document&lt;/li&gt;
+      &lt;li data-part="item"&gt;Open&lt;/li&gt;
+      &lt;li data-part="item"&gt;Save&lt;/li&gt;
       &lt;div data-part="separator"&gt;&lt;/div&gt;
-      &lt;li data-part="item" data-value="export"&gt;Export&lt;/li&gt;
-      &lt;li data-part="item" data-value="exit"&gt;Exit&lt;/li&gt;
+      &lt;li data-part="item"&gt;Export&lt;/li&gt;
+      &lt;li data-part="item"&gt;Exit&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -176,12 +181,12 @@
   &lt;/button&gt;
   &lt;div data-part=&quot;positioner&quot;&gt;
     &lt;ul data-part=&quot;content&quot;&gt;
-      &lt;li data-part=&quot;item&quot; data-value=&quot;new&quot;&gt;New Document&lt;/li&gt;
-      &lt;li data-part=&quot;item&quot; data-value=&quot;open&quot;&gt;Open&lt;/li&gt;
-      &lt;li data-part=&quot;item&quot; data-value=&quot;save&quot;&gt;Save&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot;&gt;New Document&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot;&gt;Open&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot;&gt;Save&lt;/li&gt;
       &lt;div data-part=&quot;separator&quot;&gt;&lt;/div&gt;
-      &lt;li data-part=&quot;item&quot; data-value=&quot;export&quot;&gt;Export&lt;/li&gt;
-      &lt;li data-part=&quot;item&quot; data-value=&quot;exit&quot;&gt;Exit&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot;&gt;Export&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot;&gt;Exit&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -361,7 +366,11 @@
 </div>
 <div class="preview">
   <div class="preview__display">
-    <div id="menu" class="menu menu-js" data-json="menu-data">
+    <div
+      id="menu"
+      class="menu menu-js justify-items-start"
+      data-json="menu-data"
+    >
       <div data-part="positioner">
         <ul data-part="content"></ul>
       </div>
@@ -371,7 +380,7 @@
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='&lt;div id="menu" class="menu menu-js" data-json="menu-data"&gt;
+      data-default-value='&lt;div id="menu" class="menu menu-js justify-items-start" data-json="menu-data"&gt;
   &lt;div data-part="positioner"&gt;
     &lt;ul data-part="content"&gt;&lt;/ul&gt;
   &lt;/div&gt;
@@ -421,9 +430,167 @@
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="html">&lt;div id=&quot;menu&quot; class=&quot;menu menu-js&quot; data-json=&quot;menu-data&quot;&gt;
+    <pre><code class="code-js" data-lang="html">&lt;div id=&quot;menu&quot; class=&quot;menu menu-js justify-items-start&quot; data-json=&quot;menu-data&quot;&gt;
   &lt;div data-part=&quot;positioner&quot;&gt;
     &lt;ul data-part=&quot;content&quot;&gt;&lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="custom-values" tabindex="-1">
+  <a class="link" href="#custom-values">#</a> Custom values
+</h2>
+<p>
+  The Menu items and groups can use custom values and ids, this is useful when
+  using the API or setting default values.
+</p>
+<p>
+  <code>data-value</code> can be added to each
+  <code>data-part=&quot;item&quot;</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div id="file" class="menu menu-js">
+      <button data-part="trigger">
+        File
+        <span data-part="indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            ></path>
+          </svg>
+        </span>
+      </button>
+      <div data-part="positioner">
+        <ul data-part="content">
+          <li data-part="item" data-value="new">New Document</li>
+          <li data-part="item" data-value="open">Open</li>
+          <li data-part="item" data-value="save">Save</li>
+          <div data-part="separator"></div>
+          <li data-part="item" data-value="export">Export</li>
+          <li data-part="item" data-value="exit">Exit</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div id="file" class="menu menu-js"&gt;
+  &lt;button data-part="trigger"&gt;
+    File
+    &lt;span data-part="indicator"&gt;
+      &lt;svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      &gt;
+        &lt;path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part="positioner"&gt;
+    &lt;ul data-part="content"&gt;
+      &lt;li data-part="item" data-value="new"&gt;New Document&lt;/li&gt;
+      &lt;li data-part="item" data-value="open"&gt;Open&lt;/li&gt;
+      &lt;li data-part="item" data-value="save"&gt;Save&lt;/li&gt;
+      &lt;div data-part="separator"&gt;&lt;/div&gt;
+      &lt;li data-part="item" data-value="export"&gt;Export&lt;/li&gt;
+      &lt;li data-part="item" data-value="exit"&gt;Exit&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div id=&quot;file&quot; class=&quot;menu menu-js&quot;&gt;
+  &lt;button data-part=&quot;trigger&quot;&gt;
+    File
+    &lt;span data-part=&quot;indicator&quot;&gt;
+      &lt;svg
+        xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        fill=&quot;none&quot;
+        viewBox=&quot;0 0 24 24&quot;
+        stroke-width=&quot;1.5&quot;
+        stroke=&quot;currentColor&quot;
+      &gt;
+        &lt;path
+          stroke-linecap=&quot;round&quot;
+          stroke-linejoin=&quot;round&quot;
+          d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+        &gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div data-part=&quot;positioner&quot;&gt;
+    &lt;ul data-part=&quot;content&quot;&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;new&quot;&gt;New Document&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;open&quot;&gt;Open&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;save&quot;&gt;Save&lt;/li&gt;
+      &lt;div data-part=&quot;separator&quot;&gt;&lt;/div&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;export&quot;&gt;Export&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;exit&quot;&gt;Exit&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -463,23 +630,17 @@
       </button>
       <div data-part="positioner">
         <div data-part="content">
-          <div data-part="item-group" data-id="layout">
-            <div data-part="item-group-label" data-htmlFor="layout">Layout</div>
-            <li data-part="item" data-value="grid-view" data-id="layout">
-              Grid View
-            </li>
-            <li data-part="item" data-value="list-view">List View</li>
+          <div data-part="item-group">
+            <div data-part="item-group-label">Layout</div>
+            <li data-part="item">Grid View</li>
+            <li data-part="item">List View</li>
           </div>
 
-          <div data-part="item-group" data-id="zoom">
-            <div data-part="item-group-label" data-htmlFor="zoom">Zoom</div>
+          <div data-part="item-group">
+            <div data-part="item-group-label">Zoom</div>
 
-            <li data-part="item" data-value="zoom-in" data-id="zoom">
-              Zoom In
-            </li>
-            <li data-part="item" data-value="zoom-out" data-id="zoom">
-              Zoom Out
-            </li>
+            <li data-part="item">Zoom In</li>
+            <li data-part="item">Zoom Out</li>
           </div>
         </div>
       </div>
@@ -510,19 +671,17 @@
   &lt;/button&gt;
   &lt;div data-part="positioner"&gt;
     &lt;div data-part="content"&gt;
-      &lt;div data-part="item-group" data-id="layout"&gt;
-        &lt;div data-part="item-group-label" data-htmlFor="layout"&gt;Layout&lt;/div&gt;
-        &lt;li data-part="item" data-value="grid-view" data-id="layout"&gt;
-          Grid View
-        &lt;/li&gt;
-        &lt;li data-part="item" data-value="list-view"&gt;List View&lt;/li&gt;
+      &lt;div data-part="item-group"&gt;
+        &lt;div data-part="item-group-label"&gt;Layout&lt;/div&gt;
+        &lt;li data-part="item"&gt;Grid View&lt;/li&gt;
+        &lt;li data-part="item"&gt;List View&lt;/li&gt;
       &lt;/div&gt;
 
-      &lt;div data-part="item-group" data-id="zoom"&gt;
-        &lt;div data-part="item-group-label" data-htmlFor="zoom"&gt;Zoom&lt;/div&gt;
+      &lt;div data-part="item-group"&gt;
+        &lt;div data-part="item-group-label"&gt;Zoom&lt;/div&gt;
 
-        &lt;li data-part="item" data-value="zoom-in" data-id="zoom"&gt;Zoom In&lt;/li&gt;
-        &lt;li data-part="item" data-value="zoom-out" data-id="zoom"&gt;Zoom Out&lt;/li&gt;
+        &lt;li data-part="item"&gt;Zoom In&lt;/li&gt;
+        &lt;li data-part="item"&gt;Zoom Out&lt;/li&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -593,19 +752,17 @@
   &lt;/button&gt;
   &lt;div data-part=&quot;positioner&quot;&gt;
     &lt;div data-part=&quot;content&quot;&gt;
-      &lt;div data-part=&quot;item-group&quot; data-id=&quot;layout&quot;&gt;
-        &lt;div data-part=&quot;item-group-label&quot; data-htmlFor=&quot;layout&quot;&gt;Layout&lt;/div&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;grid-view&quot; data-id=&quot;layout&quot;&gt;
-          Grid View
-        &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;list-view&quot;&gt;List View&lt;/li&gt;
+      &lt;div data-part=&quot;item-group&quot;&gt;
+        &lt;div data-part=&quot;item-group-label&quot;&gt;Layout&lt;/div&gt;
+        &lt;li data-part=&quot;item&quot;&gt;Grid View&lt;/li&gt;
+        &lt;li data-part=&quot;item&quot;&gt;List View&lt;/li&gt;
       &lt;/div&gt;
 
-      &lt;div data-part=&quot;item-group&quot; data-id=&quot;zoom&quot;&gt;
-        &lt;div data-part=&quot;item-group-label&quot; data-htmlFor=&quot;zoom&quot;&gt;Zoom&lt;/div&gt;
+      &lt;div data-part=&quot;item-group&quot;&gt;
+        &lt;div data-part=&quot;item-group-label&quot;&gt;Zoom&lt;/div&gt;
 
-        &lt;li data-part=&quot;item&quot; data-value=&quot;zoom-in&quot; data-id=&quot;zoom&quot;&gt;Zoom In&lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-value=&quot;zoom-out&quot; data-id=&quot;zoom&quot;&gt;Zoom Out&lt;/li&gt;
+        &lt;li data-part=&quot;item&quot;&gt;Zoom In&lt;/li&gt;
+        &lt;li data-part=&quot;item&quot;&gt;Zoom Out&lt;/li&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -627,11 +784,11 @@
   <div class="preview__display">
     <div
       class="menu menu-js"
-      data-children="preferences"
+      data-children="submenu-1"
       data-aria-label="Main Menu"
     >
       <button data-part="trigger">
-        Tools
+        Menu
         <span data-part="indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -650,9 +807,9 @@
       </button>
       <div data-part="positioner">
         <ul data-part="content">
-          <li data-part="trigger-item" data-child="preferences">
-            Preferences
-            <span data-part="indicator" data-child="preferences">
+          <li data-part="trigger-item" data-child="submenu-1">
+            Sub Menu
+            <span data-part="indicator">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -674,16 +831,16 @@
     </div>
 
     <div
-      id="preferences"
+      id="submenu-1"
       class="menu menu-js"
-      data-aria-label="Preferences Menu"
+      data-aria-label="Submenu Menu"
       data-offset-main-axis="5"
       data-placement="right-start"
     >
       <div data-part="positioner">
         <ul data-part="content">
-          <li data-part="item" data-value="general">General</li>
-          <li data-part="item" data-value="appearance">Appearance</li>
+          <li data-part="item" data-value="item-1">Item 1</li>
+          <li data-part="item" data-value="item-2">Item 2</li>
         </ul>
       </div>
     </div>
@@ -692,13 +849,9 @@
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='&lt;div
-  class="menu menu-js"
-  data-children="preferences"
-  data-aria-label="Main Menu"
-&gt;
+      data-default-value='&lt;div class="menu menu-js" data-children="submenu-1" data-aria-label="Main Menu"&gt;
   &lt;button data-part="trigger"&gt;
-    Tools
+    Menu
     &lt;span data-part="indicator"&gt;
       &lt;svg
         xmlns="http://www.w3.org/2000/svg"
@@ -717,9 +870,9 @@
   &lt;/button&gt;
   &lt;div data-part="positioner"&gt;
     &lt;ul data-part="content"&gt;
-      &lt;li data-part="trigger-item" data-child="preferences"&gt;
-        Preferences
-        &lt;span data-part="indicator" data-child="preferences"&gt;
+      &lt;li data-part="trigger-item" data-child="submenu-1"&gt;
+        Sub Menu
+        &lt;span data-part="indicator"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -741,16 +894,16 @@
 &lt;/div&gt;
 
 &lt;div
-  id="preferences"
+  id="submenu-1"
   class="menu menu-js"
-  data-aria-label="Preferences Menu"
+  data-aria-label="Submenu Menu"
   data-offset-main-axis="5"
   data-placement="right-start"
 &gt;
   &lt;div data-part="positioner"&gt;
     &lt;ul data-part="content"&gt;
-      &lt;li data-part="item" data-value="general"&gt;General&lt;/li&gt;
-      &lt;li data-part="item" data-value="appearance"&gt;Appearance&lt;/li&gt;
+      &lt;li data-part="item" data-value="item-1"&gt;Item 1&lt;/li&gt;
+      &lt;li data-part="item" data-value="item-2"&gt;Item 2&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -799,13 +952,9 @@
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="html">&lt;div
-  class=&quot;menu menu-js&quot;
-  data-children=&quot;preferences&quot;
-  data-aria-label=&quot;Main Menu&quot;
-&gt;
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;menu menu-js&quot; data-children=&quot;submenu-1&quot; data-aria-label=&quot;Main Menu&quot;&gt;
   &lt;button data-part=&quot;trigger&quot;&gt;
-    Tools
+    Menu
     &lt;span data-part=&quot;indicator&quot;&gt;
       &lt;svg
         xmlns=&quot;http://www.w3.org/2000/svg&quot;
@@ -824,9 +973,9 @@
   &lt;/button&gt;
   &lt;div data-part=&quot;positioner&quot;&gt;
     &lt;ul data-part=&quot;content&quot;&gt;
-      &lt;li data-part=&quot;trigger-item&quot; data-child=&quot;preferences&quot;&gt;
-        Preferences
-        &lt;span data-part=&quot;indicator&quot; data-child=&quot;preferences&quot;&gt;
+      &lt;li data-part=&quot;trigger-item&quot; data-child=&quot;submenu-1&quot;&gt;
+        Sub Menu
+        &lt;span data-part=&quot;indicator&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -848,16 +997,16 @@
 &lt;/div&gt;
 
 &lt;div
-  id=&quot;preferences&quot;
+  id=&quot;submenu-1&quot;
   class=&quot;menu menu-js&quot;
-  data-aria-label=&quot;Preferences Menu&quot;
+  data-aria-label=&quot;Submenu Menu&quot;
   data-offset-main-axis=&quot;5&quot;
   data-placement=&quot;right-start&quot;
 &gt;
   &lt;div data-part=&quot;positioner&quot;&gt;
     &lt;ul data-part=&quot;content&quot;&gt;
-      &lt;li data-part=&quot;item&quot; data-value=&quot;general&quot;&gt;General&lt;/li&gt;
-      &lt;li data-part=&quot;item&quot; data-value=&quot;appearance&quot;&gt;Appearance&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;Item 1&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;Item 2&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -877,11 +1026,11 @@
   <div class="preview__display">
     <div
       class="menu menu-js"
-      data-children="developer-tools"
+      data-children="submenu-2"
       data-aria-label="Main Menu"
     >
       <button data-part="trigger">
-        Developer
+        Menu
         <span data-part="indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -900,9 +1049,9 @@
       </button>
       <div data-part="positioner">
         <ul data-part="content">
-          <li data-part="trigger-item" data-child="developer-tools">
-            Developer Tools
-            <span data-part="indicator" data-child="developer-tools">
+          <li data-part="trigger-item" data-child="submenu-2">
+            Sub Menu
+            <span data-part="indicator">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -924,20 +1073,20 @@
     </div>
 
     <div
-      id="developer-tools"
+      id="submenu-2"
       class="menu menu-js"
-      data-children="debugging-options"
-      data-aria-label="Developer Tools Menu"
+      data-children="nestedmenu-1"
+      data-aria-label="Sub Menu"
       data-offset-main-axis="5"
       data-placement="right-start"
     >
       <div data-part="positioner">
         <ul data-part="content">
-          <li data-part="item" data-value="console">Console</li>
-          <li data-part="item" data-value="network">Network Tab</li>
-          <li data-part="trigger-item" data-child="debugging-options">
-            Debugging
-            <span data-part="indicator" data-child="debugging-options">
+          <li data-part="item">Item 2</li>
+          <li data-part="item">Item 2</li>
+          <li data-part="trigger-item" data-child="nestedmenu-1">
+            Sub Nested
+            <span data-part="indicator">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -959,16 +1108,16 @@
     </div>
 
     <div
-      id="debugging-options"
+      id="nestedmenu-1"
       class="menu menu-js"
-      data-aria-label="Debugging Options Menu"
+      data-aria-label="Nested Menu"
       data-offset-main-axis="5"
       data-placement="right-start"
     >
       <div data-part="positioner">
         <ul data-part="content">
-          <li data-part="item" data-value="breakpoints">Set Breakpoint</li>
-          <li data-part="item" data-value="step-over">Step Over</li>
+          <li data-part="item">Item 3</li>
+          <li data-part="item">Item 4</li>
         </ul>
       </div>
     </div>
@@ -977,13 +1126,9 @@
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='&lt;div
-  class="menu menu-js"
-  data-children="developer-tools"
-  data-aria-label="Main Menu"
-&gt;
+      data-default-value='&lt;div class="menu menu-js" data-children="submenu-2" data-aria-label="Main Menu"&gt;
   &lt;button data-part="trigger"&gt;
-    Developer
+    Menu
     &lt;span data-part="indicator"&gt;
       &lt;svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1002,9 +1147,9 @@
   &lt;/button&gt;
   &lt;div data-part="positioner"&gt;
     &lt;ul data-part="content"&gt;
-      &lt;li data-part="trigger-item" data-child="developer-tools"&gt;
-        Developer Tools
-        &lt;span data-part="indicator" data-child="developer-tools"&gt;
+      &lt;li data-part="trigger-item" data-child="submenu-2"&gt;
+        Sub Menu
+        &lt;span data-part="indicator"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1026,20 +1171,20 @@
 &lt;/div&gt;
 
 &lt;div
-  id="developer-tools"
+  id="submenu-2"
   class="menu menu-js"
-  data-children="debugging-options"
-  data-aria-label="Developer Tools Menu"
+  data-children="nestedmenu-1"
+  data-aria-label="Sub Menu"
   data-offset-main-axis="5"
   data-placement="right-start"
 &gt;
   &lt;div data-part="positioner"&gt;
     &lt;ul data-part="content"&gt;
-      &lt;li data-part="item" data-value="console"&gt;Console&lt;/li&gt;
-      &lt;li data-part="item" data-value="network"&gt;Network Tab&lt;/li&gt;
-      &lt;li data-part="trigger-item" data-child="debugging-options"&gt;
-        Debugging
-        &lt;span data-part="indicator" data-child="debugging-options"&gt;
+      &lt;li data-part="item"&gt;Item 2&lt;/li&gt;
+      &lt;li data-part="item"&gt;Item 2&lt;/li&gt;
+      &lt;li data-part="trigger-item" data-child="nestedmenu-1"&gt;
+        Sub Nested
+        &lt;span data-part="indicator"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1061,16 +1206,16 @@
 &lt;/div&gt;
 
 &lt;div
-  id="debugging-options"
+  id="nestedmenu-1"
   class="menu menu-js"
-  data-aria-label="Debugging Options Menu"
+  data-aria-label="Nested Menu"
   data-offset-main-axis="5"
   data-placement="right-start"
 &gt;
   &lt;div data-part="positioner"&gt;
     &lt;ul data-part="content"&gt;
-      &lt;li data-part="item" data-value="breakpoints"&gt;Set Breakpoint&lt;/li&gt;
-      &lt;li data-part="item" data-value="step-over"&gt;Step Over&lt;/li&gt;
+      &lt;li data-part="item"&gt;Item 3&lt;/li&gt;
+      &lt;li data-part="item"&gt;Item 4&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1119,13 +1264,9 @@
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="html">&lt;div
-  class=&quot;menu menu-js&quot;
-  data-children=&quot;developer-tools&quot;
-  data-aria-label=&quot;Main Menu&quot;
-&gt;
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;menu menu-js&quot; data-children=&quot;submenu-2&quot; data-aria-label=&quot;Main Menu&quot;&gt;
   &lt;button data-part=&quot;trigger&quot;&gt;
-    Developer
+    Menu
     &lt;span data-part=&quot;indicator&quot;&gt;
       &lt;svg
         xmlns=&quot;http://www.w3.org/2000/svg&quot;
@@ -1144,9 +1285,9 @@
   &lt;/button&gt;
   &lt;div data-part=&quot;positioner&quot;&gt;
     &lt;ul data-part=&quot;content&quot;&gt;
-      &lt;li data-part=&quot;trigger-item&quot; data-child=&quot;developer-tools&quot;&gt;
-        Developer Tools
-        &lt;span data-part=&quot;indicator&quot; data-child=&quot;developer-tools&quot;&gt;
+      &lt;li data-part=&quot;trigger-item&quot; data-child=&quot;submenu-2&quot;&gt;
+        Sub Menu
+        &lt;span data-part=&quot;indicator&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -1168,20 +1309,20 @@
 &lt;/div&gt;
 
 &lt;div
-  id=&quot;developer-tools&quot;
+  id=&quot;submenu-2&quot;
   class=&quot;menu menu-js&quot;
-  data-children=&quot;debugging-options&quot;
-  data-aria-label=&quot;Developer Tools Menu&quot;
+  data-children=&quot;nestedmenu-1&quot;
+  data-aria-label=&quot;Sub Menu&quot;
   data-offset-main-axis=&quot;5&quot;
   data-placement=&quot;right-start&quot;
 &gt;
   &lt;div data-part=&quot;positioner&quot;&gt;
     &lt;ul data-part=&quot;content&quot;&gt;
-      &lt;li data-part=&quot;item&quot; data-value=&quot;console&quot;&gt;Console&lt;/li&gt;
-      &lt;li data-part=&quot;item&quot; data-value=&quot;network&quot;&gt;Network Tab&lt;/li&gt;
-      &lt;li data-part=&quot;trigger-item&quot; data-child=&quot;debugging-options&quot;&gt;
-        Debugging
-        &lt;span data-part=&quot;indicator&quot; data-child=&quot;debugging-options&quot;&gt;
+      &lt;li data-part=&quot;item&quot;&gt;Item 2&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot;&gt;Item 2&lt;/li&gt;
+      &lt;li data-part=&quot;trigger-item&quot; data-child=&quot;nestedmenu-1&quot;&gt;
+        Sub Nested
+        &lt;span data-part=&quot;indicator&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -1203,16 +1344,16 @@
 &lt;/div&gt;
 
 &lt;div
-  id=&quot;debugging-options&quot;
+  id=&quot;nestedmenu-1&quot;
   class=&quot;menu menu-js&quot;
-  data-aria-label=&quot;Debugging Options Menu&quot;
+  data-aria-label=&quot;Nested Menu&quot;
   data-offset-main-axis=&quot;5&quot;
   data-placement=&quot;right-start&quot;
 &gt;
   &lt;div data-part=&quot;positioner&quot;&gt;
     &lt;ul data-part=&quot;content&quot;&gt;
-      &lt;li data-part=&quot;item&quot; data-value=&quot;breakpoints&quot;&gt;Set Breakpoint&lt;/li&gt;
-      &lt;li data-part=&quot;item&quot; data-value=&quot;step-over&quot;&gt;Step Over&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot;&gt;Item 3&lt;/li&gt;
+      &lt;li data-part=&quot;item&quot;&gt;Item 4&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1333,16 +1474,15 @@
       </div>
       <div data-part="positioner">
         <div data-part="content">
-          <div data-part="item-group-label" data-htmlFor="format">Format</div>
           <div data-part="item-group" data-id="format">
-            <div data-part="item-group-label" data-htmlFor="format">Format</div>
+            <div data-part="item-group-label" data-id="format">Format</div>
 
             <li data-part="item" data-value="bold">Bold</li>
             <li data-part="item" data-value="italic">Italic</li>
           </div>
           <div data-part="separator"></div>
           <div data-part="item-group" data-id="align">
-            <div data-part="item-group-label" data-htmlFor="align">Align</div>
+            <div data-part="item-group-label" data-id="align">Align</div>
 
             <li data-part="item" data-value="align-left">Align Left</li>
             <li data-part="item" data-value="align-center">Align Center</li>
@@ -1361,16 +1501,15 @@
   &lt;/div&gt;
   &lt;div data-part="positioner"&gt;
     &lt;div data-part="content"&gt;
-      &lt;div data-part="item-group-label" data-htmlFor="format"&gt;Format&lt;/div&gt;
       &lt;div data-part="item-group" data-id="format"&gt;
-        &lt;div data-part="item-group-label" data-htmlFor="format"&gt;Format&lt;/div&gt;
+        &lt;div data-part="item-group-label" data-id="format"&gt;Format&lt;/div&gt;
 
         &lt;li data-part="item" data-value="bold"&gt;Bold&lt;/li&gt;
         &lt;li data-part="item" data-value="italic"&gt;Italic&lt;/li&gt;
       &lt;/div&gt;
       &lt;div data-part="separator"&gt;&lt;/div&gt;
       &lt;div data-part="item-group" data-id="align"&gt;
-        &lt;div data-part="item-group-label" data-htmlFor="align"&gt;Align&lt;/div&gt;
+        &lt;div data-part="item-group-label" data-id="align"&gt;Align&lt;/div&gt;
 
         &lt;li data-part="item" data-value="align-left"&gt;Align Left&lt;/li&gt;
         &lt;li data-part="item" data-value="align-center"&gt;Align Center&lt;/li&gt;
@@ -1429,16 +1568,15 @@
   &lt;/div&gt;
   &lt;div data-part=&quot;positioner&quot;&gt;
     &lt;div data-part=&quot;content&quot;&gt;
-      &lt;div data-part=&quot;item-group-label&quot; data-htmlFor=&quot;format&quot;&gt;Format&lt;/div&gt;
       &lt;div data-part=&quot;item-group&quot; data-id=&quot;format&quot;&gt;
-        &lt;div data-part=&quot;item-group-label&quot; data-htmlFor=&quot;format&quot;&gt;Format&lt;/div&gt;
+        &lt;div data-part=&quot;item-group-label&quot; data-id=&quot;format&quot;&gt;Format&lt;/div&gt;
 
         &lt;li data-part=&quot;item&quot; data-value=&quot;bold&quot;&gt;Bold&lt;/li&gt;
         &lt;li data-part=&quot;item&quot; data-value=&quot;italic&quot;&gt;Italic&lt;/li&gt;
       &lt;/div&gt;
       &lt;div data-part=&quot;separator&quot;&gt;&lt;/div&gt;
       &lt;div data-part=&quot;item-group&quot; data-id=&quot;align&quot;&gt;
-        &lt;div data-part=&quot;item-group-label&quot; data-htmlFor=&quot;align&quot;&gt;Align&lt;/div&gt;
+        &lt;div data-part=&quot;item-group-label&quot; data-id=&quot;align&quot;&gt;Align&lt;/div&gt;
 
         &lt;li data-part=&quot;item&quot; data-value=&quot;align-left&quot;&gt;Align Left&lt;/li&gt;
         &lt;li data-part=&quot;item&quot; data-value=&quot;align-center&quot;&gt;Align Center&lt;/li&gt;
