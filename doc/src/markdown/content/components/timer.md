@@ -424,7 +424,7 @@ Description: Event name to be sent when the timer ticks.
 
 ## Modifiers
 
-timers support modifier classes that control their appearance.  
+Timer support modifier classes that control their appearance.  
 You can combine multiple modifiers on the same timer.
 
 The default modifier is applied automatically, so you don’t need to include it explicitly.
