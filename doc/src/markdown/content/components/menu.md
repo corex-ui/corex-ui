@@ -26,6 +26,8 @@ The Menu component consists of the following data parts:
 
 `trigger`, `context-trigger`, `indicator`, `positioner`, `content`, `separator`, `item`, `item-group`, `item-group-label`
 
+An optional `data-value` and can be added to each `data-part="item"`, this is useful when using the API or setting default values.
+
 ```html
 <!-- render:preview -->
 <div class="menu menu-js">
@@ -49,12 +51,12 @@ The Menu component consists of the following data parts:
   </button>
   <div data-part="positioner">
     <ul data-part="content">
-      <li data-part="item" data-value="new">New Document</li>
-      <li data-part="item" data-value="open">Open</li>
-      <li data-part="item" data-value="save">Save</li>
+      <li data-part="item">New Document</li>
+      <li data-part="item">Open</li>
+      <li data-part="item">Save</li>
       <div data-part="separator"></div>
-      <li data-part="item" data-value="export">Export</li>
-      <li data-part="item" data-value="exit">Exit</li>
+      <li data-part="item">Export</li>
+      <li data-part="item">Exit</li>
     </ul>
   </div>
 </div>
@@ -122,9 +124,51 @@ You can initialize the Menu component by embedding your JSON data directly in yo
 
 ```html
 <!-- render:preview -->
-<div id="menu" class="menu menu-js" data-json="menu-data">
+<div id="menu" class="menu menu-js justify-items-start" data-json="menu-data">
   <div data-part="positioner">
     <ul data-part="content"></ul>
+  </div>
+</div>
+```
+
+---
+
+## Custom values
+
+The Menu items and groups can use custom values and ids, this is useful when using the API or setting default values.
+
+`data-value` can be added to each `data-part="item"`
+
+```html
+<!-- render:preview -->
+<div id="file" class="menu menu-js">
+  <button data-part="trigger">
+    File
+    <span data-part="indicator">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        ></path>
+      </svg>
+    </span>
+  </button>
+  <div data-part="positioner">
+    <ul data-part="content">
+      <li data-part="item" data-value="new">New Document</li>
+      <li data-part="item" data-value="open">Open</li>
+      <li data-part="item" data-value="save">Save</li>
+      <div data-part="separator"></div>
+      <li data-part="item" data-value="export">Export</li>
+      <li data-part="item" data-value="exit">Exit</li>
+    </ul>
   </div>
 </div>
 ```
@@ -160,19 +204,17 @@ Please note you must provide and `data-id` to `item-group` and `data-htmlFor` to
   </button>
   <div data-part="positioner">
     <div data-part="content">
-      <div data-part="item-group" data-id="layout">
-        <div data-part="item-group-label" data-htmlFor="layout">Layout</div>
-        <li data-part="item" data-value="grid-view" data-id="layout">
-          Grid View
-        </li>
-        <li data-part="item" data-value="list-view">List View</li>
+      <div data-part="item-group">
+        <div data-part="item-group-label">Layout</div>
+        <li data-part="item">Grid View</li>
+        <li data-part="item">List View</li>
       </div>
 
-      <div data-part="item-group" data-id="zoom">
-        <div data-part="item-group-label" data-htmlFor="zoom">Zoom</div>
+      <div data-part="item-group">
+        <div data-part="item-group-label">Zoom</div>
 
-        <li data-part="item" data-value="zoom-in" data-id="zoom">Zoom In</li>
-        <li data-part="item" data-value="zoom-out" data-id="zoom">Zoom Out</li>
+        <li data-part="item">Zoom In</li>
+        <li data-part="item">Zoom Out</li>
       </div>
     </div>
   </div>
@@ -187,13 +229,9 @@ The Menus can be nested with `data-children` on the parent menu and `data-child`
 
 ```html
 <!-- render:preview -->
-<div
-  class="menu menu-js"
-  data-children="preferences"
-  data-aria-label="Main Menu"
->
+<div class="menu menu-js" data-children="submenu-1" data-aria-label="Main Menu">
   <button data-part="trigger">
-    Tools
+    Menu
     <span data-part="indicator">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -212,9 +250,9 @@ The Menus can be nested with `data-children` on the parent menu and `data-child`
   </button>
   <div data-part="positioner">
     <ul data-part="content">
-      <li data-part="trigger-item" data-child="preferences">
-        Preferences
-        <span data-part="indicator" data-child="preferences">
+      <li data-part="trigger-item" data-child="submenu-1">
+        Sub Menu
+        <span data-part="indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -236,16 +274,16 @@ The Menus can be nested with `data-children` on the parent menu and `data-child`
 </div>
 
 <div
-  id="preferences"
+  id="submenu-1"
   class="menu menu-js"
-  data-aria-label="Preferences Menu"
+  data-aria-label="Submenu Menu"
   data-offset-main-axis="5"
   data-placement="right-start"
 >
   <div data-part="positioner">
     <ul data-part="content">
-      <li data-part="item" data-value="general">General</li>
-      <li data-part="item" data-value="appearance">Appearance</li>
+      <li data-part="item" data-value="item-1">Item 1</li>
+      <li data-part="item" data-value="item-2">Item 2</li>
     </ul>
   </div>
 </div>
@@ -259,13 +297,9 @@ You can nest as many menus, please note that you must provide unique ids for eac
 
 ```html
 <!-- render:preview -->
-<div
-  class="menu menu-js"
-  data-children="developer-tools"
-  data-aria-label="Main Menu"
->
+<div class="menu menu-js" data-children="submenu-2" data-aria-label="Main Menu">
   <button data-part="trigger">
-    Developer
+    Menu
     <span data-part="indicator">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -284,9 +318,9 @@ You can nest as many menus, please note that you must provide unique ids for eac
   </button>
   <div data-part="positioner">
     <ul data-part="content">
-      <li data-part="trigger-item" data-child="developer-tools">
-        Developer Tools
-        <span data-part="indicator" data-child="developer-tools">
+      <li data-part="trigger-item" data-child="submenu-2">
+        Sub Menu
+        <span data-part="indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -308,20 +342,20 @@ You can nest as many menus, please note that you must provide unique ids for eac
 </div>
 
 <div
-  id="developer-tools"
+  id="submenu-2"
   class="menu menu-js"
-  data-children="debugging-options"
-  data-aria-label="Developer Tools Menu"
+  data-children="nestedmenu-1"
+  data-aria-label="Sub Menu"
   data-offset-main-axis="5"
   data-placement="right-start"
 >
   <div data-part="positioner">
     <ul data-part="content">
-      <li data-part="item" data-value="console">Console</li>
-      <li data-part="item" data-value="network">Network Tab</li>
-      <li data-part="trigger-item" data-child="debugging-options">
-        Debugging
-        <span data-part="indicator" data-child="debugging-options">
+      <li data-part="item">Item 2</li>
+      <li data-part="item">Item 2</li>
+      <li data-part="trigger-item" data-child="nestedmenu-1">
+        Sub Nested
+        <span data-part="indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -343,16 +377,16 @@ You can nest as many menus, please note that you must provide unique ids for eac
 </div>
 
 <div
-  id="debugging-options"
+  id="nestedmenu-1"
   class="menu menu-js"
-  data-aria-label="Debugging Options Menu"
+  data-aria-label="Nested Menu"
   data-offset-main-axis="5"
   data-placement="right-start"
 >
   <div data-part="positioner">
     <ul data-part="content">
-      <li data-part="item" data-value="breakpoints">Set Breakpoint</li>
-      <li data-part="item" data-value="step-over">Step Over</li>
+      <li data-part="item">Item 3</li>
+      <li data-part="item">Item 4</li>
     </ul>
   </div>
 </div>
@@ -391,16 +425,15 @@ An accessible dropdown and context menu that is used to display a list of action
   </div>
   <div data-part="positioner">
     <div data-part="content">
-      <div data-part="item-group-label" data-htmlFor="format">Format</div>
       <div data-part="item-group" data-id="format">
-        <div data-part="item-group-label" data-htmlFor="format">Format</div>
+        <div data-part="item-group-label" data-id="format">Format</div>
 
         <li data-part="item" data-value="bold">Bold</li>
         <li data-part="item" data-value="italic">Italic</li>
       </div>
       <div data-part="separator"></div>
       <div data-part="item-group" data-id="align">
-        <div data-part="item-group-label" data-htmlFor="align">Align</div>
+        <div data-part="item-group-label" data-id="align">Align</div>
 
         <li data-part="item" data-value="align-left">Align Left</li>
         <li data-part="item" data-value="align-center">Align Center</li>
@@ -663,7 +696,7 @@ Description: Event name to be sent to navigate to the selected item if it's an a
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Menu component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/menu";
@@ -673,19 +706,12 @@ This will automatically initialize all elements with `class="menu-js"` and add t
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/menu.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="menu menu-js">
-  <button data-part="trigger">File</button>
-  <div data-part="positioner">
-    <ul data-part="content"></ul>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `menu` class.

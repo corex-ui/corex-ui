@@ -514,14 +514,12 @@ Available options:
 
 ## Installation
 
+First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/icon.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<svg class="icon" aria-hidden="true" viewBox="0 0 24 24">...</svg>
-```
+These styles will be applied to all elements with the `icon` class.

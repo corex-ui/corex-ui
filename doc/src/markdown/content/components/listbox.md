@@ -26,15 +26,17 @@ The Listbox component consists of the following data parts:
 
 `root`, `label`, `content`, `item-group`, `item-group-label`, `item`, `item-text`, `item-indicator`
 
+An optional `data-value` and `data-label` can be added to each `data-part="item"`, this is useful when using the API or setting default values.
+
 ```html
 <!-- render:preview -->
 <div class="listbox listbox-js">
   <div data-part="root">
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
-      <div data-part="item" data-value="a">
-        <span data-part="item-text" data-value="a"> Item A </span>
-        <span data-part="item-indicator" data-value="a">
+      <div data-part="item">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -50,9 +52,9 @@ The Listbox component consists of the following data parts:
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="b">
-        <span data-part="item-text" data-value="b"> Item B </span>
-        <span data-part="item-indicator" data-value="b">
+      <div data-part="item">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -68,9 +70,9 @@ The Listbox component consists of the following data parts:
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="c">
-        <span data-part="item-text" data-value="c"> Item C </span>
-        <span data-part="item-indicator" data-value="c">
+      <div data-part="item">
+        <span data-part="item-text"> Item C </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -86,9 +88,9 @@ The Listbox component consists of the following data parts:
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="d">
-        <span data-part="item-text" data-value="d"> Item D </span>
-        <span data-part="item-indicator" data-value="d">
+      <div data-part="item">
+        <span data-part="item-text"> Item D </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -115,30 +117,27 @@ Another example without `item-indicator` and additional image
 <!-- render:preview -->
 <div class="listbox listbox-js">
   <div data-part="root">
-    <div data-part="label">
-      Choose your <br />
-      favorite technology
-    </div>
+    <div data-part="label">Your favorite</div>
     <div data-part="content">
-      <div data-part="item" data-value="vite">
+      <div data-part="item">
         <img src="/images/tech/vite.svg" alt="Vite" />
-        <span data-part="item-text" data-value="vite"> Vite </span>
+        <span data-part="item-text"> Vite </span>
       </div>
-      <div data-part="item" data-value="html5">
+      <div data-part="item">
         <img src="/images/tech/html5.svg" alt="HTML" />
-        <span data-part="item-text" data-value="html5"> HTML </span>
+        <span data-part="item-text"> HTML </span>
       </div>
-      <div data-part="item" data-value="typescript">
+      <div data-part="item">
         <img src="/images/tech/typescript.svg" alt="Typescript" />
-        <span data-part="item-text" data-value="typescript"> Typescript </span>
+        <span data-part="item-text"> Typescript </span>
       </div>
-      <div data-part="item" data-value="css">
+      <div data-part="item">
         <img src="/images/tech/css.svg" alt="CSS" />
-        <span data-part="item-text" data-value="css"> CSS </span>
+        <span data-part="item-text"> CSS </span>
       </div>
-      <div data-part="item" data-value="tailwind">
+      <div data-part="item">
         <img src="/images/tech/tailwind.svg" alt="Tailwind" />
-        <span data-part="item-text" data-value="tailwind"> Tailwind </span>
+        <span data-part="item-text"> Tailwind </span>
       </div>
     </div>
   </div>
@@ -153,33 +152,45 @@ You can initialize the Listbox component by embedding your JSON data directly in
 
 ```html
 <script type="application/json" data-listbox="my-listbox">
-  [
-    {
-      "value": "apple",
-      "label": "Apple",
-      "group": "Fruits"
-    },
-    {
-      "value": "banana",
-      "label": "Banana",
-      "group": "Fruits"
-    },
-    {
-      "value": "carrot",
-      "label": "Carrot",
-      "group": "Vegetables"
-    },
-    {
-      "value": "broccoli",
-      "label": "Broccoli",
-      "group": "Vegetables",
-      "disabled": true
-    },
-    {
-      "value": "water",
-      "label": "Water"
-    }
-  ]
+  {
+    "id": "my-listobox",
+    "name": "My Listbox",
+    "children": [
+      {
+        "id": "group-1",
+        "name": "Group 1",
+        "children": [
+          {
+            "id": "item-1",
+            "name": "Item 1"
+          },
+          {
+            "id": "item-2",
+            "name": "Item 2"
+          },
+          {
+            "id": "item-3",
+            "name": "Item 3",
+            "disabled": true
+          }
+        ]
+      },
+      {
+        "id": "group-2",
+        "name": "Group 2",
+        "children": [
+          {
+            "id": "item-4",
+            "name": "Item 4"
+          },
+          {
+            "id": "item-5",
+            "name": "Item 5"
+          }
+        ]
+      }
+    ]
+  }
 </script>
 ```
 
@@ -187,7 +198,7 @@ You can initialize the Listbox component by embedding your JSON data directly in
 <!-- render:preview -->
 <div class="listbox listbox-js" data-json="my-listbox">
   <div data-part="root">
-    <div data-part="label">Your dessert</div>
+    <div data-part="label">Listbox Label</div>
     <div data-part="content"></div>
   </div>
 </div>
@@ -195,11 +206,12 @@ You can initialize the Listbox component by embedding your JSON data directly in
 
 ---
 
-## Group items
+## Custom values
 
-The Listbox items can be grouped with a label to identify each group
+The Listbox items and groups can use custom values and ids, this is useful when using the API or setting default values.
 
-Please note you must provide a unique `data-id` to the `item-group` and `item-group-label`
+`data-value` and `data-label` can be added to each `data-part="item"`
+`data-id` can be added to each `data-part="item-group"` and `item-group-label`
 
 ```html
 <!-- render:preview -->
@@ -208,10 +220,11 @@ Please note you must provide a unique `data-id` to the `item-group` and `item-gr
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
       <div data-part="item-group-label" data-id="group-1">Group Label</div>
+
       <div data-part="item-group" data-id="group-1">
-        <div data-part="item" data-value="a">
-          <span data-part="item-text" data-value="a"> Item A </span>
-          <span data-part="item-indicator" data-value="a">
+        <div data-part="item" data-value="item-a" data-label="Item A">
+          <span data-part="item-text"> Item A </span>
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -227,9 +240,110 @@ Please note you must provide a unique `data-id` to the `item-group` and `item-gr
             </svg>
           </span>
         </div>
-        <div data-part="item" data-value="b">
-          <span data-part="item-text" data-value="b"> Item B </span>
-          <span data-part="item-indicator" data-value="b">
+        <div data-part="item" data-value="item-b" data-label="Item B">
+          <span data-part="item-text"> Item B </span>
+          <span data-part="item-indicator">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div data-part="item-group-label" data-id="group-2">Group Label</div>
+
+      <div data-part="item-group" data-id="group-2">
+        <div data-part="item" data-value="item-c" data-label="Item C">
+          <span data-part="item-text"> Item C </span>
+          <span data-part="item-indicator">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div data-part="item" data-value="item-d" data-label="Item D">
+          <span data-part="item-text"> Item D </span>
+          <span data-part="item-indicator">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Group items
+
+The Listbox items can be grouped with a label to identify each group
+
+An optional `data-id` can be added to each `data-part="item-group"` and `data-part="item-group-label"`, this is useful when using the API or setting default values.
+
+To use the `data-part="item-group-label"` outside of the group, useful for styling, you must provide the same `data-id` for the group and label.
+
+```html
+<!-- render:preview -->
+<div class="listbox listbox-js">
+  <div data-part="root">
+    <div data-part="label">Listbox Label</div>
+    <div data-part="content">
+      <div data-part="item-group-label" data-id="group-1">Group Label</div>
+      <div data-part="item-group" data-id="group-1">
+        <div data-part="item">
+          <span data-part="item-text"> Item A </span>
+          <span data-part="item-indicator">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div data-part="item">
+          <span data-part="item-text"> Item B </span>
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -249,9 +363,9 @@ Please note you must provide a unique `data-id` to the `item-group` and `item-gr
 
       <div data-part="item-group-label" data-id="group-2">Group Label</div>
       <div data-part="item-group" data-id="group-2">
-        <div data-part="item" data-value="c">
-          <span data-part="item-text" data-value="c"> Item C </span>
-          <span data-part="item-indicator" data-value="c">
+        <div data-part="item">
+          <span data-part="item-text"> Item C </span>
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -267,11 +381,9 @@ Please note you must provide a unique `data-id` to the `item-group` and `item-gr
             </svg>
           </span>
         </div>
-        <div data-part="item" data-value="d" data-label="item-d">
-          <span data-part="item-text" data-value="d" data-label="item-d">
-            Item D
-          </span>
-          <span data-part="item-indicator" data-value="d" data-label="item-d">
+        <div data-part="item">
+          <span data-part="item-text"> Item D </span>
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -312,9 +424,9 @@ You can use without or without `item-group`
   <div data-part="root">
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
-      <div data-part="item" data-value="a">
-        <span data-part="item-text" data-value="a"> Item A </span>
-        <span data-part="item-indicator" data-value="a">
+      <div data-part="item">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -330,9 +442,9 @@ You can use without or without `item-group`
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="b">
-        <span data-part="item-text" data-value="b"> Item B </span>
-        <span data-part="item-indicator" data-value="b">
+      <div data-part="item">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -348,9 +460,9 @@ You can use without or without `item-group`
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="c">
-        <span data-part="item-text" data-value="c"> Item C </span>
-        <span data-part="item-indicator" data-value="c">
+      <div data-part="item">
+        <span data-part="item-text"> Item C </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -366,9 +478,9 @@ You can use without or without `item-group`
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="d">
-        <span data-part="item-text" data-value="d"> Item D </span>
-        <span data-part="item-indicator" data-value="d">
+      <div data-part="item">
+        <span data-part="item-text"> Item D </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -397,11 +509,12 @@ You can use without or without `item-group`
   <div data-part="root">
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
-      <div data-part="item-group-label" data-id="group-1">Group Label</div>
-      <div data-part="item-group" data-id="group-1">
-        <div data-part="item" data-value="a">
-          <span data-part="item-text" data-value="a"> Item A </span>
-          <span data-part="item-indicator" data-value="a">
+      <div data-part="item-group-label">Group Label</div>
+
+      <div data-part="item-group">
+        <div data-part="item">
+          <span data-part="item-text"> Item A </span>
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -417,9 +530,9 @@ You can use without or without `item-group`
             </svg>
           </span>
         </div>
-        <div data-part="item" data-value="b">
-          <span data-part="item-text" data-value="b"> Item B </span>
-          <span data-part="item-indicator" data-value="b">
+        <div data-part="item">
+          <span data-part="item-text"> Item B </span>
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -436,11 +549,12 @@ You can use without or without `item-group`
           </span>
         </div>
       </div>
-      <div data-part="item-group-label" data-id="group-2">Group Label</div>
-      <div data-part="item-group" data-id="group-2">
-        <div data-part="item" data-value="c">
-          <span data-part="item-text" data-value="c"> Item C </span>
-          <span data-part="item-indicator" data-value="c">
+      <div data-part="item-group-label">Group Label</div>
+
+      <div data-part="item-group">
+        <div data-part="item">
+          <span data-part="item-text"> Item C </span>
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -456,11 +570,9 @@ You can use without or without `item-group`
             </svg>
           </span>
         </div>
-        <div data-part="item" data-value="d" data-label="item-d">
-          <span data-part="item-text" data-value="d" data-label="item-d">
-            Item D
-          </span>
-          <span data-part="item-indicator" data-value="d" data-label="item-d">
+        <div data-part="item">
+          <span data-part="item-text"> Item D </span>
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -509,8 +621,8 @@ Each listbox can be set with different settings with the following data-attribut
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
       <div data-part="item" data-value="a">
-        <span data-part="item-text" data-value="a"> Item A </span>
-        <span data-part="item-indicator" data-value="a">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -527,8 +639,8 @@ Each listbox can be set with different settings with the following data-attribut
         </span>
       </div>
       <div data-part="item" data-value="b">
-        <span data-part="item-text" data-value="b"> Item B </span>
-        <span data-part="item-indicator" data-value="b">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -545,8 +657,8 @@ Each listbox can be set with different settings with the following data-attribut
         </span>
       </div>
       <div data-part="item" data-value="c">
-        <span data-part="item-text" data-value="c"> Item C </span>
-        <span data-part="item-indicator" data-value="c">
+        <span data-part="item-text"> Item C </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -563,8 +675,8 @@ Each listbox can be set with different settings with the following data-attribut
         </span>
       </div>
       <div data-part="item" data-value="d">
-        <span data-part="item-text" data-value="d"> Item D </span>
-        <span data-part="item-indicator" data-value="d">
+        <span data-part="item-text"> Item D </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -664,8 +776,8 @@ document
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
       <div data-part="item" data-value="a">
-        <span data-part="item-text" data-value="a"> Item A </span>
-        <span data-part="item-indicator" data-value="a">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -682,8 +794,8 @@ document
         </span>
       </div>
       <div data-part="item" data-value="b">
-        <span data-part="item-text" data-value="b"> Item B </span>
-        <span data-part="item-indicator" data-value="b">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -700,8 +812,8 @@ document
         </span>
       </div>
       <div data-part="item" data-value="c">
-        <span data-part="item-text" data-value="c"> Item C </span>
-        <span data-part="item-indicator" data-value="c">
+        <span data-part="item-text"> Item C </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -718,8 +830,8 @@ document
         </span>
       </div>
       <div data-part="item" data-value="d">
-        <span data-part="item-text" data-value="d"> Item D </span>
-        <span data-part="item-indicator" data-value="d">
+        <span data-part="item-text"> Item D </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -769,8 +881,8 @@ RTL support for listbox
       <div data-part="item-group-label" data-id="group-1">Group Label</div>
       <div data-part="item-group" data-id="group-1">
         <div data-part="item" data-value="a">
-          <span data-part="item-text" data-value="a"> Item A </span>
-          <span data-part="item-indicator" data-value="a">
+          <span data-part="item-text"> Item A </span>
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -787,8 +899,8 @@ RTL support for listbox
           </span>
         </div>
         <div data-part="item" data-value="b">
-          <span data-part="item-text" data-value="b"> Item B </span>
-          <span data-part="item-indicator" data-value="b">
+          <span data-part="item-text"> Item B </span>
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -808,8 +920,8 @@ RTL support for listbox
       <div data-part="item-group-label" data-id="group-2">Group Label</div>
       <div data-part="item-group" data-id="group-2">
         <div data-part="item" data-value="c">
-          <span data-part="item-text" data-value="c"> Item C </span>
-          <span data-part="item-indicator" data-value="c">
+          <span data-part="item-text"> Item C </span>
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -826,10 +938,8 @@ RTL support for listbox
           </span>
         </div>
         <div data-part="item" data-value="d" data-label="item-d">
-          <span data-part="item-text" data-value="d" data-label="item-d">
-            Item D
-          </span>
-          <span data-part="item-indicator" data-value="d" data-label="item-d">
+          <span data-part="item-text" data-label="item-d"> Item D </span>
+          <span data-part="item-indicator" data-label="item-d">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -862,13 +972,13 @@ Each listbox can be disabled either globally or per item.
 
 ```html
 <!-- render:preview -->
-<div class="listbox listbox-js" data-disabled="true">
+<div class="listbox listbox-js" data-disabled>
   <div data-part="root">
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
       <div data-part="item" data-value="a">
-        <span data-part="item-text" data-value="a"> Item A </span>
-        <span data-part="item-indicator" data-value="a">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -885,8 +995,8 @@ Each listbox can be disabled either globally or per item.
         </span>
       </div>
       <div data-part="item" data-value="b">
-        <span data-part="item-text" data-value="b"> Item B </span>
-        <span data-part="item-indicator" data-value="b">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -903,8 +1013,8 @@ Each listbox can be disabled either globally or per item.
         </span>
       </div>
       <div data-part="item" data-value="c">
-        <span data-part="item-text" data-value="c"> Item C </span>
-        <span data-part="item-indicator" data-value="c">
+        <span data-part="item-text"> Item C </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -921,8 +1031,8 @@ Each listbox can be disabled either globally or per item.
         </span>
       </div>
       <div data-part="item" data-value="d">
-        <span data-part="item-text" data-value="d"> Item D </span>
-        <span data-part="item-indicator" data-value="d">
+        <span data-part="item-text"> Item D </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -946,11 +1056,9 @@ Each listbox can be disabled either globally or per item.
   <div data-part="root">
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
-      <div data-part="item" data-value="a" data-disabled="true">
-        <span data-part="item-text" data-value="a" data-disabled="true">
-          Item A
-        </span>
-        <span data-part="item-indicator" data-value="a" data-disabled="true">
+      <div data-part="item" data-value="a" data-disabled>
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -967,8 +1075,8 @@ Each listbox can be disabled either globally or per item.
         </span>
       </div>
       <div data-part="item" data-value="b">
-        <span data-part="item-text" data-value="b"> Item B </span>
-        <span data-part="item-indicator" data-value="b">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -984,11 +1092,9 @@ Each listbox can be disabled either globally or per item.
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="c" data-disabled="true">
-        <span data-part="item-text" data-value="c" data-disabled="true">
-          Item C
-        </span>
-        <span data-part="item-indicator" data-value="c" data-disabled="true">
+      <div data-part="item" data-value="c" data-disabled>
+        <span data-part="item-text"> Item C </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1005,8 +1111,8 @@ Each listbox can be disabled either globally or per item.
         </span>
       </div>
       <div data-part="item" data-value="d">
-        <span data-part="item-text" data-value="d"> Item D </span>
-        <span data-part="item-indicator" data-value="d">
+        <span data-part="item-text"> Item D </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1052,13 +1158,13 @@ Available options:
 
 ```html
 <!-- render:preview -->
-<div class="listbox listbox-js listbox--alert">
+<div class="listbox listbox-js listbox--accent" data-default-value="item-a">
   <div data-part="root">
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
-      <div data-part="item" data-value="a">
-        <span data-part="item-text" data-value="a"> Item A </span>
-        <span data-part="item-indicator" data-value="a">
+      <div data-part="item" data-value="item-a">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1074,9 +1180,9 @@ Available options:
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="b">
-        <span data-part="item-text" data-value="b"> Item B </span>
-        <span data-part="item-indicator" data-value="b">
+      <div data-part="item">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1092,9 +1198,9 @@ Available options:
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="c">
-        <span data-part="item-text" data-value="c"> Item C </span>
-        <span data-part="item-indicator" data-value="c">
+      <div data-part="item">
+        <span data-part="item-text"> Item C </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1110,9 +1216,325 @@ Available options:
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="d">
-        <span data-part="item-text" data-value="d"> Item D </span>
-        <span data-part="item-indicator" data-value="d">
+      <div data-part="item">
+        <span data-part="item-text"> Item D </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="listbox listbox-js listbox--brand" data-default-value="item-a">
+  <div data-part="root">
+    <div data-part="label">Listbox Label</div>
+    <div data-part="content">
+      <div data-part="item" data-value="item-a">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item C </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item D </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="listbox listbox-js listbox--alert" data-default-value="item-a">
+  <div data-part="root">
+    <div data-part="label">Listbox Label</div>
+    <div data-part="content">
+      <div data-part="item" data-value="item-a">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item C </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item D </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="listbox listbox-js listbox--info" data-default-value="item-a">
+  <div data-part="root">
+    <div data-part="label">Listbox Label</div>
+    <div data-part="content">
+      <div data-part="item" data-value="item-a">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item C </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item D </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="listbox listbox-js listbox--success" data-default-value="item-a">
+  <div data-part="root">
+    <div data-part="label">Listbox Label</div>
+    <div data-part="content">
+      <div data-part="item" data-value="item-a">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item C </span>
+        <span data-part="item-indicator">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 12.75 6 6 9-13.5"
+            />
+          </svg>
+        </span>
+      </div>
+      <div data-part="item">
+        <span data-part="item-text"> Item D </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1148,9 +1570,9 @@ Available options:
   <div data-part="root">
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
-      <div data-part="item" data-value="a">
-        <span data-part="item-text" data-value="a"> Item A </span>
-        <span data-part="item-indicator" data-value="a">
+      <div data-part="item">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1166,9 +1588,9 @@ Available options:
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="b">
-        <span data-part="item-text" data-value="b"> Item B </span>
-        <span data-part="item-indicator" data-value="b">
+      <div data-part="item">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1191,9 +1613,9 @@ Available options:
   <div data-part="root">
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
-      <div data-part="item" data-value="a">
-        <span data-part="item-text" data-value="a"> Item A </span>
-        <span data-part="item-indicator" data-value="a">
+      <div data-part="item">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1209,9 +1631,9 @@ Available options:
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="b">
-        <span data-part="item-text" data-value="b"> Item B </span>
-        <span data-part="item-indicator" data-value="b">
+      <div data-part="item">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1234,9 +1656,9 @@ Available options:
   <div data-part="root">
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
-      <div data-part="item" data-value="a">
-        <span data-part="item-text" data-value="a"> Item A </span>
-        <span data-part="item-indicator" data-value="a">
+      <div data-part="item">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1252,9 +1674,9 @@ Available options:
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="b">
-        <span data-part="item-text" data-value="b"> Item B </span>
-        <span data-part="item-indicator" data-value="b">
+      <div data-part="item">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1277,9 +1699,9 @@ Available options:
   <div data-part="root">
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
-      <div data-part="item" data-value="a">
-        <span data-part="item-text" data-value="a"> Item A </span>
-        <span data-part="item-indicator" data-value="a">
+      <div data-part="item">
+        <span data-part="item-text"> Item A </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1295,9 +1717,9 @@ Available options:
           </svg>
         </span>
       </div>
-      <div data-part="item" data-value="b">
-        <span data-part="item-text" data-value="b"> Item B </span>
-        <span data-part="item-indicator" data-value="b">
+      <div data-part="item">
+        <span data-part="item-text"> Item B </span>
+        <span data-part="item-indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1324,7 +1746,7 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Listbox component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/listbox";
@@ -1334,19 +1756,12 @@ This will automatically initialize all elements with `class="listbox-js"` and ad
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/listbox.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="listbox listbox-js">
-  <div data-part="root">
-    <div data-part="label">Label</div>
-    <div data-part="content"></div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `listbox` class.

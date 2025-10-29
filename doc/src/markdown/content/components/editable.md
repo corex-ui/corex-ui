@@ -407,7 +407,7 @@ RTL support for editable
 
 ## Modifiers
 
-Accordions support modifier classes that control their appearance.  
+editables support modifier classes that control their appearance.  
 You can combine multiple modifiers on the same editable.
 
 The default modifier is applied automatically, so you don’t need to include it explicitly.
@@ -653,18 +653,19 @@ Available options:
 
 ## Installation
 
-First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or
-framework.
+First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Editable component
+1. Import the component
 
-```ts import
-"@corex-ui/static/components/editable";
+```ts
+import "@corex-ui/static/components/editable";
 ```
 
 This will automatically initialize all elements with `class="editable-js"` and add the necessary interaction behavior.
 
 2. Add styling
+
+The component is **unstyled by default** for maximum customization flexibility.
 
 To apply the default Corex UI design system styles, import the stylesheet:
 
@@ -672,15 +673,4 @@ To apply the default Corex UI design system styles, import the stylesheet:
 @import "@corex-ui/design/components/editable.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="editable editable-js" data-placeholder="Enter Value">
-  <div data-part="root">
-    <div data-part="area">
-      <input data-part="input" />
-      <span data-part="preview"></span>
-    </div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `editable` class.

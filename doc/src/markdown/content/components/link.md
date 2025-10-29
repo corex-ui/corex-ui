@@ -1160,7 +1160,7 @@ Options: **inherit(default)**, **sm**, **md**, **lg**, **xl**
 
 ## Installation
 
-The Link component is unstyled by default for maximum customization flexibility.
+First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
 To apply the default Corex UI design system styles, import the stylesheet:
 
@@ -1168,8 +1168,4 @@ To apply the default Corex UI design system styles, import the stylesheet:
 @import "@corex-ui/design/components/link.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<a class="link" href="#">...</a>
-```
+These styles will be applied to all elements with the `link` class.
