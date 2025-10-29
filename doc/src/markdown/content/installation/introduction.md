@@ -25,7 +25,7 @@ Whether you want a fully custom look or a fast, pre-styled setup, Corex lets you
 
 ## Packages Summary
 
-- `@corex-ui/static`: Vanilla TS web components.
+- `@corex-ui/static`: Unstyled Vanilla JS components.
 - `@corex-ui/design`: Tokens, variables, and optional component styles.
 - `@corex-ui/vite`: Vite post-build hydration of Corex components.
 - `@corex-ui/astro`: Astro post-build hydration of Corex components.
