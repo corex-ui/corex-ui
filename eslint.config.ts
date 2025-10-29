@@ -4,7 +4,6 @@ import tseslint from "typescript-eslint";
 import json from "@eslint/json";
 
 export default [
-  // Global ignores - must be first
   {
     ignores: [
       "**/dist/**",
@@ -15,7 +14,6 @@ export default [
     ],
   },
 
-  // JavaScript/TypeScript base config
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
     languageOptions: {
@@ -24,13 +22,11 @@ export default [
     ...js.configs.recommended,
   },
 
-  // TypeScript specific config
   ...tseslint.configs.recommended.map((config) => ({
     ...config,
     files: ["**/*.ts", "**/*.mts", "**/*.cts"],
   })),
 
-  // TypeScript rule overrides
   {
     files: ["**/*.ts", "**/*.mts", "**/*.cts"],
     rules: {
@@ -40,7 +36,6 @@ export default [
     },
   },
 
-  // JSON config
   {
     files: ["**/*.json"],
     ignores: ["**/package-lock.json", "**/pnpm-lock.json"],
