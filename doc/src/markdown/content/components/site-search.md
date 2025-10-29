@@ -83,7 +83,7 @@ pagefind({
   assetsDirectory: "public",
   bundleDirectory: "pagefind",
   buildScript: "build",
-  developStrategy: "eager", //set "lazy" during dev
+  developStrategy: "eager",
 });
 ```
 
