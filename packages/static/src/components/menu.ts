@@ -64,26 +64,22 @@ export class Menu extends Component<menu.Props, menu.Api> {
     const rootNode = loadJsonTreeNodes(jsonPath);
     if (!rootNode.children || rootNode.children.length === 0) return;
 
-    // This container will hold multiple menu instances
     this.el.innerHTML = "";
 
     rootNode.children.forEach((topLevelNode) => {
       const menuId = `${this.el.id}-${topLevelNode.id}`;
 
-      // Create a new menu wrapper
       const menuWrapper = document.createElement("div");
       menuWrapper.classList.add("menu-js", "menu");
       menuWrapper.id = menuId;
       menuWrapper.dataset.ariaLabel = `${topLevelNode.name} Menu`;
 
-      // Copy all data attributes from parent container
       Array.from(this.el.attributes).forEach((attr) => {
         if (attr.name.startsWith("data-") && attr.name !== "data-json") {
           menuWrapper.setAttribute(attr.name, attr.value);
         }
       });
 
-      // Create trigger button
       const trigger = document.createElement("button");
       trigger.setAttribute("data-part", "trigger");
       trigger.innerHTML = `
@@ -96,7 +92,6 @@ export class Menu extends Component<menu.Props, menu.Api> {
         </span>
       `;
 
-      // Create positioner and content
       const positioner = document.createElement("div");
       positioner.setAttribute("data-part", "positioner");
 
@@ -108,7 +103,6 @@ export class Menu extends Component<menu.Props, menu.Api> {
       menuWrapper.appendChild(positioner);
       this.el.appendChild(menuWrapper);
 
-      // Render children into this menu's content
       if (topLevelNode.children) {
         topLevelNode.children.forEach((child) => {
           this.renderNodeContent(child, content, menuWrapper, menuId);
@@ -190,7 +184,6 @@ export class Menu extends Component<menu.Props, menu.Api> {
         submenuEl.dataset.children = childrenIds.join(",");
       }
 
-      // Track children on parent menu
       const existingChildren = menuWrapper.dataset.children
         ? menuWrapper.dataset.children.split(",")
         : [];
@@ -213,7 +206,7 @@ export class Menu extends Component<menu.Props, menu.Api> {
     if (isJson && !this.domInitialized) {
       this.renderFromJson();
       this.domInitialized = true;
-      return; // Don't render this wrapper, render the generated menus instead
+      return;
     }
 
     const parts = [
@@ -240,7 +233,7 @@ export class Menu extends Component<menu.Props, menu.Api> {
     const labels = ["item-group-label"];
     for (const item of labels) {
       renderPart(this.el, item, this.api, {
-        htmlFor: (el: any) => el.getAttribute("data-htmlFor"),
+        htmlFor: (el: any) => getString(el, "id"),
       });
     }
 
@@ -292,22 +285,63 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
   if (hasInitialized) return;
   hasInitialized = true;
 
-  const menusMap = new Map<string, Menu>();
+  doc.querySelectorAll<HTMLElement>(".menu-js").forEach((rootEl, menuIndex) => {
+    const groupElements = rootEl.querySelectorAll<HTMLElement>(
+      '[data-part="item-group"]',
+    );
 
-  // First pass: handle JSON-based menus that will generate DOM
+    groupElements.forEach((groupEl, groupIndex) => {
+      let groupId = getString(groupEl, "id");
+      if (!groupId) {
+        groupId = generateId(groupEl, `menu-group-${menuIndex}-${groupIndex}`);
+        groupEl.setAttribute("data-id", groupId);
+      }
+
+      const labelEl = groupEl.querySelector<HTMLElement>(
+        '[data-part="item-group-label"]',
+      );
+      if (labelEl) {
+        labelEl.setAttribute("data-id", groupId);
+      }
+    });
+
+    const itemElements =
+      rootEl.querySelectorAll<HTMLElement>('[data-part="item"]');
+    itemElements.forEach((itemEl, itemIndex) => {
+      let value = getString(itemEl, "value");
+      if (!value) {
+        value = generateId(itemEl, `menu-item-${menuIndex}-${itemIndex}`);
+        itemEl.setAttribute("data-value", value);
+      }
+
+      const textEl = itemEl.querySelector<HTMLElement>(
+        '[data-part="item-text"]',
+      );
+      if (textEl && !getString(textEl, "value")) {
+        textEl.setAttribute("data-value", value);
+      }
+
+      const indicatorEl = itemEl.querySelector<HTMLElement>(
+        '[data-part="item-indicator"]',
+      );
+      if (indicatorEl && !getString(indicatorEl, "value")) {
+        indicatorEl.setAttribute("data-value", value);
+      }
+    });
+  });
+
+  const menusMap = new Map<string, Menu>();
   doc.querySelectorAll<HTMLElement>(".menu-js[data-json]").forEach((rootEl) => {
     const id = generateId(rootEl, "menu");
     const jsonPath = getString(rootEl, "json");
 
     if (jsonPath) {
-      // Create a temporary instance just to generate the DOM
       const tempInstance = new Menu(rootEl, { id });
       tempInstance.renderFromJson();
       tempInstance.domInitialized = true;
     }
   });
 
-  // Second pass: initialize all actual menu instances (including generated ones)
   doc
     .querySelectorAll<HTMLElement>(".menu-js:not([data-json])")
     .forEach((rootEl) => {
@@ -325,10 +359,11 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
         "left-start",
         "left-end",
       ] as const;
+
       const strategies = ["absolute", "fixed"] as const;
       const directions = ["ltr", "rtl"] as const;
-
       const id = generateId(rootEl, "menu");
+
       const instance = new Menu(rootEl, {
         id,
         "aria-label": getString(rootEl, "ariaLabel"),
@@ -362,72 +397,6 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
           fitViewport: getBoolean(rootEl, "fitViewport"),
           slide: getBoolean(rootEl, "slide"),
         },
-        onSelect(details) {
-          const eventName = getString(rootEl, "onSelect");
-          if (eventName) {
-            const event = new CustomEvent(eventName, {
-              detail: details,
-              bubbles: true,
-            });
-            rootEl.dispatchEvent(event);
-          }
-        },
-        onOpenChange(details) {
-          const eventName = getString(rootEl, "onOpenChange");
-          if (eventName) {
-            rootEl.dispatchEvent(
-              new CustomEvent(eventName, { detail: details }),
-            );
-          }
-        },
-        onEscapeKeyDown(details) {
-          const eventName = getString(rootEl, "onEscapeKeyDown");
-          if (eventName) {
-            rootEl.dispatchEvent(
-              new CustomEvent(eventName, { detail: details }),
-            );
-          }
-        },
-        onFocusOutside(details) {
-          const eventName = getString(rootEl, "onFocusOutside");
-          if (eventName) {
-            rootEl.dispatchEvent(
-              new CustomEvent(eventName, { detail: details }),
-            );
-          }
-        },
-        onHighlightChange(details) {
-          const eventName = getString(rootEl, "onHighlightChange");
-          if (eventName) {
-            rootEl.dispatchEvent(
-              new CustomEvent(eventName, { detail: details }),
-            );
-          }
-        },
-        onInteractOutside(details) {
-          const eventName = getString(rootEl, "onInteractOutside");
-          if (eventName) {
-            rootEl.dispatchEvent(
-              new CustomEvent(eventName, { detail: details }),
-            );
-          }
-        },
-        onPointerDownOutside(details) {
-          const eventName = getString(rootEl, "onPointerDownOutside");
-          if (eventName) {
-            rootEl.dispatchEvent(
-              new CustomEvent(eventName, { detail: details }),
-            );
-          }
-        },
-        navigate(details) {
-          const eventName = getString(rootEl, "navigate");
-          if (eventName) {
-            rootEl.dispatchEvent(
-              new CustomEvent(eventName, { detail: details }),
-            );
-          }
-        },
       });
 
       menusMap.set(id, instance);
@@ -439,101 +408,7 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
     doc.querySelectorAll<HTMLElement>(".menu-js").forEach((rootEl) => {
       const id = rootEl.id || generateId(rootEl, "menu");
       if (!menusMap.has(id) && rootEl.dataset.parent) {
-        const instance = new Menu(rootEl, {
-          id,
-          "aria-label": getString(rootEl, "ariaLabel"),
-          closeOnSelect: getBoolean(rootEl, "closeOnSelect"),
-          dir: getString<Direction>(rootEl, "dir"),
-          positioning: {
-            placement: getString(rootEl, "placement") as any,
-            offset: (() => {
-              const mainAxis = getNumber(rootEl, "offsetMainAxis");
-              const crossAxis = getNumber(rootEl, "offsetCrossAxis");
-              if (mainAxis !== undefined || crossAxis !== undefined) {
-                return { mainAxis, crossAxis };
-              }
-              return undefined;
-            })(),
-          },
-          onSelect(details) {
-            const eventName = getString(rootEl, "onSelect");
-            if (eventName) {
-              const event = new CustomEvent(eventName, {
-                detail: details,
-                bubbles: true,
-              });
-              rootEl.dispatchEvent(event);
-
-              const parentId = rootEl.dataset.parent;
-              if (parentId) {
-                const parentMenu = doc.querySelector(`#${parentId}`);
-                if (parentMenu) {
-                  const parentEvent = new CustomEvent(eventName, {
-                    detail: details,
-                    bubbles: true,
-                  });
-                  parentMenu.dispatchEvent(parentEvent);
-                }
-              }
-            }
-          },
-          onOpenChange(details) {
-            const eventName = getString(rootEl, "onOpenChange");
-            if (eventName) {
-              rootEl.dispatchEvent(
-                new CustomEvent(eventName, { detail: details }),
-              );
-            }
-          },
-          onEscapeKeyDown(details) {
-            const eventName = getString(rootEl, "onEscapeKeyDown");
-            if (eventName) {
-              rootEl.dispatchEvent(
-                new CustomEvent(eventName, { detail: details }),
-              );
-            }
-          },
-          onFocusOutside(details) {
-            const eventName = getString(rootEl, "onFocusOutside");
-            if (eventName) {
-              rootEl.dispatchEvent(
-                new CustomEvent(eventName, { detail: details }),
-              );
-            }
-          },
-          onHighlightChange(details) {
-            const eventName = getString(rootEl, "onHighlightChange");
-            if (eventName) {
-              rootEl.dispatchEvent(
-                new CustomEvent(eventName, { detail: details }),
-              );
-            }
-          },
-          onInteractOutside(details) {
-            const eventName = getString(rootEl, "onInteractOutside");
-            if (eventName) {
-              rootEl.dispatchEvent(
-                new CustomEvent(eventName, { detail: details }),
-              );
-            }
-          },
-          onPointerDownOutside(details) {
-            const eventName = getString(rootEl, "onPointerDownOutside");
-            if (eventName) {
-              rootEl.dispatchEvent(
-                new CustomEvent(eventName, { detail: details }),
-              );
-            }
-          },
-          navigate(details) {
-            const eventName = getString(rootEl, "navigate");
-            if (eventName) {
-              rootEl.dispatchEvent(
-                new CustomEvent(eventName, { detail: details }),
-              );
-            }
-          },
-        });
+        const instance = new Menu(rootEl, { id });
         instance.init();
         menusMap.set(id, instance);
       }
