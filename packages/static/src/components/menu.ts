@@ -397,6 +397,84 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
           fitViewport: getBoolean(rootEl, "fitViewport"),
           slide: getBoolean(rootEl, "slide"),
         },
+        onSelect(details) {
+          const eventName = getString(rootEl, "onSelect");
+          if (eventName) {
+            const event = new CustomEvent(eventName, {
+              detail: details,
+              bubbles: true,
+            });
+            rootEl.dispatchEvent(event);
+
+            const parentId = rootEl.dataset.parent;
+            if (parentId) {
+              const parentMenu = doc.querySelector(`#${parentId}`);
+              if (parentMenu) {
+                const parentEvent = new CustomEvent(eventName, {
+                  detail: details,
+                  bubbles: true,
+                });
+                parentMenu.dispatchEvent(parentEvent);
+              }
+            }
+          }
+        },
+        onOpenChange(details) {
+          const eventName = getString(rootEl, "onOpenChange");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        onEscapeKeyDown(details) {
+          const eventName = getString(rootEl, "onEscapeKeyDown");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        onFocusOutside(details) {
+          const eventName = getString(rootEl, "onFocusOutside");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        onHighlightChange(details) {
+          const eventName = getString(rootEl, "onHighlightChange");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        onInteractOutside(details) {
+          const eventName = getString(rootEl, "onInteractOutside");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        onPointerDownOutside(details) {
+          const eventName = getString(rootEl, "onPointerDownOutside");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
+        navigate(details) {
+          const eventName = getString(rootEl, "navigate");
+          if (eventName) {
+            rootEl.dispatchEvent(
+              new CustomEvent(eventName, { detail: details }),
+            );
+          }
+        },
       });
 
       menusMap.set(id, instance);
