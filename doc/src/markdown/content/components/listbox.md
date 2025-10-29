@@ -153,7 +153,7 @@ You can initialize the Listbox component by embedding your JSON data directly in
 ```html
 <script type="application/json" data-listbox="my-listbox">
   {
-    "id": "my-listobox",
+    "id": "my-listbox",
     "name": "My Listbox",
     "children": [
       {
@@ -220,7 +220,6 @@ The Listbox items and groups can use custom values and ids, this is useful when 
     <div data-part="label">Listbox Label</div>
     <div data-part="content">
       <div data-part="item-group-label" data-id="group-1">Group Label</div>
-
       <div data-part="item-group" data-id="group-1">
         <div data-part="item" data-value="item-a" data-label="Item A">
           <span data-part="item-text"> Item A </span>
