@@ -34,7 +34,7 @@
 
     & svg {
       @apply ui-icon;
-      
+
       padding: 0;
     }
   }
