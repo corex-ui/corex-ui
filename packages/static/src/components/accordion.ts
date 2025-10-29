@@ -12,37 +12,59 @@ import {
   getPartIds,
   arraysEqualUnordered,
 } from "../lib";
-const PARTS = ["root"] as const;
-const ITEM_PARTS = [
-  "item",
-  "item-trigger",
-  "item-indicator",
-  "item-content",
-] as const;
+
 export class Accordion extends Component<accordion.Props, accordion.Api> {
   initMachine(props: accordion.Props): VanillaMachine<any> {
     return new VanillaMachine(accordion.machine, props);
   }
+
   initApi(): accordion.Api {
     return accordion.connect(this.machine.service, normalizeProps);
   }
+
   render(): void {
-    PARTS.forEach((part) => renderPart(this.el, part, this.api));
-    ITEM_PARTS.forEach((part) =>
-      renderPart(this.el, part, this.api, {
-        value: "string",
-        disabled: "boolean",
-      }),
-    );
+    renderPart(this.el, "root", this.api);
+
+    const items = this.el.querySelectorAll<HTMLElement>('[data-part="item"]');
+    items.forEach((itemEl) => {
+      const value = getString(itemEl, "value");
+      const disabled = getBoolean(itemEl, "disabled");
+
+      renderPart(itemEl, "item", this.api, { value, disabled });
+
+      ["item-trigger", "item-indicator", "item-content"].forEach(
+        (childPart) => {
+          renderPart(itemEl, childPart, this.api, {
+            value,
+            disabled,
+          });
+        },
+      );
+    });
   }
 }
+
 export function initializeAccordion(
   doc: HTMLElement | Document = document,
 ): void {
   doc.querySelectorAll<HTMLElement>(".accordion-js").forEach((rootEl) => {
+    const items = rootEl.querySelectorAll<HTMLElement>('[data-part="item"]');
+    items.forEach((itemEl, index) => {
+      let value = getString(itemEl, "value");
+      if (!value) {
+        value = generateId(itemEl, `accordion-item-${index}`);
+        itemEl.setAttribute("data-value", value);
+      }
+    });
     const accordion = new Accordion(rootEl, {
       id: generateId(rootEl, "accordion"),
-      ids: getPartIds(rootEl, PARTS),
+      ids: getPartIds(rootEl, [
+        "root",
+        "item",
+        "item-trigger",
+        "item-indicator",
+        "item-content",
+      ]),
       collapsible: getBoolean(rootEl, "collapsible"),
       defaultValue: getStringList(rootEl, "defaultValue"),
       value: getStringList(rootEl, "value"),
@@ -66,19 +88,23 @@ export function initializeAccordion(
         }
       },
     });
+
     accordion.init();
+
     accordion.el.addEventListener("accordion:set-value", (event) => {
       const { value } = (event as CustomEvent<{ value: string[] }>).detail;
       if (!arraysEqualUnordered(accordion.api.value, value)) {
         accordion.api.setValue(value);
       }
     });
+
     accordion.el.addEventListener("accordion:value", (event) => {
       const callback = (
         event as CustomEvent<{ callback: (value: string[]) => void }>
       ).detail.callback;
       if (callback) callback(accordion.api.value);
     });
+
     accordion.el.addEventListener("accordion:focused-value", (event) => {
       const callback = (
         event as CustomEvent<{ callback: (value: string | null) => void }>
@@ -87,6 +113,7 @@ export function initializeAccordion(
     });
   });
 }
+
 if (typeof window !== "undefined") {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => initializeAccordion());

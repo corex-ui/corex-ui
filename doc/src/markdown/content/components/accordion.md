@@ -26,15 +26,17 @@ The Accordion component consists of the following data parts:
 
 `root`, `item`, `item-trigger`, `item-text`, `item-indicator`, `item-content`
 
+An optional `data-value` can be added to each `data-part="item"`, this is useful when using the API or setting default values.
+
 ```html
 <!-- render:preview -->
 <div class="accordion accordion-js">
   <div data-part="root">
-    <div data-part="item" data-value="lorem">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -51,20 +53,20 @@ The Accordion component consists of the following data parts:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -81,18 +83,18 @@ The Accordion component consists of the following data parts:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -109,7 +111,7 @@ The Accordion component consists of the following data parts:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -131,13 +133,13 @@ You must add `data-open` and `data-closed` to the respective icons
 
 ```html
 <!-- render:preview -->
-<div class="accordion accordion-js" data-collapsible="true">
+<div class="accordion accordion-js" data-collapsible>
   <div data-part="root">
-    <div data-part="item" data-value="lorem">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem" data-closed>
+          <span data-part="item-indicator" data-closed>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -152,7 +154,7 @@ You must add `data-open` and `data-closed` to the respective icons
               />
             </svg>
           </span>
-          <span data-part="item-indicator" data-value="lorem" data-open>
+          <span data-part="item-indicator" data-open>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -169,20 +171,20 @@ You must add `data-open` and `data-closed` to the respective icons
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis" data-closed>
+          <span data-part="item-indicator" data-closed>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -197,7 +199,7 @@ You must add `data-open` and `data-closed` to the respective icons
               />
             </svg>
           </span>
-          <span data-part="item-indicator" data-value="duis" data-open>
+          <span data-part="item-indicator" data-open>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -214,18 +216,18 @@ You must add `data-open` and `data-closed` to the respective icons
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec" data-closed>
+          <span data-part="item-indicator" data-closed>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -240,7 +242,7 @@ You must add `data-open` and `data-closed` to the respective icons
               />
             </svg>
           </span>
-          <span data-part="item-indicator" data-value="donec" data-open>
+          <span data-part="item-indicator" data-open>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -257,7 +259,7 @@ You must add `data-open` and `data-closed` to the respective icons
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -282,16 +284,15 @@ Each accordion can be set with different settings with the following data-attrib
   data-default-value="lorem, donec"
   data-dir="ltr"
   data-orientation="vertical"
-  data-collapsible="true"
-  data-disabled="false"
-  data-multiple="true"
+  data-collapsible
+  data-multiple
 >
   <div data-part="root">
     <div data-part="item" data-value="lorem">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -308,7 +309,7 @@ Each accordion can be set with different settings with the following data-attrib
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
@@ -317,11 +318,11 @@ Each accordion can be set with different settings with the following data-attrib
     </div>
     <div data-part="item" data-value="duis">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -338,7 +339,7 @@ Each accordion can be set with different settings with the following data-attrib
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
@@ -347,9 +348,9 @@ Each accordion can be set with different settings with the following data-attrib
     </div>
     <div data-part="item" data-value="donec">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -366,7 +367,7 @@ Each accordion can be set with different settings with the following data-attrib
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -429,9 +430,9 @@ You must add a custom id for the accordion and a event listener for your event n
   <div data-part="root">
     <div data-part="item" data-value="lorem">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -448,7 +449,7 @@ You must add a custom id for the accordion and a event listener for your event n
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
@@ -457,11 +458,11 @@ You must add a custom id for the accordion and a event listener for your event n
     </div>
     <div data-part="item" data-value="duis">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -478,7 +479,7 @@ You must add a custom id for the accordion and a event listener for your event n
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
@@ -487,9 +488,9 @@ You must add a custom id for the accordion and a event listener for your event n
     </div>
     <div data-part="item" data-value="donec">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -506,7 +507,7 @@ You must add a custom id for the accordion and a event listener for your event n
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -552,13 +553,13 @@ You can interact with the Accordion API by dispatching custom events.
   Set Donec and Duis
 </button>
 <button data-action="accordion-value" class="button">Get current value</button>
-<div id="accordion-api" class="accordion accordion-js" data-multiple="true">
+<div id="accordion-api" class="accordion accordion-js" data-multiple>
   <div data-part="root">
     <div data-part="item" data-value="lorem">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -575,7 +576,7 @@ You can interact with the Accordion API by dispatching custom events.
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
@@ -584,11 +585,11 @@ You can interact with the Accordion API by dispatching custom events.
     </div>
     <div data-part="item" data-value="duis">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -605,7 +606,7 @@ You can interact with the Accordion API by dispatching custom events.
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
@@ -614,9 +615,9 @@ You can interact with the Accordion API by dispatching custom events.
     </div>
     <div data-part="item" data-value="donec">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -633,7 +634,7 @@ You can interact with the Accordion API by dispatching custom events.
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -720,11 +721,11 @@ When using the horizontal layout, keyboard navigation changes accordingly:
   data-default-value="lorem"
 >
   <div data-part="root" class="grid grid-cols-3">
-    <div data-part="item" data-value="lorem">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">A</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -741,17 +742,17 @@ When using the horizontal layout, keyboard navigation changes accordingly:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p
-          class="w-16 h-52 my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
+          class="w-full h-ui-xl my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
         ></p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text">B</span>
-          <span data-part="item-indicator" data-value="duis">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -768,17 +769,17 @@ When using the horizontal layout, keyboard navigation changes accordingly:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p
-          class="w-16 h-52 my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
+          class="w-full h-ui-xl my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
         ></p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">C</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -795,9 +796,9 @@ When using the horizontal layout, keyboard navigation changes accordingly:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p
-          class="w-16 h-52 my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
+          class="w-full h-ui-xl my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
         ></p>
       </div>
     </div>
@@ -815,11 +816,11 @@ RTL support for accordion
 <!-- render:preview -->
 <div class="accordion accordion-js" data-dir="rtl">
   <div data-part="root">
-    <div data-part="item" data-value="lorem">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">لوريم إيبسوم دولور سيت أميت</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -836,17 +837,17 @@ RTL support for accordion
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>هذا نص عربي تجريبي. يمكنك وضع أي محتوى هنا لتوضيح شكل الفقرة.</p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >دويس ديكتوم غرافيادا أوديو أك فارِترا؟</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -863,18 +864,18 @@ RTL support for accordion
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           هذا مثال على فقرة أخرى باللغة العربية، يمكنك استخدامه كنموذج لمحتوى
           الفقرة.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">دونيك كونديمينتوم إكس مي</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -891,7 +892,7 @@ RTL support for accordion
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           فقرة تجريبية ثالثة باللغة العربية لتوضيح كيفية عرض النصوص داخل محتوى
           الأكورديون.
@@ -908,18 +909,18 @@ RTL support for accordion
 
 Each accordion can be disabled either globally or per item.
 
-- To disable the entire accordion, add `data-disabled="true"` to the accordion element.
-- To disable a specific item, add `data-disabled="true"` to that item’s element.
+- To disable the entire accordion, add `data-disabled` to the accordion element.
+- To disable a specific item, add `data-disabled` to that item’s element.
 
 ```html
 <!-- render:preview -->
-<div class="accordion accordion-js" data-disabled="true">
+<div class="accordion accordion-js" data-disabled>
   <div data-part="root">
-    <div data-part="item" data-value="lorem">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -936,20 +937,20 @@ Each accordion can be disabled either globally or per item.
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -966,18 +967,18 @@ Each accordion can be disabled either globally or per item.
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -994,7 +995,7 @@ Each accordion can be disabled either globally or per item.
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -1005,19 +1006,11 @@ Each accordion can be disabled either globally or per item.
 </div>
 <div class="accordion accordion-js">
   <div data-part="root">
-    <div data-part="item" data-value="lorem" data-disabled="true">
+    <div data-part="item" data-disabled>
       <h3>
-        <button
-          data-part="item-trigger"
-          data-value="lorem"
-          data-disabled="true"
-        >
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span
-            data-part="item-indicator"
-            data-value="lorem"
-            data-disabled="true"
-          >
+          <span data-part="item-indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1034,20 +1027,20 @@ Each accordion can be disabled either globally or per item.
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem" data-disabled="true">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1064,18 +1057,18 @@ Each accordion can be disabled either globally or per item.
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1092,7 +1085,7 @@ Each accordion can be disabled either globally or per item.
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -1117,7 +1110,7 @@ The default modifier is applied automatically, so you don’t need to include it
 | [Color](#color) | Sets the color theme of the accordion.     |
 | [Size](#size)   | Adjusts the overall size of the accordion. |
 
-> You may have noticed the double dash before the modifier name — this follows the BEM (Block Element Modifier) naming convention
+> You may have noticed the double dash bebfore the modifier name — this follows the BEM (Block Element Modifier) naming convention
 
 ### Color
 
@@ -1130,15 +1123,15 @@ Available options:
 <!-- render:preview -->
 <div
   class="accordion accordion-js accordion--accent"
-  data-multiple="true"
+  data-multiple
   data-default-value="lorem"
 >
   <div data-part="root">
     <div data-part="item" data-value="lorem">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1155,20 +1148,20 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1185,18 +1178,18 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1213,7 +1206,7 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -1225,15 +1218,15 @@ Available options:
 
 <div
   class="accordion accordion-js accordion--brand"
-  data-multiple="true"
+  data-multiple
   data-default-value="lorem"
 >
   <div data-part="root">
     <div data-part="item" data-value="lorem">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1250,20 +1243,20 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1280,18 +1273,18 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1308,7 +1301,7 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -1320,15 +1313,15 @@ Available options:
 
 <div
   class="accordion accordion-js accordion--alert"
-  data-multiple="true"
+  data-multiple
   data-default-value="lorem"
 >
   <div data-part="root">
     <div data-part="item" data-value="lorem">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1345,20 +1338,20 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1375,18 +1368,18 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1403,7 +1396,7 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -1415,15 +1408,15 @@ Available options:
 
 <div
   class="accordion accordion-js accordion--info"
-  data-multiple="true"
+  data-multiple
   data-default-value="lorem"
 >
   <div data-part="root">
     <div data-part="item" data-value="lorem">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1440,20 +1433,20 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1470,18 +1463,18 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1498,7 +1491,7 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -1509,15 +1502,15 @@ Available options:
 </div>
 <div
   class="accordion accordion-js accordion--success"
-  data-multiple="true"
+  data-multiple
   data-default-value="lorem"
 >
   <div data-part="root">
     <div data-part="item" data-value="lorem">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1534,20 +1527,20 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1564,18 +1557,18 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1592,7 +1585,7 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -1616,11 +1609,11 @@ Available options:
 <!-- render:preview -->
 <div class="accordion accordion-js accordion--sm">
   <div data-part="root">
-    <div data-part="item" data-value="lorem">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1637,20 +1630,20 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1667,18 +1660,18 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1695,7 +1688,7 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -1707,11 +1700,11 @@ Available options:
 
 <div class="accordion accordion-js accordion--base">
   <div data-part="root">
-    <div data-part="item" data-value="lorem">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1728,20 +1721,20 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1758,18 +1751,18 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1786,7 +1779,7 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -1798,11 +1791,11 @@ Available options:
 
 <div class="accordion accordion-js accordion--lg">
   <div data-part="root">
-    <div data-part="item" data-value="lorem">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1819,20 +1812,20 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1849,18 +1842,18 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1877,7 +1870,7 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -1889,11 +1882,11 @@ Available options:
 
 <div class="accordion accordion-js accordion--xl">
   <div data-part="root">
-    <div data-part="item" data-value="lorem">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="lorem">
+        <button data-part="item-trigger">
           <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1910,20 +1903,20 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="lorem">
+      <div data-part="item-content">
         <p>
           Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
           quis risus feugiat tellus iaculis fringilla.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="duis">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="duis">
+        <button data-part="item-trigger">
           <span data-part="item-text"
             >Duis dictum gravida odio ac pharetra?</span
           >
-          <span data-part="item-indicator" data-value="duis">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1940,18 +1933,18 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="duis">
+      <div data-part="item-content">
         <p>
           Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
           dui ut fermentum sodales, lectus metus dignissim ex.
         </p>
       </div>
     </div>
-    <div data-part="item" data-value="donec">
+    <div data-part="item">
       <h3>
-        <button data-part="item-trigger" data-value="donec">
+        <button data-part="item-trigger">
           <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
+          <span data-indicator="item-trigger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1968,7 +1961,7 @@ Available options:
           </span>
         </button>
       </h3>
-      <div data-part="item-content" data-value="donec">
+      <div data-part="item-content">
         <p>
           Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
           non, pellentesque elit. Pellentesque sagittis fermentum.
@@ -1985,7 +1978,7 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Accordion component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/accordion";
@@ -1995,7 +1988,7 @@ This will automatically initialize all elements with `class="accordion-js"` and 
 
 2. Add styling
 
-The Accordion component is **unstyled by default** for maximum customization flexibility.
+The component is **unstyled by default** for maximum customization flexibility.
 
 To apply the default Corex UI design system styles, import the stylesheet:
 
@@ -2003,97 +1996,4 @@ To apply the default Corex UI design system styles, import the stylesheet:
 @import "@corex-ui/design/components/accordion.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="accordion accordion-js accordion--sm">
-  <div data-part="root">
-    <div data-part="item" data-value="lorem">
-      <h3>
-        <button data-part="item-trigger" data-value="lorem">
-          <span data-part="item-text">Lorem ipsum dolor sit amet</span>
-          <span data-part="item-indicator" data-value="lorem">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-              ></path>
-            </svg>
-          </span>
-        </button>
-      </h3>
-      <div data-part="item-content" data-value="lorem">
-        <p>
-          Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin
-          quis risus feugiat tellus iaculis fringilla.
-        </p>
-      </div>
-    </div>
-    <div data-part="item" data-value="duis">
-      <h3>
-        <button data-part="item-trigger" data-value="duis">
-          <span data-part="item-text"
-            >Duis dictum gravida odio ac pharetra?</span
-          >
-          <span data-part="item-indicator" data-value="duis">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-              ></path>
-            </svg>
-          </span>
-        </button>
-      </h3>
-      <div data-part="item-content" data-value="duis">
-        <p>
-          Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
-          dui ut fermentum sodales, lectus metus dignissim ex.
-        </p>
-      </div>
-    </div>
-    <div data-part="item" data-value="donec">
-      <h3>
-        <button data-part="item-trigger" data-value="donec">
-          <span data-part="item-text">Donec condimentum ex mi</span>
-          <span data-part="item-indicator" data-value="donec">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-              ></path>
-            </svg>
-          </span>
-        </button>
-      </h3>
-      <div data-part="item-content" data-value="donec">
-        <p>
-          Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
-          non, pellentesque elit. Pellentesque sagittis fermentum.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `accordion` class.
