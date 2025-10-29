@@ -705,7 +705,7 @@ if (formCurrency && resultCurrency) {
 
 ## Modifiers
 
-comboboxs support modifier classes that control their appearance.  
+Combobox support modifier classes that control their appearance.  
 You can combine multiple modifiers on the same combobox.
 
 The default modifier is applied automatically, so you don’t need to include it explicitly.
