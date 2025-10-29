@@ -13,33 +13,66 @@ import {
   getStringList,
 } from "../lib";
 import { createFilter } from "@zag-js/i18n-utils";
-function loadJsonItems(path: string): Item[] {
+
+interface ComboboxItem {
+  value: string;
+  label?: string;
+  group?: string;
+  disabled?: boolean;
+}
+
+interface Group {
+  value: string;
+  label?: string;
+}
+
+function flattenJsonItems(data: any, parentGroup?: string): ComboboxItem[] {
+  if (!data) return [];
+  const items: ComboboxItem[] = [];
+
+  if (data.children && Array.isArray(data.children)) {
+    data.children.forEach((child: any) => {
+      items.push(...flattenJsonItems(child, data.name || parentGroup));
+    });
+  } else {
+    items.push({
+      value: data.id,
+      label: data.name,
+      group: parentGroup ?? undefined,
+      disabled: data.disabled,
+    });
+  }
+
+  return items;
+}
+
+function loadJsonItems(path: string): ComboboxItem[] {
   try {
     const script = document.querySelector(
       `script[type="application/json"][data-combobox="${path}"]`,
     );
     if (!script) throw new Error(`No inline JSON script found for ${path}`);
-    return JSON.parse(script.textContent || "[]");
+    const data = JSON.parse(script.textContent || "{}");
+    return flattenJsonItems(data);
   } catch (e) {
     console.error("Failed to load JSON items:", e);
     return [];
   }
 }
-function getDomItems(
-  rootEl: HTMLElement,
-): Array<{ label: string; code: string }> {
-  const items: Array<{ label: string; code: string }> = [];
-  rootEl.querySelectorAll('[data-part="item"]').forEach((el) => {
-    const label = el.getAttribute("data-label") || el.textContent?.trim() || "";
-    const code = el.getAttribute("data-code") || "";
-    items.push({ label, code });
+
+function getDomGroups(rootEl: HTMLElement): Group[] {
+  const groups: Group[] = [];
+  rootEl.querySelectorAll('[data-part="item-group"]').forEach((el) => {
+    const value = el.getAttribute("data-id") || "";
+    groups.push({ value });
   });
-  return items;
+  return groups;
 }
-type Item = { label: string; code: string };
+
 export class Combobox extends Component<combobox.Props, combobox.Api> {
   userOnInputValueChange?: combobox.Props["onInputValueChange"];
   userOnOpenChange?: combobox.Props["onOpenChange"];
+
   constructor(el: HTMLElement, props: combobox.Props) {
     super(el, {
       ...props,
@@ -49,33 +82,54 @@ export class Combobox extends Component<combobox.Props, combobox.Api> {
     this.userOnInputValueChange = props.onInputValueChange;
     this.userOnOpenChange = props.onOpenChange;
   }
-  options: Item[] = [];
-  allItems: Item[] = [];
-  setItems(items: Item[]) {
+
+  options: ComboboxItem[] = [];
+  allItems: ComboboxItem[] = [];
+  groups: Group[] = [];
+  private domInitialized = false;
+
+  setItems(items: ComboboxItem[]) {
     this.allItems = items;
     this.options = items;
   }
-  getCollection(items: Item[]): ListCollection<Item> {
+
+  getCollection(
+    items: ComboboxItem[],
+    hasGroups: boolean = false,
+  ): ListCollection<ComboboxItem> {
+    if (hasGroups) {
+      return combobox.collection({
+        items,
+        itemToValue: (item) => item.value,
+        itemToString: (item) => item.label || item.value,
+        groupBy: (item) => item.group || "Default",
+      });
+    }
     return combobox.collection({
       items,
-      itemToValue: (item: any) => item.code,
-      itemToString: (item: any) => item.label,
+      itemToValue: (item) => item.value,
+      itemToString: (item) => item.label || item.value,
     });
   }
+
   initMachine(props: combobox.Props): VanillaMachine<any> {
     const self = this;
+    const hasGroups =
+      (this.groups?.length ?? 0) > 0 ||
+      ((this.allItems?.length ?? 0) > 0 && this.allItems.some((i) => i.group));
+
     return new VanillaMachine(combobox.machine, {
       ...props,
       get collection() {
-        return self.getCollection(self.options || []);
+        return self.getCollection(self.options || [], hasGroups);
       },
       onOpenChange(...args: any[]) {
         self.options = self.allItems;
         const isJson = getString(self.el, "json") !== undefined;
         if (isJson) {
-          self.renderOptions();
+          self.renderJsonDom();
         } else {
-          self.renderItems();
+          self.renderDomItems();
         }
         self.userOnOpenChange?.(args[0]);
       },
@@ -84,72 +138,176 @@ export class Combobox extends Component<combobox.Props, combobox.Api> {
         if (!details.inputValue.trim()) {
           self.options = self.allItems;
         } else {
-          const filter = createFilter({ sensitivity: "base", locale: "en-US" });
+          const filter = createFilter({
+            sensitivity: getString(self.el, "sensitivity") || "base",
+            locale: getString(self.el, "locale") || "en-US",
+          });
           const filtered = self.allItems.filter((item) =>
-            filter.contains(item.label, details.inputValue),
+            filter.contains(item.label || item.value, details.inputValue),
           );
           self.options = filtered.length > 0 ? filtered : self.allItems;
         }
         const isJson = getString(self.el, "json") !== undefined;
         if (isJson) {
-          self.renderOptions();
+          self.renderJsonDom();
         } else {
-          self.renderItems();
+          self.renderDomItems();
         }
         self.userOnInputValueChange?.(args[0]);
       },
     });
   }
+
   initApi(): combobox.Api {
     return combobox.connect(this.machine.service, normalizeProps);
   }
-  renderOptions() {
-    const contentEl = this.el.querySelector('[data-part="content"]');
-    if (!contentEl) return;
-    const existingItems = Array.from(
-      contentEl.querySelectorAll('[data-part="item"]'),
-    ) as HTMLElement[];
-    if (existingItems.length === this.options.length) {
-      for (let i = 0; i < existingItems.length; i++) {
-        const el = existingItems[i];
-        const item = this.options[i];
-        if (!el || !item) continue;
-        el.textContent = item.label;
-        el.setAttribute("data-label", item.label);
-        el.setAttribute("data-code", item.code);
-        renderPart(el, "item", this.api, { item });
-      }
+
+  private renderJsonDom() {
+    const rootEl = this.el;
+    if (!rootEl) return;
+
+    let contentEl = rootEl.querySelector<HTMLElement>('[data-part="content"]');
+    if (!contentEl) {
+      contentEl = document.createElement("div");
+      contentEl.setAttribute("data-part", "content");
+      rootEl.appendChild(contentEl);
     } else {
       contentEl.innerHTML = "";
-      for (const item of this.options) {
-        const li = document.createElement("li");
-        li.textContent = item.label;
-        li.setAttribute("data-part", "item");
-        li.setAttribute("data-label", item.label);
-        li.setAttribute("data-code", item.code);
-        contentEl.appendChild(li);
-        renderPart(li, "item", this.api, { item });
-      }
     }
+
+    const noIcon = getBoolean(this.el, "noIcon");
+    const groupMap: Record<string, HTMLElement> = {};
+
+    if (this.groups.length === 0) {
+      const uniqueGroups = new Set<string>();
+      this.options.forEach((item) => {
+        if (item.group) uniqueGroups.add(item.group);
+      });
+      this.groups = Array.from(uniqueGroups).map((value) => ({
+        value,
+        label: value,
+      }));
+    }
+
+    const groupsWithItems = new Set<string>();
+    this.options.forEach((item) => {
+      if (item.group) groupsWithItems.add(item.group);
+    });
+
+    this.groups.forEach((g) => {
+      if (!groupsWithItems.has(g.value)) return;
+
+      const groupEl = document.createElement("div");
+      groupEl.setAttribute("data-part", "item-group");
+      groupEl.setAttribute("data-id", g.value);
+
+      const labelEl = document.createElement("div");
+      labelEl.setAttribute("data-part", "item-group-label");
+      labelEl.setAttribute("data-id", g.value);
+      labelEl.textContent = g.label || g.value;
+
+      contentEl.appendChild(labelEl);
+      contentEl.appendChild(groupEl);
+
+      groupMap[g.value] = groupEl;
+    });
+
+    this.options.forEach((item) => {
+      const itemEl = document.createElement("div");
+      itemEl.setAttribute("data-part", "item");
+      itemEl.setAttribute("data-value", item.value);
+      itemEl.setAttribute("data-label", item.label || item.value);
+      if (item.disabled) itemEl.setAttribute("data-disabled", "true");
+
+      const textEl = document.createElement("span");
+      textEl.setAttribute("data-part", "item-text");
+      textEl.setAttribute("data-value", item.value);
+      textEl.textContent = item.label || item.value;
+
+      itemEl.appendChild(textEl);
+
+      if (!noIcon) {
+        const indicatorEl = document.createElement("span");
+        indicatorEl.setAttribute("data-part", "item-indicator");
+        indicatorEl.setAttribute("data-value", item.value);
+        indicatorEl.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+        `;
+        itemEl.appendChild(indicatorEl);
+      }
+
+      if (item.group && groupMap[item.group]) {
+        groupMap[item.group].appendChild(itemEl);
+      } else {
+        contentEl.appendChild(itemEl);
+      }
+    });
   }
-  renderItems() {
+
+  private renderDomItems() {
     const contentEl = this.el.querySelector('[data-part="content"]');
     if (!contentEl) return;
+
     const allDomItems = Array.from(
       contentEl.querySelectorAll('[data-part="item"]'),
     ) as HTMLElement[];
+
+    const visibleGroups = new Set<string>();
+
     allDomItems.forEach((el) => {
-      const code = el.getAttribute("data-code");
-      const match = this.options.find((item) => item.code === code);
+      const value = el.getAttribute("data-value");
+      const match = this.options.find((item) => item.value === value);
       if (match) {
         el.style.display = "";
-        renderPart(el, "item", this.api, { item: match });
+        const groupEl = el.closest(
+          '[data-part="item-group"]',
+        ) as HTMLElement | null;
+        if (groupEl) {
+          const groupId = groupEl.getAttribute("data-id");
+          if (groupId) visibleGroups.add(groupId);
+        }
       } else {
         el.style.display = "none";
       }
     });
+
+    const allGroupLabels = Array.from(
+      contentEl.querySelectorAll('[data-part="item-group-label"]'),
+    ) as HTMLElement[];
+
+    allGroupLabels.forEach((labelEl) => {
+      const groupId = labelEl.getAttribute("data-id");
+      if (groupId && visibleGroups.has(groupId)) {
+        labelEl.style.display = "";
+      } else {
+        labelEl.style.display = "none";
+      }
+    });
+
+    const allGroups = Array.from(
+      contentEl.querySelectorAll('[data-part="item-group"]'),
+    ) as HTMLElement[];
+
+    allGroups.forEach((groupEl) => {
+      const groupId = groupEl.getAttribute("data-id");
+      if (groupId && visibleGroups.has(groupId)) {
+        groupEl.style.display = "";
+      } else {
+        groupEl.style.display = "none";
+      }
+    });
   }
+
   render() {
+    const isJson = getString(this.el, "json") !== undefined;
+    if (isJson && !this.domInitialized) {
+      this.renderJsonDom();
+      this.domInitialized = true;
+    }
+
     const parts = [
       "root",
       "label",
@@ -159,34 +317,117 @@ export class Combobox extends Component<combobox.Props, combobox.Api> {
       "positioner",
       "content",
       "clear-trigger",
-      "item-group",
-      "item-group-label",
-      "item-indicator",
-      "item-text",
       "list",
     ];
     for (const part of parts) {
       renderPart(this.el, part, this.api);
     }
-    const jsonPath = getString(this.el, "json");
-    if (jsonPath !== undefined) {
-      this.renderOptions();
-    } else {
-      this.renderItems();
+
+    const itemParts = ["item", "item-text", "item-indicator"];
+    for (const part of itemParts) {
+      renderPart(this.el, part, this.api, {
+        item: (el: HTMLElement) => {
+          const value = el.getAttribute("data-value");
+          const item = this.options.find((i) => i.value === value);
+          if (!item) {
+            console.warn(`[Combobox] No matching item for value: ${value}`);
+            return undefined;
+          }
+          return {
+            ...item,
+            label: item.label || el.getAttribute("data-label") || item.value,
+            disabled: getBoolean(el, "disabled") || item.disabled,
+          };
+        },
+      });
     }
+
+    renderPart(this.el, "item-group", this.api, {
+      group: (el: HTMLElement) => {
+        const id = el.getAttribute("data-id");
+        const group = this.groups.find((g) => g.value === id);
+        return group;
+      },
+      id: (el: HTMLElement) => el.getAttribute("data-id"),
+    });
+
+    renderPart(this.el, "item-group-label", this.api, {
+      group: (el: HTMLElement) => {
+        const id = el.getAttribute("data-id");
+        return this.groups.find((g) => g.value === id);
+      },
+      htmlFor: (el: HTMLElement) => el.getAttribute("data-id"),
+    });
   }
 }
+
 export function initializeCombobox(
   doc: HTMLElement | Document = document,
 ): void {
   doc.querySelectorAll<HTMLElement>(".combobox-js").forEach((rootEl) => {
-    let items: Item[];
+    const groupElements = rootEl.querySelectorAll<HTMLElement>(
+      '[data-part="item-group"]',
+    );
+    groupElements.forEach((groupEl, index) => {
+      const groupId =
+        getString(groupEl, "id") ??
+        generateId(groupEl, `combobox-group-${index}`);
+      groupEl.setAttribute("data-id", groupId);
+
+      const labelEl = groupEl.querySelector<HTMLElement>(
+        '[data-part="item-group-label"]',
+      );
+      if (labelEl) labelEl.setAttribute("data-id", groupId);
+    });
+
+    const itemElements =
+      rootEl.querySelectorAll<HTMLElement>('[data-part="item"]');
+    itemElements.forEach((itemEl, index) => {
+      const value =
+        getString(itemEl, "value") ??
+        generateId(itemEl, `combobox-item-${index}`);
+      itemEl.setAttribute("data-value", value);
+
+      if (!itemEl.hasAttribute("data-label")) {
+        const textEl = itemEl.querySelector<HTMLElement>(
+          '[data-part="item-text"]',
+        );
+        const label = textEl?.textContent?.trim() || value;
+        itemEl.setAttribute("data-label", label);
+      }
+
+      const textEl = itemEl.querySelector<HTMLElement>(
+        '[data-part="item-text"]',
+      );
+      if (textEl) textEl.setAttribute("data-value", value);
+
+      const indicatorEl = itemEl.querySelector<HTMLElement>(
+        '[data-part="item-indicator"]',
+      );
+      if (indicatorEl) indicatorEl.setAttribute("data-value", value);
+    });
+
     const jsonPath = getString(rootEl, "json");
-    if (jsonPath !== undefined) {
-      items = loadJsonItems(jsonPath);
-    } else {
-      items = getDomItems(rootEl);
-    }
+    const items: ComboboxItem[] = jsonPath
+      ? loadJsonItems(jsonPath)
+      : Array.from(itemElements).map((itemEl) => {
+          const value = getString(itemEl, "value")!;
+          const label =
+            itemEl.getAttribute("data-label") ||
+            itemEl
+              .querySelector<HTMLElement>('[data-part="item-text"]')
+              ?.textContent?.trim() ||
+            value;
+          const groupEl = itemEl.closest(
+            '[data-part="item-group"]',
+          ) as HTMLElement | null;
+          const group = groupEl ? getString(groupEl, "id") : undefined;
+          const disabled = getBoolean(itemEl, "disabled");
+          return { value, label, group, disabled };
+        });
+
+    const groups = getDomGroups(rootEl);
+
     const directions = ["ltr", "rtl"] as const;
     const placements = [
       "top",
@@ -205,6 +446,7 @@ export function initializeCombobox(
     const strategies = ["absolute", "fixed"] as const;
     const inputBehaviors = ["autohighlight", "autocomplete", "none"] as const;
     const selectionBehaviors = ["replace", "clear", "preserve"] as const;
+
     const comboboxComponent = new Combobox(rootEl, {
       id: generateId(rootEl, "combobox"),
       placeholder: getString(rootEl, "placeholder"),
@@ -324,11 +566,14 @@ export function initializeCombobox(
         }
       },
     });
+
     comboboxComponent.setItems(items);
     comboboxComponent.options = items;
+    comboboxComponent.groups = groups;
     comboboxComponent.init();
   });
 }
+
 if (typeof window !== "undefined") {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () =>

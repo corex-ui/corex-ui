@@ -45,6 +45,16 @@
   <code>trigger</code>, <code>positioner</code>, <code>content</code>,
   <code>item</code>
 </p>
+<p>
+  <code>data-label</code> is required on all
+  <code>data-part=&quot;item&quot;</code> in order to be used for the input
+  value
+</p>
+<p>
+  An optional <code>data-value</code> and can be added to each
+  <code>data-part=&quot;item&quot;</code>, this is useful when using the API or
+  setting default values.
+</p>
 
 <div class="preview">
   <div class="preview__display">
@@ -89,7 +99,7 @@
         </div>
         <div data-part="positioner">
           <ul data-part="content" class="scrollbar">
-            <li data-part="item" data-code="USD" data-label="US Dollar">
+            <li data-part="item" data-label="US Dollar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -105,7 +115,7 @@
               </svg>
               US Dollar
             </li>
-            <li data-part="item" data-code="EURO" data-label="Euro">
+            <li data-part="item" data-label="Euro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -121,7 +131,7 @@
               </svg>
               Euro
             </li>
-            <li data-part="item" data-code="GBP" data-label="British Pound">
+            <li data-part="item" data-label="British Pound">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -137,7 +147,7 @@
               </svg>
               British Pound
             </li>
-            <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+            <li data-part="item" data-label="Japanese Yen">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -153,7 +163,7 @@
               </svg>
               Japanese Yen
             </li>
-            <li data-part="item" data-code="AL" data-label="Indian Rupee">
+            <li data-part="item" data-label="Indian Rupee">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -216,7 +226,7 @@
     &lt;/div&gt;
     &lt;div data-part="positioner"&gt;
       &lt;ul data-part="content" class="scrollbar"&gt;
-        &lt;li data-part="item" data-code="USD" data-label="US Dollar"&gt;
+        &lt;li data-part="item" data-label="US Dollar"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -232,7 +242,7 @@
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="EURO" data-label="Euro"&gt;
+        &lt;li data-part="item" data-label="Euro"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -248,7 +258,7 @@
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="GBP" data-label="British Pound"&gt;
+        &lt;li data-part="item" data-label="British Pound"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -264,7 +274,7 @@
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="YEN" data-label="Japanese Yen"&gt;
+        &lt;li data-part="item" data-label="Japanese Yen"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -280,7 +290,7 @@
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="AL" data-label="Indian Rupee"&gt;
+        &lt;li data-part="item" data-label="Indian Rupee"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -383,7 +393,7 @@
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
       &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-label=&quot;US Dollar&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -399,7 +409,7 @@
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-label=&quot;Euro&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -415,7 +425,7 @@
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-label=&quot;British Pound&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -431,7 +441,7 @@
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-label=&quot;Japanese Yen&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -447,7 +457,7 @@
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-label=&quot;Indian Rupee&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -488,21 +498,43 @@
       class="clipboard clipboard-js"
       data-name="clipboard"
       data-default-value='&lt;script type="application/json" data-combobox="countries"&gt;
-  [
-    { "label": "France", "code": "FR" },
-    { "label": "Belgium", "code": "BE" },
-    { "label": "Germany", "code": "DE" },
-    { "label": "Italy", "code": "IT" },
-    { "label": "Spain", "code": "ES" },
-    { "label": "Portugal", "code": "PT" },
-    { "label": "Netherlands", "code": "NL" },
-    { "label": "Switzerland", "code": "CH" },
-    { "label": "Austria", "code": "AT" },
-    { "label": "Poland", "code": "PL" },
-    { "label": "Czech Republic", "code": "CZ" },
-    { "label": "Hungary", "code": "HU" },
-    { "label": "Greece", "code": "GR" }
-  ]
+  {
+    "id": "countries",
+    "name": "Countries",
+    "children": [
+      {
+        "id": "western-europe",
+        "name": "Western Europe",
+        "children": [
+          { "id": "FR", "name": "France" },
+          { "id": "BE", "name": "Belgium" },
+          { "id": "DE", "name": "Germany" },
+          { "id": "NL", "name": "Netherlands" },
+          { "id": "CH", "name": "Switzerland" },
+          { "id": "AT", "name": "Austria" }
+        ]
+      },
+      {
+        "id": "southern-europe",
+        "name": "Southern Europe",
+        "children": [
+          { "id": "IT", "name": "Italy" },
+          { "id": "ES", "name": "Spain" },
+          { "id": "PT", "name": "Portugal" },
+          { "id": "GR", "name": "Greece" }
+        ]
+      },
+      {
+        "id": "central-europe",
+        "name": "Central Europe",
+        "children": [
+          { "id": "PL", "name": "Poland" },
+          { "id": "CZ", "name": "Czech Republic" },
+          { "id": "HU", "name": "Hungary" }
+        ]
+      }
+    ]
+  }
 &lt;/script&gt;
 '
     >
@@ -550,21 +582,43 @@
       </div>
     </div>
     <pre><code class="code-js" data-lang="html">&lt;script type=&quot;application/json&quot; data-combobox=&quot;countries&quot;&gt;
-  [
-    { &quot;label&quot;: &quot;France&quot;, &quot;code&quot;: &quot;FR&quot; },
-    { &quot;label&quot;: &quot;Belgium&quot;, &quot;code&quot;: &quot;BE&quot; },
-    { &quot;label&quot;: &quot;Germany&quot;, &quot;code&quot;: &quot;DE&quot; },
-    { &quot;label&quot;: &quot;Italy&quot;, &quot;code&quot;: &quot;IT&quot; },
-    { &quot;label&quot;: &quot;Spain&quot;, &quot;code&quot;: &quot;ES&quot; },
-    { &quot;label&quot;: &quot;Portugal&quot;, &quot;code&quot;: &quot;PT&quot; },
-    { &quot;label&quot;: &quot;Netherlands&quot;, &quot;code&quot;: &quot;NL&quot; },
-    { &quot;label&quot;: &quot;Switzerland&quot;, &quot;code&quot;: &quot;CH&quot; },
-    { &quot;label&quot;: &quot;Austria&quot;, &quot;code&quot;: &quot;AT&quot; },
-    { &quot;label&quot;: &quot;Poland&quot;, &quot;code&quot;: &quot;PL&quot; },
-    { &quot;label&quot;: &quot;Czech Republic&quot;, &quot;code&quot;: &quot;CZ&quot; },
-    { &quot;label&quot;: &quot;Hungary&quot;, &quot;code&quot;: &quot;HU&quot; },
-    { &quot;label&quot;: &quot;Greece&quot;, &quot;code&quot;: &quot;GR&quot; }
-  ]
+  {
+    &quot;id&quot;: &quot;countries&quot;,
+    &quot;name&quot;: &quot;Countries&quot;,
+    &quot;children&quot;: [
+      {
+        &quot;id&quot;: &quot;western-europe&quot;,
+        &quot;name&quot;: &quot;Western Europe&quot;,
+        &quot;children&quot;: [
+          { &quot;id&quot;: &quot;FR&quot;, &quot;name&quot;: &quot;France&quot; },
+          { &quot;id&quot;: &quot;BE&quot;, &quot;name&quot;: &quot;Belgium&quot; },
+          { &quot;id&quot;: &quot;DE&quot;, &quot;name&quot;: &quot;Germany&quot; },
+          { &quot;id&quot;: &quot;NL&quot;, &quot;name&quot;: &quot;Netherlands&quot; },
+          { &quot;id&quot;: &quot;CH&quot;, &quot;name&quot;: &quot;Switzerland&quot; },
+          { &quot;id&quot;: &quot;AT&quot;, &quot;name&quot;: &quot;Austria&quot; }
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;southern-europe&quot;,
+        &quot;name&quot;: &quot;Southern Europe&quot;,
+        &quot;children&quot;: [
+          { &quot;id&quot;: &quot;IT&quot;, &quot;name&quot;: &quot;Italy&quot; },
+          { &quot;id&quot;: &quot;ES&quot;, &quot;name&quot;: &quot;Spain&quot; },
+          { &quot;id&quot;: &quot;PT&quot;, &quot;name&quot;: &quot;Portugal&quot; },
+          { &quot;id&quot;: &quot;GR&quot;, &quot;name&quot;: &quot;Greece&quot; }
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;central-europe&quot;,
+        &quot;name&quot;: &quot;Central Europe&quot;,
+        &quot;children&quot;: [
+          { &quot;id&quot;: &quot;PL&quot;, &quot;name&quot;: &quot;Poland&quot; },
+          { &quot;id&quot;: &quot;CZ&quot;, &quot;name&quot;: &quot;Czech Republic&quot; },
+          { &quot;id&quot;: &quot;HU&quot;, &quot;name&quot;: &quot;Hungary&quot; }
+        ]
+      }
+    ]
+  }
 &lt;/script&gt;
 </code></pre>
   </div>
@@ -753,6 +807,998 @@
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
       &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar scrollbar--sm&quot;&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="group-items" tabindex="-1">
+  <a class="link" href="#group-items">#</a> Group Items
+</h2>
+<p>The Combobox items can be grouped with a label to identify each group</p>
+<p>
+  An optional <code>data-id</code> can be added to each
+  <code>data-part=&quot;item-group&quot;</code> and
+  <code>data-part=&quot;item-group-label&quot;</code>, this is useful when using
+  the API or setting default values.
+</p>
+<p>
+  To use the <code>data-part=&quot;item-group-label&quot;</code> outside of the
+  group, useful for styling, you must provide the same <code>data-id</code> for
+  the group and label.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="combobox-js combobox"
+      data-placeholder="Type or select currency"
+    >
+      <div data-part="root">
+        <label data-part="label">Your Currency</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <button data-part="clear-trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z"
+              ></path>
+            </svg>
+          </button>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content" class="scrollbar">
+            <div data-part="item-group">
+              <div data-part="item-group-label">Currency</div>
+
+              <li data-part="item" data-label="US Dollar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+                US Dollar
+              </li>
+              <li data-part="item" data-label="Euro">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+                Euro
+              </li>
+              <li data-part="item" data-label="British Pound">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+                British Pound
+              </li>
+              <li data-part="item" data-label="Japanese Yen">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+                Japanese Yen
+              </li>
+              <li data-part="item" data-label="Indian Rupee">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+                Indian Rupee
+              </li>
+            </div>
+            <div data-part="item-group">
+              <div data-part="item-group-label">Crypto</div>
+
+              <li data-part="item" data-label="Bitcoin">
+                <img src="/images/currency/btc.png" alt="BTC" />
+                Bitcoin
+              </li>
+              <li data-part="item" data-label="Ether">
+                <img src="/images/currency/eth.png" alt="ETH" />
+                Ether
+              </li>
+              <li data-part="item" data-label="USDT">
+                <img src="/images/currency/usdt.png" alt="USDT" />
+                Ether
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="combobox-js combobox" data-placeholder="Type or select currency"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Your Currency&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;button data-part="clear-trigger"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content" class="scrollbar"&gt;
+        &lt;div data-part="item-group"&gt;
+          &lt;div data-part="item-group-label"&gt;Currency&lt;/div&gt;
+
+          &lt;li data-part="item" data-label="US Dollar"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            US Dollar
+          &lt;/li&gt;
+          &lt;li data-part="item" data-label="Euro"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Euro
+          &lt;/li&gt;
+          &lt;li data-part="item" data-label="British Pound"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            British Pound
+          &lt;/li&gt;
+          &lt;li data-part="item" data-label="Japanese Yen"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Japanese Yen
+          &lt;/li&gt;
+          &lt;li data-part="item" data-label="Indian Rupee"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Indian Rupee
+          &lt;/li&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item-group"&gt;
+          &lt;div data-part="item-group-label"&gt;Crypto&lt;/div&gt;
+
+          &lt;li data-part="item" data-label="Bitcoin"&gt;
+            &lt;img src="/images/currency/btc.png" alt="BTC" /&gt;
+            Bitcoin
+          &lt;/li&gt;
+          &lt;li data-part="item" data-label="Ether"&gt;
+            &lt;img src="/images/currency/eth.png" alt="ETH" /&gt;
+            Ether
+          &lt;/li&gt;
+          &lt;li data-part="item" data-label="USDT"&gt;
+            &lt;img src="/images/currency/usdt.png" alt="USDT" /&gt;
+            Ether
+          &lt;/li&gt;
+        &lt;/div&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;combobox-js combobox&quot; data-placeholder=&quot;Type or select currency&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Your Currency&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;button data-part=&quot;clear-trigger&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;button data-part=&quot;trigger&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;positioner&quot;&gt;
+      &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
+        &lt;div data-part=&quot;item-group&quot;&gt;
+          &lt;div data-part=&quot;item-group-label&quot;&gt;Currency&lt;/div&gt;
+
+          &lt;li data-part=&quot;item&quot; data-label=&quot;US Dollar&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            US Dollar
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-label=&quot;Euro&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Euro
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-label=&quot;British Pound&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            British Pound
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-label=&quot;Japanese Yen&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Japanese Yen
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-label=&quot;Indian Rupee&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Indian Rupee
+          &lt;/li&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item-group&quot;&gt;
+          &lt;div data-part=&quot;item-group-label&quot;&gt;Crypto&lt;/div&gt;
+
+          &lt;li data-part=&quot;item&quot; data-label=&quot;Bitcoin&quot;&gt;
+            &lt;img src=&quot;/images/currency/btc.png&quot; alt=&quot;BTC&quot; /&gt;
+            Bitcoin
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-label=&quot;Ether&quot;&gt;
+            &lt;img src=&quot;/images/currency/eth.png&quot; alt=&quot;ETH&quot; /&gt;
+            Ether
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-label=&quot;USDT&quot;&gt;
+            &lt;img src=&quot;/images/currency/usdt.png&quot; alt=&quot;USDT&quot; /&gt;
+            Ether
+          &lt;/li&gt;
+        &lt;/div&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="custom-values" tabindex="-1">
+  <a class="link" href="#custom-values">#</a> Custom Values
+</h2>
+<p>
+  The Combobox items and groups can use custom values and ids, this is useful
+  when using the API or setting default values.
+</p>
+<p>
+  <code>data-value</code> can be added to each
+  <code>data-part=&quot;item&quot;</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="combobox-js combobox"
+      data-placeholder="Type or select currency"
+    >
+      <div data-part="root">
+        <label data-part="label">Your Currency</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <button data-part="clear-trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z"
+              ></path>
+            </svg>
+          </button>
+          <button data-part="trigger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div data-part="positioner">
+          <ul data-part="content" class="scrollbar">
+            <div data-part="item-group-label" data-id="currency">Currency</div>
+            <div data-part="item-group" data-id="currency">
+              <li data-part="item" data-value="USD" data-label="US Dollar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+                US Dollar
+              </li>
+              <li data-part="item" data-value="EURO" data-label="Euro">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+                Euro
+              </li>
+              <li data-part="item" data-value="GBP" data-label="British Pound">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+                British Pound
+              </li>
+              <li data-part="item" data-value="YEN" data-label="Japanese Yen">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+                Japanese Yen
+              </li>
+              <li data-part="item" data-value="AL" data-label="Indian Rupee">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  ></path>
+                </svg>
+                Indian Rupee
+              </li>
+            </div>
+            <div data-part="item-group-label" data-id="currency">Crypto</div>
+            <div data-part="item-group" data-id="currency">
+              <li data-part="item" data-value="BTC" data-label="Bitcoin">
+                <img src="/images/currency/btc.png" alt="BTC" />
+                Bitcoin
+              </li>
+              <li data-part="item" data-value="ETH" data-label="Ether">
+                <img src="/images/currency/eth.png" alt="ETH" />
+                Ether
+              </li>
+              <li data-part="item" data-value="USDT" data-label="USDT">
+                <img src="/images/currency/usdt.png" alt="USDT" />
+                Ether
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="combobox-js combobox" data-placeholder="Type or select currency"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Your Currency&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;button data-part="clear-trigger"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;button data-part="trigger"&gt;
+        &lt;svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="positioner"&gt;
+      &lt;ul data-part="content" class="scrollbar"&gt;
+        &lt;div data-part="item-group-label" data-id="currency"&gt;Currency&lt;/div&gt;
+        &lt;div data-part="item-group" data-id="currency"&gt;
+          &lt;li data-part="item" data-value="USD" data-label="US Dollar"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            US Dollar
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="EURO" data-label="Euro"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Euro
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="GBP" data-label="British Pound"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            British Pound
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="YEN" data-label="Japanese Yen"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Japanese Yen
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="AL" data-label="Indian Rupee"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Indian Rupee
+          &lt;/li&gt;
+        &lt;/div&gt;
+        &lt;div data-part="item-group-label" data-id="currency"&gt;Crypto&lt;/div&gt;
+        &lt;div data-part="item-group" data-id="currency"&gt;
+          &lt;li data-part="item" data-value="BTC" data-label="Bitcoin"&gt;
+            &lt;img src="/images/currency/btc.png" alt="BTC" /&gt;
+            Bitcoin
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="ETH" data-label="Ether"&gt;
+            &lt;img src="/images/currency/eth.png" alt="ETH" /&gt;
+            Ether
+          &lt;/li&gt;
+          &lt;li data-part="item" data-value="USDT" data-label="USDT"&gt;
+            &lt;img src="/images/currency/usdt.png" alt="USDT" /&gt;
+            Ether
+          &lt;/li&gt;
+        &lt;/div&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;combobox-js combobox&quot; data-placeholder=&quot;Type or select currency&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Your Currency&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;button data-part=&quot;clear-trigger&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;button data-part=&quot;trigger&quot;&gt;
+        &lt;svg
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+          &gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;positioner&quot;&gt;
+      &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
+        &lt;div data-part=&quot;item-group-label&quot; data-id=&quot;currency&quot;&gt;Currency&lt;/div&gt;
+        &lt;div data-part=&quot;item-group&quot; data-id=&quot;currency&quot;&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            US Dollar
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Euro
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            British Pound
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Japanese Yen
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;
+              &gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Indian Rupee
+          &lt;/li&gt;
+        &lt;/div&gt;
+        &lt;div data-part=&quot;item-group-label&quot; data-id=&quot;currency&quot;&gt;Crypto&lt;/div&gt;
+        &lt;div data-part=&quot;item-group&quot; data-id=&quot;currency&quot;&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;BTC&quot; data-label=&quot;Bitcoin&quot;&gt;
+            &lt;img src=&quot;/images/currency/btc.png&quot; alt=&quot;BTC&quot; /&gt;
+            Bitcoin
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;ETH&quot; data-label=&quot;Ether&quot;&gt;
+            &lt;img src=&quot;/images/currency/eth.png&quot; alt=&quot;ETH&quot; /&gt;
+            Ether
+          &lt;/li&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;USDT&quot; data-label=&quot;USDT&quot;&gt;
+            &lt;img src=&quot;/images/currency/usdt.png&quot; alt=&quot;USDT&quot; /&gt;
+            Ether
+          &lt;/li&gt;
+        &lt;/div&gt;
+      &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1065,7 +2111,7 @@
         </div>
         <div data-part="positioner">
           <ul data-part="content" class="scrollbar">
-            <li data-part="item" data-code="USD" data-label="US Dollar">
+            <li data-part="item" data-value="USD" data-label="US Dollar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -1081,7 +2127,7 @@
               </svg>
               US Dollar
             </li>
-            <li data-part="item" data-code="EURO" data-label="Euro">
+            <li data-part="item" data-value="EURO" data-label="Euro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -1097,7 +2143,7 @@
               </svg>
               Euro
             </li>
-            <li data-part="item" data-code="GBP" data-label="British Pound">
+            <li data-part="item" data-value="GBP" data-label="British Pound">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -1113,7 +2159,7 @@
               </svg>
               British Pound
             </li>
-            <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+            <li data-part="item" data-value="YEN" data-label="Japanese Yen">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -1129,7 +2175,7 @@
               </svg>
               Japanese Yen
             </li>
-            <li data-part="item" data-code="AL" data-label="Indian Rupee">
+            <li data-part="item" data-value="AL" data-label="Indian Rupee">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -1197,7 +2243,7 @@
     &lt;/div&gt;
     &lt;div data-part="positioner"&gt;
       &lt;ul data-part="content" class="scrollbar"&gt;
-        &lt;li data-part="item" data-code="USD" data-label="US Dollar"&gt;
+        &lt;li data-part="item" data-value="USD" data-label="US Dollar"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1213,7 +2259,7 @@
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="EURO" data-label="Euro"&gt;
+        &lt;li data-part="item" data-value="EURO" data-label="Euro"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1229,7 +2275,7 @@
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="GBP" data-label="British Pound"&gt;
+        &lt;li data-part="item" data-value="GBP" data-label="British Pound"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1245,7 +2291,7 @@
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="YEN" data-label="Japanese Yen"&gt;
+        &lt;li data-part="item" data-value="YEN" data-label="Japanese Yen"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1261,7 +2307,7 @@
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="AL" data-label="Indian Rupee"&gt;
+        &lt;li data-part="item" data-value="AL" data-label="Indian Rupee"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1369,7 +2415,7 @@
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
       &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -1385,7 +2431,7 @@
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -1401,7 +2447,7 @@
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -1417,7 +2463,7 @@
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -1433,7 +2479,7 @@
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -1564,7 +2610,7 @@
           </div>
           <div data-part="positioner">
             <ul data-part="content" class="scrollbar">
-              <li data-part="item" data-code="USD" data-label="US Dollar">
+              <li data-part="item" data-value="USD" data-label="US Dollar">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -1580,7 +2626,7 @@
                 </svg>
                 US Dollar
               </li>
-              <li data-part="item" data-code="EURO" data-label="Euro">
+              <li data-part="item" data-value="EURO" data-label="Euro">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -1596,7 +2642,7 @@
                 </svg>
                 Euro
               </li>
-              <li data-part="item" data-code="GBP" data-label="British Pound">
+              <li data-part="item" data-value="GBP" data-label="British Pound">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -1612,7 +2658,7 @@
                 </svg>
                 British Pound
               </li>
-              <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+              <li data-part="item" data-value="YEN" data-label="Japanese Yen">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -1628,7 +2674,7 @@
                 </svg>
                 Japanese Yen
               </li>
-              <li data-part="item" data-code="AL" data-label="Indian Rupee">
+              <li data-part="item" data-value="AL" data-label="Indian Rupee">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -1700,7 +2746,7 @@
       &lt;/div&gt;
       &lt;div data-part="positioner"&gt;
         &lt;ul data-part="content" class="scrollbar"&gt;
-          &lt;li data-part="item" data-code="USD" data-label="US Dollar"&gt;
+          &lt;li data-part="item" data-value="USD" data-label="US Dollar"&gt;
             &lt;svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1716,7 +2762,7 @@
             &lt;/svg&gt;
             US Dollar
           &lt;/li&gt;
-          &lt;li data-part="item" data-code="EURO" data-label="Euro"&gt;
+          &lt;li data-part="item" data-value="EURO" data-label="Euro"&gt;
             &lt;svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1732,7 +2778,7 @@
             &lt;/svg&gt;
             Euro
           &lt;/li&gt;
-          &lt;li data-part="item" data-code="GBP" data-label="British Pound"&gt;
+          &lt;li data-part="item" data-value="GBP" data-label="British Pound"&gt;
             &lt;svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1748,7 +2794,7 @@
             &lt;/svg&gt;
             British Pound
           &lt;/li&gt;
-          &lt;li data-part="item" data-code="YEN" data-label="Japanese Yen"&gt;
+          &lt;li data-part="item" data-value="YEN" data-label="Japanese Yen"&gt;
             &lt;svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1764,7 +2810,7 @@
             &lt;/svg&gt;
             Japanese Yen
           &lt;/li&gt;
-          &lt;li data-part="item" data-code="AL" data-label="Indian Rupee"&gt;
+          &lt;li data-part="item" data-value="AL" data-label="Indian Rupee"&gt;
             &lt;svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -1876,7 +2922,7 @@
       &lt;/div&gt;
       &lt;div data-part=&quot;positioner&quot;&gt;
         &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
-          &lt;li data-part=&quot;item&quot; data-code=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
             &lt;svg
               xmlns=&quot;http://www.w3.org/2000/svg&quot;
               fill=&quot;none&quot;
@@ -1892,7 +2938,7 @@
             &lt;/svg&gt;
             US Dollar
           &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-code=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
             &lt;svg
               xmlns=&quot;http://www.w3.org/2000/svg&quot;
               fill=&quot;none&quot;
@@ -1908,7 +2954,7 @@
             &lt;/svg&gt;
             Euro
           &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-code=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
             &lt;svg
               xmlns=&quot;http://www.w3.org/2000/svg&quot;
               fill=&quot;none&quot;
@@ -1924,7 +2970,7 @@
             &lt;/svg&gt;
             British Pound
           &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-code=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
             &lt;svg
               xmlns=&quot;http://www.w3.org/2000/svg&quot;
               fill=&quot;none&quot;
@@ -1940,7 +2986,7 @@
             &lt;/svg&gt;
             Japanese Yen
           &lt;/li&gt;
-          &lt;li data-part=&quot;item&quot; data-code=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+          &lt;li data-part=&quot;item&quot; data-value=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
             &lt;svg
               xmlns=&quot;http://www.w3.org/2000/svg&quot;
               fill=&quot;none&quot;
@@ -2139,7 +3185,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
         </div>
         <div data-part="positioner">
           <ul data-part="content" class="scrollbar">
-            <li data-part="item" data-code="USD" data-label="US Dollar">
+            <li data-part="item" data-value="USD" data-label="US Dollar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2155,7 +3201,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               US Dollar
             </li>
-            <li data-part="item" data-code="EURO" data-label="Euro">
+            <li data-part="item" data-value="EURO" data-label="Euro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2171,7 +3217,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Euro
             </li>
-            <li data-part="item" data-code="GBP" data-label="British Pound">
+            <li data-part="item" data-value="GBP" data-label="British Pound">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2187,7 +3233,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               British Pound
             </li>
-            <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+            <li data-part="item" data-value="YEN" data-label="Japanese Yen">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2203,7 +3249,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Japanese Yen
             </li>
-            <li data-part="item" data-code="AL" data-label="Indian Rupee">
+            <li data-part="item" data-value="AL" data-label="Indian Rupee">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2264,7 +3310,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
         </div>
         <div data-part="positioner">
           <ul data-part="content" class="scrollbar">
-            <li data-part="item" data-code="USD" data-label="US Dollar">
+            <li data-part="item" data-value="USD" data-label="US Dollar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2280,7 +3326,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               US Dollar
             </li>
-            <li data-part="item" data-code="EURO" data-label="Euro">
+            <li data-part="item" data-value="EURO" data-label="Euro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2296,7 +3342,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Euro
             </li>
-            <li data-part="item" data-code="GBP" data-label="British Pound">
+            <li data-part="item" data-value="GBP" data-label="British Pound">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2312,7 +3358,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               British Pound
             </li>
-            <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+            <li data-part="item" data-value="YEN" data-label="Japanese Yen">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2328,7 +3374,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Japanese Yen
             </li>
-            <li data-part="item" data-code="AL" data-label="Indian Rupee">
+            <li data-part="item" data-value="AL" data-label="Indian Rupee">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2389,7 +3435,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
         </div>
         <div data-part="positioner">
           <ul data-part="content" class="scrollbar">
-            <li data-part="item" data-code="USD" data-label="US Dollar">
+            <li data-part="item" data-value="USD" data-label="US Dollar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2405,7 +3451,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               US Dollar
             </li>
-            <li data-part="item" data-code="EURO" data-label="Euro">
+            <li data-part="item" data-value="EURO" data-label="Euro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2421,7 +3467,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Euro
             </li>
-            <li data-part="item" data-code="GBP" data-label="British Pound">
+            <li data-part="item" data-value="GBP" data-label="British Pound">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2437,7 +3483,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               British Pound
             </li>
-            <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+            <li data-part="item" data-value="YEN" data-label="Japanese Yen">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2453,7 +3499,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Japanese Yen
             </li>
-            <li data-part="item" data-code="AL" data-label="Indian Rupee">
+            <li data-part="item" data-value="AL" data-label="Indian Rupee">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2514,7 +3560,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
         </div>
         <div data-part="positioner">
           <ul data-part="content" class="scrollbar">
-            <li data-part="item" data-code="USD" data-label="US Dollar">
+            <li data-part="item" data-value="USD" data-label="US Dollar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2530,7 +3576,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               US Dollar
             </li>
-            <li data-part="item" data-code="EURO" data-label="Euro">
+            <li data-part="item" data-value="EURO" data-label="Euro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2546,7 +3592,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Euro
             </li>
-            <li data-part="item" data-code="GBP" data-label="British Pound">
+            <li data-part="item" data-value="GBP" data-label="British Pound">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2562,7 +3608,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               British Pound
             </li>
-            <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+            <li data-part="item" data-value="YEN" data-label="Japanese Yen">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2578,7 +3624,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Japanese Yen
             </li>
-            <li data-part="item" data-code="AL" data-label="Indian Rupee">
+            <li data-part="item" data-value="AL" data-label="Indian Rupee">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -2644,7 +3690,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part="positioner"&gt;
       &lt;ul data-part="content" class="scrollbar"&gt;
-        &lt;li data-part="item" data-code="USD" data-label="US Dollar"&gt;
+        &lt;li data-part="item" data-value="USD" data-label="US Dollar"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2660,7 +3706,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="EURO" data-label="Euro"&gt;
+        &lt;li data-part="item" data-value="EURO" data-label="Euro"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2676,7 +3722,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="GBP" data-label="British Pound"&gt;
+        &lt;li data-part="item" data-value="GBP" data-label="British Pound"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2692,7 +3738,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="YEN" data-label="Japanese Yen"&gt;
+        &lt;li data-part="item" data-value="YEN" data-label="Japanese Yen"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2708,7 +3754,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="AL" data-label="Indian Rupee"&gt;
+        &lt;li data-part="item" data-value="AL" data-label="Indian Rupee"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2769,7 +3815,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part="positioner"&gt;
       &lt;ul data-part="content" class="scrollbar"&gt;
-        &lt;li data-part="item" data-code="USD" data-label="US Dollar"&gt;
+        &lt;li data-part="item" data-value="USD" data-label="US Dollar"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2785,7 +3831,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="EURO" data-label="Euro"&gt;
+        &lt;li data-part="item" data-value="EURO" data-label="Euro"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2801,7 +3847,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="GBP" data-label="British Pound"&gt;
+        &lt;li data-part="item" data-value="GBP" data-label="British Pound"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2817,7 +3863,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="YEN" data-label="Japanese Yen"&gt;
+        &lt;li data-part="item" data-value="YEN" data-label="Japanese Yen"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2833,7 +3879,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="AL" data-label="Indian Rupee"&gt;
+        &lt;li data-part="item" data-value="AL" data-label="Indian Rupee"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2894,7 +3940,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part="positioner"&gt;
       &lt;ul data-part="content" class="scrollbar"&gt;
-        &lt;li data-part="item" data-code="USD" data-label="US Dollar"&gt;
+        &lt;li data-part="item" data-value="USD" data-label="US Dollar"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2910,7 +3956,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="EURO" data-label="Euro"&gt;
+        &lt;li data-part="item" data-value="EURO" data-label="Euro"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2926,7 +3972,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="GBP" data-label="British Pound"&gt;
+        &lt;li data-part="item" data-value="GBP" data-label="British Pound"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2942,7 +3988,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="YEN" data-label="Japanese Yen"&gt;
+        &lt;li data-part="item" data-value="YEN" data-label="Japanese Yen"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -2958,7 +4004,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="AL" data-label="Indian Rupee"&gt;
+        &lt;li data-part="item" data-value="AL" data-label="Indian Rupee"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -3019,7 +4065,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part="positioner"&gt;
       &lt;ul data-part="content" class="scrollbar"&gt;
-        &lt;li data-part="item" data-code="USD" data-label="US Dollar"&gt;
+        &lt;li data-part="item" data-value="USD" data-label="US Dollar"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -3035,7 +4081,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="EURO" data-label="Euro"&gt;
+        &lt;li data-part="item" data-value="EURO" data-label="Euro"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -3051,7 +4097,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="GBP" data-label="British Pound"&gt;
+        &lt;li data-part="item" data-value="GBP" data-label="British Pound"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -3067,7 +4113,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="YEN" data-label="Japanese Yen"&gt;
+        &lt;li data-part="item" data-value="YEN" data-label="Japanese Yen"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -3083,7 +4129,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="AL" data-label="Indian Rupee"&gt;
+        &lt;li data-part="item" data-value="AL" data-label="Indian Rupee"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -3189,7 +4235,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
       &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3205,7 +4251,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3221,7 +4267,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3237,7 +4283,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3253,7 +4299,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3314,7 +4360,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
       &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3330,7 +4376,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3346,7 +4392,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3362,7 +4408,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3378,7 +4424,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3439,7 +4485,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
       &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3455,7 +4501,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3471,7 +4517,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3487,7 +4533,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3503,7 +4549,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3564,7 +4610,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
       &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3580,7 +4626,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3596,7 +4642,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3612,7 +4658,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3628,7 +4674,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -3706,7 +4752,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
         </div>
         <div data-part="positioner">
           <ul data-part="content" class="scrollbar">
-            <li data-part="item" data-code="USD" data-label="US Dollar">
+            <li data-part="item" data-value="USD" data-label="US Dollar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3722,7 +4768,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               US Dollar
             </li>
-            <li data-part="item" data-code="EURO" data-label="Euro">
+            <li data-part="item" data-value="EURO" data-label="Euro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3738,7 +4784,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Euro
             </li>
-            <li data-part="item" data-code="GBP" data-label="British Pound">
+            <li data-part="item" data-value="GBP" data-label="British Pound">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3754,7 +4800,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               British Pound
             </li>
-            <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+            <li data-part="item" data-value="YEN" data-label="Japanese Yen">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3770,7 +4816,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Japanese Yen
             </li>
-            <li data-part="item" data-code="AL" data-label="Indian Rupee">
+            <li data-part="item" data-value="AL" data-label="Indian Rupee">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3831,7 +4877,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
         </div>
         <div data-part="positioner">
           <ul data-part="content" class="scrollbar">
-            <li data-part="item" data-code="USD" data-label="US Dollar">
+            <li data-part="item" data-value="USD" data-label="US Dollar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3847,7 +4893,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               US Dollar
             </li>
-            <li data-part="item" data-code="EURO" data-label="Euro">
+            <li data-part="item" data-value="EURO" data-label="Euro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3863,7 +4909,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Euro
             </li>
-            <li data-part="item" data-code="GBP" data-label="British Pound">
+            <li data-part="item" data-value="GBP" data-label="British Pound">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3879,7 +4925,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               British Pound
             </li>
-            <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+            <li data-part="item" data-value="YEN" data-label="Japanese Yen">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3895,7 +4941,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Japanese Yen
             </li>
-            <li data-part="item" data-code="AL" data-label="Indian Rupee">
+            <li data-part="item" data-value="AL" data-label="Indian Rupee">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3956,7 +5002,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
         </div>
         <div data-part="positioner">
           <ul data-part="content" class="scrollbar">
-            <li data-part="item" data-code="USD" data-label="US Dollar">
+            <li data-part="item" data-value="USD" data-label="US Dollar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3972,7 +5018,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               US Dollar
             </li>
-            <li data-part="item" data-code="EURO" data-label="Euro">
+            <li data-part="item" data-value="EURO" data-label="Euro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -3988,7 +5034,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Euro
             </li>
-            <li data-part="item" data-code="GBP" data-label="British Pound">
+            <li data-part="item" data-value="GBP" data-label="British Pound">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -4004,7 +5050,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               British Pound
             </li>
-            <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+            <li data-part="item" data-value="YEN" data-label="Japanese Yen">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -4020,7 +5066,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Japanese Yen
             </li>
-            <li data-part="item" data-code="AL" data-label="Indian Rupee">
+            <li data-part="item" data-value="AL" data-label="Indian Rupee">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -4081,7 +5127,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
         </div>
         <div data-part="positioner">
           <ul data-part="content" class="scrollbar">
-            <li data-part="item" data-code="USD" data-label="US Dollar">
+            <li data-part="item" data-value="USD" data-label="US Dollar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -4097,7 +5143,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               US Dollar
             </li>
-            <li data-part="item" data-code="EURO" data-label="Euro">
+            <li data-part="item" data-value="EURO" data-label="Euro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -4113,7 +5159,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Euro
             </li>
-            <li data-part="item" data-code="GBP" data-label="British Pound">
+            <li data-part="item" data-value="GBP" data-label="British Pound">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -4129,7 +5175,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               British Pound
             </li>
-            <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+            <li data-part="item" data-value="YEN" data-label="Japanese Yen">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -4145,7 +5191,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
               </svg>
               Japanese Yen
             </li>
-            <li data-part="item" data-code="AL" data-label="Indian Rupee">
+            <li data-part="item" data-value="AL" data-label="Indian Rupee">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -4211,7 +5257,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part="positioner"&gt;
       &lt;ul data-part="content" class="scrollbar"&gt;
-        &lt;li data-part="item" data-code="USD" data-label="US Dollar"&gt;
+        &lt;li data-part="item" data-value="USD" data-label="US Dollar"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4227,7 +5273,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="EURO" data-label="Euro"&gt;
+        &lt;li data-part="item" data-value="EURO" data-label="Euro"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4243,7 +5289,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="GBP" data-label="British Pound"&gt;
+        &lt;li data-part="item" data-value="GBP" data-label="British Pound"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4259,7 +5305,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="YEN" data-label="Japanese Yen"&gt;
+        &lt;li data-part="item" data-value="YEN" data-label="Japanese Yen"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4275,7 +5321,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="AL" data-label="Indian Rupee"&gt;
+        &lt;li data-part="item" data-value="AL" data-label="Indian Rupee"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4333,7 +5379,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part="positioner"&gt;
       &lt;ul data-part="content" class="scrollbar"&gt;
-        &lt;li data-part="item" data-code="USD" data-label="US Dollar"&gt;
+        &lt;li data-part="item" data-value="USD" data-label="US Dollar"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4349,7 +5395,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="EURO" data-label="Euro"&gt;
+        &lt;li data-part="item" data-value="EURO" data-label="Euro"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4365,7 +5411,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="GBP" data-label="British Pound"&gt;
+        &lt;li data-part="item" data-value="GBP" data-label="British Pound"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4381,7 +5427,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="YEN" data-label="Japanese Yen"&gt;
+        &lt;li data-part="item" data-value="YEN" data-label="Japanese Yen"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4397,7 +5443,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="AL" data-label="Indian Rupee"&gt;
+        &lt;li data-part="item" data-value="AL" data-label="Indian Rupee"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4458,7 +5504,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part="positioner"&gt;
       &lt;ul data-part="content" class="scrollbar"&gt;
-        &lt;li data-part="item" data-code="USD" data-label="US Dollar"&gt;
+        &lt;li data-part="item" data-value="USD" data-label="US Dollar"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4474,7 +5520,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="EURO" data-label="Euro"&gt;
+        &lt;li data-part="item" data-value="EURO" data-label="Euro"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4490,7 +5536,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="GBP" data-label="British Pound"&gt;
+        &lt;li data-part="item" data-value="GBP" data-label="British Pound"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4506,7 +5552,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="YEN" data-label="Japanese Yen"&gt;
+        &lt;li data-part="item" data-value="YEN" data-label="Japanese Yen"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4522,7 +5568,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="AL" data-label="Indian Rupee"&gt;
+        &lt;li data-part="item" data-value="AL" data-label="Indian Rupee"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4583,7 +5629,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part="positioner"&gt;
       &lt;ul data-part="content" class="scrollbar"&gt;
-        &lt;li data-part="item" data-code="USD" data-label="US Dollar"&gt;
+        &lt;li data-part="item" data-value="USD" data-label="US Dollar"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4599,7 +5645,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="EURO" data-label="Euro"&gt;
+        &lt;li data-part="item" data-value="EURO" data-label="Euro"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4615,7 +5661,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="GBP" data-label="British Pound"&gt;
+        &lt;li data-part="item" data-value="GBP" data-label="British Pound"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4631,7 +5677,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="YEN" data-label="Japanese Yen"&gt;
+        &lt;li data-part="item" data-value="YEN" data-label="Japanese Yen"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4647,7 +5693,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part="item" data-code="AL" data-label="Indian Rupee"&gt;
+        &lt;li data-part="item" data-value="AL" data-label="Indian Rupee"&gt;
           &lt;svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -4753,7 +5799,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
       &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -4769,7 +5815,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -4785,7 +5831,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -4801,7 +5847,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -4817,7 +5863,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -4875,7 +5921,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
       &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -4891,7 +5937,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -4907,7 +5953,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -4923,7 +5969,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -4939,7 +5985,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -5000,7 +6046,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
       &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -5016,7 +6062,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -5032,7 +6078,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -5048,7 +6094,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -5064,7 +6110,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -5125,7 +6171,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
     &lt;/div&gt;
     &lt;div data-part=&quot;positioner&quot;&gt;
       &lt;ul data-part=&quot;content&quot; class=&quot;scrollbar&quot;&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;USD&quot; data-label=&quot;US Dollar&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -5141,7 +6187,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           US Dollar
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;EURO&quot; data-label=&quot;Euro&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -5157,7 +6203,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Euro
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;GBP&quot; data-label=&quot;British Pound&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -5173,7 +6219,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           British Pound
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;YEN&quot; data-label=&quot;Japanese Yen&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;
@@ -5189,7 +6235,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
           &lt;/svg&gt;
           Japanese Yen
         &lt;/li&gt;
-        &lt;li data-part=&quot;item&quot; data-code=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
+        &lt;li data-part=&quot;item&quot; data-value=&quot;AL&quot; data-label=&quot;Indian Rupee&quot;&gt;
           &lt;svg
             xmlns=&quot;http://www.w3.org/2000/svg&quot;
             fill=&quot;none&quot;

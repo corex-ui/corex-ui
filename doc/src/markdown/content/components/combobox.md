@@ -26,6 +26,10 @@ The combobox component consists of the following data parts:
 
 `root`, `label`, `control`, `title`, `input`, `clear-trigger`, `trigger`, `positioner`, `content`, `item`
 
+`data-label` is required on all `data-part="item"` in order to be used for the input value
+
+An optional `data-value` and can be added to each `data-part="item"`, this is useful when using the API or setting default values.
+
 ```html
 <!-- render:preview -->
 <div class="combobox-js combobox" data-placeholder="Type or select currency">
@@ -66,7 +70,7 @@ The combobox component consists of the following data parts:
     </div>
     <div data-part="positioner">
       <ul data-part="content" class="scrollbar">
-        <li data-part="item" data-code="USD" data-label="US Dollar">
+        <li data-part="item" data-label="US Dollar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -82,7 +86,7 @@ The combobox component consists of the following data parts:
           </svg>
           US Dollar
         </li>
-        <li data-part="item" data-code="EURO" data-label="Euro">
+        <li data-part="item" data-label="Euro">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -98,7 +102,7 @@ The combobox component consists of the following data parts:
           </svg>
           Euro
         </li>
-        <li data-part="item" data-code="GBP" data-label="British Pound">
+        <li data-part="item" data-label="British Pound">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -114,7 +118,7 @@ The combobox component consists of the following data parts:
           </svg>
           British Pound
         </li>
-        <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+        <li data-part="item" data-label="Japanese Yen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -130,7 +134,7 @@ The combobox component consists of the following data parts:
           </svg>
           Japanese Yen
         </li>
-        <li data-part="item" data-code="AL" data-label="Indian Rupee">
+        <li data-part="item" data-label="Indian Rupee">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -160,21 +164,43 @@ You can initialize the Combobox component by embedding your JSON data directly i
 
 ```html
 <script type="application/json" data-combobox="countries">
-  [
-    { "label": "France", "code": "FR" },
-    { "label": "Belgium", "code": "BE" },
-    { "label": "Germany", "code": "DE" },
-    { "label": "Italy", "code": "IT" },
-    { "label": "Spain", "code": "ES" },
-    { "label": "Portugal", "code": "PT" },
-    { "label": "Netherlands", "code": "NL" },
-    { "label": "Switzerland", "code": "CH" },
-    { "label": "Austria", "code": "AT" },
-    { "label": "Poland", "code": "PL" },
-    { "label": "Czech Republic", "code": "CZ" },
-    { "label": "Hungary", "code": "HU" },
-    { "label": "Greece", "code": "GR" }
-  ]
+  {
+    "id": "countries",
+    "name": "Countries",
+    "children": [
+      {
+        "id": "western-europe",
+        "name": "Western Europe",
+        "children": [
+          { "id": "FR", "name": "France" },
+          { "id": "BE", "name": "Belgium" },
+          { "id": "DE", "name": "Germany" },
+          { "id": "NL", "name": "Netherlands" },
+          { "id": "CH", "name": "Switzerland" },
+          { "id": "AT", "name": "Austria" }
+        ]
+      },
+      {
+        "id": "southern-europe",
+        "name": "Southern Europe",
+        "children": [
+          { "id": "IT", "name": "Italy" },
+          { "id": "ES", "name": "Spain" },
+          { "id": "PT", "name": "Portugal" },
+          { "id": "GR", "name": "Greece" }
+        ]
+      },
+      {
+        "id": "central-europe",
+        "name": "Central Europe",
+        "children": [
+          { "id": "PL", "name": "Poland" },
+          { "id": "CZ", "name": "Czech Republic" },
+          { "id": "HU", "name": "Hungary" }
+        ]
+      }
+    ]
+  }
 </script>
 ```
 
@@ -222,6 +248,314 @@ You can initialize the Combobox component by embedding your JSON data directly i
     </div>
     <div data-part="positioner">
       <ul data-part="content" class="scrollbar scrollbar--sm"></ul>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Group Items
+
+The Combobox items can be grouped with a label to identify each group
+
+An optional `data-id` can be added to each `data-part="item-group"` and `data-part="item-group-label"`, this is useful when using the API or setting default values.
+
+To use the `data-part="item-group-label"` outside of the group, useful for styling, you must provide the same `data-id` for the group and label.
+
+```html
+<!-- render:preview -->
+<div class="combobox-js combobox" data-placeholder="Type or select currency">
+  <div data-part="root">
+    <label data-part="label">Your Currency</label>
+    <div data-part="control">
+      <input data-part="input" />
+      <button data-part="clear-trigger">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z"
+          ></path>
+        </svg>
+      </button>
+      <button data-part="trigger">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div data-part="positioner">
+      <ul data-part="content" class="scrollbar">
+        <div data-part="item-group">
+          <div data-part="item-group-label">Currency</div>
+
+          <li data-part="item" data-label="US Dollar">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            US Dollar
+          </li>
+          <li data-part="item" data-label="Euro">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            Euro
+          </li>
+          <li data-part="item" data-label="British Pound">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            British Pound
+          </li>
+          <li data-part="item" data-label="Japanese Yen">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            Japanese Yen
+          </li>
+          <li data-part="item" data-label="Indian Rupee">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            Indian Rupee
+          </li>
+        </div>
+        <div data-part="item-group">
+          <div data-part="item-group-label">Crypto</div>
+
+          <li data-part="item" data-label="Bitcoin">
+            <img src="/images/currency/btc.png" alt="BTC" />
+            Bitcoin
+          </li>
+          <li data-part="item" data-label="Ether">
+            <img src="/images/currency/eth.png" alt="ETH" />
+            Ether
+          </li>
+          <li data-part="item" data-label="USDT">
+            <img src="/images/currency/usdt.png" alt="USDT" />
+            Ether
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Custom Values
+
+The Combobox items and groups can use custom values and ids, this is useful when using the API or setting default values.
+
+`data-value` can be added to each `data-part="item"`
+
+```html
+<!-- render:preview -->
+<div class="combobox-js combobox" data-placeholder="Type or select currency">
+  <div data-part="root">
+    <label data-part="label">Your Currency</label>
+    <div data-part="control">
+      <input data-part="input" />
+      <button data-part="clear-trigger">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z"
+          ></path>
+        </svg>
+      </button>
+      <button data-part="trigger">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div data-part="positioner">
+      <ul data-part="content" class="scrollbar">
+        <div data-part="item-group-label" data-id="currency">Currency</div>
+        <div data-part="item-group" data-id="currency">
+          <li data-part="item" data-value="USD" data-label="US Dollar">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            US Dollar
+          </li>
+          <li data-part="item" data-value="EURO" data-label="Euro">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            Euro
+          </li>
+          <li data-part="item" data-value="GBP" data-label="British Pound">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            British Pound
+          </li>
+          <li data-part="item" data-value="YEN" data-label="Japanese Yen">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            Japanese Yen
+          </li>
+          <li data-part="item" data-value="AL" data-label="Indian Rupee">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            Indian Rupee
+          </li>
+        </div>
+        <div data-part="item-group-label" data-id="currency">Crypto</div>
+        <div data-part="item-group" data-id="currency">
+          <li data-part="item" data-value="BTC" data-label="Bitcoin">
+            <img src="/images/currency/btc.png" alt="BTC" />
+            Bitcoin
+          </li>
+          <li data-part="item" data-value="ETH" data-label="Ether">
+            <img src="/images/currency/eth.png" alt="ETH" />
+            Ether
+          </li>
+          <li data-part="item" data-value="USDT" data-label="USDT">
+            <img src="/images/currency/usdt.png" alt="USDT" />
+            Ether
+          </li>
+        </div>
+      </ul>
     </div>
   </div>
 </div>
@@ -418,7 +752,7 @@ document
     </div>
     <div data-part="positioner">
       <ul data-part="content" class="scrollbar">
-        <li data-part="item" data-code="USD" data-label="US Dollar">
+        <li data-part="item" data-value="USD" data-label="US Dollar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -434,7 +768,7 @@ document
           </svg>
           US Dollar
         </li>
-        <li data-part="item" data-code="EURO" data-label="Euro">
+        <li data-part="item" data-value="EURO" data-label="Euro">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -450,7 +784,7 @@ document
           </svg>
           Euro
         </li>
-        <li data-part="item" data-code="GBP" data-label="British Pound">
+        <li data-part="item" data-value="GBP" data-label="British Pound">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -466,7 +800,7 @@ document
           </svg>
           British Pound
         </li>
-        <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+        <li data-part="item" data-value="YEN" data-label="Japanese Yen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -482,7 +816,7 @@ document
           </svg>
           Japanese Yen
         </li>
-        <li data-part="item" data-code="AL" data-label="Indian Rupee">
+        <li data-part="item" data-value="AL" data-label="Indian Rupee">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -593,7 +927,7 @@ You must set the id of the form and the name of the Combobox
       </div>
       <div data-part="positioner">
         <ul data-part="content" class="scrollbar">
-          <li data-part="item" data-code="USD" data-label="US Dollar">
+          <li data-part="item" data-value="USD" data-label="US Dollar">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -609,7 +943,7 @@ You must set the id of the form and the name of the Combobox
             </svg>
             US Dollar
           </li>
-          <li data-part="item" data-code="EURO" data-label="Euro">
+          <li data-part="item" data-value="EURO" data-label="Euro">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -625,7 +959,7 @@ You must set the id of the form and the name of the Combobox
             </svg>
             Euro
           </li>
-          <li data-part="item" data-code="GBP" data-label="British Pound">
+          <li data-part="item" data-value="GBP" data-label="British Pound">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -641,7 +975,7 @@ You must set the id of the form and the name of the Combobox
             </svg>
             British Pound
           </li>
-          <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+          <li data-part="item" data-value="YEN" data-label="Japanese Yen">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -657,7 +991,7 @@ You must set the id of the form and the name of the Combobox
             </svg>
             Japanese Yen
           </li>
-          <li data-part="item" data-code="AL" data-label="Indian Rupee">
+          <li data-part="item" data-value="AL" data-label="Indian Rupee">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -767,7 +1101,7 @@ Available options:
     </div>
     <div data-part="positioner">
       <ul data-part="content" class="scrollbar">
-        <li data-part="item" data-code="USD" data-label="US Dollar">
+        <li data-part="item" data-value="USD" data-label="US Dollar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -783,7 +1117,7 @@ Available options:
           </svg>
           US Dollar
         </li>
-        <li data-part="item" data-code="EURO" data-label="Euro">
+        <li data-part="item" data-value="EURO" data-label="Euro">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -799,7 +1133,7 @@ Available options:
           </svg>
           Euro
         </li>
-        <li data-part="item" data-code="GBP" data-label="British Pound">
+        <li data-part="item" data-value="GBP" data-label="British Pound">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -815,7 +1149,7 @@ Available options:
           </svg>
           British Pound
         </li>
-        <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+        <li data-part="item" data-value="YEN" data-label="Japanese Yen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -831,7 +1165,7 @@ Available options:
           </svg>
           Japanese Yen
         </li>
-        <li data-part="item" data-code="AL" data-label="Indian Rupee">
+        <li data-part="item" data-value="AL" data-label="Indian Rupee">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -892,7 +1226,7 @@ Available options:
     </div>
     <div data-part="positioner">
       <ul data-part="content" class="scrollbar">
-        <li data-part="item" data-code="USD" data-label="US Dollar">
+        <li data-part="item" data-value="USD" data-label="US Dollar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -908,7 +1242,7 @@ Available options:
           </svg>
           US Dollar
         </li>
-        <li data-part="item" data-code="EURO" data-label="Euro">
+        <li data-part="item" data-value="EURO" data-label="Euro">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -924,7 +1258,7 @@ Available options:
           </svg>
           Euro
         </li>
-        <li data-part="item" data-code="GBP" data-label="British Pound">
+        <li data-part="item" data-value="GBP" data-label="British Pound">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -940,7 +1274,7 @@ Available options:
           </svg>
           British Pound
         </li>
-        <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+        <li data-part="item" data-value="YEN" data-label="Japanese Yen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -956,7 +1290,7 @@ Available options:
           </svg>
           Japanese Yen
         </li>
-        <li data-part="item" data-code="AL" data-label="Indian Rupee">
+        <li data-part="item" data-value="AL" data-label="Indian Rupee">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1017,7 +1351,7 @@ Available options:
     </div>
     <div data-part="positioner">
       <ul data-part="content" class="scrollbar">
-        <li data-part="item" data-code="USD" data-label="US Dollar">
+        <li data-part="item" data-value="USD" data-label="US Dollar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1033,7 +1367,7 @@ Available options:
           </svg>
           US Dollar
         </li>
-        <li data-part="item" data-code="EURO" data-label="Euro">
+        <li data-part="item" data-value="EURO" data-label="Euro">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1049,7 +1383,7 @@ Available options:
           </svg>
           Euro
         </li>
-        <li data-part="item" data-code="GBP" data-label="British Pound">
+        <li data-part="item" data-value="GBP" data-label="British Pound">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1065,7 +1399,7 @@ Available options:
           </svg>
           British Pound
         </li>
-        <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+        <li data-part="item" data-value="YEN" data-label="Japanese Yen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1081,7 +1415,7 @@ Available options:
           </svg>
           Japanese Yen
         </li>
-        <li data-part="item" data-code="AL" data-label="Indian Rupee">
+        <li data-part="item" data-value="AL" data-label="Indian Rupee">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1142,7 +1476,7 @@ Available options:
     </div>
     <div data-part="positioner">
       <ul data-part="content" class="scrollbar">
-        <li data-part="item" data-code="USD" data-label="US Dollar">
+        <li data-part="item" data-value="USD" data-label="US Dollar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1158,7 +1492,7 @@ Available options:
           </svg>
           US Dollar
         </li>
-        <li data-part="item" data-code="EURO" data-label="Euro">
+        <li data-part="item" data-value="EURO" data-label="Euro">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1174,7 +1508,7 @@ Available options:
           </svg>
           Euro
         </li>
-        <li data-part="item" data-code="GBP" data-label="British Pound">
+        <li data-part="item" data-value="GBP" data-label="British Pound">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1190,7 +1524,7 @@ Available options:
           </svg>
           British Pound
         </li>
-        <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+        <li data-part="item" data-value="YEN" data-label="Japanese Yen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1206,7 +1540,7 @@ Available options:
           </svg>
           Japanese Yen
         </li>
-        <li data-part="item" data-code="AL" data-label="Indian Rupee">
+        <li data-part="item" data-value="AL" data-label="Indian Rupee">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1280,7 +1614,7 @@ Available options:
     </div>
     <div data-part="positioner">
       <ul data-part="content" class="scrollbar">
-        <li data-part="item" data-code="USD" data-label="US Dollar">
+        <li data-part="item" data-value="USD" data-label="US Dollar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1296,7 +1630,7 @@ Available options:
           </svg>
           US Dollar
         </li>
-        <li data-part="item" data-code="EURO" data-label="Euro">
+        <li data-part="item" data-value="EURO" data-label="Euro">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1312,7 +1646,7 @@ Available options:
           </svg>
           Euro
         </li>
-        <li data-part="item" data-code="GBP" data-label="British Pound">
+        <li data-part="item" data-value="GBP" data-label="British Pound">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1328,7 +1662,7 @@ Available options:
           </svg>
           British Pound
         </li>
-        <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+        <li data-part="item" data-value="YEN" data-label="Japanese Yen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1344,7 +1678,7 @@ Available options:
           </svg>
           Japanese Yen
         </li>
-        <li data-part="item" data-code="AL" data-label="Indian Rupee">
+        <li data-part="item" data-value="AL" data-label="Indian Rupee">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1402,7 +1736,7 @@ Available options:
     </div>
     <div data-part="positioner">
       <ul data-part="content" class="scrollbar">
-        <li data-part="item" data-code="USD" data-label="US Dollar">
+        <li data-part="item" data-value="USD" data-label="US Dollar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1418,7 +1752,7 @@ Available options:
           </svg>
           US Dollar
         </li>
-        <li data-part="item" data-code="EURO" data-label="Euro">
+        <li data-part="item" data-value="EURO" data-label="Euro">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1434,7 +1768,7 @@ Available options:
           </svg>
           Euro
         </li>
-        <li data-part="item" data-code="GBP" data-label="British Pound">
+        <li data-part="item" data-value="GBP" data-label="British Pound">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1450,7 +1784,7 @@ Available options:
           </svg>
           British Pound
         </li>
-        <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+        <li data-part="item" data-value="YEN" data-label="Japanese Yen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1466,7 +1800,7 @@ Available options:
           </svg>
           Japanese Yen
         </li>
-        <li data-part="item" data-code="AL" data-label="Indian Rupee">
+        <li data-part="item" data-value="AL" data-label="Indian Rupee">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1527,7 +1861,7 @@ Available options:
     </div>
     <div data-part="positioner">
       <ul data-part="content" class="scrollbar">
-        <li data-part="item" data-code="USD" data-label="US Dollar">
+        <li data-part="item" data-value="USD" data-label="US Dollar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1543,7 +1877,7 @@ Available options:
           </svg>
           US Dollar
         </li>
-        <li data-part="item" data-code="EURO" data-label="Euro">
+        <li data-part="item" data-value="EURO" data-label="Euro">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1559,7 +1893,7 @@ Available options:
           </svg>
           Euro
         </li>
-        <li data-part="item" data-code="GBP" data-label="British Pound">
+        <li data-part="item" data-value="GBP" data-label="British Pound">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1575,7 +1909,7 @@ Available options:
           </svg>
           British Pound
         </li>
-        <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+        <li data-part="item" data-value="YEN" data-label="Japanese Yen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1591,7 +1925,7 @@ Available options:
           </svg>
           Japanese Yen
         </li>
-        <li data-part="item" data-code="AL" data-label="Indian Rupee">
+        <li data-part="item" data-value="AL" data-label="Indian Rupee">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1652,7 +1986,7 @@ Available options:
     </div>
     <div data-part="positioner">
       <ul data-part="content" class="scrollbar">
-        <li data-part="item" data-code="USD" data-label="US Dollar">
+        <li data-part="item" data-value="USD" data-label="US Dollar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1668,7 +2002,7 @@ Available options:
           </svg>
           US Dollar
         </li>
-        <li data-part="item" data-code="EURO" data-label="Euro">
+        <li data-part="item" data-value="EURO" data-label="Euro">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1684,7 +2018,7 @@ Available options:
           </svg>
           Euro
         </li>
-        <li data-part="item" data-code="GBP" data-label="British Pound">
+        <li data-part="item" data-value="GBP" data-label="British Pound">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1700,7 +2034,7 @@ Available options:
           </svg>
           British Pound
         </li>
-        <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+        <li data-part="item" data-value="YEN" data-label="Japanese Yen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -1716,7 +2050,7 @@ Available options:
           </svg>
           Japanese Yen
         </li>
-        <li data-part="item" data-code="AL" data-label="Indian Rupee">
+        <li data-part="item" data-value="AL" data-label="Indian Rupee">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
