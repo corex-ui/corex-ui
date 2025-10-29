@@ -10,37 +10,42 @@ import {
   normalizeProps,
   renderPart,
 } from "../lib";
+
 export class Carousel extends Component<carousel.Props, carousel.Api> {
   initMachine(props: carousel.Props): VanillaMachine<any> {
     return new VanillaMachine(carousel.machine, props);
   }
+
   initApi(): carousel.Api {
-    const api = carousel.connect(this.machine.service, normalizeProps);
-    return api;
+    return carousel.connect(this.machine.service, normalizeProps);
   }
+
   render() {
-    const indicatorGroup = this.el.querySelector<HTMLElement>(
-      '[data-part="indicator-group"]',
-    );
-    if (!indicatorGroup) return;
     const itemsPart = Array.from(
       this.el.querySelectorAll<HTMLElement>('[data-part="item"]'),
     );
     itemsPart.forEach((itemEl, index) => {
       itemEl.setAttribute("data-index", index.toString());
     });
-    const pageCount = this.api.pageSnapPoints.length;
-    const buttons = Array.from(
-      indicatorGroup.querySelectorAll<HTMLButtonElement>(
-        '[data-part="indicator"]',
-      ),
+
+    const indicatorGroup = this.el.querySelector<HTMLElement>(
+      '[data-part="indicator-group"]',
     );
-    for (let i = buttons.length; i < pageCount; i++) {
-      const button = document.createElement("button");
-      button.setAttribute("data-part", "indicator");
-      button.setAttribute("data-index", i.toString());
-      indicatorGroup.appendChild(button);
+    if (indicatorGroup) {
+      const pageCount = this.api.pageSnapPoints.length;
+      const buttons = Array.from(
+        indicatorGroup.querySelectorAll<HTMLButtonElement>(
+          '[data-part="indicator"]',
+        ),
+      );
+      for (let i = buttons.length; i < pageCount; i++) {
+        const button = document.createElement("button");
+        button.setAttribute("data-part", "indicator");
+        button.setAttribute("data-index", i.toString());
+        indicatorGroup.appendChild(button);
+      }
     }
+
     const parts = [
       "root",
       "control",
@@ -51,11 +56,13 @@ export class Carousel extends Component<carousel.Props, carousel.Api> {
       "indicator-group",
     ];
     for (const part of parts) renderPart(this.el, part, this.api);
+
     const items = ["item", "indicator"];
     for (const item of items)
       renderPart(this.el, item, this.api, { index: "number" });
   }
 }
+
 export function initializeCarousel(
   doc: HTMLElement | Document = document,
 ): void {
@@ -63,14 +70,16 @@ export function initializeCarousel(
     const directions = ["ltr", "rtl"] as const;
     const orientations = ["horizontal", "vertical"] as const;
     const snapTypes = ["proximity", "mandatory"] as const;
+
     const itemCount =
       rootEl.querySelectorAll<HTMLElement>('[data-part="item"]').length;
+
     const carousel = new Carousel(rootEl, {
       id: generateId(rootEl, "carousel"),
       slideCount: itemCount,
       slidesPerPage: getNumber(rootEl, "slidesPerPage"),
       loop: getBoolean(rootEl, "loop"),
-      allowMouseDrag: getBoolean(rootEl, "allowMouseDrag") || true,
+      allowMouseDrag: getBoolean(rootEl, "allowMouseDrag") ?? true,
       autoplay: getBoolean(rootEl, "autoplay")
         ? getNumber(rootEl, "delay") !== undefined
           ? { delay: getNumber(rootEl, "delay")! }
@@ -89,26 +98,25 @@ export function initializeCarousel(
       dir: getString<Direction>(rootEl, "dir", directions),
       onAutoplayStatusChange(details) {
         const eventName = getString(rootEl, "onAutoplayStatusChange");
-        if (eventName) {
+        if (eventName)
           rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
-        }
       },
       onDragStatusChange(details) {
         const eventName = getString(rootEl, "onDragStatusChange");
-        if (eventName) {
+        if (eventName)
           rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
-        }
       },
       onPageChange(details) {
         const eventName = getString(rootEl, "onPageChange");
-        if (eventName) {
+        if (eventName)
           rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
-        }
       },
     });
+
     carousel.init();
   });
 }
+
 if (typeof window !== "undefined") {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () =>
