@@ -202,13 +202,13 @@ You can interact with the Collapsible API by dispatching custom events.
 
 ```html
 <!-- render:preview -->
-<button data-action="collapsible-set-open" data-value="true">
+<button data-action="collapsible-set-open" data-value="true" class="button">
   Open Collapsible
 </button>
-<button data-action="collapsible-set-open" data-value="false">
+<button data-action="collapsible-set-open" data-value="false" class="button">
   Close Collapsible
 </button>
-<button data-action="collapsible-open">Get open status</button>
+<button data-action="collapsible-open" class="button">Get open status</button>
 <div id="collapsible-api" class="collapsible collapsible-js">
   <div data-part="root">
     <button data-part="trigger">
