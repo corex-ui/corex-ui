@@ -292,7 +292,7 @@ formImage?.addEventListener("submit", (e) => {
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the File Upload component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/file-upload";
@@ -302,23 +302,12 @@ This will automatically initialize all elements with `class="file-upload-js"` an
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/file-upload.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="file-upload file-upload-js">
-  <div data-part="root">
-    <label data-part="label">Upload File</label>
-    <input data-part="hidden-input" />
-    <div data-part="dropzone">
-      <span>Drag your file(s) here</span>
-    </div>
-    <button data-part="trigger">Choose file(s)</button>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `file-upload` class.

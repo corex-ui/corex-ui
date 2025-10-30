@@ -722,7 +722,7 @@
 </p>
 <hr />
 <h2 id="api" tabindex="-1"><a class="link" href="#api">#</a> API</h2>
-<p>You can interact with the Accordion API by dispatching custom events.</p>
+<p>You can interact with the dialog API by dispatching custom events.</p>
 
 <div class="preview">
   <div class="preview__display">
@@ -1039,7 +1039,7 @@ if (dialogState) {
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the Dialog component</li>
+  <li>Import the component</li>
 </ol>
 
 <div class="preview">
@@ -1106,6 +1106,10 @@ if (dialogState) {
   <li>Add styling</li>
 </ol>
 <p>
+  The component is <strong>unstyled by default</strong> for maximum
+  customization flexibility.
+</p>
+<p>
   To apply the default Corex UI design system styles, import the stylesheet:
 </p>
 
@@ -1164,74 +1168,7 @@ if (dialogState) {
 </code></pre>
   </div>
 </div>
-<p>Then apply the base class along with any desired modifiers:</p>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div class="dialog dialog-js"&gt;
-  &lt;div data-part="root"&gt;
-    &lt;button data-part="trigger"&gt;&lt;/button&gt;
-    &lt;div data-part="positioner"&gt;
-      &lt;div data-part="content"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;dialog dialog-js&quot;&gt;
-  &lt;div data-part=&quot;root&quot;&gt;
-    &lt;button data-part=&quot;trigger&quot;&gt;&lt;/button&gt;
-    &lt;div data-part=&quot;positioner&quot;&gt;
-      &lt;div data-part=&quot;content&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-</div>
+<p>
+  These styles will be applied to all elements with the
+  <code>dialog</code> class.
+</p>

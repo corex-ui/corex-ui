@@ -21,7 +21,7 @@
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  width: fit-content;
+  width: auto;
   font-size: var(--text-ui);
   line-height: var(--text-ui--line-height);
   font-weight: var(--font-weight-ui);
@@ -181,19 +181,17 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
-  color: var(--color-root--text);
-  background-color: var(--color-root);
+  color: var(--color-ui--text);
+  background-color: var(--color-ui);
 
   &::placeholder {
     color: var(--color-ui--muted);
   }
 
+  &:focus,
   &:hover {
-    background-color: var(--color-ui-hover);
-  }
-
-  &:active {
-    background-color: var(--color-ui-active);
+    background-color: var(--color-root);
+    color: var(--color-root--text);
   }
 
   &:focus-visible {

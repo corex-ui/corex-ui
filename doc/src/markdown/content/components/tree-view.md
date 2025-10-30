@@ -1115,7 +1115,7 @@ Description: Event name to be send when the tree is opened or closed
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Tree View component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/tree-view";
@@ -1125,16 +1125,12 @@ This will automatically initialize all elements with `class="tree-view-js"` and 
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/tree-view.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="tree-view tree-view-js">
-  <div data-part="root"></div>
-</div>
-```
+These styles will be applied to all elements with the `tree-view` class.

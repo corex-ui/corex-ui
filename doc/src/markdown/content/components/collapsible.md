@@ -202,13 +202,13 @@ You can interact with the Collapsible API by dispatching custom events.
 
 ```html
 <!-- render:preview -->
-<button data-action="collapsible-set-open" data-value="true">
+<button data-action="collapsible-set-open" data-value="true" class="button">
   Open Collapsible
 </button>
-<button data-action="collapsible-set-open" data-value="false">
+<button data-action="collapsible-set-open" data-value="false" class="button">
   Close Collapsible
 </button>
-<button data-action="collapsible-get-open">Get open status</button>
+<button data-action="collapsible-open" class="button">Get open status</button>
 <div id="collapsible-api" class="collapsible collapsible-js">
   <div data-part="root">
     <button data-part="trigger">
@@ -262,12 +262,12 @@ if (collapsibleState) {
     });
   });
   const getBtns = document.querySelectorAll<HTMLButtonElement>(
-    'button[data-action="collapsible-get-open"]',
+    'button[data-action="collapsible-open"]',
   );
   getBtns.forEach((btn) =>
     btn.addEventListener("click", () => {
       collapsibleState.dispatchEvent(
-        new CustomEvent("collapsible:get-open", {
+        new CustomEvent("collapsible:open", {
           detail: {
             callback: (value: string[]) => {
               alert("Collapsible value: " + JSON.stringify(value));
@@ -286,7 +286,7 @@ if (collapsibleState) {
 Type: `boolean`
 Description: Sets the open state of the collapsible
 
-**collapsible:get-open**
+**collapsible:open**
 Type: `callback`
 Description: Get the current open state of the collapsible
 
@@ -666,7 +666,7 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Collapsible component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/collapsible";
@@ -676,19 +676,12 @@ This will automatically initialize all elements with `class="collapsible-js"` an
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/collapsible.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="collapsible collapsible-js">
-  <div data-part="root">
-    <button data-part="trigger"></button>
-    <div data-part="content"></div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `collapsible` class.

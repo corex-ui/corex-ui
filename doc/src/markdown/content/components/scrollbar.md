@@ -355,14 +355,12 @@ Options: **md(default)**, **sm**, **lg**, **xl**
 
 ## Installation
 
+First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/scrollbar.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="scrollbar">...</div>
-```
+These styles will be applied to all elements with the `scrollbar` class.

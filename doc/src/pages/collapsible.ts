@@ -27,12 +27,12 @@ if (collapsibleState) {
     });
   });
   const getBtns = document.querySelectorAll<HTMLButtonElement>(
-    'button[data-action="collapsible-get-open"]',
+    'button[data-action="collapsible-open"]',
   );
   getBtns.forEach((btn) =>
     btn.addEventListener("click", () => {
       collapsibleState.dispatchEvent(
-        new CustomEvent("collapsible:get-open", {
+        new CustomEvent("collapsible:open", {
           detail: {
             callback: (value: string[]) => {
               alert("Collapsible value: " + JSON.stringify(value));

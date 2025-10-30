@@ -779,14 +779,12 @@ Options: **square(default)**, **circle**
 
 ## Installation
 
+First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/badge.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<span class="badge">...</span>
-```
+These styles will be applied to all elements with the `badge` class.

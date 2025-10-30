@@ -574,7 +574,7 @@ Description: Event name triggered when the panel stage changes (`minimized`, `ma
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Floating Panel component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/floating-panel";
@@ -584,19 +584,12 @@ This will automatically initialize all elements with `class="floating-panel-js"`
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/floating-panel.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="floating-panel floating-panel-js">
-  <button data-part="trigger"></button>
-  <div data-part="positioner">
-    <div data-part="content"></div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `floating-panel` class.

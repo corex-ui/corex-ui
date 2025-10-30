@@ -424,20 +424,20 @@ Description: Event name to be sent when the timer ticks.
 
 ## Modifiers
 
-Accordions support modifier classes that control their appearance.  
-You can combine multiple modifiers on the same accordion.
+Timer support modifier classes that control their appearance.  
+You can combine multiple modifiers on the same timer.
 
 The default modifier is applied automatically, so you don’t need to include it explicitly.
 
-| Modifier      | Description                                |
-| ------------- | ------------------------------------------ |
-| [Size](#size) | Adjusts the overall size of the accordion. |
+| Modifier      | Description                            |
+| ------------- | -------------------------------------- |
+| [Size](#size) | Adjusts the overall size of the timer. |
 
 > You may have noticed the double dash before the modifier name — this follows the BEM (Block Element Modifier) naming convention
 
 ### Size
 
-Use `class="accordion--{size}"` to set the size of an accordion.
+Use `class="timer--{size}"` to set the size of an timer.
 
 Available options:  
 **sm**, **md** (default), **lg**, **xl**
@@ -804,7 +804,7 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Timer component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/timer";
@@ -814,18 +814,12 @@ This will automatically initialize all elements with `class="timer-js"` and add 
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/timer.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="timer timer-js">
-  <div data-part="root">
-    <div data-part="area"></div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `timer` class.

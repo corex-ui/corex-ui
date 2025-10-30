@@ -1,29 +1,41 @@
 <script type="application/json" data-listbox="my-listbox">
-  [
-    {
-      "value": "apple",
-      "label": "Apple",
-      "group": "Fruits"
-    },
-    {
-      "value": "banana",
-      "label": "Banana",
-      "group": "Fruits"
-    },
-    {
-      "value": "carrot",
-      "label": "Carrot",
-      "group": "Vegetables"
-    },
-    {
-      "value": "broccoli",
-      "label": "Broccoli",
-      "group": "Vegetables",
-      "disabled": true
-    },
-    {
-      "value": "water",
-      "label": "Water"
-    }
-  ]
+  {
+    "id": "my-listbox",
+    "name": "My Listbox",
+    "children": [
+      {
+        "id": "group-1",
+        "name": "Group 1",
+        "children": [
+          {
+            "id": "item-1",
+            "name": "Item 1"
+          },
+          {
+            "id": "item-2",
+            "name": "Item 2"
+          },
+          {
+            "id": "item-3",
+            "name": "Item 3",
+            "disabled": true
+          }
+        ]
+      },
+      {
+        "id": "group-2",
+        "name": "Group 2",
+        "children": [
+          {
+            "id": "item-4",
+            "name": "Item 4"
+          },
+          {
+            "id": "item-5",
+            "name": "Item 5"
+          }
+        ]
+      }
+    ]
+  }
 </script>

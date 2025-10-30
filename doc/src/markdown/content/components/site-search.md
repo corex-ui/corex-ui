@@ -83,7 +83,7 @@ pagefind({
   assetsDirectory: "public",
   bundleDirectory: "pagefind",
   buildScript: "build",
-  developStrategy: "eager", //set "lazy" during dev
+  developStrategy: "eager",
 });
 ```
 
@@ -109,3 +109,27 @@ import type { Pagefind } from "vite-plugin-pagefind/types";
 ```
 
 ---
+
+## Installation
+
+First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
+
+1. Import the component
+
+```ts
+import "@corex-ui/static/components/site-search";
+```
+
+This will automatically initialize all elements with `class="site-search-js"` and add the necessary interaction behavior.
+
+2. Add styling
+
+The component is **unstyled by default** for maximum customization flexibility.
+
+To apply the default Corex UI design system styles, import the stylesheet:
+
+```css
+@import "@corex-ui/design/components/site-search.css";
+```
+
+These styles will be applied to all elements with the `site-search` class.

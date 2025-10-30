@@ -52,8 +52,6 @@
     "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
-    "intersection-observer": "^0.12.2",
-    "resize-observer-polyfill": "^1.5.1",
     "jsdom": "^26.1.0"
   }
 }

@@ -973,13 +973,11 @@ Available options:
 </div>
 ```
 
----
-
 ## Installation
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Carousel component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/carousel";
@@ -989,20 +987,12 @@ This will automatically initialize all elements with `class="carousel-js"` and a
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/carousel.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="carousel carousel-js">
-  <div data-part="root">
-    <div data-part="item-group">
-      <div data-part="item"><img src="/images/bg/beach.jpg" alt="beach" /></div>
-    </div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `carousel` class.

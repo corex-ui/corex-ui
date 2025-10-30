@@ -144,15 +144,9 @@ importers:
       astro:
         specifier: ^5.13.10
         version: 5.14.6(@types/node@22.18.11)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.5)(terser@5.44.0)(tsx@4.20.6)(typescript@5.8.3)
-      intersection-observer:
-        specifier: ^0.12.2
-        version: 0.12.2
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
-      resize-observer-polyfill:
-        specifier: ^1.5.1
-        version: 1.5.1
     devDependencies:
       '@types/jsdom':
         specifier: ^21.1.7
@@ -184,9 +178,6 @@ importers:
       jsdom:
         specifier: ^22.1.0
         version: 22.1.0
-      resize-observer-polyfill:
-        specifier: ^1.5.1
-        version: 1.5.1
     devDependencies:
       '@eslint/compat':
         specifier: ^1
@@ -221,9 +212,6 @@ importers:
       eslint-config-prettier:
         specifier: ^10
         version: 10.1.8(eslint@9.38.0(jiti@2.6.1))
-      intersection-observer:
-        specifier: ^0.12.2
-        version: 0.12.2
       mocha:
         specifier: ^10
         version: 10.8.2
@@ -373,15 +361,9 @@ importers:
 
   packages/vite:
     dependencies:
-      intersection-observer:
-        specifier: ^0.12.2
-        version: 0.12.2
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
-      resize-observer-polyfill:
-        specifier: ^1.5.1
-        version: 1.5.1
     devDependencies:
       '@types/jsdom':
         specifier: ^21.1.7
@@ -4983,10 +4965,6 @@ packages:
   interpret@1.4.0:
     resolution: {integrity: sha512-agE4QfB2Lkp9uICn7BAqoscw4SZP9kTE2hxiFI3jBPmXJfdqiahTbUuKGsMoN2GtqL9AxhYioAcVvgsb1HvRbA==}
     engines: {node: '>= 0.10'}
-
-  intersection-observer@0.12.2:
-    resolution: {integrity: sha512-7m1vEcPCxXYI8HqnL8CKI6siDyD+eIWSwgB3DZA+ZTogxk9I4CDnj4wilt9x/+/QbHI4YG5YZNmC6458/e9Ktg==}
-    deprecated: The Intersection Observer polyfill is no longer needed and can safely be removed. Intersection Observer has been Baseline since 2019.
 
   iron-webcrypto@1.2.1:
     resolution: {integrity: sha512-feOM6FaSr6rEABp/eDfVseKyTMDt+KGpeB35SkVn9Tyn0CqvVsY3EwI0v5i8nMHyJnzCIQf7nsy3p41TPkJZhg==}
@@ -13488,8 +13466,6 @@ snapshots:
       side-channel: 1.1.0
 
   interpret@1.4.0: {}
-
-  intersection-observer@0.12.2: {}
 
   iron-webcrypto@1.2.1: {}
 

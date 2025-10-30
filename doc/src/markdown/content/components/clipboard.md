@@ -82,41 +82,6 @@ To hide and show the icons on copy state you must add `data-copy` and `data-copi
       <button data-part="trigger">
         <span data-copy>Copy</span>
         <span data-copied>Copied</span>
-
-        <svg
-          data-copy
-          stroke="currentColor"
-          fill="none"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-          height="1em"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-          ></path>
-        </svg>
-        <svg
-          data-copied
-          stroke="currentColor"
-          fill="currentColor"
-          stroke-width="0"
-          viewBox="0 0 20 20"
-          aria-hidden="true"
-          height="1em"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-            clip-rule="evenodd"
-          ></path>
-        </svg>
       </button>
     </div>
   </div>
@@ -282,7 +247,7 @@ Description: Event name to send when the value changes
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Clipboard component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/clipboard";
@@ -292,22 +257,12 @@ This will automatically initialize all elements with `class="clipboard-js"` and 
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/clipboard.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="clipboard clipboard-js" data-default-value="info@netoum.com">
-  <div data-part="root">
-    <label data-part="label">Contact</label>
-    <div data-part="control">
-      <input data-part="input" />
-      <button data-part="trigger"></button>
-    </div>
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `clipboard` class.

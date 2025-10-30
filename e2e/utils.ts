@@ -75,3 +75,30 @@ export async function isFocus(locator: Locator) {
   const focused = await locator.evaluate((el) => document.activeElement === el);
   expect(focused).toBe(true);
 }
+
+/**
+ * Check if the element is currently highlighted (focused in listbox)
+ */
+export async function isHighlightedFocus(locator: Locator) {
+  const highlighted = await locator.getAttribute("data-highlighted");
+  expect(highlighted).not.toBeNull();
+}
+
+/**
+ * Expect the element to have the selected state for listbox
+ * Works with data-state="checked"/"unchecked"
+ */
+export async function expectSelected(locator: Locator) {
+  await locator.waitFor({ state: "attached" });
+  const state = await locator.getAttribute("data-state");
+  expect(state).toBe("checked");
+}
+
+/**
+ * Expect the element to be unselected in listbox
+ */
+export async function expectUnselected(locator: Locator) {
+  await locator.waitFor({ state: "attached" });
+  const state = await locator.getAttribute("data-state");
+  expect(state).toBe("unchecked");
+}

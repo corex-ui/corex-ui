@@ -15,8 +15,7 @@
     "@oclif/core": "^4",
     "@oclif/plugin-help": "^6",
     "@oclif/plugin-plugins": "^5",
-    "jsdom": "^22.1.0",
-    "resize-observer-polyfill": "^1.5.1"
+    "jsdom": "^22.1.0"
   },
   "devDependencies": {
     "@eslint/compat": "^1",
@@ -30,7 +29,6 @@
     "eslint": "^9",
     "eslint-config-oclif": "^6",
     "eslint-config-prettier": "^10",
-    "intersection-observer": "^0.12.2",
     "mocha": "^10",
     "oclif": "^4",
     "shx": "^0.3.3",

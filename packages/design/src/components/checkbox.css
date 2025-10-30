@@ -6,6 +6,7 @@
 
     flex-direction: row;
     max-width: var(--container-ui);
+    align-items: center;
     width: auto;
     gap: var(--spacing-ui-gap);
     position: relative;

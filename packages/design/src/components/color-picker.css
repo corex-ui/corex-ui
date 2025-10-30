@@ -26,18 +26,19 @@
   }
 
   .color-picker [data-scope="color-picker"][data-part="trigger"] {
-    @apply ui-trigger;
+    @apply ui-trigger ui-trigger--square;
 
-    min-height: var(--spacing-mini);
+    min-height: var(--spacing-ui);
+    min-width: var(--spacing-ui);
     padding: 0;
     aspect-ratio: 1 / 1;
     width: auto;
     position: relative;
 
     & [data-scope="color-picker"][data-part="swatch"] {
-      min-height: var(--spacing-ui);
-      width: auto;
-      aspect-ratio: 1 / 1;
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     & [data-scope="color-picker"][data-part="transparency-grid"] {

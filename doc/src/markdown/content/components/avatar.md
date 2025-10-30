@@ -88,7 +88,7 @@ Description: Unique id of the avatar. Default generated if none is provided.
 
 **data-dir**
 Type: `string`
-Description: The orientation of the accordion. Can be `ltr` or `rtl`.
+Description: The orientation of the avatar. Can be `ltr` or `rtl`.
 
 ---
 
@@ -151,7 +151,7 @@ RTL support for avatar
   </div>
   <div class="avatar avatar-js" data-dir="rtl">
     <div data-part="root">
-      <span data-part="fallback">ك س</span>
+      <span data-part="fallback">س</span>
       <img data-part="image" alt="كوركس HTML" src="/corex_not_found.svg" />
     </div>
   </div>
@@ -316,7 +316,7 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the Avatar component
+1. Import the component
 
 ```ts
 import "@corex-ui/static/components/avatar";
@@ -326,19 +326,12 @@ This will automatically initialize all elements with `class="avatar-js"` and add
 
 2. Add styling
 
+The component is **unstyled by default** for maximum customization flexibility.
+
 To apply the default Corex UI design system styles, import the stylesheet:
 
 ```css
 @import "@corex-ui/design/components/avatar.css";
 ```
 
-Then apply the base class along with any desired modifiers:
-
-```html
-<div class="avatar avatar-js">
-  <div data-part="root">
-    <span data-part="fallback">C</span>
-    <img data-part="image" alt="Corex HTML" src="/images/avatar.png" />
-  </div>
-</div>
-```
+These styles will be applied to all elements with the `avatar` class.

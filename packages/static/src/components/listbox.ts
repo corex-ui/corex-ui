@@ -21,6 +21,28 @@ interface ListboxItem {
 
 interface Group {
   value: string;
+  label?: string;
+}
+
+function flattenJsonItems(data: any, parentGroup?: string): ListboxItem[] {
+  if (!data) return [];
+  const items: ListboxItem[] = [];
+
+  if (data.children && Array.isArray(data.children)) {
+    data.children.forEach((child: any) => {
+      items.push(...flattenJsonItems(child, data.name || parentGroup));
+    });
+  } else {
+    // leaf node = actual item
+    items.push({
+      value: data.id,
+      label: data.name,
+      group: parentGroup,
+      disabled: data.disabled,
+    });
+  }
+
+  return items;
 }
 
 function loadJsonItems(path: string): ListboxItem[] {
@@ -29,24 +51,12 @@ function loadJsonItems(path: string): ListboxItem[] {
       `script[type="application/json"][data-listbox="${path}"]`,
     );
     if (!script) throw new Error(`No inline JSON script found for ${path}`);
-    return JSON.parse(script.textContent || "[]");
+    const data = JSON.parse(script.textContent || "{}");
+    return flattenJsonItems(data);
   } catch (e) {
     console.error("Failed to load JSON items:", e);
     return [];
   }
-}
-
-function getDomItems(rootEl: HTMLElement): ListboxItem[] {
-  const items: ListboxItem[] = [];
-  rootEl.querySelectorAll('[data-part="item"]').forEach((el) => {
-    const value = el.getAttribute("data-value") || "";
-    const label = el.getAttribute("data-label") || "";
-    const groupEl = el.closest('[data-part="item-group"]');
-    const group = groupEl?.getAttribute("data-id") || undefined;
-    const disabled = getBoolean(el as HTMLElement, "disabled");
-    items.push({ value, label, group, disabled });
-  });
-  return items;
 }
 
 function getDomGroups(rootEl: HTMLElement): Group[] {
@@ -104,6 +114,17 @@ export class Listbox extends Component<listbox.Props, listbox.Api> {
 
     const groupMap: Record<string, HTMLElement> = {};
 
+    if (this.groups.length === 0) {
+      const uniqueGroups = new Set<string>();
+      this.items.forEach((item) => {
+        if (item.group) uniqueGroups.add(item.group);
+      });
+      this.groups = Array.from(uniqueGroups).map((value) => ({
+        value,
+        label: value,
+      }));
+    }
+
     this.groups.forEach((g) => {
       const groupEl = document.createElement("div");
       groupEl.setAttribute("data-part", "item-group");
@@ -111,9 +132,10 @@ export class Listbox extends Component<listbox.Props, listbox.Api> {
 
       const labelEl = document.createElement("div");
       labelEl.setAttribute("data-part", "item-group-label");
-      labelEl.textContent = g.value;
+      labelEl.setAttribute("data-id", g.value);
+      labelEl.textContent = g.label || g.value;
 
-      groupEl.appendChild(labelEl);
+      contentEl.appendChild(labelEl);
       contentEl.appendChild(groupEl);
 
       groupMap[g.value] = groupEl;
@@ -153,7 +175,6 @@ export class Listbox extends Component<listbox.Props, listbox.Api> {
       }
     });
   }
-
   render() {
     const isJson = getString(this.el, "json") !== undefined;
     if (isJson && !this.domInitialized) {
@@ -183,15 +204,22 @@ export class Listbox extends Component<listbox.Props, listbox.Api> {
       });
     }
 
-    const groupParts = ["item-group", "item-group-label"];
-    for (const part of groupParts) {
-      renderPart(this.el, part, this.api, {
-        group: (el: HTMLElement) => {
-          const value = el.getAttribute("data-id");
-          return this.groups.find((g) => g.value === value);
-        },
-      });
-    }
+    renderPart(this.el, "item-group", this.api, {
+      group: (el: HTMLElement) => {
+        const id = el.getAttribute("data-id");
+        const group = this.groups.find((g) => g.value === id);
+        return group;
+      },
+      id: (el: HTMLElement) => el.getAttribute("data-id"),
+    });
+
+    renderPart(this.el, "item-group-label", this.api, {
+      group: (el: HTMLElement) => {
+        const id = el.getAttribute("data-id");
+        return this.groups.find((g) => g.value === id);
+      },
+      htmlFor: (el: HTMLElement) => el.getAttribute("data-id"),
+    });
   }
 }
 
@@ -199,10 +227,56 @@ export function initializeListbox(
   doc: HTMLElement | Document = document,
 ): void {
   doc.querySelectorAll<HTMLElement>(".listbox-js").forEach((rootEl) => {
+    const groupElements = rootEl.querySelectorAll<HTMLElement>(
+      '[data-part="item-group"]',
+    );
+    groupElements.forEach((groupEl, index) => {
+      const groupId =
+        getString(groupEl, "id") ??
+        generateId(groupEl, `listbox-group-${index}`);
+      groupEl.setAttribute("data-id", groupId);
+
+      const labelEl = groupEl.querySelector<HTMLElement>(
+        '[data-part="item-group-label"]',
+      );
+      if (labelEl) labelEl.setAttribute("data-id", groupId);
+    });
+
+    const itemElements =
+      rootEl.querySelectorAll<HTMLElement>('[data-part="item"]');
+    itemElements.forEach((itemEl, index) => {
+      const value =
+        getString(itemEl, "value") ??
+        generateId(itemEl, `listbox-item-${index}`);
+      itemEl.setAttribute("data-value", value);
+
+      const textEl = itemEl.querySelector<HTMLElement>(
+        '[data-part="item-text"]',
+      );
+      if (textEl) textEl.setAttribute("data-value", value);
+
+      const indicatorEl = itemEl.querySelector<HTMLElement>(
+        '[data-part="item-indicator"]',
+      );
+      if (indicatorEl) indicatorEl.setAttribute("data-value", value);
+    });
+
     const jsonPath = getString(rootEl, "json");
     const items: ListboxItem[] = jsonPath
       ? loadJsonItems(jsonPath)
-      : getDomItems(rootEl);
+      : Array.from(itemElements).map((itemEl) => {
+          const value = getString(itemEl, "value")!;
+          const label =
+            itemEl
+              .querySelector<HTMLElement>('[data-part="item-text"]')
+              ?.textContent?.trim() || value;
+          const groupEl = itemEl.closest(
+            '[data-part="item-group"]',
+          ) as HTMLElement | null;
+          const group = groupEl ? getString(groupEl, "id") : undefined;
+          const disabled = getBoolean(itemEl, "disabled");
+          return { value, label, group, disabled };
+        });
 
     const groups = getDomGroups(rootEl);
     const hasGroups = groups.length > 0 || items.some((i) => i.group);
@@ -269,6 +343,16 @@ export function initializeListbox(
     listboxComponent.groups = groups;
     listboxComponent.init();
   });
+}
+
+if (typeof window !== "undefined") {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () =>
+      initializeListbox(document),
+    );
+  } else {
+    initializeListbox(document);
+  }
 }
 
 if (typeof window !== "undefined") {
