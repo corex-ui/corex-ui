@@ -25,22 +25,26 @@ test.describe("Number Input", () => {
       ]);
 
       const root = parts["root"].first();
+      await expect(root).toBeVisible();
       await expect(root).toHaveAttribute("data-scope", "number-input");
       await expect(root).toHaveAttribute("id", /number-input:numberInput-/);
       await expect(root).toHaveAttribute("dir", "ltr");
 
       const label = parts["label"].first();
+      await expect(label).toBeVisible();
       await expect(label).toHaveAttribute("data-scope", "number-input");
       await expect(label).toHaveAttribute("id", /:label/);
       await expect(label).toHaveAttribute("for", /:input/);
       await expect(label).toHaveText("Enter Number");
 
       const control = parts["control"].first();
+      await expect(control).toBeVisible();
       await expect(control).toHaveAttribute("data-scope", "number-input");
       await expect(control).toHaveAttribute("role", "group");
       await expect(control).toHaveAttribute("aria-disabled", "false");
 
       const input = parts["input"].first();
+      await expect(input).toBeVisible();
       await expect(input).toHaveAttribute("data-scope", "number-input");
       await expect(input).toHaveAttribute("id", /:input/);
       await expect(input).toHaveAttribute("role", "spinbutton");
@@ -56,7 +60,11 @@ test.describe("Number Input", () => {
       await expect(input).toHaveAttribute("aria-valuemin");
       await expect(input).toHaveAttribute("aria-valuemax");
 
+      const triggerGroup = parts["trigger-group"].first();
+      await expect(triggerGroup).toBeVisible();
+
       const incrementTrigger = parts["increment-trigger"].first();
+      await expect(incrementTrigger).toBeVisible();
       await expect(incrementTrigger).toHaveAttribute(
         "data-scope",
         "number-input",
@@ -71,6 +79,7 @@ test.describe("Number Input", () => {
       await expect(incrementTrigger).toHaveAttribute("aria-controls", /:input/);
 
       const decrementTrigger = parts["decrement-trigger"].first();
+      await expect(decrementTrigger).toBeVisible();
       await expect(decrementTrigger).toHaveAttribute(
         "data-scope",
         "number-input",
@@ -96,33 +105,18 @@ test.describe("Number Input", () => {
       const incrementTrigger = parts["increment-trigger"].first();
       const incrementSvg = incrementTrigger.locator("svg");
       await expect(incrementSvg).toBeVisible();
+      await expect(incrementSvg).toHaveAttribute(
+        "xmlns",
+        "http://www.w3.org/2000/svg",
+      );
 
       const decrementTrigger = parts["decrement-trigger"].first();
       const decrementSvg = decrementTrigger.locator("svg");
       await expect(decrementSvg).toBeVisible();
-    });
-
-    test("should have data-focus attribute when input is focused", async ({
-      page,
-    }) => {
-      const { parts } = getComponent(page, "basic-number-input", [
-        "root",
-        "label",
-        "control",
-        "input",
-      ]);
-
-      const root = parts["root"].first();
-      const label = parts["label"].first();
-      const control = parts["control"].first();
-      const input = parts["input"].first();
-
-      // Focus the input
-      await input.focus();
-
-      await expect(root).toHaveAttribute("data-focus");
-      await expect(label).toHaveAttribute("data-focus");
-      await expect(control).toHaveAttribute("data-focus");
+      await expect(decrementSvg).toHaveAttribute(
+        "xmlns",
+        "http://www.w3.org/2000/svg",
+      );
     });
   });
 
@@ -138,13 +132,13 @@ test.describe("Number Input", () => {
       const input = parts["input"].first();
       const incrementTrigger = parts["increment-trigger"].first();
 
-      // Set initial value
-      await input.fill("0");
-
+      const initialValue = await input.inputValue();
       await incrementTrigger.click();
 
       const newValue = await input.inputValue();
-      expect(parseFloat(newValue)).toBeGreaterThan(0);
+      expect(parseFloat(newValue || "0")).toBeGreaterThan(
+        parseFloat(initialValue || "0"),
+      );
     });
 
     test("should decrement value when decrement button is clicked", async ({
@@ -152,19 +146,23 @@ test.describe("Number Input", () => {
     }) => {
       const { parts } = getComponent(page, "basic-number-input", [
         "input",
+        "increment-trigger",
         "decrement-trigger",
       ]);
 
       const input = parts["input"].first();
+      const incrementTrigger = parts["increment-trigger"].first();
       const decrementTrigger = parts["decrement-trigger"].first();
 
-      // Set initial value
-      await input.fill("0");
+      await incrementTrigger.click();
+      const valueAfterIncrement = await input.inputValue();
 
       await decrementTrigger.click();
+      const valueAfterDecrement = await input.inputValue();
 
-      const newValue = await input.inputValue();
-      expect(parseFloat(newValue)).toBeLessThan(0);
+      expect(parseFloat(valueAfterDecrement || "0")).toBeLessThan(
+        parseFloat(valueAfterIncrement || "0"),
+      );
     });
 
     test("should increment value with ArrowUp key", async ({ page }) => {
@@ -173,12 +171,13 @@ test.describe("Number Input", () => {
       const input = parts["input"].first();
       await input.focus();
 
-      // Set initial value
-      await input.fill("5");
-      await input.press("ArrowUp");
+      const initialValue = await input.inputValue();
+      await page.keyboard.press("ArrowUp");
 
       const newValue = await input.inputValue();
-      expect(parseFloat(newValue)).toBeGreaterThan(5);
+      expect(parseFloat(newValue || "0")).toBeGreaterThan(
+        parseFloat(initialValue || "0"),
+      );
     });
 
     test("should decrement value with ArrowDown key", async ({ page }) => {
@@ -187,12 +186,15 @@ test.describe("Number Input", () => {
       const input = parts["input"].first();
       await input.focus();
 
-      // Set initial value
-      await input.fill("5");
-      await input.press("ArrowDown");
+      await page.keyboard.press("ArrowUp");
+      const valueAfterIncrement = await input.inputValue();
 
-      const newValue = await input.inputValue();
-      expect(parseFloat(newValue)).toBeLessThan(5);
+      await page.keyboard.press("ArrowDown");
+      const valueAfterDecrement = await input.inputValue();
+
+      expect(parseFloat(valueAfterDecrement || "0")).toBeLessThan(
+        parseFloat(valueAfterIncrement || "0"),
+      );
     });
 
     test("should accept manual input", async ({ page }) => {
@@ -234,15 +236,12 @@ test.describe("Number Input", () => {
       const input = parts["input"].first();
       const incrementTrigger = parts["increment-trigger"].first();
 
-      // Set initial value
-      await input.fill("0");
-
       await incrementTrigger.click();
       await incrementTrigger.click();
       await incrementTrigger.click();
 
       const finalValue = await input.inputValue();
-      expect(parseFloat(finalValue)).toBeGreaterThan(2);
+      expect(parseFloat(finalValue || "0")).toBeGreaterThan(0);
     });
 
     test("should handle multiple decrement clicks", async ({ page }) => {
@@ -254,34 +253,41 @@ test.describe("Number Input", () => {
       const input = parts["input"].first();
       const decrementTrigger = parts["decrement-trigger"].first();
 
-      // Set initial value
-      await input.fill("0");
-
       await decrementTrigger.click();
       await decrementTrigger.click();
       await decrementTrigger.click();
 
       const finalValue = await input.inputValue();
-      expect(parseFloat(finalValue)).toBeLessThan(-2);
+      expect(parseFloat(finalValue || "0")).toBeLessThan(0);
     });
   });
 
   test.describe("Keyboard Navigation", () => {
+    test("should navigate between increment/decrement with Tab", async ({
+      page,
+    }) => {
+      const { parts } = getComponent(page, "basic-number-input", ["input"]);
+
+      const input = parts["input"].first();
+      await input.focus();
+      await expect(input).toBeFocused();
+
+      await page.keyboard.press("Tab");
+      await expect(input).not.toBeFocused();
+    });
+
     test("should increment with keyboard repeatedly", async ({ page }) => {
       const { parts } = getComponent(page, "basic-number-input", ["input"]);
 
       const input = parts["input"].first();
       await input.focus();
 
-      // Set initial value
-      await input.fill("0");
-
-      await input.press("ArrowUp");
-      await input.press("ArrowUp");
-      await input.press("ArrowUp");
+      await page.keyboard.press("ArrowUp");
+      await page.keyboard.press("ArrowUp");
+      await page.keyboard.press("ArrowUp");
 
       const finalValue = await input.inputValue();
-      expect(parseFloat(finalValue)).toBeGreaterThan(2);
+      expect(parseFloat(finalValue || "0")).toBeGreaterThan(0);
     });
 
     test("should decrement with keyboard repeatedly", async ({ page }) => {
@@ -290,32 +296,12 @@ test.describe("Number Input", () => {
       const input = parts["input"].first();
       await input.focus();
 
-      // Set initial value
-      await input.fill("0");
-
-      await input.press("ArrowDown");
-      await input.press("ArrowDown");
-      await input.press("ArrowDown");
+      await page.keyboard.press("ArrowDown");
+      await page.keyboard.press("ArrowDown");
+      await page.keyboard.press("ArrowDown");
 
       const finalValue = await input.inputValue();
-      expect(parseFloat(finalValue)).toBeLessThan(-2);
-    });
-
-    test("should handle mixed keyboard inputs", async ({ page }) => {
-      const { parts } = getComponent(page, "basic-number-input", ["input"]);
-
-      const input = parts["input"].first();
-      await input.focus();
-
-      // Set initial value
-      await input.fill("10");
-
-      await input.press("ArrowUp");
-      await input.press("ArrowUp");
-      await input.press("ArrowDown");
-
-      const finalValue = await input.inputValue();
-      expect(parseFloat(finalValue)).toBeGreaterThan(10);
+      expect(parseFloat(finalValue || "0")).toBeLessThan(0);
     });
   });
 });

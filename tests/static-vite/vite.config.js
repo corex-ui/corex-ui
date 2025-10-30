@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [corex(), tailwindcss()],
   build: {
     outDir: "./dist",
-    chunkSizeWarningLimit: 600,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
@@ -29,6 +29,9 @@ export default defineConfig({
         "floating-panel": resolve(__dirname, "pages/floating-panel.html"),
         listbox: resolve(__dirname, "pages/listbox.html"),
         menu: resolve(__dirname, "pages/menu.html"),
+        "number-input": resolve(__dirname, "pages/number-input.html"),
+        "password-input": resolve(__dirname, "pages/password-input.html"),
+        "pin-input": resolve(__dirname, "pages/pin-input.html"),
         select: resolve(__dirname, "pages/select.html"),
         "signature-pad": resolve(__dirname, "pages/signature-pad.html"),
         switch: resolve(__dirname, "pages/switch.html"),

@@ -15,6 +15,9 @@ import { FileUpload } from "./components/file-upload";
 import { FloatingPanel } from "./components/floating-panel";
 import { Listbox } from "./components/listbox";
 import { Menu } from "./components/menu";
+import { NumberInput } from "./components/number-input";
+import { PasswordInput } from "./components/password-input";
+import { PinInput } from "./components/pin-input";
 import { SignaturePad } from "./components/signature-pad";
 import { Select } from "./components/select";
 import { SiteSearch } from "./components/site-search";
@@ -44,6 +47,9 @@ export {
   SignaturePad,
   Listbox,
   Menu,
+  NumberInput,
+  PasswordInput,
+  PinInput,
   Select,
   SiteSearch,
   Tabs,

@@ -1,0 +1,280 @@
+<h1 id="pin-input-(beta)" tabindex="-1">
+  <a class="link" href="#pin-input-(beta)">#</a> Pin Input (Beta)
+</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/pin-input"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Pin Input
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>
+  The pin input provides controls for editing, incrementing or decrementing
+  numeric values using the keyboard or pointer.
+</p>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Pin Input component consists of the following data parts:</p>
+<p>
+  <code>root</code>, <code>control</code>, <code>label</code>,
+  <code>input</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="pin-input pin-input-js">
+      <div data-part="root">
+        <label data-part="label">Enter Pin</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <input data-part="input" />
+          <input data-part="input" />
+          <input data-part="input" />
+          <input data-part="input" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="pin-input pin-input-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Enter Pin&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;pin-input pin-input-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Enter Pin&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
+<ol>
+  <li>Import the component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import "@corex-ui/static/components/pin-input";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/pin-input&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  This will automatically initialize all elements with
+  <code>class=&quot;pin-input-js&quot;</code> and add the necessary interaction
+  behavior.
+</p>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  The component is <strong>unstyled by default</strong> for maximum
+  customization flexibility.
+</p>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/pin-input.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/pin-input.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  These styles will be applied to all elements with the
+  <code>pin-input</code> class.
+</p>

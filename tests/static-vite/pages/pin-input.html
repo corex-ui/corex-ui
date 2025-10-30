@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pin Input Examples</title>
+  </head>
+  <body class="typo layout">
+    <main class="layout__main">
+      <h1>Pin Input Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-pin-input">
+        <h2>Basic Pin Input</h2>
+        <div class="pin-input pin-input-js">
+          <div data-part="root">
+            <label data-part="label">Enter Pin</label>
+            <div data-part="control">
+              <input data-part="input" />
+              <input data-part="input" />
+              <input data-part="input" />
+              <input data-part="input" />
+              <input data-part="input" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
