@@ -11,22 +11,27 @@ Official documentation at [corex-ui.com](https://corex-ui.com).
 Corex UI is a monorepo with multiple packages:
 
 - **[@corex-ui/static](./packages/static)** – Vanilla JS/HTML components. Works on any static website
+
   [![Version](https://img.shields.io/npm/v/@corex-ui/static.svg)](https://npmjs.org/package/@corex-ui/static)
   [![Downloads/week](https://img.shields.io/npm/dw/@corex-ui/static.svg)](https://npmjs.org/package/@corex-ui/static)
 
 - **[@corex-ui/design](./packages/design)** – Design tokens, Tailwind v4 configuration and components styling
+
   [![Version](https://img.shields.io/npm/v/@corex-ui/design.svg)](https://npmjs.org/package/@corex-ui/design)
   [![Downloads/week](https://img.shields.io/npm/dw/@corex-ui/design.svg)](https://npmjs.org/package/@corex-ui/design)
 
 - **[@corex-ui/cli](./packages/cli)** – CLI tools for rendering components post-build
+
   [![Version](https://img.shields.io/npm/v/@corex-ui/cli.svg)](https://npmjs.org/package/@corex-ui/cli)
   [![Downloads/week](https://img.shields.io/npm/dw/@corex-ui/cli.svg)](https://npmjs.org/package/@corex-ui/cli)
 
 - **[@corex-ui/vite](./packages/vite)** – Vite integration for rendering components post-build
+
   [![Version](https://img.shields.io/npm/v/@corex-ui/vite.svg)](https://npmjs.org/package/@corex-ui/vite)
   [![Downloads/week](https://img.shields.io/npm/dw/@corex-ui/vite.svg)](https://npmjs.org/package/@corex-ui/vite)
 
 - **[@corex-ui/astro](./packages/astro)** – Astro integration for rendering components post-build
+
   [![Version](https://img.shields.io/npm/v/@corex-ui/astro.svg)](https://npmjs.org/package/@corex-ui/astro)
   [![Downloads/week](https://img.shields.io/npm/dw/@corex-ui/astro.svg)](https://npmjs.org/package/@corex-ui/astro)
 

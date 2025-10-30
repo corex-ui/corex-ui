@@ -42,6 +42,165 @@
   <code>root</code>, <code>list</code>, <code>trigger</code>,
   <code>content</code>
 </p>
+<p>
+  An optional <code>data-value</code> can be added to each
+  <code>data-part=&quot;trigger&quot;</code> and corresponding
+  <code>data-part=&quot;content&quot;</code>, this is useful when using the API
+  or setting default values.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="tabs tabs-js" data-default-value="lorem">
+      <div data-part="root">
+        <div data-part="list">
+          <button data-part="trigger" data-value="lorem">Lorem</button>
+          <button data-part="trigger">Duis</button>
+          <button data-part="trigger">Donec</button>
+        </div>
+        <div data-part="content" data-value="lorem">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur
+            adipiscing elit. Sed sodales ullamcorper tristique. Proin quis risus
+            feugiat tellus iaculis fringilla.
+          </p>
+        </div>
+        <div data-part="content">
+          <p>
+            Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat,
+            dui ut fermentum sodales, lectus metus dignissim ex.
+          </p>
+        </div>
+        <div data-part="content">
+          <p>
+            Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis
+            non, pellentesque elit. Pellentesque sagittis fermentum.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="tabs tabs-js" data-default-value="lorem"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="list"&gt;
+      &lt;button data-part="trigger" data-value="lorem"&gt;Lorem&lt;/button&gt;
+      &lt;button data-part="trigger"&gt;Duis&lt;/button&gt;
+      &lt;button data-part="trigger"&gt;Donec&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part="content" data-value="lorem"&gt;
+      &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur
+        adipiscing elit. Sed sodales ullamcorper tristique. Proin quis risus
+        feugiat tellus iaculis fringilla.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;p&gt;
+        Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat, dui
+        ut fermentum sodales, lectus metus dignissim ex.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div data-part="content"&gt;
+      &lt;p&gt;
+        Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis non,
+        pellentesque elit. Pellentesque sagittis fermentum.
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;tabs tabs-js&quot; data-default-value=&quot;lorem&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;list&quot;&gt;
+      &lt;button data-part=&quot;trigger&quot; data-value=&quot;lorem&quot;&gt;Lorem&lt;/button&gt;
+      &lt;button data-part=&quot;trigger&quot;&gt;Duis&lt;/button&gt;
+      &lt;button data-part=&quot;trigger&quot;&gt;Donec&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;content&quot; data-value=&quot;lorem&quot;&gt;
+      &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur
+        adipiscing elit. Sed sodales ullamcorper tristique. Proin quis risus
+        feugiat tellus iaculis fringilla.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;p&gt;
+        Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat, dui
+        ut fermentum sodales, lectus metus dignissim ex.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div data-part=&quot;content&quot;&gt;
+      &lt;p&gt;
+        Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis non,
+        pellentesque elit. Pellentesque sagittis fermentum.
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="custom-values" tabindex="-1">
+  <a class="link" href="#custom-values">#</a> Custom Values
+</h2>
+<p>
+  The Tab trigger and content can use custom values and ids, this is useful when
+  using the API or setting default values.
+</p>
+<p>
+  <code>data-value</code> can be added to each
+  <code>data-part=&quot;trigger&quot;</code> and the corresponding
+  <code>data-part=&quot;content&quot;</code>
+</p>
 
 <div class="preview">
   <div class="preview__display">
