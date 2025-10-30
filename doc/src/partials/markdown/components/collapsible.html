@@ -656,13 +656,19 @@
 
 <div class="preview">
   <div class="preview__display">
-    <button data-action="collapsible-set-open" data-value="true">
+    <button data-action="collapsible-set-open" data-value="true" class="button">
       Open Collapsible
     </button>
-    <button data-action="collapsible-set-open" data-value="false">
+    <button
+      data-action="collapsible-set-open"
+      data-value="false"
+      class="button"
+    >
       Close Collapsible
     </button>
-    <button data-action="collapsible-open">Get open status</button>
+    <button data-action="collapsible-open" class="button">
+      Get open status
+    </button>
     <div id="collapsible-api" class="collapsible collapsible-js">
       <div data-part="root">
         <button data-part="trigger">
@@ -700,13 +706,13 @@
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='&lt;button data-action="collapsible-set-open" data-value="true"&gt;
+      data-default-value='&lt;button data-action="collapsible-set-open" data-value="true" class="button"&gt;
   Open Collapsible
 &lt;/button&gt;
-&lt;button data-action="collapsible-set-open" data-value="false"&gt;
+&lt;button data-action="collapsible-set-open" data-value="false" class="button"&gt;
   Close Collapsible
 &lt;/button&gt;
-&lt;button data-action="collapsible-open"&gt;Get open status&lt;/button&gt;
+&lt;button data-action="collapsible-open" class="button"&gt;Get open status&lt;/button&gt;
 &lt;div id="collapsible-api" class="collapsible collapsible-js"&gt;
   &lt;div data-part="root"&gt;
     &lt;button data-part="trigger"&gt;
@@ -784,13 +790,13 @@
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="html">&lt;button data-action=&quot;collapsible-set-open&quot; data-value=&quot;true&quot;&gt;
+    <pre><code class="code-js" data-lang="html">&lt;button data-action=&quot;collapsible-set-open&quot; data-value=&quot;true&quot; class=&quot;button&quot;&gt;
   Open Collapsible
 &lt;/button&gt;
-&lt;button data-action=&quot;collapsible-set-open&quot; data-value=&quot;false&quot;&gt;
+&lt;button data-action=&quot;collapsible-set-open&quot; data-value=&quot;false&quot; class=&quot;button&quot;&gt;
   Close Collapsible
 &lt;/button&gt;
-&lt;button data-action=&quot;collapsible-open&quot;&gt;Get open status&lt;/button&gt;
+&lt;button data-action=&quot;collapsible-open&quot; class=&quot;button&quot;&gt;Get open status&lt;/button&gt;
 &lt;div id=&quot;collapsible-api&quot; class=&quot;collapsible collapsible-js&quot;&gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;button data-part=&quot;trigger&quot;&gt;
