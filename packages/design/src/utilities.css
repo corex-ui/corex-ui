@@ -21,7 +21,7 @@
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  width: fit-content;
+  width: auto;
   font-size: var(--text-ui);
   line-height: var(--text-ui--line-height);
   font-weight: var(--font-weight-ui);
