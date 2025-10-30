@@ -1,5 +1,11 @@
 # @corex-ui/vite
 
+## 0.2.0
+
+### Minor Changes
+
+- 2fc8038: Refactor Components and add Tests
+
 ## 0.1.10
 
 ### Patch Changes

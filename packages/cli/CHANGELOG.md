@@ -1,5 +1,16 @@
 # @corex-ui/cli
 
+## 0.2.0
+
+### Minor Changes
+
+- 2fc8038: Refactor Components and add Tests
+
+### Patch Changes
+
+- Updated dependencies [2fc8038]
+  - @corex-ui/static@0.2.0
+
 ## 0.1.10
 
 ### Patch Changes
