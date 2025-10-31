@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio Group Examples</title>
+  </head>
+  <body class="typo layout">
+    <main class="layout__main">
+      <h1>Radio Group Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-radio-group">
+        <h2>Basic Radio Group</h2>
+        <div class="radio-group radio-group-js">
+          <div data-part="root">
+            <div data-part="label">Label</div>
+            <label data-part="item">
+              <span data-part="item-text">Item 1</span>
+              <input data-part="item-hidden-input" />
+              <div data-part="item-control">
+                <svg
+                  data-checked
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  />
+                </svg>
+              </div>
+            </label>
+            <label data-part="item">
+              <span data-part="item-text">Item 2</span>
+              <input data-part="item-hidden-input" />
+              <div data-part="item-control">
+                <svg
+                  data-checked
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  />
+                </svg>
+              </div>
+            </label>
+            <label data-part="item">
+              <span data-part="item-text">Item 3</span>
+              <input data-part="item-hidden-input" />
+              <div data-part="item-control">
+                <svg
+                  data-checked
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  />
+                </svg>
+              </div>
+            </label>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

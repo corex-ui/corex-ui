@@ -54,6 +54,7 @@ const navigation = {
           beta: true,
         },
         { label: "Pin Input", url: "/components/pin-input", beta: true },
+        { label: "Radio Group", url: "/components/radio-group", beta: true },
         { label: "Scrollbar", url: "/components/scrollbar" },
         { label: "Select", url: "/components/select" },
         { label: "Signature Pad", url: "/components/signature-pad" },

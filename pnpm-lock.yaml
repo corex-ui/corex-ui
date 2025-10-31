@@ -321,6 +321,9 @@ importers:
       '@zag-js/pin-input':
         specifier: ^1.26.5
         version: 1.26.5
+      '@zag-js/radio-group':
+        specifier: ^1.26.5
+        version: 1.26.5
       '@zag-js/select':
         specifier: ^1.26.5
         version: 1.26.5
@@ -3358,6 +3361,9 @@ packages:
 
   '@zag-js/popper@1.26.5':
     resolution: {integrity: sha512-/NdLdakwtpy0zLNdUwv7qy9aMrwcIdpzBFeQFIztdZA5Sf596YhNxGxnhEptCxy2xUYd9FJvX1TL6DINO5aeJw==}
+
+  '@zag-js/radio-group@1.26.5':
+    resolution: {integrity: sha512-/69sBVY+14VOIiubgFTqwSoEE4czdNAovYtkOZGpHC50dIH41n91uUfS+nRTmo2Qukg5KT60iKpiWdmz/xPO1A==}
 
   '@zag-js/rect-utils@1.26.5':
     resolution: {integrity: sha512-nX+QOEy9LJjDxiwi2kPu775PW4Q6CGTx53Ub5CRc9U27TXp7y6VDjuhCeuraiHByt5VhcUngbNI7QoeFdacVjg==}
@@ -11445,6 +11451,15 @@ snapshots:
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@zag-js/dom-query': 1.26.5
+      '@zag-js/utils': 1.26.5
+
+  '@zag-js/radio-group@1.26.5':
+    dependencies:
+      '@zag-js/anatomy': 1.26.5
+      '@zag-js/core': 1.26.5
+      '@zag-js/dom-query': 1.26.5
+      '@zag-js/focus-visible': 1.26.5
+      '@zag-js/types': 1.26.5
       '@zag-js/utils': 1.26.5
 
   '@zag-js/rect-utils@1.26.5': {}

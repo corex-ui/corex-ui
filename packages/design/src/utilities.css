@@ -124,7 +124,6 @@
   line-height: 5;
   color: currentcolor;
   font-size: inherit;
-  flex-shrink: 0;
   max-width: fit-content;
 
   [dir="rtl"] & {
