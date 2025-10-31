@@ -32,6 +32,7 @@ export default defineConfig({
         "number-input": resolve(__dirname, "pages/number-input.html"),
         "password-input": resolve(__dirname, "pages/password-input.html"),
         "pin-input": resolve(__dirname, "pages/pin-input.html"),
+        "qr-code": resolve(__dirname, "pages/qr-code.html"),
         "radio-group": resolve(__dirname, "pages/radio-group.html"),
         select: resolve(__dirname, "pages/select.html"),
         "signature-pad": resolve(__dirname, "pages/signature-pad.html"),

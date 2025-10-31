@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Examples</title>
+  </head>
+  <body class="typo layout">
+    <main class="layout__main">
+      <h1>QR Code Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-qr-code">
+        <h2>Basic QR Code</h2>
+        <div class="qr-code qr-code-js" data-value="https://corex-ui.com/">
+          <div data-part="root">
+            <svg data-part="frame">
+              <path data-part="pattern" />
+            </svg>
+            <div data-part="overlay">
+              <img src="/logo.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

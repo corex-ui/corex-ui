@@ -1,0 +1,42 @@
+@import "../main.css";
+
+@layer components {
+  .qr-code [data-scope="qr-code"][data-part="root"] {
+    @apply ui-root;
+
+    gap: var(--spacing-mini-gap);
+    position: relative;
+    width: auto;
+    background-color: var(--color-ui);
+    border: 1px solid var(--color-ui--border);
+    border-radius: var(--radius-ui);
+  }
+
+  .qr-code [data-scope="qr-code"][data-part="frame"] {
+    display: block;
+    width: var(--qrcode-width);
+    height: var(--qrcode-height);
+  }
+
+  .qr-code [data-scope="qr-code"][data-part="pattern"] {
+    fill: var(--color-ui--text);
+  }
+
+  .qr-code [data-scope="qr-code"][data-part="overlay"] {
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    border-radius: var(--radius-ui);
+    overflow: hidden;
+    box-shadow: var(--shadow-ui);
+    background-color: var(--color-ui);
+    border: 1px solid var(--color-ui--border);
+    padding: var(--spacing-micro-padding-sm);
+  }
+
+  .qr-code [data-scope="qr-code"][data-part="overlay"] img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

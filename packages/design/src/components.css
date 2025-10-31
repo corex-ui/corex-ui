@@ -23,6 +23,7 @@
 @import "./components/number-input.css";
 @import "./components/password-input.css";
 @import "./components/pin-input.css";
+@import "./components/qr-code.css";
 @import "./components/radio-group.css";
 @import "./components/scrollbar.css";
 @import "./components/select.css";

@@ -18,6 +18,7 @@ import { Menu } from "./components/menu";
 import { NumberInput } from "./components/number-input";
 import { PasswordInput } from "./components/password-input";
 import { PinInput } from "./components/pin-input";
+import { QrCode } from "./components/qr-code";
 import { RadioGroup } from "./components/radio-group";
 import { SignaturePad } from "./components/signature-pad";
 import { Select } from "./components/select";
@@ -51,6 +52,7 @@ export {
   NumberInput,
   PasswordInput,
   PinInput,
+  QrCode,
   RadioGroup,
   Select,
   SiteSearch,

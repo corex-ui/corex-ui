@@ -92,6 +92,7 @@
     "@zag-js/number-input": "^1.26.5",
     "@zag-js/password-input": "^1.26.5",
     "@zag-js/pin-input": "^1.26.5",
+    "@zag-js/qr-code": "^1.26.5",
     "@zag-js/radio-group": "^1.26.5",
     "@zag-js/select": "^1.26.5",
     "@zag-js/signature-pad": "^1.26.5",
