@@ -40,7 +40,11 @@
             data-id="{{ link.url }}"
             data-name="{{ link.url }}"
           >
-            {{ link.label }}
+            {{ link.label }} {{#if link.beta}}
+            <span class="badge badge--sm badge--info rounded-ui">Beta</span>
+            {{/if}} {{#if link.new}}
+            <span class="badge badge--sm badge--success rounded-ui">New</span>
+            {{/if}}
           </div>
           {{/each}}
         </div>
