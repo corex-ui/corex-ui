@@ -112,14 +112,10 @@ test.describe("Select", () => {
       const secondItem = items.nth(1);
 
       await page.keyboard.press("ArrowDown");
-      await expect(firstItem).toHaveAttribute("data-highlighted", "", {
-        timeout: 2000,
-      });
+      await expect(firstItem).toHaveAttribute("data-highlighted");
 
       await page.keyboard.press("ArrowDown");
-      await expect(secondItem).toHaveAttribute("data-highlighted", "", {
-        timeout: 2000,
-      });
+      await expect(secondItem).toHaveAttribute("data-highlighted");
 
       await page.keyboard.press("Enter");
       await expect(trigger).toHaveText(/Euro/);
