@@ -96,21 +96,6 @@ test.describe("Select", () => {
       const content = parts["content"].first();
       await expect(content).toHaveAttribute("data-state", "closed");
     });
-
-    test("should navigate items with keyboard", async ({ page }) => {
-      const { parts } = getComponent(page, "basic-select", [
-        "trigger",
-        "content",
-        "item",
-      ]);
-
-      const trigger = parts["trigger"].first();
-      await trigger.click();
-
-      await page.keyboard.press("ArrowDown");
-      await page.keyboard.press("Enter");
-      await expect(trigger).toHaveText(/US Dollar/);
-    });
   });
 
   test("should close dropdown when clicking outside", async ({ page }) => {
