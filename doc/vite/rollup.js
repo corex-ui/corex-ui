@@ -1,16 +1,18 @@
 import { resolve } from "path";
+
 export const rollupInput = (dirname) => ({
   index: resolve(dirname, "index.html"),
+
   introduction: resolve(dirname, "installation/introduction.html"),
   vite: resolve(dirname, "installation/vite.html"),
   astro: resolve(dirname, "installation/astro.html"),
   eleventy: resolve(dirname, "installation/eleventy.html"),
   serve: resolve(dirname, "installation/serve.html"),
+  figma: resolve(dirname, "guides/figma.html"),
   llms: resolve(dirname, "guides/llms.html"),
   penpot: resolve(dirname, "guides/penpot.html"),
   tailwind: resolve(dirname, "guides/tailwind.html"),
   theming: resolve(dirname, "guides/theming.html"),
-  figma: resolve(dirname, "guides/figma.html"),
   accordion: resolve(dirname, "components/accordion.html"),
   "angle-slider": resolve(dirname, "components/angle-slider.html"),
   avatar: resolve(dirname, "components/avatar.html"),
@@ -32,6 +34,11 @@ export const rollupInput = (dirname) => ({
   link: resolve(dirname, "components/link.html"),
   listbox: resolve(dirname, "components/listbox.html"),
   menu: resolve(dirname, "components/menu.html"),
+  "number-input": resolve(dirname, "components/number-input.html"),
+  "password-input": resolve(dirname, "components/password-input.html"),
+  "pin-input": resolve(dirname, "components/pin-input.html"),
+  "qr-code": resolve(dirname, "components/qr-code.html"),
+  "radio-group": resolve(dirname, "components/radio-group.html"),
   scrollbar: resolve(dirname, "components/scrollbar.html"),
   select: resolve(dirname, "components/select.html"),
   "signature-pad": resolve(dirname, "components/signature-pad.html"),

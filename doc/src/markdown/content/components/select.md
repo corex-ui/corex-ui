@@ -26,6 +26,216 @@ The select component consists of the following data parts:
 
 `root`, `control`, `label`, `trigger`, `positioner`, `content`, `item`
 
+An optional `data-value` can be added to each `data-part="item"`, this is useful when using the API or setting default values.
+
+```html
+<!-- render:preview -->
+<div class="select-js select" data-same-width="true">
+  <div data-part="root">
+    <div data-part="control">
+      <div data-part="label">Your Currency</div>
+      <button data-part="trigger">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div data-part="positioner">
+      <ul data-part="content">
+        <li data-part="item">
+          <span data-part="item-text">US Dollar</span>
+        </li>
+        <li data-part="item">
+          <span data-part="item-text">Euro</span>
+        </li>
+        <li data-part="item">
+          <span data-part="item-text">British Pound</span>
+        </li>
+        <li data-part="item">
+          <span data-part="item-text">Japanese Yen</span>
+        </li>
+        <li data-part="item">
+          <span data-part="item-text">Indian Rupee</span>
+        </li>
+        <li data-part="item">
+          <span data-part="item-text">Canadian Dollar</span>
+        </li>
+        <li data-part="item">
+          <span data-part="item-text">Australian Dollar</span>
+        </li>
+        <li data-part="item">
+          <span data-part="item-text">Swiss Franc</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Group items
+
+The Select items can be grouped with a label to identify each group
+
+An optional `data-id` can be added to each `data-part="item-group"` and `data-part="item-group-label"`, this is useful when using the API or setting default values.
+
+To use the `data-part="item-group-label"` outside of the group, useful for styling, you must provide the same `data-id` for the group and label.
+
+```html
+<!-- render:preview -->
+<div
+  class="select-js select"
+  data-same-width="true"
+  data-placeholder="Select currency"
+>
+  <div data-part="root">
+    <div data-part="control">
+      <label data-part="label">Your Currency</label>
+      <button data-part="trigger">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div data-part="positioner">
+      <ul data-part="content" class="scrollbar">
+        <div data-part="item-group" data-id="currency">
+          <div data-part="item-group-label">Currency</div>
+
+          <li data-part="item" data-value="usd">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            US Dollar
+          </li>
+          <li data-part="item" data-value="eur">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            Euro
+          </li>
+          <li data-part="item" data-value="gbp">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            British Pound
+          </li>
+          <li data-part="item" data-value="jpy">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            Japanese Yen
+          </li>
+          <li data-part="item" data-value="inr">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              ></path>
+            </svg>
+            Indian Rupee
+          </li>
+        </div>
+
+        <div data-part="item-group" data-id="crypto">
+          <div data-part="item-group-label">Crypto</div>
+
+          <li data-part="item" data-value="btc">
+            <img src="/images/currency/btc.png" alt="BTC" />
+            Bitcoin
+          </li>
+          <li data-part="item" data-value="eth">
+            <img src="/images/currency/eth.png" alt="ETH" />
+            Ether
+          </li>
+          <li data-part="item" data-value="usdt">
+            <img src="/images/currency/usdt.png" alt="USDT" />
+            USDT
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Custom Values
+
+The Select items and groups can use custom values and ids, this is useful when using the API or setting default values.
+
+`data-value` can be added to each `data-part="item"`
+`data-id` can be added to each `data-part="item-group"` and `item-group-label`
+
 ```html
 <!-- render:preview -->
 <div class="select-js select" data-same-width="true">
@@ -88,21 +298,43 @@ You can initialize the Select component by embedding your JSON data directly in 
 
 ```html
 <script type="application/json" data-select="countries">
-  [
-    { "label": "France", "value": "FR" },
-    { "label": "Belgium", "value": "BE" },
-    { "label": "Germany", "value": "DE" },
-    { "label": "Italy", "value": "IT" },
-    { "label": "Spain", "value": "ES" },
-    { "label": "Portugal", "value": "PT" },
-    { "label": "Netherlands", "value": "NL" },
-    { "label": "Switzerland", "value": "CH" },
-    { "label": "Austria", "value": "AT" },
-    { "label": "Poland", "value": "PL" },
-    { "label": "Czech Republic", "value": "CZ" },
-    { "label": "Hungary", "value": "HU" },
-    { "label": "Greece", "value": "GR" }
-  ]
+  {
+    "id": "countries",
+    "name": "Countries",
+    "children": [
+      {
+        "id": "western-europe",
+        "name": "Western Europe",
+        "children": [
+          { "id": "FR", "name": "France" },
+          { "id": "BE", "name": "Belgium" },
+          { "id": "DE", "name": "Germany" },
+          { "id": "NL", "name": "Netherlands" },
+          { "id": "CH", "name": "Switzerland" },
+          { "id": "AT", "name": "Austria", "disabled": true }
+        ]
+      },
+      {
+        "id": "southern-europe",
+        "name": "Southern Europe",
+        "children": [
+          { "id": "IT", "name": "Italy" },
+          { "id": "ES", "name": "Spain" },
+          { "id": "PT", "name": "Portugal" },
+          { "id": "GR", "name": "Greece" }
+        ]
+      },
+      {
+        "id": "central-europe",
+        "name": "Central Europe",
+        "children": [
+          { "id": "PL", "name": "Poland" },
+          { "id": "CZ", "name": "Czech Republic" },
+          { "id": "HU", "name": "Hungary" }
+        ]
+      }
+    ]
+  }
 </script>
 ```
 
@@ -135,6 +367,8 @@ You can initialize the Select component by embedding your JSON data directly in 
 </div>
 ```
 
+---
+
 ## Data attributes
 
 Each select can be set with different settings with the following data-attribute.
@@ -145,6 +379,7 @@ Each select can be set with different settings with the following data-attribute
   class="select-js select"
   data-same-width="true"
   data-close-on-select="false"
+  data-default-value="EUR"
 >
   <div data-part="root">
     <div data-part="control">

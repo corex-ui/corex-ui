@@ -26,6 +26,48 @@ The Tabs component consists of the following data parts:
 
 `root`, `list`, `trigger`, `content`
 
+An optional `data-value` can be added to each `data-part="trigger"` and corresponding `data-part="content"`, this is useful when using the API or setting default values.
+
+```html
+<!-- render:preview -->
+<div class="tabs tabs-js" data-default-value="lorem">
+  <div data-part="root">
+    <div data-part="list">
+      <button data-part="trigger" data-value="lorem">Lorem</button>
+      <button data-part="trigger">Duis</button>
+      <button data-part="trigger">Donec</button>
+    </div>
+    <div data-part="content" data-value="lorem">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur
+        adipiscing elit. Sed sodales ullamcorper tristique. Proin quis risus
+        feugiat tellus iaculis fringilla.
+      </p>
+    </div>
+    <div data-part="content">
+      <p>
+        Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat, dui
+        ut fermentum sodales, lectus metus dignissim ex.
+      </p>
+    </div>
+    <div data-part="content">
+      <p>
+        Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis non,
+        pellentesque elit. Pellentesque sagittis fermentum.
+      </p>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Custom Values
+
+The Tab trigger and content can use custom values and ids, this is useful when using the API or setting default values.
+
+`data-value` can be added to each `data-part="trigger"` and the corresponding `data-part="content"`
+
 ```html
 <!-- render:preview -->
 <div class="tabs tabs-js" data-default-value="lorem">

@@ -1,0 +1,2082 @@
+<h1 id="number-input" tabindex="-1">
+  <a class="link" href="#number-input">#</a> Number Input
+</h1>
+<blockquote>
+  <p>
+    A pure HTML and vanilla JS implementation of
+    <a
+      href="https://zagjs.com/components/react/number-input"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="External link, opens in a new window"
+      >Zag JS Number Input
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <title>Opens in a new window</title>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        ></path>
+      </svg>
+    </a>
+  </p>
+</blockquote>
+<p>
+  The number input provides controls for editing, incrementing or decrementing
+  numeric values using the keyboard or pointer.
+</p>
+<hr />
+<h2 id="anatomy" tabindex="-1">
+  <a class="link" href="#anatomy">#</a> Anatomy
+</h2>
+<p>The Number Input component consists of the following data parts:</p>
+<p>
+  <code>root</code>, <code>control</code>, <code>increment-trigger</code>,
+  <code>secrement-trigger</code>, <code>label</code>, <code>input</code>,<code
+    >value-text</code
+  >
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="number-input number-input-js">
+      <div data-part="root">
+        <label data-part="label">Enter Number</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <div data-part="trigger-group">
+            <button data-part="increment-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            </button>
+            <button data-part="decrement-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="number-input number-input-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Enter Number&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;div data-part="trigger-group"&gt;
+        &lt;button data-part="increment-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 15.75 7.5-7.5 7.5 7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part="decrement-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;number-input number-input-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Enter Number&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;div data-part=&quot;trigger-group&quot;&gt;
+        &lt;button data-part=&quot;increment-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 15.75 7.5-7.5 7.5 7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part=&quot;decrement-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="scrubber" tabindex="-1">
+  <a class="link" href="#scrubber">#</a> Scrubber
+</h2>
+<p>The Number Input can use the scrubber feature:</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="number-input number-input-js">
+      <div data-part="root">
+        <label data-part="label">Enter Number</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <div data-part="trigger-group">
+            <button data-part="scrubber">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="number-input number-input-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Enter Number&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;div data-part="trigger-group"&gt;
+        &lt;button data-part="scrubber"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;number-input number-input-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Enter Number&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;div data-part=&quot;trigger-group&quot;&gt;
+        &lt;button data-part=&quot;scrubber&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+            class=&quot;size-6&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
+</h2>
+<p>
+  Each Number Input can be set with different settings with the following
+  data-attribute.
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="number-input number-input-js"
+      data-style="currency"
+      data-currency="EUR"
+      data-default-value="12"
+    >
+      <div data-part="root">
+        <label data-part="label">Enter Number</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <div data-part="trigger-group">
+            <button data-part="increment-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            </button>
+            <button data-part="decrement-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="number-input number-input-js"
+  data-style="currency"
+  data-currency="EUR"
+  data-default-value="12"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Enter Number&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;div data-part="trigger-group"&gt;
+        &lt;button data-part="increment-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 15.75 7.5-7.5 7.5 7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part="decrement-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;number-input number-input-js&quot;
+  data-style=&quot;currency&quot;
+  data-currency=&quot;EUR&quot;
+  data-default-value=&quot;12&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Enter Number&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;div data-part=&quot;trigger-group&quot;&gt;
+        &lt;button data-part=&quot;increment-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 15.75 7.5-7.5 7.5 7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part=&quot;decrement-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="number-input number-input-js"
+      data-style="decimal"
+      data-step="0.1"
+      data-default-value="12"
+    >
+      <div data-part="root">
+        <label data-part="label">Enter Number</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <div data-part="trigger-group">
+            <button data-part="increment-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            </button>
+            <button data-part="decrement-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="number-input number-input-js"
+  data-style="decimal"
+  data-step="0.1"
+  data-default-value="12"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Enter Number&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;div data-part="trigger-group"&gt;
+        &lt;button data-part="increment-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 15.75 7.5-7.5 7.5 7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part="decrement-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;number-input number-input-js&quot;
+  data-style=&quot;decimal&quot;
+  data-step=&quot;0.1&quot;
+  data-default-value=&quot;12&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Enter Number&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;div data-part=&quot;trigger-group&quot;&gt;
+        &lt;button data-part=&quot;increment-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 15.75 7.5-7.5 7.5 7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part=&quot;decrement-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="number-input number-input-js"
+      data-style="percent"
+      data-default-value="53"
+    >
+      <div data-part="root">
+        <label data-part="label">Enter Amount</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <div data-part="trigger-group">
+            <button data-part="increment-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            </button>
+            <button data-part="decrement-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="number-input number-input-js"
+  data-style="percent"
+  data-default-value="53"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Enter Amount&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;div data-part="trigger-group"&gt;
+        &lt;button data-part="increment-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 15.75 7.5-7.5 7.5 7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part="decrement-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;number-input number-input-js&quot;
+  data-style=&quot;percent&quot;
+  data-default-value=&quot;53&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Enter Amount&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;div data-part=&quot;trigger-group&quot;&gt;
+        &lt;button data-part=&quot;increment-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 15.75 7.5-7.5 7.5 7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part=&quot;decrement-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="number-input number-input-js"
+      data-style="currency"
+      data-currency="USD"
+      data-default-value="3"
+      data-currency-display="code"
+    >
+      <div data-part="root">
+        <label data-part="label">Enter Amount</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <div data-part="trigger-group">
+            <button data-part="increment-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            </button>
+            <button data-part="decrement-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="number-input number-input-js"
+  data-style="currency"
+  data-currency="USD"
+  data-default-value="3"
+  data-currency-display="code"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Enter Amount&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;div data-part="trigger-group"&gt;
+        &lt;button data-part="increment-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 15.75 7.5-7.5 7.5 7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part="decrement-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;number-input number-input-js&quot;
+  data-style=&quot;currency&quot;
+  data-currency=&quot;USD&quot;
+  data-default-value=&quot;3&quot;
+  data-currency-display=&quot;code&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Enter Amount&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;div data-part=&quot;trigger-group&quot;&gt;
+        &lt;button data-part=&quot;increment-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 15.75 7.5-7.5 7.5 7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part=&quot;decrement-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Default: <code>-</code><br />
+  Description: Unique id of the component. Automatically generated if none is
+  provided.
+</p>
+<p>
+  <strong>dir</strong><br />
+  Type: <code>&quot;ltr&quot; | &quot;rtl&quot;</code><br />
+  Default: <code>ltr</code><br />
+  Description: Text direction of the component (left-to-right or right-to-left).
+  Defaults to the document direction.
+</p>
+<p>
+  <strong>allow-mouse-wheel</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>false</code><br />
+  Description: Whether changing the mouse wheel (when input focused)
+  increments/decrements the value.
+</p>
+<p>
+  <strong>allow-overflow</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>true</code><br />
+  Description: Whether the value may temporarily exceed the configured
+  <code>min</code>/<code>max</code> bounds.
+</p>
+<p>
+  <strong>clamp-value-on-blur</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>true</code><br />
+  Description: If <code>true</code>, the value is clamped to
+  <code>min</code>/<code>max</code> when the input loses focus.
+</p>
+<p>
+  <strong>disabled</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>false</code><br />
+  Description: Whether the number input is disabled (prevents user interaction).
+</p>
+<p>
+  <strong>focus-input-on-change</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>true</code><br />
+  Description: If <code>true</code>, the input element is focused when the value
+  changes programmatically.
+</p>
+<p>
+  <strong>invalid</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>false</code><br />
+  Description: Marks the input as invalid (useful for validation styling/ARIA).
+</p>
+<p>
+  <strong>default-value</strong><br />
+  Type: <code>string</code><br />
+  Default: <code>-</code><br />
+  Description: The initial, uncontrolled value of the input when rendered.
+</p>
+<p>
+  <strong>form</strong><br />
+  Type: <code>string</code><br />
+  Default: <code>-</code><br />
+  Description: The id of the associated <code>&lt;form&gt;</code> element (for
+  form submission).
+</p>
+<p>
+  <strong>currency</strong><br />
+  Type: <code>string</code><br />
+  Default: <code>-</code><br />
+  Description: ISO currency code (used when <code>style</code> is
+  <code>&quot;currency&quot;</code>).
+</p>
+<p>
+  <strong>style</strong><br />
+  Type:
+  <code>&quot;decimal&quot; | &quot;currency&quot; | &quot;percent&quot;</code
+  ><br />
+  Default: <code>decimal</code><br />
+  Description: Number formatting style.
+</p>
+<p>
+  <strong>maximum-fraction-digits</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>-</code><br />
+  Description: Maximum fraction digits to display.
+</p>
+<p>
+  <strong>minimum-fraction-digits</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>-</code><br />
+  Description: Minimum fraction digits to display.
+</p>
+<p>
+  <strong>maximum-significant-digits</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>-</code><br />
+  Description: Maximum significant digits.
+</p>
+<p>
+  <strong>minimum-significant-digits</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>-</code><br />
+  Description: Minimum significant digits.
+</p>
+<p>
+  <strong>minimum-integer-digits</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>-</code><br />
+  Description: Minimum integer digits.
+</p>
+<p>
+  <strong>numbering-system</strong><br />
+  Type: <code>string</code><br />
+  Default: <code>-</code><br />
+  Description: Numbering system identifier (e.g. <code>&quot;latn&quot;</code>).
+</p>
+<p>
+  <strong>currency-display</strong><br />
+  Type: <code>&quot;code&quot; | &quot;symbol&quot; | &quot;name&quot;</code
+  ><br />
+  Default: <code>-</code><br />
+  Description: How currency is displayed.
+</p>
+<p>
+  <strong>compact-display</strong><br />
+  Type: <code>&quot;short&quot; | &quot;long&quot;</code><br />
+  Default: <code>-</code><br />
+  Description: Compact display style for compact notation.
+</p>
+<p>
+  <strong>notation</strong><br />
+  Type:
+  <code
+    >&quot;standard&quot; | &quot;scientific&quot; | &quot;engineering&quot; |
+    &quot;compact&quot;</code
+  ><br />
+  Default: <code>standard</code><br />
+  Description: Notation style used for formatting.
+</p>
+<p>
+  <strong>unit</strong><br />
+  Type: <code>string</code><br />
+  Default: <code>-</code><br />
+  Description: Measurement unit (e.g. <code>&quot;kilogram&quot;</code>).
+</p>
+<p>
+  <strong>unit-display</strong><br />
+  Type: <code>&quot;short&quot; | &quot;long&quot; | &quot;narrow&quot;</code
+  ><br />
+  Default: <code>-</code><br />
+  Description: How units are displayed.
+</p>
+<p>
+  <strong>currency-sign</strong><br />
+  Type: <code>&quot;standard&quot; | &quot;accounting&quot;</code><br />
+  Default: <code>standard</code><br />
+  Description: Currency sign style.
+</p>
+<p>
+  <strong>input-mode</strong><br />
+  Type:
+  <code
+    >&quot;text&quot; | &quot;tel&quot; | &quot;numeric&quot; |
+    &quot;decimal&quot;</code
+  ><br />
+  Default: <code>decimal</code><br />
+  Description: Hint for the expected input type (affects virtual keyboard on
+  mobile).
+</p>
+<p>
+  <strong>locale</strong><br />
+  Type: <code>string</code><br />
+  Default: <code>-</code><br />
+  Description: Locale string used for number formatting (e.g.
+  <code>&quot;en-US&quot;</code>).
+</p>
+<p>
+  <strong>max</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>Number.MAX_SAFE_INTEGER</code><br />
+  Description: Maximum allowed value.
+</p>
+<p>
+  <strong>min</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>Number.MIN_SAFE_INTEGER</code><br />
+  Description: Minimum allowed value.
+</p>
+<p>
+  <strong>name</strong><br />
+  Type: <code>string</code><br />
+  Default: <code>-</code><br />
+  Description: Name attribute for form submissions.
+</p>
+<p>
+  <strong>pattern</strong><br />
+  Type: <code>string</code><br />
+  Default: <code>-?[0-9]*(.[0-9]+)?</code><br />
+  Description: Regex pattern to validate the input string.
+</p>
+<p>
+  <strong>read-only</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>false</code><br />
+  Description: Makes the input read-only (cannot be edited but not disabled).
+</p>
+<p>
+  <strong>required</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>false</code><br />
+  Description: Marks the input as required for form validation.
+</p>
+<p>
+  <strong>spin-on-press</strong><br />
+  Type: <code>boolean</code><br />
+  Default: <code>true</code><br />
+  Description: Whether holding increment/decrement triggers continuous value
+  changes.
+</p>
+<p>
+  <strong>step</strong><br />
+  Type: <code>number</code><br />
+  Default: <code>1</code><br />
+  Description: Amount to increment/decrement on each step.
+</p>
+<p>
+  <strong>value</strong><br />
+  Type: <code>string</code><br />
+  Default: <code>-</code><br />
+  Description: Controlled value of the input (used in controlled components).
+</p>
+<hr />
+<h2 id="event-callbacks" tabindex="-1">
+  <a class="link" href="#event-callbacks">#</a> Event Callbacks
+</h2>
+<p>
+  Each Menu component can receive callbacks that can be used to respond to user
+  interaction with custom behavior.
+</p>
+<p>
+  You must add a custom id for the menu and a event listener for your event name
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='document
+  .getElementById("my-number-input")
+  ?.addEventListener("my-number-input-event", (event) =&gt; {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">document
+  .getElementById(&quot;my-number-input&quot;)
+  ?.addEventListener(&quot;my-number-input-event&quot;, (event) =&gt; {
+    console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
+  });
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="number-input number-input-js"
+      id="my-number-input"
+      data-on-value-change="my-number-input-event"
+    >
+      <div data-part="root">
+        <label data-part="label">Enter Amount</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <div data-part="trigger-group">
+            <button data-part="increment-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            </button>
+            <button data-part="decrement-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="number-input number-input-js"
+  id="my-number-input"
+  data-on-value-change="my-number-input-event"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Enter Amount&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;div data-part="trigger-group"&gt;
+        &lt;button data-part="increment-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 15.75 7.5-7.5 7.5 7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part="decrement-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;number-input number-input-js&quot;
+  id=&quot;my-number-input&quot;
+  data-on-value-change=&quot;my-number-input-event&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Enter Amount&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;div data-part=&quot;trigger-group&quot;&gt;
+        &lt;button data-part=&quot;increment-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 15.75 7.5-7.5 7.5 7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part=&quot;decrement-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<blockquote>
+  <p>
+    Open your browser's console to see the events received when the input value
+    changes
+  </p>
+</blockquote>
+<p>
+  <strong>data-on-value-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when the number input changes.
+</p>
+<p>
+  <strong>data-on-focus-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when the number input is focused.
+</p>
+<p>
+  <strong>data-on-value-invalid</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when the number input is invalid.
+</p>
+<hr />
+<h2 id="form-usage" tabindex="-1">
+  <a class="link" href="#form-usage">#</a> Form usage
+</h2>
+<p>Number Input can be used inside a form</p>
+<p>You must set the id of the form and the name of the Checkbox</p>
+<p>
+  <code>data-form=&quot;form-id&quot;</code><br />
+  <code>data-name=&quot;number-input-name&quot;</code>
+</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <form
+      id="my-form"
+      class="flex flex-col items-center gap-(--spacing-ui-gap)"
+    >
+      <div
+        class="number-input number-input-js"
+        data-form="my-form"
+        data-name="number-input-name"
+      >
+        <div data-part="root">
+          <label data-part="label">Enter Amount</label>
+          <div data-part="control">
+            <input data-part="input" />
+            <div data-part="trigger-group">
+              <button data-part="increment-trigger">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                  />
+                </svg>
+              </button>
+              <button data-part="decrement-trigger">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="button button--accent" type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;form id="my-form" class="flex flex-col items-center gap-(--spacing-ui-gap)"&gt;
+  &lt;div
+    class="number-input number-input-js"
+    data-form="my-form"
+    data-name="number-input-name"
+  &gt;
+    &lt;div data-part="root"&gt;
+      &lt;label data-part="label"&gt;Enter Amount&lt;/label&gt;
+      &lt;div data-part="control"&gt;
+        &lt;input data-part="input" /&gt;
+        &lt;div data-part="trigger-group"&gt;
+          &lt;button data-part="increment-trigger"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 15.75 7.5-7.5 7.5 7.5"
+              /&gt;
+            &lt;/svg&gt;
+          &lt;/button&gt;
+          &lt;button data-part="decrement-trigger"&gt;
+            &lt;svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            &gt;
+              &lt;path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              /&gt;
+            &lt;/svg&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="button button--accent" type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+&lt;div id="result"&gt;&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;form id=&quot;my-form&quot; class=&quot;flex flex-col items-center gap-(--spacing-ui-gap)&quot;&gt;
+  &lt;div
+    class=&quot;number-input number-input-js&quot;
+    data-form=&quot;my-form&quot;
+    data-name=&quot;number-input-name&quot;
+  &gt;
+    &lt;div data-part=&quot;root&quot;&gt;
+      &lt;label data-part=&quot;label&quot;&gt;Enter Amount&lt;/label&gt;
+      &lt;div data-part=&quot;control&quot;&gt;
+        &lt;input data-part=&quot;input&quot; /&gt;
+        &lt;div data-part=&quot;trigger-group&quot;&gt;
+          &lt;button data-part=&quot;increment-trigger&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m4.5 15.75 7.5-7.5 7.5 7.5&quot;
+              /&gt;
+            &lt;/svg&gt;
+          &lt;/button&gt;
+          &lt;button data-part=&quot;decrement-trigger&quot;&gt;
+            &lt;svg
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              fill=&quot;none&quot;
+              viewBox=&quot;0 0 24 24&quot;
+              stroke-width=&quot;1.5&quot;
+              stroke=&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+              /&gt;
+            &lt;/svg&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;button button--accent&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+&lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>You can use the results from the form as you wish</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='const form = document.getElementById("my-form") as HTMLFormElement | null;
+const resultCurrency = document.getElementById(
+  "result",
+) as HTMLDivElement | null;
+if (form &amp;&amp; resultCurrency) {
+  form.addEventListener("submit", (e: Event) =&gt; {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const number = (formData.get("number-input-name") as string) || "none";
+    resultCurrency.textContent = `Number entered: ${number}`;
+  });
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">const form = document.getElementById(&quot;my-form&quot;) as HTMLFormElement | null;
+const resultCurrency = document.getElementById(
+  &quot;result&quot;,
+) as HTMLDivElement | null;
+if (form &amp;&amp; resultCurrency) {
+  form.addEventListener(&quot;submit&quot;, (e: Event) =&gt; {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const number = (formData.get(&quot;number-input-name&quot;) as string) || &quot;none&quot;;
+    resultCurrency.textContent = `Number entered: ${number}`;
+  });
+}
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
+<ol>
+  <li>Import the component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import "@corex-ui/static/components/number-input";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/number-input&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  This will automatically initialize all elements with
+  <code>class=&quot;number-input-js&quot;</code> and add the necessary
+  interaction behavior.
+</p>
+<ol start="2">
+  <li>Add styling</li>
+</ol>
+<p>
+  The component is <strong>unstyled by default</strong> for maximum
+  customization flexibility.
+</p>
+<p>
+  To apply the default Corex UI design system styles, import the stylesheet:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='@import "@corex-ui/design/components/number-input.css";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">css</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/number-input.css&quot;;
+</code></pre>
+  </div>
+</div>
+<p>
+  These styles will be applied to all elements with the
+  <code>number-input</code> class.
+</p>
