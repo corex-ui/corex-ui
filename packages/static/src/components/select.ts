@@ -348,7 +348,6 @@ export class Select extends Component<select.Props, select.Api> {
 
 export function initializeSelect(doc: HTMLElement | Document = document): void {
   doc.querySelectorAll<HTMLElement>(".select-js").forEach((rootEl) => {
-    // Initialize group elements with data-id
     const groupElements = rootEl.querySelectorAll<HTMLElement>(
       '[data-part="item-group"]',
     );
@@ -364,7 +363,6 @@ export function initializeSelect(doc: HTMLElement | Document = document): void {
       if (labelEl) labelEl.setAttribute("data-id", groupId);
     });
 
-    // Initialize item elements with data-value
     const itemElements =
       rootEl.querySelectorAll<HTMLElement>('[data-part="item"]');
     itemElements.forEach((itemEl, index) => {
@@ -379,7 +377,6 @@ export function initializeSelect(doc: HTMLElement | Document = document): void {
       }
     });
 
-    // Load items
     const jsonPath = getString(rootEl, "json");
     const items: SelectItem[] = jsonPath
       ? loadJsonItems(jsonPath)
