@@ -1,17 +1,39 @@
 <script type="application/json" data-select="countries">
-  [
-    { "label": "France", "value": "FR" },
-    { "label": "Belgium", "value": "BE" },
-    { "label": "Germany", "value": "DE" },
-    { "label": "Italy", "value": "IT" },
-    { "label": "Spain", "value": "ES" },
-    { "label": "Portugal", "value": "PT" },
-    { "label": "Netherlands", "value": "NL" },
-    { "label": "Switzerland", "value": "CH" },
-    { "label": "Austria", "value": "AT" },
-    { "label": "Poland", "value": "PL" },
-    { "label": "Czech Republic", "value": "CZ" },
-    { "label": "Hungary", "value": "HU" },
-    { "label": "Greece", "value": "GR" }
-  ]
+  {
+    "id": "countries",
+    "name": "Countries",
+    "children": [
+      {
+        "id": "western-europe",
+        "name": "Western Europe",
+        "children": [
+          { "id": "FR", "name": "France" },
+          { "id": "BE", "name": "Belgium" },
+          { "id": "DE", "name": "Germany" },
+          { "id": "NL", "name": "Netherlands" },
+          { "id": "CH", "name": "Switzerland" },
+          { "id": "AT", "name": "Austria", "disabled": "true" }
+        ]
+      },
+      {
+        "id": "southern-europe",
+        "name": "Southern Europe",
+        "children": [
+          { "id": "IT", "name": "Italy" },
+          { "id": "ES", "name": "Spain" },
+          { "id": "PT", "name": "Portugal" },
+          { "id": "GR", "name": "Greece" }
+        ]
+      },
+      {
+        "id": "central-europe",
+        "name": "Central Europe",
+        "children": [
+          { "id": "PL", "name": "Poland" },
+          { "id": "CZ", "name": "Czech Republic" },
+          { "id": "HU", "name": "Hungary" }
+        ]
+      }
+    ]
+  }
 </script>

@@ -45,6 +45,22 @@
     }
   }
 
+  .select [data-scope="select"][data-part="item-group"] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .select [data-scope="select"][data-part="item-group-label"] {
+    font-size: var(--text-ui);
+    line-height: var(--text-ui--line-height);
+    text-align: start;
+    padding-inline: var(--spacing-ui-padding);
+    padding-block: var(--spacing-mini-padding-sm);
+    background-color: var(--color-root);
+    color: var(--color-root--text);
+    border-bottom: 1px solid var(--color-ui--border);
+  }
+
   .select [data-scope="select"][data-part="item"] {
     @apply ui-item;
   }
