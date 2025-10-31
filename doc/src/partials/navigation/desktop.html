@@ -42,9 +42,13 @@
             data-name="{{ link.url }}"
           >
             {{ link.label }} {{#if link.beta}}
-            <span class="badge badge--sm badge--info rounded-ui">Beta</span>
+            <span class="badge badge--sm badge--success rounded-ui text-xs"
+              >Beta</span
+            >
             {{/if}} {{#if link.new}}
-            <span class="badge badge--sm badge--success rounded-ui">New</span>
+            <span class="badge badge--sm badge--alert rounded-ui text-xs"
+              >New</span
+            >
             {{/if}}
           </div>
           {{/each}}

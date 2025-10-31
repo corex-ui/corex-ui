@@ -12,7 +12,7 @@ tags:
   - ZagJS
 ---
 
-# Password Input (Beta)
+# Password Input
 
 > A pure HTML and vanilla JS implementation of [Zag JS Password Input](https://zagjs.com/components/react/password-input)
 

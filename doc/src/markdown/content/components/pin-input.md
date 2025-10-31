@@ -12,7 +12,7 @@ tags:
   - ZagJS
 ---
 
-# Pin Input (Beta)
+# Pin Input
 
 > A pure HTML and vanilla JS implementation of [Zag JS Pin Input](https://zagjs.com/components/react/pin-input)
 

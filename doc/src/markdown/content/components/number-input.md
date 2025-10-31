@@ -12,7 +12,7 @@ tags:
   - ZagJS
 ---
 
-# Number Input (Beta)
+# Number Input
 
 > A pure HTML and vanilla JS implementation of [Zag JS Number Input](https://zagjs.com/components/react/number-input)
 
