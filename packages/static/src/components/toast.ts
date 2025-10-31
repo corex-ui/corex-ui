@@ -64,6 +64,9 @@ export class ToastItem extends Component<
     );
     if (descEl && descEl.textContent !== this.api.description)
       descEl.textContent = this.api.description || "";
+
+    renderPart(this.el, "title", this.api);
+    renderPart(this.el, "description", this.api);
   }
 }
 export class Toast extends Component<toast.GroupProps, toast.GroupApi> {
@@ -72,12 +75,12 @@ export class Toast extends Component<toast.GroupProps, toast.GroupApi> {
   public groupId: string;
   constructor(el: HTMLElement, props: toast.GroupProps) {
     super(el, props);
-    this.groupId = props.id || generateId(el, "toaster");
+    this.groupId = props.id || generateId(el, "toast");
   }
   initMachine(props: toast.GroupProps): VanillaMachine<any> {
     return new VanillaMachine(toast.group.machine, {
       ...props,
-      id: props.id ?? generateId(this.el, "toaster"),
+      id: props.id ?? generateId(this.el, "toast"),
     });
   }
   initApi(): toast.GroupApi {
@@ -126,9 +129,9 @@ export class Toast extends Component<toast.GroupProps, toast.GroupApi> {
 export function initializeToast(
   doc: HTMLElement | Document = document,
 ): Toast | null {
-  let toasterInstance: Toast | null = null;
+  let toastInstance: Toast | null = null;
   doc.querySelectorAll<HTMLElement>(".toast-js").forEach((rootEl) => {
-    const groupId = generateId(rootEl, "toaster");
+    const groupId = generateId(rootEl, "toast");
     const placements = [
       "top-start",
       "top",
@@ -148,12 +151,12 @@ export function initializeToast(
       max,
       offsets,
     });
-    toasterInstance = new Toast(rootEl, { id: groupId, store });
-    toasterInstance.init();
-    (rootEl as any).__toasterInstance = toasterInstance;
-    (rootEl as any).__toasterStore = store;
+    toastInstance = new Toast(rootEl, { id: groupId, store });
+    toastInstance.init();
+    (rootEl as any).__toastInstance = toastInstance;
+    (rootEl as any).__toastStore = store;
   });
-  return toasterInstance;
+  return toastInstance;
 }
 export function createToast(options: {
   title: string;
@@ -169,9 +172,9 @@ export function createToast(options: {
 
   if (options.groupId) {
     const el = document.getElementById(options.groupId);
-    store = (el as any)?.__toasterStore;
+    store = (el as any)?.__toastStore;
   } else {
-    store = (document.querySelector(".toast-js") as any)?.__toasterStore;
+    store = (document.querySelector(".toast-js") as any)?.__toastStore;
   }
 
   if (!store) throw new Error("No toast store found");
@@ -212,7 +215,7 @@ export function updateToast(
   if (!stores.length) throw new Error("No toast store found");
 
   stores.forEach((el: any) => {
-    const store = el.__toasterStore;
+    const store = el.__toastStore;
     if (store) store.update(id, options);
   });
 }
@@ -222,7 +225,7 @@ export function dismissToast(id: string) {
   if (!stores.length) throw new Error("No toast store found");
 
   stores.forEach((el: any) => {
-    const store = el.__toasterStore;
+    const store = el.__toastStore;
     if (store) store.dismiss(id);
   });
 }

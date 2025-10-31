@@ -128,7 +128,9 @@
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='document.querySelectorAll&lt;HTMLElement&gt;(".toast-info").forEach((btn) =&gt; {
+      data-default-value='import {createToast} from "@corex-ui/static/components/toast"
+
+document.querySelectorAll&lt;HTMLElement&gt;(".toast-info").forEach((btn) =&gt; {
   btn.addEventListener("click", () =&gt; {
     createToast({
       title: "Profile Updated",
@@ -214,7 +216,9 @@ document.querySelectorAll&lt;HTMLElement&gt;(".toast-loading").forEach((btn) =&g
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-info&quot;).forEach((btn) =&gt; {
+    <pre><code class="code-js" data-lang="ts">import {createToast} from &quot;@corex-ui/static/components/toast&quot;
+
+document.querySelectorAll&lt;HTMLElement&gt;(&quot;.toast-info&quot;).forEach((btn) =&gt; {
   btn.addEventListener(&quot;click&quot;, () =&gt; {
     createToast({
       title: &quot;Profile Updated&quot;,

@@ -39,6 +39,7 @@ export default defineConfig({
         switch: resolve(__dirname, "pages/switch.html"),
         tabs: resolve(__dirname, "pages/tabs.html"),
         timer: resolve(__dirname, "pages/timer.html"),
+        toast: resolve(__dirname, "pages/toast.html"),
         "toggle-group": resolve(__dirname, "pages/toggle-group.html"),
         "tree-view": resolve(__dirname, "pages/tree-view.html"),
       },
