@@ -60,6 +60,12 @@ export function initializeRadioGroup(
         "vertical",
       ]),
       dir: getString<Direction>(rootEl, "dir", ["ltr", "rtl"]),
+      defaultValue: getString(rootEl, "defaultValue"),
+      disabled: getBoolean(rootEl, "disabled"),
+      form: getString(rootEl, "form"),
+      name: getString(rootEl, "form"),
+      readOnly: getBoolean(rootEl, "disabled"),
+      value: getString(rootEl, "defaultValue"),
       onValueChange(details) {
         const eventName = getString(rootEl, "onValueChange");
         if (eventName) {
