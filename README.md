@@ -1,7 +1,6 @@
 # Corex UI
 
 [![Tests](https://github.com/corex-ui/corex-ui/actions/workflows/test.yml/badge.svg)](https://github.com/corex-ui/corex-ui/actions/workflows/test.yml)
-
 [![Release](https://github.com/corex-ui/corex-ui/actions/workflows/release.yml/badge.svg)](https://github.com/corex-ui/corex-ui/actions/workflows/release.yml)
 
 A modern, accessible UI component system built with TypeScript and Zag.js. Framework-agnostic, unstyled by default, and flexible for building web interfaces.
