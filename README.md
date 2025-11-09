@@ -1,5 +1,9 @@
 # Corex UI
 
+[![Tests](https://github.com/corex-ui/corex-ui/actions/workflows/test.yml/badge.svg)](https://github.com/corex-ui/corex-ui/actions/workflows/test.yml)
+
+[![Release](https://github.com/corex-ui/corex-ui/actions/workflows/release.yml/badge.svg)](https://github.com/corex-ui/corex-ui/actions/workflows/release.yml)
+
 A modern, accessible UI component system built with TypeScript and Zag.js. Framework-agnostic, unstyled by default, and flexible for building web interfaces.
 
 Official documentation at [corex-ui.com](https://corex-ui.com).
@@ -12,8 +16,8 @@ Corex UI is a monorepo with multiple packages:
 
 - **[@corex-ui/static](./packages/static)** – Vanilla JS/HTML components. Works on any static website
 
-  [![Version](https://img.shields.io/npm/v/@corex-ui/static.svg)](https://npmjs.org/package/@corex-ui/static)
-  [![Downloads/week](https://img.shields.io/npm/dw/@corex-ui/static.svg)](https://npmjs.org/package/@corex-ui/static)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/%40corex-ui%2Fstatic)
+![NPM Downloads](https://img.shields.io/npm/d18m/%40corex-ui%2Fstatic)
 
 - **[@corex-ui/design](./packages/design)** – Design tokens, Tailwind v4 configuration and components styling
 
