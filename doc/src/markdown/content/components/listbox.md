@@ -415,7 +415,7 @@ The column count will also be available as a CSS variable `--column-count` which
 
 You can use without or without `item-group`
 
-### Column Layout without group items
+**Column Layout without group items**
 
 ```html
 <!-- render:preview -->
@@ -500,7 +500,7 @@ You can use without or without `item-group`
 </div>
 ```
 
-### Column Layout with group items
+**Column Layout with group items**
 
 ```html
 <!-- render:preview -->

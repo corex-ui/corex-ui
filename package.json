@@ -26,11 +26,22 @@
     "globals": "^16.4.0",
     "jiti": "^2.6.1",
     "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
     "stylelint": "^16.25.0",
     "stylelint-config-standard": "^39.0.1",
     "stylelint-config-tailwindcss": "^1.0.0",
     "turbo": "^2.5.8",
     "typescript-eslint": "^8.46.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "expr-eval-fork": "3.0.0",
+      "mout": "1.2.4",
+      "glob": "9.3.5",
+      "source-map": "0.7.6",
+      "magic-string": "0.30.21",
+      "sourcemap-codec": "@jridgewell/sourcemap-codec@^1.5.5"
+    }
   },
   "packageManager": "pnpm@10.16.1"
 }

@@ -52,6 +52,6 @@
     "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
-    "jsdom": "^26.1.0"
+    "jsdom": "^27.1.0"
   }
 }

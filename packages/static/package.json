@@ -29,13 +29,13 @@
   "jsdelivr": "./dist/index.min.js",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.cjs.js"
     },
     "./lib": {
-      "import": "./dist/lib/index.mjs",
-      "types": "./dist/lib/index.d.ts"
+      "types": "./dist/lib/index.d.ts",
+      "import": "./dist/lib/index.mjs"
     },
     "./lib/*": {
       "import": "./dist/lib/*.mjs",
@@ -63,7 +63,7 @@
     "typescript"
   ],
   "devDependencies": {
-    "esbuild": "^0.17.11",
+    "esbuild": "^0.26.0",
     "tsup": "^8.1.0",
     "typescript": "~5.8.3"
   },

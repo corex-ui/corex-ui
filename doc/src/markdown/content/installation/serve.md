@@ -16,13 +16,13 @@ tags:
 
 Corex UI can be seamlessly integrated into your static HTML projects using Serve. This guide walks you through installing Corex UI packages, applying styles, using components, and configuring the Corex CLI for post-build hydration.
 
-## 1. New Serve Project
+## New Serve Project
 
 ```bash
 mkdir corex-serve-demo && cd corex-serve-demo && pnpm init --init-type module && pnpm add -D serve cpx npm-run-all rimraf && mkdir src && touch src/index.html src/style.css
 ```
 
-## 2. Install Corex UI
+## Install Corex UI
 
 ```bash
 pnpm add @corex-ui/static @corex-ui/design @corex-ui/cli tailwindcss @tailwindcss/cli
@@ -35,7 +35,7 @@ pnpm add @corex-ui/static @corex-ui/design @corex-ui/cli tailwindcss @tailwindcs
 - `@corex-ui/cli` – Post-build hydration for Corex components.
 - `tailwindcss` + `@tailwindcss/cli` – Tailwind integration.
 
-## 3. Tailwind Styles
+## Tailwind Styles
 
 Apply Corex and Tailwind styles in `src/style.css`:
 
@@ -47,7 +47,7 @@ Apply Corex and Tailwind styles in `src/style.css`:
 @import "@corex-ui/design/components/typo.css";
 ```
 
-## 4. Build Scripts
+## Build Scripts
 
 Configure build scripts in `package.json`:
 
@@ -70,7 +70,7 @@ Configure build scripts in `package.json`:
 - Hydrates components in a JSDOM instance.
 - Writes the hydrated HTML back to disk.
 
-## 5. Component HTML
+## Component HTML
 
 Create your main page in `src/index.html` with Corex theming:
 
@@ -184,7 +184,7 @@ Create your main page in `src/index.html` with Corex theming:
 </html>
 ```
 
-## 6. Build App
+## Build App
 
 Now that Corex UI is integrated into your Serve project, you can build it for production and preview the results.
 
