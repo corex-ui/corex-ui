@@ -246,7 +246,7 @@ You must set the id of the form and the name of the Signature pad
 <!-- render:preview -->
 <form
   id="my-form"
-  class="flex flex-col items-center gap-(--spacing-ui-gap) max-w-(--container-mini)"
+  class="flex max-w-(--container-mini) flex-col items-center gap-(--spacing-ui-gap)"
 >
   <div class="signature-pad signature-pad-js" data-name="signature">
     <div data-part="root">
