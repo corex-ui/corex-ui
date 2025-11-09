@@ -16,8 +16,9 @@ Corex UI is a monorepo with multiple packages:
 
 - **[@corex-ui/static](./packages/static)** – Vanilla JS/HTML components. Works on any static website
 
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/%40corex-ui%2Fstatic)
-![NPM Downloads](https://img.shields.io/npm/d18m/%40corex-ui%2Fstatic)
+![NPM Last Update](https://img.shields.io/npm/last-update/%40corex-ui%2Fstatic)
+![NPM Type Definitions](https://img.shields.io/npm/types/%40corex-ui%2Fstatic)
+![NPM License](https://img.shields.io/npm/l/%40corex-ui%2Fstatic)
 
 - **[@corex-ui/design](./packages/design)** – Design tokens, Tailwind v4 configuration and components styling
 
