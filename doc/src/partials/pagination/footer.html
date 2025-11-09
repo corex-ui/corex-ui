@@ -4,17 +4,17 @@
   data-column-count="{{#if prevUrl}}{{#if nextUrl}}2{{else}}1{{/if}}{{else}}1{{/if}}"
   data-on-select="link"
 >
-  <div data-part="root" class="max-w-full bg-root shadow-none w-full">
+  <div data-part="root" class="bg-root w-full max-w-full shadow-none">
     <div data-part="label" class="sr-only">Listbox Label</div>
     <div data-part="content" class="bg-root border-none">
       {{#if prevUrl}}
-      <div class="flex flex-col gap-4 flex-1">
-        <div class="uppercase text-ui-sm px-4">Previous</div>
+      <div class="flex flex-1 flex-col gap-4">
+        <div class="text-ui-sm px-4 uppercase">Previous</div>
         <div
           data-part="item"
           data-value="{{prevUrl}}"
           data-label="{{prevName}}"
-          class="w-fit border-[1px] border-ui--border rounded-s-ui"
+          class="border-ui--border rounded-s-ui w-fit border-[1px]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,13 +38,13 @@
         </div>
       </div>
       {{/if}} {{#if nextUrl}}
-      <div class="flex flex-col gap-4 flex-1">
-        <div class="uppercase text-ui-sm text-end px-4">Next</div>
+      <div class="flex flex-1 flex-col gap-4">
+        <div class="text-ui-sm px-4 text-end uppercase">Next</div>
         <div
           data-part="item"
           data-value="{{nextUrl}}"
           data-label="{{nextName}}"
-          class="w-fit self-end border-[1px] border-ui--border rounded-e-ui"
+          class="border-ui--border rounded-e-ui w-fit self-end border-[1px]"
         >
           <span
             data-part="item-text"

@@ -16,7 +16,7 @@ tags:
 
 Corex UI can be seamlessly integrated into your Vite projects. This guide walks you through installing Corex UI packages, applying styles, using components, and configuring the Corex Vite plugin for post-build hydration.
 
-## 1. New Vite Project
+## New Vite Project
 
 ```bash
 pnpm create vite@latest corex-vite-demo --template vanilla-ts --no-interactive
@@ -24,7 +24,7 @@ cd corex-vite-demo
 pnpm install
 ```
 
-## 2. Install Corex UI
+## Install Corex UI
 
 ```bash
 pnpm add @corex-ui/static @corex-ui/design @corex-ui/vite tailwindcss @tailwindcss/vite
@@ -37,7 +37,7 @@ pnpm add @corex-ui/static @corex-ui/design @corex-ui/vite tailwindcss @tailwindc
 - `@corex-ui/vite` – Post-build hydration for Corex components.
 - `tailwindcss` + `@tailwindcss/vite` – Tailwind integration.
 
-## 3. Corex Components
+## Corex Components
 
 Import Corex components in your `src/main.ts` file:
 
@@ -50,7 +50,7 @@ import "@corex-ui/static/components/accordion";
 // import "@corex-ui/static"
 ```
 
-## 4. Tailwind Styles
+## Tailwind Styles
 
 Apply Corex and Tailwind styles in `src/style.css`:
 
@@ -62,7 +62,7 @@ Apply Corex and Tailwind styles in `src/style.css`:
 @import "@corex-ui/design/components/typo.css";
 ```
 
-## 5. Vite Plugin
+## Vite Plugin
 
 Configure the Vite plugin in `vite.config.js` to hydrate Corex components:
 
@@ -83,7 +83,7 @@ export default defineConfig({
 - Hydrates components in a JSDOM instance.
 - Writes the hydrated HTML back to disk.
 
-## 6. Component HTML
+## Component HTML
 
 Ensure your `<html>` tag includes `data-theme="neo"` and `data-mode="light"` in your `index.html` file:
 
@@ -193,7 +193,7 @@ Ensure your `<html>` tag includes `data-theme="neo"` and `data-mode="light"` in 
 </html>
 ```
 
-## 7. Build App
+## Build App
 
 Now that Corex UI is integrated into your Vite project, you can run it locally, build it for production, and preview the results.
 

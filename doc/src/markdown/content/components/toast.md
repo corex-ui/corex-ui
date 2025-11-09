@@ -42,6 +42,8 @@ You can created 4 different types of toast:
 ```
 
 ```ts
+import { createToast } from "@corex-ui/static/components/toast";
+
 document.querySelectorAll<HTMLElement>(".toast-info").forEach((btn) => {
   btn.addEventListener("click", () => {
     createToast({

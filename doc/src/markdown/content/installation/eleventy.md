@@ -16,13 +16,13 @@ tags:
 
 Corex UI can be seamlessly integrated into your Eleventy projects. This guide walks you through installing Corex UI packages, applying styles, using components, and configuring the Corex CLI for post-build hydration.
 
-## 1. New Eleventy Project
+## New Eleventy Project
 
 ```bash
 mkdir corex-eleventy-demo && cd corex-eleventy-demo && pnpm init --init-type module && pnpm add -D @11ty/eleventy && mkdir src && touch eleventy.config.mjs src/index.html src/style.css
 ```
 
-## 2. Install Corex UI
+## Install Corex UI
 
 ```bash
 pnpm add @corex-ui/static @corex-ui/design @corex-ui/cli tailwindcss @tailwindcss/cli
@@ -35,7 +35,7 @@ pnpm add @corex-ui/static @corex-ui/design @corex-ui/cli tailwindcss @tailwindcs
 - `@corex-ui/cli` – Post-build hydration for Corex components.
 - `tailwindcss` + `@tailwindcss/cli` – Tailwind integration.
 
-## 3. Eleventy Configuration
+## Eleventy Configuration
 
 Configure Eleventy in `eleventy.config.mjs` to copy Corex components and assets:
 
@@ -60,7 +60,7 @@ export default function (eleventyConfig) {
 }
 ```
 
-## 4. Tailwind Styles
+## Tailwind Styles
 
 Apply Corex and Tailwind styles in `src/style.css`:
 
@@ -72,7 +72,7 @@ Apply Corex and Tailwind styles in `src/style.css`:
 @import "@corex-ui/design/components/typo.css";
 ```
 
-## 5. Build Scripts
+## Build Scripts
 
 Configure build scripts in `package.json`:
 
@@ -90,7 +90,7 @@ Configure build scripts in `package.json`:
 - Hydrates components in a JSDOM instance.
 - Writes the hydrated HTML back to disk.
 
-## 6. Component HTML
+## Component HTML
 
 Create your main page in `src/index.html` with Corex theming:
 
@@ -204,7 +204,7 @@ Create your main page in `src/index.html` with Corex theming:
 </html>
 ```
 
-## 8. Build App
+## Build App
 
 Now that Corex UI is integrated into your Eleventy project, you can run it locally, build it for production, and preview the results.
 

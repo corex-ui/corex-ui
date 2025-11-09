@@ -42,6 +42,7 @@
   .navigation.tree-view [data-scope="tree-view"][data-part="item"] {
     border-inline-start: 3px solid var(--color-ui--border);
     border-radius: 0;
+    gap: var(--spacing-ui-gap-sm);
   }
 
   .navigation.tree-view [data-scope="tree-view"][data-part="item"]:hover,

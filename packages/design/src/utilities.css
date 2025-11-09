@@ -119,9 +119,8 @@
   display: inline-block;
   align-items: center;
   justify-content: center;
-  height: 1.2em;
-  width: 1.2em;
-  line-height: 5;
+  height: 0.9em;
+  width: 0.9em;
   color: currentcolor;
   font-size: inherit;
   max-width: fit-content;

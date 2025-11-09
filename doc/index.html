@@ -26,10 +26,9 @@
     <main class="layout__main">
       <div class="layout__content md:py-ui-xl">
         <section
-          class="flex flex-col mx-auto max-w-(--container-ui-xl) gap-ui-sm sm:gap-ui md:gap-ui-lg py-ui sm:py-ui-lg md:py-ui-xl px-ui-padding-xl justify-between relative"
+          class="gap-ui-sm sm:gap-ui md:gap-ui-lg py-ui sm:py-ui-lg md:py-ui-xl px-ui-padding-xl relative mx-auto flex max-w-(--container-ui-xl) flex-col justify-between"
         >
-          <!-- {{>gradient/brand}} -->
-          <h1 class="text-4xl md:text-6xl my-0">
+          <h1 class="my-0 text-4xl md:text-6xl">
             Build <span class="text-root--success">fast</span>,
             <span class="text-root--success">accessible</span> and
             <span class="text-root--success">interactive</span> websites
@@ -46,7 +45,7 @@
             Corex UI provides a complete foundation for creating <br />
             beautiful, scalable, and performant websites.
           </p>
-          <div class="flex justify-start gap-ui-gap flex-wrap p-ui-padding">
+          <div class="gap-ui-gap p-ui-padding flex flex-wrap justify-start">
             <a
               href="/installation/introduction"
               class="button button--brand md:button--lg w-full md:w-auto"
@@ -90,23 +89,23 @@
           </div>
         </section>
         <section
-          class="bg-root items-start flex flex-wrap justify-center w-full rounded-full"
+          class="bg-root flex w-full flex-wrap items-start justify-center rounded-full"
         >
-          <div class="flex flex-col gap-ui-gap">
+          <div class="gap-ui-gap flex flex-col">
             {{>demo/cookies}} {{>demo/color}}
           </div>
           {{>demo/visa}}
-          <div class="flex flex-col gap-ui-gap items-center justify-center">
+          <div class="gap-ui-gap flex flex-col items-center justify-center">
             {{>demo/cat}}
           </div>
         </section>
         <section
-          class="bg-root items-start flex flex-wrap justify-center w-full my-ui"
+          class="bg-root my-ui flex w-full flex-wrap items-start justify-center"
         >
           <div class="my-ui-xl text-center">
             <h2>Works on all frameworks and build tools</h2>
             <div
-              class="flex flex-wrap justify-center gap-ui items-center w-full"
+              class="gap-ui flex w-full flex-wrap items-center justify-center"
             >
               <svg
                 class="icon icon--xl"
@@ -216,10 +215,10 @@
           </div>
         </section>
         <section
-          class="bg-root items-center flex flex-col justify-center w-full"
+          class="bg-root flex w-full flex-col items-center justify-center"
         >
           <div
-            class="max-w-(--container-ui-xl) flex flex-col mx-auto p-ui-padding justify-between gap-ui"
+            class="p-ui-padding gap-ui mx-auto flex max-w-(--container-ui-xl) flex-col justify-between"
           >
             <div class="text-center">
               <h2 class="text-4xl">Features</h2>
@@ -231,13 +230,13 @@
               </p>
             </div>
             <div
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+              class="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
             >
               <!-- Feature Card 1: Easy Automation -->
-              <div class="card p-0 cursor-default">
+              <div class="card cursor-default p-0">
                 <!-- Card Body -->
-                <div class="flex-grow p-ui-padding">
-                  <h3 class="text-center text-ui-lg">Accessible</h3>
+                <div class="p-ui-padding flex-grow">
+                  <h3 class="text-ui-lg text-center">Accessible</h3>
                   <p class="my-0">
                     Built on top of <strong>Zag.js state machines</strong>,
                     every component comes with complete
@@ -247,10 +246,10 @@
                   </p>
                 </div>
                 <!-- Card Footer -->
-                <div class="flex-shrink-0 mt-8">
+                <div class="mt-8 flex-shrink-0">
                   <a
                     href="/installation/introduction"
-                    class="button button--accent button--lg w-full no-underline rounded-t-none border-none rounded-ui"
+                    class="button button--accent button--lg rounded-ui w-full rounded-t-none border-none no-underline"
                   >
                     Learn more
                     <svg
@@ -269,10 +268,10 @@
                   </a>
                 </div>
               </div>
-              <div class="card p-0 cursor-default">
+              <div class="card cursor-default p-0">
                 <!-- Card Body -->
-                <div class="flex-grow p-ui-padding">
-                  <h3 class="text-center text-ui-lg">Performance</h3>
+                <div class="p-ui-padding flex-grow">
+                  <h3 class="text-ui-lg text-center">Performance</h3>
                   <p class="my-0">
                     No flashes of unstyled content, no layout shifts. Every
                     component is optimized for speed and stability, delivering a
@@ -281,10 +280,10 @@
                   </p>
                 </div>
                 <!-- Card Footer -->
-                <div class="flex-shrink-0 mt-8">
+                <div class="mt-8 flex-shrink-0">
                   <a
                     href="/guides/theming"
-                    class="button button--accent button--lg w-full no-underline rounded-t-none border-none rounded-ui"
+                    class="button button--accent button--lg rounded-ui w-full rounded-t-none border-none no-underline"
                   >
                     Learn more
                     <svg
@@ -303,10 +302,10 @@
                   </a>
                 </div>
               </div>
-              <div class="card p-0 cursor-default">
+              <div class="card cursor-default p-0">
                 <!-- Card Body -->
-                <div class="flex-grow p-ui-padding">
-                  <h3 class="text-center text-ui-lg">Tailwind v4</h3>
+                <div class="p-ui-padding flex-grow">
+                  <h3 class="text-ui-lg text-center">Tailwind v4</h3>
                   <p class="my-0">
                     Leverage modern Tailwind v4 modifiers and theming utilities
                     for dynamic styling. Accessible color palettes with built-in
@@ -315,10 +314,10 @@
                   </p>
                 </div>
                 <!-- Card Footer -->
-                <div class="flex-shrink-0 mt-8">
+                <div class="mt-8 flex-shrink-0">
                   <a
                     href="/guides/tailwind"
-                    class="button button--accent button--lg w-full no-underline rounded-t-none border-none rounded-ui"
+                    class="button button--accent button--lg rounded-ui w-full rounded-t-none border-none no-underline"
                   >
                     Learn more
                     <svg
@@ -341,14 +340,14 @@
           </div>
         </section>
         <section
-          class="bg-root items-center flex flex-col justify-center w-full my-ui gap-ui"
+          class="bg-root my-ui gap-ui flex w-full flex-col items-center justify-center"
         >
           <div
-            class="max-w-(--container-ui-xl) flex flex-col mx-auto p-ui-padding justify-between gap-ui"
+            class="p-ui-padding gap-ui mx-auto flex max-w-(--container-ui-xl) flex-col justify-between"
           >
             <div class="text-center">
-              <h3 class="text-4xl text-layer--brand">Get started</h3>
-              <p class="text-lg text-layer--text">
+              <h3 class="text-layer--brand text-4xl">Get started</h3>
+              <p class="text-layer--text text-lg">
                 Corex UI is <strong>open source</strong> and available <br />
                 on
                 <a
@@ -415,7 +414,7 @@
                 </div>
               </div>
             </div>
-            <div class="flex justify-start gap-ui-gap flex-wrap p-ui-padding">
+            <div class="gap-ui-gap p-ui-padding flex flex-wrap justify-start">
               <a
                 href="/installation/introduction"
                 class="button button--brand md:button--lg w-full md:w-auto"

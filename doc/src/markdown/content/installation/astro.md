@@ -16,14 +16,14 @@ tags:
 
 Corex UI can be seamlessly integrated into your Astro projects. This guide walks you through installing Corex UI packages, applying styles, using components, and configuring the Corex Astro plugin for post-build hydration.
 
-## 1. New Astro Project
+## New Astro Project
 
 ```bash
 pnpm create astro@latest corex-astro-demo --yes
 cd corex-astro-demo
 ```
 
-## 2. Install Corex UI
+## Install Corex UI
 
 ```bash
 pnpm add @corex-ui/static @corex-ui/design @corex-ui/astro tailwindcss @tailwindcss/vite
@@ -36,7 +36,7 @@ pnpm add @corex-ui/static @corex-ui/design @corex-ui/astro tailwindcss @tailwind
 - `@corex-ui/astro` – Post-build hydration for Corex components.
 - `tailwindcss` + `@tailwindcss/vite` – Tailwind integration.
 
-## 3. Corex Components
+## Corex Components
 
 Import Corex components in your `src/pages/index.astro` file:
 
@@ -56,7 +56,7 @@ import '../style.css';
 </script>
 ```
 
-## 4. Tailwind Styles
+## Tailwind Styles
 
 Apply Corex and Tailwind styles in `src/style.css`:
 
@@ -68,7 +68,7 @@ Apply Corex and Tailwind styles in `src/style.css`:
 @import "@corex-ui/design/components/typo.css";
 ```
 
-## 5. Astro Plugin
+## Astro Plugin
 
 Configure the Astro plugin in `astro.config.mjs` to hydrate Corex components:
 
@@ -94,7 +94,7 @@ export default defineConfig({
 - Hydrates components in a JSDOM instance.
 - Writes the hydrated HTML back to disk.
 
-## 6. Component HTML
+## Component HTML
 
 Ensure your `<html>` tag includes `data-theme="neo"` and `data-mode="light"` in your component file:
 
@@ -160,7 +160,7 @@ Ensure your `<html>` tag includes `data-theme="neo"` and `data-mode="light"` in 
 </main>
 ```
 
-## 7. Layout HTML
+## Layout HTML
 
 Set up your main layout with Corex theming:
 
@@ -180,7 +180,7 @@ Set up your main layout with Corex theming:
 </html>
 ```
 
-## 8. Build App
+## Build App
 
 Now that Corex UI is integrated into your Astro project, you can run it locally, build it for production, and preview the results.
 

@@ -744,7 +744,7 @@ When using the horizontal layout, keyboard navigation changes accordingly:
       </h3>
       <div data-part="item-content">
         <p
-          class="w-full h-ui-xl my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
+          class="h-ui-xl my-ui-padding rounded-ui bg-root mx-auto w-full border-1 border-dashed"
         ></p>
       </div>
     </div>
@@ -771,7 +771,7 @@ When using the horizontal layout, keyboard navigation changes accordingly:
       </h3>
       <div data-part="item-content">
         <p
-          class="w-full h-ui-xl my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
+          class="h-ui-xl my-ui-padding rounded-ui bg-root mx-auto w-full border-1 border-dashed"
         ></p>
       </div>
     </div>
@@ -798,7 +798,7 @@ When using the horizontal layout, keyboard navigation changes accordingly:
       </h3>
       <div data-part="item-content">
         <p
-          class="w-full h-ui-xl my-ui-padding rounded-ui border-1 border-dashed bg-root mx-auto"
+          class="h-ui-xl my-ui-padding rounded-ui bg-root mx-auto w-full border-1 border-dashed"
         ></p>
       </div>
     </div>
@@ -1117,7 +1117,7 @@ The default modifier is applied automatically, so you don’t need to include it
 Use `class="accordion--{color}"` to set the color of an accordion.
 
 Available options:  
-**accent**(default), **brand**, **alert**, **info**, **success**
+**accent**, **brand**, **alert**, **info**, **success**
 
 ```html
 <!-- render:preview -->

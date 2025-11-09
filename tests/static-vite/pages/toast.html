@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" data-theme="neo" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toast Examples</title>
+  </head>
+  <body class="typo layout">
+    <main class="layout__main">
+      <h1>Toast Examples</h1>
+      <a href="/" class="link">← Back to index</a>
+
+      <!-- Test: Basic -->
+      <section data-test="basic-toast">
+        <h2>Basic Toast</h2>
+        <div class="toast toast-js" data-max="5">
+          <div data-part="group"></div>
+        </div>
+        <button class="button toast-info">Info Toast</button>
+        <button class="button toast-alert">Alert Toast</button>
+        <button class="button toast-success">Success Toast</button>
+        <button class="button toast-loading">Loading Toast</button>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

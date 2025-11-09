@@ -26,7 +26,7 @@ The Scrollbar component can be configured to scroll vertically, horizontally, or
 <!-- render:preview -->
 <div>
   <div
-    class="scrollbar w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+    class="scrollbar flex h-[150px] w-[150px] justify-start overflow-y-auto p-1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
     aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
@@ -35,17 +35,17 @@ The Scrollbar component can be configured to scroll vertically, horizontally, or
     nisi, eu lacinia odio felis sed nibh.
   </div>
 
-  <div class="scrollbar w-[150px] overflow-x-auto flex justify-start p-1">
-    <div class="min-w-[300px] inline-block">
+  <div class="scrollbar flex w-[150px] justify-start overflow-x-auto p-1">
+    <div class="inline-block min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus.
     </div>
   </div>
 
   <div
-    class="scrollbar w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+    class="scrollbar flex h-[150px] w-[150px] justify-start overflow-auto p-1"
   >
-    <div class="min-w-[300px] min-h-[300px] block">
+    <div class="block min-h-[300px] min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
@@ -85,7 +85,7 @@ Options: **base(default)**, **accent**, **alert**, **info**,**success**
 <!-- render:preview -->
 <div>
   <div
-    class="scrollbar scrollbar--accent w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+    class="scrollbar scrollbar--accent flex h-[150px] w-[150px] justify-start overflow-y-auto p-1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
     aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
@@ -95,18 +95,18 @@ Options: **base(default)**, **accent**, **alert**, **info**,**success**
   </div>
 
   <div
-    class="scrollbar scrollbar--accent w-[150px] overflow-x-auto flex justify-start p-1"
+    class="scrollbar scrollbar--accent flex w-[150px] justify-start overflow-x-auto p-1"
   >
-    <div class="min-w-[300px] inline-block">
+    <div class="inline-block min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus.
     </div>
   </div>
 
   <div
-    class="scrollbar scrollbar--accent w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+    class="scrollbar scrollbar--accent flex h-[150px] w-[150px] justify-start overflow-auto p-1"
   >
-    <div class="min-w-[300px] min-h-[300px] block">
+    <div class="block min-h-[300px] min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
@@ -117,7 +117,7 @@ Options: **base(default)**, **accent**, **alert**, **info**,**success**
 </div>
 <div>
   <div
-    class="scrollbar scrollbar--alert w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+    class="scrollbar scrollbar--alert flex h-[150px] w-[150px] justify-start overflow-y-auto p-1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
     aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
@@ -127,18 +127,18 @@ Options: **base(default)**, **accent**, **alert**, **info**,**success**
   </div>
 
   <div
-    class="scrollbar scrollbar--alert w-[150px] overflow-x-auto flex justify-start p-1"
+    class="scrollbar scrollbar--alert flex w-[150px] justify-start overflow-x-auto p-1"
   >
-    <div class="min-w-[300px] inline-block">
+    <div class="inline-block min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus.
     </div>
   </div>
 
   <div
-    class="scrollbar scrollbar--alert w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+    class="scrollbar scrollbar--alert flex h-[150px] w-[150px] justify-start overflow-auto p-1"
   >
-    <div class="min-w-[300px] min-h-[300px] block">
+    <div class="block min-h-[300px] min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
@@ -149,7 +149,7 @@ Options: **base(default)**, **accent**, **alert**, **info**,**success**
 </div>
 <div>
   <div
-    class="scrollbar scrollbar--info w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+    class="scrollbar scrollbar--info flex h-[150px] w-[150px] justify-start overflow-y-auto p-1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
     aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
@@ -159,18 +159,18 @@ Options: **base(default)**, **accent**, **alert**, **info**,**success**
   </div>
 
   <div
-    class="scrollbar scrollbar--info w-[150px] overflow-x-auto flex justify-start p-1"
+    class="scrollbar scrollbar--info flex w-[150px] justify-start overflow-x-auto p-1"
   >
-    <div class="min-w-[300px] inline-block">
+    <div class="inline-block min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus.
     </div>
   </div>
 
   <div
-    class="scrollbar scrollbar--info w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+    class="scrollbar scrollbar--info flex h-[150px] w-[150px] justify-start overflow-auto p-1"
   >
-    <div class="min-w-[300px] min-h-[300px] block">
+    <div class="block min-h-[300px] min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
@@ -181,7 +181,7 @@ Options: **base(default)**, **accent**, **alert**, **info**,**success**
 </div>
 <div>
   <div
-    class="scrollbar scrollbar--success w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+    class="scrollbar scrollbar--success flex h-[150px] w-[150px] justify-start overflow-y-auto p-1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
     aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
@@ -191,18 +191,18 @@ Options: **base(default)**, **accent**, **alert**, **info**,**success**
   </div>
 
   <div
-    class="scrollbar scrollbar--success w-[150px] overflow-x-auto flex justify-start p-1"
+    class="scrollbar scrollbar--success flex w-[150px] justify-start overflow-x-auto p-1"
   >
-    <div class="min-w-[300px] inline-block">
+    <div class="inline-block min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus.
     </div>
   </div>
 
   <div
-    class="scrollbar scrollbar--success w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+    class="scrollbar scrollbar--success flex h-[150px] w-[150px] justify-start overflow-auto p-1"
   >
-    <div class="min-w-[300px] min-h-[300px] block">
+    <div class="block min-h-[300px] min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
@@ -225,7 +225,7 @@ Options: **md(default)**, **sm**, **lg**, **xl**
 <!-- render:preview -->
 <div>
   <div
-    class="scrollbar scrollbar--sm w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+    class="scrollbar scrollbar--sm flex h-[150px] w-[150px] justify-start overflow-y-auto p-1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
     aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
@@ -235,18 +235,18 @@ Options: **md(default)**, **sm**, **lg**, **xl**
   </div>
 
   <div
-    class="scrollbar scrollbar--sm w-[150px] overflow-x-auto flex justify-start p-1"
+    class="scrollbar scrollbar--sm flex w-[150px] justify-start overflow-x-auto p-1"
   >
-    <div class="min-w-[300px] inline-block">
+    <div class="inline-block min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus.
     </div>
   </div>
 
   <div
-    class="scrollbar scrollbar--sm w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+    class="scrollbar scrollbar--sm flex h-[150px] w-[150px] justify-start overflow-auto p-1"
   >
-    <div class="min-w-[300px] min-h-[300px] block">
+    <div class="block min-h-[300px] min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
@@ -257,7 +257,7 @@ Options: **md(default)**, **sm**, **lg**, **xl**
 </div>
 <div>
   <div
-    class="scrollbar w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+    class="scrollbar flex h-[150px] w-[150px] justify-start overflow-y-auto p-1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
     aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
@@ -266,17 +266,17 @@ Options: **md(default)**, **sm**, **lg**, **xl**
     nisi, eu lacinia odio felis sed nibh.
   </div>
 
-  <div class="scrollbar w-[150px] overflow-x-auto flex justify-start p-1">
-    <div class="min-w-[300px] inline-block">
+  <div class="scrollbar flex w-[150px] justify-start overflow-x-auto p-1">
+    <div class="inline-block min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus.
     </div>
   </div>
 
   <div
-    class="scrollbar w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+    class="scrollbar flex h-[150px] w-[150px] justify-start overflow-auto p-1"
   >
-    <div class="min-w-[300px] min-h-[300px] block">
+    <div class="block min-h-[300px] min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
@@ -287,7 +287,7 @@ Options: **md(default)**, **sm**, **lg**, **xl**
 </div>
 <div>
   <div
-    class="scrollbar scrollbar--lg w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+    class="scrollbar scrollbar--lg flex h-[150px] w-[150px] justify-start overflow-y-auto p-1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
     aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
@@ -297,18 +297,18 @@ Options: **md(default)**, **sm**, **lg**, **xl**
   </div>
 
   <div
-    class="scrollbar scrollbar--lg w-[150px] overflow-x-auto flex justify-start p-1"
+    class="scrollbar scrollbar--lg flex w-[150px] justify-start overflow-x-auto p-1"
   >
-    <div class="min-w-[300px] inline-block">
+    <div class="inline-block min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus.
     </div>
   </div>
 
   <div
-    class="scrollbar scrollbar--lg w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+    class="scrollbar scrollbar--lg flex h-[150px] w-[150px] justify-start overflow-auto p-1"
   >
-    <div class="min-w-[300px] min-h-[300px] block">
+    <div class="block min-h-[300px] min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
@@ -319,7 +319,7 @@ Options: **md(default)**, **sm**, **lg**, **xl**
 </div>
 <div>
   <div
-    class="scrollbar scrollbar--xl w-[150px] h-[150px] overflow-y-auto flex justify-start p-1"
+    class="scrollbar scrollbar--xl flex h-[150px] w-[150px] justify-start overflow-y-auto p-1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus,
     aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan
@@ -329,18 +329,18 @@ Options: **md(default)**, **sm**, **lg**, **xl**
   </div>
 
   <div
-    class="scrollbar scrollbar--xl w-[150px] overflow-x-auto flex justify-start p-1"
+    class="scrollbar scrollbar--xl flex w-[150px] justify-start overflow-x-auto p-1"
   >
-    <div class="min-w-[300px] inline-block">
+    <div class="inline-block min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus.
     </div>
   </div>
 
   <div
-    class="scrollbar scrollbar--xl w-[150px] h-[150px] overflow-auto flex justify-start p-1"
+    class="scrollbar scrollbar--xl flex h-[150px] w-[150px] justify-start overflow-auto p-1"
   >
-    <div class="min-w-[300px] min-h-[300px] block">
+    <div class="block min-h-[300px] min-w-[300px]">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi
       risus, aliquam vitae suscipit non, mattis vel enim. Aliquam in leo luctus,
       accumsan neque varius, fringilla lorem. Duis eros ipsum, efficitur non
