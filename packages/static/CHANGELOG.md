@@ -1,5 +1,11 @@
 # @corex-ui/static
 
+## 0.2.2
+
+### Patch Changes
+
+- b3cfb3c: Dependencies update
+
 ## 0.2.1
 
 ### Patch Changes
