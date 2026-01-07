@@ -1,14 +1,14 @@
 import * as colorPicker from "@zag-js/color-picker";
 import type { ColorFormat } from "@zag-js/color-picker";
 import type { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   getBoolean,
   getNumber,
   generateId,
-  normalizeProps,
   renderPart,
 } from "../lib";
 export class ColorPicker extends Component<colorPicker.Props, colorPicker.Api> {
@@ -70,10 +70,11 @@ export class ColorPicker extends Component<colorPicker.Props, colorPicker.Api> {
     });
   }
 }
-export function initializeColorPicker(
+export function initColorPicker(
   doc: HTMLElement | Document = document,
+  selector = ".color-picker-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".color-picker-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const formats = ["rgba", "hsla", "hsba"] as const;
     const placements = [
@@ -182,13 +183,4 @@ export function initializeColorPicker(
     });
     colorPickerComponent.init();
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeColorPicker(document),
-    );
-  } else {
-    initializeColorPicker(document);
-  }
 }

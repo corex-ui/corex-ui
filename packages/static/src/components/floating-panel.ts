@@ -1,13 +1,13 @@
 import * as floatingPanel from "@zag-js/floating-panel";
 import type { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   getBoolean,
   getNumber,
   generateId,
-  normalizeProps,
   renderPart,
 } from "../lib";
 export class FloatingPanel extends Component<
@@ -40,7 +40,7 @@ export class FloatingPanel extends Component<
       renderPart(this.el, item, this.api, { axis: "string" });
   }
 }
-export function initializeFloatingPanel(
+export function initFloatingPanel(
   doc: HTMLElement | Document = document,
 ): void {
   doc.querySelectorAll<HTMLElement>(".floating-panel-js").forEach((rootEl) => {
@@ -129,13 +129,4 @@ export function initializeFloatingPanel(
     });
     floatingPanel.init();
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeFloatingPanel(document),
-    );
-  } else {
-    initializeFloatingPanel(document);
-  }
 }

@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/collapsible";
+import { initCollapsible } from "@corex-ui/static";
 import "@corex-ui/design/components/collapsible.css";
+
+initCollapsible();
 
 document
   .getElementById("my-collapsible")

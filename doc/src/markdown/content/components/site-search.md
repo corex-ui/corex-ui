@@ -87,10 +87,10 @@ pagefind({
 });
 ```
 
-You then need initialize Pagefind
+You then need init Pagefind
 
 ```ts
-import { initializeSiteSearch } from "@corex-ui/static/components/site-search";
+import { initSiteSearch } from "@corex-ui/static/components/site-search";
 import type { Pagefind } from "vite-plugin-pagefind/types";
 
 (async () => {
@@ -101,9 +101,9 @@ import type { Pagefind } from "vite-plugin-pagefind/types";
       excerptLength: 5,
       highlightParam: "highlight",
     });
-    initializeSiteSearch(pagefind, window.document);
+    initSiteSearch(pagefind, window.document);
   } catch (error) {
-    console.error("Failed to initialize Pagefind:", error);
+    console.error("Failed to init Pagefind:", error);
   }
 })();
 ```
@@ -114,13 +114,23 @@ import type { Pagefind } from "vite-plugin-pagefind/types";
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the component
+1. Import and initialize the component
 
 ```ts
-import "@corex-ui/static/components/site-search";
+import { initSiteSearch } from "@corex-ui/static";
+
+// With Pagefind (recommended for search functionality)
+(async () => {
+  const pagefind = await import("/pagefind/pagefind.js");
+  await pagefind.options({ excerptLength: 5 });
+  initSiteSearch(pagefind);
+})();
+
+// Without Pagefind (for static content only)
+// initSiteSearch();
 ```
 
-This will automatically initialize all elements with `class="site-search-js"` and add the necessary interaction behavior.
+This will initialize all elements with `class="site-search-js"` and add the necessary interaction behavior.
 
 2. Add styling
 

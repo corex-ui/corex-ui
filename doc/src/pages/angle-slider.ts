@@ -1,8 +1,9 @@
 import "../main.ts";
-import "@corex-ui/static/components/angle-slider";
+import { initAngleSlider } from "@corex-ui/static";
 import "./angle-slider.css";
 
-// Events
+initAngleSlider();
+
 document
   .getElementById("my-angle-slider")
   ?.addEventListener("my-angle-slider-event", (event) => {

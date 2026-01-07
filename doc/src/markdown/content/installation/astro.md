@@ -52,7 +52,8 @@ import '../style.css';
 </Layout>
 
 <script>
-  import "@corex-ui/static/components/accordion";
+  import { initAccordion } from "@corex-ui/static";
+  initAccordion();
 </script>
 ```
 

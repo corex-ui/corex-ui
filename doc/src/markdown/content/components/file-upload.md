@@ -292,13 +292,14 @@ formImage?.addEventListener("submit", (e) => {
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the component
+1. Import and initialize the component
 
 ```ts
-import "@corex-ui/static/components/file-upload";
+import { initFileUpload } from "@corex-ui/static";
+initFileUpload();
 ```
 
-This will automatically initialize all elements with `class="file-upload-js"` and add the necessary interaction behavior.
+This will initialize all elements with `class="file-upload-js"` and add the necessary interaction behavior.
 
 2. Add styling
 

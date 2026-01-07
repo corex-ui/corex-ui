@@ -148,7 +148,7 @@ Another example without `item-indicator` and additional image
 
 ## Load from JSON
 
-You can initialize the Listbox component by embedding your JSON data directly in your HTML using a `<script>` tag with `type="application/json"` and a unique `data-listbox` attribute. Then, reference this JSON in your Listbox container via the corresponding `data-json` attribute.
+You can init the Listbox component by embedding your JSON data directly in your HTML using a `<script>` tag with `type="application/json"` and a unique `data-listbox` attribute. Then, reference this JSON in your Listbox container via the corresponding `data-json` attribute.
 
 ```html
 <script type="application/json" data-listbox="my-listbox">
@@ -1745,13 +1745,14 @@ Available options:
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the component
+1. Import and initialize the component
 
 ```ts
-import "@corex-ui/static/components/listbox";
+import { initListbox } from "@corex-ui/static";
+initListbox();
 ```
 
-This will automatically initialize all elements with `class="listbox-js"` and add the necessary interaction behavior.
+This will initialize all elements with `class="listbox-js"` and add the necessary interaction behavior.
 
 2. Add styling
 

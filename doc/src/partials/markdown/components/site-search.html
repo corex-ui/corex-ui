@@ -292,14 +292,14 @@
 </code></pre>
   </div>
 </div>
-<p>You then need initialize Pagefind</p>
+<p>You then need init Pagefind</p>
 
 <div class="preview">
   <div class="preview__code">
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import { initializeSiteSearch } from "@corex-ui/static/components/site-search";
+      data-default-value='import { initSiteSearch } from "@corex-ui/static/components/site-search";
 import type { Pagefind } from "vite-plugin-pagefind/types";
 
 (async () =&gt; {
@@ -310,9 +310,9 @@ import type { Pagefind } from "vite-plugin-pagefind/types";
       excerptLength: 5,
       highlightParam: "highlight",
     });
-    initializeSiteSearch(pagefind, window.document);
+    initSiteSearch(pagefind, window.document);
   } catch (error) {
-    console.error("Failed to initialize Pagefind:", error);
+    console.error("Failed to init Pagefind:", error);
   }
 })();
 '
@@ -360,7 +360,7 @@ import type { Pagefind } from "vite-plugin-pagefind/types";
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import { initializeSiteSearch } from &quot;@corex-ui/static/components/site-search&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initSiteSearch } from &quot;@corex-ui/static/components/site-search&quot;;
 import type { Pagefind } from &quot;vite-plugin-pagefind/types&quot;;
 
 (async () =&gt; {
@@ -371,9 +371,9 @@ import type { Pagefind } from &quot;vite-plugin-pagefind/types&quot;;
       excerptLength: 5,
       highlightParam: &quot;highlight&quot;,
     });
-    initializeSiteSearch(pagefind, window.document);
+    initSiteSearch(pagefind, window.document);
   } catch (error) {
-    console.error(&quot;Failed to initialize Pagefind:&quot;, error);
+    console.error(&quot;Failed to init Pagefind:&quot;, error);
   }
 })();
 </code></pre>
@@ -389,7 +389,7 @@ import type { Pagefind } from &quot;vite-plugin-pagefind/types&quot;;
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -397,7 +397,17 @@ import type { Pagefind } from &quot;vite-plugin-pagefind/types&quot;;
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/site-search";
+      data-default-value='import { initSiteSearch } from "@corex-ui/static";
+
+// With Pagefind (recommended for search functionality)
+(async () =&gt; {
+  const pagefind = await import("/pagefind/pagefind.js");
+  await pagefind.options({ excerptLength: 5 });
+  initSiteSearch(pagefind);
+})();
+
+// Without Pagefind (for static content only)
+// initSiteSearch();
 '
     >
       <div data-part="control">
@@ -443,12 +453,22 @@ import type { Pagefind } from &quot;vite-plugin-pagefind/types&quot;;
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/site-search&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initSiteSearch } from &quot;@corex-ui/static&quot;;
+
+// With Pagefind (recommended for search functionality)
+(async () =&gt; {
+  const pagefind = await import(&quot;/pagefind/pagefind.js&quot;);
+  await pagefind.options({ excerptLength: 5 });
+  initSiteSearch(pagefind);
+})();
+
+// Without Pagefind (for static content only)
+// initSiteSearch();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;site-search-js&quot;</code> and add the necessary
   interaction behavior.
 </p>

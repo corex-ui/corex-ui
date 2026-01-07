@@ -26,26 +26,24 @@
     max-width: 100%;
     width: 100%;
     padding-inline: var(--spacing-ui-padding);
+    border-inline-end: none;
+    border-end-end-radius: 0;
+    border-start-end-radius: 0;
   }
 
-  .combobox [data-scope="combobox"][data-part="trigger"] svg {
-    @apply ui-icon;
-
-    cursor: pointer;
-    position: absolute;
-    right: var(--spacing-mini-padding);
-    top: 50%;
-    transform: translateY(-50%);
+  .combobox [data-scope="combobox"][data-part="trigger"] {
+    @apply ui-trigger ui-trigger--square;
+    border-inline-start: none;
+    border-start-start-radius: 0;
+    border-end-start-radius: 0;
+    flex-shrink: 0;
   }
 
-  .combobox [data-scope="combobox"][data-part="clear-trigger"] svg {
-    @apply ui-icon;
-
-    cursor: pointer;
-    position: absolute;
-    right: calc(var(--spacing-mini) + var(--spacing-mini-padding));
-    top: 50%;
-    transform: translateY(-50%);
+  .combobox [data-scope="combobox"][data-part="clear-trigger"] {
+    @apply ui-trigger ui-trigger--square;
+    border-inline: none;
+    border-radius: 0;
+    flex-shrink: 0;
   }
 
   .combobox [data-scope="combobox"][data-part="positioner"] {
@@ -110,6 +108,11 @@
   [data-scope="combobox"][data-part="trigger"],
   [data-scope="combobox"][data-part="clear-trigger"] {
     color: --value(--color-root--*, [color]);
+    font-size: --value(--text-ui-*, [length]);
+    line-height: --value(--text-ui-* --line-height, [length]);
+    min-height: --value(--spacing-ui-*, [length]);
+    padding-inline: --value(--spacing-ui-padding-*, [length]);
+    gap: --value(--spacing-ui-gap-*, [length]);
   }
 
   [data-scope="combobox"][data-part="item"] {

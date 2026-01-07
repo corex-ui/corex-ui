@@ -743,7 +743,7 @@ document
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -751,7 +751,8 @@ document
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/toast";
+      data-default-value='import { initToast } from "@corex-ui/static";
+initToast();
 '
     >
       <div data-part="control">
@@ -797,12 +798,13 @@ document
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/toast&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initToast } from &quot;@corex-ui/static&quot;;
+initToast();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;toast-js&quot;</code> and add the necessary interaction
   behavior.
 </p>

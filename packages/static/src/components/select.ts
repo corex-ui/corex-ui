@@ -1,11 +1,11 @@
 import * as select from "@zag-js/select";
 import type { Direction } from "@zag-js/types";
 import type { ListCollection } from "@zag-js/collection";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   generateId,
-  normalizeProps,
   renderPart,
   getString,
   getBoolean,
@@ -346,8 +346,11 @@ export class Select extends Component<select.Props, select.Api> {
   }
 }
 
-export function initializeSelect(doc: HTMLElement | Document = document): void {
-  doc.querySelectorAll<HTMLElement>(".select-js").forEach((rootEl) => {
+export function initSelect(
+  doc: HTMLElement | Document = document,
+  selector = ".select-js",
+): void {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const groupElements = rootEl.querySelectorAll<HTMLElement>(
       '[data-part="item-group"]',
     );
@@ -531,14 +534,4 @@ export function initializeSelect(doc: HTMLElement | Document = document): void {
       }
     });
   });
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeSelect(document),
-    );
-  } else {
-    initializeSelect(document);
-  }
 }

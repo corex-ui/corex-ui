@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/signature-pad";
+import { initSignaturePad } from "@corex-ui/static";
 import "@corex-ui/design/components/signature-pad.css";
+
+initSignaturePad();
 document
   .getElementById("my-signature-pad")
   ?.addEventListener("my-signature-pad-event", (event) => {

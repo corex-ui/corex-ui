@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/carousel";
 import "@corex-ui/design/components/carousel.css";
+import { initCarousel } from "@corex-ui/static";
+
+initCarousel();
 
 document
   .getElementById("my-carousel")

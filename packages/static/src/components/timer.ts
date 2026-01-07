@@ -1,14 +1,13 @@
 import * as timer from "@zag-js/timer";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   getBoolean,
   getNumber,
   generateId,
-  normalizeProps,
   renderPart,
-  renderItem,
 } from "../lib";
 
 declare global {
@@ -60,11 +59,27 @@ export class Timer extends Component<timer.Props, timer.Api> {
   }
 
   render() {
-    const parts = ["root", "area", "control"];
+    const parts = ["root", "area", "control", "separator"];
     for (const part of parts) renderPart(this.el, part, this.api);
 
-    const items = ["item", "separator", "action-trigger"];
-    for (const item of items) renderItem(this.el, item, this.api);
+    const itemElements =
+      this.el.querySelectorAll<HTMLElement>('[data-part="item"]');
+    itemElements.forEach((itemEl) => {
+      const type = getString(itemEl, "type");
+      if (type) {
+        renderPart(itemEl, "item", this.api, { type });
+      }
+    });
+
+    const actionTriggerElements = this.el.querySelectorAll<HTMLElement>(
+      '[data-part="action-trigger"]',
+    );
+    actionTriggerElements.forEach((actionEl) => {
+      const action = getString(actionEl, "action");
+      if (action) {
+        renderPart(actionEl, "action-trigger", this.api, { action });
+      }
+    });
 
     document
       .querySelectorAll(`[data-start-timer="${this.el.id}"]`)
@@ -84,8 +99,11 @@ export class Timer extends Component<timer.Props, timer.Api> {
   }
 }
 
-export function initializeTimer(doc: HTMLElement | Document = document): void {
-  doc.querySelectorAll<HTMLElement>(".timer-js").forEach((rootEl) => {
+export function initTimer(
+  doc: HTMLElement | Document = document,
+  selector = ".timer-js",
+): void {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const countdown = getBoolean(rootEl, "countdown") ?? false;
 
     // Check for date string attributes first
@@ -178,14 +196,4 @@ export function initializeTimer(doc: HTMLElement | Document = document): void {
       timerComponent.render();
     }
   });
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeTimer(document),
-    );
-  } else {
-    initializeTimer(document);
-  }
 }

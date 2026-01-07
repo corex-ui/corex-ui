@@ -1,11 +1,11 @@
 import * as numberInput from "@zag-js/number-input";
 import { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   generateId,
-  normalizeProps,
   renderPart,
   getBoolean,
   getNumber,
@@ -31,10 +31,11 @@ export class NumberInput extends Component<numberInput.Props, numberInput.Api> {
     for (const part of parts) renderPart(this.el, part, this.api);
   }
 }
-export function initializeNumberInput(
+export function initNumberInput(
   doc: HTMLElement | Document = document,
+  selector = ".number-input-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".number-input-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const numberInput = new NumberInput(rootEl, {
       id: generateId(rootEl, "numberInput"),
@@ -118,14 +119,23 @@ export function initializeNumberInput(
       },
     });
     numberInput.init();
+
+    numberInput.el.addEventListener("number-input:set-value", (event) => {
+      const { value } = (event as CustomEvent<{ value: string }>).detail;
+      if (typeof value === "string" && value && !isNaN(Number(value))) {
+        // Type assertion needed due to zag-js type mismatch (API says number but runtime expects string)
+        (numberInput.api.setValue as unknown as (value: string) => void)(value);
+      }
+    });
+
+    numberInput.el.addEventListener("number-input:value", (event) => {
+      const detail = (
+        event as CustomEvent<{ callback: (value: string) => void }>
+      ).detail;
+      const callback = detail.callback;
+      if (callback && typeof callback === "function") {
+        callback(numberInput.api.value);
+      }
+    });
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeNumberInput(document),
-    );
-  } else {
-    initializeNumberInput(document);
-  }
 }

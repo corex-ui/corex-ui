@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/avatar";
+import { initAvatar } from "@corex-ui/static";
 import "./avatar.css";
+
+initAvatar();
 
 document
   .getElementById("my-avatar")

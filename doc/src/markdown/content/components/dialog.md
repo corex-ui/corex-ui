@@ -329,13 +329,14 @@ Description: Get the current open state of the dialog
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the component
+1. Import and initialize the component
 
 ```ts
-import "@corex-ui/static/components/dialog";
+import { initDialog } from "@corex-ui/static";
+initDialog();
 ```
 
-This will automatically initialize all elements with `class="dialog-js"` and add the necessary interaction behavior.
+This will initialize all elements with `class="dialog-js"` and add the necessary interaction behavior.
 
 2. Add styling
 

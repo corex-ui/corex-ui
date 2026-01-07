@@ -1,13 +1,12 @@
 import * as combobox from "@zag-js/combobox";
 import type { Direction } from "@zag-js/types";
 import type { ListCollection } from "@zag-js/collection";
+import { VanillaMachine, normalizeProps, spreadProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   generateId,
-  normalizeProps,
   renderPart,
-  spreadProps,
   getString,
   getBoolean,
   getNumber,
@@ -200,11 +199,12 @@ export class SiteSearch extends Component<combobox.Props, combobox.Api> {
     this.renderItems();
   }
 }
-export function initializeSiteSearch(
+export function initSiteSearch(
   pagefindInstance?: Pagefind,
   doc: HTMLElement | Document = document,
+  selector = ".site-search-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".site-search-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const items: SearchItem[] = getDomItems(rootEl);
     const directions = ["ltr", "rtl"] as const;
     const placements = [

@@ -1,12 +1,11 @@
 import * as tabs from "@zag-js/tabs";
 import type { Direction, Orientation } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
 import {
   Component,
-  VanillaMachine,
   getString,
   getBoolean,
   generateId,
-  normalizeProps,
   renderPart,
   getPartIds,
 } from "../lib";
@@ -56,8 +55,11 @@ export class Tabs extends Component<tabs.Props, tabs.Api> {
   }
 }
 
-export function initializeTabs(doc: HTMLElement | Document = document): void {
-  doc.querySelectorAll<HTMLElement>(".tabs-js").forEach((rootEl) => {
+export function initTabs(
+  doc: HTMLElement | Document = document,
+  selector = ".tabs-js",
+): void {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const triggers = rootEl.querySelectorAll<HTMLElement>(
       '[data-part="trigger"]',
     );
@@ -136,12 +138,4 @@ export function initializeTabs(doc: HTMLElement | Document = document): void {
       if (callback) callback(tabsInstance.api.focusedValue);
     });
   });
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => initializeTabs());
-  } else {
-    initializeTabs();
-  }
 }

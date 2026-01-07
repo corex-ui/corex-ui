@@ -2499,7 +2499,7 @@
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -2507,7 +2507,8 @@
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/timer";
+      data-default-value='import { initTimer } from "@corex-ui/static";
+initTimer();
 '
     >
       <div data-part="control">
@@ -2553,12 +2554,13 @@
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/timer&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initTimer } from &quot;@corex-ui/static&quot;;
+initTimer();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;timer-js&quot;</code> and add the necessary interaction
   behavior.
 </p>

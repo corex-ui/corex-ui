@@ -492,7 +492,10 @@
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/main&gt;
-    &lt;script type="module" src="/js/corex-ui/accordion.min.mjs"&gt;&lt;/script&gt;
+    &lt;script type="module"&gt;
+      import { initAccordion } from "/js/corex-ui/accordion.min.mjs";
+      initAccordion();
+    &lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 '
@@ -644,7 +647,10 @@
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/main&gt;
-    &lt;script type=&quot;module&quot; src=&quot;/js/corex-ui/accordion.min.mjs&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;module&quot;&gt;
+      import { initAccordion } from &quot;/js/corex-ui/accordion.min.mjs&quot;;
+      initAccordion();
+    &lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>

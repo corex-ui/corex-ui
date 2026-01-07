@@ -1,14 +1,15 @@
 import * as qrCode from "@zag-js/qr-code";
 import { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   generateId,
-  normalizeProps,
   renderPart,
   getNumber,
   getBoolean,
+  getPartIds,
 } from "../lib";
 export class QrCode extends Component<qrCode.Props, qrCode.Api> {
   initMachine(props: qrCode.Props): VanillaMachine<any> {
@@ -22,11 +23,21 @@ export class QrCode extends Component<qrCode.Props, qrCode.Api> {
     for (const part of parts) renderPart(this.el, part, this.api);
   }
 }
-export function initializeQrCode(doc: HTMLElement | Document = document): void {
-  doc.querySelectorAll<HTMLElement>(".qr-code-js").forEach((rootEl) => {
+export function initQrCode(
+  doc: HTMLElement | Document = document,
+  selector = ".qr-code-js",
+): void {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const qrCode = new QrCode(rootEl, {
       id: generateId(rootEl, "qrCode"),
+      ids: getPartIds(rootEl, [
+        "root",
+        "frame",
+        "pattern",
+        "overlay",
+        "downloadTrigger",
+      ]),
       dir: getString<Direction>(rootEl, "dir", directions),
       defaultValue: getString(rootEl, "defaultValue"),
       pixelSize: getNumber(rootEl, "pixelSize"),
@@ -40,7 +51,7 @@ export function initializeQrCode(doc: HTMLElement | Document = document): void {
         maxVersion: getNumber(rootEl, "maxVersion"),
         minVersion: getNumber(rootEl, "minVersion"),
         onEncoded(qr) {
-          const eventName = getString(rootEl, "onValueChange");
+          const eventName = getString(rootEl, "onEncoded");
           if (eventName) {
             rootEl.dispatchEvent(new CustomEvent(eventName, { detail: qr }));
           }
@@ -56,13 +67,4 @@ export function initializeQrCode(doc: HTMLElement | Document = document): void {
     });
     qrCode.init();
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeQrCode(document),
-    );
-  } else {
-    initializeQrCode(document);
-  }
 }

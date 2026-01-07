@@ -1,13 +1,13 @@
 import * as treeView from "@zag-js/tree-view";
 import type { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   generateId,
   getString,
   getStringList,
   arraysEqualUnordered,
-  normalizeProps,
   renderPart,
   renderNode,
   getBoolean,
@@ -195,10 +195,11 @@ export class TreeView extends Component<treeView.Props, treeView.Api> {
     }
   }
 }
-export function initializeTreeView(
+export function initTreeView(
   doc: HTMLElement | Document = document,
+  selector = ".tree-view-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".tree-view-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const selectionModes = ["single", "multiple"] as const;
     const jsonPath = getString(rootEl, "json");
@@ -261,13 +262,4 @@ export function initializeTreeView(
       }
     });
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeTreeView(document),
-    );
-  } else {
-    initializeTreeView(document);
-  }
 }

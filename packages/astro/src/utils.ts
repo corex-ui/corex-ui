@@ -127,7 +127,7 @@ export async function processHtmlFile(
         `${fileUrl}?cache_bust=${Date.now()}`
       );
       const initName =
-        "initialize" +
+        "init" +
         baseName
           .split("-")
           .map((s) => s[0].toUpperCase() + s.slice(1))

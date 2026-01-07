@@ -559,24 +559,643 @@
   </div>
 </div>
 <hr />
-<h2 id="installation" tabindex="-1">
-  <a class="link" href="#installation">#</a> Installation
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
 </h2>
 <p>
-  First, complete the Corex UI
-  <a href="/installation/introduction" class="link">initial installation</a>
-  guide for your platform, bundler, or framework.
+  Each Radio Group can be set with different settings with the following
+  data-attribute.
 </p>
-<ol>
-  <li>Import the component</li>
-</ol>
 
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="radio-group radio-group-js"
+      id="custom-radio-group"
+      data-default-value="item-1"
+      data-dir="ltr"
+      data-disabled
+      data-form="my-form"
+      data-name="radio-group"
+      data-orientation="vertical"
+      data-read-only
+      data-value="item-2"
+    >
+      <div data-part="root">
+        <div data-part="label">Label</div>
+        <label data-part="item" data-value="item-1">
+          <span data-part="item-text">Item 1</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-2">
+          <span data-part="item-text">Item 2</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-3">
+          <span data-part="item-text">Item 3</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="radio-group radio-group-js"
+  id="custom-radio-group"
+  data-default-value="item-1"
+  data-dir="ltr"
+  data-disabled
+  data-form="my-form"
+  data-name="radio-group"
+  data-orientation="vertical"
+  data-read-only
+  data-value="item-2"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Label&lt;/div&gt;
+    &lt;label data-part="item" data-value="item-1"&gt;
+      &lt;span data-part="item-text"&gt;Item 1&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-2"&gt;
+      &lt;span data-part="item-text"&gt;Item 2&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-3"&gt;
+      &lt;span data-part="item-text"&gt;Item 3&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;radio-group radio-group-js&quot;
+  id=&quot;custom-radio-group&quot;
+  data-default-value=&quot;item-1&quot;
+  data-dir=&quot;ltr&quot;
+  data-disabled
+  data-form=&quot;my-form&quot;
+  data-name=&quot;radio-group&quot;
+  data-orientation=&quot;vertical&quot;
+  data-read-only
+  data-value=&quot;item-2&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Label&lt;/div&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 1&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 2&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 3&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Description: Unique id of the radio group. Default generated if none is
+  provided.
+</p>
+<p>
+  <strong>data-dir</strong><br />
+  Type: <code>string</code><br />
+  Description: The text direction of the component. Can be <code>ltr</code> or
+  <code>rtl</code>.
+</p>
+<p>
+  <strong>data-orientation</strong><br />
+  Type: <code>string</code><br />
+  Description: The orientation of the radio group. Can be
+  <code>horizontal</code> or <code>vertical</code> - <code>horizontal</code>:
+  only left and right arrow key navigation will work. - <code>vertical</code>:
+  only up and down arrow key navigation will work.
+</p>
+<p>
+  <strong>data-default-value</strong><br />
+  Type: <code>string</code><br />
+  Description: Initial default value of the radio group when rendered. Use when
+  you don't need to control the value.
+</p>
+<p>
+  <strong>data-disabled</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the radio group is disabled.
+</p>
+<p>
+  <strong>data-form</strong><br />
+  Type: <code>string</code><br />
+  Description: The id of the associated <code>&lt;form&gt;</code> element (for
+  form submission).
+</p>
+<p>
+  <strong>data-name</strong><br />
+  Type: <code>string</code><br />
+  Description: Name attribute for form submissions (all radio items share the
+  same name).
+</p>
+<p>
+  <strong>data-read-only</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Makes the radio group read-only (cannot be changed but not
+  disabled).
+</p>
+<p>
+  <strong>data-value</strong><br />
+  Type: <code>string</code><br />
+  Description: Controlled value of the radio group (used in controlled
+  components).
+</p>
+<hr />
+<h2 id="event-callbacks" tabindex="-1">
+  <a class="link" href="#event-callbacks">#</a> Event Callbacks
+</h2>
+<p>
+  Each Radio Group component can receive callbacks that can be used to respond
+  to user interaction with custom behavior.
+</p>
+<p>
+  You must add a custom id for the radio group and an event listener for your
+  event name
+</p>
+<blockquote>
+  <p>
+    Open your browser's console to see the events received when the radio group
+    value changes
+  </p>
+</blockquote>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      id="my-radio-group"
+      class="radio-group radio-group-js"
+      data-on-value-change="my-radio-group-event"
+    >
+      <div data-part="root">
+        <div data-part="label">Label</div>
+        <label data-part="item" data-value="item-1">
+          <span data-part="item-text">Item 1</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-2">
+          <span data-part="item-text">Item 2</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-3">
+          <span data-part="item-text">Item 3</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  id="my-radio-group"
+  class="radio-group radio-group-js"
+  data-on-value-change="my-radio-group-event"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Label&lt;/div&gt;
+    &lt;label data-part="item" data-value="item-1"&gt;
+      &lt;span data-part="item-text"&gt;Item 1&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-2"&gt;
+      &lt;span data-part="item-text"&gt;Item 2&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-3"&gt;
+      &lt;span data-part="item-text"&gt;Item 3&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  id=&quot;my-radio-group&quot;
+  class=&quot;radio-group radio-group-js&quot;
+  data-on-value-change=&quot;my-radio-group-event&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Label&lt;/div&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 1&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 2&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 3&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
 <div class="preview">
   <div class="preview__code">
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/radio-group";
+      data-default-value='document
+  .getElementById("my-radio-group")
+  ?.addEventListener("my-radio-group-event", (event) =&gt; {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
 '
     >
       <div data-part="control">
@@ -622,12 +1241,1502 @@
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/radio-group&quot;;
+    <pre><code class="code-js" data-lang="ts">document
+  .getElementById(&quot;my-radio-group&quot;)
+  ?.addEventListener(&quot;my-radio-group-event&quot;, (event) =&gt; {
+    console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
+  });
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  <strong>data-on-value-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when the radio group value changes.
+</p>
+<hr />
+<h2 id="api" tabindex="-1"><a class="link" href="#api">#</a> API</h2>
+<p>You can interact with the Radio Group API by dispatching custom events.</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <button
+      data-action="radio-group-set-value"
+      data-value="item-2"
+      class="button"
+    >
+      Set to Item 2
+    </button>
+    <button data-action="radio-group-value" class="button">
+      Get current value
+    </button>
+    <div
+      id="radio-group-api"
+      class="radio-group radio-group-js"
+      data-default-value="item-1"
+    >
+      <div data-part="root">
+        <div data-part="label">Label</div>
+        <label data-part="item" data-value="item-1">
+          <span data-part="item-text">Item 1</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-2">
+          <span data-part="item-text">Item 2</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-3">
+          <span data-part="item-text">Item 3</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;button data-action="radio-group-set-value" data-value="item-2" class="button"&gt;
+  Set to Item 2
+&lt;/button&gt;
+&lt;button data-action="radio-group-value" class="button"&gt;Get current value&lt;/button&gt;
+&lt;div id="radio-group-api" class="radio-group radio-group-js" data-default-value="item-1"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Label&lt;/div&gt;
+    &lt;label data-part="item" data-value="item-1"&gt;
+      &lt;span data-part="item-text"&gt;Item 1&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-2"&gt;
+      &lt;span data-part="item-text"&gt;Item 2&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-3"&gt;
+      &lt;span data-part="item-text"&gt;Item 3&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;button data-action=&quot;radio-group-set-value&quot; data-value=&quot;item-2&quot; class=&quot;button&quot;&gt;
+  Set to Item 2
+&lt;/button&gt;
+&lt;button data-action=&quot;radio-group-value&quot; class=&quot;button&quot;&gt;Get current value&lt;/button&gt;
+&lt;div id=&quot;radio-group-api&quot; class=&quot;radio-group radio-group-js&quot; data-default-value=&quot;item-1&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Label&lt;/div&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 1&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 2&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 3&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='const radioGroupState = document.getElementById("radio-group-api");
+if (radioGroupState) {
+  const buttons = document.querySelectorAll&lt;HTMLButtonElement&gt;(
+    &#39;button[data-action="radio-group-set-value"]&#39;,
+  );
+  buttons.forEach((button) =&gt; {
+    button.addEventListener("click", () =&gt; {
+      const value = button.dataset.value;
+      if (value) {
+        radioGroupState.dispatchEvent(
+          new CustomEvent("radio-group:set-value", {
+            detail: { value },
+          }),
+        );
+      }
+    });
+  });
+  const getBtns = document.querySelectorAll&lt;HTMLButtonElement&gt;(
+    &#39;button[data-action="radio-group-value"]&#39;,
+  );
+  getBtns.forEach((btn) =&gt;
+    btn.addEventListener("click", () =&gt; {
+      radioGroupState.dispatchEvent(
+        new CustomEvent("radio-group:value", {
+          detail: {
+            callback: (value: string | null) =&gt; {
+              alert("Radio Group value: " + (value ?? "none"));
+            },
+          },
+        }),
+      );
+    }),
+  );
+} else {
+  console.warn("Element with ID &#39;radio-group-api&#39; not found");
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">const radioGroupState = document.getElementById(&quot;radio-group-api&quot;);
+if (radioGroupState) {
+  const buttons = document.querySelectorAll&lt;HTMLButtonElement&gt;(
+    'button[data-action=&quot;radio-group-set-value&quot;]',
+  );
+  buttons.forEach((button) =&gt; {
+    button.addEventListener(&quot;click&quot;, () =&gt; {
+      const value = button.dataset.value;
+      if (value) {
+        radioGroupState.dispatchEvent(
+          new CustomEvent(&quot;radio-group:set-value&quot;, {
+            detail: { value },
+          }),
+        );
+      }
+    });
+  });
+  const getBtns = document.querySelectorAll&lt;HTMLButtonElement&gt;(
+    'button[data-action=&quot;radio-group-value&quot;]',
+  );
+  getBtns.forEach((btn) =&gt;
+    btn.addEventListener(&quot;click&quot;, () =&gt; {
+      radioGroupState.dispatchEvent(
+        new CustomEvent(&quot;radio-group:value&quot;, {
+          detail: {
+            callback: (value: string | null) =&gt; {
+              alert(&quot;Radio Group value: &quot; + (value ?? &quot;none&quot;));
+            },
+          },
+        }),
+      );
+    }),
+  );
+} else {
+  console.warn(&quot;Element with ID 'radio-group-api' not found&quot;);
+}
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>radio-group:set-value</strong><br />
+  Type: <code>string</code><br />
+  Description: Sets the value of the radio group
+</p>
+<p>
+  <strong>radio-group:value</strong><br />
+  Type: <code>callback</code><br />
+  Description: Get the current value of the radio group. The callback receives
+  <code>string | null</code> (null when no item is selected).
+</p>
+<hr />
+<h2 id="orientation" tabindex="-1">
+  <a class="link" href="#orientation">#</a> Orientation
+</h2>
+<p>
+  By default, the radio group is displayed <strong>vertically</strong>.<br />
+  You can also switch it to a <strong>horizontal</strong> layout.
+</p>
+<p>
+  When using the horizontal layout, keyboard navigation changes accordingly:
+</p>
+<ul>
+  <li>
+    <strong>Vertical:</strong> use <kbd>↑</kbd> / <kbd>↓</kbd> to move between
+    items
+  </li>
+  <li>
+    <strong>Horizontal:</strong> use <kbd>←</kbd> / <kbd>→</kbd> to move between
+    items
+  </li>
+</ul>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="radio-group radio-group-js"
+      data-orientation="horizontal"
+      data-default-value="item-1"
+    >
+      <div data-part="root">
+        <div data-part="label">Label</div>
+        <label data-part="item" data-value="item-1">
+          <span data-part="item-text">Item 1</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-2">
+          <span data-part="item-text">Item 2</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-3">
+          <span data-part="item-text">Item 3</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="radio-group radio-group-js"
+  data-orientation="horizontal"
+  data-default-value="item-1"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Label&lt;/div&gt;
+    &lt;label data-part="item" data-value="item-1"&gt;
+      &lt;span data-part="item-text"&gt;Item 1&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-2"&gt;
+      &lt;span data-part="item-text"&gt;Item 2&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-3"&gt;
+      &lt;span data-part="item-text"&gt;Item 3&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;radio-group radio-group-js&quot;
+  data-orientation=&quot;horizontal&quot;
+  data-default-value=&quot;item-1&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Label&lt;/div&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 1&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 2&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 3&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="rtl" tabindex="-1"><a class="link" href="#rtl">#</a> RTL</h2>
+<p>RTL support for radio group</p>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="radio-group radio-group-js" data-dir="rtl">
+      <div data-part="root">
+        <div data-part="label">الخيارات</div>
+        <label data-part="item" data-value="item-1">
+          <span data-part="item-text">الخيار 1</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-2">
+          <span data-part="item-text">الخيار 2</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-3">
+          <span data-part="item-text">الخيار 3</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="radio-group radio-group-js" data-dir="rtl"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;الخيارات&lt;/div&gt;
+    &lt;label data-part="item" data-value="item-1"&gt;
+      &lt;span data-part="item-text"&gt;الخيار 1&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-2"&gt;
+      &lt;span data-part="item-text"&gt;الخيار 2&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-3"&gt;
+      &lt;span data-part="item-text"&gt;الخيار 3&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;radio-group radio-group-js&quot; data-dir=&quot;rtl&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;الخيارات&lt;/div&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;الخيار 1&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;الخيار 2&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;الخيار 3&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="disabled" tabindex="-1">
+  <a class="link" href="#disabled">#</a> Disabled
+</h2>
+<p>Each radio group can be disabled either globally or per item.</p>
+<ul>
+  <li>
+    To disable the entire radio group, add <code>data-disabled</code> to the
+    radio group element.
+  </li>
+  <li>
+    To disable a specific item, add <code>data-disabled</code> to that item's
+    element.
+  </li>
+</ul>
+
+<div class="preview">
+  <div class="preview__display">
+    <div class="radio-group radio-group-js" data-disabled>
+      <div data-part="root">
+        <div data-part="label">Label</div>
+        <label data-part="item" data-value="item-1">
+          <span data-part="item-text">Item 1</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-2">
+          <span data-part="item-text">Item 2</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-3">
+          <span data-part="item-text">Item 3</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="radio-group radio-group-js">
+      <div data-part="root">
+        <div data-part="label">Label</div>
+        <label data-part="item" data-value="item-1" data-disabled>
+          <span data-part="item-text">Item 1</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-2">
+          <span data-part="item-text">Item 2</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+        <label data-part="item" data-value="item-3">
+          <span data-part="item-text">Item 3</span>
+          <input data-part="item-hidden-input" />
+          <div data-part="item-control">
+            <svg
+              data-checked
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div class="radio-group radio-group-js" data-disabled&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Label&lt;/div&gt;
+    &lt;label data-part="item" data-value="item-1"&gt;
+      &lt;span data-part="item-text"&gt;Item 1&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-2"&gt;
+      &lt;span data-part="item-text"&gt;Item 2&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-3"&gt;
+      &lt;span data-part="item-text"&gt;Item 3&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="radio-group radio-group-js"&gt;
+  &lt;div data-part="root"&gt;
+    &lt;div data-part="label"&gt;Label&lt;/div&gt;
+    &lt;label data-part="item" data-value="item-1" data-disabled&gt;
+      &lt;span data-part="item-text"&gt;Item 1&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-2"&gt;
+      &lt;span data-part="item-text"&gt;Item 2&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part="item" data-value="item-3"&gt;
+      &lt;span data-part="item-text"&gt;Item 3&lt;/span&gt;
+      &lt;input data-part="item-hidden-input" /&gt;
+      &lt;div data-part="item-control"&gt;
+        &lt;svg
+          data-checked
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        &gt;
+          &lt;path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 12.75 6 6 9-13.5"
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;radio-group radio-group-js&quot; data-disabled&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Label&lt;/div&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-1&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 1&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 2&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 3&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio-group radio-group-js&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;div data-part=&quot;label&quot;&gt;Label&lt;/div&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-1&quot; data-disabled&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 1&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-2&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 2&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label data-part=&quot;item&quot; data-value=&quot;item-3&quot;&gt;
+      &lt;span data-part=&quot;item-text&quot;&gt;Item 3&lt;/span&gt;
+      &lt;input data-part=&quot;item-hidden-input&quot; /&gt;
+      &lt;div data-part=&quot;item-control&quot;&gt;
+        &lt;svg
+          data-checked
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          fill=&quot;none&quot;
+          viewBox=&quot;0 0 24 24&quot;
+          stroke-width=&quot;1.5&quot;
+          stroke=&quot;currentColor&quot;
+        &gt;
+          &lt;path
+            stroke-linecap=&quot;round&quot;
+            stroke-linejoin=&quot;round&quot;
+            d=&quot;m4.5 12.75 6 6 9-13.5&quot;
+          /&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
+<ol>
+  <li>Import and initialize the component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initRadioGroup } from "@corex-ui/static";
+initRadioGroup();
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initRadioGroup } from &quot;@corex-ui/static&quot;;
+initRadioGroup();
+</code></pre>
+  </div>
+</div>
+<p>
+  This will initialize all elements with
   <code>class=&quot;radio-group-js&quot;</code> and add the necessary
   interaction behavior.
 </p>

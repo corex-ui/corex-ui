@@ -1,3 +1,5 @@
 import "../main.ts";
-import "@corex-ui/static/components/qr-code";
+import { initQrCode } from "@corex-ui/static";
 import "./qr-code.css";
+
+initQrCode();

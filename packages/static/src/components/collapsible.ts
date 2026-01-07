@@ -1,10 +1,10 @@
 import * as collapsible from "@zag-js/collapsible";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   generateId,
-  normalizeProps,
   renderPart,
   getBoolean,
   valuesEqual,
@@ -22,10 +22,11 @@ export class Collapsible extends Component<collapsible.Props, collapsible.Api> {
     for (const part of parts) renderPart(this.el, part, this.api);
   }
 }
-export function initializeCollapsible(
+export function initCollapsible(
   doc: HTMLElement | Document = document,
+  selector = ".collapsible-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".collapsible-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const collapsible = new Collapsible(rootEl, {
       id: generateId(rootEl, "collapsible"),
       ids: getPartIds(rootEl, ["root", "trigger", "content", "indicator"]),
@@ -64,13 +65,4 @@ export function initializeCollapsible(
       }
     });
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeCollapsible(document),
-    );
-  } else {
-    initializeCollapsible(document);
-  }
 }

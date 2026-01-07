@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/select";
+import { initSelect } from "@corex-ui/static";
 import "@corex-ui/design/components/select.css";
+
+initSelect();
 
 const selectForm = document.getElementById("my-form") as HTMLFormElement | null;
 const seectResult = document.getElementById("result") as HTMLDivElement | null;

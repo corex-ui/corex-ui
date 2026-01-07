@@ -1,11 +1,11 @@
 import * as combobox from "@zag-js/combobox";
 import type { Direction } from "@zag-js/types";
 import type { ListCollection } from "@zag-js/collection";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   generateId,
-  normalizeProps,
   renderPart,
   getString,
   getBoolean,
@@ -361,10 +361,11 @@ export class Combobox extends Component<combobox.Props, combobox.Api> {
   }
 }
 
-export function initializeCombobox(
+export function initCombobox(
   doc: HTMLElement | Document = document,
+  selector = ".combobox-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".combobox-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const groupElements = rootEl.querySelectorAll<HTMLElement>(
       '[data-part="item-group"]',
     );
@@ -572,14 +573,4 @@ export function initializeCombobox(
     comboboxComponent.groups = groups;
     comboboxComponent.init();
   });
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeCombobox(document),
-    );
-  } else {
-    initializeCombobox(document);
-  }
 }

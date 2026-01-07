@@ -294,7 +294,7 @@ The Select items and groups can use custom values and ids, this is useful when u
 
 ## Load from JSON
 
-You can initialize the Select component by embedding your JSON data directly in your HTML using a `<script>` tag with `type="application/json"` and a unique `data-select` attribute. Then, reference this JSON in your Select container via the corresponding `data-json` attribute.
+You can init the Select component by embedding your JSON data directly in your HTML using a `<script>` tag with `type="application/json"` and a unique `data-select` attribute. Then, reference this JSON in your Select container via the corresponding `data-json` attribute.
 
 ```html
 <script type="application/json" data-select="countries">
@@ -1147,13 +1147,14 @@ Options: **md(default)**, **sm**, **lg**, **xl**
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the component
+1. Import and initialize the component
 
 ```ts
-import "@corex-ui/static/components/select";
+import { initSelect } from "@corex-ui/static";
+initSelect();
 ```
 
-This will automatically initialize all elements with `class="select-js"` and add the necessary interaction behavior.
+This will initialize all elements with `class="select-js"` and add the necessary interaction behavior.
 
 2. Add styling
 

@@ -2167,7 +2167,7 @@ if (collapsibleState) {
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -2175,7 +2175,8 @@ if (collapsibleState) {
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/collapsible";
+      data-default-value='import { initCollapsible } from "@corex-ui/static";
+initCollapsible();
 '
     >
       <div data-part="control">
@@ -2221,12 +2222,13 @@ if (collapsibleState) {
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/collapsible&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initCollapsible } from &quot;@corex-ui/static&quot;;
+initCollapsible();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;collapsible-js&quot;</code> and add the necessary
   interaction behavior.
 </p>

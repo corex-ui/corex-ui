@@ -101,7 +101,7 @@ vite build
 2. Scans the output folder (`dist/`) for HTML files
 3. Loads Corex UI component modules from `@corex-ui/static/dist/components`
 4. Detects matching component placeholders in HTML
-5. Calls each component's `initialize<ComponentName>` function inside a JSDOM instance
+5. Calls each component's `init<ComponentName>` function inside a JSDOM instance
 6. Writes the modified HTML back to disk
 
 ---

@@ -76,7 +76,7 @@ test.describe("Color Picker rendering", () => {
     await expect(content).toHaveAttribute("data-scope", "color-picker");
     await expect(content).toHaveAttribute("tabindex", "-1");
     await expect(content).toHaveAttribute("data-state", "closed");
-    await expect(content).toHaveAttribute("hidden", "true");
+    await expect(content).toHaveAttribute("hidden", "");
   });
 
   test("should render trigger with transparency grid and swatch", async ({
@@ -333,7 +333,7 @@ test.describe("Color Picker rendering", () => {
 
     await expect(control).toHaveAttribute("data-state", "closed");
     await expect(content).toHaveAttribute("data-state", "closed");
-    await expect(content).toHaveAttribute("hidden", "true");
+    await expect(content).toHaveAttribute("hidden", "");
 
     await trigger.click();
 

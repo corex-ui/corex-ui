@@ -847,13 +847,14 @@ Description: Event name to send when the value change ends.
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the component
+1. Import and initialize the component
 
 ```ts
-import "@corex-ui/static/components/color-picker";
+import { initColorPicker } from "@corex-ui/static";
+initColorPicker();
 ```
 
-This will automatically initialize all elements with `class="color-picker-js"` and add the necessary interaction behavior.
+This will initialize all elements with `class="color-picker-js"` and add the necessary interaction behavior.
 
 2. Add styling
 

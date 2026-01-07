@@ -1,12 +1,12 @@
 import * as radioGroup from "@zag-js/radio-group";
 import type { Direction, Orientation } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   getBoolean,
   generateId,
-  normalizeProps,
   renderPart,
 } from "../lib";
 
@@ -41,10 +41,11 @@ export class RadioGroup extends Component<radioGroup.Props, radioGroup.Api> {
   }
 }
 
-export function initializeRadioGroup(
+export function initRadioGroup(
   doc: HTMLElement | Document = document,
+  selector = ".radio-group-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".radio-group-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const items = rootEl.querySelectorAll<HTMLElement>('[data-part="item"]');
     items.forEach((itemEl, index) => {
       let value = getString(itemEl, "value");
@@ -63,9 +64,9 @@ export function initializeRadioGroup(
       defaultValue: getString(rootEl, "defaultValue"),
       disabled: getBoolean(rootEl, "disabled"),
       form: getString(rootEl, "form"),
-      name: getString(rootEl, "form"),
-      readOnly: getBoolean(rootEl, "disabled"),
-      value: getString(rootEl, "defaultValue"),
+      name: getString(rootEl, "name"),
+      readOnly: getBoolean(rootEl, "readOnly"),
+      value: getString(rootEl, "value"),
       onValueChange(details) {
         const eventName = getString(rootEl, "onValueChange");
         if (eventName) {
@@ -82,13 +83,15 @@ export function initializeRadioGroup(
         radioGroup.api.setValue(value);
       }
     });
-  });
-}
 
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => initializeRadioGroup());
-  } else {
-    initializeRadioGroup();
-  }
+    radioGroup.el.addEventListener("radio-group:value", (event) => {
+      const detail = (
+        event as CustomEvent<{ callback: (value: string | null) => void }>
+      ).detail;
+      const callback = detail.callback;
+      if (callback && typeof callback === "function") {
+        callback(radioGroup.api.value);
+      }
+    });
+  });
 }

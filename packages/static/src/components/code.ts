@@ -19,18 +19,12 @@ export class Code {
     Prism.highlightElement(this.el);
   }
 }
-export function initializeCode(doc: HTMLElement | Document = document): void {
-  doc.querySelectorAll<HTMLElement>(".code-js").forEach((codeEl) => {
+export function initCode(
+  doc: HTMLElement | Document = document,
+  selector = ".code-js",
+): void {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((codeEl) => {
     const code = new Code(codeEl);
     code.init();
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeCode(document),
-    );
-  } else {
-    initializeCode(document);
-  }
 }

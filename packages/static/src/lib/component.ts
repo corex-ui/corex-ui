@@ -1,4 +1,4 @@
-import { VanillaMachine } from ".";
+import { VanillaMachine } from "@zag-js/vanilla";
 
 interface ComponentInterface<Api> {
   el: HTMLElement;

@@ -1,6 +1,6 @@
 import "./style.css";
-import "@corex-ui/static";
-
+import { initAll } from "@corex-ui/static";
+initAll();
 import { createToast } from "@corex-ui/static/components/toast";
 
 document.querySelectorAll<HTMLElement>(".toast-info").forEach((btn) => {

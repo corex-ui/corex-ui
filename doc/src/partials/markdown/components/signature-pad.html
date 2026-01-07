@@ -997,7 +997,7 @@ if (signaturePadForm &amp;&amp; signatureResult) {
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -1005,7 +1005,8 @@ if (signaturePadForm &amp;&amp; signatureResult) {
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/signature-pad";
+      data-default-value='import { initSignaturePad } from "@corex-ui/static";
+initSignaturePad();
 '
     >
       <div data-part="control">
@@ -1051,12 +1052,13 @@ if (signaturePadForm &amp;&amp; signatureResult) {
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/signature-pad&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initSignaturePad } from &quot;@corex-ui/static&quot;;
+initSignaturePad();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;signature-pad-js&quot;</code> and add the necessary
   interaction behavior.
 </p>

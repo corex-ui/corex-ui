@@ -945,8 +945,8 @@
   <a class="link" href="#load-from-json">#</a> Load from JSON
 </h2>
 <p>
-  You can initialize the Select component by embedding your JSON data directly
-  in your HTML using a <code>&lt;script&gt;</code> tag with
+  You can init the Select component by embedding your JSON data directly in your
+  HTML using a <code>&lt;script&gt;</code> tag with
   <code>type=&quot;application/json&quot;</code> and a unique
   <code>data-select</code> attribute. Then, reference this JSON in your Select
   container via the corresponding <code>data-json</code> attribute.
@@ -3633,7 +3633,7 @@ if (selectForm &amp;&amp; seectResult) {
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -3641,7 +3641,8 @@ if (selectForm &amp;&amp; seectResult) {
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/select";
+      data-default-value='import { initSelect } from "@corex-ui/static";
+initSelect();
 '
     >
       <div data-part="control">
@@ -3687,12 +3688,13 @@ if (selectForm &amp;&amp; seectResult) {
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/select&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initSelect } from &quot;@corex-ui/static&quot;;
+initSelect();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;select-js&quot;</code> and add the necessary interaction
   behavior.
 </p>

@@ -72,6 +72,7 @@ pnpm install
 <h2 id="install-corex-ui" tabindex="-1">
   <a class="link" href="#install-corex-ui">#</a> Install Corex UI
 </h2>
+<p><strong>Install Corex UI Styled</strong></p>
 
 <div class="preview">
   <div class="preview__code">
@@ -128,6 +129,63 @@ pnpm install
 </code></pre>
   </div>
 </div>
+<p><strong>Install Corex UI Unstyled</strong></p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value="pnpm add @corex-ui/static @corex-ui/vite
+"
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">bash</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="bash">pnpm add @corex-ui/static @corex-ui/vite
+</code></pre>
+  </div>
+</div>
 <p><strong>Package Overview:</strong></p>
 <ul>
   <li><code>@corex-ui/static</code> – Vanilla JS web components.</li>
@@ -155,10 +213,12 @@ pnpm install
       data-name="clipboard"
       data-default-value='import "./style.css";
 // Import only the components you need
-import "@corex-ui/static/components/accordion";
+import { initAccordion } from "@corex-ui/static";
+initAccordion();
 
 // Or import all components ONLY during development
-// import "@corex-ui/static"
+// import { initAll } from "@corex-ui/static";
+// initAll();
 '
     >
       <div data-part="control">
@@ -206,10 +266,12 @@ import "@corex-ui/static/components/accordion";
     </div>
     <pre><code class="code-js" data-lang="ts">import &quot;./style.css&quot;;
 // Import only the components you need
-import &quot;@corex-ui/static/components/accordion&quot;;
+import { initAccordion } from &quot;@corex-ui/static&quot;;
+initAccordion();
 
 // Or import all components ONLY during development
-// import &quot;@corex-ui/static&quot;
+// import { initAll } from &quot;@corex-ui/static&quot;;
+// initAll();
 </code></pre>
   </div>
 </div>

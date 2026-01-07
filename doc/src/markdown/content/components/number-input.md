@@ -643,17 +643,126 @@ if (form && resultCurrency) {
 
 ---
 
+## API
+
+You can interact with the Number Input API by dispatching custom events.
+
+```html
+<!-- render:preview -->
+<button data-action="number-input-set-value" data-value="42" class="button">
+  Set to 42
+</button>
+<button data-action="number-input-value" class="button">
+  Get current value
+</button>
+<div
+  id="number-input-api"
+  class="number-input number-input-js"
+  data-default-value="10"
+>
+  <div data-part="root">
+    <label data-part="label">Enter Number</label>
+    <div data-part="control">
+      <input data-part="input" />
+      <div data-part="trigger-group">
+        <button data-part="increment-trigger">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 15.75 7.5-7.5 7.5 7.5"
+            />
+          </svg>
+        </button>
+        <button data-part="decrement-trigger">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+```ts
+const numberInputState = document.getElementById("number-input-api");
+if (numberInputState) {
+  const buttons = document.querySelectorAll<HTMLButtonElement>(
+    'button[data-action="number-input-set-value"]',
+  );
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const value = button.dataset.value;
+      if (value && !isNaN(Number(value))) {
+        numberInputState.dispatchEvent(
+          new CustomEvent("number-input:set-value", {
+            detail: { value },
+            bubbles: true,
+          }),
+        );
+      }
+    });
+  });
+  const getBtns = document.querySelectorAll<HTMLButtonElement>(
+    'button[data-action="number-input-value"]',
+  );
+  getBtns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      numberInputState.dispatchEvent(
+        new CustomEvent("number-input:value", {
+          detail: {
+            callback: (value: string) => {
+              alert("Number Input value: " + value);
+            },
+          },
+        }),
+      );
+    }),
+  );
+} else {
+  console.warn("Element with ID 'number-input-api' not found");
+}
+```
+
+**number-input:set-value**
+Type: `string`
+Description: Sets the value of the number input
+
+**number-input:value**
+Type: `callback`
+Description: Get the current value of the number input
+
+---
+
 ## Installation
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the component
+1. Import and initialize the component
 
 ```ts
-import "@corex-ui/static/components/number-input";
+import { initNumberInput } from "@corex-ui/static";
+initNumberInput();
 ```
 
-This will automatically initialize all elements with `class="number-input-js"` and add the necessary interaction behavior.
+This will initialize all elements with `class="number-input-js"` and add the necessary interaction behavior.
 
 2. Add styling
 

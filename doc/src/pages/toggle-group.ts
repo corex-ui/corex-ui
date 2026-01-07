@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/toggle-group";
+import { initToggleGroup } from "@corex-ui/static";
 import "./toggle-group.css";
+
+initToggleGroup();
 
 document
   .getElementById("my-toggle-group")

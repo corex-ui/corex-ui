@@ -1,121 +1,55 @@
 /**
- * Corex is based on the original Zag.js Vanilla JS example.
- * The code has been adapted and modified for this project to suit specific requirements.
+ * Corex utility functions for working with Zag.js components.
  *
- * All credit goes to the authors of Zag.js for their excellent work in providing a lightweight, accessible,
- * and flexible library for UI components.
+ * Note: `normalizeProps` is provided by @zag-js/vanilla and is imported from there.
+ * `spreadProps` is wrapped to ensure ARIA boolean attributes are converted to strings
+ * for accessibility compliance.
+ */
+import { spreadProps as zagSpreadProps } from "@zag-js/vanilla";
+
+/**
+ * Wrapper around zag's spreadProps that converts boolean ARIA attributes to strings
+ * ("true" or "false") for accessibility compliance. All other attributes are passed
+ * through unchanged.
  *
- * For more details about Zagjs, visit the official Zag.js Vanilla JS example GitHub repository:
- * https://github.com/chakra-ui/zag/tree/main/examples/vanilla-ts
+ * The vanilla spreadProps removes boolean false attributes, but ARIA attributes
+ * should always be present as strings when provided by the API.
+ *
+ * Exception: `aria-readonly` is omitted when false as it's invalid on certain roles
+ * (e.g., role="button").
  */
-import { createNormalizer } from "@zag-js/types";
-const propMap: Record<string, any> = {
-  onFocus: "onFocusin",
-  onBlur: "onFocusout",
-  onChange: "onInput",
-  onDoubleClick: "onDblclick",
-  htmlFor: "for",
-  className: "class",
-  defaultValue: "value",
-  defaultChecked: "checked",
-};
-/**
- * Converts a style object into a CSS style string.
- * @param style - The style object where keys are CSS properties and values are their corresponding values.
- * @returns A string that represents the styles, formatted as CSS (e.g., `color: red; background-color: blue;`).
- * ```
- */
-const toStyleString = (style: any) => {
-  return Object.entries(style).reduce((styleString, [key, value]) => {
-    if (value === null || value === undefined) return styleString;
-    const formattedKey = key.startsWith("--")
-      ? key
-      : key.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
-    return `${styleString}${formattedKey}:${value};`;
-  }, "");
-};
-/**
- * Normalizes the provided properties, converting them to a lower case format
- * and adjusting specific attributes for compatibility with certain HTML conventions.
- * Additionally, transforms style objects into a valid CSS style string.
- * @param props - An object where keys represent property names and values are the corresponding values.
- * @returns A normalized version of the properties, where attributes are adjusted as necessary.
- * ```
- */
-export const normalizeProps = createNormalizer((props: any) => {
-  return Object.entries(props).reduce<any>((acc, [key, value]) => {
-    if (value === undefined) return acc;
-    if (key in propMap) {
-      key = propMap[key];
-    }
-    if (key === "style" && typeof value === "object") {
-      acc.style = toStyleString(value);
-      return acc;
-    }
-    acc[key.toLowerCase()] = value;
-    return acc;
-  }, {});
-});
-export interface Attrs {
-  [key: string]: any;
-}
-const prevAttrsMap = new WeakMap<HTMLElement, Attrs>();
-/**
- * Applies the given attributes (props) to the provided HTML element, including event listeners and attributes.
- * It tracks previous attributes and ensures that only the necessary updates are applied to the element.
- * @param node - The HTML element to which the attributes will be applied.
- * @param attrs - The attributes (props) to apply to the element.
- * @returns A cleanup function that removes event listeners when called.
- * ```
- */
-export function spreadProps(node: HTMLElement, attrs: Attrs): () => void {
-  const oldAttrs = prevAttrsMap.get(node) || {};
-  const attrKeys = Object.keys(attrs);
-  const addEvt = (e: string, f: EventListener) => {
-    node.addEventListener(e.toLowerCase(), f);
-  };
-  const remEvt = (e: string, f: EventListener) => {
-    node.removeEventListener(e.toLowerCase(), f);
-  };
-  const onEvents = (attr: string) => attr.startsWith("on");
-  const others = (attr: string) => !attr.startsWith("on");
-  const setup = (attr: string) => addEvt(attr.substring(2), attrs[attr]);
-  const teardown = (attr: string) => remEvt(attr.substring(2), attrs[attr]);
-  const apply = (attrName: string) => {
-    let value = attrs[attrName];
-    const oldValue = oldAttrs[attrName];
-    if (value === oldValue) return;
+export function spreadProps(
+  node: Element,
+  attrs: Record<string, any>,
+): () => void {
+  const normalizedAttrs: Record<string, any> = {};
+
+  for (const [attrName, value] of Object.entries(attrs)) {
     if (typeof value === "boolean") {
-      const lower = attrName.toLowerCase();
-      const isAria = lower.startsWith("aria-");
-      value = value === true ? "true" : isAria ? "false" : undefined;
-    }
-    if (value != null) {
-      if (["value", "checked", "htmlFor"].includes(attrName)) {
-        (node as any)[attrName] = value;
+      const lowerAttrName = attrName.toLowerCase();
+      const isAria = lowerAttrName.startsWith("aria-");
+
+      if (isAria) {
+        // aria-readonly should be omitted when false (invalid on certain roles)
+        if (lowerAttrName === "aria-readonly" && value === false) {
+          // Omit this attribute - don't add it to normalizedAttrs
+          continue;
+        }
+        // Convert other ARIA booleans to strings for a11y compliance
+        normalizedAttrs[attrName] = String(value);
       } else {
-        node.setAttribute(attrName.toLowerCase(), value);
+        // Keep non-ARIA booleans as-is (zagSpreadProps will handle them)
+        normalizedAttrs[attrName] = value;
       }
-      return;
-    }
-    node.removeAttribute(attrName.toLowerCase());
-  };
-  for (const key in oldAttrs) {
-    if (attrs[key] == null) {
-      node.removeAttribute(key.toLowerCase());
+    } else {
+      // Keep non-boolean values as-is
+      normalizedAttrs[attrName] = value;
     }
   }
-  const oldEvents = Object.keys(oldAttrs).filter(onEvents);
-  oldEvents.forEach((evt) => {
-    remEvt(evt.substring(2), oldAttrs[evt]);
-  });
-  attrKeys.filter(onEvents).forEach(setup);
-  attrKeys.filter(others).forEach(apply);
-  prevAttrsMap.set(node, attrs);
-  return function cleanup() {
-    attrKeys.filter(onEvents).forEach(teardown);
-  };
+
+  return zagSpreadProps(node, normalizedAttrs);
 }
+
 type PropertyType = "string" | "boolean" | "number" | "string[]";
 type PropMap = Record<string, PropertyType>;
 /**
@@ -204,59 +138,6 @@ function isPropMap(value: any): value is PropMap {
       v === "string" || v === "boolean" || v === "number" || v === "string[]",
   );
 }
-
-/**
- * Renders a list of items inside the root element. Each item is identified by the `name`, and the
- * properties for each item are retrieved from the API based on its `data-value`, `data-disabled`, and `data-index` attributes.
- * @param root - The root HTML element containing the items.
- * @param name - The name of the item part to render.
- * @param api - The API object used to retrieve the properties for each item.
- * ```
- */
-export const renderItem = (root: HTMLElement, name: string, api: any) => {
-  const camelizedName = name.replace(
-    /(^|-)([a-z])/g,
-    (_match, _prefix, letter) => letter.toUpperCase(),
-  );
-  const getterName = `get${camelizedName}Props`;
-  if (typeof api[getterName] !== "function") return;
-  const componentClass = Array.from(root.classList).find((cls) =>
-    cls.endsWith("-js"),
-  );
-  const parts = Array.from(
-    root.querySelectorAll<HTMLElement>(`[data-part='${name}']`),
-  );
-  const scopedParts = componentClass
-    ? parts.filter((part) => part.closest(`.${componentClass}`) === root)
-    : parts;
-  scopedParts.forEach((part) => {
-    const value = getString(part, "value");
-    const disabled = getBoolean(part, "disabled");
-    const index = getNumber(part, "index");
-    const id = getString(part, "id");
-    const type = getString(part, "type");
-    const action = getString(part, "action");
-    const size = getString(part, "size");
-    const channel = getString(part, "channel");
-    const view = getString(part, "view");
-    const stage = getString(part, "stage");
-    const axis = getString(part, "axis");
-    const props = api[getterName]({
-      value,
-      disabled,
-      index,
-      id,
-      type,
-      action,
-      size,
-      channel,
-      view,
-      stage,
-      axis,
-    });
-    spreadProps(part, props);
-  });
-};
 
 /**
  * Renders a list of items inside the root element. Each item is identified by the `name`, and the

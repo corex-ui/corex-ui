@@ -1,16 +1,27 @@
 import "../main.ts";
 import "./index.css";
-import "@corex-ui/static/components/angle-slider";
-import "@corex-ui/static/components/combobox";
-import "@corex-ui/static/components/timer";
-import "@corex-ui/static/components/switch";
-import "@corex-ui/static/components/clipboard";
-import "@corex-ui/static/components/date-picker";
-import "@corex-ui/static/components/color-picker";
-import "@corex-ui/static/components/signature-pad";
-import "@corex-ui/static/components/toast";
+import {
+  initAngleSlider,
+  initCombobox,
+  initTimer,
+  initSwitch,
+  initClipboard,
+  initDatePicker,
+  initColorPicker,
+  initSignaturePad,
+  initToast,
+  createToast,
+} from "@corex-ui/static";
 
-import { createToast } from "@corex-ui/static/components/toast";
+initAngleSlider();
+initCombobox();
+initTimer();
+initSwitch();
+initClipboard();
+initDatePicker();
+initColorPicker();
+initSignaturePad();
+initToast();
 
 document
   .getElementById("angle-slider-rotate")

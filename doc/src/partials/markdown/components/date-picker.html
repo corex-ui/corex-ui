@@ -3684,7 +3684,7 @@ if (formBirth &amp;&amp; resultBirth) {
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -3692,7 +3692,8 @@ if (formBirth &amp;&amp; resultBirth) {
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/date-picker";
+      data-default-value='import { initDatePicker } from "@corex-ui/static";
+initDatePicker();
 '
     >
       <div data-part="control">
@@ -3738,12 +3739,13 @@ if (formBirth &amp;&amp; resultBirth) {
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/date-picker&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initDatePicker } from &quot;@corex-ui/static&quot;;
+initDatePicker();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;date-picker-js&quot;</code> and add the necessary
   interaction behavior.
 </p>

@@ -1,11 +1,11 @@
 import * as zagSwitch from "@zag-js/switch";
 import type { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   generateId,
-  normalizeProps,
   renderPart,
   getBoolean,
   valuesEqual,
@@ -22,7 +22,7 @@ export class ZagSwitch extends Component<zagSwitch.Props, zagSwitch.Api> {
     for (const part of parts) renderPart(this.el, part, this.api);
   }
 }
-export function initializeSwitch(doc: HTMLElement | Document = document): void {
+export function initSwitch(doc: HTMLElement | Document = document): void {
   doc.querySelectorAll<HTMLElement>(".switch-js").forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const zagSwitch = new ZagSwitch(rootEl, {
@@ -65,13 +65,4 @@ export function initializeSwitch(doc: HTMLElement | Document = document): void {
       }
     });
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeSwitch(document),
-    );
-  } else {
-    initializeSwitch(document);
-  }
 }

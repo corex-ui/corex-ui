@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/combobox";
+import { initCombobox } from "@corex-ui/static";
 import "./combobox.css";
+
+initCombobox();
 
 const formCurrency = document.getElementById(
   "my-form",

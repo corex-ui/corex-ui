@@ -1,22 +1,20 @@
 import * as toast from "@zag-js/toast";
+import { VanillaMachine, normalizeProps, spreadProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
-  normalizeProps,
   renderPart,
   generateId,
-  spreadProps,
   getString,
   getNumber,
 } from "../lib";
-import { bindable } from "../lib/bindable";
+
 import type { Placement, StatusChangeDetails } from "@zag-js/toast";
 export class ToastItem extends Component<
   toast.Options<any> & { parent: any; index: number },
   toast.Api
 > {
   actor: toast.Options<any> & { parent: any; index: number };
-  index = bindable.ref(0);
   private isDestroyed = false;
   constructor(
     el: HTMLElement,
@@ -25,8 +23,9 @@ export class ToastItem extends Component<
     super(el, actor);
     this.actor = actor;
   }
-  initMachine(props: toast.Options<any> & { parent: any; index: number }) {
-    return new VanillaMachine(toast.machine, { ...props });
+
+  initMachine(props: toast.Props): VanillaMachine<any> {
+    return new VanillaMachine(toast.machine, props);
   }
   initApi(): toast.Api {
     return toast.connect(this.machine.service, normalizeProps);
@@ -107,7 +106,6 @@ export class Toast extends Component<toast.GroupProps, toast.GroupApi> {
       toastComp.init();
       this.toastComponents.set(toastActor.id, toastComp);
     }
-    toastComp.index.set(index);
     toastComp.render();
   }
   render() {
@@ -126,11 +124,12 @@ export class Toast extends Component<toast.GroupProps, toast.GroupApi> {
     this.toastComponents = newToastMap;
   }
 }
-export function initializeToast(
+export function initToast(
   doc: HTMLElement | Document = document,
+  selector = ".toast-js",
 ): Toast | null {
   let toastInstance: Toast | null = null;
-  doc.querySelectorAll<HTMLElement>(".toast-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const groupId = generateId(rootEl, "toast");
     const placements = [
       "top-start",
@@ -228,14 +227,4 @@ export function dismissToast(id: string) {
     const store = el.__toastStore;
     if (store) store.dismiss(id);
   });
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeToast(document),
-    );
-  } else {
-    initializeToast(document);
-  }
 }

@@ -61,7 +61,7 @@ corex-ui render dist button accordion
 1. Scans the specified output folder (`dist/`) for HTML files
 2. Loads Corex UI component modules from `node_modules/@corex-ui/static/dist/components`
 3. Detects matching component placeholders in HTML
-4. Calls each component's `initialize<ComponentName>` function inside a JSDOM instance
+4. Calls each component's `init<ComponentName>` function inside a JSDOM instance
 5. Writes the modified HTML back to disk
 
 Logs show how many components were rendered per file.

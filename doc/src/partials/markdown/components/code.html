@@ -636,7 +636,7 @@ import &quot;prismjs/components/prism-halm&quot;;
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -644,7 +644,8 @@ import &quot;prismjs/components/prism-halm&quot;;
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/code";
+      data-default-value='import { initCode } from "@corex-ui/static";
+initCode();
 '
     >
       <div data-part="control">
@@ -690,12 +691,13 @@ import &quot;prismjs/components/prism-halm&quot;;
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/code&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initCode } from &quot;@corex-ui/static&quot;;
+initCode();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;code-js&quot;</code> and add the necessary interaction
   behavior.
 </p>

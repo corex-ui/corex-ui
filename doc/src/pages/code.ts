@@ -1,3 +1,5 @@
 import "../main.ts";
-import "@corex-ui/static/components/code";
+import { initCode } from "@corex-ui/static";
 import "@corex-ui/design/components/code.css";
+
+initCode();

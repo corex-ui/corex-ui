@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/switch";
+import { initSwitch } from "@corex-ui/static";
 import "@corex-ui/design/components/switch.css";
+
+initSwitch();
 
 document
   .getElementById("my-switch")

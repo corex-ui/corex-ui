@@ -1,15 +1,13 @@
 import * as signaturePad from "@zag-js/signature-pad";
 import type { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
 import {
   Component,
-  VanillaMachine,
   getBoolean,
   getNumber,
   generateId,
-  normalizeProps,
   renderPart,
   getString,
-  // renderItem,
   getStringList,
 } from "../lib";
 export class SignaturePad extends Component<
@@ -66,10 +64,11 @@ export class SignaturePad extends Component<
     renderPart(this.el, "hidden-input", this.api, { value: dataUrl });
   }
 }
-export function initializeSignaturePad(
+export function initSignaturePad(
   doc: HTMLElement | Document = document,
+  selector = ".signature-pad-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".signature-pad-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const signaturePad = new SignaturePad(rootEl, {
       id: generateId(rootEl, "signaturePad"),
@@ -100,13 +99,4 @@ export function initializeSignaturePad(
     });
     signaturePad.init();
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeSignaturePad(document),
-    );
-  } else {
-    initializeSignaturePad(document);
-  }
 }

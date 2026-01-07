@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/color-picker";
+import { initColorPicker } from "@corex-ui/static";
 import "@corex-ui/design/components/color-picker.css";
+
+initColorPicker();
 
 document
   .getElementById("my-color-picker")

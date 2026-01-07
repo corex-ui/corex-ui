@@ -1,11 +1,11 @@
 import * as pinInput from "@zag-js/pin-input";
 import { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   generateId,
-  normalizeProps,
   renderPart,
   getBoolean,
   getStringList,
@@ -24,10 +24,11 @@ export class PinInput extends Component<pinInput.Props, pinInput.Api> {
     renderPart(this.el, "input", this.api, { index: "number" });
   }
 }
-export function initializePinInput(
+export function initPinInput(
   doc: HTMLElement | Document = document,
+  selector = ".pin-input-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".pin-input-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const inputs = rootEl.querySelectorAll<HTMLElement>('[data-part="input"]');
 
     inputs.forEach((input, index) => {
@@ -58,7 +59,6 @@ export function initializePinInput(
         "numeric",
         "alphabetic",
       ]),
-      value: getStringList(rootEl, "value"),
       onValueComplete(details) {
         const eventName = getString(rootEl, "onValueComplete");
         if (eventName) {
@@ -80,13 +80,4 @@ export function initializePinInput(
     });
     pinInput.init();
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializePinInput(document),
-    );
-  } else {
-    initializePinInput(document);
-  }
 }

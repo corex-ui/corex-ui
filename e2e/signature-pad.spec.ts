@@ -35,7 +35,7 @@ test.describe("Signature Pad", () => {
       await expect(label).toHaveText("Signature Pad");
 
       const hiddenInput = parts["hidden-input"].first();
-      await expect(hiddenInput).toHaveAttribute("hidden", "true");
+      await expect(hiddenInput).toHaveAttribute("hidden", "");
 
       const control = parts["control"].first();
       await expect(control).toBeVisible();
@@ -45,7 +45,7 @@ test.describe("Signature Pad", () => {
       await expect(segment).toBeVisible();
 
       const clearButton = parts["clear-trigger"].first();
-      await expect(clearButton).toHaveAttribute("hidden", "true");
+      await expect(clearButton).toHaveAttribute("hidden", "");
 
       const guide = parts["guide"].first();
       await expect(guide).toBeVisible();
@@ -104,8 +104,8 @@ test.describe("Signature Pad", () => {
 
       await clearButton.click();
 
-      await expect(hiddenInput).toHaveAttribute("hidden", "true");
-      await expect(hiddenInput).toHaveAttribute("readonly", "true");
+      await expect(hiddenInput).toHaveAttribute("hidden", "");
+      await expect(hiddenInput).toHaveAttribute("readonly", "");
     });
   });
 });

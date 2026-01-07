@@ -1,3 +1,5 @@
 import "../main.ts";
-import "@corex-ui/static/components/tabs";
+import { initTabs } from "@corex-ui/static";
 import "@corex-ui/design/components/tabs.css";
+
+initTabs();
