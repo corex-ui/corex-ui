@@ -15,7 +15,7 @@
   .layout__header {
     position: sticky;
     top: 0;
-    z-index: 20;
+    z-index: 10;
     height: var(--spacing-ui-lg);
     background: var(--color-layer);
     color: var(--color-layer--text);
