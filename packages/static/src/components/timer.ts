@@ -77,25 +77,9 @@ export class Timer extends Component<timer.Props, timer.Api> {
     actionTriggerElements.forEach((actionEl) => {
       const action = getString(actionEl, "action");
       if (action) {
-        renderPart(actionEl, "action-trigger", this.api, { action });
+        renderPart(actionEl, "action-trigger", this.api, { action: "string" });
       }
     });
-
-    document
-      .querySelectorAll(`[data-start-timer="${this.el.id}"]`)
-      .forEach((el) => {
-        el.addEventListener("click", () => this.api.start());
-      });
-    document
-      .querySelectorAll(`[data-resume-timer="${this.el.id}"]`)
-      .forEach((el) => {
-        el.addEventListener("click", () => this.api.resume());
-      });
-    document
-      .querySelectorAll(`[data-pause-timer="${this.el.id}"]`)
-      .forEach((el) => {
-        el.addEventListener("click", () => this.api.pause());
-      });
   }
 }
 
