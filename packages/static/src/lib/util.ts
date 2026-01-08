@@ -27,22 +27,13 @@ export function spreadProps(
   for (const [attrName, value] of Object.entries(attrs)) {
     if (typeof value === "boolean") {
       const lowerAttrName = attrName.toLowerCase();
-      const isAria = lowerAttrName.startsWith("aria-");
-
-      if (isAria) {
-        // aria-readonly should be omitted when false (invalid on certain roles)
-        if (lowerAttrName === "aria-readonly" && value === false) {
-          // Omit this attribute - don't add it to normalizedAttrs
-          continue;
-        }
-        // Convert other ARIA booleans to strings for a11y compliance
+      if (lowerAttrName.startsWith("aria-")) {
+        if (lowerAttrName === "aria-readonly" && !value) continue;
         normalizedAttrs[attrName] = String(value);
       } else {
-        // Keep non-ARIA booleans as-is (zagSpreadProps will handle them)
         normalizedAttrs[attrName] = value;
       }
     } else {
-      // Keep non-boolean values as-is
       normalizedAttrs[attrName] = value;
     }
   }
