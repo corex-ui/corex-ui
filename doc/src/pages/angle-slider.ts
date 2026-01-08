@@ -23,7 +23,6 @@ document
 
 // API
 const angleSlider = document.getElementById("angle-slider-api");
-console.log(angleSlider);
 
 if (angleSlider) {
   const buttons = document.querySelectorAll<HTMLButtonElement>(

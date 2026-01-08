@@ -28,7 +28,7 @@ The QR Code component consists of the following data parts:
 
 ```html
 <!-- render:preview -->
-<div class="qr-code qr-code-js" data-value="https://corex-ui.com/">
+<div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/">
   <div data-part="root">
     <svg data-part="frame">
       <path data-part="pattern" />
@@ -51,12 +51,10 @@ Each QR Code can be set with different settings with the following data-attribut
 <div
   class="qr-code qr-code-js"
   id="custom-qr-code"
-  data-default-value="https://corex-ui.com/"
   data-dir="ltr"
   data-pixel-size="8"
-  data-value="https://corex-ui.com/"
+  data-default-value="https://corex-ui.com/"
   data-boost-ecc
-  data-border="4"
   data-ecc="M"
   data-invert
   data-mask-pattern="0"
@@ -89,10 +87,6 @@ Description: Initial default value of the QR code when rendered. Use when you do
 **data-pixel-size**
 Type: `number`
 Description: Size of each QR code pixel/module in pixels.
-
-**data-value**
-Type: `string`
-Description: Controlled value of the QR code (used in controlled components).
 
 **data-boost-ecc**
 Type: `boolean`
@@ -142,13 +136,16 @@ You must add a custom id for the QR code and an event listener for your event na
 <div
   id="my-qr-code"
   class="qr-code qr-code-js"
-  data-value="https://corex-ui.com/"
+  data-default-value="https://corex-ui.com/"
   data-on-encoded="my-qr-code-event"
 >
   <div data-part="root">
     <svg data-part="frame">
       <path data-part="pattern" />
     </svg>
+    <div data-part="overlay">
+      <img src="/logo.svg" alt="" />
+    </div>
   </div>
 </div>
 ```
@@ -161,9 +158,9 @@ document
   });
 ```
 
-**data-on-value-change**
+**data-on-encoded**
 Type: `string`
-Description: Event name to be sent when the QR code value changes or when encoding completes.
+Description: Event name to be sent when the generated QR Code.
 
 ---
 
@@ -173,11 +170,14 @@ The QR Code component supports a download trigger that allows users to download 
 
 ```html
 <!-- render:preview -->
-<div class="qr-code qr-code-js" data-value="https://corex-ui.com/">
+<div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/">
   <div data-part="root">
     <svg data-part="frame">
       <path data-part="pattern" />
     </svg>
+    <div data-part="overlay">
+      <img src="/logo.svg" alt="" />
+    </div>
     <button data-part="downloadTrigger" class="button">Download QR Code</button>
   </div>
 </div>
