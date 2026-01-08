@@ -1,0 +1,829 @@
+<h1 id="upgrade-guide" tabindex="-1">
+  <a class="link" href="#upgrade-guide">#</a> Upgrade Guide
+</h1>
+<p>
+  This guide will help you upgrade your Corex UI project from version 0 to
+  version 1. The main change is that components now require manual
+  initialization instead of auto-initializing when imported.
+</p>
+<h2 id="from-v0-to-v1" tabindex="-1">
+  <a class="link" href="#from-v0-to-v1">#</a> From v0 to v1
+</h2>
+<p>
+  In <strong>v0</strong>, Corex UI components were automatically initialized
+  when you imported them. This made getting started easier, but limited
+  flexibility and control over when and how components were initialized.
+</p>
+<p>
+  In <strong>v1</strong>, you now have full control over component
+  initialization. You import the <code>initComponentName</code> functions and
+  call them manually when you're ready. This gives you:
+</p>
+<ul>
+  <li>Better control over initialization timing</li>
+  <li>Ability to initialize components in specific DOM contexts</li>
+  <li>Custom selector support for finding components</li>
+  <li>More predictable behavior and easier debugging</li>
+</ul>
+<h2 id="breaking-changes" tabindex="-1">
+  <a class="link" href="#breaking-changes">#</a> Breaking Changes
+</h2>
+<p><strong>Before (v0):</strong></p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='// Components auto-initialized on import
+import "@corex-ui/static/components/accordion";
+// Accordion is already initialized
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">// Components auto-initialized on import
+import &quot;@corex-ui/static/components/accordion&quot;;
+// Accordion is already initialized
+</code></pre>
+  </div>
+</div>
+<p><strong>After (v1):</strong></p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='// Import the init function
+import { initAccordion } from "@corex-ui/static";
+
+// Manually initialize when ready
+initAccordion();
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">// Import the init function
+import { initAccordion } from &quot;@corex-ui/static&quot;;
+
+// Manually initialize when ready
+initAccordion();
+</code></pre>
+  </div>
+</div>
+<h2 id="manual-initialization" tabindex="-1">
+  <a class="link" href="#manual-initialization">#</a> Manual Initialization
+</h2>
+<p>
+  In v1, each component has a corresponding
+  <code>initComponentName</code> function that you import and call. Available
+  init functions include:
+</p>
+<ul>
+  <li><code>initAccordion</code></li>
+  <li><code>initTabs</code></li>
+  <li><code>initDialog</code></li>
+  <li><code>initMenu</code></li>
+  <li><code>initSelect</code></li>
+  <li><code>initCheckbox</code></li>
+  <li><code>initSwitch</code></li>
+  <li><code>initRadioGroup</code></li>
+  <li>... and many more</li>
+</ul>
+<p>
+  You can import individual init functions or use <code>initAll</code> to
+  initialize all components at once (useful for development):
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initAccordion, initTabs, initDialog } from "@corex-ui/static";
+
+// Initialize specific components
+initAccordion();
+initTabs();
+initDialog();
+
+// Or initialize all components (development only)
+import { initAll } from "@corex-ui/static";
+initAll();
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initAccordion, initTabs, initDialog } from &quot;@corex-ui/static&quot;;
+
+// Initialize specific components
+initAccordion();
+initTabs();
+initDialog();
+
+// Or initialize all components (development only)
+import { initAll } from &quot;@corex-ui/static&quot;;
+initAll();
+</code></pre>
+  </div>
+</div>
+<h2 id="init-function-options" tabindex="-1">
+  <a class="link" href="#init-function-options">#</a> Init Function Options
+</h2>
+<p>
+  All <code>initComponentName</code> functions accept two optional parameters:
+</p>
+<h3 id="1.-doc-parameter" tabindex="-1">
+  <a class="link" href="#1.-doc-parameter">#</a> 1. <code>doc</code> Parameter
+</h3>
+<p>
+  The first parameter is the document or element to search within. This allows
+  you to initialize components within a specific DOM context.
+</p>
+<ul>
+  <li><strong>Type:</strong> <code>HTMLElement | Document</code></li>
+  <li>
+    <strong>Default:</strong> <code>document</code> (searches the entire
+    document)
+  </li>
+</ul>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initAccordion } from "@corex-ui/static";
+
+// Initialize in the entire document (default)
+initAccordion();
+
+// Initialize only within a specific container
+const container = document.querySelector("#my-container");
+if (container) {
+  initAccordion(container);
+}
+
+// Initialize within an iframe document
+const iframe = document.querySelector("iframe");
+if (iframe &amp;&amp; iframe.contentDocument) {
+  initAccordion(iframe.contentDocument);
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initAccordion } from &quot;@corex-ui/static&quot;;
+
+// Initialize in the entire document (default)
+initAccordion();
+
+// Initialize only within a specific container
+const container = document.querySelector(&quot;#my-container&quot;);
+if (container) {
+  initAccordion(container);
+}
+
+// Initialize within an iframe document
+const iframe = document.querySelector(&quot;iframe&quot;);
+if (iframe &amp;&amp; iframe.contentDocument) {
+  initAccordion(iframe.contentDocument);
+}
+</code></pre>
+  </div>
+</div>
+<h3 id="2.-selector-parameter" tabindex="-1">
+  <a class="link" href="#2.-selector-parameter">#</a> 2.
+  <code>selector</code> Parameter
+</h3>
+<p>
+  The second parameter is the CSS selector used to find component root elements.
+  Each component has a default selector, but you can customize it.
+</p>
+<ul>
+  <li><strong>Type:</strong> <code>string</code></li>
+  <li>
+    <strong>Default:</strong> Component-specific (e.g.,
+    <code>&quot;.accordion-js&quot;</code> for accordion,
+    <code>&quot;.tabs-js&quot;</code> for tabs)
+  </li>
+</ul>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initAccordion } from "@corex-ui/static";
+
+// Use default selector (.accordion-js)
+initAccordion();
+
+// Use custom selector
+initAccordion(document, ".my-custom-accordion");
+
+// Combine both: custom container + custom selector
+const container = document.querySelector("#app");
+if (container) {
+  initAccordion(container, ".accordion");
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initAccordion } from &quot;@corex-ui/static&quot;;
+
+// Use default selector (.accordion-js)
+initAccordion();
+
+// Use custom selector
+initAccordion(document, &quot;.my-custom-accordion&quot;);
+
+// Combine both: custom container + custom selector
+const container = document.querySelector(&quot;#app&quot;);
+if (container) {
+  initAccordion(container, &quot;.accordion&quot;);
+}
+</code></pre>
+  </div>
+</div>
+<h3 id="function-signature" tabindex="-1">
+  <a class="link" href="#function-signature">#</a> Function Signature
+</h3>
+<p>The complete function signature for all init functions is:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='function initComponentName(
+  doc: HTMLElement | Document = document,
+  selector: string = ".component-js"
+): void
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">function initComponentName(
+  doc: HTMLElement | Document = document,
+  selector: string = &quot;.component-js&quot;
+): void
+</code></pre>
+  </div>
+</div>
+<h2 id="migration-examples" tabindex="-1">
+  <a class="link" href="#migration-examples">#</a> Migration Examples
+</h2>
+<h3 id="example-1%3A-basic-migration" tabindex="-1">
+  <a class="link" href="#example-1%3A-basic-migration">#</a> Example 1: Basic
+  Migration
+</h3>
+<p><strong>v0 Code:</strong></p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='// main.ts (v0)
+import "@corex-ui/static/components/accordion";
+import "@corex-ui/static/components/tabs";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">// main.ts (v0)
+import &quot;@corex-ui/static/components/accordion&quot;;
+import &quot;@corex-ui/static/components/tabs&quot;;
+</code></pre>
+  </div>
+</div>
+<p><strong>v1 Code:</strong></p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='// main.ts (v1)
+import { initAccordion, initTabs } from "@corex-ui/static";
+
+initAccordion();
+initTabs();
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">// main.ts (v1)
+import { initAccordion, initTabs } from &quot;@corex-ui/static&quot;;
+
+initAccordion();
+initTabs();
+</code></pre>
+  </div>
+</div>
+<h3 id="example-2%3A-dynamic-content" tabindex="-1">
+  <a class="link" href="#example-2%3A-dynamic-content">#</a> Example 2: Dynamic
+  Content
+</h3>
+<p>
+  When loading content dynamically (e.g., via AJAX or a router), you can
+  initialize components after the new content is added to the DOM:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initAccordion, initTabs } from "@corex-ui/static";
+
+// Initialize on page load
+initAccordion();
+initTabs();
+
+// After loading new content dynamically
+async function loadPageContent(url: string) {
+  const response = await fetch(url);
+  const html = await response.text();
+  const container = document.querySelector("#content");
+  
+  if (container) {
+    container.innerHTML = html;
+    // Re-initialize components in the new content
+    initAccordion(container);
+    initTabs(container);
+  }
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initAccordion, initTabs } from &quot;@corex-ui/static&quot;;
+
+// Initialize on page load
+initAccordion();
+initTabs();
+
+// After loading new content dynamically
+async function loadPageContent(url: string) {
+  const response = await fetch(url);
+  const html = await response.text();
+  const container = document.querySelector(&quot;#content&quot;);
+  
+  if (container) {
+    container.innerHTML = html;
+    // Re-initialize components in the new content
+    initAccordion(container);
+    initTabs(container);
+  }
+}
+</code></pre>
+  </div>
+</div>
+<h3 id="example-3%3A-custom-selectors" tabindex="-1">
+  <a class="link" href="#example-3%3A-custom-selectors">#</a> Example 3: Custom
+  Selectors
+</h3>
+<p>
+  If you're using custom class names instead of the default selectors, you can
+  specify them:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initAccordion } from "@corex-ui/static";
+
+// Your HTML uses .faq-accordion instead of .accordion-js
+initAccordion(document, ".faq-accordion");
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initAccordion } from &quot;@corex-ui/static&quot;;
+
+// Your HTML uses .faq-accordion instead of .accordion-js
+initAccordion(document, &quot;.faq-accordion&quot;);
+</code></pre>
+  </div>
+</div>
+<p>
+  That's it! You've successfully upgraded from v0 to v1. The manual
+  initialization approach gives you more control and flexibility over when and
+  how your components are initialized.
+</p>

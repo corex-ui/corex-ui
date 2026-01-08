@@ -11,6 +11,7 @@ const navigation = {
         { label: "Astro", url: "/installation/astro" },
         { label: "Eleventy", url: "/installation/eleventy" },
         { label: "Serve", url: "/installation/serve" },
+        { label: "Upgrade", url: "/installation/updgrade" },
       ],
     },
     {
