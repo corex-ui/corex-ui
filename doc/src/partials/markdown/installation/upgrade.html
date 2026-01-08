@@ -465,8 +465,8 @@ if (container) {
       data-name="clipboard"
       data-default-value='function initComponentName(
   doc: HTMLElement | Document = document,
-  selector: string = ".component-js"
-): void
+  selector: string = ".component-js",
+): void;
 '
     >
       <div data-part="control">
@@ -514,8 +514,8 @@ if (container) {
     </div>
     <pre><code class="code-js" data-lang="ts">function initComponentName(
   doc: HTMLElement | Document = document,
-  selector: string = &quot;.component-js&quot;
-): void
+  selector: string = &quot;.component-js&quot;,
+): void;
 </code></pre>
   </div>
 </div>
@@ -677,7 +677,7 @@ async function loadPageContent(url: string) {
   const response = await fetch(url);
   const html = await response.text();
   const container = document.querySelector("#content");
-  
+
   if (container) {
     container.innerHTML = html;
     // Re-initialize components in the new content
@@ -741,7 +741,7 @@ async function loadPageContent(url: string) {
   const response = await fetch(url);
   const html = await response.text();
   const container = document.querySelector(&quot;#content&quot;);
-  
+
   if (container) {
     container.innerHTML = html;
     // Re-initialize components in the new content
