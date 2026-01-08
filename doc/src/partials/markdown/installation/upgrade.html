@@ -1,326 +1,43 @@
-<h1 id="astro-installation-guide" tabindex="-1">
-  <a class="link" href="#astro-installation-guide">#</a> Astro Installation
-  Guide
+<h1 id="upgrade-guide" tabindex="-1">
+  <a class="link" href="#upgrade-guide">#</a> Upgrade Guide
 </h1>
 <p>
-  Corex UI can be seamlessly integrated into your Astro projects. This guide
-  walks you through installing Corex UI packages, applying styles, using
-  components, and configuring the Corex Astro plugin for post-build hydration.
+  This guide will help you upgrade your Corex UI project from version 0 to
+  version 1. The main change is that components now require manual
+  initialization instead of auto-initializing when imported.
 </p>
-<h2 id="new-astro-project" tabindex="-1">
-  <a class="link" href="#new-astro-project">#</a> New Astro Project
-</h2>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="pnpm create astro@latest corex-astro-demo --yes
-cd corex-astro-demo
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">bash</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="bash">pnpm create astro@latest corex-astro-demo --yes
-cd corex-astro-demo
-</code></pre>
-  </div>
-</div>
-<h2 id="install-corex-ui" tabindex="-1">
-  <a class="link" href="#install-corex-ui">#</a> Install Corex UI
-</h2>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="pnpm add @corex-ui/static @corex-ui/design @corex-ui/astro tailwindcss @tailwindcss/vite
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">bash</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="bash">pnpm add @corex-ui/static @corex-ui/design @corex-ui/astro tailwindcss @tailwindcss/vite
-</code></pre>
-  </div>
-</div>
-<p><strong>Package Overview:</strong></p>
-<ul>
-  <li><code>@corex-ui/static</code> – Vanilla JS web components.</li>
-  <li>
-    <code>@corex-ui/design</code> – Design tokens, CSS variables, and optional
-    component styles.
-  </li>
-  <li>
-    <code>@corex-ui/astro</code> – Post-build hydration for Corex components.
-  </li>
-  <li>
-    <code>tailwindcss</code> + <code>@tailwindcss/vite</code> – Tailwind
-    integration.
-  </li>
-</ul>
-<h2 id="corex-components" tabindex="-1">
-  <a class="link" href="#corex-components">#</a> Corex Components
-</h2>
-<p>Import Corex components in your <code>src/pages/index.astro</code> file:</p>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='---
-import Welcome from &#39;../components/Welcome.astro&#39;;
-import Layout from &#39;../layouts/Layout.astro&#39;;
-import &#39;../style.css&#39;;
----
-
-&lt;Layout&gt;
-  &lt;Welcome /&gt;
-&lt;/Layout&gt;
-
-&lt;script&gt;
-  import { initAccordion } from "@corex-ui/static";
-  initAccordion();
-&lt;/script&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">astro</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="astro">---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import '../style.css';
----
-
-&lt;Layout&gt;
-  &lt;Welcome /&gt;
-&lt;/Layout&gt;
-
-&lt;script&gt;
-  import { initAccordion } from &quot;@corex-ui/static&quot;;
-  initAccordion();
-&lt;/script&gt;
-</code></pre>
-  </div>
-</div>
-<h2 id="tailwind-styles" tabindex="-1">
-  <a class="link" href="#tailwind-styles">#</a> Tailwind Styles
-</h2>
-<p>Apply Corex and Tailwind styles in <code>src/style.css</code>:</p>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='@import "tailwindcss";
-@import "@corex-ui/design";
-@import "@corex-ui/design/themes/neo/light.css";
-@import "@corex-ui/design/components/accordion.css";
-@import "@corex-ui/design/components/typo.css";
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">css</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="css">@import &quot;tailwindcss&quot;;
-@import &quot;@corex-ui/design&quot;;
-@import &quot;@corex-ui/design/themes/neo/light.css&quot;;
-@import &quot;@corex-ui/design/components/accordion.css&quot;;
-@import &quot;@corex-ui/design/components/typo.css&quot;;
-</code></pre>
-  </div>
-</div>
-<h2 id="astro-plugin" tabindex="-1">
-  <a class="link" href="#astro-plugin">#</a> Astro Plugin
+<h2 id="from-v0-to-v1" tabindex="-1">
+  <a class="link" href="#from-v0-to-v1">#</a> From v0 to v1
 </h2>
 <p>
-  Configure the Astro plugin in <code>astro.config.mjs</code> to hydrate Corex
-  components:
+  In <strong>v0</strong>, Corex UI components were automatically initialized
+  when you imported them. This made getting started easier, but limited
+  flexibility and control over when and how components were initialized.
 </p>
+<p>
+  In <strong>v1</strong>, you now have full control over component
+  initialization. You import the <code>initComponentName</code> functions and
+  call them manually when you're ready. This gives you:
+</p>
+<ul>
+  <li>Better control over initialization timing</li>
+  <li>Ability to initialize components in specific DOM contexts</li>
+  <li>Custom selector support for finding components</li>
+  <li>More predictable behavior and easier debugging</li>
+</ul>
+<h2 id="breaking-changes" tabindex="-1">
+  <a class="link" href="#breaking-changes">#</a> Breaking Changes
+</h2>
+<p><strong>Before (v0):</strong></p>
 
 <div class="preview">
   <div class="preview__code">
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='// @ts-check
-import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
-import corex from "@corex-ui/astro";
-
-export default defineConfig({
-  vite: {
-    // @ts-expect-error Vanilla JS https://github.com/withastro/roadmap/discussions/1174
-    plugins: [tailwindcss()],
-  },
-  integrations: [corex()],
-});
+      data-default-value='// Components auto-initialized on import
+import "@corex-ui/static/components/accordion";
+// Accordion is already initialized
 '
     >
       <div data-part="control">
@@ -366,108 +83,221 @@ export default defineConfig({
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">// @ts-check
-import tailwindcss from &quot;@tailwindcss/vite&quot;;
-import { defineConfig } from &quot;astro/config&quot;;
-import corex from &quot;@corex-ui/astro&quot;;
-
-export default defineConfig({
-  vite: {
-    // @ts-expect-error Vanilla JS https://github.com/withastro/roadmap/discussions/1174
-    plugins: [tailwindcss()],
-  },
-  integrations: [corex()],
-});
+    <pre><code class="code-js" data-lang="ts">// Components auto-initialized on import
+import &quot;@corex-ui/static/components/accordion&quot;;
+// Accordion is already initialized
 </code></pre>
   </div>
 </div>
-<p><strong>Plugin Features:</strong></p>
+<p><strong>After (v1):</strong></p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='// Import the init function
+import { initAccordion } from "@corex-ui/static";
+
+// Manually initialize when ready
+initAccordion();
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">// Import the init function
+import { initAccordion } from &quot;@corex-ui/static&quot;;
+
+// Manually initialize when ready
+initAccordion();
+</code></pre>
+  </div>
+</div>
+<h2 id="manual-initialization" tabindex="-1">
+  <a class="link" href="#manual-initialization">#</a> Manual Initialization
+</h2>
+<p>
+  In v1, each component has a corresponding
+  <code>initComponentName</code> function that you import and call. Available
+  init functions include:
+</p>
 <ul>
+  <li><code>initAccordion</code></li>
+  <li><code>initTabs</code></li>
+  <li><code>initDialog</code></li>
+  <li><code>initMenu</code></li>
+  <li><code>initSelect</code></li>
+  <li><code>initCheckbox</code></li>
+  <li><code>initSwitch</code></li>
+  <li><code>initRadioGroup</code></li>
+  <li>... and many more</li>
+</ul>
+<p>
+  You can import individual init functions or use <code>initAll</code> to
+  initialize all components at once (useful for development):
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initAccordion, initTabs, initDialog } from "@corex-ui/static";
+
+// Initialize specific components
+initAccordion();
+initTabs();
+initDialog();
+
+// Or initialize all components (development only)
+import { initAll } from "@corex-ui/static";
+initAll();
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initAccordion, initTabs, initDialog } from &quot;@corex-ui/static&quot;;
+
+// Initialize specific components
+initAccordion();
+initTabs();
+initDialog();
+
+// Or initialize all components (development only)
+import { initAll } from &quot;@corex-ui/static&quot;;
+initAll();
+</code></pre>
+  </div>
+</div>
+<h2 id="init-function-options" tabindex="-1">
+  <a class="link" href="#init-function-options">#</a> Init Function Options
+</h2>
+<p>
+  All <code>initComponentName</code> functions accept two optional parameters:
+</p>
+<h3 id="1.-doc-parameter" tabindex="-1">
+  <a class="link" href="#1.-doc-parameter">#</a> 1. <code>doc</code> Parameter
+</h3>
+<p>
+  The first parameter is the document or element to search within. This allows
+  you to initialize components within a specific DOM context.
+</p>
+<ul>
+  <li><strong>Type:</strong> <code>HTMLElement | Document</code></li>
   <li>
-    Executes after Astro finishes building (<code>closeBundle</code> hook).
+    <strong>Default:</strong> <code>document</code> (searches the entire
+    document)
   </li>
-  <li>Scans generated HTML to locate Corex components.</li>
-  <li>Hydrates components in a JSDOM instance.</li>
-  <li>Writes the hydrated HTML back to disk.</li>
 </ul>
-<h2 id="component-html" tabindex="-1">
-  <a class="link" href="#component-html">#</a> Component HTML
-</h2>
-<p>
-  Ensure your <code>&lt;html&gt;</code> tag includes
-  <code>data-theme=&quot;neo&quot;</code> and
-  <code>data-mode=&quot;light&quot;</code> in your component file:
-</p>
 
 <div class="preview">
   <div class="preview__code">
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='&lt;main&gt;
-  &lt;div class="accordion accordion-js"&gt;
-    &lt;div data-part="root"&gt;
-      &lt;div data-part="item" data-value="lorem"&gt;
-        &lt;h3&gt;
-          &lt;button data-part="item-trigger" data-value="lorem"&gt;
-            &lt;span data-part="item-text"&gt;Lorem ipsum dolor sit amet&lt;/span&gt;
-            &lt;span data-part="item-indicator" data-value="lorem"&gt;
-              &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;
-                &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
-              &lt;/svg&gt;
-            &lt;/span&gt;
-          &lt;/button&gt;
-        &lt;/h3&gt;
-        &lt;div data-part="item-content" data-value="lorem"&gt;
-          &lt;p&gt;
-            Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin quis risus feugiat tellus iaculis fringilla.
-          &lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
+      data-default-value='import { initAccordion } from "@corex-ui/static";
 
-      &lt;div data-part="item" data-value="duis"&gt;
-        &lt;h3&gt;
-          &lt;button data-part="item-trigger" data-value="duis"&gt;
-            &lt;span data-part="item-text"&gt;Duis dictum gravida odio ac pharetra?&lt;/span&gt;
-            &lt;span data-part="item-indicator" data-value="duis"&gt;
-              &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;
-                &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
-              &lt;/svg&gt;
-            &lt;/span&gt;
-          &lt;/button&gt;
-        &lt;/h3&gt;
-        &lt;div data-part="item-content" data-value="duis"&gt;
-          &lt;p&gt;
-            Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
-          &lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
+// Initialize in the entire document (default)
+initAccordion();
 
-      &lt;div data-part="item" data-value="donec"&gt;
-        &lt;h3&gt;
-          &lt;button data-part="item-trigger" data-value="donec"&gt;
-            &lt;span data-part="item-text"&gt;Donec condimentum ex mi&lt;/span&gt;
-            &lt;span data-part="item-indicator" data-value="donec"&gt;
-              &lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;
-                &lt;path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"&gt;&lt;/path&gt;
-              &lt;/svg&gt;
-            &lt;/span&gt;
-          &lt;/button&gt;
-        &lt;/h3&gt;
-        &lt;div data-part="item-content" data-value="donec"&gt;
-          &lt;p&gt;
-            Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis non, pellentesque elit. Pellentesque sagittis fermentum.
-          &lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/main&gt;
+// Initialize only within a specific container
+const container = document.querySelector("#my-container");
+if (container) {
+  initAccordion(container);
+}
+
+// Initialize within an iframe document
+const iframe = document.querySelector("iframe");
+if (iframe &amp;&amp; iframe.contentDocument) {
+  initAccordion(iframe.contentDocument);
+}
 '
     >
       <div data-part="control">
         <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">astro</span>
+          <span data-copy class="uppercase">ts</span>
           <span data-copied>Copied</span>
           <svg
             data-copy
@@ -508,306 +338,65 @@ export default defineConfig({
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="astro">&lt;main&gt;
-  &lt;div class=&quot;accordion accordion-js&quot;&gt;
-    &lt;div data-part=&quot;root&quot;&gt;
-      &lt;div data-part=&quot;item&quot; data-value=&quot;lorem&quot;&gt;
-        &lt;h3&gt;
-          &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;lorem&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot;&gt;Lorem ipsum dolor sit amet&lt;/span&gt;
-            &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;lorem&quot;&gt;
-              &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;currentColor&quot;&gt;
-                &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
-              &lt;/svg&gt;
-            &lt;/span&gt;
-          &lt;/button&gt;
-        &lt;/h3&gt;
-        &lt;div data-part=&quot;item-content&quot; data-value=&quot;lorem&quot;&gt;
-          &lt;p&gt;
-            Consectetur adipiscing elit. Sed sodales ullamcorper tristique. Proin quis risus feugiat tellus iaculis fringilla.
-          &lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
+    <pre><code class="code-js" data-lang="ts">import { initAccordion } from &quot;@corex-ui/static&quot;;
 
-      &lt;div data-part=&quot;item&quot; data-value=&quot;duis&quot;&gt;
-        &lt;h3&gt;
-          &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;duis&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot;&gt;Duis dictum gravida odio ac pharetra?&lt;/span&gt;
-            &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;duis&quot;&gt;
-              &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;currentColor&quot;&gt;
-                &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
-              &lt;/svg&gt;
-            &lt;/span&gt;
-          &lt;/button&gt;
-        &lt;/h3&gt;
-        &lt;div data-part=&quot;item-content&quot; data-value=&quot;duis&quot;&gt;
-          &lt;p&gt;
-            Nullam eget vestibulum ligula, at interdum tellus. Quisque feugiat, dui ut fermentum sodales, lectus metus dignissim ex.
-          &lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
+// Initialize in the entire document (default)
+initAccordion();
 
-      &lt;div data-part=&quot;item&quot; data-value=&quot;donec&quot;&gt;
-        &lt;h3&gt;
-          &lt;button data-part=&quot;item-trigger&quot; data-value=&quot;donec&quot;&gt;
-            &lt;span data-part=&quot;item-text&quot;&gt;Donec condimentum ex mi&lt;/span&gt;
-            &lt;span data-part=&quot;item-indicator&quot; data-value=&quot;donec&quot;&gt;
-              &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;currentColor&quot;&gt;
-                &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;m8.25 4.5 7.5 7.5-7.5 7.5&quot;&gt;&lt;/path&gt;
-              &lt;/svg&gt;
-            &lt;/span&gt;
-          &lt;/button&gt;
-        &lt;/h3&gt;
-        &lt;div data-part=&quot;item-content&quot; data-value=&quot;donec&quot;&gt;
-          &lt;p&gt;
-            Congue molestie ipsum gravida a. Sed ac eros luctus, cursus turpis non, pellentesque elit. Pellentesque sagittis fermentum.
-          &lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/main&gt;
+// Initialize only within a specific container
+const container = document.querySelector(&quot;#my-container&quot;);
+if (container) {
+  initAccordion(container);
+}
+
+// Initialize within an iframe document
+const iframe = document.querySelector(&quot;iframe&quot;);
+if (iframe &amp;&amp; iframe.contentDocument) {
+  initAccordion(iframe.contentDocument);
+}
 </code></pre>
   </div>
 </div>
-<h2 id="layout-html" tabindex="-1">
-  <a class="link" href="#layout-html">#</a> Layout HTML
-</h2>
-<p>Set up your main layout with Corex theming:</p>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;!doctype html&gt;
-&lt;html lang="en" data-theme="neo" data-mode="light"&gt;
-  &lt;head&gt;
-    &lt;meta charset="UTF-8" /&gt;
-    &lt;meta name="viewport" content="width=device-width" /&gt;
-    &lt;link rel="icon" type="image/svg+xml" href="/favicon.svg" /&gt;
-    &lt;meta name="generator" content={Astro.generator} /&gt;
-    &lt;title&gt;Astro Basics&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body class="typo"&gt;
-    &lt;slot /&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">astro</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="astro">&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot; data-theme=&quot;neo&quot; data-mode=&quot;light&quot;&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;
-    &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;/favicon.svg&quot; /&gt;
-    &lt;meta name=&quot;generator&quot; content={Astro.generator} /&gt;
-    &lt;title&gt;Astro Basics&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body class=&quot;typo&quot;&gt;
-    &lt;slot /&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-  </div>
-</div>
-<h2 id="build-app" tabindex="-1">
-  <a class="link" href="#build-app">#</a> Build App
-</h2>
+<h3 id="2.-selector-parameter" tabindex="-1">
+  <a class="link" href="#2.-selector-parameter">#</a> 2.
+  <code>selector</code> Parameter
+</h3>
 <p>
-  Now that Corex UI is integrated into your Astro project, you can run it
-  locally, build it for production, and preview the results.
-</p>
-<ol>
-  <li>Start the dev server:</li>
-</ol>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="pnpm dev
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">bash</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="bash">pnpm dev
-</code></pre>
-  </div>
-</div>
-<ol start="2">
-  <li>Build production:</li>
-</ol>
-
-<div class="preview">
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value="pnpm build
-"
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">bash</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <pre><code class="code-js" data-lang="bash">pnpm build
-</code></pre>
-  </div>
-</div>
-<p>
-  During this process, the
-  <strong>Corex Astro plugin runs in the <code>closeBundle</code> step</strong>:
+  The second parameter is the CSS selector used to find component root elements.
+  Each component has a default selector, but you can customize it.
 </p>
 <ul>
-  <li>It scans your built HTML for Corex components.</li>
-  <li>Hydrates them in a JSDOM instance.</li>
-  <li>Writes the updated markup back to disk.</li>
+  <li><strong>Type:</strong> <code>string</code></li>
+  <li>
+    <strong>Default:</strong> Component-specific (e.g.,
+    <code>&quot;.accordion-js&quot;</code> for accordion,
+    <code>&quot;.tabs-js&quot;</code> for tabs)
+  </li>
 </ul>
-<p>
-  This ensures your Corex web components are
-  <strong>interactive out of the box</strong>, even in the static output.
-</p>
-<ol start="3">
-  <li>Preview production</li>
-</ol>
-<p>To test your production build locally:</p>
 
 <div class="preview">
   <div class="preview__code">
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value="pnpm preview
-"
+      data-default-value='import { initAccordion } from "@corex-ui/static";
+
+// Use default selector (.accordion-js)
+initAccordion();
+
+// Use custom selector
+initAccordion(document, ".my-custom-accordion");
+
+// Combine both: custom container + custom selector
+const container = document.querySelector("#app");
+if (container) {
+  initAccordion(container, ".accordion");
+}
+'
     >
       <div data-part="control">
         <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">bash</span>
+          <span data-copy class="uppercase">ts</span>
           <span data-copied>Copied</span>
           <svg
             data-copy
@@ -848,12 +437,393 @@ export default defineConfig({
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="bash">pnpm preview
+    <pre><code class="code-js" data-lang="ts">import { initAccordion } from &quot;@corex-ui/static&quot;;
+
+// Use default selector (.accordion-js)
+initAccordion();
+
+// Use custom selector
+initAccordion(document, &quot;.my-custom-accordion&quot;);
+
+// Combine both: custom container + custom selector
+const container = document.querySelector(&quot;#app&quot;);
+if (container) {
+  initAccordion(container, &quot;.accordion&quot;);
+}
 </code></pre>
   </div>
 </div>
-<p>Visit the printed URL (usually <code>http://localhost:4321</code>).</p>
+<h3 id="function-signature" tabindex="-1">
+  <a class="link" href="#function-signature">#</a> Function Signature
+</h3>
+<p>The complete function signature for all init functions is:</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='function initComponentName(
+  doc: HTMLElement | Document = document,
+  selector: string = ".component-js",
+): void;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">function initComponentName(
+  doc: HTMLElement | Document = document,
+  selector: string = &quot;.component-js&quot;,
+): void;
+</code></pre>
+  </div>
+</div>
+<h2 id="migration-examples" tabindex="-1">
+  <a class="link" href="#migration-examples">#</a> Migration Examples
+</h2>
+<h3 id="example-1%3A-basic-migration" tabindex="-1">
+  <a class="link" href="#example-1%3A-basic-migration">#</a> Example 1: Basic
+  Migration
+</h3>
+<p><strong>v0 Code:</strong></p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='// main.ts (v0)
+import "@corex-ui/static/components/accordion";
+import "@corex-ui/static/components/tabs";
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">// main.ts (v0)
+import &quot;@corex-ui/static/components/accordion&quot;;
+import &quot;@corex-ui/static/components/tabs&quot;;
+</code></pre>
+  </div>
+</div>
+<p><strong>v1 Code:</strong></p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='// main.ts (v1)
+import { initAccordion, initTabs } from "@corex-ui/static";
+
+initAccordion();
+initTabs();
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">// main.ts (v1)
+import { initAccordion, initTabs } from &quot;@corex-ui/static&quot;;
+
+initAccordion();
+initTabs();
+</code></pre>
+  </div>
+</div>
+<h3 id="example-2%3A-dynamic-content" tabindex="-1">
+  <a class="link" href="#example-2%3A-dynamic-content">#</a> Example 2: Dynamic
+  Content
+</h3>
 <p>
-  This serves the optimized files from the <code>dist/</code> folder.<br />
-  Always preview your build before deployment
+  When loading content dynamically (e.g., via AJAX or a router), you can
+  initialize components after the new content is added to the DOM:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initAccordion, initTabs } from "@corex-ui/static";
+
+// Initialize on page load
+initAccordion();
+initTabs();
+
+// After loading new content dynamically
+async function loadPageContent(url: string) {
+  const response = await fetch(url);
+  const html = await response.text();
+  const container = document.querySelector("#content");
+
+  if (container) {
+    container.innerHTML = html;
+    // Re-initialize components in the new content
+    initAccordion(container);
+    initTabs(container);
+  }
+}
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initAccordion, initTabs } from &quot;@corex-ui/static&quot;;
+
+// Initialize on page load
+initAccordion();
+initTabs();
+
+// After loading new content dynamically
+async function loadPageContent(url: string) {
+  const response = await fetch(url);
+  const html = await response.text();
+  const container = document.querySelector(&quot;#content&quot;);
+
+  if (container) {
+    container.innerHTML = html;
+    // Re-initialize components in the new content
+    initAccordion(container);
+    initTabs(container);
+  }
+}
+</code></pre>
+  </div>
+</div>
+<h3 id="example-3%3A-custom-selectors" tabindex="-1">
+  <a class="link" href="#example-3%3A-custom-selectors">#</a> Example 3: Custom
+  Selectors
+</h3>
+<p>
+  If you're using custom class names instead of the default selectors, you can
+  specify them:
+</p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initAccordion } from "@corex-ui/static";
+
+// Your HTML uses .faq-accordion instead of .accordion-js
+initAccordion(document, ".faq-accordion");
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initAccordion } from &quot;@corex-ui/static&quot;;
+
+// Your HTML uses .faq-accordion instead of .accordion-js
+initAccordion(document, &quot;.faq-accordion&quot;);
+</code></pre>
+  </div>
+</div>
+<p>
+  That's it! You've successfully upgraded from v0 to v1. The manual
+  initialization approach gives you more control and flexibility over when and
+  how your components are initialized.
 </p>

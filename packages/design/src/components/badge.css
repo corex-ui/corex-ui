@@ -9,7 +9,7 @@
     cursor: unset;
     width: fit-content;
     max-width: 100%;
-    font-size: var(--text-ui);
+    font-size: calc(var(--text-ui) * 0.8);
     line-height: var(--text-ui--line-height);
     font-weight: var(--font-weight-ui);
     border-radius: var(--radius-full);
@@ -55,13 +55,13 @@
 }
 
 @utility badge--* {
-  font-size: --value(--text-ui-*, [length]);
-  line-height: --value(--text-ui-* --line-height, [length]);
+  font-size: calc(--value(--text-ui-*, [length]) * 0.8);
+  line-height: calc(--value(--text-ui-* --line-height, [length]) * 0.8);
   height: calc(--value(--spacing-ui-*, [length]) * 0.8);
   background-color: --value(--color-ui-*, [color]);
   color: --value(--color-ui-* --text, [color]);
-  padding-inline: --value(--spacing-mini-padding-*, [length]);
-  gap: --value(--spacing-mini-gap-*, [length]);
+  padding-inline: calc(--value(--spacing-mini-padding-*, [length]) * 0.8);
+  gap: calc(--value(--spacing-mini-gap-*, [length]) * 0.8);
 
   :disabled,
   [data-disabled] {

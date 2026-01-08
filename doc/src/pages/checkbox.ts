@@ -1,6 +1,7 @@
 import "../main.ts";
-import "@corex-ui/static/components/checkbox";
+import { initCheckbox } from "@corex-ui/static";
 import "@corex-ui/design/components/checkbox.css";
+initCheckbox();
 
 document
   .getElementById("my-checkbox")

@@ -1,13 +1,13 @@
 import * as passwordInput from "@zag-js/password-input";
 import { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
 import {
   Component,
-  VanillaMachine,
   getString,
   generateId,
-  normalizeProps,
   renderPart,
   getBoolean,
+  getPartIds,
 } from "../lib";
 export class PasswordInput extends Component<
   passwordInput.Props,
@@ -31,13 +31,22 @@ export class PasswordInput extends Component<
     for (const part of parts) renderPart(this.el, part, this.api);
   }
 }
-export function initializePasswordInput(
+export function initPasswordInput(
   doc: HTMLElement | Document = document,
+  selector = ".password-input-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".password-input-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const passwordInput = new PasswordInput(rootEl, {
       id: generateId(rootEl, "passwordInput"),
+      ids: getPartIds(rootEl, [
+        "root",
+        "input",
+        "label",
+        "control",
+        "indicator",
+        "visibility-trigger",
+      ]),
       dir: getString<Direction>(rootEl, "dir", directions),
       autoComplete: getString(rootEl, "autoComplete", [
         "current-password",
@@ -60,13 +69,4 @@ export function initializePasswordInput(
     });
     passwordInput.init();
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializePasswordInput(document),
-    );
-  } else {
-    initializePasswordInput(document);
-  }
 }

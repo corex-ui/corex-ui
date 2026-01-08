@@ -1,13 +1,7 @@
 import * as avatar from "@zag-js/avatar";
 import { Direction } from "@zag-js/types";
-import {
-  Component,
-  VanillaMachine,
-  getString,
-  generateId,
-  normalizeProps,
-  renderPart,
-} from "../lib";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+import { Component, getString, generateId, renderPart } from "../lib";
 export class Avatar extends Component<avatar.Props, avatar.Api> {
   initMachine(props: avatar.Props): VanillaMachine<any> {
     return new VanillaMachine(avatar.machine, props);
@@ -20,8 +14,11 @@ export class Avatar extends Component<avatar.Props, avatar.Api> {
     for (const part of parts) renderPart(this.el, part, this.api);
   }
 }
-export function initializeAvatar(doc: HTMLElement | Document = document): void {
-  doc.querySelectorAll<HTMLElement>(".avatar-js").forEach((rootEl) => {
+export function initAvatar(
+  doc: HTMLElement | Document = document,
+  selector = ".avatar-js",
+): void {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const avatar = new Avatar(rootEl, {
       id: generateId(rootEl, "avatar"),
@@ -35,13 +32,4 @@ export function initializeAvatar(doc: HTMLElement | Document = document): void {
     });
     avatar.init();
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeAvatar(document),
-    );
-  } else {
-    initializeAvatar(document);
-  }
 }

@@ -1,5 +1,11 @@
 # @corex-ui/design
 
+## 1.0.0
+
+### Major Changes
+
+- Upgrade to Vanilla package
+
 ## 0.2.2
 
 ### Patch Changes

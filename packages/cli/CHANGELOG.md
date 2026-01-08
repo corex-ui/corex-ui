@@ -1,5 +1,16 @@
 # @corex-ui/cli
 
+## 1.0.0
+
+### Major Changes
+
+- Upgrade to Vanilla package
+
+### Patch Changes
+
+- Updated dependencies
+  - @corex-ui/static@1.0.0
+
 ## 0.2.2
 
 ### Patch Changes

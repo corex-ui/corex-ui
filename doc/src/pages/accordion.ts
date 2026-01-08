@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/accordion";
+import { initAccordion } from "@corex-ui/static";
 import "./accordion.css";
+
+initAccordion();
 
 // Events
 document

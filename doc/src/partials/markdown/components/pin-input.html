@@ -136,24 +136,417 @@
   </div>
 </div>
 <hr />
-<h2 id="installation" tabindex="-1">
-  <a class="link" href="#installation">#</a> Installation
+<h2 id="data-attributes" tabindex="-1">
+  <a class="link" href="#data-attributes">#</a> Data attributes
 </h2>
 <p>
-  First, complete the Corex UI
-  <a href="/installation/introduction" class="link">initial installation</a>
-  guide for your platform, bundler, or framework.
+  Each Pin Input can be set with different settings with the following
+  data-attribute.
 </p>
-<ol>
-  <li>Import the component</li>
-</ol>
 
+<div class="preview">
+  <div class="preview__display">
+    <div
+      class="pin-input pin-input-js"
+      id="custom-pin-input"
+      data-auto-focus
+      data-blur-on-complete
+      data-default-value="1,2,3,4,5"
+      data-dir="ltr"
+      data-disabled
+      data-form="my-form"
+      data-invalid
+      data-mask
+      data-name="pin"
+      data-otp
+      data-pattern="[0-9]"
+      data-placeholder="0"
+      data-read-only
+      data-required
+      data-select-on-focus
+      data-type="numeric"
+      data-value="1,2,3,4,5"
+    >
+      <div data-part="root">
+        <label data-part="label">Enter Pin</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <input data-part="input" />
+          <input data-part="input" />
+          <input data-part="input" />
+          <input data-part="input" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  class="pin-input pin-input-js"
+  id="custom-pin-input"
+  data-auto-focus
+  data-blur-on-complete
+  data-default-value="1,2,3,4,5"
+  data-dir="ltr"
+  data-disabled
+  data-form="my-form"
+  data-invalid
+  data-mask
+  data-name="pin"
+  data-otp
+  data-pattern="[0-9]"
+  data-placeholder="0"
+  data-read-only
+  data-required
+  data-select-on-focus
+  data-type="numeric"
+  data-value="1,2,3,4,5"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Enter Pin&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  class=&quot;pin-input pin-input-js&quot;
+  id=&quot;custom-pin-input&quot;
+  data-auto-focus
+  data-blur-on-complete
+  data-default-value=&quot;1,2,3,4,5&quot;
+  data-dir=&quot;ltr&quot;
+  data-disabled
+  data-form=&quot;my-form&quot;
+  data-invalid
+  data-mask
+  data-name=&quot;pin&quot;
+  data-otp
+  data-pattern=&quot;[0-9]&quot;
+  data-placeholder=&quot;0&quot;
+  data-read-only
+  data-required
+  data-select-on-focus
+  data-type=&quot;numeric&quot;
+  data-value=&quot;1,2,3,4,5&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Enter Pin&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>id</strong><br />
+  Type: <code>string</code><br />
+  Description: Unique id of the pin input. Default generated if none is
+  provided.
+</p>
+<p>
+  <strong>data-dir</strong><br />
+  Type: <code>string</code><br />
+  Description: The text direction of the component. Can be <code>ltr</code> or
+  <code>rtl</code>.
+</p>
+<p>
+  <strong>data-auto-focus</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to automatically focus the first input on mount.
+</p>
+<p>
+  <strong>data-blur-on-complete</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to blur the input when all fields are filled.
+</p>
+<p>
+  <strong>data-default-value</strong><br />
+  Type: <code>string[]</code><br />
+  Description: Initial default value of the pin input when rendered. Use when
+  you don't need to control the value. Format: comma-separated values (e.g.,
+  <code>&quot;1,2,3,4,5&quot;</code>).
+</p>
+<p>
+  <strong>data-disabled</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether the pin input is disabled.
+</p>
+<p>
+  <strong>data-form</strong><br />
+  Type: <code>string</code><br />
+  Description: The id of the associated <code>&lt;form&gt;</code> element (for
+  form submission).
+</p>
+<p>
+  <strong>data-invalid</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Marks the input as invalid (useful for validation styling/ARIA).
+</p>
+<p>
+  <strong>data-mask</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to mask the input values (useful for password-like pins).
+</p>
+<p>
+  <strong>data-name</strong><br />
+  Type: <code>string</code><br />
+  Description: Name attribute for form submissions.
+</p>
+<p>
+  <strong>data-otp</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether this is an OTP (One-Time Password) input (affects
+  autocomplete behavior).
+</p>
+<p>
+  <strong>data-pattern</strong><br />
+  Type: <code>string</code><br />
+  Description: Regex pattern to validate each input character.
+</p>
+<p>
+  <strong>data-placeholder</strong><br />
+  Type: <code>string</code><br />
+  Description: Placeholder text for empty inputs.
+</p>
+<p>
+  <strong>data-read-only</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Makes the input read-only (cannot be edited but not disabled).
+</p>
+<p>
+  <strong>data-required</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Marks the input as required for form validation.
+</p>
+<p>
+  <strong>data-select-on-focus</strong><br />
+  Type: <code>boolean</code><br />
+  Description: Whether to select the input value when focused.
+</p>
+<p>
+  <strong>data-type</strong><br />
+  Type:
+  <code
+    >&quot;alphanumeric&quot; | &quot;numeric&quot; |
+    &quot;alphabetic&quot;</code
+  ><br />
+  Description: Type of characters allowed in the input.
+</p>
+<p>
+  <strong>data-value</strong><br />
+  Type: <code>string[]</code><br />
+  Description: Controlled value of the pin input (used in controlled
+  components). Format: comma-separated values (e.g.,
+  <code>&quot;1,2,3,4,5&quot;</code>).
+</p>
+<hr />
+<h2 id="event-callbacks" tabindex="-1">
+  <a class="link" href="#event-callbacks">#</a> Event Callbacks
+</h2>
+<p>
+  Each Pin Input component can receive callbacks that can be used to respond to
+  user interaction with custom behavior.
+</p>
+<p>
+  You must add a custom id for the pin input and an event listener for your
+  event name
+</p>
+<blockquote>
+  <p>
+    Open your browser's console to see the events received when the pin input
+    value changes
+  </p>
+</blockquote>
+
+<div class="preview">
+  <div class="preview__display">
+    <div
+      id="my-pin-input"
+      class="pin-input pin-input-js"
+      data-on-value-change="my-pin-input-change-event"
+      data-on-value-complete="my-pin-input-complete-event"
+      data-on-value-invalid="my-pin-input-invalid-event"
+    >
+      <div data-part="root">
+        <label data-part="label">Enter Pin</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <input data-part="input" />
+          <input data-part="input" />
+          <input data-part="input" />
+          <input data-part="input" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;div
+  id="my-pin-input"
+  class="pin-input pin-input-js"
+  data-on-value-change="my-pin-input-change-event"
+  data-on-value-complete="my-pin-input-complete-event"
+  data-on-value-invalid="my-pin-input-invalid-event"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Enter Pin&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;input data-part="input" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;div
+  id=&quot;my-pin-input&quot;
+  class=&quot;pin-input pin-input-js&quot;
+  data-on-value-change=&quot;my-pin-input-change-event&quot;
+  data-on-value-complete=&quot;my-pin-input-complete-event&quot;
+  data-on-value-invalid=&quot;my-pin-input-invalid-event&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Enter Pin&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
 <div class="preview">
   <div class="preview__code">
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/pin-input";
+      data-default-value='document
+  .getElementById("my-pin-input")
+  ?.addEventListener("my-pin-input-change-event", (event) =&gt; {
+    console.log("Value changed:", (event as CustomEvent).detail);
+  });
+
+document
+  .getElementById("my-pin-input")
+  ?.addEventListener("my-pin-input-complete-event", (event) =&gt; {
+    console.log("Value complete:", (event as CustomEvent).detail);
+  });
+
+document
+  .getElementById("my-pin-input")
+  ?.addEventListener("my-pin-input-invalid-event", (event) =&gt; {
+    console.log("Value invalid:", (event as CustomEvent).detail);
+  });
 '
     >
       <div data-part="control">
@@ -199,12 +592,113 @@
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/pin-input&quot;;
+    <pre><code class="code-js" data-lang="ts">document
+  .getElementById(&quot;my-pin-input&quot;)
+  ?.addEventListener(&quot;my-pin-input-change-event&quot;, (event) =&gt; {
+    console.log(&quot;Value changed:&quot;, (event as CustomEvent).detail);
+  });
+
+document
+  .getElementById(&quot;my-pin-input&quot;)
+  ?.addEventListener(&quot;my-pin-input-complete-event&quot;, (event) =&gt; {
+    console.log(&quot;Value complete:&quot;, (event as CustomEvent).detail);
+  });
+
+document
+  .getElementById(&quot;my-pin-input&quot;)
+  ?.addEventListener(&quot;my-pin-input-invalid-event&quot;, (event) =&gt; {
+    console.log(&quot;Value invalid:&quot;, (event as CustomEvent).detail);
+  });
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  <strong>data-on-value-change</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when the pin input value changes.
+</p>
+<p>
+  <strong>data-on-value-complete</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when all pin input fields are filled.
+</p>
+<p>
+  <strong>data-on-value-invalid</strong><br />
+  Type: <code>string</code><br />
+  Description: Event name to be sent when the pin input value is invalid.
+</p>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
+<ol>
+  <li>Import and initialize the component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initPinInput } from "@corex-ui/static";
+initPinInput();
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initPinInput } from &quot;@corex-ui/static&quot;;
+initPinInput();
+</code></pre>
+  </div>
+</div>
+<p>
+  This will initialize all elements with
   <code>class=&quot;pin-input-js&quot;</code> and add the necessary interaction
   behavior.
 </p>

@@ -1,16 +1,25 @@
 import "./main.css";
-import "@corex-ui/static/components/dialog";
-import "@corex-ui/static/components/tree-view";
-import "@corex-ui/static/components/site-search";
-import "@corex-ui/static/components/menu";
-import "@corex-ui/static/components/listbox";
-import "@corex-ui/static/components/code";
-import "@corex-ui/static/components/clipboard";
-import "@corex-ui/static/components/toggle-group";
-import "@corex-ui/static/components/select";
+import {
+  initDialog,
+  initTreeView,
+  initSiteSearch,
+  initMenu,
+  initListbox,
+  initCode,
+  initClipboard,
+  initToggleGroup,
+  initSelect,
+  type Pagefind,
+} from "@corex-ui/static";
 
-import { initializeSiteSearch } from "@corex-ui/static/components/site-search";
-import type { Pagefind } from "@corex-ui/static/components/site-search";
+initDialog();
+initTreeView();
+initMenu();
+initListbox();
+initCode();
+initClipboard();
+initToggleGroup();
+initSelect();
 
 (async () => {
   try {
@@ -19,9 +28,9 @@ import type { Pagefind } from "@corex-ui/static/components/site-search";
     await pagefind.options({
       excerptLength: 5,
     });
-    initializeSiteSearch(pagefind, window.document);
+    initSiteSearch(pagefind);
   } catch (error) {
-    console.error("Failed to initialize Pagefind:", error);
+    console.error("Failed to init Pagefind:", error);
   }
 })();
 

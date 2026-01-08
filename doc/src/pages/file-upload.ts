@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/file-upload";
+import { initFileUpload } from "@corex-ui/static";
 import "./file-upload.css";
+
+initFileUpload();
 import { createClient } from "@supabase/supabase-js";
 const supabase = createClient(
   "https://pmbmemytehehldnvtetd.supabase.co",

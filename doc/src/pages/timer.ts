@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/timer";
+import { initTimer } from "@corex-ui/static";
 import "@corex-ui/design/components/timer.css";
+
+initTimer();
 
 document
   .getElementById("my-timer")

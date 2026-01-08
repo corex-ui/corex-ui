@@ -1,13 +1,12 @@
 import * as carousel from "@zag-js/carousel";
 import type { Direction, Orientation } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
 import {
   Component,
-  VanillaMachine,
   getString,
   getBoolean,
   getNumber,
   generateId,
-  normalizeProps,
   renderPart,
 } from "../lib";
 
@@ -63,10 +62,11 @@ export class Carousel extends Component<carousel.Props, carousel.Api> {
   }
 }
 
-export function initializeCarousel(
+export function initCarousel(
   doc: HTMLElement | Document = document,
+  selector = ".carousel-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".carousel-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const orientations = ["horizontal", "vertical"] as const;
     const snapTypes = ["proximity", "mandatory"] as const;
@@ -115,14 +115,4 @@ export function initializeCarousel(
 
     carousel.init();
   });
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeCarousel(document),
-    );
-  } else {
-    initializeCarousel(document);
-  }
 }

@@ -1279,7 +1279,7 @@ if (toggleGroupState) {
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -1287,7 +1287,8 @@ if (toggleGroupState) {
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/toggle-group";
+      data-default-value='import { initToggleGroup } from "@corex-ui/static";
+initToggleGroup();
 '
     >
       <div data-part="control">
@@ -1333,12 +1334,13 @@ if (toggleGroupState) {
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/toggle-group&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initToggleGroup } from &quot;@corex-ui/static&quot;;
+initToggleGroup();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;toggle-group-js&quot;</code> and add the necessary
   interaction behavior.
 </p>

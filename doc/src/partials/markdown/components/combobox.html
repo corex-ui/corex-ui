@@ -485,8 +485,8 @@
   <a class="link" href="#load-from-json">#</a> Load from JSON
 </h2>
 <p>
-  You can initialize the Combobox component by embedding your JSON data directly
-  in your HTML using a <code>&lt;script&gt;</code> tag with
+  You can init the Combobox component by embedding your JSON data directly in
+  your HTML using a <code>&lt;script&gt;</code> tag with
   <code>type=&quot;application/json&quot;</code> and a unique
   <code>data-combobox</code> attribute. Then, reference this JSON in your
   Combobox container via the corresponding <code>data-json</code> attribute.
@@ -6268,7 +6268,7 @@ if (formCurrency &amp;&amp; resultCurrency) {
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -6276,7 +6276,8 @@ if (formCurrency &amp;&amp; resultCurrency) {
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/combobox";
+      data-default-value='import { initCombobox } from "@corex-ui/static";
+initCombobox();
 '
     >
       <div data-part="control">
@@ -6322,12 +6323,13 @@ if (formCurrency &amp;&amp; resultCurrency) {
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/combobox&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initCombobox } from &quot;@corex-ui/static&quot;;
+initCombobox();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;combobox-js&quot;</code> and add the necessary interaction
   behavior.
 </p>

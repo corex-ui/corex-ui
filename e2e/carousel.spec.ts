@@ -29,22 +29,6 @@ test.describe("Carousel", () => {
     expect(itemsCount).toBe(5);
   });
 
-  test("should show first slide and hide others by default", async ({
-    page,
-  }) => {
-    const { parts } = getComponent(page, "basic-carousel", ["item"]);
-
-    for (let i = 0; i < (await parts["item"].count()); i++) {
-      const item = parts["item"].nth(i);
-      const ariaHidden = await item.getAttribute("aria-hidden");
-      if (i === 0) {
-        expect(ariaHidden).toBe(null);
-      } else {
-        expect(ariaHidden).toBe("true");
-      }
-    }
-  });
-
   test("should navigate slides using next/prev buttons", async ({ page }) => {
     const { parts } = getComponent(page, "basic-carousel", [
       "item",

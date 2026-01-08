@@ -1,12 +1,12 @@
 import * as accordion from "@zag-js/accordion";
 import type { Direction, Orientation } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   getBoolean,
   generateId,
-  normalizeProps,
   renderPart,
   getStringList,
   getPartIds,
@@ -44,10 +44,11 @@ export class Accordion extends Component<accordion.Props, accordion.Api> {
   }
 }
 
-export function initializeAccordion(
+export function initAccordion(
   doc: HTMLElement | Document = document,
+  selector = ".accordion-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".accordion-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const items = rootEl.querySelectorAll<HTMLElement>('[data-part="item"]');
     items.forEach((itemEl, index) => {
       let value = getString(itemEl, "value");
@@ -93,7 +94,8 @@ export function initializeAccordion(
 
     accordion.el.addEventListener("accordion:set-value", (event) => {
       const { value } = (event as CustomEvent<{ value: string[] }>).detail;
-      if (!arraysEqualUnordered(accordion.api.value, value)) {
+      const current = accordion.api.value;
+      if (!arraysEqualUnordered(current, value)) {
         accordion.api.setValue(value);
       }
     });
@@ -102,7 +104,9 @@ export function initializeAccordion(
       const callback = (
         event as CustomEvent<{ callback: (value: string[]) => void }>
       ).detail.callback;
-      if (callback) callback(accordion.api.value);
+      if (callback && typeof callback === "function") {
+        callback(accordion.api.value);
+      }
     });
 
     accordion.el.addEventListener("accordion:focused-value", (event) => {
@@ -112,12 +116,4 @@ export function initializeAccordion(
       if (callback) callback(accordion.api.focusedValue);
     });
   });
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => initializeAccordion());
-  } else {
-    initializeAccordion();
-  }
 }

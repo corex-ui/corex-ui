@@ -1,3 +1,5 @@
 import "../main.ts";
-import "@corex-ui/static/components/clipboard";
+import { initClipboard } from "@corex-ui/static";
 import "@corex-ui/design/components/clipboard.css";
+
+initClipboard();

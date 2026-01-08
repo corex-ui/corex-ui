@@ -35,7 +35,7 @@ test.describe("Avatar", () => {
     const fallbackHidden = await parts["fallback"]
       .first()
       .getAttribute("hidden");
-    expect(fallbackHidden).toBe("true");
+    expect(fallbackHidden).toBe("");
 
     expect(await parts["image"].first().getAttribute("alt")).toBe("Corex HTML");
   });

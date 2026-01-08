@@ -1938,24 +1938,256 @@ if (form &amp;&amp; resultCurrency) {
   </div>
 </div>
 <hr />
-<h2 id="installation" tabindex="-1">
-  <a class="link" href="#installation">#</a> Installation
-</h2>
-<p>
-  First, complete the Corex UI
-  <a href="/installation/introduction" class="link">initial installation</a>
-  guide for your platform, bundler, or framework.
-</p>
-<ol>
-  <li>Import the component</li>
-</ol>
+<h2 id="api" tabindex="-1"><a class="link" href="#api">#</a> API</h2>
+<p>You can interact with the Number Input API by dispatching custom events.</p>
 
+<div class="preview">
+  <div class="preview__display">
+    <button data-action="number-input-set-value" data-value="42" class="button">
+      Set to 42
+    </button>
+    <button data-action="number-input-value" class="button">
+      Get current value
+    </button>
+    <div
+      id="number-input-api"
+      class="number-input number-input-js"
+      data-default-value="10"
+    >
+      <div data-part="root">
+        <label data-part="label">Enter Number</label>
+        <div data-part="control">
+          <input data-part="input" />
+          <div data-part="trigger-group">
+            <button data-part="increment-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            </button>
+            <button data-part="decrement-trigger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='&lt;button data-action="number-input-set-value" data-value="42" class="button"&gt;
+  Set to 42
+&lt;/button&gt;
+&lt;button data-action="number-input-value" class="button"&gt;
+  Get current value
+&lt;/button&gt;
+&lt;div
+  id="number-input-api"
+  class="number-input number-input-js"
+  data-default-value="10"
+&gt;
+  &lt;div data-part="root"&gt;
+    &lt;label data-part="label"&gt;Enter Number&lt;/label&gt;
+    &lt;div data-part="control"&gt;
+      &lt;input data-part="input" /&gt;
+      &lt;div data-part="trigger-group"&gt;
+        &lt;button data-part="increment-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 15.75 7.5-7.5 7.5 7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part="decrement-trigger"&gt;
+          &lt;svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          &gt;
+            &lt;path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">html</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="html">&lt;button data-action=&quot;number-input-set-value&quot; data-value=&quot;42&quot; class=&quot;button&quot;&gt;
+  Set to 42
+&lt;/button&gt;
+&lt;button data-action=&quot;number-input-value&quot; class=&quot;button&quot;&gt;
+  Get current value
+&lt;/button&gt;
+&lt;div
+  id=&quot;number-input-api&quot;
+  class=&quot;number-input number-input-js&quot;
+  data-default-value=&quot;10&quot;
+&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;label data-part=&quot;label&quot;&gt;Enter Number&lt;/label&gt;
+    &lt;div data-part=&quot;control&quot;&gt;
+      &lt;input data-part=&quot;input&quot; /&gt;
+      &lt;div data-part=&quot;trigger-group&quot;&gt;
+        &lt;button data-part=&quot;increment-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m4.5 15.75 7.5-7.5 7.5 7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;button data-part=&quot;decrement-trigger&quot;&gt;
+          &lt;svg
+            xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            fill=&quot;none&quot;
+            viewBox=&quot;0 0 24 24&quot;
+            stroke-width=&quot;1.5&quot;
+            stroke=&quot;currentColor&quot;
+          &gt;
+            &lt;path
+              stroke-linecap=&quot;round&quot;
+              stroke-linejoin=&quot;round&quot;
+              d=&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;
+            /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
 <div class="preview">
   <div class="preview__code">
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/number-input";
+      data-default-value='const numberInputState = document.getElementById("number-input-api");
+if (numberInputState) {
+  const buttons = document.querySelectorAll&lt;HTMLButtonElement&gt;(
+    &#39;button[data-action="number-input-set-value"]&#39;,
+  );
+  buttons.forEach((button) =&gt; {
+    button.addEventListener("click", () =&gt; {
+      const value = button.dataset.value;
+      if (value &amp;&amp; !isNaN(Number(value))) {
+        numberInputState.dispatchEvent(
+          new CustomEvent("number-input:set-value", {
+            detail: { value },
+            bubbles: true,
+          }),
+        );
+      }
+    });
+  });
+  const getBtns = document.querySelectorAll&lt;HTMLButtonElement&gt;(
+    &#39;button[data-action="number-input-value"]&#39;,
+  );
+  getBtns.forEach((btn) =&gt;
+    btn.addEventListener("click", () =&gt; {
+      numberInputState.dispatchEvent(
+        new CustomEvent("number-input:value", {
+          detail: {
+            callback: (value: string) =&gt; {
+              alert("Number Input value: " + value);
+            },
+          },
+        }),
+      );
+    }),
+  );
+} else {
+  console.warn("Element with ID &#39;number-input-api&#39; not found");
+}
 '
     >
       <div data-part="control">
@@ -2001,12 +2233,128 @@ if (form &amp;&amp; resultCurrency) {
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/number-input&quot;;
+    <pre><code class="code-js" data-lang="ts">const numberInputState = document.getElementById(&quot;number-input-api&quot;);
+if (numberInputState) {
+  const buttons = document.querySelectorAll&lt;HTMLButtonElement&gt;(
+    'button[data-action=&quot;number-input-set-value&quot;]',
+  );
+  buttons.forEach((button) =&gt; {
+    button.addEventListener(&quot;click&quot;, () =&gt; {
+      const value = button.dataset.value;
+      if (value &amp;&amp; !isNaN(Number(value))) {
+        numberInputState.dispatchEvent(
+          new CustomEvent(&quot;number-input:set-value&quot;, {
+            detail: { value },
+            bubbles: true,
+          }),
+        );
+      }
+    });
+  });
+  const getBtns = document.querySelectorAll&lt;HTMLButtonElement&gt;(
+    'button[data-action=&quot;number-input-value&quot;]',
+  );
+  getBtns.forEach((btn) =&gt;
+    btn.addEventListener(&quot;click&quot;, () =&gt; {
+      numberInputState.dispatchEvent(
+        new CustomEvent(&quot;number-input:value&quot;, {
+          detail: {
+            callback: (value: string) =&gt; {
+              alert(&quot;Number Input value: &quot; + value);
+            },
+          },
+        }),
+      );
+    }),
+  );
+} else {
+  console.warn(&quot;Element with ID 'number-input-api' not found&quot;);
+}
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  <strong>number-input:set-value</strong><br />
+  Type: <code>string</code><br />
+  Description: Sets the value of the number input
+</p>
+<p>
+  <strong>number-input:value</strong><br />
+  Type: <code>callback</code><br />
+  Description: Get the current value of the number input
+</p>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  First, complete the Corex UI
+  <a href="/installation/introduction" class="link">initial installation</a>
+  guide for your platform, bundler, or framework.
+</p>
+<ol>
+  <li>Import and initialize the component</li>
+</ol>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value='import { initNumberInput } from "@corex-ui/static";
+initNumberInput();
+'
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">ts</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="ts">import { initNumberInput } from &quot;@corex-ui/static&quot;;
+initNumberInput();
+</code></pre>
+  </div>
+</div>
+<p>
+  This will initialize all elements with
   <code>class=&quot;number-input-js&quot;</code> and add the necessary
   interaction behavior.
 </p>

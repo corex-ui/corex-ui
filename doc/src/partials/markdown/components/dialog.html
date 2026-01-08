@@ -1039,7 +1039,7 @@ if (dialogState) {
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -1047,7 +1047,8 @@ if (dialogState) {
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/dialog";
+      data-default-value='import { initDialog } from "@corex-ui/static";
+initDialog();
 '
     >
       <div data-part="control">
@@ -1093,12 +1094,13 @@ if (dialogState) {
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/dialog&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initDialog } from &quot;@corex-ui/static&quot;;
+initDialog();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;dialog-js&quot;</code> and add the necessary interaction
   behavior.
 </p>

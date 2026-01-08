@@ -1,13 +1,13 @@
 import * as editable from "@zag-js/editable";
 import type { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   getBoolean,
   getNumber,
   generateId,
-  normalizeProps,
   renderPart,
   valuesEqual,
 } from "../lib";
@@ -31,10 +31,11 @@ export class Editable extends Component<editable.Props, editable.Api> {
     for (const part of parts) renderPart(this.el, part, this.api);
   }
 }
-export function initializeEditable(
+export function initEditable(
   doc: HTMLElement | Document = document,
+  selector = ".editable-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".editable-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const activationModes = ["focus", "dblclick", "click", "none"] as const;
     const submitModes = ["enter", "blur", "both", "none"] as const;
     const directions = ["ltr", "rtl"] as const;
@@ -109,13 +110,4 @@ export function initializeEditable(
       }
     });
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeEditable(document),
-    );
-  } else {
-    initializeEditable(document);
-  }
 }

@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/password-input";
+import { initPasswordInput } from "@corex-ui/static";
 import "@corex-ui/design/components/password-input.css";
+
+initPasswordInput();
 
 document
   .getElementById("my-password-input")

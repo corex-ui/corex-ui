@@ -2105,7 +2105,7 @@ if (angleSlider) {
   guide for your platform, bundler, or framework.
 </p>
 <ol>
-  <li>Import the component</li>
+  <li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
@@ -2113,7 +2113,8 @@ if (angleSlider) {
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='import "@corex-ui/static/components/angle-slider";
+      data-default-value='import { initAngleSlider } from "@corex-ui/static";
+initAngleSlider();
 '
     >
       <div data-part="control">
@@ -2159,12 +2160,13 @@ if (angleSlider) {
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="ts">import &quot;@corex-ui/static/components/angle-slider&quot;;
+    <pre><code class="code-js" data-lang="ts">import { initAngleSlider } from &quot;@corex-ui/static&quot;;
+initAngleSlider();
 </code></pre>
   </div>
 </div>
 <p>
-  This will automatically initialize all elements with
+  This will initialize all elements with
   <code>class=&quot;angle-slider-js&quot;</code> and add the necessary
   interaction behavior.
 </p>

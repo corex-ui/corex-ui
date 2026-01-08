@@ -45,7 +45,7 @@ test.describe("Listbox rendering", () => {
       const indicator = parts["item-indicator"].nth(i);
       await expect(indicator).toHaveAttribute("aria-hidden", "true");
       await expect(indicator).toHaveAttribute("data-state", "unchecked");
-      await expect(indicator).toHaveAttribute("hidden", "true");
+      await expect(indicator).toHaveAttribute("hidden", "");
     }
   });
   test("should select first item on click and show indicator", async ({
@@ -73,7 +73,7 @@ test.describe("Listbox rendering", () => {
       );
       await expect(parts["item-indicator"].nth(i)).toHaveAttribute(
         "hidden",
-        "true",
+        "",
       );
     }
   });

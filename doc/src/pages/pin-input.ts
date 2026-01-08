@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/pin-input";
+import { initPinInput } from "@corex-ui/static";
 import "@corex-ui/design/components/pin-input.css";
+
+initPinInput();
 
 document
   .getElementById("my-pin-input")
@@ -20,3 +22,21 @@ if (form && resultCurrency) {
     resultCurrency.textContent = `Number entered: ${pin}`;
   });
 }
+
+document
+  .getElementById("my-pin-input")
+  ?.addEventListener("my-pin-input-change-event", (event) => {
+    console.log("Value changed:", (event as CustomEvent).detail);
+  });
+
+document
+  .getElementById("my-pin-input")
+  ?.addEventListener("my-pin-input-complete-event", (event) => {
+    console.log("Value complete:", (event as CustomEvent).detail);
+  });
+
+document
+  .getElementById("my-pin-input")
+  ?.addEventListener("my-pin-input-invalid-event", (event) => {
+    console.log("Value invalid:", (event as CustomEvent).detail);
+  });

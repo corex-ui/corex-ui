@@ -319,7 +319,7 @@ test.describe("Accordion", () => {
         await parts["item-trigger"].nth(0).getAttribute("aria-expanded"),
       ).toBe("false");
       expect(await parts["item-content"].nth(0).getAttribute("hidden")).toBe(
-        "true",
+        "",
       );
 
       // After clicking

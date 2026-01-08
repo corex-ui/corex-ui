@@ -128,7 +128,7 @@ export async function processHtmlFile(htmlFilePath: string, targetFiles: string[
       // eslint-disable-next-line no-await-in-loop
       const uiModule: Record<string, unknown> = await import(`${fileUrl}?cache_bust=${Date.now()}`)
       const initName =
-        'initialize' +
+        'init' +
         baseName
           .split('-')
           .map((s) => s[0].toUpperCase() + s.slice(1))

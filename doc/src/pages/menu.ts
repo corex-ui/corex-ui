@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/menu";
+import { initMenu } from "@corex-ui/static";
 import "@corex-ui/design/components/menu.css";
+
+initMenu();
 
 document
   .getElementById("my-menu")

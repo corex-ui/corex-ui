@@ -24,8 +24,16 @@ mkdir corex-serve-demo && cd corex-serve-demo && pnpm init --init-type module &&
 
 ## Install Corex UI
 
+**Install Corex UI Styled**
+
 ```bash
-pnpm add @corex-ui/static @corex-ui/design @corex-ui/cli tailwindcss @tailwindcss/cli
+pnpm add @corex-ui/static @corex-ui/design @corex-ui/vite tailwindcss @tailwindcss/vite
+```
+
+**Install Corex UI Unstyled**
+
+```bash
+pnpm add @corex-ui/static @corex-ui/vite
 ```
 
 **Package Overview:**
@@ -51,10 +59,26 @@ Apply Corex and Tailwind styles in `src/style.css`:
 
 Configure build scripts in `package.json`:
 
+**Option 1: Use main index bundle (Recommended for multiple components)**
+
 ```json
 "scripts": {
   "clean": "rimraf dist",
-  "copy:accordion": "cpx 'node_modules/@corex-ui/static/dist/components/accordion.min.mjs*' dist/js/corex-ui",
+  "copy:corex": "cpx 'node_modules/@corex-ui/static/dist/index.min.mjs' dist/js/corex-ui",
+  "copy": "cpx 'src/**/*.{html,js,png,jpg,svg,json}' dist && run-s copy:*",
+  "tailwind": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css",
+  "corex": "pnpm corex-ui render dist",
+  "build": "pnpm run clean && pnpm run copy && pnpm run tailwind && pnpm run corex",
+  "preview": "npx serve dist -l 3000"
+}
+```
+
+**Option 2: Use individual component bundles (For single component or tree-shaking)**
+
+```json
+"scripts": {
+  "clean": "rimraf dist",
+  "copy:accordion": "cpx 'node_modules/@corex-ui/static/dist/components/accordion.min.mjs' dist/js/corex-ui",
   "copy": "cpx 'src/**/*.{html,js,png,jpg,svg,json}' dist && run-s copy:*",
   "tailwind": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css",
   "corex": "pnpm corex-ui render dist",
@@ -179,7 +203,19 @@ Create your main page in `src/index.html` with Corex theming:
         </div>
       </div>
     </main>
-    <script type="module" src="/js/corex-ui/accordion.min.mjs"></script>
+    <script type="module">
+      // Option 1: Import from main index bundle (recommended)
+      import { initAccordion } from "/js/corex-ui/index.min.mjs";
+      initAccordion();
+
+      // Option 2: Import from individual component bundle
+      // import { initAccordion } from "/js/corex-ui/accordion.min.mjs";
+      // initAccordion();
+
+      // For development/testing with multiple components, use initAll():
+      // import { initAll } from "/js/corex-ui/index.min.mjs";
+      // initAll();
+    </script>
   </body>
 </html>
 ```

@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/date-picker";
+import { initDatePicker } from "@corex-ui/static";
 import "@corex-ui/design/components/date-picker.css";
+
+initDatePicker();
 
 document
   .getElementById("my-date-picker")

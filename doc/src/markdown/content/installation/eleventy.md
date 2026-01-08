@@ -199,7 +199,10 @@ Create your main page in `src/index.html` with Corex theming:
         </div>
       </div>
     </main>
-    <script type="module" src="/js/corex-ui/accordion.min.mjs"></script>
+    <script type="module">
+      import { initAccordion } from "/js/corex-ui/accordion.min.mjs";
+      initAccordion();
+    </script>
   </body>
 </html>
 ```

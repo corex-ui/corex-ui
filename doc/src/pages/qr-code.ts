@@ -1,3 +1,11 @@
 import "../main.ts";
-import "@corex-ui/static/components/qr-code";
+import { initQrCode } from "@corex-ui/static";
 import "./qr-code.css";
+
+initQrCode();
+
+document
+  .getElementById("my-qr-code")
+  ?.addEventListener("my-qr-code-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });

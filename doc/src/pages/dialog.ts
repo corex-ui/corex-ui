@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/dialog";
+import { initDialog } from "@corex-ui/static";
 import "@corex-ui/design/components/dialog.css";
+
+initDialog();
 
 // Events
 document

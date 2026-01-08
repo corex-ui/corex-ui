@@ -1,43 +1,42 @@
 import * as toast from "@zag-js/toast";
+import { VanillaMachine, normalizeProps, spreadProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
-  normalizeProps,
   renderPart,
   generateId,
-  spreadProps,
   getString,
   getNumber,
 } from "../lib";
-import { bindable } from "../lib/bindable";
+
 import type { Placement, StatusChangeDetails } from "@zag-js/toast";
+
+const toastInstances = new WeakMap<HTMLElement, Toast>();
+const toastStores = new WeakMap<HTMLElement, any>();
+
 export class ToastItem extends Component<
   toast.Options<any> & { parent: any; index: number },
   toast.Api
 > {
-  actor: toast.Options<any> & { parent: any; index: number };
-  index = bindable.ref(0);
-  private isDestroyed = false;
   constructor(
     el: HTMLElement,
     actor: toast.Options<any> & { parent: any; index: number },
   ) {
     super(el, actor);
-    this.actor = actor;
   }
-  initMachine(props: toast.Options<any> & { parent: any; index: number }) {
-    return new VanillaMachine(toast.machine, { ...props });
+
+  initMachine(props: toast.Props): VanillaMachine<any> {
+    return new VanillaMachine(toast.machine, props);
   }
   initApi(): toast.Api {
     return toast.connect(this.machine.service, normalizeProps);
   }
   destroy = () => {
-    this.isDestroyed = true;
     this.machine.stop();
     this.el.remove();
   };
   render() {
-    if (this.isDestroyed) return;
+    if (!this.el.isConnected) return;
     const rootProps = this.api.getRootProps();
     spreadProps(this.el, rootProps);
     if (!this.el.innerHTML) {
@@ -107,7 +106,6 @@ export class Toast extends Component<toast.GroupProps, toast.GroupApi> {
       toastComp.init();
       this.toastComponents.set(toastActor.id, toastComp);
     }
-    toastComp.index.set(index);
     toastComp.render();
   }
   render() {
@@ -126,11 +124,44 @@ export class Toast extends Component<toast.GroupProps, toast.GroupApi> {
     this.toastComponents = newToastMap;
   }
 }
-export function initializeToast(
+
+export function createToastGroup(
+  container: HTMLElement,
+  options?: {
+    id?: string;
+    store?: ReturnType<typeof toast.createStore>;
+    placement?: Placement;
+    overlap?: boolean;
+    max?: number;
+    gap?: number;
+    offsets?: string | Record<"left" | "right" | "bottom" | "top", string>;
+  },
+): { group: Toast; store: ReturnType<typeof toast.createStore> } {
+  const groupId = options?.id || generateId(container, "toast");
+  const store =
+    options?.store ||
+    toast.createStore({
+      placement: options?.placement || "bottom-end",
+      overlap: options?.overlap,
+      max: options?.max,
+      gap: options?.gap,
+      offsets: options?.offsets,
+    });
+
+  const toastInstance = new Toast(container, { id: groupId, store });
+  toastInstance.init();
+  toastInstances.set(container, toastInstance);
+  toastStores.set(container, store);
+
+  return { group: toastInstance, store };
+}
+
+export function initToast(
   doc: HTMLElement | Document = document,
+  selector = ".toast-js",
 ): Toast | null {
   let toastInstance: Toast | null = null;
-  doc.querySelectorAll<HTMLElement>(".toast-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const groupId = generateId(rootEl, "toast");
     const placements = [
       "top-start",
@@ -153,8 +184,8 @@ export function initializeToast(
     });
     toastInstance = new Toast(rootEl, { id: groupId, store });
     toastInstance.init();
-    (rootEl as any).__toastInstance = toastInstance;
-    (rootEl as any).__toastStore = store;
+    toastInstances.set(rootEl, toastInstance);
+    toastStores.set(rootEl, store);
   });
   return toastInstance;
 }
@@ -172,9 +203,10 @@ export function createToast(options: {
 
   if (options.groupId) {
     const el = document.getElementById(options.groupId);
-    store = (el as any)?.__toastStore;
+    store = el ? toastStores.get(el) : undefined;
   } else {
-    store = (document.querySelector(".toast-js") as any)?.__toastStore;
+    const el = document.querySelector<HTMLElement>(".toast-js");
+    store = el ? toastStores.get(el) : undefined;
   }
 
   if (!store) throw new Error("No toast store found");
@@ -211,31 +243,21 @@ export function updateToast(
     type?: "info" | "success" | "error" | "warning" | "loading";
   }>,
 ) {
-  const stores = document.querySelectorAll(".toast-js");
+  const stores = document.querySelectorAll<HTMLElement>(".toast-js");
   if (!stores.length) throw new Error("No toast store found");
 
-  stores.forEach((el: any) => {
-    const store = el.__toastStore;
+  stores.forEach((el) => {
+    const store = toastStores.get(el);
     if (store) store.update(id, options);
   });
 }
 
 export function dismissToast(id: string) {
-  const stores = document.querySelectorAll(".toast-js");
+  const stores = document.querySelectorAll<HTMLElement>(".toast-js");
   if (!stores.length) throw new Error("No toast store found");
 
-  stores.forEach((el: any) => {
-    const store = el.__toastStore;
+  stores.forEach((el) => {
+    const store = toastStores.get(el);
     if (store) store.dismiss(id);
   });
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeToast(document),
-    );
-  } else {
-    initializeToast(document);
-  }
 }

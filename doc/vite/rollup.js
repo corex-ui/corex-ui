@@ -8,6 +8,7 @@ export const rollupInput = (dirname) => ({
   astro: resolve(dirname, "installation/astro.html"),
   eleventy: resolve(dirname, "installation/eleventy.html"),
   serve: resolve(dirname, "installation/serve.html"),
+  upgrade: resolve(dirname, "installation/upgrade.html"),
   figma: resolve(dirname, "guides/figma.html"),
   llms: resolve(dirname, "guides/llms.html"),
   penpot: resolve(dirname, "guides/penpot.html"),

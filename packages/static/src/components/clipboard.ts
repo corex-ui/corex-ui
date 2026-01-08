@@ -1,10 +1,10 @@
 import * as clipboard from "@zag-js/clipboard";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   generateId,
-  normalizeProps,
   renderPart,
   getNumber,
 } from "../lib";
@@ -20,10 +20,11 @@ export class Clipboard extends Component<clipboard.Props, clipboard.Api> {
     for (const part of parts) renderPart(this.el, part, this.api);
   }
 }
-export function initializeClipboard(
+export function initClipboard(
   doc: HTMLElement | Document = document,
+  selector = ".clipboard-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".clipboard-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const clipboard = new Clipboard(rootEl, {
       id: generateId(rootEl, "clipboard"),
       defaultValue: getString(rootEl, "defaultValue"),
@@ -44,13 +45,4 @@ export function initializeClipboard(
     });
     clipboard.init();
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeClipboard(document),
-    );
-  } else {
-    initializeClipboard(document);
-  }
 }

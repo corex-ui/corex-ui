@@ -1,8 +1,6 @@
 import "../main.ts";
-import "@corex-ui/static/components/site-search";
+import { initSiteSearch } from "@corex-ui/static";
 import "@corex-ui/design/components/site-search.css";
-
-import { initializeSiteSearch } from "@corex-ui/static/components/site-search";
 import type { Pagefind } from "vite-plugin-pagefind/types";
 // createInfoToast('Hello', 'This is a toast message');
 // createInfoToast('Hello2', 'This is a toast message3');
@@ -14,8 +12,8 @@ import type { Pagefind } from "vite-plugin-pagefind/types";
       excerptLength: 5,
       highlightParam: "highlight",
     });
-    initializeSiteSearch(pagefind, window.document);
+    initSiteSearch(pagefind, window.document);
   } catch (error) {
-    console.error("Failed to initialize Pagefind:", error);
+    console.error("Failed to init Pagefind:", error);
   }
 })();

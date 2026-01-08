@@ -1,15 +1,13 @@
 import * as toggleGroup from "@zag-js/toggle-group";
 import type { Direction, Orientation } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
 import {
   Component,
-  VanillaMachine,
   getString,
   getStringList,
   getBoolean,
   generateId,
-  normalizeProps,
   renderPart,
-  renderItem,
   arraysEqualUnordered,
 } from "../lib";
 export class ToggleGroup extends Component<toggleGroup.Props, toggleGroup.Api> {
@@ -22,14 +20,20 @@ export class ToggleGroup extends Component<toggleGroup.Props, toggleGroup.Api> {
   render() {
     const parts = ["root"];
     for (const part of parts) renderPart(this.el, part, this.api);
-    const items = ["item"];
-    for (const item of items) renderItem(this.el, item, this.api);
+
+    const items = this.el.querySelectorAll<HTMLElement>('[data-part="item"]');
+    items.forEach((itemEl) => {
+      const value = getString(itemEl, "value");
+      const disabled = getBoolean(itemEl, "disabled");
+      renderPart(itemEl, "item", this.api, { value, disabled });
+    });
   }
 }
-export function initializeToggleGroup(
+export function initToggleGroup(
   doc: HTMLElement | Document = document,
+  selector = ".toggle-group-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".toggle-group-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const orientations = ["horizontal", "vertical"] as const;
     const toggleGroup = new ToggleGroup(rootEl, {
@@ -68,13 +72,4 @@ export function initializeToggleGroup(
       }
     });
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeToggleGroup(document),
-    );
-  } else {
-    initializeToggleGroup(document);
-  }
 }

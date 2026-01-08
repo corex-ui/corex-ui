@@ -574,13 +574,14 @@ Description: Event name triggered when the panel stage changes (`minimized`, `ma
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the component
+1. Import and initialize the component
 
 ```ts
-import "@corex-ui/static/components/floating-panel";
+import { initFloatingPanel } from "@corex-ui/static";
+initFloatingPanel();
 ```
 
-This will automatically initialize all elements with `class="floating-panel-js"` and add the necessary interaction behavior.
+This will initialize all elements with `class="floating-panel-js"` and add the necessary interaction behavior.
 
 2. Add styling
 

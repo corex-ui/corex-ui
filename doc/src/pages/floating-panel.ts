@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/floating-panel";
+import { initFloatingPanel } from "@corex-ui/static";
 import "@corex-ui/design/components/floating-panel.css";
+
+initFloatingPanel();
 
 document
   .getElementById("my-floating panel")

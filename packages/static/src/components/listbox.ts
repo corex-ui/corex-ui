@@ -1,10 +1,10 @@
 import * as listbox from "@zag-js/listbox";
 import type { Direction, Orientation } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   generateId,
-  normalizeProps,
   renderPart,
   getString,
   getStringList,
@@ -223,9 +223,7 @@ export class Listbox extends Component<listbox.Props, listbox.Api> {
   }
 }
 
-export function initializeListbox(
-  doc: HTMLElement | Document = document,
-): void {
+export function initListbox(doc: HTMLElement | Document = document): void {
   doc.querySelectorAll<HTMLElement>(".listbox-js").forEach((rootEl) => {
     const groupElements = rootEl.querySelectorAll<HTMLElement>(
       '[data-part="item-group"]',
@@ -343,24 +341,4 @@ export function initializeListbox(
     listboxComponent.groups = groups;
     listboxComponent.init();
   });
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeListbox(document),
-    );
-  } else {
-    initializeListbox(document);
-  }
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeListbox(document),
-    );
-  } else {
-    initializeListbox(document);
-  }
 }

@@ -1,12 +1,12 @@
 import * as angleSlider from "@zag-js/angle-slider";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   getBoolean,
   getNumber,
   generateId,
-  normalizeProps,
   renderPart,
   getPartIds,
   valuesEqual,
@@ -49,10 +49,11 @@ export class AngleSlider extends Component<angleSlider.Props, angleSlider.Api> {
     }
   }
 }
-export function initializeAngleSlider(
+export function initAngleSlider(
   doc: HTMLElement | Document = document,
+  selector = ".angle-slider-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".angle-slider-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const angleSlider = new AngleSlider(rootEl, {
       id: generateId(rootEl, "angleSlider"),
       ids: getPartIds(rootEl, [
@@ -105,13 +106,4 @@ export function initializeAngleSlider(
       if (callback) callback(angleSlider.api.valueAsDegree);
     });
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeAngleSlider(),
-    );
-  } else {
-    initializeAngleSlider();
-  }
 }

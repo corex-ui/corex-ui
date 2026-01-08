@@ -1,12 +1,11 @@
 import * as dialog from "@zag-js/dialog";
 import type { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
 import {
   Component,
-  VanillaMachine,
   getString,
   getBoolean,
   generateId,
-  normalizeProps,
   renderPart,
   valuesEqual,
 } from "../lib";
@@ -33,8 +32,11 @@ export class Dialog extends Component<dialog.Props, dialog.Api> {
     }
   }
 }
-export function initializeDialog(doc: HTMLElement | Document = document): void {
-  doc.querySelectorAll<HTMLElement>(".dialog-js").forEach((rootEl) => {
+export function initDialog(
+  doc: HTMLElement | Document = document,
+  selector = ".dialog-js",
+): void {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const roles = ["dialog", "alertdialog"] as const;
     const dialog = new Dialog(rootEl, {
@@ -74,13 +76,4 @@ export function initializeDialog(doc: HTMLElement | Document = document): void {
       }
     });
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeDialog(document),
-    );
-  } else {
-    initializeDialog(document);
-  }
 }

@@ -1,16 +1,14 @@
 import * as datePicker from "@zag-js/date-picker";
 import type { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps, spreadProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   generateId,
-  normalizeProps,
   renderPart,
-  // renderItem,
   getNumber,
   getStringList,
-  spreadProps,
   getBoolean,
 } from "../lib";
 import {
@@ -416,10 +414,11 @@ export class DatePicker extends Component<datePicker.Props, datePicker.Api> {
     });
   }
 }
-export function initializeDatePicker(
+export function initDatePicker(
   doc: HTMLElement | Document = document,
+  selector = ".date-picker-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".date-picker-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const selectionModes = ["single", "multiple", "range"] as const;
     const views = ["day", "month", "year"] as const;
@@ -564,13 +563,4 @@ export function initializeDatePicker(
     });
     datePickerComponent.init();
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeDatePicker(document),
-    );
-  } else {
-    initializeDatePicker(document);
-  }
 }

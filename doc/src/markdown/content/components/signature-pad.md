@@ -305,13 +305,14 @@ if (signaturePadForm && signatureResult) {
 
 First, complete the Corex UI [initial installation](/installation/introduction) guide for your platform, bundler, or framework.
 
-1. Import the component
+1. Import and initialize the component
 
 ```ts
-import "@corex-ui/static/components/signature-pad";
+import { initSignaturePad } from "@corex-ui/static";
+initSignaturePad();
 ```
 
-This will automatically initialize all elements with `class="signature-pad-js"` and add the necessary interaction behavior.
+This will initialize all elements with `class="signature-pad-js"` and add the necessary interaction behavior.
 
 2. Add styling
 

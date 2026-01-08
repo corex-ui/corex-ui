@@ -1,14 +1,13 @@
 import * as menu from "@zag-js/menu";
 import type { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps, spreadProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
-  spreadProps,
   getString,
   getNumber,
   getBoolean,
   generateId,
-  normalizeProps,
   renderPart,
 } from "../lib";
 
@@ -281,11 +280,14 @@ export class Menu extends Component<menu.Props, menu.Api> {
 
 let hasInitialized = false;
 
-export function initializeMenu(doc: HTMLElement | Document = document): void {
+export function initMenu(
+  doc: HTMLElement | Document = document,
+  selector = ".menu-js",
+): void {
   if (hasInitialized) return;
   hasInitialized = true;
 
-  doc.querySelectorAll<HTMLElement>(".menu-js").forEach((rootEl, menuIndex) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl, menuIndex) => {
     const groupElements = rootEl.querySelectorAll<HTMLElement>(
       '[data-part="item-group"]',
     );
@@ -331,19 +333,21 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
   });
 
   const menusMap = new Map<string, Menu>();
-  doc.querySelectorAll<HTMLElement>(".menu-js[data-json]").forEach((rootEl) => {
-    const id = generateId(rootEl, "menu");
-    const jsonPath = getString(rootEl, "json");
+  doc
+    .querySelectorAll<HTMLElement>(`${selector}[data-json]`)
+    .forEach((rootEl) => {
+      const id = generateId(rootEl, "menu");
+      const jsonPath = getString(rootEl, "json");
 
-    if (jsonPath) {
-      const tempInstance = new Menu(rootEl, { id });
-      tempInstance.renderFromJson();
-      tempInstance.domInitialized = true;
-    }
-  });
+      if (jsonPath) {
+        const tempInstance = new Menu(rootEl, { id });
+        tempInstance.renderFromJson();
+        tempInstance.domInitialized = true;
+      }
+    });
 
   doc
-    .querySelectorAll<HTMLElement>(".menu-js:not([data-json])")
+    .querySelectorAll<HTMLElement>(`${selector}:not([data-json])`)
     .forEach((rootEl) => {
       const placements = [
         "top",
@@ -483,7 +487,7 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
   menusMap.forEach((menu) => menu.init());
 
   setTimeout(() => {
-    doc.querySelectorAll<HTMLElement>(".menu-js").forEach((rootEl) => {
+    doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
       const id = rootEl.id || generateId(rootEl, "menu");
       if (!menusMap.has(id) && rootEl.dataset.parent) {
         const instance = new Menu(rootEl, { id });
@@ -518,14 +522,4 @@ export function initializeMenu(doc: HTMLElement | Document = document): void {
       });
     }, 10);
   }, 0);
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeMenu(document),
-    );
-  } else {
-    initializeMenu(document);
-  }
 }

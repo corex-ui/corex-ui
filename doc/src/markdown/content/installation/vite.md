@@ -26,8 +26,16 @@ pnpm install
 
 ## Install Corex UI
 
+**Install Corex UI Styled**
+
 ```bash
 pnpm add @corex-ui/static @corex-ui/design @corex-ui/vite tailwindcss @tailwindcss/vite
+```
+
+**Install Corex UI Unstyled**
+
+```bash
+pnpm add @corex-ui/static @corex-ui/vite
 ```
 
 **Package Overview:**
@@ -44,10 +52,12 @@ Import Corex components in your `src/main.ts` file:
 ```ts
 import "./style.css";
 // Import only the components you need
-import "@corex-ui/static/components/accordion";
+import { initAccordion } from "@corex-ui/static";
+initAccordion();
 
 // Or import all components ONLY during development
-// import "@corex-ui/static"
+// import { initAll } from "@corex-ui/static";
+// initAll();
 ```
 
 ## Tailwind Styles

@@ -1,14 +1,13 @@
 import * as fileUpload from "@zag-js/file-upload";
 import type { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
 
 import {
   Component,
-  VanillaMachine,
   generateId,
   getBoolean,
   getString,
   getNumber,
-  normalizeProps,
   renderPart,
 } from "../lib";
 
@@ -33,7 +32,7 @@ export class FileUpload extends Component<fileUpload.Props, fileUpload.Api> {
     ].forEach((part) => renderPart(this.el, part, this.api));
   }
 }
-export function initializeFileUpload(doc: HTMLElement | Document = document) {
+export function initFileUpload(doc: HTMLElement | Document = document) {
   doc.querySelectorAll<HTMLElement>(".file-upload-js").forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
     const fileUploadComponent = new FileUpload(rootEl, {
@@ -70,14 +69,4 @@ export function initializeFileUpload(doc: HTMLElement | Document = document) {
 
     fileUploadComponent.init();
   });
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      initializeFileUpload(document),
-    );
-  } else {
-    initializeFileUpload(document);
-  }
 }

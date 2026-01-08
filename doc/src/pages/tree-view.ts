@@ -1,6 +1,8 @@
 import "../main.ts";
-import "@corex-ui/static/components/tree-view";
+import { initTreeView } from "@corex-ui/static";
 import "@corex-ui/design/components/tree-view.css";
+
+initTreeView();
 
 document
   .getElementById("my-tree-view")

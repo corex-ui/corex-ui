@@ -1,12 +1,12 @@
 import * as checkbox from "@zag-js/checkbox";
 import type { Direction } from "@zag-js/types";
+import { VanillaMachine, normalizeProps } from "@zag-js/vanilla";
+
 import {
   Component,
-  VanillaMachine,
   getString,
   getBoolean,
   generateId,
-  normalizeProps,
   renderPart,
   getPartIds,
 } from "../lib";
@@ -31,10 +31,11 @@ function parseCheckedState(
   if (getBoolean(el, attr) === true) return true;
   return getString(el, attr, ["indeterminate"] as const);
 }
-export function initializeCheckbox(
+export function initCheckbox(
   doc: HTMLElement | Document = document,
+  selector = ".checkbox-js",
 ): void {
-  doc.querySelectorAll<HTMLElement>(".checkbox-js").forEach((rootEl) => {
+  doc.querySelectorAll<HTMLElement>(selector).forEach((rootEl) => {
     const checkbox = new Checkbox(rootEl, {
       id: generateId(rootEl, "checkbox"),
       ids: getPartIds(rootEl, [
@@ -103,11 +104,4 @@ export function initializeCheckbox(
       if (typeof callback === "function") callback(checkbox.api.checkedState);
     });
   });
-}
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => initializeCheckbox());
-  } else {
-    initializeCheckbox();
-  }
 }
