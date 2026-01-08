@@ -203,6 +203,7 @@
     outline: none;
     border: 1px solid var(--color-ui--muted);
   }
+
   &:disabled,
   &[data-disabled],
   &[data-disabled="true"],
