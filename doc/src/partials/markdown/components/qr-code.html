@@ -46,7 +46,7 @@
 
 <div class="preview">
   <div class="preview__display">
-    <div class="qr-code qr-code-js" data-value="https://corex-ui.com/">
+    <div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/">
       <div data-part="root">
         <svg data-part="frame">
           <path data-part="pattern" />
@@ -61,7 +61,7 @@
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='&lt;div class="qr-code qr-code-js" data-value="https://corex-ui.com/"&gt;
+      data-default-value='&lt;div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/"&gt;
   &lt;div data-part="root"&gt;
     &lt;svg data-part="frame"&gt;
       &lt;path data-part="pattern" /&gt;
@@ -116,7 +116,7 @@
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;qr-code qr-code-js&quot; data-value=&quot;https://corex-ui.com/&quot;&gt;
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;qr-code qr-code-js&quot; data-default-value=&quot;https://corex-ui.com/&quot;&gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;svg data-part=&quot;frame&quot;&gt;
       &lt;path data-part=&quot;pattern&quot; /&gt;
@@ -143,12 +143,10 @@
     <div
       class="qr-code qr-code-js"
       id="custom-qr-code"
-      data-default-value="https://corex-ui.com/"
       data-dir="ltr"
       data-pixel-size="8"
-      data-value="https://corex-ui.com/"
+      data-default-value="https://corex-ui.com/"
       data-boost-ecc
-      data-border="4"
       data-ecc="M"
       data-invert
       data-mask-pattern="0"
@@ -172,12 +170,10 @@
       data-default-value='&lt;div
   class="qr-code qr-code-js"
   id="custom-qr-code"
-  data-default-value="https://corex-ui.com/"
   data-dir="ltr"
   data-pixel-size="8"
-  data-value="https://corex-ui.com/"
+  data-default-value="https://corex-ui.com/"
   data-boost-ecc
-  data-border="4"
   data-ecc="M"
   data-invert
   data-mask-pattern="0"
@@ -241,12 +237,10 @@
     <pre><code class="code-js" data-lang="html">&lt;div
   class=&quot;qr-code qr-code-js&quot;
   id=&quot;custom-qr-code&quot;
-  data-default-value=&quot;https://corex-ui.com/&quot;
   data-dir=&quot;ltr&quot;
   data-pixel-size=&quot;8&quot;
-  data-value=&quot;https://corex-ui.com/&quot;
+  data-default-value=&quot;https://corex-ui.com/&quot;
   data-boost-ecc
-  data-border=&quot;4&quot;
   data-ecc=&quot;M&quot;
   data-invert
   data-mask-pattern=&quot;0&quot;
@@ -286,11 +280,6 @@
   <strong>data-pixel-size</strong><br />
   Type: <code>number</code><br />
   Description: Size of each QR code pixel/module in pixels.
-</p>
-<p>
-  <strong>data-value</strong><br />
-  Type: <code>string</code><br />
-  Description: Controlled value of the QR code (used in controlled components).
 </p>
 <p>
   <strong>data-boost-ecc</strong><br />
@@ -363,13 +352,16 @@
     <div
       id="my-qr-code"
       class="qr-code qr-code-js"
-      data-value="https://corex-ui.com/"
+      data-default-value="https://corex-ui.com/"
       data-on-encoded="my-qr-code-event"
     >
       <div data-part="root">
         <svg data-part="frame">
           <path data-part="pattern" />
         </svg>
+        <div data-part="overlay">
+          <img src="/logo.svg" alt="" />
+        </div>
       </div>
     </div>
   </div>
@@ -380,13 +372,16 @@
       data-default-value='&lt;div
   id="my-qr-code"
   class="qr-code qr-code-js"
-  data-value="https://corex-ui.com/"
+  data-default-value="https://corex-ui.com/"
   data-on-encoded="my-qr-code-event"
 &gt;
   &lt;div data-part="root"&gt;
     &lt;svg data-part="frame"&gt;
       &lt;path data-part="pattern" /&gt;
     &lt;/svg&gt;
+    &lt;div data-part="overlay"&gt;
+      &lt;img src="/logo.svg" alt="" /&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 '
@@ -437,13 +432,16 @@
     <pre><code class="code-js" data-lang="html">&lt;div
   id=&quot;my-qr-code&quot;
   class=&quot;qr-code qr-code-js&quot;
-  data-value=&quot;https://corex-ui.com/&quot;
+  data-default-value=&quot;https://corex-ui.com/&quot;
   data-on-encoded=&quot;my-qr-code-event&quot;
 &gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;svg data-part=&quot;frame&quot;&gt;
       &lt;path data-part=&quot;pattern&quot; /&gt;
     &lt;/svg&gt;
+    &lt;div data-part=&quot;overlay&quot;&gt;
+      &lt;img src=&quot;/logo.svg&quot; alt=&quot;&quot; /&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -513,10 +511,9 @@
   </div>
 </div>
 <p>
-  <strong>data-on-value-change</strong><br />
+  <strong>data-on-encoded</strong><br />
   Type: <code>string</code><br />
-  Description: Event name to be sent when the QR code value changes or when
-  encoding completes.
+  Description: Event name to be sent when the generated QR Code.
 </p>
 <hr />
 <h2 id="download-trigger" tabindex="-1">
@@ -529,11 +526,14 @@
 
 <div class="preview">
   <div class="preview__display">
-    <div class="qr-code qr-code-js" data-value="https://corex-ui.com/">
+    <div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/">
       <div data-part="root">
         <svg data-part="frame">
           <path data-part="pattern" />
         </svg>
+        <div data-part="overlay">
+          <img src="/logo.svg" alt="" />
+        </div>
         <button data-part="downloadTrigger" class="button">
           Download QR Code
         </button>
@@ -544,14 +544,15 @@
     <div
       class="clipboard clipboard-js"
       data-name="clipboard"
-      data-default-value='&lt;div class="qr-code qr-code-js" data-value="https://corex-ui.com/"&gt;
+      data-default-value='&lt;div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/"&gt;
   &lt;div data-part="root"&gt;
     &lt;svg data-part="frame"&gt;
       &lt;path data-part="pattern" /&gt;
     &lt;/svg&gt;
-    &lt;button data-part="downloadTrigger" class="button"&gt;
-      Download QR Code
-    &lt;/button&gt;
+    &lt;div data-part="overlay"&gt;
+      &lt;img src="/logo.svg" alt="" /&gt;
+    &lt;/div&gt;
+    &lt;button data-part="downloadTrigger" class="button"&gt;Download QR Code&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 '
@@ -599,14 +600,15 @@
         </button>
       </div>
     </div>
-    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;qr-code qr-code-js&quot; data-value=&quot;https://corex-ui.com/&quot;&gt;
+    <pre><code class="code-js" data-lang="html">&lt;div class=&quot;qr-code qr-code-js&quot; data-default-value=&quot;https://corex-ui.com/&quot;&gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;svg data-part=&quot;frame&quot;&gt;
       &lt;path data-part=&quot;pattern&quot; /&gt;
     &lt;/svg&gt;
-    &lt;button data-part=&quot;downloadTrigger&quot; class=&quot;button&quot;&gt;
-      Download QR Code
-    &lt;/button&gt;
+    &lt;div data-part=&quot;overlay&quot;&gt;
+      &lt;img src=&quot;/logo.svg&quot; alt=&quot;&quot; /&gt;
+    &lt;/div&gt;
+    &lt;button data-part=&quot;downloadTrigger&quot; class=&quot;button&quot;&gt;Download QR Code&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
