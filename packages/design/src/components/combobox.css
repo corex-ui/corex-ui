@@ -33,6 +33,7 @@
 
   .combobox [data-scope="combobox"][data-part="trigger"] {
     @apply ui-trigger ui-trigger--square;
+
     border-inline-start: none;
     border-start-start-radius: 0;
     border-end-start-radius: 0;
@@ -41,6 +42,7 @@
 
   .combobox [data-scope="combobox"][data-part="clear-trigger"] {
     @apply ui-trigger ui-trigger--square;
+
     border-inline: none;
     border-radius: 0;
     flex-shrink: 0;

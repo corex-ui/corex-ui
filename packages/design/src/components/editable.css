@@ -5,7 +5,7 @@
     @apply ui-root;
 
     flex: 1 1 auto;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
     justify-content: start;
     max-width: var(--container-mini);
@@ -35,8 +35,10 @@
   }
 
   .editable [data-part="triggers"] {
-    display: flex;
-    align-items: end;
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--spacing-ui);
+    flex: 1 1 auto;
     gap: var(--spacing-mini-gap);
   }
 
@@ -67,6 +69,8 @@
     font-size: --value(--text-ui-*, [length]);
     line-height: --value(--text-ui-* --line-height, [length]);
     min-height: --value(--spacing-ui-*, [length]);
+    padding-inline: --value(--spacing-ui-padding-*, [length]);
+    gap: --value(--spacing-ui-gap-*, [length]);
   }
 
   [data-scope="editable"][data-part="edit-trigger"]::placeholder,
@@ -75,9 +79,9 @@
     color: --value(--color-root--*, [color]);
   }
 
-  [data-scope="editable"][data-part="area"] {
+  /* [data-scope="editable"][data-part="area"] {
     max-height: --value(--spacing-ui-*, [length]);
-  }
+  } */
 
   [data-scope="editable"][data-part="preview"] {
     font-size: --value(--text-ui-*, [length]);
