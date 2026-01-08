@@ -41,7 +41,6 @@ export function initQrCode(
       dir: getString<Direction>(rootEl, "dir", directions),
       defaultValue: getString(rootEl, "defaultValue"),
       pixelSize: getNumber(rootEl, "pixelSize"),
-      value: getString(rootEl, "value"),
       encoding: {
         boostEcc: getBoolean(rootEl, "boostEcc"),
         border: getNumber(rootEl, "border"),
@@ -53,16 +52,11 @@ export function initQrCode(
         onEncoded(qr) {
           const eventName = getString(rootEl, "onEncoded");
           if (eventName) {
-            rootEl.dispatchEvent(new CustomEvent(eventName, { detail: qr }));
+            queueMicrotask(() => {
+              rootEl.dispatchEvent(new CustomEvent(eventName, { detail: qr }));
+            });
           }
         },
-      },
-
-      onValueChange(details: any) {
-        const eventName = getString(rootEl, "onValueChange");
-        if (eventName) {
-          rootEl.dispatchEvent(new CustomEvent(eventName, { detail: details }));
-        }
       },
     });
     qrCode.init();
