@@ -4,6 +4,7 @@ export const rollupInput = (dirname) => ({
   index: resolve(dirname, "index.html"),
 
   introduction: resolve(dirname, "installation/introduction.html"),
+  "phoenix-ssr": resolve(dirname, "installation/phoenix-ssr.html"),
   vite: resolve(dirname, "installation/vite.html"),
   astro: resolve(dirname, "installation/astro.html"),
   eleventy: resolve(dirname, "installation/eleventy.html"),

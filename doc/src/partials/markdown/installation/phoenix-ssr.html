@@ -1,0 +1,274 @@
+<h1 id="phoenix-ssr-installation-guide" tabindex="-1">
+  <a class="link" href="#phoenix-ssr-installation-guide">#</a> Phoenix SSR
+  Installation Guide
+</h1>
+<p>
+  <strong>Corex</strong> for Phoenix is a separate Elixir library that brings
+  accessible, unstyled UI components to the Phoenix Framework. It integrates
+  Zag.js state machines with Phoenix Controllers and LiveView.
+</p>
+<p>
+  This guide points you to the official Phoenix documentation and resources.
+</p>
+<hr />
+<h2 id="quick-links" tabindex="-1">
+  <a class="link" href="#quick-links">#</a> Quick Links
+</h2>
+<ul>
+  <li>
+    <strong
+      ><a
+        href="https://hexdocs.pm/corex"
+        class="link"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="External link, opens in a new window"
+        >Hex documentation
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <title>Opens in a new window</title>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+          ></path>
+        </svg> </a
+    ></strong>
+    — Full setup, API reference, and installation
+  </li>
+  <li>
+    <strong
+      ><a
+        href="https://corex.gigalixirapp.com/"
+        class="link"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="External link, opens in a new window"
+        >Live demo
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <title>Opens in a new window</title>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+          ></path>
+        </svg> </a
+    ></strong>
+    — Interactive component examples
+  </li>
+  <li>
+    <strong
+      ><a
+        href="https://github.com/corex-ui/corex"
+        class="link"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="External link, opens in a new window"
+        >GitHub
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <title>Opens in a new window</title>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+          ></path>
+        </svg> </a
+    ></strong>
+    — Source code and contribution
+  </li>
+</ul>
+<hr />
+<h2 id="installation" tabindex="-1">
+  <a class="link" href="#installation">#</a> Installation
+</h2>
+<p>
+  To add Corex to your Phoenix application, follow the
+  <a
+    href="https://hexdocs.pm/corex"
+    class="link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="External link, opens in a new window"
+    >official installation guide on Hex
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <title>Opens in a new window</title>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+      ></path>
+    </svg> </a
+  >.
+</p>
+<p><strong>Using the project generator:</strong></p>
+
+<div class="preview">
+  <div class="preview__code">
+    <div
+      class="clipboard clipboard-js"
+      data-name="clipboard"
+      data-default-value="mix archive.install hex corex_new
+mix corex.new my_app
+cd my_app
+mix deps.get
+"
+    >
+      <div data-part="control">
+        <button data-part="trigger" class="button button--sm">
+          <span data-copy class="uppercase">bash</span>
+          <span data-copied>Copied</span>
+          <svg
+            data-copy
+            class="icon"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+          <svg
+            data-copied
+            class="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <pre><code class="code-js" data-lang="bash">mix archive.install hex corex_new
+mix corex.new my_app
+cd my_app
+mix deps.get
+</code></pre>
+  </div>
+</div>
+<p>
+  <strong>Existing project:</strong> See
+  <a
+    href="https://hexdocs.pm/corex"
+    class="link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="External link, opens in a new window"
+    >Manual installation
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <title>Opens in a new window</title>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+      ></path>
+    </svg>
+  </a>
+  in the Hex docs.
+</p>
+<hr />
+<h2 id="what-you-get" tabindex="-1">
+  <a class="link" href="#what-you-get">#</a> What You Get
+</h2>
+<ul>
+  <li>
+    <strong>Accessible by default</strong> — Built-in ARIA attributes and
+    keyboard navigation
+  </li>
+  <li><strong>Unstyled components</strong> — Full control over styling</li>
+  <li>
+    <strong>Phoenix Controllers and LiveView</strong> — Works in both rendering
+    modes
+  </li>
+  <li>
+    <strong>Zag.js state machines</strong> — Type-safe, predictable component
+    behavior
+  </li>
+</ul>
+<hr />
+<h2 id="learn-more" tabindex="-1">
+  <a class="link" href="#learn-more">#</a> Learn More
+</h2>
+<p>
+  For complete documentation, examples, and API details, visit
+  <a
+    href="https://hexdocs.pm/corex"
+    class="link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="External link, opens in a new window"
+    >hexdocs.pm/corex
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <title>Opens in a new window</title>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+      ></path>
+    </svg> </a
+  >.
+</p>

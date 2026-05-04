@@ -7,11 +7,12 @@ const navigation = {
       label: "Installation",
       link: [
         { label: "Introduction", url: "/installation/introduction" },
+        { label: "Phoenix SSR", url: "/installation/phoenix-ssr" },
         { label: "Vite", url: "/installation/vite" },
         { label: "Astro", url: "/installation/astro" },
         { label: "Eleventy", url: "/installation/eleventy" },
         { label: "Serve", url: "/installation/serve" },
-        { label: "Upgrade", url: "/installation/updgrade" },
+        { label: "Upgrade", url: "/installation/upgrade" },
       ],
     },
     {

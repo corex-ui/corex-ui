@@ -1,6 +1,6 @@
 {
   "name": "@corex-ui/astro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Astro integration for rendering Corex UI static components post build.",
   "publishConfig": {
     "access": "public"
@@ -51,11 +51,11 @@
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
     "typescript": "~5.8.3",
-    "vite-plugin-dts": "^4.5.4",
-    "vite": "^7.1.2"
+    "vite": "^8.0.10",
+    "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
-    "astro": "^5.13.10",
-    "jsdom": "^27.1.0"
+    "astro": "^6.2.1",
+    "jsdom": "^29.1.1"
   }
 }

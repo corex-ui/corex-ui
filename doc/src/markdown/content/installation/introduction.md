@@ -31,8 +31,15 @@ Whether you want a fully custom look or a fast, pre-styled setup, Corex lets you
 - `@corex-ui/astro`: Astro post-build hydration of Corex components.
 - `@corex-ui/cli`: CLI post-build hydration of Corex components.
 
-> Corex UI is currently only available for **_Static Websites_**.
-> SSR (Server-Side Rendering) integrations for Phoenix, React, Svelte, Solid and Vue are coming soon.
+Corex is now available for **Elixir and Phoenix Framework** as well as static sites.
+
+> ### Phoenix & Elixir
+>
+> **Corex for Phoenix** integrates accessible, unstyled UI components into the Phoenix Framework. Built with Zag.js state machines, it supports Phoenix Controllers and LiveView with full ARIA attributes and keyboard navigation.
+>
+> - [Hex documentation](https://hexdocs.pm/corex) — Setup and API reference
+> - [GitHub](https://github.com/corex-ui/corex) — Source code
+> - [Live demo](https://corex.gigalixirapp.com/) — Interactive examples
 
 ---
 
