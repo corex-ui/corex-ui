@@ -1,5 +1,11 @@
 # @corex-ui/vite
 
+## 1.0.1
+
+### Patch Changes
+
+- 7eef23f: Packages update
+
 ## 1.0.0
 
 ### Major Changes

@@ -1,5 +1,13 @@
 # @corex-ui/cli
 
+## 1.0.1
+
+### Patch Changes
+
+- 7eef23f: Packages update
+- Updated dependencies [7eef23f]
+  - @corex-ui/static@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
