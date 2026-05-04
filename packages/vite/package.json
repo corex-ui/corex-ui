@@ -48,10 +48,10 @@
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
     "typescript": "~5.8.3",
-    "vite": "^7.1.2",
+    "vite": "^8.0.10",
     "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
-    "jsdom": "^27.1.0"
+    "jsdom": "^27.4.0"
   }
 }

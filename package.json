@@ -41,7 +41,11 @@
       "source-map": "0.7.6",
       "magic-string": "0.30.21",
       "sourcemap-codec": "@jridgewell/sourcemap-codec@^1.5.5"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   },
-  "packageManager": "pnpm@10.27.0"
+  "packageManager": "pnpm@10.33.2"
 }
