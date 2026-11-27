@@ -18,15 +18,15 @@ test.describe("Listbox rendering", () => {
 
     const root = parts["root"].first();
     await expect(root).toHaveAttribute("data-scope", "listbox");
-    await expect(root).toHaveAttribute("id", /select:listbox-/);
+    await expect(root).toHaveAttribute("id", /listbox:listbox-/);
     await expect(root).toHaveAttribute("data-orientation", "vertical");
 
     const label = parts["label"].first();
-    await expect(label).toHaveAttribute("id", /select:listbox-.*:label/);
+    await expect(label).toHaveAttribute("id", /listbox:listbox-.*:label/);
     await expect(label).toHaveAttribute("data-scope", "listbox");
 
     const content = parts["content"].first();
-    await expect(content).toHaveAttribute("id", /select:listbox-.*:content/);
+    await expect(content).toHaveAttribute("id", /listbox:listbox-.*:content/);
     await expect(content).toHaveAttribute("role", "listbox");
     await expect(content).toHaveAttribute("data-scope", "listbox");
     await expect(content).toHaveAttribute("tabindex", "0");

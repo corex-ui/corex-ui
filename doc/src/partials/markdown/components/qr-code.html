@@ -1,121 +1,70 @@
-<h1 id="qr-code" tabindex="-1">
-  <a class="link" href="#qr-code">#</a> QR Code
-</h1>
+<h1 id="qr-code" tabindex="-1"><a class="link" href="#qr-code">#</a> QR Code</h1>
 <blockquote>
-  <p>
-    A pure HTML and vanilla JS implementation of
-    <a
-      href="https://zagjs.com/components/react/qr-code"
-      class="link"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="External link, opens in a new window"
-      >Zag JS QR Code
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <title>Opens in a new window</title>
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-        ></path>
-      </svg>
-    </a>
-  </p>
+<p>A pure HTML and vanilla JS implementation of <a href="https://zagjs.com/components/react/qr-code" class="link" target="_blank" rel="noopener noreferrer" aria-label="External link, opens in a new window">Zag JS QR Code
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <title>Opens in a new window</title>
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+    ></path>
+  </svg>
+</a></p>
 </blockquote>
-<p>
-  QR (Quick Response) Code is used to provide information or link which can be
-  accessed by scanning the code with an app or a smartphone.
-</p>
-<hr />
-<h2 id="anatomy" tabindex="-1">
-  <a class="link" href="#anatomy">#</a> Anatomy
-</h2>
+<p>QR (Quick Response) Code is used to provide information or link which can be accessed by scanning the code with an app or a smartphone.</p>
+<hr>
+<h2 id="anatomy" tabindex="-1"><a class="link" href="#anatomy">#</a> Anatomy</h2>
 <p>The QR Code component consists of the following data parts:</p>
-<p>
-  <code>root</code>, <code>frame</code>, <code>pattern</code>,
-  <code>overlay</code>, <code>download-trigger</code>
-</p>
+<p><code>root</code>, <code>frame</code>, <code>pattern</code>, <code>overlay</code>, <code>download-trigger</code></p>
 
 <div class="preview">
-  <div class="preview__display">
-    <div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/">
-      <div data-part="root">
-        <svg data-part="frame">
-          <path data-part="pattern" />
-        </svg>
-        <div data-part="overlay">
-          <img src="/logo.svg" alt="" />
-        </div>
-      </div>
+  <div class="preview__display"><div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/">
+  <div data-part="root">
+    <svg data-part="frame">
+      <path data-part="pattern" />
+    </svg>
+    <div data-part="overlay">
+      <img src="/logo.svg" alt="" />
     </div>
   </div>
+</div>
+</div>
   <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/"&gt;
-  &lt;div data-part="root"&gt;
-    &lt;svg data-part="frame"&gt;
-      &lt;path data-part="pattern" /&gt;
+    
+<div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;qr-code qr-code-js&quot; data-default-value=&quot;https://corex-ui.com/&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;svg data-part=&quot;frame&quot;&gt;
+      &lt;path data-part=&quot;pattern&quot; /&gt;
     &lt;/svg&gt;
-    &lt;div data-part="overlay"&gt;
-      &lt;img src="/logo.svg" alt="" /&gt;
+    &lt;div data-part=&quot;overlay&quot;&gt;
+      &lt;img src=&quot;/logo.svg&quot; alt=&quot;&quot; /&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
+">
+  <div data-part="control">
+    <button data-part="trigger" class="button button--sm">
+      <span data-copy class="uppercase">html</span>
+      <span data-copied>Copied</span>
+      <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+        </path>
+      </svg>
+      <svg data-copied class="icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
     <pre><code class="code-js" data-lang="html">&lt;div class=&quot;qr-code qr-code-js&quot; data-default-value=&quot;https://corex-ui.com/&quot;&gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;svg data-part=&quot;frame&quot;&gt;
@@ -128,46 +77,12 @@
 &lt;/div&gt;
 </code></pre>
   </div>
-</div>
-<hr />
-<h2 id="data-attributes" tabindex="-1">
-  <a class="link" href="#data-attributes">#</a> Data attributes
-</h2>
-<p>
-  Each QR Code can be set with different settings with the following
-  data-attribute.
-</p>
+</div><hr>
+<h2 id="data-attributes" tabindex="-1"><a class="link" href="#data-attributes">#</a> Data attributes</h2>
+<p>Each QR Code can be set with different settings with the following data-attribute.</p>
 
 <div class="preview">
-  <div class="preview__display">
-    <div
-      class="qr-code qr-code-js"
-      id="custom-qr-code"
-      data-dir="ltr"
-      data-pixel-size="8"
-      data-default-value="https://corex-ui.com/"
-      data-boost-ecc
-      data-ecc="M"
-      data-invert
-      data-mask-pattern="0"
-      data-max-version="40"
-      data-min-version="1"
-    >
-      <div data-part="root">
-        <svg data-part="frame">
-          <path data-part="pattern" />
-        </svg>
-        <div data-part="overlay">
-          <img src="/logo.svg" alt="" />
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div
+  <div class="preview__display"><div
   class="qr-code qr-code-js"
   id="custom-qr-code"
   data-dir="ltr"
@@ -179,61 +94,57 @@
   data-mask-pattern="0"
   data-max-version="40"
   data-min-version="1"
+>
+  <div data-part="root">
+    <svg data-part="frame">
+      <path data-part="pattern" />
+    </svg>
+    <div data-part="overlay">
+      <img src="/logo.svg" alt="" />
+    </div>
+  </div>
+</div>
+</div>
+  <div class="preview__code">
+    
+<div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div
+  class=&quot;qr-code qr-code-js&quot;
+  id=&quot;custom-qr-code&quot;
+  data-dir=&quot;ltr&quot;
+  data-pixel-size=&quot;8&quot;
+  data-default-value=&quot;https://corex-ui.com/&quot;
+  data-boost-ecc
+  data-ecc=&quot;M&quot;
+  data-invert
+  data-mask-pattern=&quot;0&quot;
+  data-max-version=&quot;40&quot;
+  data-min-version=&quot;1&quot;
 &gt;
-  &lt;div data-part="root"&gt;
-    &lt;svg data-part="frame"&gt;
-      &lt;path data-part="pattern" /&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;svg data-part=&quot;frame&quot;&gt;
+      &lt;path data-part=&quot;pattern&quot; /&gt;
     &lt;/svg&gt;
-    &lt;div data-part="overlay"&gt;
-      &lt;img src="/logo.svg" alt="" /&gt;
+    &lt;div data-part=&quot;overlay&quot;&gt;
+      &lt;img src=&quot;/logo.svg&quot; alt=&quot;&quot; /&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
+">
+  <div data-part="control">
+    <button data-part="trigger" class="button button--sm">
+      <span data-copy class="uppercase">html</span>
+      <span data-copied>Copied</span>
+      <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+        </path>
+      </svg>
+      <svg data-copied class="icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
     <pre><code class="code-js" data-lang="html">&lt;div
   class=&quot;qr-code qr-code-js&quot;
   id=&quot;custom-qr-code&quot;
@@ -258,177 +169,103 @@
 &lt;/div&gt;
 </code></pre>
   </div>
-</div>
-<p>
-  <strong>id</strong><br />
-  Type: <code>string</code><br />
-  Description: Unique id of the QR code. Default generated if none is provided.
-</p>
-<p>
-  <strong>data-dir</strong><br />
-  Type: <code>string</code><br />
-  Description: The text direction of the component. Can be <code>ltr</code> or
-  <code>rtl</code>.
-</p>
-<p>
-  <strong>data-default-value</strong><br />
-  Type: <code>string</code><br />
-  Description: Initial default value of the QR code when rendered. Use when you
-  don't need to control the value.
-</p>
-<p>
-  <strong>data-pixel-size</strong><br />
-  Type: <code>number</code><br />
-  Description: Size of each QR code pixel/module in pixels.
-</p>
-<p>
-  <strong>data-boost-ecc</strong><br />
-  Type: <code>boolean</code><br />
-  Description: Whether to boost error correction level automatically if needed.
-</p>
-<p>
-  <strong>data-border</strong><br />
-  Type: <code>number</code><br />
-  Description: Size of the quiet zone (border) around the QR code in modules.
-</p>
-<p>
-  <strong>data-ecc</strong><br />
-  Type:
-  <code>&quot;L&quot; | &quot;M&quot; | &quot;Q&quot; | &quot;H&quot;</code
-  ><br />
-  Description: Error correction level. Higher levels allow more damage before
-  the code becomes unreadable.
-</p>
+</div><p><strong>id</strong><br>
+Type: <code>string</code><br>
+Description: Unique id of the QR code. Default generated if none is provided.</p>
+<p><strong>data-dir</strong><br>
+Type: <code>string</code><br>
+Description: The text direction of the component. Can be <code>ltr</code> or <code>rtl</code>.</p>
+<p><strong>data-default-value</strong><br>
+Type: <code>string</code><br>
+Description: Initial default value of the QR code when rendered. Use when you don't need to control the value.</p>
+<p><strong>data-pixel-size</strong><br>
+Type: <code>number</code><br>
+Description: Size of each QR code pixel/module in pixels.</p>
+<p><strong>data-boost-ecc</strong><br>
+Type: <code>boolean</code><br>
+Description: Whether to boost error correction level automatically if needed.</p>
+<p><strong>data-border</strong><br>
+Type: <code>number</code><br>
+Description: Size of the quiet zone (border) around the QR code in modules.</p>
+<p><strong>data-ecc</strong><br>
+Type: <code>&quot;L&quot; | &quot;M&quot; | &quot;Q&quot; | &quot;H&quot;</code><br>
+Description: Error correction level. Higher levels allow more damage before the code becomes unreadable.</p>
 <ul>
-  <li><code>L</code>: ~7% error correction</li>
-  <li><code>M</code>: ~15% error correction (default)</li>
-  <li><code>Q</code>: ~25% error correction</li>
-  <li><code>H</code>: ~30% error correction</li>
+<li><code>L</code>: ~7% error correction</li>
+<li><code>M</code>: ~15% error correction (default)</li>
+<li><code>Q</code>: ~25% error correction</li>
+<li><code>H</code>: ~30% error correction</li>
 </ul>
-<p>
-  <strong>data-invert</strong><br />
-  Type: <code>boolean</code><br />
-  Description: Whether to invert the colors (white becomes black, black becomes
-  white).
-</p>
-<p>
-  <strong>data-mask-pattern</strong><br />
-  Type: <code>number</code><br />
-  Description: Mask pattern to use (0-7). If not specified, the best pattern is
-  automatically selected.
-</p>
-<p>
-  <strong>data-max-version</strong><br />
-  Type: <code>number</code><br />
-  Description: Maximum QR code version (1-40). Higher versions support more
-  data.
-</p>
-<p>
-  <strong>data-min-version</strong><br />
-  Type: <code>number</code><br />
-  Description: Minimum QR code version (1-40).
-</p>
-<hr />
-<h2 id="event-callbacks" tabindex="-1">
-  <a class="link" href="#event-callbacks">#</a> Event Callbacks
-</h2>
-<p>
-  Each QR Code component can receive callbacks that can be used to respond to
-  value changes.
-</p>
-<p>
-  You must add a custom id for the QR code and an event listener for your event
-  name
-</p>
+<p><strong>data-invert</strong><br>
+Type: <code>boolean</code><br>
+Description: Whether to invert the colors (white becomes black, black becomes white).</p>
+<p><strong>data-mask-pattern</strong><br>
+Type: <code>number</code><br>
+Description: Mask pattern to use (0-7). If not specified, the best pattern is automatically selected.</p>
+<p><strong>data-max-version</strong><br>
+Type: <code>number</code><br>
+Description: Maximum QR code version (1-40). Higher versions support more data.</p>
+<p><strong>data-min-version</strong><br>
+Type: <code>number</code><br>
+Description: Minimum QR code version (1-40).</p>
+<hr>
+<h2 id="event-callbacks" tabindex="-1"><a class="link" href="#event-callbacks">#</a> Event Callbacks</h2>
+<p>Each QR Code component can receive callbacks that can be used to respond to value changes.</p>
+<p>You must add a custom id for the QR code and an event listener for your event name</p>
 <blockquote>
-  <p>
-    Open your browser's console to see the events received when the QR code
-    value changes
-  </p>
+<p>Open your browser's console to see the events received when the QR code value changes</p>
 </blockquote>
 
 <div class="preview">
-  <div class="preview__display">
-    <div
-      id="my-qr-code"
-      class="qr-code qr-code-js"
-      data-default-value="https://corex-ui.com/"
-      data-on-encoded="my-qr-code-event"
-    >
-      <div data-part="root">
-        <svg data-part="frame">
-          <path data-part="pattern" />
-        </svg>
-        <div data-part="overlay">
-          <img src="/logo.svg" alt="" />
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div
+  <div class="preview__display"><div
   id="my-qr-code"
   class="qr-code qr-code-js"
   data-default-value="https://corex-ui.com/"
   data-on-encoded="my-qr-code-event"
+>
+  <div data-part="root">
+    <svg data-part="frame">
+      <path data-part="pattern" />
+    </svg>
+    <div data-part="overlay">
+      <img src="/logo.svg" alt="" />
+    </div>
+  </div>
+</div>
+</div>
+  <div class="preview__code">
+    
+<div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div
+  id=&quot;my-qr-code&quot;
+  class=&quot;qr-code qr-code-js&quot;
+  data-default-value=&quot;https://corex-ui.com/&quot;
+  data-on-encoded=&quot;my-qr-code-event&quot;
 &gt;
-  &lt;div data-part="root"&gt;
-    &lt;svg data-part="frame"&gt;
-      &lt;path data-part="pattern" /&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;svg data-part=&quot;frame&quot;&gt;
+      &lt;path data-part=&quot;pattern&quot; /&gt;
     &lt;/svg&gt;
-    &lt;div data-part="overlay"&gt;
-      &lt;img src="/logo.svg" alt="" /&gt;
+    &lt;div data-part=&quot;overlay&quot;&gt;
+      &lt;img src=&quot;/logo.svg&quot; alt=&quot;&quot; /&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
+">
+  <div data-part="control">
+    <button data-part="trigger" class="button button--sm">
+      <span data-copy class="uppercase">html</span>
+      <span data-copied>Copied</span>
+      <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+        </path>
+      </svg>
+      <svg data-copied class="icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
     <pre><code class="code-js" data-lang="html">&lt;div
   id=&quot;my-qr-code&quot;
   class=&quot;qr-code qr-code-js&quot;
@@ -449,59 +286,28 @@
 </div>
 <div class="preview">
   <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='document
-  .getElementById("my-qr-code")
-  ?.addEventListener("my-qr-code-event", (event) =&gt; {
-    console.log("Received event:", (event as CustomEvent).detail);
+    
+<div class="clipboard clipboard-js" data-name="clipboard" data-default-value="document
+  .getElementById(&quot;my-qr-code&quot;)
+  ?.addEventListener(&quot;my-qr-code-event&quot;, (event) =&gt; {
+    console.log(&quot;Received event:&quot;, (event as CustomEvent).detail);
   });
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">ts</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
+">
+  <div data-part="control">
+    <button data-part="trigger" class="button button--sm">
+      <span data-copy class="uppercase">ts</span>
+      <span data-copied>Copied</span>
+      <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+        </path>
+      </svg>
+      <svg data-copied class="icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
     <pre><code class="code-js" data-lang="ts">document
   .getElementById(&quot;my-qr-code&quot;)
   ?.addEventListener(&quot;my-qr-code-event&quot;, (event) =&gt; {
@@ -509,97 +315,55 @@
   });
 </code></pre>
   </div>
-</div>
-<p>
-  <strong>data-on-encoded</strong><br />
-  Type: <code>string</code><br />
-  Description: Event name to be sent when the generated QR Code.
-</p>
-<hr />
-<h2 id="download-trigger" tabindex="-1">
-  <a class="link" href="#download-trigger">#</a> Download Trigger
-</h2>
-<p>
-  The QR Code component supports a download trigger that allows users to
-  download the QR code as an image.
-</p>
+</div><p><strong>data-on-encoded</strong><br>
+Type: <code>string</code><br>
+Description: Event name to be sent when the generated QR Code.</p>
+<hr>
+<h2 id="download-trigger" tabindex="-1"><a class="link" href="#download-trigger">#</a> Download Trigger</h2>
+<p>The QR Code component supports a download trigger that allows users to download the QR code as an image.</p>
 
 <div class="preview">
-  <div class="preview__display">
-    <div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/">
-      <div data-part="root">
-        <svg data-part="frame">
-          <path data-part="pattern" />
-        </svg>
-        <div data-part="overlay">
-          <img src="/logo.svg" alt="" />
-        </div>
-        <button data-part="downloadTrigger" class="button">
-          Download QR Code
-        </button>
-      </div>
+  <div class="preview__display"><div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/">
+  <div data-part="root">
+    <svg data-part="frame">
+      <path data-part="pattern" />
+    </svg>
+    <div data-part="overlay">
+      <img src="/logo.svg" alt="" />
     </div>
+    <button data-part="downloadTrigger" class="button">Download QR Code</button>
   </div>
+</div>
+</div>
   <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='&lt;div class="qr-code qr-code-js" data-default-value="https://corex-ui.com/"&gt;
-  &lt;div data-part="root"&gt;
-    &lt;svg data-part="frame"&gt;
-      &lt;path data-part="pattern" /&gt;
+    
+<div class="clipboard clipboard-js" data-name="clipboard" data-default-value="&lt;div class=&quot;qr-code qr-code-js&quot; data-default-value=&quot;https://corex-ui.com/&quot;&gt;
+  &lt;div data-part=&quot;root&quot;&gt;
+    &lt;svg data-part=&quot;frame&quot;&gt;
+      &lt;path data-part=&quot;pattern&quot; /&gt;
     &lt;/svg&gt;
-    &lt;div data-part="overlay"&gt;
-      &lt;img src="/logo.svg" alt="" /&gt;
+    &lt;div data-part=&quot;overlay&quot;&gt;
+      &lt;img src=&quot;/logo.svg&quot; alt=&quot;&quot; /&gt;
     &lt;/div&gt;
-    &lt;button data-part="downloadTrigger" class="button"&gt;Download QR Code&lt;/button&gt;
+    &lt;button data-part=&quot;downloadTrigger&quot; class=&quot;button&quot;&gt;Download QR Code&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">html</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
+">
+  <div data-part="control">
+    <button data-part="trigger" class="button button--sm">
+      <span data-copy class="uppercase">html</span>
+      <span data-copied>Copied</span>
+      <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+        </path>
+      </svg>
+      <svg data-copied class="icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
     <pre><code class="code-js" data-lang="html">&lt;div class=&quot;qr-code qr-code-js&quot; data-default-value=&quot;https://corex-ui.com/&quot;&gt;
   &lt;div data-part=&quot;root&quot;&gt;
     &lt;svg data-part=&quot;frame&quot;&gt;
@@ -613,149 +377,66 @@
 &lt;/div&gt;
 </code></pre>
   </div>
-</div>
-<hr />
-<h2 id="installation" tabindex="-1">
-  <a class="link" href="#installation">#</a> Installation
-</h2>
-<p>
-  First, complete the Corex UI
-  <a href="/installation/introduction" class="link">initial installation</a>
-  guide for your platform, bundler, or framework.
-</p>
+</div><hr>
+<h2 id="installation" tabindex="-1"><a class="link" href="#installation">#</a> Installation</h2>
+<p>First, complete the Corex UI <a href="/installation/introduction" class="link">initial installation</a> guide for your platform, bundler, or framework.</p>
 <ol>
-  <li>Import and initialize the component</li>
+<li>Import and initialize the component</li>
 </ol>
 
 <div class="preview">
   <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='import { initQrCode } from "@corex-ui/static";
+    
+<div class="clipboard clipboard-js" data-name="clipboard" data-default-value="import { initQrCode } from &quot;@corex-ui/static&quot;;
 initQrCode();
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">ts</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
+">
+  <div data-part="control">
+    <button data-part="trigger" class="button button--sm">
+      <span data-copy class="uppercase">ts</span>
+      <span data-copied>Copied</span>
+      <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+        </path>
+      </svg>
+      <svg data-copied class="icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
     <pre><code class="code-js" data-lang="ts">import { initQrCode } from &quot;@corex-ui/static&quot;;
 initQrCode();
 </code></pre>
   </div>
-</div>
-<p>
-  This will initialize all elements with
-  <code>class=&quot;qr-code-js&quot;</code> and add the necessary interaction
-  behavior.
-</p>
+</div><p>This will initialize all elements with <code>class=&quot;qr-code-js&quot;</code> and add the necessary interaction behavior.</p>
 <ol start="2">
-  <li>Add styling</li>
+<li>Add styling</li>
 </ol>
-<p>
-  The component is <strong>unstyled by default</strong> for maximum
-  customization flexibility.
-</p>
-<p>
-  To apply the default Corex UI design system styles, import the stylesheet:
-</p>
+<p>The component is <strong>unstyled by default</strong> for maximum customization flexibility.</p>
+<p>To apply the default Corex UI design system styles, import the stylesheet:</p>
 
 <div class="preview">
   <div class="preview__code">
-    <div
-      class="clipboard clipboard-js"
-      data-name="clipboard"
-      data-default-value='@import "@corex-ui/design/components/qr-code.css";
-'
-    >
-      <div data-part="control">
-        <button data-part="trigger" class="button button--sm">
-          <span data-copy class="uppercase">css</span>
-          <span data-copied>Copied</span>
-          <svg
-            data-copy
-            class="icon"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            ></path>
-          </svg>
-          <svg
-            data-copied
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
+    
+<div class="clipboard clipboard-js" data-name="clipboard" data-default-value="@import &quot;@corex-ui/design/components/qr-code.css&quot;;
+">
+  <div data-part="control">
+    <button data-part="trigger" class="button button--sm">
+      <span data-copy class="uppercase">css</span>
+      <span data-copied>Copied</span>
+      <svg data-copy class="icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+        </path>
+      </svg>
+      <svg data-copied class="icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
     <pre><code class="code-js" data-lang="css">@import &quot;@corex-ui/design/components/qr-code.css&quot;;
 </code></pre>
   </div>
-</div>
-<p>
-  These styles will be applied to all elements with the
-  <code>qr-code</code> class.
-</p>
+</div><p>These styles will be applied to all elements with the <code>qr-code</code> class.</p>

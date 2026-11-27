@@ -170,12 +170,15 @@ test.describe("Pin Input", () => {
       const { parts } = getComponent(page, "basic-pin-input", ["input"]);
       const inputs = parts["input"];
       const count = await inputs.count();
+      expect(count).toBeGreaterThan(1);
 
-      for (let i = 0; i < count; i++) {
-        const input = inputs.nth(i);
-        await input.focus();
-        await expect(input).toBeFocused();
+      await expect(inputs.first()).toHaveAttribute("tabindex", "0");
+      for (let i = 1; i < count; i++) {
+        await expect(inputs.nth(i)).toHaveAttribute("tabindex", "-1");
       }
+
+      await inputs.first().focus();
+      await expect(inputs.first()).toBeFocused();
     });
   });
 });

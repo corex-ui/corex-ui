@@ -46,8 +46,8 @@ test.describe("Angle Slider", () => {
 
       await expect(value).toHaveText("0");
       await expect(input).toHaveValue("0");
-      expect(await root.getAttribute("style")).toContain("--value:0");
-      expect(await root.getAttribute("style")).toContain("--angle:0deg");
+      expect(await root.getAttribute("style")).toContain("--value: 0");
+      expect(await root.getAttribute("style")).toContain("--angle: 0deg");
       expect(await thumb.getAttribute("aria-valuenow")).toBe("0");
     });
 
@@ -80,8 +80,8 @@ test.describe("Angle Slider", () => {
       await page.keyboard.press("ArrowRight");
       expect(Number(await value.textContent())).toBeGreaterThan(0);
       expect(Number(await input.inputValue())).toBeGreaterThan(0);
-      expect(await root.getAttribute("style")).toMatch(/--value:\d+/);
-      expect(await root.getAttribute("style")).toMatch(/--angle:\d+deg/);
+      expect(await root.getAttribute("style")).toMatch(/--value:\s*\d+/);
+      expect(await root.getAttribute("style")).toMatch(/--angle:\s*\d+deg/);
 
       await page.keyboard.press("ArrowLeft");
       expect(Number(await value.textContent())).toBeGreaterThanOrEqual(0);

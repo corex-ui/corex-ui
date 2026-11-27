@@ -25,7 +25,7 @@ test.describe("Color Picker rendering", () => {
     await expect(root).toHaveAttribute("id", /color-picker:colorPicker-/);
     await expect(root).toHaveAttribute(
       "style",
-      /--value:rgba\(25, 9, 192, 0\.9\)/,
+      /--value:\s*rgba\(25, 9, 192, 0\.9\)/,
     );
 
     const label = parts["label"].first();
@@ -101,7 +101,7 @@ test.describe("Color Picker rendering", () => {
     await expect(swatch).toHaveAttribute("data-value", "#1909C0");
     await expect(swatch).toHaveAttribute(
       "style",
-      /background:rgba\(25, 9, 192, 0\.9\)/,
+      /background:\s*rgba\(25, 9, 192, 0\.9\)/,
     );
   });
 
