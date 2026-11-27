@@ -15,28 +15,29 @@ jobs:
     runs-on: ubuntu-latest
     environment: npm
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
-      - uses: actions/setup-node@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
         with:
           node-version: 24
-          registry-url: 'https://registry.npmjs.org'
+          cache: "pnpm"
+          cache-dependency-path: "pnpm-lock.yaml"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Update npm for OIDC support
         run: npm install -g npm@latest
-
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 10.16.1
 
       - run: pnpm install
 
       - run: pnpm build
 
-      - uses: changesets/action@v1
+      - uses: changesets/action@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2.1.2
         with:
-          publish: pnpm release
-          createGithubReleases: true
+          publish-script: pnpm release
+          create-github-releases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_CONFIG_PROVENANCE: true

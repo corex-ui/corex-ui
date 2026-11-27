@@ -444,7 +444,7 @@ test.describe("Accordion", () => {
       ]);
 
       const trigger = parts["item-trigger"].first();
-      expect(await trigger.getAttribute("aria-disabled")).toBe("true");
+      await expect(trigger).toBeDisabled();
 
       await trigger.click({ force: true });
       await expectState(trigger, "closed");
@@ -471,12 +471,8 @@ test.describe("Accordion", () => {
       ]);
 
       // First two items disabled
-      expect(
-        await parts["item-trigger"].nth(0).getAttribute("aria-disabled"),
-      ).toBe("true");
-      expect(
-        await parts["item-trigger"].nth(1).getAttribute("aria-disabled"),
-      ).toBe("true");
+      await expect(parts["item-trigger"].nth(0)).toBeDisabled();
+      await expect(parts["item-trigger"].nth(1)).toBeDisabled();
 
       await parts["item-trigger"].nth(0).click({ force: true });
       await expectState(parts["item-trigger"].nth(0), "closed");

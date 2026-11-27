@@ -51,11 +51,11 @@
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
     "typescript": "~5.8.3",
-    "vite": "^8.0.10",
+    "vite": "^8.4.0",
     "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
-    "astro": "^6.2.1",
+    "astro": "^7.4.13",
     "jsdom": "^29.1.1"
   }
 }

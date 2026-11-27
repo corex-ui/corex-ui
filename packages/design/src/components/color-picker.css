@@ -76,11 +76,14 @@
     margin: 0;
   }
 
+  .color-picker [data-scope="color-picker"][data-part="positioner"] {
+    z-index: 30;
+  }
+
   [data-scope="color-picker"][data-part="content"] {
     @apply ui-content;
 
     flex-direction: column;
-    z-index: 30;
     padding: 0;
     max-width: var(--container-mini);
     gap: var(--spacing-mini-gap);

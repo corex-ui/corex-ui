@@ -35,6 +35,10 @@ export class FileUpload extends Component<fileUpload.Props, fileUpload.Api> {
 export function initFileUpload(doc: HTMLElement | Document = document) {
   doc.querySelectorAll<HTMLElement>(".file-upload-js").forEach((rootEl) => {
     const directions = ["ltr", "rtl"] as const;
+    const dropzone = rootEl.querySelector<HTMLElement>(
+      '[data-part="dropzone"]',
+    );
+    const dropzoneLabel = dropzone?.textContent?.replace(/\s+/g, " ").trim();
     const fileUploadComponent = new FileUpload(rootEl, {
       id: generateId(rootEl, "fileUpload"),
       dir: getString<Direction>(rootEl, "dir", directions),
@@ -45,6 +49,7 @@ export function initFileUpload(doc: HTMLElement | Document = document) {
       maxFileSize: getNumber(rootEl, "maxFileSize"),
       minFileSize: getNumber(rootEl, "minFileSize"),
       name: getString(rootEl, "name"),
+      translations: dropzoneLabel ? { dropzone: dropzoneLabel } : undefined,
 
       required: getBoolean(rootEl, "required"),
       onFileChange(details) {

@@ -91,7 +91,7 @@ export class Toast extends Component<toast.GroupProps, toast.GroupApi> {
     }
     return api;
   }
-  addToast(toastActor: toast.Options<any> & { id: string }, index: number) {
+  addToast(toastActor: toast.Props<any> & { id: string }, index: number) {
     let toastComp = this.toastComponents.get(toastActor.id);
     if (!toastComp) {
       const rootEl = document.createElement("div");
@@ -112,7 +112,7 @@ export class Toast extends Component<toast.GroupProps, toast.GroupApi> {
     renderPart(this.el, "group", this.api);
     const toasts = this.api
       .getToasts()
-      .filter((t): t is toast.Options<any> & { id: string } => !!t.id);
+      .filter((t): t is toast.Props<any> & { id: string } => !!t.id);
     const newToastMap = new Map<string, ToastItem>();
     toasts.forEach((toastActor, i) => {
       this.addToast(toastActor, i);

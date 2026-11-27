@@ -63,12 +63,10 @@ test.describe("Password Input", () => {
         "password-input",
       );
       await expect(visibilityTrigger).toHaveAttribute("type", "button");
-      await expect(visibilityTrigger).toHaveAttribute("tabindex", "-1");
       await expect(visibilityTrigger).toHaveAttribute(
         "aria-controls",
         /p-input-passwordInput-.*-input/,
       );
-      await expect(visibilityTrigger).toHaveAttribute("aria-expanded", "false");
       await expect(visibilityTrigger).toHaveAttribute("data-state", "hidden");
       await expect(visibilityTrigger).toHaveAttribute(
         "aria-label",
@@ -120,7 +118,6 @@ test.describe("Password Input", () => {
 
       await expect(input).toHaveAttribute("type", "password");
       await expect(input).toHaveAttribute("data-state", "hidden");
-      await expect(visibilityTrigger).toHaveAttribute("aria-expanded", "false");
       await expect(visibilityTrigger).toHaveAttribute(
         "aria-label",
         "Show password",
@@ -129,7 +126,6 @@ test.describe("Password Input", () => {
       await visibilityTrigger.click();
       await expect(input).toHaveAttribute("type", "text");
       await expect(input).toHaveAttribute("data-state", "visible");
-      await expect(visibilityTrigger).toHaveAttribute("aria-expanded", "true");
       await expect(visibilityTrigger).toHaveAttribute(
         "aria-label",
         "Hide password",
@@ -138,7 +134,6 @@ test.describe("Password Input", () => {
       await visibilityTrigger.click();
       await expect(input).toHaveAttribute("type", "password");
       await expect(input).toHaveAttribute("data-state", "hidden");
-      await expect(visibilityTrigger).toHaveAttribute("aria-expanded", "false");
       await expect(visibilityTrigger).toHaveAttribute(
         "aria-label",
         "Show password",

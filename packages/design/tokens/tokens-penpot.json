@@ -899,12 +899,18 @@
     "font": {
       "ui": {
         "default": {
-          "value": ["system-ui", "sans-serif"],
+          "value": [
+            "system-ui",
+            "sans-serif"
+          ],
           "type": "fontFamily"
         }
       },
       "code": {
-        "value": ["ui-monospace", "monospace"],
+        "value": [
+          "ui-monospace",
+          "monospace"
+        ],
         "type": "fontFamily"
       }
     },

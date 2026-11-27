@@ -1,11 +1,14 @@
 @import "../main.css";
 
 @layer components {
+  .menu [data-scope="menu"][data-part="positioner"] {
+    z-index: 50;
+  }
+
   .menu [data-scope="menu"][data-part="content"] {
     @apply ui-content;
 
     border: 1px solid var(--color-ui--border);
-    z-index: 50;
     padding: 0;
     border-radius: var(--radius-ui);
     overflow: hidden;
