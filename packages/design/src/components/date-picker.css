@@ -38,20 +38,23 @@
     max-width: var(--container-micro);
   }
 
+  .date-picker [data-scope="date-picker"][data-part="positioner"] {
+    z-index: 30;
+  }
+
+  .date-picker[data-inline="true"]
+    [data-scope="date-picker"][data-part="positioner"] {
+    z-index: auto;
+  }
+
   .date-picker [data-scope="date-picker"][data-part="content"] {
     @apply ui-content;
 
     flex-direction: column;
-    z-index: 30;
     padding: 0;
     box-shadow: var(--shadow-ui);
     max-width: fit-content;
     gap: var(--spacing-mini-gap);
-  }
-
-  .date-picker[data-inline="true"]
-    [data-scope="date-picker"][data-part="content"] {
-    z-index: 0;
   }
 
   .date-picker [data-scope="date-picker"][data-part="table"] {
